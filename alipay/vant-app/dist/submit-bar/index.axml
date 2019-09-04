@@ -32,7 +32,7 @@
           {{ suffixLabel }}
         </text>
       </view>
-      <van-button my-class='van-submit-bar__button' square=" " size='large' type='{{ buttonType }}' loading='{{ loading }}' disabled='{{ disabled }}' class='van-submit-bar__button' custom-class='button-class' onClick='onSubmit' ref='saveChildRef2'>
+      <van-button my-class='van-submit-bar__button' square=" " size='large' type='{{ buttonType }}' loading='{{ loading }}' disabled='{{ disabled }}' class='van-submit-bar__button' custom-class='{{buttonClass}}' onClick='onSubmit' ref='saveChildRef2'>
         {{ loading ? '' : buttonText }}
       </van-button>
     </view>

@@ -18,7 +18,7 @@
       </custom-loading>
     </view>
     <view class='van-picker__columns' style='height: {{ itemHeight * visibleItemCount }}px' catchTouchMove='noop'>
-      <picker-column class='van-picker__column' a:for='{{ isSimple(columns) ? [columns] : columns }}' a:key='*this' data-index='{{ index }}' custom-class='column-class' value-key='{{ valueKey }}' initial-options='{{ isSimple(columns) ? item : item.values }}' default-index='{{ item.defaultIndex || defaultIndex }}' item-height='{{ itemHeight }}' visible-item-count='{{ visibleItemCount }}' active-class='active-class' ref-numbers='{{ isSimple(columns) ? [columns] : columns }}' onChange='onChange' ref='saveChildRef2'>
+      <picker-column class='van-picker__column' a:for='{{ isSimple(columns) ? [columns] : columns }}' a:key='*this' data-index='{{ index }}' custom-class='{{columnClass}}' value-key='{{ valueKey }}' initial-options='{{ isSimple(columns) ? item : item.values }}' default-index='{{ item.defaultIndex || defaultIndex }}' item-height='{{ itemHeight }}' visible-item-count='{{ visibleItemCount }}' active-class='{{activeClass}}' ref-numbers='{{ isSimple(columns) ? [columns] : columns }}' onChange='onChange' ref='saveChildRef2'>
       </picker-column>
       <view class='van-picker__frame van-hairline--top-bottom' style='height: {{ itemHeight }}px'>
       </view>
