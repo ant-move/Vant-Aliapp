@@ -15,7 +15,7 @@ function processRelations (ctx, relationInfo = {}) {
                 ctx[node.$id] = function () {};
                 node.$index = 0;
                 node.$route = route;
-                createNode(ctx, null, node);
+                createNode.call(ctx, ctx, null, node);
                 return false;
             }
             ctx[node.$id] = function (ref) {
@@ -28,7 +28,7 @@ function processRelations (ctx, relationInfo = {}) {
                 this.selectComponentApp.preProcesscomponents(ref);
                 node.$index = ctx.$antmove[node.$id];
                 node.$route = route;
-                createNode(ref, null, node);
+                createNode.call(ctx, ref, null, node);
 
             };
         });
@@ -375,9 +375,9 @@ function processTriggerEvent () {
 }
 
 
-function observerHandle (observerObj, args, that ) {
-    Object.keys(observerObj).forEach(function (obs) {
-        
+function observerHandle (observerObj, args, that ,isInit = false) {
+    if (isInit && observerObj[obs] === undefined ) return
+    Object.keys(observerObj).forEach(function (obs) {       
         if (args[0][obs] !== that.props[obs] && typeof observerObj[obs] === 'function') { 
             observerObj[obs].call(that, that.props[obs], args[0][obs]);
         }
@@ -459,15 +459,12 @@ module.exports = {
             }
 
             // process relations, get relation ast
-            let relationAst = createNode(null, null, null, null, true).mountedHandles;
+            let relationAst = createNode.call(this, null, null, null, null, true).mountedHandles;
             relationAst.push(()=>{
                 handleRelations.call(this);
             });
         };      
         fnApp.add('onInit', function () {
-            this.getRelationNodes = function () {
-                return [];
-            };
             processIntersectionObserver(this);
             
             this.onPageReady = function (p) {
@@ -481,6 +478,9 @@ module.exports = {
         fnApp.add('didMount', didMount);
         fnApp.add('onInit', options.created);
         fnApp.insert('onInit', function () {
+          this.getRelationNodes = function () {
+                return [];
+            };
             this.selectComponentApp = new SelectComponent(this);
 
             this.properties = {
@@ -491,7 +491,7 @@ module.exports = {
             processRelations(this, Relations);
             this.selectComponentApp.connect();
 
-            observerHandle(_opts.observerObj, [_opts.props, this.data], this);
+            observerHandle(_opts.observerObj, [_opts.props, this.data], this ,true);
         });
         fnApp.bind('onInit', _opts);
         fnApp.add('didMount', _opts.attached);

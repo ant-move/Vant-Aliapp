@@ -1,22 +1,25 @@
 "use strict";
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var id = 0;
 
 var _require = require('./utils'),
     connectNodes = _require.connectNodes;
 
-var RelationAst = _defineProperty({
-  $refNodes: {},
-  $nodes: {},
-  $page: null,
-  current: null,
-  createArray: [],
-  destoryArray: [],
-  mountedHandles: [],
-  componentNodes: {}
-}, "$refNodes", {});
+var astCache = {};
+
+function createAstData() {
+  var RelationAst = {
+    $refNodes: {},
+    $nodes: {},
+    $page: null,
+    current: null,
+    createArray: [],
+    destoryArray: [],
+    mountedHandles: [],
+    componentNodes: {}
+  };
+  return RelationAst;
+}
 
 function createNode(ctx) {
   this.$self = ctx;
@@ -27,7 +30,9 @@ function createNode(ctx) {
 
 createNode.prototype = {
   getRootNode: function getRootNode() {
-    return RelationAst;
+    var ctx = this.$self;
+    var cacheId = ctx.$page ? ctx.$page.$id : ctx.$id;
+    return astCache[cacheId];
   },
   setParent: function setParent(parent) {
     this.$parent = parent;
@@ -55,27 +60,6 @@ createNode.prototype = {
   }
 };
 
-function initRootNode() {
-  /**
-  * 页面节点信息初始化
-  */
-  RelationAst = {
-    $nodes: {},
-    $page: null,
-    current: null,
-    createArray: [],
-    destoryArray: [],
-    mountedHandles: [],
-    componentNodes: {},
-    $refNodes: {}
-  };
-  return RelationAst;
-}
-
-function getRootNode() {
-  return RelationAst;
-}
-
 module.exports = function (node) {
   var cb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
   var relationNode = arguments.length > 2 ? arguments[2] : undefined;
@@ -83,14 +67,19 @@ module.exports = function (node) {
 
   var _bool = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
 
+  var RelationAst = {};
+  var cacheId = this.$page ? this.$page.$id : this.$id;
+
   if (_bool) {
-    return getRootNode();
+    return astCache[cacheId];
   }
 
   if (bool) {
-    return initRootNode();
+    astCache[cacheId] = createAstData();
+    return astCache[cacheId];
   }
 
+  RelationAst = astCache[cacheId];
   var wrapNode = new createNode(node);
   var route = relationNode.$route;
   RelationAst.$page = wrapNode;

@@ -74,7 +74,7 @@ module.exports = {
             this.selectComponentApp = new selectComponent(this);
             this.selectComponentApp.connect();
             // 初始化节点树
-            createNode(null, null, null, true);
+            createNode.call(this, null, null, null, true);
             processRelations(this, Relations);
             if (typeof options.data === 'function') {
                 options.data = options.data();
@@ -140,7 +140,7 @@ function processRelations (ctx, relationInfo = {}) {
                 ctx[id] = function () {};
                 node.$index = 0;
                 node.$route = route;
-                createNode(ctx, null, node);
+                createNode.call(ctx, ctx, null, node);
                 return false;
             }
             ctx[id] = function (ref) {
@@ -153,7 +153,7 @@ function processRelations (ctx, relationInfo = {}) {
                 ctx.selectComponentApp.preProcesscomponents(ref);
                 node.$index = ctx.$antmove[id];
                 node.$route = route;
-                createNode(ref, null, node);
+                createNode.call(ctx, ref, null, node);
             };
         });
     } else {
