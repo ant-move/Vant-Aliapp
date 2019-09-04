@@ -9,6 +9,11 @@ Vant Aliapp 是移动端 Vue 组件库 [Vant](https://github.com/youzan/vant) �
 
 > Vant aliapp 通过 [Antmove](https://ant-move.github.io/website/) 小程序转换器基于 vant-weapp 转换得到，并做了少量的兼容适配调整。
 
+## 文档
+
+* [Vant Aliapp 官网](https://ant-move.github.io/vant-ailapp-docs/#/intro)
+* [Vant Weapp 官网](https://youzan.github.io/vant-weapp/#/intro)
+
 ## 使用之前
 
 在开始使用 iView alipay 之前，你需要先阅读 [支付宝小程序自定义组件](https://docs.alipay.com/mini/framework/custom-component-overview) 的相关文档。
@@ -56,8 +61,8 @@ git clone https://github.com/ant-move/Vant-Aliapp.git
 
 ## 链接
 
-* [更新日志](https://github.com/youzan/vant-weapp/blob/dev/docs/markdown/changelog.md)
-* [意见反馈](https://github.com/youzan/vant-weapp/issues)
+* [更新日志](https://ant-move.github.io/vant-ailapp-docs/#/changelog)
+* [意见反馈](https://github.com/ant-move/Vant-Aliapp/issues)
 
 ## 开源协议
 
