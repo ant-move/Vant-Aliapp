@@ -1,0 +1,16 @@
+{
+  "name": "vant-aliapp",
+  "version": "1.0.0",
+  "description": "vant alipay mini app components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "antmove wx-alipay -i ./wx/vant-app -o ./alipay/vant-app"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "author": "amap-appx@service.autonavi.com",
+  "license": "GPL-3.0"
+}

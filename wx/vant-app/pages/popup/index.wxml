@@ -1,0 +1,75 @@
+<van-nav-bar
+  title="Popup 弹出层"
+  left-text="返回"
+  left-arrow
+  bind:click-left="onClickLeft"
+/>
+
+<demo-block title="基础用法" padding>
+  <van-button is-inline="true"  bind:click="togglePopup">弹出 Popup</van-button>
+  <van-popup
+    show="{{ show.middle }}"
+    custom-class="center"
+    transition="none"
+    bind:close="togglePopup"
+    bind:transitionEnd="onTransitionEnd"
+    is-inline="true"
+  >
+    内容
+  </van-popup>
+</demo-block>
+
+<demo-block title="弹出位置" padding>
+  <van-button is-inline="true" bind:click="toggleBottomPopup" class="demo-margin-right">底部弹出</van-button>
+
+  <van-popup
+    show="{{ show.bottom }}"
+    position="bottom"
+    is-inline="true"
+    custom-class="bottom"
+    bind:close="toggleBottomPopup"
+    bind:transitionEnd="onTransitionEnd"
+  >
+    内容
+  </van-popup>
+
+  <van-button is-inline="true" bind:click="toggleTopPopup" class="demo-margin-right">顶部弹出</van-button>
+  <van-popup
+    show="{{ show.top }}"
+    position="top"
+    safe-area-inset-top
+    overlay="{{ false }}"
+    is-inline="true"
+    custom-class="top"
+    bind:close="toggleTopPopup"
+    bind:transitionEnd="onTransitionEnd"
+  >
+    内容
+  </van-popup>
+
+  <van-button is-inline="true" bind:click="toggleRightPopup">右侧弹出</van-button>
+  <van-popup
+    show="{{ show.right }}"
+    position="right"
+    is-inline="true"
+    safe-area-inset-top
+    custom-class="right"
+    bind:close="toggleRightPopup"
+    bind:transitionEnd="onTransitionEnd"
+  >
+    <van-button is-inline="true" bind:click="toggleRightPopup" class="demo-margin-right">关闭弹层</van-button>
+
+    <van-button is-inline="true" bind:click="toggleRightPopup2">右侧弹出</van-button>
+    <van-popup
+      show="{{ show.right2 }}"
+      position="right"
+      is-inline="true"
+      safe-area-inset-top
+      custom-class="right"
+      bind:close="toggleRightPopup2"
+      bind:transitionEnd="onTransitionEnd"
+    >
+      <van-button is-inline="true" bind:click="toggleRightPopup2">关闭弹层</van-button>
+    </van-popup>
+  </van-popup>
+</demo-block>

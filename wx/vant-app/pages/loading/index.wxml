@@ -1,0 +1,9 @@
+<demo-block title="Circular" padding>
+  <van-loading is-inline="true" custom-class="loading" />
+  <van-loading is-inline="true" custom-class="loading shadow" color="#fff" />
+</demo-block>
+
+<demo-block title="Spinner" padding>
+  <van-loading is-inline="true" custom-class="loading" type="spinner" />
+  <van-loading is-inline="true" custom-class="loading shadow" type="spinner" color="#fff" />
+</demo-block>

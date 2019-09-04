@@ -1,0 +1,6 @@
+.van-icon-question {
+  margin-left: 5px;
+  font-size: 15px !important;
+  color: #1989fa;
+  vertical-align: -3px;
+}

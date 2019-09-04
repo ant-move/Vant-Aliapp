@@ -1,0 +1,18 @@
+<demo-block title="基础用法">
+  <van-steps
+    steps="{{ steps }}"
+    active="{{ active }}"
+    custom-class="demo-margin-bottom"
+  />
+
+  <van-button custom-class="demo-margin-left" bind:click="nextStep">下一步</van-button>
+</demo-block>
+
+<demo-block title="竖向步骤条">
+  <van-steps
+    steps="{{ steps }}"
+    active="{{ active }}"
+    direction="vertical"
+    active-color="#f44"
+  />
+</demo-block>

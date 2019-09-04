@@ -1,0 +1,6 @@
+@import '../common/index.wxss';
+.van-row:after{
+  content:"";
+  display:table;
+  clear:both;
+  }

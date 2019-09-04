@@ -1,0 +1,25 @@
+page {
+  padding-bottom: 300px;
+}
+
+.content {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.content-2 {
+  padding: 20px;
+}
+
+.right-nav {
+  padding: 0 10px;
+  line-height: 44px !important;
+}
+
+.tab-class {
+  transition: all 0.25s ease-in-out;
+}
+
+.tab-active-class {
+  font-size: 1.05em !important;
+}

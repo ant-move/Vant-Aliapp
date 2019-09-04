@@ -1,0 +1,15 @@
+.demo-radio-group {
+  padding: 0 17px;
+}
+
+.demo-radio {
+  margin-bottom: 10px;
+}
+
+.value-class {
+  flex: none !important;
+}
+
+.icon {
+  width: 20px;
+}

@@ -1,0 +1,34 @@
+<demo-block title="基本用法">
+  <van-search
+    value="{{ value }}"
+    placeholder="请输入搜索关键词"
+    bind:change="onChange"
+    bind:search="onSearch"
+  />
+</demo-block>
+
+<demo-block title="监听对应事件">
+  <van-search
+    value="{{ value }}"
+    show-action
+    placeholder="请输入搜索关键词"
+    bind:change="onChange"
+    bind:search="onSearch"
+    bind:cancel="onCancel"
+    bind:clear="onClear"
+  />
+</demo-block>
+
+<demo-block title="高级用法">
+  <van-search
+    value="{{ value }}"
+    placeholder="请输入搜索关键词"
+    use-action-slot
+    bind:change="onChange"
+    bind:search="onSearch"
+    label="地址"
+    shape="round"
+  >
+    <view slot="action" bind:tap="onSearch">搜索</view>
+  </van-search>
+</demo-block>
