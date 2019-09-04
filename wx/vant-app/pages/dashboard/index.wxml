@@ -1,7 +1,7 @@
 <view class="container">
   <view class="title">
     <image class="logo" src="https://img.yzcdn.cn/vant/logo.png" />
-    <view class="title-text">Vant Weapp</view>
+    <view class="title-text">Vant Aliapp</view>
   </view>
   <view class="desc">轻量、可靠的小程序 UI 组件库</view>
 

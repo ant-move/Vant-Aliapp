@@ -5,7 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "antmove wx-alipay -i ./wx/vant-app -o ./alipay/vant-app"
+    "build": "antmove wx-alipay -i ./wx/vant-app -o ./alipay/vant-app",
+    "build-npm": "rm -rf dist && babel alipay/vant-app --out-dir dist",
+    "pub": "npm run build && npm publish"
+  },
+  "files": [
+    "dist"
+  ],
+  "babel": {
+    "presets": [
+      [
+        "es2015",
+        {
+          "modules": false
+        }
+      ]
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1"
   },
   "publishConfig": {
     "access": "public",

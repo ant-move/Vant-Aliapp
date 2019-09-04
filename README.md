@@ -45,6 +45,10 @@ git clone https://github.com/ant-move/Vant-Aliapp.git
 <van-button type="primary">按钮</van-button>
 ```
 
+## 预览
+
+<img width='200' src='https://cache.amap.com/ecology/tool/antmove/web/assets/dashboard.png'/>
+
 ## 在开发者工具中预览
 
 下载本项目到本地，使用支付宝 IDE 打开 `alipay/vant-app` 即可预览。

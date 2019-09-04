@@ -13,6 +13,7 @@ VantComponent({
         },
         columns: {
             type: Array,
+            value: [],
 
             observer(columns = []) {
                 this.simple = columns.length && !columns[0].values;
@@ -27,15 +28,6 @@ VantComponent({
 
     beforeCreate() {
         this.children = [];
-    },
-
-    mounted() {
-        this.simple = this.data.columns.length && !this.data.columns[0].values;
-        this.children = this.selectAllComponents(".van-picker__column");
-
-        if (Array.isArray(this.children) && this.children.length) {
-            this.setColumns().catch(() => {});
-        }
     },
 
     methods: {
