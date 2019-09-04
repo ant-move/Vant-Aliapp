@@ -1,0 +1,24 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' ref='saveChildRef1'>
+  <van-rate custom-class='van-rate' data-key='value1' value='{{ value1 }}' childName='base' ref='saveChildRef2'>
+  </van-rate>
+</demo-block><demo-block title='自定义图标' ref='saveChildRef3'>
+  <van-rate custom-class='van-rate' icon='like' void-icon='like-o' data-key='value2' value='{{ value2 }}' childName='custom-icon' ref='saveChildRef4'>
+  </van-rate>
+</demo-block><demo-block title='自定义样式' ref='saveChildRef5'>
+  <van-rate custom-class='van-rate' data-key='value3' value='{{ value3 }}' size='{{ 25 }}' color='#f44' void-color='#eee' void-icon='star' childName='custom-style' onChange='onChange' ref='saveChildRef6'>
+  </van-rate>
+</demo-block><demo-block title='半星' ref='saveChildRef7'>
+  <van-rate custom-class='van-rate' data-key='value4' value='{{ value4 }}' size='{{ 25 }}' allow-half=" " color='#f44' void-color='#eee' void-icon='star' childName='half-star' onChange='onChange' ref='saveChildRef8'>
+  </van-rate>
+</demo-block><demo-block title='自定义数量' ref='saveChildRef9'>
+  <van-rate custom-class='van-rate' data-key='value5' value='{{ value5 }}' count='{{ 6 }}' childName='custom-num' onChange='onChange' ref='saveChildRef10'>
+  </van-rate>
+</demo-block><demo-block title='禁用状态' ref='saveChildRef11'>
+  <van-rate custom-class='van-rate' data-key='value6' value='{{ value6 }}' disabled=" " ref='saveChildRef12'>
+  </van-rate>
+</demo-block><demo-block title='只读状态' ref='saveChildRef13'>
+  <van-rate custom-class='van-rate' data-key='value6' value='{{ value6 }}' readonly=" " ref='saveChildRef14'>
+  </van-rate>
+</demo-block>
+            </view>

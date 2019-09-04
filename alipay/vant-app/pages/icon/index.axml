@@ -1,0 +1,31 @@
+<view class='page-container-classname'>
+                <van-tabs active='{{ active }}' color='#1989fa' ref='saveChildRef1' onChange='onSwitch'>
+  <van-tab title='基础图标' custom-class='demo-tab-pane' ref='saveChildRef2'>
+    <van-col a:for='{{ icons.basic }}' a:key='*this' custom-class='col' span='{{6}}' ref-numbers='{{ icons.basic }}' ref='saveChildRef3'>
+      <van-icon name='{{ item }}' size='32px' custom-class='icon' ref='saveChildRef4'>
+      </van-icon>
+      <view class='text'>
+        {{ item }}
+      </view>
+    </van-col>
+  </van-tab>
+  <van-tab title='线框风格' custom-class='demo-tab-pane' ref='saveChildRef5'>
+    <van-col a:for='{{ icons.outline }}' a:key='*this' custom-class='col' span='{{6}}' ref-numbers='{{ icons.outline }}' ref='saveChildRef6'>
+      <van-icon name='{{ item }}' size='32px' custom-class='icon' ref='saveChildRef7'>
+      </van-icon>
+      <view class='text'>
+        {{ item }}
+      </view>
+    </van-col>
+  </van-tab>
+  <van-tab title='实底风格' custom-class='demo-tab-pane' ref='saveChildRef8'>
+    <van-col a:for='{{ icons.filled }}' a:key='*this' custom-class='col' span='{{6}}' ref-numbers='{{ icons.filled }}' ref='saveChildRef9'>
+      <van-icon name='{{ item }}' size='32px' custom-class='icon' ref='saveChildRef10'>
+      </van-icon>
+      <view class='text'>
+        {{ item }}
+      </view>
+    </van-col>
+  </van-tab>
+</van-tabs>
+            </view>

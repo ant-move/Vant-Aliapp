@@ -1,0 +1,16 @@
+@import "../common/index.acss";
+.van-notify {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    word-break: break-all;
+    box-sizing: border-box;
+}
+
+.van-notify__safe-top {
+    height: 44px;
+}

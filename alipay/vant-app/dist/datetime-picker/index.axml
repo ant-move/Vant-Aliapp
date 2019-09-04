@@ -1,0 +1,4 @@
+<view class='datetime-picker-index {{className}}' ref='saveChildRef0'>
+  <van-picker class='van-datetime-picker van-datetime-picker-{{cId}}' active-class='active-class' toolbar-class='toolbar-class' column-class='column-class' title='{{ title }}' columns='{{ columns }}' item-height='{{ itemHeight }}' show-toolbar='{{ showToolbar }}' visible-item-count='{{ visibleItemCount }}' confirm-button-text='{{ confirmButtonText }}' cancel-button-text='{{ cancelButtonText }}' onChange='onChange' onConfirm='onConfirm' onCancel='onCancel' ref='saveChildRef1'>
+  </van-picker>
+</view>

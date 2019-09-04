@@ -1,0 +1,5 @@
+<view class='info-index {{className}}' ref='saveChildRef0'>
+  <view a:if='{{ info !== null }}' class='{{customClass}} van-info' style='{{ customStyle }}'>
+    {{ info }}
+  </view>
+</view>

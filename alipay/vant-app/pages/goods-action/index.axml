@@ -1,0 +1,28 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' ref='saveChildRef1'>
+  <van-goods-action custom-class='goods-action' safe-area-inset-bottom='{{ false }}' ref='saveChildRef2'>
+    <van-goods-action-icon icon='chat-o' text='客服' open-type='contact' ref='saveChildRef3'>
+    </van-goods-action-icon>
+    <van-goods-action-icon icon='cart-o' text='购物车' onClick='onClickIcon' ref='saveChildRef4'>
+    </van-goods-action-icon>
+    <van-goods-action-button text='加入购物车' type='warning' onClick='onClickButton' ref='saveChildRef5'>
+    </van-goods-action-button>
+    <van-goods-action-button text='立即购买' onClick='onClickButton' ref='saveChildRef6'>
+    </van-goods-action-button>
+  </van-goods-action>
+</demo-block><demo-block title='图标提示' ref='saveChildRef7'>
+  <van-goods-action custom-class='goods-action' safe-area-inset-bottom='{{ false }}' ref='saveChildRef8'>
+    <van-goods-action-icon icon='chat-o' text='客服' ref='saveChildRef9'>
+    </van-goods-action-icon>
+    <van-goods-action-icon icon='cart-o' text='购物车' info='{{5}}' ref='saveChildRef10'>
+    </van-goods-action-icon>
+    <van-goods-action-icon icon='shop-o' text='店铺' ref='saveChildRef11'>
+    </van-goods-action-icon>
+    <van-goods-action-button text='加入购物车' type='warning' ref='saveChildRef12'>
+    </van-goods-action-button>
+    <van-goods-action-button text='立即购买' ref='saveChildRef13'>
+    </van-goods-action-button>
+  </van-goods-action>
+</demo-block><van-toast class='van-toast' ref='saveChildRef14'>
+</van-toast>
+            </view>

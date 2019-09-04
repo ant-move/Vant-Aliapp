@@ -1,0 +1,40 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' ref='saveChildRef1'>
+  <van-collapse value='{{ active1 }}' data-key='active1' onChange='onChange' ref='saveChildRef2'>
+    <van-collapse-item title='{{ title1 }}' ref='saveChildRef3'>
+      {{ content1 }}
+    </van-collapse-item>
+    <van-collapse-item title='{{ title2 }}' ref='saveChildRef4'>
+      {{ content2 }}
+    </van-collapse-item>
+    <van-collapse-item title='{{ title3 }}' disabled=" " ref='saveChildRef5'>
+      {{ content3 }}
+    </van-collapse-item>
+  </van-collapse>
+</demo-block><demo-block title='手风琴' ref='saveChildRef6'>
+  <van-collapse value='{{ active2 }}' data-key='active2' accordion=" " onChange='onChange' ref='saveChildRef7'>
+    <van-collapse-item title='{{ title1 }}' ref='saveChildRef8'>
+      {{ content1 }}
+    </van-collapse-item>
+    <van-collapse-item title='{{ title2 }}' ref='saveChildRef9'>
+      {{ content2 }}
+    </van-collapse-item>
+    <van-collapse-item title='{{ title3 }}' ref='saveChildRef10'>
+      {{ content3 }}
+    </van-collapse-item>
+  </van-collapse>
+</demo-block><demo-block title='自定义标题内容' ref='saveChildRef11'>
+  <van-collapse value='{{ active3 }}' data-key='active3' onChange='onChange' ref='saveChildRef12'>
+    <van-collapse-item ref='saveChildRef13'>
+      <view slot='title'>
+        {{ title1 }}        <van-icon name='question-o' custom-class='van-icon-question' ref='saveChildRef14'>
+        </van-icon>
+      </view>
+      {{ content1 }}
+    </van-collapse-item>
+    <van-collapse-item title='{{ title2 }}' value='内容' icon='shop-o' ref='saveChildRef15'>
+      {{ content2 }}
+    </van-collapse-item>
+  </van-collapse>
+</demo-block>
+            </view>

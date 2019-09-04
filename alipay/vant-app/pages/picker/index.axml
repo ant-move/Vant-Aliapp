@@ -1,0 +1,22 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' ref='saveChildRef1'>
+  <van-picker columns='{{ column1 }}' onChange='onChange1' ref='saveChildRef2'>
+  </van-picker>
+</demo-block><demo-block title='默认选中项' ref='saveChildRef3'>
+  <van-picker columns='{{ column1 }}' default-index='{{ 2 }}' onChange='onChange1' ref='saveChildRef4'>
+  </van-picker>
+</demo-block><demo-block title='展示顶部栏' ref='saveChildRef5'>
+  <van-picker show-toolbar=" " title='标题' columns='{{ column1 }}' onChange='onChange1' onConfirm='onConfirm' onCancel='onCancel' ref='saveChildRef6'>
+  </van-picker>
+</demo-block><demo-block title='禁用选项' ref='saveChildRef7'>
+  <van-picker columns='{{ column2 }}' ref='saveChildRef8'>
+  </van-picker>
+</demo-block><demo-block title='多列联动' ref='saveChildRef9'>
+  <van-picker columns='{{ column4 }}' onChange='onChange2' ref='saveChildRef10'>
+  </van-picker>
+</demo-block><demo-block title='加载状态' ref='saveChildRef11'>
+  <van-picker loading=" " columns='{{ column4 }}' ref='saveChildRef12'>
+  </van-picker>
+</demo-block><van-toast class='van-toast' ref='saveChildRef13'>
+</van-toast>
+            </view>

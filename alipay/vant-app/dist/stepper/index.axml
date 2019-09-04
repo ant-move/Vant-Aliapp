@@ -1,0 +1,12 @@
+<view class='stepper-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class='van-stepper {{customClass}}'>
+    <view class="{{minusClass}} {{ utils.bem('stepper__minus', { disabled: minusDisabled }) }}" style="{{ showMinus ? '' : 'display: none;' }}" hover-class='van-stepper__minus--hover' hover-stay-time='{{70}}' onTap='onMinus'>
+    </view>
+    <input type="{{ integer ? 'number' : 'digit' }}" class="{{inputClass}} {{ utils.bem('stepper__input', { disabled: disabled || disableInput }) }}" style="{{ inputWidth ? 'width: ' + inputWidth : '' }}" value='{{ value }}' focus='{{ focus }}' disabled='{{ disabled || disableInput }}' onInput='onInput' onFocus='onFocus' onBlur='onBlur'>
+    </input>
+    <view class="{{plusClass}} {{ utils.bem('stepper__plus', { disabled: plusDisabled }) }}" style="{{ showPlus ? '' : 'display: none;' }}" hover-class='van-stepper__plus--hover' hover-stay-time='{{70}}' onTap='onPlus'>
+    </view>
+  </view>
+</view>

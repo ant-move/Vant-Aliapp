@@ -1,0 +1,24 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' ref='saveChildRef1'>
+  <van-slider value='{{50}}' custom-class='slider' onChange='onChange' ref='saveChildRef2'>
+  </van-slider>
+</demo-block><demo-block title='指定选择范围' ref='saveChildRef3'>
+  <van-slider custom-class='slider' value='{{50}}' min='{{10}}' max='{{90}}' onChange='onChange' ref='saveChildRef4'>
+  </van-slider>
+</demo-block><demo-block title='禁用' ref='saveChildRef5'>
+  <van-slider custom-class='slider' value='{{50}}' disabled=" " ref='saveChildRef6'>
+  </van-slider>
+</demo-block><demo-block title='指定步长' ref='saveChildRef7'>
+  <van-slider custom-class='slider' value='{{50}}' step='{{10}}' onChange='onChange' ref='saveChildRef8'>
+  </van-slider>
+</demo-block><demo-block title='自定义样式' ref='saveChildRef9'>
+  <van-slider value='{{50}}' custom-class='slider' bar-height='4px' active-color='#f44' ref='saveChildRef10'>
+  </van-slider>
+</demo-block><demo-block title='自定义按钮' ref='saveChildRef11'>
+  <van-slider value='{{ currentValue }}' custom-class='slider' use-button-slot=" " active-color='#f44' onDrag='onDrag' ref='saveChildRef12'>
+    <view class='custom-button' slot='button'>
+      {{ currentValue }}
+    </view>
+  </van-slider>
+</demo-block>
+            </view>

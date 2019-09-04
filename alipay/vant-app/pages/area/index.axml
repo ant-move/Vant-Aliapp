@@ -1,0 +1,13 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' ref='saveChildRef1'>
+  <van-area value='{{ value }}' loading='{{ loading }}' area-list='{{ areaList }}' onChange='onChange' onConfirm='onConfirm' onCancel='onCancel' ref='saveChildRef2'>
+  </van-area>
+</demo-block><demo-block title='选中省市县' ref='saveChildRef3'>
+  <van-area value='{{ value }}' loading='{{ loading }}' area-list='{{ areaList }}' onChange='onChange' onConfirm='onConfirm' ref='saveChildRef4'>
+  </van-area>
+</demo-block><demo-block title='配置显示列' ref='saveChildRef5'>
+  <van-area title='标题' columns-num='{{ 2 }}' loading='{{ loading }}' area-list='{{ areaList }}' onChange='onChange' onConfirm='onConfirm' ref='saveChildRef6'>
+  </van-area>
+</demo-block><van-toast class='van-toast' ref='saveChildRef7'>
+</van-toast>
+            </view>

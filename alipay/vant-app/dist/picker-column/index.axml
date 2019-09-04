@@ -1,0 +1,11 @@
+<view class='picker-column-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='./index.sjs' name='getOptionText'>
+  </import-sjs>
+  <view class='van-picker-column {{customClass}}' style='height: {{ itemHeight * visibleItemCount }}px' onTouchStart='onTouchStart' catchTouchMove='onTouchMove' onTouchEnd='onTouchEnd' onTouchCancel='onTouchEnd'>
+    <view style='{{ wrapperStyle }}'>
+      <view a:for='{{ options }}' a:for-item='option' a:key='index' data-index='{{ index }}' style='height: {{ itemHeight }}px' class="van-ellipsis van-picker-column__item {{ option && option.disabled ? 'van-picker-column__item--disabled' : '' }} {{ index === currentIndex ? 'van-picker-column__item--selected active-class' : '' }}" ref-numbers='{{ options }}' onTap='onClickItem'>
+        {{ getOptionText(option, valueKey) }}
+      </view>
+    </view>
+  </view>
+</view>

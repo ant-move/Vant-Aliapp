@@ -1,0 +1,28 @@
+<view class='steps-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from="./index.axmlstatus.sjs" name='status'>
+  </import-sjs>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class="{{customClass}} {{ utils.bem('steps', [direction]) }}">
+    <view class='van-step__wrapper'>
+      <view a:for='{{ steps }}' a:key='index' class="{{ utils.bem('step', [direction, status(index, active)]) }} van-hairline" ref-numbers='{{ steps }}'>
+        <view class='van-step__title' style="{{ index === active ? 'color: ' + activeColor : '' }}">
+          <view>
+            {{ item.text }}
+          </view>
+          <view>
+            {{ item.desc }}
+          </view>
+        </view>
+        <view class='van-step__circle-container'>
+          <view class='van-step__circle' a:if='{{ index !== active }}' style="{{ index < active ? 'background-color: ' + activeColor : '' }}">
+          </view>
+          <van-icon a:else  name='checked' color='{{ activeColor }}' custom-class='van-step__active' ref='saveChildRef1'>
+          </van-icon>
+        </view>
+        <view a:if='{{ index !== steps.length - 1 }}' class='van-step__line' style="{{ index < active ? 'background-color: ' + activeColor : '' }}">
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

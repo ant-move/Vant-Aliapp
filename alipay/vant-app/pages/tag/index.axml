@@ -1,0 +1,81 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' padding=" " ref='saveChildRef1'>
+  <van-tag my-class='demo-margin-right' ref='saveChildRef2'>
+    标签
+  </van-tag>
+  <van-tag my-class='demo-margin-right' type='danger' ref='saveChildRef3'>
+    标签
+  </van-tag>
+  <van-tag my-class='demo-margin-right' type='primary' ref='saveChildRef4'>
+    标签
+  </van-tag>
+  <van-tag type='success' ref='saveChildRef5'>
+    标签
+  </van-tag>
+</demo-block><demo-block title='空心样式' padding=" " ref='saveChildRef6'>
+  <van-tag my-class='demo-margin-right' plain=" " ref='saveChildRef7'>
+    标签
+  </van-tag>
+  <van-tag my-class='demo-margin-right' plain=" " type='danger' ref='saveChildRef8'>
+    标签
+  </van-tag>
+  <van-tag my-class='demo-margin-right' plain=" " type='primary' ref='saveChildRef9'>
+    标签
+  </van-tag>
+  <van-tag plain=" " type='success' ref='saveChildRef10'>
+    标签
+  </van-tag>
+</demo-block><demo-block title='圆角样式' padding=" " ref='saveChildRef11'>
+  <van-tag my-class='demo-margin-right' round=" " ref='saveChildRef12'>
+    标签
+  </van-tag>
+  <van-tag my-class='demo-margin-right' round=" " type='danger' ref='saveChildRef13'>
+    标签
+  </van-tag>
+  <van-tag my-class='demo-margin-right' round=" " type='primary' ref='saveChildRef14'>
+    标签
+  </van-tag>
+  <van-tag round=" " type='success' ref='saveChildRef15'>
+    标签
+  </van-tag>
+</demo-block><demo-block title='标记样式' padding=" " ref='saveChildRef16'>
+  <van-tag my-class='demo-margin-right' mark=" " ref='saveChildRef17'>
+    标签
+  </van-tag>
+  <van-tag my-class='demo-margin-right' mark=" " type='danger' ref='saveChildRef18'>
+    标签
+  </van-tag>
+  <van-tag my-class='demo-margin-right' mark=" " type='primary' ref='saveChildRef19'>
+    标签
+  </van-tag>
+  <van-tag mark=" " type='success' ref='saveChildRef20'>
+    标签
+  </van-tag>
+</demo-block><demo-block title='自定义颜色' padding=" " ref='saveChildRef21'>
+  <van-tag my-class='demo-margin-right' color='#f2826a' ref='saveChildRef22'>
+    标签
+  </van-tag>
+  <van-tag my-class='demo-margin-right' color='#f2826a' plain=" " ref='saveChildRef23'>
+    标签
+  </van-tag>
+  <van-tag my-class='demo-margin-right' color='#7232dd' ref='saveChildRef24'>
+    标签
+  </van-tag>
+  <van-tag my-class='demo-margin-right' color='#7232dd' plain=" " ref='saveChildRef25'>
+    标签
+  </van-tag>
+  <van-tag color='#ffe1e1' text-color='#ad0000' ref='saveChildRef26'>
+    标签
+  </van-tag>
+</demo-block><demo-block title='标签大小' padding=" " ref='saveChildRef27'>
+  <van-tag my-class='demo-margin-right' type='danger' ref='saveChildRef28'>
+    标签
+  </van-tag>
+  <van-tag my-class='demo-margin-right' type='danger' size='medium' ref='saveChildRef29'>
+    标签
+  </van-tag>
+  <van-tag type='danger' size='large' ref='saveChildRef30'>
+    标签
+  </van-tag>
+</demo-block>
+            </view>

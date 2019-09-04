@@ -1,0 +1,19 @@
+<view class='notice-bar-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view a:if='{{ show }}' class="{{customClass}} {{ utils.bem('notice-bar', { withicon: mode, wrapable }) }}" style='color: {{ color }}; background-color: {{ backgroundColor }};' onTap='onClick'>
+    <van-icon a:if='{{ leftIcon }}' size='16px' name='{{ leftIcon }}' class='van-notice-bar__left-icon' ref='saveChildRef1'>
+    </van-icon>
+    <view class='van-notice-bar__wrap'>
+      <view class="van-notice-bar__content {{ !scrollable && !wrapable ? 'van-ellipsis' : '' }}" animation='{{ animationData }}'>
+        {{ text }}
+      </view>
+    </view>
+    <van-icon a:if="{{ mode === 'closeable' }}" class='van-notice-bar__right-icon' name='cross' onTap='onClickIcon' ref='saveChildRef2'>
+    </van-icon>
+    <navigator a:if="{{ mode === 'link' }}" url='{{ url }}' open-type='{{ openType }}'>
+      <van-icon class='van-notice-bar__right-icon' name='arrow' ref='saveChildRef3'>
+      </van-icon>
+    </navigator>
+  </view>
+</view>

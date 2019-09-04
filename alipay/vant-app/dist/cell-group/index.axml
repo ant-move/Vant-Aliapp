@@ -1,0 +1,9 @@
+<view class='cell-group-index {{className}}' ref='saveChildRef0'>
+  <view a:if='{{ title }}' class='van-cell-group__title'>
+    {{ title }}
+  </view>
+  <view class="{{customClass}} van-cell-group {{ border ? 'van-hairline--top-bottom' : '' }}">
+    <slot>
+    </slot>
+  </view>
+</view>
