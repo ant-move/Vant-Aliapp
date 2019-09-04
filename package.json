@@ -1,6 +1,6 @@
 {
   "name": "vant-aliapp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "vant alipay mini app components",
   "main": "index.js",
   "scripts": {
