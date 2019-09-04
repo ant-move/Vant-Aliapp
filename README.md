@@ -20,7 +20,20 @@ Vant Aliapp 是移动端 Vue 组件库 [Vant](https://github.com/youzan/vant) �
 
 ## 安装
 
-### 下载代码
+### 通过 npm 安装使用
+
+* 通过 npm 安装
+```bash
+npm i vant-aliapp -S --production
+```
+
+* 通过 yarn 安装
+
+```bash
+yarn add vant-aliapp --production
+```
+
+### 下载代码使用
 
 直接通过 git 下载 Vant Aliapp 源代码，并将`dist`目录拷贝到自己的项目中
 ```bash
@@ -38,6 +51,8 @@ git clone https://github.com/ant-move/Vant-Aliapp.git
   }
 }
 ```
+
+> npm 地址：`vant-aliapp/dist/dist/button/index`
 
 接着就可以在 axml 中直接使用组件
 
