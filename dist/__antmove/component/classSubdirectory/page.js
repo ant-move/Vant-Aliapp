@@ -166,6 +166,7 @@ function processRelations(ctx) {
       }
 
       ctx[id] = function (ref) {
+        if (!ref) return false;
         ctx.$antmove = ctx.$antmove || {};
 
         if (ctx.$antmove[id] === undefined) {
