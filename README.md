@@ -76,4 +76,4 @@ git clone https://github.com/ant-move/Vant-Aliapp.git
 
 ## 感谢
 
-感谢 vant 团队对 vant-weapp 的贡献，本项目基于 iview-weapp 转换而来，并做了支付宝小程序平台的适配兼容。
+感谢 vant 团队对 vant-weapp 的贡献，本项目基于 vant-weapp 转换而来，并做了支付宝小程序平台的适配兼容。
