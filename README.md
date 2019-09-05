@@ -63,10 +63,11 @@ git clone https://github.com/ant-move/Vant-Aliapp.git
 ## 预览
 
 * 支付宝小程序扫码预览
-<img width='200' style='width:200px' src='https://cache.amap.com/ecology/tool/antmove/web/assets/qr/qr.png'/>
 
-### 图片预览
-<img width='200' src='https://cache.amap.com/ecology/tool/antmove/web/assets/dashboard.png'/>
+    <img width='200' src='https://cache.amap.com/ecology/tool/antmove/web/assets/qr/qr.png'/>
+
+* 图片预览
+    <img width='200' src='https://cache.amap.com/ecology/tool/antmove/web/assets/dashboard.png'/>
 
 ## 在开发者工具中预览
 
