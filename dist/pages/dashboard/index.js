@@ -14,7 +14,6 @@ var _my = require("/__antmove/api/index.js")(my);
     activeName: []
   },
   onChangeCollapse: function onChangeCollapse(event) {
-    console.log("eee", event);
     this.setData({
       activeNames: event.detail
     });

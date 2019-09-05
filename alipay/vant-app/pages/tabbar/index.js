@@ -7,7 +7,7 @@ createPage({
     },
 
     onShow() {
-        this.getTabBar().init();
+        // this.getTabBar().init();
     },
 
     onChange(event) {

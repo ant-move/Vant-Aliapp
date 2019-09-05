@@ -37,7 +37,6 @@ var _component = require("../common/component");
       instance.$emit("change", value);
     },
     onChange: function onChange(event) {
-      console.log(event);
       this.emitChange(this.data.name);
     },
     onClickLabel: function onClickLabel() {

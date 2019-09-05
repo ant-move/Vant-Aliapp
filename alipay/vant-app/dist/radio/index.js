@@ -37,7 +37,6 @@ VantComponent({
         },
 
         onChange(event) {
-            console.log(event);
             this.emitChange(this.data.name);
         },
 

@@ -10,9 +10,6 @@ VantComponent({
         'leave-to-class'
     ],
     mixins: [transition(true)],
-    mounted () {
-      console.log(this)
-    },
     methods: {
       onTap() {
         this.props.onTap&&this.props.onTap()

@@ -28,7 +28,6 @@ var _component = require("../common/component");
   },
   methods: {
     onClick: function onClick(event) {
-      console.log("e", event);
       this.$emit("click", event.detail);
       this.jumpLink();
     }

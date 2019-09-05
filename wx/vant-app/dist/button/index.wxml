@@ -3,7 +3,7 @@
   <wxs unscope-style src="../wxs/utils.wxs" module="utils" />
   <button
     id="{{ id }}"
-    class="{{className}} custom-class {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, hairline, unclickable: disabled || loading }]) }} {{ hairline ? 'van-hairline--surround' : '' }} {{className}}"
+    class="{{className}} my-class custom-class {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, hairline, unclickable: disabled || loading }]) }} {{ hairline ? 'van-hairline--surround' : '' }} {{className}}"
     open-type="{{ openType }}"
     hover-class="van-button--active hover-class"
     lang="{{ lang }}"

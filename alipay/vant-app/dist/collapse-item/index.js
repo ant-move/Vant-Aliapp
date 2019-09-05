@@ -88,7 +88,6 @@ VantComponent({
             });
             return this.getRect(".van-collapse-item__content_" + randomStr)
                 .then(rect => {
-                    console.log("style", rect);
                     return rect.height;
                 })
                 .then(height => {

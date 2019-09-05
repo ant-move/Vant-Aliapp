@@ -8,7 +8,6 @@ createPage({
   },
 
   onChangeCollapse(event) {
-    console.log('eee', event)
     this.setData({
       activeNames: event.detail
     });

@@ -12,11 +12,7 @@ VantComponent({
             type: Array,
             value:[],
             observer(columns = []) {
-                    this.simple = columns.length && !columns[0].values;
-                    this.children = this.selectAllComponents(".van-picker__column");
-                    if (Array.isArray(this.children) && this.children.length) {
-                        this.setColumns().catch(() => { });
-                    }
+                    this.setChildren(columns)
             }
         } }),
     beforeCreate() {
@@ -24,6 +20,13 @@ VantComponent({
     },
     methods: {
         noop() { },
+        setChildren (columns) {
+            this.simple = columns.length && !columns[0].values;
+                    this.children = this.selectAllComponents(".van-picker__column");
+                    if (Array.isArray(this.children) && this.children.length) {
+                        this.setColumns().catch(() => {});
+                    }
+        },
         setColumns() {
             const { data } = this;
             let that =this;
@@ -83,7 +86,8 @@ VantComponent({
         },
         // get column option index by column index
         getColumnIndex(columnIndex) {
-            return (this.getColumn(columnIndex) || {}).data.currentIndex;
+            let data = (this.getColumn(columnIndex) || {}).data;
+            return data && data.currentIndex;
         },
         // set column option index by column index
         setColumnIndex(columnIndex, optionIndex) {
@@ -99,6 +103,9 @@ VantComponent({
         },
         // set options of column by index
         setColumnValues(index, options, needReset = true) {
+            if (this.children && this.children.length <= 0) {
+                this.setChildren(this.data.columns)
+            }
             const column = this.children[index];
             if (column == null) {
                 return Promise.reject(new Error('setColumnValues: 对应列不存在'));

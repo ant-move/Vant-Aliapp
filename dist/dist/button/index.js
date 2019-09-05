@@ -10,7 +10,7 @@ var _my = require("/__antmove/api/index.js")(my);
 
 (0, _component.VantComponent)({
   mixins: [_button.button, _openType.openType],
-  classes: ["hover-class", "loading-class"],
+  classes: ["hover-class", "loading-class", "my-class"],
   props: {
     icon: String,
     plain: Boolean,

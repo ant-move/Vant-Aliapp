@@ -28,7 +28,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
     }
   },
   onInput: function onInput(event) {
-    console.log(event);
     var detail = event.detail,
         currentTarget = event.currentTarget;
     var result = this.getResult(detail, currentTarget.dataset.type);

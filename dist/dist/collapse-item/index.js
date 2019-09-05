@@ -92,7 +92,6 @@ var nextTick = function nextTick() {
         itemId: randomStr
       });
       return this.getRect(".van-collapse-item__content_" + randomStr).then(function (rect) {
-        console.log("style", rect);
         return rect.height;
       }).then(function (height) {
         if (expanded) {

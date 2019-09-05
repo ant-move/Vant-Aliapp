@@ -30,7 +30,6 @@ VantComponent({
     },
     methods: {
         onClick(event) {
-          console.log('e', event)
             this.$emit('click', event.detail);
             this.jumpLink();
         }

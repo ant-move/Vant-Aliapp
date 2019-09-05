@@ -3,7 +3,7 @@ import { button } from '../mixins/button';
 import { openType } from '../mixins/open-type';
 VantComponent({
     mixins: [button, openType],
-classes: ['hover-class', 'loading-class'],
+classes: ['hover-class', 'loading-class', 'my-class'],
     props: {
         icon: String,
         plain: Boolean,

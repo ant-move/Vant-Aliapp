@@ -182,6 +182,7 @@ VantComponent({
             });
         },
         setActiveTab() {
+            if (!this.child) return false;
             this.child.forEach((item, index) => {
                 const data = {
                     active: index === this.data.active

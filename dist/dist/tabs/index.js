@@ -210,6 +210,7 @@ var _my = require("/__antmove/api/index.js")(my);
     setActiveTab: function setActiveTab() {
       var _this4 = this;
 
+      if (!this.child) return false;
       this.child.forEach(function (item, index) {
         var data = {
           active: index === _this4.data.active

@@ -20,12 +20,7 @@ var _shared = require("./shared");
       value: [],
       observer: function observer() {
         var columns = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-        this.simple = columns.length && !columns[0].values;
-        this.children = this.selectAllComponents(".van-picker__column");
-
-        if (Array.isArray(this.children) && this.children.length) {
-          this.setColumns()["catch"](function () {});
-        }
+        this.setChildren(columns);
       }
     }
   }),
@@ -34,6 +29,14 @@ var _shared = require("./shared");
   },
   methods: {
     noop: function noop() {},
+    setChildren: function setChildren(columns) {
+      this.simple = columns.length && !columns[0].values;
+      this.children = this.selectAllComponents(".van-picker__column");
+
+      if (Array.isArray(this.children) && this.children.length) {
+        this.setColumns()["catch"](function () {});
+      }
+    },
     setColumns: function setColumns() {
       var data = this.data;
       var that = this;
@@ -97,7 +100,8 @@ var _shared = require("./shared");
     },
     // get column option index by column index
     getColumnIndex: function getColumnIndex(columnIndex) {
-      return (this.getColumn(columnIndex) || {}).data.currentIndex;
+      var data = (this.getColumn(columnIndex) || {}).data;
+      return data && data.currentIndex;
     },
     // set column option index by column index
     setColumnIndex: function setColumnIndex(columnIndex, optionIndex) {
@@ -116,6 +120,11 @@ var _shared = require("./shared");
     // set options of column by index
     setColumnValues: function setColumnValues(index, options) {
       var needReset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+
+      if (this.children && this.children.length <= 0) {
+        this.setChildren(this.data.columns);
+      }
+
       var column = this.children[index];
 
       if (column == null) {

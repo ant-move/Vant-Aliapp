@@ -24,7 +24,6 @@ createPage({
     },
 
     onInput(event) {
-        console.log(event);
         const { detail, currentTarget } = event;
         const result = this.getResult(detail, currentTarget.dataset.type);
         Toast(result);

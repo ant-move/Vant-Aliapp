@@ -12,8 +12,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     active2: "home",
     active3: 0
   },
-  onShow: function onShow() {
-    this.getTabBar().init();
+  onShow: function onShow() {// this.getTabBar().init();
   },
   onChange: function onChange(event) {
     var key = event.currentTarget.dataset.key;
