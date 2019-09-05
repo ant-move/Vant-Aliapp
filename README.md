@@ -64,7 +64,7 @@ git clone https://github.com/ant-move/Vant-Aliapp.git
 
 <img width='200' src='https://cache.amap.com/ecology/tool/antmove/web/assets/dashboard.png'/>
 
-<img width='200' src='https://cache.amap.com/ecology/tool/antmove/web/assets/qr/qr.png'/>
+<img width='200' src='https://cache.amap.com/ecology/tool/antmove/web/assets/qr/qr.jpg'/>
 
 
 
