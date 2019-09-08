@@ -1,0 +1,16 @@
+<view class='page-container-classname'>
+                <demo-block title='选择完整时间' onChildRef='saveChildRef1'>
+  <van-datetime-picker type='datetime' data-type='datetime' loading='{{ loading }}' value='{{ currentDate1 }}' min-date='{{ minDate }}' onInput='onInput' onChildRef='saveChildRef2'>
+  </van-datetime-picker>
+</demo-block><demo-block title='选择日期（年月日）' onChildRef='saveChildRef3'>
+  <van-datetime-picker type='date' data-type='date' value='{{ currentDate2 }}' min-date='{{ minDate }}' formatter='{{ formatter }}' onInput='onInput' onChildRef='saveChildRef4'>
+  </van-datetime-picker>
+</demo-block><demo-block title='选择日期（年月）' onChildRef='saveChildRef5'>
+  <van-datetime-picker type='year-month' data-type='year-month' value='{{ currentDate3 }}' min-date='{{ minDate }}' onInput='onInput' onChildRef='saveChildRef6'>
+  </van-datetime-picker>
+</demo-block><demo-block title='选择时间' onChildRef='saveChildRef7'>
+  <van-datetime-picker type='time' data-type='time' value='{{ currentDate4 }}' min-hour='{{ minHour }}' max-hour='{{ maxHour }}' onInput='onInput' onChildRef='saveChildRef8'>
+  </van-datetime-picker>
+</demo-block><van-toast class='van-toast' onChildRef='saveChildRef9'>
+</van-toast>
+            </view>

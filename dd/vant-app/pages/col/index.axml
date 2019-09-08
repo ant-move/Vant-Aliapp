@@ -1,0 +1,40 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' padding=" " onChildRef='saveChildRef1'>
+  <van-row onChildRef='saveChildRef2'>
+    <van-col span='{{8}}' custom-class='dark' onChildRef='saveChildRef3'>
+      span: 8
+    </van-col>
+    <van-col span='{{8}}' custom-class='light' onChildRef='saveChildRef4'>
+      span: 8
+    </van-col>
+    <van-col span='{{8}}' custom-class='dark' onChildRef='saveChildRef5'>
+      span: 8
+    </van-col>
+  </van-row>
+  <van-row onChildRef='saveChildRef6'>
+    <van-col span='{{4}}' custom-class='dark' onChildRef='saveChildRef7'>
+      span: 4
+    </van-col>
+    <van-col span='{{10}}' offset='{{4}}' custom-class='light' onChildRef='saveChildRef8'>
+      offset: 4, span: 10
+    </van-col>
+  </van-row>
+  <van-row onChildRef='saveChildRef9'>
+    <van-col offset='{{12}}' span='{{12}}' custom-class='dark' onChildRef='saveChildRef10'>
+      offset: 12, span: 12
+    </van-col>
+  </van-row>
+</demo-block><demo-block title='在列元素之间增加间距' padding=" " onChildRef='saveChildRef11'>
+  <van-row gutter='{{20}}' onChildRef='saveChildRef12'>
+    <van-col span='{{8}}' custom-class='dark' onChildRef='saveChildRef13'>
+      span: 8
+    </van-col>
+    <van-col span='{{8}}' custom-class='light' onChildRef='saveChildRef14'>
+      span: 8
+    </van-col>
+    <van-col span='{{8}}' custom-class='dark' onChildRef='saveChildRef15'>
+      span: 8
+    </van-col>
+  </van-row>
+</demo-block>
+            </view>

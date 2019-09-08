@@ -64,11 +64,7 @@ VantComponent({
             return Promise.all(stack);
         },
         updateStyle(expanded) {
-          let randomStr = Number(new Date())
-          this.setData({
-            itemId: randomStr
-          })
-          return this.getRect(".van-collapse-item__content_" + randomStr)
+          return this.getRect(".van-collapse-item__content_" + this.data.theId)
                 .then((rect) => {
                   return rect.height
                   })

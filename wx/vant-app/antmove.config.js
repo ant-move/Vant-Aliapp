@@ -1,9 +1,8 @@
 module.exports = 
 {
     "input": "./wx/vant-app",
-    "output": "./alipay/vant-app",
+    "output": "./dd/vant-app/",
     "env": "production",
-    "defaultInput": "/Users/yangxiaofu/work/gaode/sources/app/vant-aliapp/",
     "scope": false,
     "type": "wx-alipay"
 }  

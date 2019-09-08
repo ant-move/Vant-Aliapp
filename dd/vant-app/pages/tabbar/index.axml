@@ -1,0 +1,48 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' onChildRef='saveChildRef1'>
+  <van-tabbar active='{{ active }}' data-key='active' custom-class='tabbar' safe-area-inset-bottom='{{ false }}' onChange='onChange' onChildRef='saveChildRef2'>
+    <van-tabbar-item icon='home-o' onChildRef='saveChildRef3'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item icon='search' onChildRef='saveChildRef4'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item icon='friends-o' onChildRef='saveChildRef5'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item icon='setting-o' onChildRef='saveChildRef6'>
+      标签
+    </van-tabbar-item>
+  </van-tabbar>
+</demo-block><demo-block title='通过名称匹配' onChildRef='saveChildRef7'>
+  <van-tabbar active='{{ active2 }}' data-key='active2' custom-class='tabbar' safe-area-inset-bottom='{{ false }}' onChange='onChange' onChildRef='saveChildRef8'>
+    <van-tabbar-item name='home' icon='home-o' onChildRef='saveChildRef9'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item name='search' icon='search' onChildRef='saveChildRef10'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item name='friends' icon='friends-o' onChildRef='saveChildRef11'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item name='setting' icon='setting-o' onChildRef='saveChildRef12'>
+      标签
+    </van-tabbar-item>
+  </van-tabbar>
+</demo-block><demo-block title='显示徽标' onChildRef='saveChildRef13'>
+  <van-tabbar active='{{ active3 }}' data-key='active3' custom-class='tabbar' safe-area-inset-bottom='{{ false }}' onChange='onChange' onChildRef='saveChildRef14'>
+    <van-tabbar-item icon='home-o' onChildRef='saveChildRef15'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item icon='search' dot=" " onChildRef='saveChildRef16'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item icon='friends-o' info='{{5}}' onChildRef='saveChildRef17'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item icon='setting-o' info='{{20}}' onChildRef='saveChildRef18'>
+      标签
+    </van-tabbar-item>
+  </van-tabbar>
+</demo-block>
+            </view>

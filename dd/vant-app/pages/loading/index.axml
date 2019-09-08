@@ -1,0 +1,13 @@
+<view class='page-container-classname'>
+                <demo-block title='Circular' padding=" " onChildRef='saveChildRef1'>
+  <van-loading is-inline='true' custom-class='loading' onChildRef='saveChildRef2'>
+  </van-loading>
+  <van-loading is-inline='true' custom-class='loading shadow' color='#fff' onChildRef='saveChildRef3'>
+  </van-loading>
+</demo-block><demo-block title='Spinner' padding=" " onChildRef='saveChildRef4'>
+  <van-loading is-inline='true' custom-class='loading' type='spinner' onChildRef='saveChildRef5'>
+  </van-loading>
+  <van-loading is-inline='true' custom-class='loading shadow' type='spinner' color='#fff' onChildRef='saveChildRef6'>
+  </van-loading>
+</demo-block>
+            </view>

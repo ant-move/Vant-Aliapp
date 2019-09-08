@@ -1,0 +1,10 @@
+@import "../common/index.acss";
+.van-panel {
+    background: #fff;
+}
+.van-panel__header-value {
+    color: #f44;
+}
+.van-panel__footer {
+    padding: 10px 15px;
+}

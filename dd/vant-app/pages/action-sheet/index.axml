@@ -1,0 +1,24 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' padding=" " onChildRef='saveChildRef1'>
+  <van-button onClick='toggleActionSheet1' onChildRef='saveChildRef2'>
+    弹出 ActionSheet
+  </van-button>
+  <van-action-sheet show='{{ show1 }}' actions='{{ actions }}' onClose='toggleActionSheet1' onSelect='toggleActionSheet1' onChildRef='saveChildRef3'>
+  </van-action-sheet>
+</demo-block><demo-block title='带取消按钮的 ActionSheet' padding=" " onChildRef='saveChildRef4'>
+  <van-button onClick='toggleActionSheet2' onChildRef='saveChildRef5'>
+    弹出带取消按钮的 ActionSheet
+  </van-button>
+  <van-action-sheet show='{{ show2 }}' actions='{{ actions }}' cancel-text='取消' onClose='toggleActionSheet2' onCancel='toggleActionSheet2' onSelect='toggleActionSheet2' onChildRef='saveChildRef6'>
+  </van-action-sheet>
+</demo-block><demo-block title='带标题的 ActionSheet' padding=" " onChildRef='saveChildRef7'>
+  <van-button onClick='toggleActionSheet3' onChildRef='saveChildRef8'>
+    弹出带标题的 ActionSheet
+  </van-button>
+  <van-action-sheet show='{{ show3 }}' title='标题' onClose='toggleActionSheet3' onChildRef='saveChildRef9'>
+    <view class='content'>
+      内容
+    </view>
+  </van-action-sheet>
+</demo-block>
+            </view>

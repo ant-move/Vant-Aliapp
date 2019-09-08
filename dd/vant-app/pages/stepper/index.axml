@@ -1,0 +1,16 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' padding=" " onChildRef='saveChildRef1'>
+  <van-stepper value='{{ value1 }}' onChildRef='saveChildRef2'>
+  </van-stepper>
+</demo-block><demo-block title='禁用状态' padding=" " onChildRef='saveChildRef3'>
+  <van-stepper value='{{ value1 }}' disabled=" " onChildRef='saveChildRef4'>
+  </van-stepper>
+</demo-block><demo-block title='异步变更' padding=" " onChildRef='saveChildRef5'>
+  <van-stepper value='{{ 5 }}' integer=" " async-change=" " onChange='onChange' onChildRef='saveChildRef6'>
+  </van-stepper>
+</demo-block><demo-block title='高级用法' padding=" " onChildRef='saveChildRef7'>
+  <van-stepper value='{{ value2 }}' integer=" " min='{{5}}' max='{{40}}' step='{{2}}' onChildRef='saveChildRef8'>
+  </van-stepper>
+</demo-block><van-toast class='van-toast' onChildRef='saveChildRef9'>
+</van-toast>
+            </view>

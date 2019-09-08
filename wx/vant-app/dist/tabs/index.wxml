@@ -17,7 +17,7 @@
           wx:for="{{ tabs }}"
           wx:key="index"
           data-index="{{ index }}"
-          class="van-ellipsis tab-class {{ index === active ? 'tab-active-class' : '' }} {{ utils.bem('tab', { active: index === active, disabled: item.disabled }) }}"
+          class="van-ellipsis vant_tabs_{{num}} tab-class {{ index === active ? 'tab-active-class' : '' }} {{ utils.bem('tab', { active: index === active, disabled: item.disabled }) }}"
           style="{{ color && index !== active && type === 'card' && !item.disabled ? 'color: ' + color : '' }} {{ color && index === active && type === 'card' ? ';background-color:' + color : '' }} {{ color ? ';border-color: ' + color : '' }} {{ scrollable ? ';flex-basis:' + (88 / swipeThreshold) + '%' : '' }}"
           bind:tap="onTap"
         >

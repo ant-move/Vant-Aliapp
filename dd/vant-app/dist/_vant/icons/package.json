@@ -1,0 +1,59 @@
+{
+	"_from": "_vant/icons@1.1.13",
+	"_id": "_vant/icons@1.1.13",
+	"_inBundle": false,
+	"_integrity": "sha512-r2EoKDQ4Xh82fo5jVY/m/+LZFfRhHp+ViagySExzlJ7t6JFtmK1OqB6HdFkXXbfEzB/48BvGoPVifFoYzke6KQ==",
+	"_location": "/_vant/icons",
+	"_phantomChildren": {},
+	"_requested": {
+		"type": "version",
+		"registry": true,
+		"raw": "_vant/icons@1.1.13",
+		"name": "_vant/icons",
+		"escapedName": "_vant%2ficons",
+		"scope": "_vant",
+		"rawSpec": "1.1.13",
+		"saveSpec": null,
+		"fetchSpec": "1.1.13"
+	},
+	"_requiredBy": ["#DEV:/"],
+	"_resolved": "https://registry.npmjs.org/_vant/icons/-/icons-1.1.13.tgz",
+	"_shasum": "ea77298f4f2b19ccc761005068a2c7436098e4d4",
+	"_spec": "_vant/icons@1.1.13",
+	"_where": "/Users/yangxiaofu/work/gaode/sources/app/Antmove-examples/entry/wx/vant-weapp",
+	"author": {
+		"name": "chenjiahan"
+	},
+	"bugs": {
+		"url": "https://github.com/youzan/vant-icons/issues"
+	},
+	"bundleDependencies": false,
+	"deprecated": false,
+	"description": "vant icons",
+	"devDependencies": {
+		"fast-glob": "^3.0.0",
+		"fs-extra": "^8.0.1",
+		"gulp": "^4.0.2",
+		"gulp-iconfont": "^10.0.3",
+		"gulp-iconfont-css": "^3.0.0",
+		"md5-file": "^4.0.0",
+		"shelljs": "^0.8.3",
+		"svgo": "^1.2.2"
+	},
+	"files": ["src"],
+	"homepage": "https://github.com/youzan/vant-icons#readme",
+	"keywords": ["vant", "icons"],
+	"license": "MIT",
+	"main": "./src/config.js",
+	"name": "_vant/icons",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/youzan/vant-icons.git"
+	},
+	"scripts": {
+		"build": "npm run export && gulp --gulpfile ./build/build-iconfont.js",
+		"export": "node ./build/export.js",
+		"release": "sh ./build/release.sh"
+	},
+	"version": "1.1.13"
+}

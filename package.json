@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "antmove wx-alipay -i ./wx/vant-app -o ./alipay/vant-app",
+    "build-dd": "antmove wx-alipay -i ./wx/vant-app -o ./dd/vant-app",
     "build-npm": "rm -rf dist && babel alipay/vant-app -d dist",
     "pub": "npm run build && npm publish"
   },

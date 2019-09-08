@@ -36,7 +36,7 @@
     bind:transitionend="onTransitionEnd"
   >
     <view
-      class="van-collapse-item__content van-collapse-item__content_{{itemId}} content-class"
+      class="van-collapse-item__content van-collapse-item__content_{{theId}} content-class"
     >
       <slot />
     </view>

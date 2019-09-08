@@ -136,7 +136,11 @@ VantComponent({
                 return;
             }
             const { color, active, duration, lineWidth, lineHeight } = this.data;
-            this.getRect('.van-tab', true).then((rects) => {
+            let num = Number(new Date());
+            this.setData({
+              num
+            })
+            this.getRect(`.vant_tabs_${this.data.num}`, true).then((rects) => { 
                 const rect = rects[active];
                 if (!rect) return false;
                 const width = lineWidth !== -1 ? lineWidth : rect.width / 2;
@@ -161,7 +165,8 @@ VantComponent({
             });
         },
         setTrack() {
-            const { animated, active, duration } = this.data;
+            const { animated, active, duration } = this.data
+
             if (!animated)
                 return '';
             this.getRect('.van-tabs__content').then((rect) => {

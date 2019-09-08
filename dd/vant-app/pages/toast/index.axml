@@ -1,0 +1,26 @@
+<view class='page-container-classname'>
+                <demo-block title='文字提示' padding=" " onChildRef='saveChildRef1'>
+  <van-button is-inline='true' class='demo-margin-right' onTap='showToast' onChildRef='saveChildRef2'>
+    文字提示
+  </van-button>
+  <van-button is-inline='true' onTap='showLongToast' onChildRef='saveChildRef3'>
+    长文字提示
+  </van-button>
+</demo-block><demo-block title='加载提示' padding=" " onChildRef='saveChildRef4'>
+  <van-button is-inline='true' onTap='showLoadingToast' onChildRef='saveChildRef5'>
+    加载提示
+  </van-button>
+</demo-block><demo-block title='成功/失败提示' padding=" " onChildRef='saveChildRef6'>
+  <van-button is-inline='true' class='demo-margin-right' onTap='showSuccessToast' onChildRef='saveChildRef7'>
+    成功提示
+  </van-button>
+  <van-button is-inline='true' onTap='showFailToast' onChildRef='saveChildRef8'>
+    失败提示
+  </van-button>
+</demo-block><demo-block title='高级用法' padding=" " onChildRef='saveChildRef9'>
+  <van-button is-inline='true' onTap='showCustomizedToast' onChildRef='saveChildRef10'>
+    高级用法
+  </van-button>
+</demo-block><van-toast class='van-toast' onChildRef='saveChildRef11'>
+</van-toast>
+            </view>
