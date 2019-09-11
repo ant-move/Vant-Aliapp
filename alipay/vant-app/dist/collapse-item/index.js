@@ -33,7 +33,8 @@ VantComponent({
         contentHeight: 0,
         expanded: false,
         transition: false,
-        itemId: 0
+        itemId: 0,
+        theId: 0
     },
 
     mounted() {
@@ -82,11 +83,8 @@ VantComponent({
         },
 
         updateStyle(expanded) {
-            let randomStr = Number(new Date());
-            this.setData({
-                itemId: randomStr
-            });
-            return this.getRect(".van-collapse-item__content_" + randomStr)
+            let id = this.data.theId || 0;
+            return this.getRect(".van-collapse-item__content_" + id)
                 .then(rect => {
                     return rect.height;
                 })

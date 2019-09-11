@@ -1,14 +1,9 @@
-"use strict";
-
-var _component = require("../common/component");
-
-var _transition = require("../mixins/transition");
-
-var _safeArea = require("../mixins/safe-area");
-
-(0, _component.VantComponent)({
+import { VantComponent } from "../common/component";
+import { transition } from "../mixins/transition";
+import { safeArea } from "../mixins/safe-area";
+VantComponent({
   classes: ["enter-class", "enter-active-class", "enter-to-class", "leave-class", "leave-active-class", "leave-to-class"],
-  mixins: [(0, _transition.transition)(false), (0, _safeArea.safeArea)()],
+  mixins: [transition(false), safeArea()],
   props: {
     transition: {
       type: String,
@@ -34,22 +29,26 @@ var _safeArea = require("../mixins/safe-area");
       observer: "observeClass"
     }
   },
-  created: function created() {
+
+  created() {
     this.observeClass();
   },
+
   methods: {
-    onClickOverlay: function onClickOverlay() {
+    onClickOverlay() {
       this.$emit("click-overlay");
 
       if (this.data.closeOnClickOverlay) {
         this.$emit("close");
       }
     },
-    observeClass: function observeClass() {
-      var _this$data = this.data,
-          transition = _this$data.transition,
-          position = _this$data.position;
-      var updateData = {
+
+    observeClass() {
+      const {
+        transition,
+        position
+      } = this.data;
+      const updateData = {
         name: transition || position
       };
 
@@ -59,5 +58,6 @@ var _safeArea = require("../mixins/safe-area");
 
       this.set(updateData);
     }
+
   }
 });

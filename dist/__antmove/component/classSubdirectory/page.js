@@ -1,29 +1,30 @@
-"use strict";
+const utils = require('../../api/utils');
 
-var utils = require('../../api/utils');
+const {
+  warnLife
+} = utils;
 
-var warnLife = utils.warnLife;
+const config = require('../../api/config');
 
-var config = require('../../api/config');
+const createNode = require('./relation');
 
-var createNode = require('./relation');
+const Relations = require('../../api/relations');
 
-var Relations = require('../../api/relations');
+const processRelationHandle = require('./processRelation');
 
-var processRelationHandle = require('./processRelation');
+const {
+  connectNodes
+} = require('./utils');
 
-var _require = require('./utils'),
-    connectNodes = _require.connectNodes;
+const selectComponent = require('./selectComponent');
 
-var selectComponent = require('./selectComponent');
+const getUrl = function () {
+  let pages = getCurrentPages();
+  let url = pages[pages.length - 1].route;
 
-var getUrl = function getUrl() {
-  var pages = getCurrentPages();
-  var url = pages[pages.length - 1].route;
+  let _arr = url.split('/');
 
-  var _arr = url.split('/');
-
-  var _name = _arr[_arr.length - 1];
+  let _name = _arr[_arr.length - 1];
   my.setStorageSync({
     key: '_pageMsg',
     data: {
@@ -34,9 +35,9 @@ var getUrl = function getUrl() {
   return url;
 };
 
-var getLogInfo = function getLogInfo() {
-  var num = 0;
-  var info = my.getStorageSync({
+const getLogInfo = function () {
+  let num = 0;
+  let info = my.getStorageSync({
     key: '__antmove_loginfo'
   }).data.pages;
   info.forEach(function (v, i) {
@@ -45,15 +46,15 @@ var getLogInfo = function getLogInfo() {
   return num;
 };
 
-var watchShakes = function watchShakes() {
-  var pages = getCurrentPages();
-  var url = pages[pages.length - 1].route;
-  var logUrl = "pages/ant-move-runtime-logs/index";
-  var specificUrl = "pages/ant-move-runtime-logs/specific/index";
+const watchShakes = function () {
+  let pages = getCurrentPages();
+  let url = pages[pages.length - 1].route;
+  let logUrl = "pages/ant-move-runtime-logs/index";
+  let specificUrl = "pages/ant-move-runtime-logs/specific/index";
   my.watchShake({
-    success: function success() {
-      var num = getLogInfo();
-      var ifWatch = my.getStorageSync({
+    success: function () {
+      let num = getLogInfo();
+      let ifWatch = my.getStorageSync({
         key: 'ifWatch'
       }).data;
 
@@ -64,17 +65,17 @@ var watchShakes = function watchShakes() {
 
       my.confirm({
         title: '温馨提示',
-        content: "\u5DF2\u6536\u96C6\u4E86".concat(num, "\u6761\u95EE\u9898\u65E5\u5FD7\uFF0C\u662F\u5426\u67E5\u770B?  (\u8BE5\u5F39\u7A97\u548C\u95EE\u9898\u6536\u96C6\u9875\u9762\u7684\u4EE3\u7801\u7531Antmove\u5D4C\u5165\uFF0C\u4E0A\u7EBF\u65F6\u8BF7\u8BB0\u5F97\u53BB\u6389)"),
+        content: `已收集了${num}条问题日志，是否查看?  (该弹窗和问题收集页面的代码由Antmove嵌入，上线时请记得去掉)`,
         confirmButtonText: '赶紧看看',
         cancelButtonText: '暂不需要',
-        success: function success(res) {
+        success: function (res) {
           if (res.confirm) {
             my.navigateTo({
               url: '/pages/ant-move-runtime-logs/index'
             });
           }
         },
-        complete: function complete() {
+        complete: function () {
           watchShakes();
         }
       });
@@ -83,7 +84,7 @@ var watchShakes = function watchShakes() {
 };
 
 module.exports = {
-  processTransformationPage: function processTransformationPage(_opts, options) {
+  processTransformationPage(_opts, options) {
     _opts = Object.assign(_opts, options);
 
     _opts.onLoad = function (res) {
@@ -113,7 +114,7 @@ module.exports = {
     };
 
     _opts.onReady = function (param) {
-      var ast = this.$node.getRootNode();
+      let ast = this.$node.getRootNode();
       processRelationNodes(ast);
 
       if (options.onReady) {
@@ -123,17 +124,17 @@ module.exports = {
       ast.isPageReady = true;
     };
   }
+
 };
 
-function processRelationNodes() {
-  var ast = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var $nodes = ast.$nodes;
+function processRelationNodes(ast = {}) {
+  let $nodes = ast.$nodes;
   /**
    * componentNodes onPageReady
    */
 
   Object.keys($nodes).forEach(function (item) {
-    var node = $nodes[item];
+    let node = $nodes[item];
     connectNodes(node, ast);
 
     if (node.$self && typeof node.$self.onPageReady === 'function') {
@@ -146,15 +147,15 @@ function processRelationNodes() {
   ast.mountedHandles = [];
 }
 
-function processRelations(ctx) {
-  var relationInfo = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  var route = ctx.route;
+function processRelations(ctx, relationInfo = {}) {
+  let route = ctx.route;
+  route = route.replace(/\/node_modules\/[a-z-]+\/[a-z-]+/, '');
   if (route[0] !== '/') route = '/' + route;
-  var info = relationInfo[route] || relationInfo[route.substring(1)];
+  let info = relationInfo[route] || relationInfo[route.substring(1)];
 
   if (info) {
     processRelationHandle(info, function (node) {
-      var id = node.$id;
+      let id = node.$id;
 
       if (id === 'saveChildRef0') {
         ctx[id] = function () {};

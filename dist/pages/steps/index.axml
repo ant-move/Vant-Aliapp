@@ -1,0 +1,12 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' ref='saveChildRef1'>
+  <van-steps steps='{{ steps }}' active='{{ active }}' custom-class='demo-margin-bottom' ref='saveChildRef2'>
+  </van-steps>
+  <van-button custom-class='demo-margin-left' onClick='nextStep' ref='saveChildRef3'>
+    下一步
+  </van-button>
+</demo-block><demo-block title='竖向步骤条' ref='saveChildRef4'>
+  <van-steps steps='{{ steps }}' active='{{ active }}' direction='vertical' active-color='#f44' ref='saveChildRef5'>
+  </van-steps>
+</demo-block>
+            </view>

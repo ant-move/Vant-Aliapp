@@ -1,28 +1,29 @@
-"use strict";
-
 Component({
   props: {
     hidden: true,
     duration: 1500,
     textContent: "",
-    onLoadChange: function onLoadChange() {}
+    onLoadChange: () => {}
   },
   methods: {
-    watchHidden: function watchHidden() {
-      var num = Number(this.props.duration);
+    watchHidden() {
+      const num = Number(this.props.duration);
 
       if (!this.props.hidden) {
-        var that = this;
-        setTimeout(function () {
-          var e = {
+        const that = this;
+        setTimeout(() => {
+          const e = {
             type: "change"
           };
           that.props.onLoadChange(e);
         }, num);
       }
     }
+
   },
-  didUpdate: function didUpdate() {
+
+  didUpdate() {
     this.watchHidden();
   }
+
 });

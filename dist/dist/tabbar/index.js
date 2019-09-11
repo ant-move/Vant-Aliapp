@@ -1,25 +1,22 @@
-"use strict";
-
-var _component = require("../common/component");
-
-var _safeArea = require("../mixins/safe-area");
-
-(0, _component.VantComponent)({
-  mixins: [(0, _safeArea.safeArea)()],
+import { VantComponent } from "../common/component";
+import { safeArea } from "../mixins/safe-area";
+VantComponent({
+  mixins: [safeArea()],
   relation: {
     name: "tabbar-item",
     type: "descendant",
-    linked: function linked(target) {
+
+    linked(target) {
       this.children.push(target);
       target.parent = this;
       target.updateFromParent();
     },
-    unlinked: function unlinked(target) {
-      this.children = this.children.filter(function (item) {
-        return item !== target;
-      });
+
+    unlinked(target) {
+      this.children = this.children.filter(item => item !== target);
       this.updateChildren();
     }
+
   },
   props: {
     active: {
@@ -47,28 +44,32 @@ var _safeArea = require("../mixins/safe-area");
       value: 1
     }
   },
-  beforeCreate: function beforeCreate() {
+
+  beforeCreate() {
     this.children = [];
   },
+
   methods: {
-    updateChildren: function updateChildren() {
-      var children = this.children;
+    updateChildren() {
+      const {
+        children
+      } = this;
 
       if (!Array.isArray(children) || !children.length) {
         return Promise.resolve();
       }
 
-      return Promise.all(children.map(function (child) {
-        return child.updateFromParent();
-      }));
+      return Promise.all(children.map(child => child.updateFromParent()));
     },
-    onChange: function onChange(child) {
-      var index = this.children.indexOf(child);
-      var active = child.data.name || index;
+
+    onChange(child) {
+      const index = this.children.indexOf(child);
+      const active = child.data.name || index;
 
       if (active !== this.data.active) {
         this.$emit("change", active);
       }
     }
+
   }
 });

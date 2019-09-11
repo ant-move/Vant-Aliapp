@@ -1,4 +1,4 @@
-function Behavior(behavior) {
+function Behavior(behavior = {}) {
     return behavior;
 }
 

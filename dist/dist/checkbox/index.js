@@ -1,23 +1,24 @@
-"use strict";
-
-var _component = require("../common/component");
+import { VantComponent } from "../common/component";
 
 function emit(target, value) {
   target.$emit("input", value);
   target.$emit("change", value);
 }
 
-(0, _component.VantComponent)({
+VantComponent({
   field: true,
   relation: {
     name: "checkbox-group",
     type: "ancestor",
-    linked: function linked(target) {
+
+    linked(target) {
       this.parent = target;
     },
-    unlinked: function unlinked() {
+
+    unlinked() {
       this.parent = null;
     }
+
   },
   classes: ["icon-class", "label-class"],
   props: {
@@ -33,36 +34,45 @@ function emit(target, value) {
     }
   },
   methods: {
-    emitChange: function emitChange(value) {
+    emitChange(value) {
       if (this.parent) {
         this.setParentValue(this.parent, value);
       } else {
         emit(this, value);
       }
     },
-    toggle: function toggle() {
-      var _this$data = this.data,
-          disabled = _this$data.disabled,
-          value = _this$data.value;
+
+    toggle() {
+      const {
+        disabled,
+        value
+      } = this.data;
 
       if (!disabled) {
         this.emitChange(!value);
       }
     },
-    onClickLabel: function onClickLabel() {
-      var _this$data2 = this.data,
-          labelDisabled = _this$data2.labelDisabled,
-          disabled = _this$data2.disabled,
-          value = _this$data2.value;
+
+    onClickLabel() {
+      const {
+        labelDisabled,
+        disabled,
+        value
+      } = this.data;
 
       if (!disabled && !labelDisabled) {
         this.emitChange(!value);
       }
     },
-    setParentValue: function setParentValue(parent, value) {
-      var parentValue = parent.data.value.slice();
-      var name = this.data.name;
-      var max = parent.data.max;
+
+    setParentValue(parent, value) {
+      const parentValue = parent.data.value.slice();
+      const {
+        name
+      } = this.data;
+      const {
+        max
+      } = parent.data;
 
       if (value) {
         if (max && parentValue.length >= max) {
@@ -75,7 +85,7 @@ function emit(target, value) {
           emit(parent, parentValue);
         }
       } else {
-        var index = parentValue.indexOf(name);
+        const index = parentValue.indexOf(name);
 
         if (index !== -1) {
           parentValue.splice(index, 1);
@@ -83,5 +93,6 @@ function emit(target, value) {
         }
       }
     }
+
   }
 });

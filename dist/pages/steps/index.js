@@ -1,10 +1,5 @@
-"use strict";
-
-var _page = _interopRequireDefault(require("../../common/page"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-(0, _page["default"])({
+import createPage from "../../common/page";
+createPage({
   data: {
     active: 0,
     steps: [{
@@ -21,9 +16,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
       desc: "描述信息"
     }]
   },
-  nextStep: function nextStep() {
+
+  nextStep() {
     this.setData({
       active: ++this.data.active % 4
     });
   }
+
 });

@@ -1,11 +1,7 @@
-"use strict";
-
-var _component = require("../common/component");
-
-var _touch = require("../mixins/touch");
-
-var THRESHOLD = 0.3;
-(0, _component.VantComponent)({
+import { VantComponent } from "../common/component";
+import { touch } from "../mixins/touch";
+const THRESHOLD = 0.3;
+VantComponent({
   props: {
     disabled: Boolean,
     leftWidth: {
@@ -18,38 +14,51 @@ var THRESHOLD = 0.3;
     },
     asyncClose: Boolean
   },
-  mixins: [_touch.touch],
+  mixins: [touch],
   data: {
     catchMove: false
   },
-  created: function created() {
+
+  created() {
     this.offset = 0;
   },
+
   methods: {
-    open: function open(position) {
-      var _this$data = this.data,
-          leftWidth = _this$data.leftWidth,
-          rightWidth = _this$data.rightWidth;
-      var offset = position === "left" ? leftWidth : -rightWidth;
+    open(position) {
+      const {
+        leftWidth,
+        rightWidth
+      } = this.data;
+      const offset = position === "left" ? leftWidth : -rightWidth;
       this.swipeMove(offset);
     },
-    close: function close() {
+
+    close() {
       this.swipeMove(0);
     },
-    swipeMove: function swipeMove() {
-      var offset = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+
+    swipeMove(offset = 0) {
       this.offset = offset;
-      var transform = "translate3d(".concat(offset, "px, 0, 0)");
-      var transition = this.draging ? "none" : ".6s cubic-bezier(0.18, 0.89, 0.32, 1)";
+      const transform = `translate3d(${offset}px, 0, 0)`;
+      const transition = this.draging ? "none" : ".6s cubic-bezier(0.18, 0.89, 0.32, 1)";
       this.set({
-        wrapperStyle: "\n        -webkit-transform: ".concat(transform, ";\n        -webkit-transition: ").concat(transition, ";\n        transform: ").concat(transform, ";\n        transition: ").concat(transition, ";\n      ")
+        wrapperStyle: `
+        -webkit-transform: ${transform};
+        -webkit-transition: ${transition};
+        transform: ${transform};
+        transition: ${transition};
+      `
       });
     },
-    swipeLeaveTransition: function swipeLeaveTransition() {
-      var _this$data2 = this.data,
-          leftWidth = _this$data2.leftWidth,
-          rightWidth = _this$data2.rightWidth;
-      var offset = this.offset;
+
+    swipeLeaveTransition() {
+      const {
+        leftWidth,
+        rightWidth
+      } = this.data;
+      const {
+        offset
+      } = this;
 
       if (rightWidth > 0 && -offset > rightWidth * THRESHOLD) {
         this.open("right");
@@ -63,7 +72,8 @@ var THRESHOLD = 0.3;
         catchMove: false
       });
     },
-    startDrag: function startDrag(event) {
+
+    startDrag(event) {
       if (this.data.disabled) {
         return;
       }
@@ -73,8 +83,10 @@ var THRESHOLD = 0.3;
       this.firstDirection = "";
       this.touchStart(event);
     },
-    noop: function noop() {},
-    onDrag: function onDrag(event) {
+
+    noop() {},
+
+    onDrag(event) {
       if (this.data.disabled) {
         return;
       }
@@ -92,10 +104,11 @@ var THRESHOLD = 0.3;
         return;
       }
 
-      var _this$data3 = this.data,
-          leftWidth = _this$data3.leftWidth,
-          rightWidth = _this$data3.rightWidth;
-      var offset = this.startOffset + this.deltaX;
+      const {
+        leftWidth,
+        rightWidth
+      } = this.data;
+      const offset = this.startOffset + this.deltaX;
 
       if (rightWidth > 0 && -offset > rightWidth || leftWidth > 0 && offset > leftWidth) {
         return;
@@ -103,7 +116,8 @@ var THRESHOLD = 0.3;
 
       this.swipeMove(offset);
     },
-    endDrag: function endDrag() {
+
+    endDrag() {
       if (this.data.disabled) {
         return;
       }
@@ -111,9 +125,11 @@ var THRESHOLD = 0.3;
       this.draging = false;
       this.swipeLeaveTransition();
     },
-    onClick: function onClick(event) {
-      var _event$currentTarget$ = event.currentTarget.dataset.key,
-          position = _event$currentTarget$ === void 0 ? "outside" : _event$currentTarget$;
+
+    onClick(event) {
+      const {
+        key: position = "outside"
+      } = event.currentTarget.dataset;
       this.$emit("click", position);
 
       if (!this.offset) {
@@ -122,12 +138,13 @@ var THRESHOLD = 0.3;
 
       if (this.data.asyncClose) {
         this.$emit("close", {
-          position: position,
+          position,
           instance: this
         });
       } else {
         this.swipeMove(0);
       }
     }
+
   }
 });

@@ -1,0 +1,12 @@
+<view class='icon-index {{className}}' style='display: inline-block;' ref='saveChildRef0'>
+  <view is-inline='true' style='display: inline'>
+    <import-sjs from='../wxs/utils.sjs' name='utils'>
+    </import-sjs>
+    <view is-inline='true' class="{{customClass}} {{ classPrefix }} {{ utils.isSrc(name) ? 'van-icon--image' : classPrefix + '-' + name }}" style="{{ color ? 'color: ' + color + ';' : '' }}{{ size ? 'font-size: ' + size + ';' : '' }}{{ customStyle }}" onTap='onClick'>
+      <van-info a:if='{{ info !== null }}' info='{{ info }}' custom-class='van-icon__info' ref='saveChildRef1'>
+      </van-info>
+      <image a:if='{{ utils.isSrc(name) }}' src='{{ name }}' mode='aspectFit' class='van-icon__image'>
+      </image>
+    </view>
+  </view>
+</view>

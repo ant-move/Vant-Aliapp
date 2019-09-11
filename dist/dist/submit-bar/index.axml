@@ -1,0 +1,40 @@
+<view class='submit-bar-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class='van-submit-bar {{customClass}}'>
+    <slot name='top'>
+    </slot>
+    <view class='van-submit-bar__tip'>
+      <van-icon a:if='{{ tipIcon }}' size='12px' name='{{ tipIcon }}' custom-class='van-submit-bar__tip-icon' ref='saveChildRef1'>
+      </van-icon>
+      <view a:if='{{ hasTip }}' class='van-submit-bar__tip-text'>
+        {{ tip }}
+      </view>
+      <slot name='tip'>
+      </slot>
+    </view>
+    <view class="{{barClass}} {{ utils.bem('submit-bar__bar', { safe: safeAreaInsetBottom && isIPhoneX }) }}">
+      <slot>
+      </slot>
+      <view a:if='{{ hasPrice }}' class='van-submit-bar__text'>
+        <text>
+          {{ label || '合计：' }}
+        </text>
+        <text class='van-submit-bar__price {{priceClass}}'>
+          <text class='van-submit-bar__currency'>
+            {{ currency }}
+          </text>
+          <text>
+            {{ priceStr }}
+          </text>
+        </text>
+        <text class='van-submit-bar__suffix-label'>
+          {{ suffixLabel }}
+        </text>
+      </view>
+      <van-button my-class='van-submit-bar__button' square=" " size='large' type='{{ buttonType }}' loading='{{ loading }}' disabled='{{ disabled }}' class='van-submit-bar__button' custom-class='{{buttonClass}}' onClick='onSubmit' ref='saveChildRef2'>
+        {{ loading ? '' : buttonText }}
+      </van-button>
+    </view>
+  </view>
+</view>

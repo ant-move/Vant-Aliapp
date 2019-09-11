@@ -1,8 +1,5 @@
-"use strict";
-
-var _component = require("../common/component");
-
-(0, _component.VantComponent)({
+import { VantComponent } from "../common/component";
+VantComponent({
   props: {
     info: null,
     icon: String,
@@ -19,25 +16,30 @@ var _component = require("../common/component");
     active: false
   },
   methods: {
-    onClick: function onClick() {
+    onClick() {
       if (this.parent) {
         this.parent.onChange(this);
       }
 
       this.$emit("click");
     },
-    updateFromParent: function updateFromParent() {
-      var parent = this.parent;
+
+    updateFromParent() {
+      const {
+        parent
+      } = this;
 
       if (!parent) {
         return;
       }
 
-      var index = parent.children.indexOf(this);
-      var parentData = parent.data;
-      var data = this.data;
-      var active = (data.name || index) === parentData.active;
-      var patch = {};
+      const index = parent.children.indexOf(this);
+      const parentData = parent.data;
+      const {
+        data
+      } = this;
+      const active = (data.name || index) === parentData.active;
+      const patch = {};
 
       if (active !== data.active) {
         patch.active = active;
@@ -53,5 +55,6 @@ var _component = require("../common/component");
 
       return Object.keys(patch).length > 0 ? this.set(patch) : Promise.resolve();
     }
+
   }
 });

@@ -1,12 +1,5 @@
-"use strict";
-
-var _page = _interopRequireDefault(require("../../common/page"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-(0, _page["default"])({
+import createPage from "../../common/page";
+createPage({
   data: {
     radio1: "1",
     radio2: "2",
@@ -17,14 +10,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     list: ["1", "2", "3", "4"]
   },
-  onChange: function onChange(event) {
-    var key = event.currentTarget.dataset.key;
-    this.setData(_defineProperty({}, key, event.detail));
+
+  onChange(event) {
+    const {
+      key
+    } = event.currentTarget.dataset;
+    this.setData({
+      [key]: event.detail
+    });
   },
-  onClick: function onClick(event) {
-    var name = event.currentTarget.dataset.name;
+
+  onClick(event) {
+    const {
+      name
+    } = event.currentTarget.dataset;
     this.setData({
       radio3: name
     });
   }
+
 });

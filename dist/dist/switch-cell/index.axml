@@ -1,0 +1,12 @@
+<view class='switch-cell-index {{className}}' ref='saveChildRef0'>
+  <van-cell center=" " title='{{ title }}' label='{{ label }}' border='{{ border }}' icon='{{ icon }}' custom-class='van-switch-cell' use-label-slot='{{ useLabelSlot }}' ref='saveChildRef1'>
+    <slot slot='icon' name='icon'>
+    </slot>
+    <slot slot='title' name='title'>
+    </slot>
+    <slot slot='label' name='label'>
+    </slot>
+    <van-switch size='{{ size }}' checked='{{ checked }}' loading='{{ loading }}' disabled='{{ disabled }}' active-color='{{ activeColor }}' inactive-color='{{ inactiveColor }}' active-value='{{ activeValue }}' inactive-value='{{ inactiveValue }}' custom-class='van-switch-cell__switch' onChange='onChange' ref='saveChildRef2'>
+    </van-switch>
+  </van-cell>
+</view>

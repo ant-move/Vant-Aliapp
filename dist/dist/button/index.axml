@@ -1,0 +1,18 @@
+<import-sjs unscope-style=" " ref='saveChildRef0' from='../wxs/utils.sjs' name='utils'>
+</import-sjs><button id='{{ id }}' class="{{className}} {{myClass}} {{customClass}} {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, hairline, unclickable: disabled || loading }]) }} {{ hairline ? 'van-hairline--surround' : '' }} {{className}}" open-type='{{ openType }}' hover-class='van-button--active {{hoverClass}}' business-id='{{ businessId }}' app-parameter='{{ appParameter }}' aria-label='{{ ariaLabel }}' onGetAuthorize='bindGetPhoneNumber' scope='phoneNumber' onOpenSetting='bindOpenSetting' onTap='onClick'>
+  <block a:if='{{ loading }}'>
+    <van-loading custom-class='{{loadingClass}}' size='{{ loadingSize }}' color="{{ type === 'default' ? '#c9c9c9' : '' }}" ref='saveChildRef1'>
+    </van-loading>
+    <view a:if='{{ loadingText }}' class='van-button__loading-text'>
+      {{ loadingText }}
+    </view>
+  </block>
+  <block a:else >
+    <van-icon a:if='{{ icon }}' size='1.2em' name='{{ icon }}' class='van-button__icon' custom-style='line-height: inherit;' ref='saveChildRef2'>
+    </van-icon>
+    <view class='van-button__text'>
+      <slot>
+      </slot>
+    </view>
+  </block>
+</button>

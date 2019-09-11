@@ -1,12 +1,6 @@
-"use strict";
-
-var _page = _interopRequireDefault(require("../../common/page"));
-
-var _toast = _interopRequireDefault(require("../../dist/toast/toast"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-(0, _page["default"])({
+import createPage from "../../common/page";
+import Toast from "../../dist/toast/toast";
+createPage({
   data: {
     column1: ["杭州", "宁波", "温州", "嘉兴", "湖州"],
     column2: [{
@@ -30,27 +24,35 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
       defaultIndex: 2
     }]
   },
-  onChange1: function onChange1(event) {
+
+  onChange1(event) {
     console.log(event);
-    var _event$detail = event.detail,
-        value = _event$detail.value,
-        index = _event$detail.index;
-    (0, _toast["default"])("Value: ".concat(value, ", Index\uFF1A").concat(index));
+    const {
+      value,
+      index
+    } = event.detail;
+    Toast(`Value: ${value}, Index：${index}`);
   },
-  onConfirm: function onConfirm(event) {
-    var _event$detail2 = event.detail,
-        value = _event$detail2.value,
-        index = _event$detail2.index;
-    (0, _toast["default"])("Value: ".concat(value, ", Index\uFF1A").concat(index));
+
+  onConfirm(event) {
+    const {
+      value,
+      index
+    } = event.detail;
+    Toast(`Value: ${value}, Index：${index}`);
   },
-  onCancel: function onCancel() {
-    (0, _toast["default"])("取消");
+
+  onCancel() {
+    Toast("取消");
   },
-  onChange2: function onChange2(event) {
-    var _event$detail3 = event.detail,
-        picker = _event$detail3.picker,
-        value = _event$detail3.value;
+
+  onChange2(event) {
+    const {
+      picker,
+      value
+    } = event.detail;
     picker.setColumnValues(1, this.data.column3[value[0]]);
     getApp().picker = picker;
   }
+
 });

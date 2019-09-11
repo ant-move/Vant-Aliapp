@@ -8,7 +8,7 @@ selectComponent.prototype = {
     _addComponentNode (className, ctx) {
         className = '.' + className;
         let componentNodes = this.$nodes;
-        if (componentNodes[className]) {
+        if (componentNodes[className]&&!componentNodes[className].includes(ctx)) {
             componentNodes[className].push(ctx);
         } else {
             componentNodes[className] = [ctx];
@@ -19,7 +19,7 @@ selectComponent.prototype = {
     addComponentNodeId (id, ctx) {
         id = '#' + id;
         let componentNodes = this.$nodes;
-        if (componentNodes[id]) {
+        if (componentNodes[id]&&!componentNodes[id].includes(ctx)) {
             componentNodes[id].push(ctx);
         } else {
             componentNodes[id] = [ctx];
@@ -50,6 +50,10 @@ selectComponent.prototype = {
         ctx.selectAllComponents = function (...p) {
             return self.selectComponents(...p);
         };
+
+        ctx.selectAll = function () {
+          return self.$nodes;
+        }
     }
 };
 
@@ -65,6 +69,7 @@ function preProcesscomponents (ctx) {
     if (ctx.props.className) {
         this.addComponentNode(ctx.props.className, ctx);
     }
+
 }
 
 module.exports = selectComponent;

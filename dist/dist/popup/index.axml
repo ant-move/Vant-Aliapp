@@ -1,0 +1,14 @@
+<view class='popup-index {{className}}' style='display: inline-block;' ref='saveChildRef0'>
+  <view is-inline='true' style='display: inline-block'>
+    <import-sjs from='../wxs/utils.sjs' name='utils'>
+    </import-sjs>
+    <van-overlay a:if='{{ overlay }}' mask=" " show='{{ show }}' z-index='{{ zIndex }}' custom-style='{{ overlayStyle }}' duration='{{ duration }}' onClick='onClickOverlay' ref='saveChildRef1'>
+    </van-overlay>
+    <view a:if='{{ inited }}' class="{{customClass}} {{ classes }} {{ utils.bem('popup', [position, { safe: isIPhoneX && safeAreaInsetBottom }]) }}" style="z-index: {{ zIndex }}; -webkit-transition-duration:{{ currentDuration }}ms; transition-duration:{{ currentDuration }}ms; {{ display ? '' : 'display: none;' }} {{ customStyle }}" onTransitionend='onTransitionEnd'>
+      <view a:if='{{ safeAreaInsetTop }}' class='van-popup__safe-top' style='padding-top: {{ statusBarHeight }}px;'>
+      </view>
+      <slot>
+      </slot>
+    </view>
+  </view>
+</view>

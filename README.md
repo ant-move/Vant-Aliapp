@@ -33,6 +33,8 @@ npm i vant-aliapp -S --production
 yarn add vant-aliapp --production
 ```
 
+> npm 使用 [example（vant-alipay-area）](https://github.com/ant-move/Vant-Aliapp/blob/master/alipay/vant-app/pages/area/index.json)。
+
 ### 下载代码使用
 
 直接通过 git 下载 Vant Aliapp 源代码，并将`dist`目录拷贝到自己的项目中

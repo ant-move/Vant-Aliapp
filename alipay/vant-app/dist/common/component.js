@@ -1,4 +1,4 @@
-const _Component = require("/__antmove/component/componentClass.js")(
+const _Component = require("../../__antmove/component/componentClass.js")(
     "Component"
 );
 import { basic } from "../mixins/basic";

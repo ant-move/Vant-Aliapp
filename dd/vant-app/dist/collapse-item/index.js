@@ -9,6 +9,7 @@ VantComponent({
         type: "ancestor",
 
         linked(parent) {
+          console.log(parent)
             this.parent = parent;
         }
     },
@@ -33,7 +34,8 @@ VantComponent({
         contentHeight: 0,
         expanded: false,
         transition: false,
-        itemId: 0
+        itemId: 0,
+        theId: 0
     },
 
     mounted() {
@@ -82,9 +84,8 @@ VantComponent({
         },
 
         updateStyle(expanded) {
-            return this.getRect(
-                ".van-collapse-item__content_" + this.data.theId
-            )
+            let id = this.data.theId || 0;
+            return this.getRect(".van-collapse-item__content_" + id)
                 .then(rect => {
                     return rect.height;
                 })

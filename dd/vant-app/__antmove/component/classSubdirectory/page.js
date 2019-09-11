@@ -16,8 +16,9 @@ module.exports = {
             this.selectComponentApp = new selectComponent(this);
             this.selectComponentApp.connect();
             // 初始化节点树
-            createNode.call(this, null, null, null, true);
-            processRelations(this, Relations);
+            createNode.call(this, null, null, null, true, false, false);
+            // processRelations(this, Relations);
+
             if (typeof options.data === 'function') {
                 options.data = options.data();
             }
@@ -33,12 +34,27 @@ module.exports = {
                 options.onLoad.call(this, res);
             }
         };      
+
+        _opts.onShow = function () {
+            if (this.$node) {
+              // 初始化节点树
+            let self = this;
+              createNode.call(self, null, null, null, true, false, false);
+            //processRelations(self, Relations);
+            
+            if (options.onShow) {
+              options.onShow.call(this)
+            }
+            }
+        }
         
-        _opts.saveChildRef1 = function () {}
 
         _opts.onReady = function (param) {
+          
+            processRelations(this, Relations);
             let ast = this.$node.getRootNode();
-            processRelationNodes(ast);
+            console.log(this.$node)
+            //processRelationNodes(ast);
 
             if (options.onReady) {
                 options.onReady.call(this, param);
@@ -58,7 +74,7 @@ function processRelationNodes (ast = {}) {
     Object.keys($nodes)
         .forEach(function (item) {
             let node = $nodes[item];
-            connectNodes(node, ast);
+            //connectNodes(node, ast);
         
             if (node.$self && typeof node.$self.onPageReady === 'function') {
                 node.$self.onPageReady();
@@ -90,6 +106,9 @@ function processRelations (ctx, relationInfo = {}) {
             ctx[id] = function (ref) {
                 if (!ref) return false;
                 ctx.$antmove = ctx.$antmove || {};
+              ctx.$antmove.initChildRef = ctx.$antmove.initChildRef || {}
+              if (ctx.$antmove.initChildRef[ref.$id]) return false;
+              ctx.$antmove.initChildRef[ref.$id] = true;
                 if (ctx.$antmove[id] === undefined) {
                     ctx.$antmove[id] = 0;
                 } else {

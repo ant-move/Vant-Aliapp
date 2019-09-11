@@ -1,8 +1,5 @@
-"use strict";
-
-var _component = require("../common/component");
-
-(0, _component.VantComponent)({
+import { VantComponent } from "../common/component";
+VantComponent({
   field: true,
   props: {
     value: null,
@@ -30,20 +27,24 @@ var _component = require("../common/component");
     }
   },
   watch: {
-    checked: function checked(value) {
+    checked(value) {
       this.set({
-        value: value
+        value
       });
     }
+
   },
-  created: function created() {
+
+  created() {
     this.set({
       value: this.data.checked
     });
   },
+
   methods: {
-    onChange: function onChange(event) {
+    onChange(event) {
       this.$emit("change", event.detail);
     }
+
   }
 });

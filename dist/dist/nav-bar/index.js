@@ -1,11 +1,7 @@
-"use strict";
-
-var _component = require("../common/component");
-
-var _safeArea = require("../mixins/safe-area");
-
-(0, _component.VantComponent)({
-  mixins: [(0, _safeArea.safeArea)({
+import { VantComponent } from "../common/component";
+import { safeArea } from "../mixins/safe-area";
+VantComponent({
+  mixins: [safeArea({
     safeAreaInsetTop: true
   })],
   classes: ["title-class"],
@@ -25,11 +21,13 @@ var _safeArea = require("../mixins/safe-area");
     }
   },
   methods: {
-    onClickLeft: function onClickLeft() {
+    onClickLeft() {
       this.$emit("click-left");
     },
-    onClickRight: function onClickRight() {
+
+    onClickRight() {
       this.$emit("click-right");
     }
+
   }
 });

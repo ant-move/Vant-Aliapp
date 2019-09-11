@@ -1,18 +1,11 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.touch = void 0;
-
 function Behavior(behavior) {
   return behavior;
 }
 
-var touch = Behavior({
+export const touch = Behavior({
   methods: {
-    touchStart: function touchStart(event) {
-      var touch = event.touches[0];
+    touchStart(event) {
+      const touch = event.touches[0];
       this.direction = "";
       this.deltaX = 0;
       this.deltaY = 0;
@@ -21,14 +14,15 @@ var touch = Behavior({
       this.startX = touch.clientX;
       this.startY = touch.clientY;
     },
-    touchMove: function touchMove(event) {
-      var touch = event.touches[0];
+
+    touchMove(event) {
+      const touch = event.touches[0];
       this.deltaX = touch.clientX - this.startX;
       this.deltaY = touch.clientY - this.startY;
       this.offsetX = Math.abs(this.deltaX);
       this.offsetY = Math.abs(this.deltaY);
       this.direction = this.offsetX > this.offsetY ? "horizontal" : this.offsetX < this.offsetY ? "vertical" : "";
     }
+
   }
 });
-exports.touch = touch;

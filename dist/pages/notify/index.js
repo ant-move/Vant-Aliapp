@@ -1,19 +1,14 @@
-"use strict";
+const _my = require("../../__antmove/api/index.js")(my);
 
-var _page = _interopRequireDefault(require("../../common/page"));
-
-var _notify = _interopRequireDefault(require("../../dist/notify/notify"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-var _my = require("/__antmove/api/index.js")(my);
-
-(0, _page["default"])({
-  showNotify: function showNotify() {
-    (0, _notify["default"])("通知内容");
+import createPage from "../../common/page";
+import Notify from "../../dist/notify/notify";
+createPage({
+  showNotify() {
+    Notify("通知内容");
   },
-  showNotify2: function showNotify2() {
-    (0, _notify["default"])({
+
+  showNotify2() {
+    Notify({
       duration: 1000,
       text: "通知内容",
       selector: ".custom-selector",
@@ -21,7 +16,9 @@ var _my = require("/__antmove/api/index.js")(my);
       safeAreaInsetTop: true
     });
   },
-  onClickLeft: function onClickLeft() {
+
+  onClickLeft() {
     _my.navigateBack();
   }
+
 });

@@ -1,13 +1,8 @@
-"use strict";
-
-var _component = require("../common/component");
-
-var _button = require("../mixins/button");
-
-var _openType = require("../mixins/open-type");
-
-(0, _component.VantComponent)({
-  mixins: [_button.button, _openType.openType],
+import { VantComponent } from "../common/component";
+import { button } from "../mixins/button";
+import { openType } from "../mixins/open-type";
+VantComponent({
+  mixins: [button, openType],
   props: {
     show: Boolean,
     title: String,
@@ -52,35 +47,41 @@ var _openType = require("../mixins/open-type");
     }
   },
   watch: {
-    show: function show(_show) {
-      !_show && this.stopLoading();
+    show(show) {
+      !show && this.stopLoading();
     }
+
   },
   methods: {
-    onConfirm: function onConfirm() {
+    onConfirm() {
       this.handleAction("confirm");
     },
-    onCancel: function onCancel() {
+
+    onCancel() {
       this.handleAction("cancel");
     },
-    onClickOverlay: function onClickOverlay() {
+
+    onClickOverlay() {
       this.onClose("overlay");
     },
-    handleAction: function handleAction(action) {
+
+    handleAction(action) {
       if (this.data.asyncClose) {
-        var _data = this.data.loading;
-        _data["".concat(action)] = true;
+        let _data = this.data.loading;
+        _data[`${action}`] = true;
         this.set(_data);
       }
 
       this.onClose(action);
     },
-    close: function close() {
+
+    close() {
       this.set({
         show: false
       });
     },
-    stopLoading: function stopLoading() {
+
+    stopLoading() {
       this.set({
         loading: {
           confirm: false,
@@ -88,7 +89,8 @@ var _openType = require("../mixins/open-type");
         }
       });
     },
-    onClose: function onClose(action) {
+
+    onClose(action) {
       if (!this.data.asyncClose) {
         this.close();
       }
@@ -98,11 +100,12 @@ var _openType = require("../mixins/open-type");
       this.$emit(action, {
         dialog: this
       });
-      var callback = this.data[action === "confirm" ? "onConfirm" : "onCancel"];
+      const callback = this.data[action === "confirm" ? "onConfirm" : "onCancel"];
 
       if (callback) {
         callback(this);
       }
     }
+
   }
 });

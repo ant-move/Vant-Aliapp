@@ -1,8 +1,5 @@
-"use strict";
-
-var _component = require("../common/component");
-
-(0, _component.VantComponent)({
+import { VantComponent } from "../common/component";
+VantComponent({
   field: true,
   classes: ["field-class", "input-class", "cancel-class"],
   props: {
@@ -30,40 +27,42 @@ var _component = require("../common/component");
     label: String
   },
   methods: {
-    onChange: function onChange(event) {
+    onChange(event) {
       this.set({
         value: event.detail
       });
       this.$emit("change", event.detail);
     },
-    onCancel: function onCancel() {
-      var _this = this;
 
+    onCancel() {
       /**
        * 修复修改输入框值时，输入框失焦和赋值同时触发，赋值失效
        * // https://github.com/youzan/vant-weapp/issues/1768
        */
-      setTimeout(function () {
-        _this.set({
+      setTimeout(() => {
+        this.set({
           value: ""
         });
-
-        _this.$emit("cancel");
-
-        _this.$emit("change", "");
+        this.$emit("cancel");
+        this.$emit("change", "");
       }, 200);
     },
-    onSearch: function onSearch() {
+
+    onSearch() {
       this.$emit("search", this.data.value);
     },
-    onFocus: function onFocus() {
+
+    onFocus() {
       this.$emit("focus");
     },
-    onBlur: function onBlur() {
+
+    onBlur() {
       this.$emit("blur");
     },
-    onClear: function onClear() {
+
+    onClear() {
       this.$emit("clear");
     }
+
   }
 });

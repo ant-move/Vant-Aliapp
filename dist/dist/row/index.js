@@ -1,16 +1,15 @@
-"use strict";
-
-var _component = require("../common/component");
-
-(0, _component.VantComponent)({
+import { VantComponent } from "../common/component";
+VantComponent({
   relation: {
     name: "col",
     type: "descendant",
-    linked: function linked(target) {
+
+    linked(target) {
       if (this.data.gutter) {
         target.setGutter(this.data.gutter);
       }
     }
+
   },
   props: {
     gutter: Number
@@ -18,24 +17,27 @@ var _component = require("../common/component");
   watch: {
     gutter: "setGutter"
   },
-  ready: function ready() {
+
+  ready() {
     if (this.data.gutter) {
       this.setGutter();
     }
   },
-  methods: {
-    setGutter: function setGutter() {
-      var _this = this;
 
-      var gutter = this.data.gutter;
-      var margin = "-".concat(Number(gutter) / 2, "px");
-      var style = gutter ? "margin-right: ".concat(margin, "; margin-left: ").concat(margin, ";") : "";
+  methods: {
+    setGutter() {
+      const {
+        gutter
+      } = this.data;
+      const margin = `-${Number(gutter) / 2}px`;
+      const style = gutter ? `margin-right: ${margin}; margin-left: ${margin};` : "";
       this.set({
-        style: style
+        style
       });
-      this.getRelationNodes("/dist/col/index").forEach(function (col) {
-        col.setGutter(_this.data.gutter);
+      this.getRelationNodes("/dist/col/index").forEach(col => {
+        col.setGutter(this.data.gutter);
       });
     }
+
   }
 });

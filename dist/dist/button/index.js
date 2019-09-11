@@ -1,15 +1,10 @@
-"use strict";
+const _my = require("../../__antmove/api/index.js")(my);
 
-var _component = require("../common/component");
-
-var _button = require("../mixins/button");
-
-var _openType = require("../mixins/open-type");
-
-var _my = require("/__antmove/api/index.js")(my);
-
-(0, _component.VantComponent)({
-  mixins: [_button.button, _openType.openType],
+import { VantComponent } from "../common/component";
+import { button } from "../mixins/button";
+import { openType } from "../mixins/open-type";
+VantComponent({
+  mixins: [button, openType],
   classes: ["hover-class", "loading-class", "my-class"],
   props: {
     icon: String,
@@ -35,7 +30,7 @@ var _my = require("/__antmove/api/index.js")(my);
     }
   },
   methods: {
-    onClick: function onClick(e) {
+    onClick(e) {
       if (!this.data.disabled && !this.data.loading) {
         this.$emit("click");
       }
@@ -44,5 +39,6 @@ var _my = require("/__antmove/api/index.js")(my);
         this.props.onTap(e);
       }
     }
+
   }
 });

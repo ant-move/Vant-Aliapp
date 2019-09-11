@@ -1,8 +1,5 @@
-"use strict";
-
-var _component = require("../common/component");
-
-(0, _component.VantComponent)({
+import { VantComponent } from "../common/component";
+VantComponent({
   classes: ["header-class", "footer-class"],
   props: {
     desc: String,

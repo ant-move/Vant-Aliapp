@@ -1,0 +1,28 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' padding=" " ref='saveChildRef1'>
+  <van-cell title='Fade' is-link=" " onClick='onClickFade' ref='saveChildRef2'>
+  </van-cell>
+  <van-cell title='Fade Up' is-link=" " onClick='onClickFadeUp' ref='saveChildRef3'>
+  </van-cell>
+  <van-cell title='Fade Down' is-link=" " onClick='onClickFadeDown' ref='saveChildRef4'>
+  </van-cell>
+  <van-cell title='Fade Left' is-link=" " onClick='onClickFadeLeft' ref='saveChildRef5'>
+  </van-cell>
+  <van-cell title='Fade Right' is-link=" " onClick='onClickFadeRight' ref='saveChildRef6'>
+  </van-cell>
+  <van-cell title='Slide Up' is-link=" " onClick='onClickSlideUp' ref='saveChildRef7'>
+  </van-cell>
+  <van-cell title='Slide Down' is-link=" " onClick='onClickSlideDown' ref='saveChildRef8'>
+  </van-cell>
+  <van-cell title='Slide Left' is-link=" " onClick='onClickSlideLeft' ref='saveChildRef9'>
+  </van-cell>
+  <van-cell title='Slide Right' is-link=" " onClick='onClickSlideRight' ref='saveChildRef10'>
+  </van-cell>
+  <van-cell title='Custom' is-link=" " onClick='onClickCustom' ref='saveChildRef11'>
+  </van-cell>
+  <van-transition show='{{ show }}' name='{{ name }}' custom-class='block' ref='saveChildRef12'>
+  </van-transition>
+  <van-transition show='{{ showCustom }}' name=" " duration='{{ { enter: 300, leave: 1000 } }}' custom-class='block' enter-class='van-enter-class' enter-active-class='van-enter-active-class' leave-active-class='van-leave-active-class' leave-to-class='van-leave-to-class' ref='saveChildRef13'>
+  </van-transition>
+</demo-block>
+            </view>

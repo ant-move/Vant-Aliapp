@@ -1,4 +1,4 @@
-const _my = require("/__antmove/api/index.js")(my);
+const _my = require("../../__antmove/api/index.js")(my);
 import { VantComponent } from "../common/component";
 const FONT_COLOR = "#ed6a0c";
 const BG_COLOR = "#fffbe8";

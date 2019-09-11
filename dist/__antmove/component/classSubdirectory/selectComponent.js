@@ -1,5 +1,3 @@
-"use strict";
-
 function selectComponent(ctx) {
   this.$ctx = ctx;
   this.$nodes = {};
@@ -7,9 +5,9 @@ function selectComponent(ctx) {
 }
 
 selectComponent.prototype = {
-  _addComponentNode: function _addComponentNode(className, ctx) {
+  _addComponentNode(className, ctx) {
     className = '.' + className;
-    var componentNodes = this.$nodes;
+    let componentNodes = this.$nodes;
 
     if (componentNodes[className]) {
       componentNodes[className].push(ctx);
@@ -18,12 +16,13 @@ selectComponent.prototype = {
     }
 
     this.$cacheNodes[ctx.$id] = {
-      className: className
+      className
     };
   },
-  addComponentNodeId: function addComponentNodeId(id, ctx) {
+
+  addComponentNodeId(id, ctx) {
     id = '#' + id;
-    var componentNodes = this.$nodes;
+    let componentNodes = this.$nodes;
 
     if (componentNodes[id]) {
       componentNodes[id].push(ctx);
@@ -32,48 +31,48 @@ selectComponent.prototype = {
     }
 
     this.$cacheNodes[ctx.$id] = {
-      id: id
+      id
     };
   },
-  addComponentNode: function addComponentNode() {
-    var _this = this;
 
-    var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-    var ctx = arguments.length > 1 ? arguments[1] : undefined;
-    var classNameArray = className.split(/\s+/g);
-    classNameArray.forEach(function (classNameStr) {
-      _this._addComponentNode(classNameStr, ctx);
+  addComponentNode(className = '', ctx) {
+    let classNameArray = className.split(/\s+/g);
+    classNameArray.forEach(classNameStr => {
+      this._addComponentNode(classNameStr, ctx);
     });
   },
-  selectComponent: function selectComponent(className) {
-    var componentNodes = this.$nodes;
+
+  selectComponent(className) {
+    let componentNodes = this.$nodes;
     return componentNodes[className] && componentNodes[className][0];
   },
-  selectComponents: function selectComponents(className) {
-    var componentNodes = this.$nodes;
+
+  selectComponents(className) {
+    let componentNodes = this.$nodes;
     return componentNodes[className];
   },
-  preProcesscomponents: preProcesscomponents,
-  connect: function connect() {
-    var ctx = this.$ctx;
-    var self = this;
 
-    ctx.selectComponent = function () {
-      return self.selectComponent.apply(self, arguments);
+  preProcesscomponents,
+
+  connect() {
+    let ctx = this.$ctx;
+    let self = this;
+
+    ctx.selectComponent = function (...p) {
+      return self.selectComponent(...p);
     };
 
-    ctx.selectAllComponents = function () {
-      return self.selectComponents.apply(self, arguments);
+    ctx.selectAllComponents = function (...p) {
+      return self.selectComponents(...p);
     };
   }
+
 };
 
 function preProcesscomponents(ctx) {
-  var _this2 = this;
-
-  var selectorObj = this.$cacheNodes[ctx.$id];
-  selectorObj && Object.keys(selectorObj).forEach(function (item) {
-    _this2.$nodes[item] = [];
+  let selectorObj = this.$cacheNodes[ctx.$id];
+  selectorObj && Object.keys(selectorObj).forEach(item => {
+    this.$nodes[item] = [];
   });
 
   if (ctx.props.id) {

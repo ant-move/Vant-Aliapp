@@ -1,12 +1,6 @@
-"use strict";
-
-var _page = _interopRequireDefault(require("../../common/page"));
-
-var _toast = _interopRequireDefault(require("../../dist/toast/toast"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-(0, _page["default"])({
+import createPage from "../../common/page";
+import Toast from "../../dist/toast/toast";
+createPage({
   data: {
     minHour: 10,
     maxHour: 20,
@@ -17,24 +11,30 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
     currentDate3: new Date(2018, 0, 1),
     currentDate4: "12:00",
     loading: false,
-    formatter: function formatter(type, value) {
+
+    formatter(type, value) {
       if (type === "year") {
-        return "".concat(value, "\u5E74");
+        return `${value}年`;
       } else if (type === "month") {
-        return "".concat(value, "\u6708");
+        return `${value}月`;
       }
 
       return value;
     }
+
   },
-  onInput: function onInput(event) {
-    var detail = event.detail,
-        currentTarget = event.currentTarget;
-    var result = this.getResult(detail, currentTarget.dataset.type);
-    (0, _toast["default"])(result);
+
+  onInput(event) {
+    const {
+      detail,
+      currentTarget
+    } = event;
+    const result = this.getResult(detail, currentTarget.dataset.type);
+    Toast(result);
   },
-  getResult: function getResult(time, type) {
-    var date = new Date(time);
+
+  getResult(time, type) {
+    const date = new Date(time);
 
     switch (type) {
       case "datetime":
@@ -44,7 +44,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
         return date.toLocaleDateString();
 
       case "year-month":
-        return "".concat(date.getFullYear(), "/").concat(date.getMonth() + 1);
+        return `${date.getFullYear()}/${date.getMonth() + 1}`;
 
       case "time":
         return time;
@@ -53,4 +53,5 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
         return "";
     }
   }
+
 });

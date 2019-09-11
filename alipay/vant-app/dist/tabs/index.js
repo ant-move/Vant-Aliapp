@@ -1,4 +1,4 @@
-const _my = require("/__antmove/api/index.js")(my);
+const _my = require("../../__antmove/api/index.js")(my);
 import { VantComponent } from "../common/component";
 import { touch } from "../mixins/touch";
 import { nextTick } from "../common/utils";

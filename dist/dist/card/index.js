@@ -1,12 +1,8 @@
-"use strict";
-
-var _link = require("../mixins/link");
-
-var _component = require("../common/component");
-
-(0, _component.VantComponent)({
+import { link } from "../mixins/link";
+import { VantComponent } from "../common/component";
+VantComponent({
   classes: ["num-class", "desc-class", "thumb-class", "title-class", "price-class", "origin-price-class"],
-  mixins: [_link.link],
+  mixins: [link],
   props: {
     tag: String,
     num: String,
@@ -28,8 +24,9 @@ var _component = require("../common/component");
     }
   },
   methods: {
-    onClickThumb: function onClickThumb() {
+    onClickThumb() {
       this.jumpLink("thumbLink");
     }
+
   }
 });

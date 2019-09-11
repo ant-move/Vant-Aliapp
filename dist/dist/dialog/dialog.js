@@ -1,21 +1,15 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-var queue = [];
+let queue = [];
 
 function getContext() {
-  var pages = getCurrentPages();
+  const pages = getCurrentPages();
   return pages[pages.length - 1];
 }
 
-var Dialog = function Dialog(options) {
+const Dialog = options => {
   options = Object.assign({}, Dialog.currentOptions, options);
-  return new Promise(function (resolve, reject) {
-    var context = options.context || getContext();
-    var dialog = context.selectComponent(options.selector);
+  return new Promise((resolve, reject) => {
+    const context = options.context || getContext();
+    const dialog = context.selectComponent(options.selector);
     delete options.context;
     delete options.selector;
 
@@ -52,34 +46,31 @@ Dialog.defaultOptions = {
 };
 Dialog.alert = Dialog;
 
-Dialog.confirm = function (options) {
-  return Dialog(Object.assign({
-    showCancelButton: true
-  }, options));
-};
+Dialog.confirm = options => Dialog(Object.assign({
+  showCancelButton: true
+}, options));
 
-Dialog.close = function () {
-  queue.forEach(function (dialog) {
+Dialog.close = () => {
+  queue.forEach(dialog => {
     dialog.close();
     dialog.stopLoading();
   });
   queue = [];
 };
 
-Dialog.stopLoading = function () {
-  queue.forEach(function (dialog) {
+Dialog.stopLoading = () => {
+  queue.forEach(dialog => {
     dialog.stopLoading();
   });
 };
 
-Dialog.setDefaultOptions = function (options) {
+Dialog.setDefaultOptions = options => {
   Object.assign(Dialog.currentOptions, options);
 };
 
-Dialog.resetDefaultOptions = function () {
+Dialog.resetDefaultOptions = () => {
   Dialog.currentOptions = Object.assign({}, Dialog.defaultOptions);
 };
 
 Dialog.resetDefaultOptions();
-var _default = Dialog;
-exports["default"] = _default;
+export default Dialog;

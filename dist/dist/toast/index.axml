@@ -1,0 +1,22 @@
+<view class='toast-index {{className}}' ref='saveChildRef0'>
+  <van-overlay a:if='{{ mask || forbidClick }}' show='{{ show }}' mask='{{ mask }}' z-index='{{ zIndex }}' ref='saveChildRef1'>
+  </van-overlay>
+  <van-transition show='{{ show }}' custom-style='z-index: {{ zIndex }}' custom-class='van-toast__container' ref='saveChildRef2'>
+    <view class="van-toast van-toast--{{ type === 'text' ? 'text' : 'icon' }} van-toast--{{ position }}" catchTouchMove='noop'>
+      <text a:if="{{ type === 'text' }}">
+        {{ message }}
+      </text>
+      <block a:else >
+        <van-loading a:if="{{ type === 'loading' }}" color='white' type='{{ loadingType }}' custom-class='van-toast__loading' ref='saveChildRef3'>
+        </van-loading>
+        <van-icon a:else  class='van-toast__icon' name='{{ type }}' ref='saveChildRef4'>
+        </van-icon>
+        <text a:if='{{ message }}' class='van-toast__text'>
+          {{ message }}
+        </text>
+      </block>
+      <slot>
+      </slot>
+    </view>
+  </van-transition>
+</view>

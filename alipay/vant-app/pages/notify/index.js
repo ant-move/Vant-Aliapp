@@ -1,4 +1,4 @@
-const _my = require("/__antmove/api/index.js")(my);
+const _my = require("../../__antmove/api/index.js")(my);
 import createPage from "../../common/page";
 import Notify from "../../dist/notify/notify";
 createPage({

@@ -62,14 +62,13 @@ const watchShakes = function () {
 };
 
 module.exports = {
-    connectNodes: function connectNodes (node, ast) {
+    connectNodes: function connectNodes (node, ast, isUpdate) {
         if (!node.$relationNode.$parent) return false;
         let parentNodeId = node.$relationNode.$parent.$id;
         let parentNodeRoute = node.$relationNode.$parent.$route;
         let index = node.$relationNode.$parent.$index;
     
         let refNumbers = (node.$self.props.refNumbers && node.$self.props.refNumbers.length) || 1;
-    
         let parentArray = ast.$refNodes[parentNodeRoute][parentNodeId];
         let parent = null;
         if (refNumbers > 1) {

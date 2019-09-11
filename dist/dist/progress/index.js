@@ -1,10 +1,6 @@
-"use strict";
-
-var _component = require("../common/component");
-
-var _color = require("../common/color");
-
-(0, _component.VantComponent)({
+import { VantComponent } from "../common/component";
+import { BLUE } from "../common/color";
+VantComponent({
   props: {
     inactive: Boolean,
     percentage: Number,
@@ -16,7 +12,7 @@ var _color = require("../common/color");
     },
     color: {
       type: String,
-      value: _color.BLUE
+      value: BLUE
     },
     textColor: {
       type: String,

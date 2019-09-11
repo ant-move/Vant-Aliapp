@@ -1,0 +1,30 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' ref='saveChildRef1'>
+  <van-swipe-cell right-width='{{ 65 }}' left-width='{{ 65 }}' ref='saveChildRef2'>
+    <view slot='left'>
+      选择
+    </view>
+    <van-cell-group ref='saveChildRef3'>
+      <van-cell title='单元格' value='内容' ref='saveChildRef4'>
+      </van-cell>
+    </van-cell-group>
+    <view slot='right'>
+      删除
+    </view>
+  </van-swipe-cell>
+</demo-block><demo-block title='异步关闭' ref='saveChildRef5'>
+  <van-swipe-cell id='swipe-cell' right-width='{{ 65 }}' left-width='{{ 65 }}' async-close=" " onClose='onClose' ref='saveChildRef6'>
+    <view slot='left'>
+      选择
+    </view>
+    <van-cell-group ref='saveChildRef7'>
+      <van-cell title='单元格' value='内容' ref='saveChildRef8'>
+      </van-cell>
+    </van-cell-group>
+    <view slot='right'>
+      删除
+    </view>
+  </van-swipe-cell>
+</demo-block><van-dialog id='van-dialog' ref='saveChildRef9'>
+</van-dialog>
+            </view>

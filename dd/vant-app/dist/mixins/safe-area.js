@@ -1,5 +1,5 @@
 const _my = require("/__antmove/api/index.js")(my);
-function Behavior(behavior) {
+function Behavior(behavior = {}) {
     return behavior;
 }
 

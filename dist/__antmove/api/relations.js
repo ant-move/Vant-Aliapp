@@ -1,11 +1,9 @@
-"use strict";
-
 module.exports = {
-  '/components/demo-block/index': {
+  'components/demo-block/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/custom-tab-bar/index': {
+  'custom-tab-bar/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -15,7 +13,7 @@ module.exports = {
       }]
     }]
   },
-  '/dist/action-sheet/index': {
+  'dist/action-sheet/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -28,25 +26,25 @@ module.exports = {
       }]
     }]
   },
-  '/dist/area/index': {
+  'dist/area/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/badge/index': {
+  'dist/badge/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/badge-group/index': {
+  'dist/badge-group/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/dist/button/index': {
+  'dist/button/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -56,14 +54,14 @@ module.exports = {
       children: []
     }]
   },
-  '/dist/card/index': {
+  'dist/card/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/cell/index': {
+  'dist/cell/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -73,44 +71,44 @@ module.exports = {
       children: []
     }]
   },
-  '/dist/cell-group/index': {
+  'dist/cell-group/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/dist/checkbox/index': {
+  'dist/checkbox/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/checkbox-group/index': {
+  'dist/checkbox-group/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/dist/col/index': {
+  'dist/col/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/dist/collapse/index': {
+  'dist/collapse/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/dist/collapse-item/index': {
+  'dist/collapse-item/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/datetime-picker/index': {
+  'dist/datetime-picker/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/dialog/index': {
+  'dist/dialog/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -123,7 +121,7 @@ module.exports = {
       }]
     }]
   },
-  '/dist/field/index': {
+  'dist/field/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -136,18 +134,18 @@ module.exports = {
       }]
     }]
   },
-  '/dist/goods-action/index': {
+  'dist/goods-action/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/dist/goods-action-button/index': {
+  'dist/goods-action-button/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/goods-action-icon/index': {
+  'dist/goods-action-icon/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -157,29 +155,29 @@ module.exports = {
       }]
     }]
   },
-  '/dist/icon/index': {
+  'dist/icon/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/info/index': {
+  'dist/info/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/dist/loading/index': {
+  'dist/loading/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/dist/nav-bar/index': {
+  'dist/nav-bar/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/notice-bar/index': {
+  'dist/notice-bar/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -192,64 +190,28 @@ module.exports = {
       children: []
     }]
   },
-  '/dist/notify/index': {
+  'dist/notify/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/overlay/index': {
+  'dist/overlay/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/panel/index': {
+  'dist/panel/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/picker/index': {
-    id: 'saveChildRef0',
-    children: [{
-      id: 'saveChildRef1',
-      children: []
-    }, {
-      id: 'saveChildRef2',
-      children: []
-    }]
-  },
-  '/dist/picker-column/index': {
-    id: 'saveChildRef0',
-    children: []
-  },
-  '/dist/popup/index': {
-    id: 'saveChildRef0',
-    children: [{
-      id: 'saveChildRef1',
-      children: []
-    }]
-  },
-  '/dist/progress/index': {
-    id: 'saveChildRef0',
-    children: []
-  },
-  '/dist/radio/index': {
-    id: 'saveChildRef0',
-    children: [{
-      id: 'saveChildRef1',
-      children: []
-    }]
-  },
-  '/dist/radio-group/index': {
-    id: 'saveChildRef0',
-    children: []
-  },
-  '/dist/rate/index': {
+  'dist/picker/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -259,33 +221,33 @@ module.exports = {
       children: []
     }]
   },
-  '/dist/row/index': {
+  'dist/picker-column/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/dist/search/index': {
+  'dist/popup/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/slider/index': {
+  'dist/progress/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/dist/stepper/index': {
-    id: 'saveChildRef0',
-    children: []
-  },
-  '/dist/steps/index': {
+  'dist/radio/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/submit-bar/index': {
+  'dist/radio-group/index': {
+    id: 'saveChildRef0',
+    children: []
+  },
+  'dist/rate/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -295,18 +257,54 @@ module.exports = {
       children: []
     }]
   },
-  '/dist/swipe-cell/index': {
+  'dist/row/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/dist/switch/index': {
+  'dist/search/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/switch-cell/index': {
+  'dist/slider/index': {
+    id: 'saveChildRef0',
+    children: []
+  },
+  'dist/stepper/index': {
+    id: 'saveChildRef0',
+    children: []
+  },
+  'dist/steps/index': {
+    id: 'saveChildRef0',
+    children: [{
+      id: 'saveChildRef1',
+      children: []
+    }]
+  },
+  'dist/submit-bar/index': {
+    id: 'saveChildRef0',
+    children: [{
+      id: 'saveChildRef1',
+      children: []
+    }, {
+      id: 'saveChildRef2',
+      children: []
+    }]
+  },
+  'dist/swipe-cell/index': {
+    id: 'saveChildRef0',
+    children: []
+  },
+  'dist/switch/index': {
+    id: 'saveChildRef0',
+    children: [{
+      id: 'saveChildRef1',
+      children: []
+    }]
+  },
+  'dist/switch-cell/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -316,15 +314,15 @@ module.exports = {
       }]
     }]
   },
-  '/dist/tab/index': {
+  'dist/tab/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/dist/tabbar/index': {
+  'dist/tabbar/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/dist/tabbar-item/index': {
+  'dist/tabbar-item/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -334,18 +332,18 @@ module.exports = {
       children: []
     }]
   },
-  '/dist/tabs/index': {
+  'dist/tabs/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/dist/tag/index': {
+  'dist/tag/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/dist/toast/index': {
+  'dist/toast/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -361,18 +359,18 @@ module.exports = {
       }]
     }]
   },
-  '/dist/transition/index': {
+  'dist/transition/index': {
     id: 'saveChildRef0',
     children: []
   },
-  '/dist/tree-select/index': {
+  'dist/tree-select/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
       children: []
     }]
   },
-  '/pages/action-sheet/index': {
+  'pages/action-sheet/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -403,7 +401,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/area/index': {
+  'pages/area/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -428,7 +426,7 @@ module.exports = {
       children: []
     }]
   },
-  '/pages/badge/index': {
+  'pages/badge/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -450,7 +448,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/button/index': {
+  'pages/button/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -544,7 +542,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/card/index': {
+  'pages/card/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -572,7 +570,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/cell/index': {
+  'pages/cell/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -660,7 +658,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/checkbox/index': {
+  'pages/checkbox/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -724,7 +722,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/col/index': {
+  'pages/col/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -773,7 +771,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/collapse/index': {
+  'pages/collapse/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -822,7 +820,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/dashboard/index': {
+  'pages/dashboard/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -838,7 +836,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/datetime-picker/index': {
+  'pages/datetime-picker/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -869,7 +867,7 @@ module.exports = {
       children: []
     }]
   },
-  '/pages/dialog/index': {
+  'pages/dialog/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -906,7 +904,7 @@ module.exports = {
       children: []
     }]
   },
-  '/pages/field/index': {
+  'pages/field/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -973,7 +971,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/goods-action/index': {
+  'pages/goods-action/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1019,7 +1017,7 @@ module.exports = {
       children: []
     }]
   },
-  '/pages/icon/index': {
+  'pages/icon/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1053,7 +1051,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/loading/index': {
+  'pages/loading/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1075,7 +1073,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/nav-bar/index': {
+  'pages/nav-bar/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1094,7 +1092,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/notice-bar/index': {
+  'pages/notice-bar/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1125,7 +1123,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/notify/index': {
+  'pages/notify/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1150,7 +1148,7 @@ module.exports = {
       children: []
     }]
   },
-  '/pages/panel/index': {
+  'pages/panel/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1172,7 +1170,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/picker/index': {
+  'pages/picker/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1215,7 +1213,7 @@ module.exports = {
       children: []
     }]
   },
-  '/pages/popup/index': {
+  'pages/popup/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1264,7 +1262,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/progress/index': {
+  'pages/progress/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1292,7 +1290,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/radio/index': {
+  'pages/radio/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1347,7 +1345,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/rate/index': {
+  'pages/rate/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1393,7 +1391,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/search/index': {
+  'pages/search/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1415,7 +1413,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/slider/index': {
+  'pages/slider/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1455,7 +1453,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/stepper/index': {
+  'pages/stepper/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1486,7 +1484,7 @@ module.exports = {
       children: []
     }]
   },
-  '/pages/steps/index': {
+  'pages/steps/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1505,7 +1503,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/submit-bar/index': {
+  'pages/submit-bar/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1539,7 +1537,7 @@ module.exports = {
       children: []
     }]
   },
-  '/pages/swipe-cell/index': {
+  'pages/swipe-cell/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1570,7 +1568,7 @@ module.exports = {
       children: []
     }]
   },
-  '/pages/switch/index': {
+  'pages/switch/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1613,7 +1611,7 @@ module.exports = {
       children: []
     }]
   },
-  '/pages/switch-cell/index': {
+  'pages/switch-cell/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1644,7 +1642,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/tab/index': {
+  'pages/tab/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1732,7 +1730,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/tabbar/index': {
+  'pages/tabbar/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1790,7 +1788,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/tabbar1/index': {
+  'pages/tabbar1/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1827,7 +1825,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/tag/index': {
+  'pages/tag/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1921,7 +1919,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/toast/index': {
+  'pages/toast/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -1958,7 +1956,7 @@ module.exports = {
       children: []
     }]
   },
-  '/pages/transition/index': {
+  'pages/transition/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',
@@ -2001,7 +1999,7 @@ module.exports = {
       }]
     }]
   },
-  '/pages/tree-select/index': {
+  'pages/tree-select/index': {
     id: 'saveChildRef0',
     children: [{
       id: 'saveChildRef1',

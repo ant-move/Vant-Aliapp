@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * type
  * 0 - missing - 不支持该属性

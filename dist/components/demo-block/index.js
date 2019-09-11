@@ -1,6 +1,4 @@
-"use strict";
-
-var _Component = require("/__antmove/component/componentClass.js")("Component");
+const _Component = require("../../__antmove/component/componentClass.js")("Component");
 
 _Component({
   properties: {

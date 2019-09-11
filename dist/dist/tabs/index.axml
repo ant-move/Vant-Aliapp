@@ -1,0 +1,30 @@
+<view class='tabs-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class="{{customClass}} {{ utils.bem('tabs', [type]) }}">
+    <view style='z-index: {{ zIndex }}; {{ wrapStyle }}' class="{{ utils.bem('tabs__wrap', { scrollable }) }} {{ type === 'line' && border ? 'van-hairline--top-bottom' : '' }}">
+      <slot name='nav-left'>
+      </slot>
+      <scroll-view scroll-x='{{ scrollable }}' scroll-with-animation=" " scroll-left='{{ scrollLeft }}' class='van-tabs__scroll--{{ type }}' style="{{ color ? 'border-color: ' + color : '' }}">
+        <view class="{{ utils.bem('tabs__nav', [type]) }} {{navClass}}">
+          <view a:if="{{ type === 'line' }}" class='van-tabs__line' style='{{ lineStyle }}'>
+          </view>
+          <view a:for='{{ tabs }}' a:key='index' data-index='{{ index }}' class="van-ellipsis vant_tabs_{{num}} {{tabClass}} {{ index === active ? 'tab-active-class' : '' }} {{ utils.bem('tab', { active: index === active, disabled: item.disabled }) }}" style="{{ color && index !== active && type === 'card' && !item.disabled ? 'color: ' + color : '' }} {{ color && index === active && type === 'card' ? ';background-color:' + color : '' }} {{ color ? ';border-color: ' + color : '' }} {{ scrollable ? ';flex-basis:' + (88 / swipeThreshold) + '%' : '' }}" ref-numbers='{{ tabs }}' onTap='onTap'>
+            <view class="van-ellipsis {{ utils.bem('tab__title', { dot: item.dot }) }}" style='{{ item.titleStyle }}'>
+              {{ item.title }}              <van-info a:if='{{ item.info !== null }}' info='{{ item.info }}' custom-class='van-tab__title__info' ref='saveChildRef1'>
+              </van-info>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <slot name='nav-right'>
+      </slot>
+    </view>
+    <view class='van-tabs__content' onTouchStart='onTouchStart' onTouchMove='onTouchMove' onTouchEnd='onTouchEnd' onTouchCancel='onTouchEnd'>
+      <view class='van-tabs__track' style='{{ trackStyle }}'>
+        <slot>
+        </slot>
+      </view>
+    </view>
+  </view>
+</view>

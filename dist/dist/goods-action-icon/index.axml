@@ -1,0 +1,11 @@
+<view class='goods-action-icon-index {{className}}' ref='saveChildRef0'>
+  <van-button square=" " id='{{ id }}' size='large' lang='{{ lang }}' loading='{{ loading }}' disabled='{{ disabled }}' open-type='{{ openType }}' business-id='{{ businessId }}' custom-class='van-goods-action-icon' session-from='{{ sessionFrom }}' app-parameter='{{ appParameter }}' send-message-img='{{ sendMessageImg }}' send-message-path='{{ sendMessagePath }}' show-message-card='{{ showMessageCard }}' send-message-title='{{ sendMessageTitle }}' onClick='onClick' onError='bindError' onContact='bindContact' onOpensetting='bindOpenSetting' onGetuserinfo='bindGetUserInfo' onGetphonenumber='bindGetPhoneNumber' onLaunchapp='bindLaunchApp' ref='saveChildRef1'>
+    <view class='van-goods-action-icon__content van-hairline--right'>
+      <van-icon size='20px' name='{{ icon }}' info='{{ info }}' class='van-goods-action-icon__icon' custom-class='{{iconClass}}' ref='saveChildRef2'>
+      </van-icon>
+      <text class='{{textClass}}'>
+        {{ text }}
+      </text>
+    </view>
+  </van-button>
+</view>

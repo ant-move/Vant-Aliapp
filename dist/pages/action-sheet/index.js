@@ -1,18 +1,12 @@
-"use strict";
-
-var _page = _interopRequireDefault(require("../../common/page"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-(0, _page["default"])({
+import createPage from "../../common/page";
+createPage({
   data: {
     show1: false,
     show2: false,
     show3: false
   },
-  onLoad: function onLoad() {
+
+  onLoad() {
     this.setData({
       actions: [{
         name: "选项"
@@ -28,16 +22,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }]
     });
   },
-  toggle: function toggle(type) {
-    this.setData(_defineProperty({}, type, !this.data[type]));
+
+  toggle(type) {
+    this.setData({
+      [type]: !this.data[type]
+    });
   },
-  toggleActionSheet1: function toggleActionSheet1() {
+
+  toggleActionSheet1() {
     this.toggle("show1");
   },
-  toggleActionSheet2: function toggleActionSheet2() {
+
+  toggleActionSheet2() {
     this.toggle("show2");
   },
-  toggleActionSheet3: function toggleActionSheet3() {
+
+  toggleActionSheet3() {
     this.toggle("show3");
   }
+
 });

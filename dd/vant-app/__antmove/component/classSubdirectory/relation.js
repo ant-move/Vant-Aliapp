@@ -25,11 +25,12 @@ function createNode (ctx) {
 createNode.prototype = {
     getRootNode () {
       let ctx = this.$self;
-  let cacheId = ctx.$page ? ctx.$page.$id : ctx.$id;
+  let cacheId = ctx.$page ? ctx.$page.$viewId : ctx.$viewId;
 
         return astCache[cacheId];
     },
     setParent (parent) {
+      if (this.$parent) return false;
         this.$parent = parent;
         parent.appendChild(this);
     },
@@ -44,6 +45,7 @@ createNode.prototype = {
         this.$parent.$children.splice(index, 1);
     },
     appendChild (child) {
+      
         this.$children.push(child);
         child.$parent = this;
     },
@@ -56,9 +58,10 @@ createNode.prototype = {
 };
 
 
-module.exports = function (node, cb = () => {}, relationNode, bool =false, _bool = false) {
+module.exports = function (node, cb = () => {}, relationNode, bool =false, _bool = false, isConnect = true) {
   let RelationAst = {}
-  let cacheId = this.$page ? this.$page.$id : this.$id;
+
+  let cacheId = this.$page ? this.$page.$viewId : this.$viewId;
     if (_bool) {
         return astCache[cacheId];
     }
@@ -76,15 +79,22 @@ module.exports = function (node, cb = () => {}, relationNode, bool =false, _bool
        * component
        */
     wrapNode.$relationNode = relationNode;
+    if (relationNode.$parent&&!relationNode.$parent.$route) {
+      console.log('------', this, relationNode.$parent, relationNode.$parent.$route)
+    }
     RelationAst.$nodes[node.$id] = wrapNode;
     RelationAst.$refNodes[route] = RelationAst.$refNodes[route] || {};
     let componentNodes = RelationAst.$refNodes[route];
     RelationAst.$refNodes[route][relationNode.$id] = RelationAst.$refNodes[route][relationNode.$id] || [];
     componentNodes[relationNode.$id].push(wrapNode);
 
+    if (!isConnect) return false;
+    setTimeout(()=> {
+      connectNodes(wrapNode, RelationAst);
+    }, 0)
+
     if (RelationAst.isPageReady) {
-        setTimeout(()=>{
-            connectNodes(wrapNode, RelationAst);
+       setTimeout(()=>{
             RelationAst.mountedHandles
                 .forEach(function (fn, i) {
                     if (wrapNode.$parent) {

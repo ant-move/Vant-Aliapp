@@ -1,0 +1,40 @@
+<view class='page-container-classname'>
+                <van-nav-bar title='Popup 弹出层' left-text='返回' left-arrow=" " ref='saveChildRef1' onClick-left='onClickLeft'>
+</van-nav-bar><demo-block title='基础用法' padding=" " ref='saveChildRef2'>
+  <van-button is-inline='true' onClick='togglePopup' ref='saveChildRef3'>
+    弹出 Popup
+  </van-button>
+  <van-popup show='{{ show.middle }}' custom-class='center' transition='none' is-inline='true' onClose='togglePopup' onTransitionEnd='onTransitionEnd' ref='saveChildRef4'>
+    内容
+  </van-popup>
+</demo-block><demo-block title='弹出位置' padding=" " ref='saveChildRef5'>
+  <van-button is-inline='true' class='demo-margin-right' onClick='toggleBottomPopup' ref='saveChildRef6'>
+    底部弹出
+  </van-button>
+  <van-popup show='{{ show.bottom }}' position='bottom' is-inline='true' custom-class='bottom' onClose='toggleBottomPopup' onTransitionEnd='onTransitionEnd' ref='saveChildRef7'>
+    内容
+  </van-popup>
+  <van-button is-inline='true' class='demo-margin-right' onClick='toggleTopPopup' ref='saveChildRef8'>
+    顶部弹出
+  </van-button>
+  <van-popup show='{{ show.top }}' position='top' safe-area-inset-top=" " overlay='{{ false }}' is-inline='true' custom-class='top' onClose='toggleTopPopup' onTransitionEnd='onTransitionEnd' ref='saveChildRef9'>
+    内容
+  </van-popup>
+  <van-button is-inline='true' onClick='toggleRightPopup' ref='saveChildRef10'>
+    右侧弹出
+  </van-button>
+  <van-popup show='{{ show.right }}' position='right' is-inline='true' safe-area-inset-top=" " custom-class='right' onClose='toggleRightPopup' onTransitionEnd='onTransitionEnd' ref='saveChildRef11'>
+    <van-button is-inline='true' class='demo-margin-right' onClick='toggleRightPopup' ref='saveChildRef12'>
+      关闭弹层
+    </van-button>
+    <van-button is-inline='true' onClick='toggleRightPopup2' ref='saveChildRef13'>
+      右侧弹出
+    </van-button>
+    <van-popup show='{{ show.right2 }}' position='right' is-inline='true' safe-area-inset-top=" " custom-class='right' onClose='toggleRightPopup2' onTransitionEnd='onTransitionEnd' ref='saveChildRef14'>
+      <van-button is-inline='true' onClick='toggleRightPopup2' ref='saveChildRef15'>
+        关闭弹层
+      </van-button>
+    </van-popup>
+  </van-popup>
+</demo-block>
+            </view>

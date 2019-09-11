@@ -1,12 +1,8 @@
-"use strict";
-
-var _component = require("../common/component");
-
-var _shared = require("./shared");
-
-(0, _component.VantComponent)({
+import { VantComponent } from "../common/component";
+import { pickerProps } from "./shared";
+VantComponent({
   classes: ["active-class", "toolbar-class", "column-class"],
-  props: Object.assign({}, _shared.pickerProps, {
+  props: Object.assign({}, pickerProps, {
     valueKey: {
       type: String,
       value: "text"
@@ -18,38 +14,48 @@ var _shared = require("./shared");
     columns: {
       type: Array,
       value: [],
-      observer: function observer() {
-        var columns = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+
+      observer(columns = []) {
         this.setChildren(columns);
       }
+
     }
   }),
-  beforeCreate: function beforeCreate() {
+
+  beforeCreate() {
     this.children = [];
   },
+
   methods: {
-    noop: function noop() {},
-    setChildren: function setChildren(columns) {
+    noop() {},
+
+    setChildren(columns) {
       this.simple = columns.length && !columns[0].values;
       this.children = this.selectAllComponents(".van-picker__column");
 
       if (Array.isArray(this.children) && this.children.length) {
-        this.setColumns()["catch"](function () {});
+        this.setColumns().catch(() => {});
       }
     },
-    setColumns: function setColumns() {
-      var data = this.data;
-      var that = this;
-      var columns = this.simple ? [{
+
+    setColumns() {
+      const {
+        data
+      } = this;
+      let that = this;
+      const columns = this.simple ? [{
         values: data.columns
       }] : data.columns;
-      var stack = columns.map(function (column, index) {
+      const stack = columns.map(function (column, index) {
         that.setColumnValues(index, column.values);
       });
       return Promise.all(stack);
     },
-    emit: function emit(event) {
-      var type = event.currentTarget.dataset.type;
+
+    emit(event) {
+      const {
+        type
+      } = event.currentTarget.dataset;
 
       if (this.simple) {
         this.$emit(type, {
@@ -63,7 +69,8 @@ var _shared = require("./shared");
         });
       }
     },
-    onChange: function onChange(event) {
+
+    onChange(event) {
       if (this.simple) {
         this.$emit("change", {
           picker: this,
@@ -78,19 +85,22 @@ var _shared = require("./shared");
         });
       }
     },
+
     // get column instance by index
-    getColumn: function getColumn(index) {
-      var children = this.children && this.children[index];
+    getColumn(index) {
+      let children = this.children && this.children[index];
       return children;
     },
+
     // get column value by index
-    getColumnValue: function getColumnValue(index) {
-      var column = this.getColumn(index);
+    getColumnValue(index) {
+      const column = this.getColumn(index);
       return column && column.getValue();
     },
+
     // set column value by index
-    setColumnValue: function setColumnValue(index, value) {
-      var column = this.getColumn(index);
+    setColumnValue(index, value) {
+      const column = this.getColumn(index);
 
       if (column == null) {
         return Promise.reject(new Error("setColumnValue: 对应列不存在"));
@@ -98,14 +108,16 @@ var _shared = require("./shared");
 
       return column.setValue(value);
     },
+
     // get column option index by column index
-    getColumnIndex: function getColumnIndex(columnIndex) {
-      var data = (this.getColumn(columnIndex) || {}).data;
+    getColumnIndex(columnIndex) {
+      let data = (this.getColumn(columnIndex) || {}).data;
       return data && data.currentIndex;
     },
+
     // set column option index by column index
-    setColumnIndex: function setColumnIndex(columnIndex, optionIndex) {
-      var column = this.getColumn(columnIndex);
+    setColumnIndex(columnIndex, optionIndex) {
+      const column = this.getColumn(columnIndex);
 
       if (column == null) {
         return Promise.reject(new Error("setColumnIndex: 对应列不存在"));
@@ -113,67 +125,60 @@ var _shared = require("./shared");
 
       return column.setIndex(optionIndex);
     },
+
     // get options of column by index
-    getColumnValues: function getColumnValues(index) {
+    getColumnValues(index) {
       return (this.children[index] || {}).data.options;
     },
-    // set options of column by index
-    setColumnValues: function setColumnValues(index, options) {
-      var needReset = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
 
+    // set options of column by index
+    setColumnValues(index, options, needReset = true) {
       if (this.children && this.children.length <= 0) {
         this.setChildren(this.data.columns);
       }
 
-      var column = this.children[index];
+      const column = this.children[index];
 
       if (column == null) {
         return Promise.reject(new Error("setColumnValues: 对应列不存在"));
       }
 
-      var isSame = JSON.stringify(column.data.options) === JSON.stringify(options);
+      const isSame = JSON.stringify(column.data.options) === JSON.stringify(options);
 
       if (isSame) {
         return Promise.resolve();
       }
 
       return column.set({
-        options: options
-      }).then(function () {
+        options
+      }).then(() => {
         if (needReset) {
           column.setIndex(0);
         }
       });
     },
-    // get values of all columns
-    getValues: function getValues() {
-      return this.children.map(function (child) {
-        return child.getValue();
-      });
-    },
-    // set values of all columns
-    setValues: function setValues(values) {
-      var _this = this;
 
-      var stack = values.map(function (value, index) {
-        return _this.setColumnValue(index, value);
-      });
+    // get values of all columns
+    getValues() {
+      return this.children.map(child => child.getValue());
+    },
+
+    // set values of all columns
+    setValues(values) {
+      const stack = values.map((value, index) => this.setColumnValue(index, value));
       return Promise.all(stack);
     },
-    // get indexes of all columns
-    getIndexes: function getIndexes() {
-      return this.children.map(function (child) {
-        return child.data.currentIndex;
-      });
-    },
-    // set indexes of all columns
-    setIndexes: function setIndexes(indexes) {
-      var _this2 = this;
 
-      var stack = indexes.map(function (optionIndex, columnIndex) {
-        return _this2.setColumnIndex(columnIndex, optionIndex);
-      });
+    // get indexes of all columns
+    getIndexes() {
+      return this.children.map(child => child.data.currentIndex);
+    },
+
+    // set indexes of all columns
+    setIndexes(indexes) {
+      const stack = indexes.map((optionIndex, columnIndex) => this.setColumnIndex(columnIndex, optionIndex));
       return Promise.all(stack);
     }
+
   }
 });

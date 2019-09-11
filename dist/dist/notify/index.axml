@@ -1,0 +1,7 @@
+<view class='notify-index {{className}}' ref='saveChildRef0'>
+  <van-transition name='slide-down' show='{{ show }}' custom-class='van-notify' custom-style='background-color:{{ backgroundColor }}; color: {{ color }}; z-index: {{ zIndex }};' ref='saveChildRef1'>
+    <view a:if='{{ safeAreaInsetTop }}' class='van-notify__safe-top' style='padding-top: {{ statusBarHeight }}px'>
+    </view>
+    {{ text }}
+  </van-transition>
+</view>

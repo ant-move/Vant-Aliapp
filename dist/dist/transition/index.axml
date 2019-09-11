@@ -1,0 +1,6 @@
+<view class='transition-index {{className}}' ref='saveChildRef0'>
+  <view a:if='{{ inited }}' class='van-transition {{customClass}} {{ classes }}' style="-webkit-transition-duration:{{ currentDuration }}ms; transition-duration:{{ currentDuration }}ms; {{ display ? '' : 'display: none;' }} {{ customStyle }}" onTap='onTap' onTransitionend='onTransitionEnd'>
+    <slot>
+    </slot>
+  </view>
+</view>

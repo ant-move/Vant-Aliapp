@@ -1,7 +1,7 @@
-const _Component = require("/__antmove/component/componentClass.js")(
+const _Component = require("../__antmove/component/componentClass.js")(
     "Component"
 );
-const _my = require("/__antmove/api/index.js")(my);
+const _my = require("../__antmove/api/index.js")(my);
 _Component({
     data: {
         active: 0,

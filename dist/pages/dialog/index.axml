@@ -1,0 +1,27 @@
+<view class='page-container-classname'>
+                <demo-block title='提示弹窗' padding=" " ref='saveChildRef1'>
+  <van-button plain=" " type='primary' class='demo-margin-right' is-inline='true' onClick='onClickAlert' ref='saveChildRef2'>
+    提示弹窗
+  </van-button>
+  <van-button plain=" " type='primary' is-inline='true' onClick='onClickAlert2' ref='saveChildRef3'>
+    提示弹窗（无标题）
+  </van-button>
+</demo-block><demo-block title='确认弹窗' padding=" " ref='saveChildRef4'>
+  <van-button plain=" " type='primary' is-inline='true' onClick='onClickConfirm' ref='saveChildRef5'>
+    确认弹窗
+  </van-button>
+</demo-block><demo-block title='异步关闭' padding=" " ref='saveChildRef6'>
+  <van-button plain=" " type='primary' is-inline='true' onClick='onClickAsyncClose' ref='saveChildRef7'>
+    异步关闭
+  </van-button>
+</demo-block><demo-block title='组件调用' padding=" " ref='saveChildRef8'>
+  <van-button plain=" " type='danger' is-inline='true' onClick='showCustomDialog' ref='saveChildRef9'>
+    组件调用
+  </van-button>
+  <van-dialog use-slot=" " title='标题' show='{{ show }}' show-cancel-button=" " confirm-button-open-type='getUserInfo' onClose='onClose' onGetuserinfo='getUserInfo' ref='saveChildRef10'>
+    <image class='demo-image' src='https://img.yzcdn.cn/public_files/2017/09/05/4e3ea0898b1c2c416eec8c11c5360833.jpg'>
+    </image>
+  </van-dialog>
+</demo-block><van-dialog id='van-dialog' class='myvan-dialog' ref='saveChildRef11'>
+</van-dialog>
+            </view>

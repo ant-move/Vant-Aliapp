@@ -6,6 +6,7 @@ let posix = browserPath();
 const Relations = require('../../api/relations');
 const SelectComponent = require('./selectComponent');
 const { getUrl, processIntersectionObserver } = require('./utils.js')
+//const sjsObj = require('../../api/sjs/sjs');
 
 function processRelations (ctx, relationInfo = {}) {
     let route = ctx.is;
@@ -20,14 +21,21 @@ function processRelations (ctx, relationInfo = {}) {
                 return false;
             }
             ctx[node.$id] = function (ref) {
+              /**
+               * 子组件挂载的时候不一定会触发，而是在 didUpdate 才触发，保证只触发一次
+               */
+                this.selectComponentApp.preProcesscomponents(ref);
+
                 ctx.$antmove = ctx.$antmove || {};
+                ctx.$antmove.initChildRef = ctx.$antmove.initChildRef || {}
+              if (ctx.$antmove.initChildRef[ref.$id]) return false;
+              ctx.$antmove.initChildRef[ref.$id] = true;
                 if (ctx.$antmove[node.$id] === undefined) {
                     ctx.$antmove[node.$id] = 0;
                 } else {
                     ctx.$antmove[node.$id] += 1;
                 }
-                this.selectComponentApp.preProcesscomponents(ref);
-                node.$index = ctx.$antmove[node.$id];
+                // node.$index = ctx.$antmove[node.$id];
                 node.$route = route;
                 createNode.call(ctx, ref, null, node);
 
@@ -392,14 +400,14 @@ function observersHandle (observersObj, args, that) {
     });
 }
 
-function preProcesscomponents () {
-    if (this.props.id) {
-        this.$node.addComponentNodeId(this.props.id, this);
-    }
-    if (this.props.className) {
-        this.$node.addComponentNode(this.props.className, this);
-    }
-}
+// function preProcesscomponents () {
+//     if (this.props.id) {
+//         this.$node.addComponentNodeId(this.props.id, this);
+//     }
+//     if (this.props.className) {
+//         this.$node.addComponentNode(this.props.className, this);
+//     }
+// }
 
 /**
  * 
@@ -440,9 +448,12 @@ module.exports = {
 
         if (_opts.methods) {
             processMethods(_opts);
+        } else {
+          _opts.methods = {}
         }
         _opts.data = _opts.data || {};
         _opts.data.theId = Number(new Date());
+        
 
         let didMount = function () {
             _life.error && warnLife(`There is no error life cycle`, "error");
@@ -486,9 +497,10 @@ module.exports = {
             updateData.call(this);
             processRelations(this, Relations);
 
-            if (this.props.onChildRef) {
-                this.props.onChildRef(this);
-            }
+            
+                if (this.props.onChildRef) {
+                    this.props.onChildRef(this);
+                }
 
             this.selectComponentApp.connect();
 
@@ -507,18 +519,20 @@ module.exports = {
         };
         fnApp.add('didUpdate', didUpdate);
         fnApp.add('didUpdate', function () {
-            handleAfterInit.call(this);        
+            handleAfterInit.call(this);  
+            if (this.props.onChildRef) {
+                this.props.onChildRef(this);
+            }      
         });
         fnApp.insert('didMount', function () {
             if (!my.canIUse('component2')) {
-                _opts.onInit.call(this)
-                _opts.deriveDataFromProps.call(this)
+                _opts.onInit.call(this);
             }
         })
 
         fnApp.bind('deriveDataFromProps', _opts);
         fnApp.bind('didUpdate', _opts); 
-        fnApp.bind('didMount', _opts);
+        fnApp.bind('didMount', _opts, true);
         fnApp.add('didUnmount', options.detached);
         fnApp.add('didUnmount', function () {
             if (this.$node) {

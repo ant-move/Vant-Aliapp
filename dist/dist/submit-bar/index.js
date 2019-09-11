@@ -1,11 +1,7 @@
-"use strict";
-
-var _component = require("../common/component");
-
-var _safeArea = require("../mixins/safe-area");
-
-(0, _component.VantComponent)({
-  mixins: [(0, _safeArea.safeArea)()],
+import { VantComponent } from "../common/component";
+import { safeArea } from "../mixins/safe-area";
+VantComponent({
+  mixins: [safeArea()],
   classes: ["bar-class", "price-class", "button-class"],
   props: {
     tip: {
@@ -37,10 +33,12 @@ var _safeArea = require("../mixins/safe-area");
     },
     suffixLabel: String
   },
-  didUpdate: function didUpdate() {
-    var _this$data = this.data,
-        price = _this$data.price,
-        decimalLength = _this$data.decimalLength;
+
+  didUpdate() {
+    const {
+      price,
+      decimalLength
+    } = this.data;
     this.set({
       hasPrice: typeof price === "number",
       priceStr: (price / 100).toFixed(decimalLength)
@@ -49,23 +47,28 @@ var _safeArea = require("../mixins/safe-area");
       hasTip: typeof this.data.tip === "string"
     });
   },
+
   methods: {
-    updatePrice: function updatePrice() {
-      var _this$data2 = this.data,
-          price = _this$data2.price,
-          decimalLength = _this$data2.decimalLength;
+    updatePrice() {
+      const {
+        price,
+        decimalLength
+      } = this.data;
       this.set({
         hasPrice: typeof price === "number",
         priceStr: (price / 100).toFixed(decimalLength)
       });
     },
-    updateTip: function updateTip() {
+
+    updateTip() {
       this.set({
         hasTip: typeof this.data.tip === "string"
       });
     },
-    onSubmit: function onSubmit(event) {
+
+    onSubmit(event) {
       this.$emit("submit", event.detail);
     }
+
   }
 });

@@ -1,32 +1,24 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = Notify;
-
-var _utils = require("../common/utils");
-
-var defaultOptions = {
+import { isObj } from "../common/utils";
+const defaultOptions = {
   selector: ".van-notify",
   duration: 3000
 };
 
 function parseOptions(text) {
-  return (0, _utils.isObj)(text) ? text : {
-    text: text
+  return isObj(text) ? text : {
+    text
   };
 }
 
 function getContext() {
-  var pages = getCurrentPages();
+  const pages = getCurrentPages();
   return pages[pages.length - 1];
 }
 
-function Notify(options) {
+export default function Notify(options) {
   options = Object.assign({}, defaultOptions, parseOptions(options));
-  var context = options.context || getContext();
-  var notify = context.selectComponent(options.selector);
+  const context = options.context || getContext();
+  const notify = context.selectComponent(options.selector);
   delete options.context;
   delete options.selector;
 

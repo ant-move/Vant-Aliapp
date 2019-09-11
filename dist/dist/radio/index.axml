@@ -1,0 +1,20 @@
+<view class='radio-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class='van-radio {{customClass}}'>
+    <view a:if="{{ labelPosition === 'left' }}" class="{{labelClass}} {{ utils.bem('radio__label', [labelPosition, { disabled }]) }}" onTap='onClickLabel'>
+      <slot>
+      </slot>
+    </view>
+    <view class='van-radio__icon-wrap' onTap='onChange'>
+      <slot a:if='{{ useIconSlot }}' name='icon'>
+      </slot>
+      <van-icon a:else  name='success' class="{{ utils.bem('radio__icon', [shape, { disabled, checked: value === name }]) }}" style="{{ checkedColor && !disabled && value === name ? 'border-color:' + checkedColor + '; background-color:' + checkedColor : '' }}" custom-class='{{iconClass}}' custom-style='line-height: 20px;' ref='saveChildRef1'>
+      </van-icon>
+    </view>
+    <view a:if="{{ labelPosition === 'right' }}" class="{{labelClass}} {{ utils.bem('radio__label', [labelPosition, { disabled }]) }}" onTap='onClickLabel'>
+      <slot>
+      </slot>
+    </view>
+  </view>
+</view>

@@ -1,13 +1,13 @@
 {
   "name": "vant-aliapp",
-  "version": "1.0.4",
+  "version": "1.0.11",
   "description": "vant alipay mini app components",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "antmove wx-alipay -i ./wx/vant-app -o ./alipay/vant-app",
     "build-dd": "antmove wx-alipay -i ./wx/vant-app -o ./dd/vant-app",
-    "build-npm": "rm -rf dist && babel alipay/vant-app -d dist",
+    "build-npm": "rm -rf dist && cp -R alipay/vant-app dist && babel alipay/vant-app -d dist && rm -rf dist/node_modules dist/.tea",
     "pub": "npm run build && npm publish"
   },
   "files": [

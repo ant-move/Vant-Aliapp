@@ -1,16 +1,11 @@
-"use strict";
-
-var _page = _interopRequireDefault(require("../../common/page"));
-
-var _dialog = _interopRequireDefault(require("../../dist/dialog/dialog"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-(0, _page["default"])({
-  onClose: function onClose(event) {
-    var _event$detail = event.detail,
-        position = _event$detail.position,
-        instance = _event$detail.instance;
+import createPage from "../../common/page";
+import Dialog from "../../dist/dialog/dialog";
+createPage({
+  onClose(event) {
+    const {
+      position,
+      instance
+    } = event.detail;
 
     switch (position) {
       case "left":
@@ -19,13 +14,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
         break;
 
       case "right":
-        _dialog["default"].confirm({
+        Dialog.confirm({
           message: "确定删除吗？"
-        }).then(function () {
+        }).then(() => {
           instance.close();
         });
-
         break;
     }
   }
+
 });

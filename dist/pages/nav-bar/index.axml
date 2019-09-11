@@ -1,0 +1,11 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' ref='saveChildRef1'>
+  <van-nav-bar title='标题' left-text='返回' right-text='按钮' left-arrow=" " onClick-left='onClickLeft' onClick-right='onClickRight' ref='saveChildRef2'>
+  </van-nav-bar>
+</demo-block><demo-block title='高级用法' ref='saveChildRef3'>
+  <van-nav-bar title='标题' left-text='返回' left-arrow=" " ref='saveChildRef4'>
+    <van-icon name='search' slot='right' custom-class='icon' ref='saveChildRef5'>
+    </van-icon>
+  </van-nav-bar>
+</demo-block>
+            </view>

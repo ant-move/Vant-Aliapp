@@ -1,0 +1,36 @@
+<view class='field-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <van-cell icon='{{ leftIcon }}' title='{{ label }}' center='{{ center }}' border='{{ border }}' is-link='{{ isLink }}' required='{{ required }}' custom-style='{{ customStyle }}' title-width='{{ titleWidth }}' custom-class='van-field' size='{{ size }}' ref='saveChildRef1'>
+    <slot name='left-icon' slot='icon'>
+    </slot>
+    <slot name='label' slot='title'>
+    </slot>
+    <view class="van-field__body {{ type === 'textarea' ? 'van-field__body--textarea' : '' }}">
+      <textarea a:if="{{ type === 'textarea' }}" class="{{inputClass}} {{ utils.bem('field__input', [inputAlign, { disabled, error }]) }}" focus='{{ focus }}' value='{{ value }}' disabled='{{ disabled || readonly }}' maxlength='{{ maxlength }}' auto-height='{{ autosize }}' onInput='onInput' onBlur='onBlur' onFocus='onFocus' onConfirm='onConfirm'>
+        <view a:if='{{ value == null || value.length === 0 }}' style='{{ placeholderStyle }}' class="{{ utils.bem('field__placeholder', { error }) }}">
+          {{ placeholder }}
+        </view>
+      </textarea>
+      <input a:else  class="{{inputClass}} {{ utils.bem('field__input', [inputAlign, { disabled, error }]) }}" type='{{ type }}' focus='{{ focus }}' value='{{ value }}' disabled='{{ disabled || readonly }}' maxlength='{{ maxlength }}' placeholder='{{ placeholder }}' placeholder-style='{{ placeholderStyle }}' placeholder-class="{{ error ? 'van-field__placeholder--error' : 'van-field__placeholder' }}" confirm-type='{{ confirmType }}' confirm-hold='{{ confirmHold }}' password="{{ password || type === 'password' }}" onInput='onInput' onBlur='onBlur' onFocus='onFocus' onConfirm='onConfirm'>
+      </input>
+      <van-icon a:if='{{ showClear }}' size='16px' name='clear' class='van-field__clear-root van-field__icon-root' onTouchstart='onClear' ref='saveChildRef2'>
+      </van-icon>
+      <view class='van-field__icon-container' onTap='onClickIcon'>
+        <van-icon a:if='{{ rightIcon || icon }}' size='16px' name='{{ rightIcon || icon }}' class='van-field__icon-root {{ iconClass }}' custom-class='{{rightIconClass}}' ref='saveChildRef3'>
+        </van-icon>
+        <slot name='right-icon'>
+        </slot>
+        <slot name='icon'>
+        </slot>
+      </view>
+      <view class='van-field__button'>
+        <slot name='button'>
+        </slot>
+      </view>
+    </view>
+    <view a:if='{{ errorMessage }}' class="van-field__error-message {{ utils.bem('field__error', [errorMessageAlign, { disabled, error }]) }}">
+      {{ errorMessage }}
+    </view>
+  </van-cell>
+</view>

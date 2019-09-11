@@ -1,13 +1,8 @@
-"use strict";
-
-var _component = require("../common/component");
-
-var _color = require("../common/color");
-
-var _safeArea = require("../mixins/safe-area");
-
-(0, _component.VantComponent)({
-  mixins: [(0, _safeArea.safeArea)()],
+import { VantComponent } from "../common/component";
+import { RED } from "../common/color";
+import { safeArea } from "../mixins/safe-area";
+VantComponent({
+  mixins: [safeArea()],
   props: {
     text: String,
     color: {
@@ -16,7 +11,7 @@ var _safeArea = require("../mixins/safe-area");
     },
     backgroundColor: {
       type: String,
-      value: _color.RED
+      value: RED
     },
     duration: {
       type: Number,
@@ -28,8 +23,10 @@ var _safeArea = require("../mixins/safe-area");
     }
   },
   methods: {
-    show: function show() {
-      var duration = this.data.duration;
+    show() {
+      const {
+        duration
+      } = this.data;
       clearTimeout(this.timer);
       console.log(this.data.show, this.data);
       this.set({
@@ -37,15 +34,17 @@ var _safeArea = require("../mixins/safe-area");
       });
 
       if (duration > 0 && duration !== Infinity) {
-        this.timer = setTimeout(function () {//this.hide();
+        this.timer = setTimeout(() => {//this.hide();
         }, duration);
       }
     },
-    hide: function hide() {
+
+    hide() {
       clearTimeout(this.timer);
       this.set({
         show: false
       });
     }
+
   }
 });

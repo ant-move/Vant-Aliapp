@@ -1,0 +1,6 @@
+{
+  "name": "vant-app-alipay",
+  "dependencies": {
+    "vant-aliapp": "^1.0.11"
+  }
+}

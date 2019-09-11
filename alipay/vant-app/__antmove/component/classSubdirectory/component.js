@@ -8,7 +8,10 @@ const SelectComponent = require('./selectComponent');
 
 function processRelations (ctx, relationInfo = {}) {
     let route = ctx.is;
+    route = route.replace(/\/node_modules\/[a-z-]+\/[a-z-]+/, '')
+    
     let info = relationInfo[route] || relationInfo[route.substring(1)];
+    
     if (info) {
         processRelationHandle(info, function (node) {
             if (node.$id === 'saveChildRef0') {

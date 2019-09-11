@@ -1,8 +1,5 @@
-"use strict";
-
-var _component = require("../common/component");
-
-(0, _component.VantComponent)({
+import { VantComponent } from "../common/component";
+VantComponent({
   field: true,
   classes: ["icon-class"],
   props: {
@@ -44,18 +41,23 @@ var _component = require("../common/component");
     innerValue: 0
   },
   watch: {
-    value: function value(_value) {
-      if (_value !== this.data.innerValue) {
+    value(value) {
+      if (value !== this.data.innerValue) {
         this.set({
-          innerValue: _value
+          innerValue: value
         });
       }
     }
+
   },
   methods: {
-    onSelect: function onSelect(event) {
-      var data = this.data;
-      var score = event.currentTarget.dataset.score;
+    onSelect(event) {
+      const {
+        data
+      } = this;
+      const {
+        score
+      } = event.currentTarget.dataset;
 
       if (!data.disabled && !data.readonly) {
         this.set({
@@ -65,13 +67,13 @@ var _component = require("../common/component");
         this.$emit("change", score + 1);
       }
     },
-    onTouchMove: function onTouchMove(event) {
-      var _this = this;
 
-      var _event$touches$ = event.touches[0],
-          clientX = _event$touches$.clientX,
-          clientY = _event$touches$.clientY;
-      var childName = "";
+    onTouchMove(event) {
+      const {
+        clientX,
+        clientY
+      } = event.touches[0];
+      let childName = "";
 
       if (this.props) {
         childName = "." + this.props.childName;
@@ -79,27 +81,24 @@ var _component = require("../common/component");
         childName = "." + this.properties.childName;
       }
 
-      var nodes = this.selectAllComponents(childName);
-      this.getRect(childName, true).then(function (list) {
+      let nodes = this.selectAllComponents(childName);
+      this.getRect(childName, true).then(list => {
         if (nodes[0] && nodes[0]["props"]) {
-          list.map(function (item, index) {
+          list.map((item, index) => {
             item["dataset"] = {};
             item["dataset"]["score"] = nodes[index].props["data-score"];
           });
         }
 
-        var target = list.sort(function (item) {
-          return item.right - item.left;
-        }).find(function (item) {
-          return clientX >= item.left && clientX <= item.right && clientY >= item.top && clientY <= item.bottom;
-        });
+        const target = list.sort(item => item.right - item.left).find(item => clientX >= item.left && clientX <= item.right && clientY >= item.top && clientY <= item.bottom);
 
         if (target != null) {
-          _this.onSelect(Object.assign({}, event, {
+          this.onSelect(Object.assign({}, event, {
             currentTarget: target
           }));
         }
       });
     }
+
   }
 });

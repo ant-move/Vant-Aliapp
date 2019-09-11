@@ -1,22 +1,20 @@
-"use strict";
-
-var _component = require("../common/component");
-
-(0, _component.VantComponent)({
+import { VantComponent } from "../common/component";
+VantComponent({
   field: true,
   relation: {
     name: "radio",
     type: "descendant",
-    linked: function linked(target) {
+
+    linked(target) {
       this.children = this.children || [];
       this.children.push(target);
       this.updateChild(target);
     },
-    unlinked: function unlinked(target) {
-      this.children = this.children.filter(function (child) {
-        return child !== target;
-      });
+
+    unlinked(target) {
+      this.children = this.children.filter(child => child !== target);
     }
+
   },
   props: {
     value: {
@@ -29,21 +27,20 @@ var _component = require("../common/component");
     }
   },
   methods: {
-    updateChildren: function updateChildren() {
-      var _this = this;
-
-      (this.children || []).forEach(function (child) {
-        return _this.updateChild(child);
-      });
+    updateChildren() {
+      (this.children || []).forEach(child => this.updateChild(child));
     },
-    updateChild: function updateChild(child) {
-      var _this$data = this.data,
-          value = _this$data.value,
-          disabled = _this$data.disabled;
+
+    updateChild(child) {
+      const {
+        value,
+        disabled
+      } = this.data;
       child.set({
-        value: value,
+        value,
         disabled: disabled || child.data.disabled
       });
     }
+
   }
 });

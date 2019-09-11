@@ -1,15 +1,12 @@
-"use strict";
-
-var _component = require("../common/component");
-
-var _transition = require("../mixins/transition");
-
-(0, _component.VantComponent)({
+import { VantComponent } from "../common/component";
+import { transition } from "../mixins/transition";
+VantComponent({
   classes: ["enter-class", "enter-active-class", "enter-to-class", "leave-class", "leave-active-class", "leave-to-class"],
-  mixins: [(0, _transition.transition)(true)],
+  mixins: [transition(true)],
   methods: {
-    onTap: function onTap() {
+    onTap() {
       this.props.onTap && this.props.onTap();
     }
+
   }
 });

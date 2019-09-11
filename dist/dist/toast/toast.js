@@ -1,13 +1,5 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _utils = require("../common/utils");
-
-var defaultOptions = {
+import { isObj } from "../common/utils";
+const defaultOptions = {
   type: "text",
   mask: false,
   message: "",
@@ -19,24 +11,24 @@ var defaultOptions = {
   loadingType: "circular",
   selector: ".van-toast"
 };
-var queue = [];
-var currentOptions = Object.assign({}, defaultOptions);
+let queue = [];
+let currentOptions = Object.assign({}, defaultOptions);
 
 function parseOptions(message) {
-  return (0, _utils.isObj)(message) ? message : {
-    message: message
+  return isObj(message) ? message : {
+    message
   };
 }
 
 function getContext() {
-  var pages = getCurrentPages();
+  const pages = getCurrentPages();
   return pages[pages.length - 1];
 }
 
 function Toast(toastOptions) {
-  var options = Object.assign({}, currentOptions, parseOptions(toastOptions));
-  var context = options.context || getContext();
-  var toast = context.selectComponent(options.selector);
+  const options = Object.assign({}, currentOptions, parseOptions(toastOptions));
+  const context = options.context || getContext();
+  const toast = context.selectComponent(options.selector);
 
   if (!toast) {
     console.warn("未找到 van-toast 节点，请确认 selector 及 context 是否正确");
@@ -46,7 +38,7 @@ function Toast(toastOptions) {
   delete options.context;
   delete options.selector;
 
-  toast.clear = function () {
+  toast.clear = () => {
     toast.set({
       show: false
     });
@@ -61,43 +53,36 @@ function Toast(toastOptions) {
   clearTimeout(toast.timer);
 
   if (options.duration > 0) {
-    toast.timer = setTimeout(function () {
+    toast.timer = setTimeout(() => {
       toast.clear();
-      queue = queue.filter(function (item) {
-        return item !== toast;
-      });
+      queue = queue.filter(item => item !== toast);
     }, options.duration);
   }
 
   return toast;
 }
 
-var createMethod = function createMethod(type) {
-  return function (options) {
-    return Toast(Object.assign({
-      type: type
-    }, parseOptions(options)));
-  };
-};
+const createMethod = type => options => Toast(Object.assign({
+  type
+}, parseOptions(options)));
 
 Toast.loading = createMethod("loading");
 Toast.success = createMethod("success");
 Toast.fail = createMethod("fail");
 
-Toast.clear = function () {
-  queue.forEach(function (toast) {
+Toast.clear = () => {
+  queue.forEach(toast => {
     toast.clear();
   });
   queue = [];
 };
 
-Toast.setDefaultOptions = function (options) {
+Toast.setDefaultOptions = options => {
   Object.assign(currentOptions, options);
 };
 
-Toast.resetDefaultOptions = function () {
+Toast.resetDefaultOptions = () => {
   currentOptions = Object.assign({}, defaultOptions);
 };
 
-var _default = Toast;
-exports["default"] = _default;
+export default Toast;

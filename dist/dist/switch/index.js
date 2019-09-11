@@ -1,8 +1,5 @@
-"use strict";
-
-var _component = require("../common/component");
-
-(0, _component.VantComponent)({
+import { VantComponent } from "../common/component";
+VantComponent({
   field: true,
   classes: ["node-class"],
   props: {
@@ -25,29 +22,34 @@ var _component = require("../common/component");
     }
   },
   watch: {
-    checked: function checked(value) {
+    checked(value) {
       this.set({
-        value: value
+        value
       });
     }
+
   },
-  created: function created() {
+
+  created() {
     this.set({
       value: this.data.checked
     });
   },
+
   methods: {
-    onClick: function onClick() {
-      var _this$data = this.data,
-          activeValue = _this$data.activeValue,
-          inactiveValue = _this$data.inactiveValue;
+    onClick() {
+      const {
+        activeValue,
+        inactiveValue
+      } = this.data;
 
       if (!this.data.disabled && !this.data.loading) {
-        var checked = this.data.checked === activeValue;
-        var value = checked ? inactiveValue : activeValue;
+        const checked = this.data.checked === activeValue;
+        const value = checked ? inactiveValue : activeValue;
         this.$emit("input", value);
         this.$emit("change", value);
       }
     }
+
   }
 });

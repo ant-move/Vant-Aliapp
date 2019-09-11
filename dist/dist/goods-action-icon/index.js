@@ -1,16 +1,10 @@
-"use strict";
-
-var _component = require("../common/component");
-
-var _link = require("../mixins/link");
-
-var _button = require("../mixins/button");
-
-var _openType = require("../mixins/open-type");
-
-(0, _component.VantComponent)({
+import { VantComponent } from "../common/component";
+import { link } from "../mixins/link";
+import { button } from "../mixins/button";
+import { openType } from "../mixins/open-type";
+VantComponent({
   classes: ["icon-class", "text-class"],
-  mixins: [_link.link, _button.button, _openType.openType],
+  mixins: [link, button, openType],
   props: {
     text: String,
     info: String,
@@ -19,9 +13,10 @@ var _openType = require("../mixins/open-type");
     loading: Boolean
   },
   methods: {
-    onClick: function onClick(event) {
+    onClick(event) {
       this.$emit("click", event.detail);
       this.jumpLink();
     }
+
   }
 });

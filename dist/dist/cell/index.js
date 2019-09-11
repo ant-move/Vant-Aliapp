@@ -1,12 +1,8 @@
-"use strict";
-
-var _link = require("../mixins/link");
-
-var _component = require("../common/component");
-
-(0, _component.VantComponent)({
+import { link } from "../mixins/link";
+import { VantComponent } from "../common/component";
+VantComponent({
   classes: ["title-class", "label-class", "value-class", "right-icon-class", "hover-class"],
-  mixins: [_link.link],
+  mixins: [link],
   props: {
     title: null,
     value: null,
@@ -27,9 +23,10 @@ var _component = require("../common/component");
     }
   },
   methods: {
-    onClick: function onClick(event) {
+    onClick(event) {
       this.$emit("click", event.detail);
       this.jumpLink();
     }
+
   }
 });

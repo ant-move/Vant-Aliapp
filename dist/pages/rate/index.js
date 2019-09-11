@@ -1,12 +1,5 @@
-"use strict";
-
-var _page = _interopRequireDefault(require("../../common/page"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-(0, _page["default"])({
+import createPage from "../../common/page";
+createPage({
   data: {
     value1: 3,
     value2: 3,
@@ -15,8 +8,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     value5: 4,
     value6: 3
   },
-  onChange: function onChange(event) {
-    var key = event.currentTarget.dataset.key;
-    this.setData(_defineProperty({}, key, event.detail));
+
+  onChange(event) {
+    const {
+      key
+    } = event.currentTarget.dataset;
+    this.setData({
+      [key]: event.detail
+    });
   }
+
 });

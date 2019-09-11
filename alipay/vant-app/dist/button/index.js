@@ -1,4 +1,4 @@
-const _my = require("/__antmove/api/index.js")(my);
+const _my = require("../../__antmove/api/index.js")(my);
 import { VantComponent } from "../common/component";
 import { button } from "../mixins/button";
 import { openType } from "../mixins/open-type";

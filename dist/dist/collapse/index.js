@@ -1,20 +1,18 @@
-"use strict";
-
-var _component = require("../common/component");
-
-(0, _component.VantComponent)({
+import { VantComponent } from "../common/component";
+VantComponent({
   relation: {
     name: "collapse-item",
     type: "descendant",
-    linked: function linked(child) {
+
+    linked(child) {
       this.children.push(child);
       this.updateExpanded();
     },
-    unlinked: function unlinked(child) {
-      this.children = this.children.filter(function (item) {
-        return item !== child;
-      });
+
+    unlinked(child) {
+      this.children = this.children.filter(item => item !== child);
     }
+
   },
   props: {
     value: {
@@ -30,26 +28,28 @@ var _component = require("../common/component");
       value: true
     }
   },
-  beforeCreate: function beforeCreate() {
+
+  beforeCreate() {
     this.children = [];
   },
+
   methods: {
-    updateExpanded: function updateExpanded() {
+    updateExpanded() {
       if (this["children"]) {
-        this.children.forEach(function (child) {
+        this.children.forEach(child => {
           child.updateExpanded();
         });
       }
     },
-    "switch": function _switch(name, expanded) {
-      var _this$data = this.data,
-          accordion = _this$data.accordion,
-          value = _this$data.value;
+
+    switch(name, expanded) {
+      const {
+        accordion,
+        value
+      } = this.data;
 
       if (!accordion) {
-        name = expanded ? (value || []).concat(name) : (value || []).filter(function (activeName) {
-          return activeName !== name;
-        });
+        name = expanded ? (value || []).concat(name) : (value || []).filter(activeName => activeName !== name);
       } else {
         name = expanded ? name : "";
       }
@@ -57,5 +57,6 @@ var _component = require("../common/component");
       this.$emit("change", name);
       this.$emit("input", name);
     }
+
   }
 });

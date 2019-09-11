@@ -1,12 +1,7 @@
-"use strict";
+const _my = require("../../__antmove/api/index.js")(my);
 
-var _page = _interopRequireDefault(require("../../common/page"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-var _my = require("/__antmove/api/index.js")(my);
-
-(0, _page["default"])({
+import createPage from "../../common/page";
+createPage({
   data: {
     sms: "",
     value: "",
@@ -16,24 +11,31 @@ var _my = require("/__antmove/api/index.js")(my);
     message: "",
     phone: "1365577"
   },
-  onClickIcon: function onClickIcon() {
+
+  onClickIcon() {
     _my.showToast({
       icon: "none",
       title: "点击图标"
     });
   },
-  onFieldChange: function onFieldChange(_ref) {
-    var detail = _ref.detail;
+
+  onFieldChange({
+    detail
+  }) {
     console.log("change", detail);
     this.setData({
       sms: detail
     });
   },
-  onFieldBlur: function onFieldBlur(_ref2) {
-    var detail = _ref2.detail;
+
+  onFieldBlur({
+    detail
+  }) {
     console.log("blur", detail);
   },
-  onSendSms: function onSendSms() {
+
+  onSendSms() {
     console.log("onSendSms", this.data.sms);
   }
+
 });

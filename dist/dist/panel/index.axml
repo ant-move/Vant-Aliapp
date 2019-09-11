@@ -1,0 +1,16 @@
+<view class='panel-index {{className}}' ref='saveChildRef0'>
+  <view class='van-panel van-hairline--top-bottom {{customClass}}'>
+    <van-cell a:if='{{ title || desc || status }}' title='{{ title }}' label='{{ desc }}' value='{{ status }}' custom-class='{{headerClass}}' value-class='van-panel__header-value' ref='saveChildRef1'>
+    </van-cell>
+    <slot a:else  name='header'>
+    </slot>
+    <view class='van-panel__content'>
+      <slot>
+      </slot>
+    </view>
+    <view a:if='{{ useFooterSlot }}' class='van-panel__footer van-hairline--top {{footerClass}}'>
+      <slot name='footer'>
+      </slot>
+    </view>
+  </view>
+</view>
