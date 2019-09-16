@@ -1,7 +1,11 @@
-import { VantComponent } from "../common/component";
-import { touch } from "../mixins/touch";
-VantComponent({
-  mixins: [touch],
+"use strict";
+
+var _component = require("../common/component");
+
+var _touch = require("../mixins/touch");
+
+(0, _component.VantComponent)({
+  mixins: [_touch.touch],
   props: {
     disabled: Boolean,
     useButtonSlot: Boolean,
@@ -29,56 +33,55 @@ VantComponent({
     }
   },
   watch: {
-    value(value) {
-      this.updateValue(value, false);
+    value: function value(_value) {
+      this.updateValue(_value, false);
     }
-
   },
-
-  created() {
+  created: function created() {
     this.updateValue(this.data.value);
   },
-
   methods: {
-    onTouchStart(event) {
+    onTouchStart: function onTouchStart(event) {
       if (this.data.disabled) return;
       this.touchStart(event);
       this.startValue = this.format(this.data.value);
     },
+    onTouchMove: function onTouchMove(event) {
+      var _this = this;
 
-    onTouchMove(event) {
       if (this.data.disabled) return;
       this.touchMove(event);
-      this.getRect(".van-slider").then(rect => {
-        const diff = this.deltaX / rect.width * 100;
-        this.newValue = this.startValue + diff;
-        this.updateValue(this.newValue, false, true);
+      this.getRect(".van-slider").then(function (rect) {
+        var diff = _this.deltaX / rect.width * 100;
+        _this.newValue = _this.startValue + diff;
+
+        _this.updateValue(_this.newValue, false, true);
       });
     },
-
-    onTouchEnd() {
+    onTouchEnd: function onTouchEnd() {
       if (this.data.disabled) return;
       this.updateValue(this.newValue, true);
     },
+    onClick: function onClick(event) {
+      var _this2 = this;
 
-    onClick(event) {
       if (this.data.disabled) return;
-      this.getRect(".van-slider").then(rect => {
-        const value = (event.detail.x - rect.left) / rect.width * 100;
-        this.updateValue(value, true);
+      this.getRect(".van-slider").then(function (rect) {
+        var value = (event.detail.x - rect.left) / rect.width * 100;
+
+        _this2.updateValue(value, true);
       });
     },
-
-    updateValue(value, end, drag) {
+    updateValue: function updateValue(value, end, drag) {
       value = this.format(value);
       this.set({
-        value,
-        barStyle: `width: ${value}%; height: ${this.data.barHeight};`
+        value: value,
+        barStyle: "width: ".concat(value, "%; height: ").concat(this.data.barHeight, ";")
       });
 
       if (drag) {
         this.$emit("drag", {
-          value
+          value: value
         });
       }
 
@@ -86,15 +89,12 @@ VantComponent({
         this.$emit("change", value);
       }
     },
-
-    format(value) {
-      const {
-        max,
-        min,
-        step
-      } = this.data;
+    format: function format(value) {
+      var _this$data = this.data,
+          max = _this$data.max,
+          min = _this$data.min,
+          step = _this$data.step;
       return Math.round(Math.max(min, Math.min(value, max)) / step) * step;
     }
-
   }
 });

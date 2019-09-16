@@ -1,6 +1,8 @@
-const utils = require("./utils");
+"use strict";
 
-const infoObj = {
+var utils = require("./utils");
+
+var infoObj = {
   canIUse: {
     status: 0,
     desc: "判断小程序的 API，回调，参数，组件等是否在当前版本可用",
@@ -2502,7 +2504,7 @@ const infoObj = {
       msg: "返回值方法缺失",
       returnValue: {
         props: {
-          in: {
+          "in": {
             type: 0,
             desc: "将选择器的选取范围更改为自定义组件 component 内。（初始时，选择器仅选取页面范围的节点，不会选取任何自定义组件中的节点）"
           }

@@ -1,40 +1,40 @@
-import { VantComponent } from "../common/component";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+(0, _component.VantComponent)({
   relation: {
     type: "ancestor",
     name: "badge-group",
-
-    linked(target) {
+    linked: function linked(target) {
       this.parent = target;
     }
-
   },
   props: {
     info: null,
     title: String
   },
   methods: {
-    onClick() {
-      const {
-        parent
-      } = this;
+    onClick: function onClick() {
+      var _this = this;
+
+      var parent = this.parent;
 
       if (!parent) {
         return;
       }
 
-      const index = parent.badges.indexOf(this);
-      parent.setActive(index).then(() => {
-        this.$emit("click", index);
+      var index = parent.badges.indexOf(this);
+      parent.setActive(index).then(function () {
+        _this.$emit("click", index);
+
         parent.$emit("change", index);
       });
     },
-
-    setActive(active) {
+    setActive: function setActive(active) {
       return this.set({
-        active
+        active: active
       });
     }
-
   }
 });

@@ -1,13 +1,14 @@
-let id = 0;
+"use strict";
 
-const {
-  connectNodes
-} = require('./utils');
+var id = 0;
 
-const astCache = {};
+var _require = require('./utils'),
+    connectNodes = _require.connectNodes;
+
+var astCache = {};
 
 function createAstData() {
-  let RelationAst = {
+  var RelationAst = {
     $refNodes: {},
     $nodes: {},
     $page: null,
@@ -28,44 +29,46 @@ function createNode(ctx) {
 }
 
 createNode.prototype = {
-  getRootNode() {
-    let ctx = this.$self;
-    let cacheId = ctx.$page ? ctx.$page.$id : ctx.$id;
+  getRootNode: function getRootNode() {
+    var ctx = this.$self;
+    var cacheId = ctx.$page ? ctx.$page.$id : ctx.$id;
     return astCache[cacheId];
   },
-
-  setParent(parent) {
+  setParent: function setParent(parent) {
     this.$parent = parent;
     parent.appendChild(this);
   },
+  appendChildren: function appendChildren() {
+    var _this = this;
 
-  appendChildren() {
-    this.$children.forEach(child => {
-      this.appendChild(child);
+    this.$children.forEach(function (child) {
+      _this.appendChild(child);
     });
   },
-
-  destory() {
-    let index = this.$relationNode.$index;
+  destory: function destory() {
+    var index = this.$relationNode.$index;
     this.$parent.$children.splice(index, 1);
   },
-
-  appendChild(child) {
+  appendChild: function appendChild(child) {
     this.$children.push(child);
     child.$parent = this;
   },
-
-  removeChld(child) {
+  removeChld: function removeChld(child) {
     this.$children = this.$children.filter(function (el) {
       return el.$id !== child.$id;
     });
   }
-
 };
 
-module.exports = function (node, cb = () => {}, relationNode, bool = false, _bool = false) {
-  let RelationAst = {};
-  let cacheId = this.$page ? this.$page.$id : this.$id;
+module.exports = function (node) {
+  var cb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
+  var relationNode = arguments.length > 2 ? arguments[2] : undefined;
+  var bool = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+
+  var _bool = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
+
+  var RelationAst = {};
+  var cacheId = this.$page ? this.$page.$id : this.$id;
 
   if (_bool) {
     return astCache[cacheId];
@@ -77,8 +80,8 @@ module.exports = function (node, cb = () => {}, relationNode, bool = false, _boo
   }
 
   RelationAst = astCache[cacheId];
-  let wrapNode = new createNode(node);
-  let route = relationNode.$route;
+  var wrapNode = new createNode(node);
+  var route = relationNode.$route;
   RelationAst.$page = wrapNode;
   /**
      * component
@@ -87,18 +90,18 @@ module.exports = function (node, cb = () => {}, relationNode, bool = false, _boo
   wrapNode.$relationNode = relationNode;
   RelationAst.$nodes[node.$id] = wrapNode;
   RelationAst.$refNodes[route] = RelationAst.$refNodes[route] || {};
-  let componentNodes = RelationAst.$refNodes[route];
+  var componentNodes = RelationAst.$refNodes[route];
   RelationAst.$refNodes[route][relationNode.$id] = RelationAst.$refNodes[route][relationNode.$id] || [];
   componentNodes[relationNode.$id].push(wrapNode);
 
   if (RelationAst.isPageReady) {
-    setTimeout(() => {
+    setTimeout(function () {
       connectNodes(wrapNode, RelationAst);
       RelationAst.mountedHandles.forEach(function (fn, i) {
         if (wrapNode.$parent) {
           fn();
         } else {
-          setTimeout(() => {
+          setTimeout(function () {
             fn();
           }, 0);
         }

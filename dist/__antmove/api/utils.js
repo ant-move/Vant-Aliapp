@@ -1,29 +1,41 @@
-const logUtils = require('./log.js');
+"use strict";
 
-let hasProxy = typeof Proxy !== 'undefined';
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-let _Proxy = function () {};
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var logUtils = require('./log.js');
+
+var hasProxy = typeof Proxy !== 'undefined';
+
+var _Proxy = function _Proxy() {};
 
 if (hasProxy) _Proxy = Proxy;
-module.exports = { ...logUtils,
-
+module.exports = _objectSpread({}, logUtils, {
   /**
    * defineGetter
    */
-  defineGetter(obj = {}, descObj = {}, cb = () => {}) {
+  defineGetter: function defineGetter() {
+    var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var descObj = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var cb = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {};
+
     if (!hasProxy) {
       return obj;
     }
 
     return new _Proxy(obj, {
-      get(target, attr) {
+      get: function get(target, attr) {
         if (typeof attr === 'string' && descObj[attr] && descObj[attr].type === 0) {
           cb && cb(target, attr);
         }
 
         return target[attr];
       }
-
     });
   },
 
@@ -32,30 +44,31 @@ module.exports = { ...logUtils,
    * wxAttr: 微信key值
    * alipayAttr: 支付宝key值
    **/
-  objectMap(sourceObj = {}, wxAttr, alipayAttr) {
+  objectMap: function objectMap() {
+    var sourceObj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var wxAttr = arguments.length > 1 ? arguments[1] : undefined;
+    var alipayAttr = arguments.length > 2 ? arguments[2] : undefined;
+
     if (!hasProxy) {
       Object.defineProperty(sourceObj, wxAttr, {
-        get() {
+        get: function get() {
           return sourceObj[alipayAttr];
         }
-
       });
       return sourceObj;
     }
 
     return new _Proxy(sourceObj, {
-      get(target, attr) {
+      get: function get(target, attr) {
         if (attr === wxAttr) {
           return target[alipayAttr];
         }
       }
-
     });
   },
-
   // 类型转换
-  changeType(str) {
-    let hexA = new Array();
+  changeType: function changeType(str) {
+    var hexA = new Array();
 
     if (typeof attr === 'string') {
       // 十六进制字符串转字节数组
@@ -78,9 +91,8 @@ module.exports = { ...logUtils,
       return hexA;
     }
   },
-
   // https://github.com/wandergis/coordtransform/blob/master/index.js
-  wgs84togcj02(lng, lat) {
+  wgs84togcj02: function wgs84togcj02(lng, lat) {
     var ee = 0.00669342162296594323;
     var a = 6378245.0;
     lat = Number(lat);
@@ -102,9 +114,8 @@ module.exports = { ...logUtils,
     var mglng = lng + dlng;
     return [mglng, mglat];
   },
-
-  ab2hex(buffer) {
-    const hexArr = Array.prototype.map.call(new Uint8Array(buffer), function (bit) {
+  ab2hex: function ab2hex(buffer) {
+    var hexArr = Array.prototype.map.call(new Uint8Array(buffer), function (bit) {
       return ('00' + bit.toString(16)).slice(-2);
     });
     return hexArr.join('');
@@ -114,20 +125,23 @@ module.exports = { ...logUtils,
    * change attr for object
    * replace attr by newAttr
    */
-  changeObjAttr(obj = {}, attr, newAttr) {
+  changeObjAttr: function changeObjAttr() {
+    var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var attr = arguments.length > 1 ? arguments[1] : undefined;
+    var newAttr = arguments.length > 2 ? arguments[2] : undefined;
+
     if (obj[attr] !== undefined) {
       obj[newAttr] = obj[attr];
       delete obj[attr];
     } else {
-      console.warn(`${attr} attribute is missing!`);
+      console.warn("".concat(attr, " attribute is missing!"));
     }
 
     return obj;
   },
-
-  fnAppClass,
-  browserPath
-};
+  fnAppClass: fnAppClass,
+  browserPath: browserPath
+});
 
 function out_of_china(lng, lat) {
   // 纬度3.86~53.55,经度73.66~135.05
@@ -151,36 +165,38 @@ function transformlng(lng, lat) {
 }
 
 function fnAppClass() {
-  const fn = {
+  var fn = {
     $data: {},
-
-    add(key, cb = () => {}) {
+    add: function add(key) {
+      var cb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
       fn.$data[key] = fn.$data[key] || [];
       fn.$data[key].push(cb);
       return fn;
     },
-
-    insert(key, cb = () => {}) {
+    insert: function insert(key) {
+      var cb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
       fn.$data[key] = fn.$data[key] || [];
       fn.$data[key].unshift(cb);
     },
-
-    getFn(key) {
+    getFn: function getFn(key) {
       return fn.$data[key];
     },
-
-    bind(key, ctx = {}) {
+    bind: function bind(key) {
+      var ctx = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
       fn.$data[key] = fn.$data[key] || [];
       fn.add(key, ctx[key]);
 
-      ctx[key] = function (...params) {
-        let self = this;
+      ctx[key] = function () {
+        for (var _len = arguments.length, params = new Array(_len), _key = 0; _key < _len; _key++) {
+          params[_key] = arguments[_key];
+        }
+
+        var self = this;
         fn.getFn(key).forEach(function (cb) {
           cb.apply(self, params);
         });
       };
     }
-
   };
   return fn;
 }
@@ -340,12 +356,12 @@ var posix = {
     /* /*/
     ;
   },
-  join: function join(...p) {
-    if (p.length === 0) return '.';
+  join: function join() {
+    if (arguments.length === 0) return '.';
     var joined;
 
-    for (var i = 0; i < p.length; ++i) {
-      var arg = p[i];
+    for (var i = 0; i < arguments.length; ++i) {
+      var arg = i < 0 || arguments.length <= i ? undefined : arguments[i];
       assertPath(arg);
 
       if (arg.length > 0) {
@@ -611,8 +627,8 @@ var posix = {
     return path.slice(startDot, end);
   },
   format: function format(pathObject) {
-    if (pathObject === null || typeof pathObject !== 'object') {
-      throw new TypeError('The "pathObject" argument must be of type Object. Received type ' + typeof pathObject);
+    if (pathObject === null || _typeof(pathObject) !== 'object') {
+      throw new TypeError('The "pathObject" argument must be of type Object. Received type ' + _typeof(pathObject));
     }
 
     return _format('/', pathObject);

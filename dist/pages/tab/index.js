@@ -1,38 +1,38 @@
-const _my = require("../../__antmove/api/index.js")(my);
+"use strict";
 
-import createPage from "../../common/page";
-createPage({
+var _page = _interopRequireDefault(require("../../common/page"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var _my = require("../../__antmove/api/index.js")(my);
+
+(0, _page["default"])({
   data: {
     tabs: [1, 2, 3, 4],
     tabsMore: [1, 2, 3, 4, 5, 6, 7, 8]
   },
-
-  onClickDisabled(event) {
+  onClickDisabled: function onClickDisabled(event) {
     _my.showToast({
-      title: `标签 ${event.detail.index + 1} 已被禁用`,
+      title: "\u6807\u7B7E ".concat(event.detail.index + 1, " \u5DF2\u88AB\u7981\u7528"),
       icon: "none"
     });
   },
-
-  onChange(event) {
+  onChange: function onChange(event) {
     _my.showToast({
-      title: `切换到标签 ${event.detail.index + 1}`,
+      title: "\u5207\u6362\u5230\u6807\u7B7E ".concat(event.detail.index + 1),
       icon: "none"
     });
   },
-
-  onClickNavRight() {
+  onClickNavRight: function onClickNavRight() {
     _my.showToast({
       title: "点击 right nav",
       icon: "none"
     });
   },
-
-  onClick(event) {
+  onClick: function onClick(event) {
     _my.showToast({
-      title: `点击标签 ${event.detail.index + 1}`,
+      title: "\u70B9\u51FB\u6807\u7B7E ".concat(event.detail.index + 1),
       icon: "none"
     });
   }
-
 });

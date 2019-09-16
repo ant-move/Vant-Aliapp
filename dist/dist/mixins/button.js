@@ -1,8 +1,15 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.button = void 0;
+
 function Behavior(behavior) {
   return behavior;
 }
 
-export const button = Behavior({
+var button = Behavior({
   externalClasses: ["hover-class"],
   properties: {
     id: String,
@@ -20,3 +27,4 @@ export const button = Behavior({
     ariaLabel: String
   }
 });
+exports.button = button;

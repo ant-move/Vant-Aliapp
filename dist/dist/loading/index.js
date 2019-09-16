@@ -1,5 +1,8 @@
-import { VantComponent } from "../common/component";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+(0, _component.VantComponent)({
   props: {
     size: {
       type: String,

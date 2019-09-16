@@ -1,22 +1,23 @@
-const config = require('./config.js');
+"use strict";
 
-const env = config.env === 'production' ? 'prod' : 'dev'; // prod, 生产环境不输出
+var config = require('./config.js');
 
-let oldUrl = [];
-let flag = false;
+var env = config.env === 'production' ? 'prod' : 'dev'; // prod, 生产环境不输出
+
+var oldUrl = [];
+var flag = false;
 module.exports = {
-  info() {},
-
+  info: function info() {},
   // 生命周期报错警告记录函数
 
   /**
    * msg 为发出的警告信息
    * lifeName 为发出警告的生命周期名字
    * **/
-  warnLife(msg, lifeName) {
+  warnLife: function warnLife(msg, lifeName) {
     if (env === "prod") return false;
-    let _flag = true;
-    let rs = my.getStorageSync({
+    var _flag = true;
+    var rs = my.getStorageSync({
       key: "_pageMsg"
     });
 
@@ -26,7 +27,7 @@ module.exports = {
     }
 
     if (flag) {
-      for (let i = 0; i < oldUrl.length; i++) {
+      for (var i = 0; i < oldUrl.length; i++) {
         if (oldUrl[i] === rs.data.pagePath) {
           _flag = false;
           break;
@@ -40,28 +41,28 @@ module.exports = {
       oldUrl.push(rs.data.pagePath);
     }
 
-    let logInfo = {
+    var logInfo = {
       appName: "",
       appVersion: "",
       pages: []
     };
-    let page = {
+    var page = {
       pageName: "",
       path: "",
       open: false,
       logs: []
     };
-    let log = {
+    var log = {
       type: "",
       errorType: "",
       name: "",
       message: "",
       custom: ""
     };
-    let p = false;
-    let l = false;
-    let a = -1;
-    let res = my.getStorageSync({
+    var p = false;
+    var l = false;
+    var a = -1;
+    var res = my.getStorageSync({
       key: "__antmove_loginfo"
     });
 
@@ -76,13 +77,13 @@ module.exports = {
     log.message = msg;
 
     if (res.data !== null) {
-      for (let i = 0; i < res.data.pages.length; i++) {
-        if (rs.data.pagePath === res.data.pages[i].path) {
+      for (var _i = 0; _i < res.data.pages.length; _i++) {
+        if (rs.data.pagePath === res.data.pages[_i].path) {
           p = true;
-          a = i;
+          a = _i;
 
-          for (let j = 0; j < res.data.pages[i].logs.length; j++) {
-            if (lifeName === res.data.pages[i].logs[j].name) {
+          for (var j = 0; j < res.data.pages[_i].logs.length; j++) {
+            if (lifeName === res.data.pages[_i].logs[j].name) {
               l = true;
               if (l) break;
             }
@@ -126,31 +127,33 @@ module.exports = {
   * 6 - diff tagName
   * 7 - equal - 完全支持
   */
-  warn(msg, _desc = {
-    apiName: "",
-    errorType: "",
-    type: ""
-  }) {
+  warn: function warn(msg) {
+    var _desc = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
+      apiName: "",
+      errorType: "",
+      type: ""
+    };
+
     if (env === "prod") return false;
-    let logInfo = {
+    var logInfo = {
       appName: "",
       appVersion: "",
       pages: []
     };
-    let page = {
+    var page = {
       pageName: "",
       path: "",
       open: "",
       logs: []
     };
-    let log = {
+    var log = {
       type: "",
       errorType: "",
       name: "",
       message: "",
       custom: ""
     };
-    let res = my.getStorageSync({
+    var res = my.getStorageSync({
       key: "__antmove_loginfo"
     });
 
@@ -158,7 +161,7 @@ module.exports = {
       logInfo = res.data;
     }
 
-    let rs = my.getStorageSync({
+    var rs = my.getStorageSync({
       key: "_pageMsg"
     });
     page.pageName = rs.data.pageName;
@@ -180,17 +183,17 @@ module.exports = {
       log.custom = "默认值不同";
     }
 
-    let p = false;
-    let l = false;
-    let a = -1;
+    var p = false;
+    var l = false;
+    var a = -1;
 
     if (res.data !== null) {
-      for (let i = 0; i < res.data.pages.length; i++) {
+      for (var i = 0; i < res.data.pages.length; i++) {
         if (rs.data.pagePath === res.data.pages[i].path) {
           p = true;
           a = i;
 
-          for (let j = 0; j < res.data.pages[i].logs.length; j++) {
+          for (var j = 0; j < res.data.pages[i].logs.length; j++) {
             if (_desc.apiName === res.data.pages[i].logs[j].name) {
               l = true;
               if (l) break;
@@ -218,7 +221,5 @@ module.exports = {
     });
     console.warn(msg);
   },
-
-  error() {}
-
+  error: function error() {}
 };

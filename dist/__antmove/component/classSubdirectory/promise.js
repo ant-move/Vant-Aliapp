@@ -1,4 +1,8 @@
-let isArray = Array.isArray;
+"use strict";
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var isArray = Array.isArray;
 
 Promise.all = function (arr) {
   return new Promise(function (resolve, reject) {
@@ -12,7 +16,7 @@ Promise.all = function (arr) {
 
     function res(i, val) {
       try {
-        if (val && (typeof val === 'object' || typeof val === 'function')) {
+        if (val && (_typeof(val) === 'object' || typeof val === 'function')) {
           var then = val.then;
 
           if (typeof then === 'function') {

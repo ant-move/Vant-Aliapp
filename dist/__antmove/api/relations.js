@@ -1,3 +1,5 @@
+"use strict";
+
 module.exports = {
   'components/demo-block/index': {
     id: 'saveChildRef0',

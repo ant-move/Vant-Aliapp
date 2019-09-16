@@ -1,6 +1,10 @@
-import { VantComponent } from "../common/component";
-import { GREEN } from "../common/color";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+var _color = require("../common/color");
+
+(0, _component.VantComponent)({
   props: {
     icon: String,
     steps: Array,
@@ -11,7 +15,7 @@ VantComponent({
     },
     activeColor: {
       type: String,
-      value: GREEN
+      value: _color.GREEN
     }
   }
 });

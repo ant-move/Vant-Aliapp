@@ -1,68 +1,65 @@
-import createPage from "../../common/page";
-createPage({
+"use strict";
+
+var _page = _interopRequireDefault(require("../../common/page"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+(0, _page["default"])({
   data: {
     show: false,
     name: "fade",
     showCustom: false
   },
-
-  onClickFade() {
+  onClickFade: function onClickFade() {
     this.trigger("fade");
   },
-
-  onClickFadeUp() {
+  onClickFadeUp: function onClickFadeUp() {
     this.trigger("fade-up");
   },
-
-  onClickFadeDown() {
+  onClickFadeDown: function onClickFadeDown() {
     this.trigger("fade-down");
   },
-
-  onClickFadeLeft() {
+  onClickFadeLeft: function onClickFadeLeft() {
     this.trigger("fade-left");
   },
-
-  onClickFadeRight() {
+  onClickFadeRight: function onClickFadeRight() {
     this.trigger("fade-right");
   },
-
-  onClickSlideUp() {
+  onClickSlideUp: function onClickSlideUp() {
     this.trigger("slide-up");
   },
-
-  onClickSlideDown() {
+  onClickSlideDown: function onClickSlideDown() {
     this.trigger("slide-down");
   },
-
-  onClickSlideLeft() {
+  onClickSlideLeft: function onClickSlideLeft() {
     this.trigger("slide-left");
   },
-
-  onClickSlideRight() {
+  onClickSlideRight: function onClickSlideRight() {
     this.trigger("slide-right");
   },
+  trigger: function trigger(name) {
+    var _this = this;
 
-  trigger(name) {
     this.setData({
-      name,
+      name: name,
       show: true
     });
-    setTimeout(() => {
-      this.setData({
+    setTimeout(function () {
+      _this.setData({
         show: false
       });
     }, 500);
   },
+  onClickCustom: function onClickCustom() {
+    var _this2 = this;
 
-  onClickCustom() {
     this.setData({
       showCustom: true
     });
-    setTimeout(() => {
-      this.setData({
+    setTimeout(function () {
+      _this2.setData({
         showCustom: false
       });
     }, 500);
   }
-
 });

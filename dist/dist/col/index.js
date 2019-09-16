@@ -1,5 +1,8 @@
-import { VantComponent } from "../common/component";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+(0, _component.VantComponent)({
   relation: {
     name: "row",
     type: "ancestor"
@@ -12,16 +15,15 @@ VantComponent({
     style: ""
   },
   methods: {
-    setGutter(gutter) {
-      const padding = `${gutter / 2}px`;
-      const style = gutter ? `padding-left: ${padding}; padding-right: ${padding};` : "";
+    setGutter: function setGutter(gutter) {
+      var padding = "".concat(gutter / 2, "px");
+      var style = gutter ? "padding-left: ".concat(padding, "; padding-right: ").concat(padding, ";") : "";
 
       if (style !== this.data.style) {
         this.set({
-          style
+          style: style
         });
       }
     }
-
   }
 });

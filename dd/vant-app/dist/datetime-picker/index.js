@@ -286,7 +286,7 @@ VantComponent({
             const { data } = this;
             let value;
             const picker = this.getPicker();
-console.log(picker, this.selectAll())
+
             if (data.type === "time") {
                 const indexes = picker.getIndexes();
                 value = `${indexes[0] + data.minHour}:${indexes[1] +
@@ -377,14 +377,5 @@ console.log(picker, this.selectAll())
             this.updateColumnValue(innerValue).then(() => {
                 this.$emit("input", innerValue);
             });
-
-        
-    },
-    mounted () {
-          setTimeout(()=> {
-      console.log('-----', this.$id)
-            this.onChange()
-          }, 500)
-
     }
 });

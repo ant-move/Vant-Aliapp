@@ -1,8 +1,8 @@
 {
 	"component": true,
 	"usingComponents": {
-		"van-icon": "/dist/icon/index",
-		"van-popup": "/dist/popup/index",
-		"van-loading": "/dist/loading/index"
+		"van-icon": "../icon/index",
+		"van-popup": "../popup/index",
+		"van-loading": "../loading/index"
 	}
 }

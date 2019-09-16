@@ -1,5 +1,10 @@
-import createPage from "../../common/page";
-createPage({
+"use strict";
+
+var _page = _interopRequireDefault(require("../../common/page"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+(0, _page["default"])({
   data: {
     active: 0,
     steps: [{
@@ -16,11 +21,9 @@ createPage({
       desc: "描述信息"
     }]
   },
-
-  nextStep() {
+  nextStep: function nextStep() {
     this.setData({
       active: ++this.data.active % 4
     });
   }
-
 });

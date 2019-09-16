@@ -1,18 +1,36 @@
-export function isDef(value) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.isDef = isDef;
+exports.isObj = isObj;
+exports.isNumber = isNumber;
+exports.range = range;
+exports.nextTick = nextTick;
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function isDef(value) {
   return value !== undefined && value !== null;
 }
-export function isObj(x) {
-  const type = typeof x;
+
+function isObj(x) {
+  var type = _typeof(x);
+
   return x !== null && (type === "object" || type === "function");
 }
-export function isNumber(value) {
+
+function isNumber(value) {
   return /^\d+$/.test(value);
 }
-export function range(num, min, max) {
+
+function range(num, min, max) {
   return Math.min(Math.max(num, min), max);
 }
-export function nextTick(fn) {
-  setTimeout(() => {
+
+function nextTick(fn) {
+  setTimeout(function () {
     fn();
   }, 1000 / 30);
 }

@@ -1,5 +1,12 @@
-import createPage from "../../common/page";
-createPage({
+"use strict";
+
+var _page = _interopRequireDefault(require("../../common/page"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+(0, _page["default"])({
   data: {
     checkbox1: true,
     checkbox2: true,
@@ -13,35 +20,22 @@ createPage({
       active: "https://img.yzcdn.cn/public_files/2017/10/13/793c77793db8641c4c325b7f25bf130d.png"
     }
   },
-
-  onChange(event) {
+  onChange: function onChange(event) {
     console.log(event);
-    const {
-      key
-    } = event.currentTarget.dataset;
-    this.setData({
-      [key]: event.detail
-    });
+    var key = event.currentTarget.dataset.key;
+    this.setData(_defineProperty({}, key, event.detail));
   },
-
-  onClick(event) {
-    const {
-      value
-    } = event.currentTarget.dataset;
+  onClick: function onClick(event) {
+    var value = event.currentTarget.dataset.value;
     this.setData({
       radio3: value
     });
   },
-
-  toggle(event) {
-    const {
-      index
-    } = event.currentTarget.dataset;
-    const checkbox = this.selectComponent(`.checkboxes-${index}`);
+  toggle: function toggle(event) {
+    var index = event.currentTarget.dataset.index;
+    var checkbox = this.selectComponent(".checkboxes-".concat(index));
     console.log("toggle");
     checkbox.toggle();
   },
-
-  noop() {}
-
+  noop: function noop() {}
 });

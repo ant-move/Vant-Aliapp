@@ -1,22 +1,25 @@
-import { VantComponent } from "../common/component";
-import { safeArea } from "../mixins/safe-area";
-VantComponent({
-  mixins: [safeArea()],
+"use strict";
+
+var _component = require("../common/component");
+
+var _safeArea = require("../mixins/safe-area");
+
+(0, _component.VantComponent)({
+  mixins: [(0, _safeArea.safeArea)()],
   relation: {
     name: "tabbar-item",
     type: "descendant",
-
-    linked(target) {
+    linked: function linked(target) {
       this.children.push(target);
       target.parent = this;
       target.updateFromParent();
     },
-
-    unlinked(target) {
-      this.children = this.children.filter(item => item !== target);
+    unlinked: function unlinked(target) {
+      this.children = this.children.filter(function (item) {
+        return item !== target;
+      });
       this.updateChildren();
     }
-
   },
   props: {
     active: {
@@ -44,32 +47,28 @@ VantComponent({
       value: 1
     }
   },
-
-  beforeCreate() {
+  beforeCreate: function beforeCreate() {
     this.children = [];
   },
-
   methods: {
-    updateChildren() {
-      const {
-        children
-      } = this;
+    updateChildren: function updateChildren() {
+      var children = this.children;
 
       if (!Array.isArray(children) || !children.length) {
         return Promise.resolve();
       }
 
-      return Promise.all(children.map(child => child.updateFromParent()));
+      return Promise.all(children.map(function (child) {
+        return child.updateFromParent();
+      }));
     },
-
-    onChange(child) {
-      const index = this.children.indexOf(child);
-      const active = child.data.name || index;
+    onChange: function onChange(child) {
+      var index = this.children.indexOf(child);
+      var active = child.data.name || index;
 
       if (active !== this.data.active) {
         this.$emit("change", active);
       }
     }
-
   }
 });

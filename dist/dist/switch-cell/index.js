@@ -1,5 +1,8 @@
-import { VantComponent } from "../common/component";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+(0, _component.VantComponent)({
   field: true,
   props: {
     value: null,
@@ -27,24 +30,20 @@ VantComponent({
     }
   },
   watch: {
-    checked(value) {
+    checked: function checked(value) {
       this.set({
-        value
+        value: value
       });
     }
-
   },
-
-  created() {
+  created: function created() {
     this.set({
       value: this.data.checked
     });
   },
-
   methods: {
-    onChange(event) {
+    onChange: function onChange(event) {
       this.$emit("change", event.detail);
     }
-
   }
 });

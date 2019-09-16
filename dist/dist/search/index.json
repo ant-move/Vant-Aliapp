@@ -1,1 +1,1 @@
-{ "component": true, "usingComponents": { "van-field": "/dist/field/index" } }
+{ "component": true, "usingComponents": { "van-field": "../field/index" } }

@@ -1,14 +1,25 @@
-const utils = require("./utils");
+"use strict";
 
-const descObj = require("./desc.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-const apiObj = {
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var utils = require("./utils");
+
+var descObj = require("./desc.js");
+
+var apiObj = {
   startBeaconDiscovery: {
-    fn: function fn(obj = {}) {
-      let startBeaconDiscoveryParams = descObj.startBeaconDiscovery.body.params;
-      let params = utils.defineGetter(obj, startBeaconDiscoveryParams, function (obj, prop) {
-        utils.warn(`startBeaconDiscovery的参数不支持 ${prop} 属性!`, {
-          apiName: `startBeaconDiscovery/${prop}`,
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var startBeaconDiscoveryParams = descObj.startBeaconDiscovery.body.params;
+      var params = utils.defineGetter(obj, startBeaconDiscoveryParams, function (obj, prop) {
+        utils.warn("startBeaconDiscovery\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "startBeaconDiscovery/".concat(prop),
           errorType: startBeaconDiscoveryParams[prop].type,
           type: 'api'
         });
@@ -17,7 +28,8 @@ const apiObj = {
     }
   },
   stopBeaconDiscovery: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       my.stopBeaconDiscovery(obj);
     }
   },
@@ -39,12 +51,15 @@ const apiObj = {
     }
   },
   getBeacons: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       return my.getBeacons(obj);
     }
   },
   writeBLECharacteristicValue: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (obj.value) {
         obj.value = utils.ab2hex(obj.value);
       }
@@ -53,7 +68,8 @@ const apiObj = {
     }
   },
   onBLEConnectionStateChange: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       return my.onBLEConnectionStateChanged(obj);
     }
   },
@@ -66,11 +82,12 @@ const apiObj = {
     }
   },
   getBLEDeviceServices: {
-    fn: function fn(obj = {}) {
-      my.getBLEDeviceServices({ ...obj,
-        success: res => {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      my.getBLEDeviceServices(_objectSpread({}, obj, {
+        success: function success(res) {
           if (res.services) {
-            res.services.forEach(item => {
+            res.services.forEach(function (item) {
               item.uuid = item.serviceId;
               delete item.serviceId;
             });
@@ -78,15 +95,16 @@ const apiObj = {
 
           obj.success && obj.success(res);
         }
-      });
+      }));
     }
   },
   getBLEDeviceCharacteristics: {
-    fn: function fn(obj = {}) {
-      my.getBLEDeviceCharacteristics({ ...obj,
-        success: res => {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      my.getBLEDeviceCharacteristics(_objectSpread({}, obj, {
+        success: function success(res) {
           if (res.characteristics) {
-            res.characteristics.forEach(item => {
+            res.characteristics.forEach(function (item) {
               item.uuid = item.characteristicId;
               delete item.characteristicId;
             });
@@ -94,11 +112,13 @@ const apiObj = {
 
           obj.success && obj.success(res);
         }
-      });
+      }));
     }
   },
   addPhoneContact: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (obj.weChatNumber) {
         obj.alipayAccount = obj.weChatNumber;
       }
@@ -107,7 +127,9 @@ const apiObj = {
     }
   },
   startBluetoothDevicesDiscovery: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (obj.interval) {
         obj.interval = Math.round(obj.interval);
       }
@@ -117,13 +139,13 @@ const apiObj = {
   },
   onBluetoothDeviceFound: {
     fn: function fn(cb) {
-      let onBluetoothDeviceFoundProps = descObj.onBluetoothDeviceFound.body.returnValue.props;
+      var onBluetoothDeviceFoundProps = descObj.onBluetoothDeviceFound.body.returnValue.props;
       my.onBluetoothDeviceFound(function (res) {
-        let arr = res.devices.map(item => {
+        var arr = res.devices.map(function (item) {
           item.advertisData = utils.changeType(item.advertisData);
           return utils.defineGetter(item, onBluetoothDeviceFoundProps, function (obj, prop) {
-            utils.warn(`onBluetoothDeviceFound的返回值不支持 ${prop} 属性!`, {
-              apiName: `onBluetoothDeviceFound/${prop}`,
+            utils.warn("onBluetoothDeviceFound\u7684\u8FD4\u56DE\u503C\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+              apiName: "onBluetoothDeviceFound/".concat(prop),
               errorType: onBluetoothDeviceFoundProps[prop].type,
               type: 'api'
             });
@@ -135,15 +157,16 @@ const apiObj = {
     }
   },
   getBluetoothDevices: {
-    fn: function fn(obj = {}) {
-      let getBluetoothDevicesProps = descObj.getBluetoothDevices.body.returnValue.props.devices.props;
-      my.getBluetoothDevices({ ...obj,
-        success: res => {
-          let arr = res.devices.map(item => {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var getBluetoothDevicesProps = descObj.getBluetoothDevices.body.returnValue.props.devices.props;
+      my.getBluetoothDevices(_objectSpread({}, obj, {
+        success: function success(res) {
+          var arr = res.devices.map(function (item) {
             item.advertisData = utils.changeType(item.advertisData);
             return utils.defineGetter(item, getBluetoothDevicesProps, function (obj, prop) {
-              utils.warn(`getBluetoothDevices的返回值不支持 ${prop} 属性!`, {
-                apiName: `getBluetoothDevices/${prop}`,
+              utils.warn("getBluetoothDevices\u7684\u8FD4\u56DE\u503C\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+                apiName: "getBluetoothDevices/".concat(prop),
                 errorType: getBluetoothDevicesProps[prop].type,
                 type: 'api'
               });
@@ -152,11 +175,13 @@ const apiObj = {
           res.devices = arr;
           obj.success && obj.success(res);
         }
-      });
+      }));
     }
   },
   setClipboardData: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (obj.data) {
         obj.text = obj.data;
         delete obj.data;
@@ -166,21 +191,22 @@ const apiObj = {
     }
   },
   getClipboardData: {
-    fn: function fn(obj = {}) {
-      my.getClipboard({ ...obj,
-        success: res => {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      my.getClipboard(_objectSpread({}, obj, {
+        success: function success(res) {
           res.data = res.text;
           delete res.text;
           obj.success && obj.success(res);
         }
-      });
+      }));
     }
   },
   onNetworkStatusChange: {
     fn: function fn(cb) {
       my.onNetworkStatusChange(function (res) {
         res.networkType = res.networkType.toLowerCase();
-        let typeObjMap = {
+        var typeObjMap = {
           unknown: 'unknown',
           wifi: 'wifi',
           '2g': '2g',
@@ -199,7 +225,9 @@ const apiObj = {
     }
   },
   setScreenBrightness: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (obj.value) {
         obj.brightness = obj.value;
         delete obj.value;
@@ -209,28 +237,30 @@ const apiObj = {
     }
   },
   getScreenBrightness: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       my.getScreenBrightness({
-        success: res => {
+        success: function success(res) {
           res.value = res.brightness;
           delete res.brightness;
           obj.success && obj.success(res);
         },
-        fail: res => {
+        fail: function fail(res) {
           obj.fail && obj.fail(res);
         }
       });
     }
   },
   scanCode: {
-    fn: function fn(obj = {}) {
-      let scanCodeSuccessRes = descObj.scanCode.body.successRes;
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var scanCodeSuccessRes = descObj.scanCode.body.successRes;
 
       if (obj.scanType) {
-        obj.scanType.forEach(item => {
+        obj.scanType.forEach(function (item) {
           if (item === 'datamatrix' || item === 'pdf417') {
-            utils.warn(`${item} is not supported `, {
-              apiName: `scanCode/${item}`,
+            utils.warn("".concat(item, " is not supported "), {
+              apiName: "scanCode/".concat(item),
               errorType: 0,
               type: 'api'
             });
@@ -243,12 +273,11 @@ const apiObj = {
         delete obj.onlyFromCamera;
       }
 
-      my.scan({ ...obj,
-
-        success(res) {
-          let _res = utils.defineGetter(res, scanCodeSuccessRes, function (obj, prop) {
-            utils.warn(`scanCode的参数不支持 ${prop} 属性!`, {
-              apiName: `scanCode/${prop}`,
+      my.scan(_objectSpread({}, obj, {
+        success: function success(res) {
+          var _res = utils.defineGetter(res, scanCodeSuccessRes, function (obj, prop) {
+            utils.warn("scanCode\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+              apiName: "scanCode/".concat(prop),
               errorType: scanCodeSuccessRes[prop].type,
               type: 'api'
             });
@@ -258,16 +287,16 @@ const apiObj = {
           delete _res.code;
           obj.success && obj.success(_res);
         }
-
-      });
+      }));
     }
   },
   stopGyroscope: {
-    fn: function fn(obj = {}) {
-      let stopGyroscopeParams = descObj.stopGyroscope.body.params;
-      let params = utils.defineGetter(obj, stopGyroscopeParams, function (obj, prop) {
-        utils.warn(`stopGyroscope的参数不支持 ${prop} 属性!`, {
-          apiName: `stopGyroscope${prop}`,
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var stopGyroscopeParams = descObj.stopGyroscope.body.params;
+      var params = utils.defineGetter(obj, stopGyroscopeParams, function (obj, prop) {
+        utils.warn("stopGyroscope\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "stopGyroscope".concat(prop),
           errorType: stopGyroscopeParams[prop].type,
           type: 'api'
         });
@@ -277,11 +306,11 @@ const apiObj = {
   },
   onCompassChange: {
     fn: function fn(cb) {
-      let onCompassChangeReturnValue = descObj.onCompassChange.body.returnValue;
+      var onCompassChangeReturnValue = descObj.onCompassChange.body.returnValue;
       my.onCompassChange(function (res) {
-        let _res = utils.defineGetter(res, onCompassChangeReturnValue, function (obj, prop) {
-          utils.warn(`onCompassChange的返回值不支持 ${prop} 属性!`, {
-            apiName: `onCompassChange/${prop}`,
+        var _res = utils.defineGetter(res, onCompassChangeReturnValue, function (obj, prop) {
+          utils.warn("onCompassChange\u7684\u8FD4\u56DE\u503C\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+            apiName: "onCompassChange/".concat(prop),
             errorType: onCompassChangeReturnValue[prop].type,
             type: 'api'
           });
@@ -292,11 +321,12 @@ const apiObj = {
     }
   },
   stopCompass: {
-    fn: function fn(obj = {}) {
-      let stopCompassParams = descObj.stopCompass.body.params;
-      let params = utils.defineGetter(obj, stopCompassParams, function (obj, prop) {
-        utils.warn(`stopCompass的参数不支持 ${prop} 属性!`, {
-          apiName: `stopCompass/${prop}`,
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var stopCompassParams = descObj.stopCompass.body.params;
+      var params = utils.defineGetter(obj, stopCompassParams, function (obj, prop) {
+        utils.warn("stopCompass\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "stopCompass/".concat(prop),
           errorType: stopCompassParams[prop].type,
           type: 'api'
         });
@@ -305,11 +335,12 @@ const apiObj = {
     }
   },
   stopAccelerometer: {
-    fn: function fn(obj = {}) {
-      let stopAccelerometerParams = descObj.stopAccelerometer.body.params;
-      let params = utils.defineGetter(obj, stopAccelerometerParams, function (obj, prop) {
-        utils.warn(`stopAccelerometer的参数不支持 ${prop} 属性!`, {
-          apiName: `stopCompass/${prop}`,
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var stopAccelerometerParams = descObj.stopAccelerometer.body.params;
+      var params = utils.defineGetter(obj, stopAccelerometerParams, function (obj, prop) {
+        utils.warn("stopAccelerometer\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "stopCompass/".concat(prop),
           errorType: stopAccelerometerParams[prop].type,
           type: 'api'
         });
@@ -318,17 +349,18 @@ const apiObj = {
     }
   },
   makePhoneCall: {
-    fn: function fn(obj = {}) {
-      let makePhoneCallParams = descObj.makePhoneCall.body.params;
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var makePhoneCallParams = descObj.makePhoneCall.body.params;
 
       if (obj.phoneNumber) {
         obj.number = obj.phoneNumber;
         delete obj.phoneNumber;
       }
 
-      let params = utils.defineGetter(obj, makePhoneCallParams, function (obj, prop) {
-        utils.warn(`makePhoneCall的参数不支持 ${prop} 属性!`, {
-          apiName: `makePhoneCall/${prop}`,
+      var params = utils.defineGetter(obj, makePhoneCallParams, function (obj, prop) {
+        utils.warn("makePhoneCall\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "makePhoneCall/".concat(prop),
           errorType: makePhoneCallParams[prop].type,
           type: 'api'
         });
@@ -338,23 +370,23 @@ const apiObj = {
   },
   canIUse: {
     fn: function fn(params) {
-      let paramsList = params.split(".");
+      var paramsList = params.split(".");
 
       if (paramsList[1] && paramsList[1] === "success") {
         paramsList[1] = "return";
       }
 
-      let str = paramsList.join(".");
+      var str = paramsList.join(".");
       return my.canIUse(str);
     }
   },
   getSystemInfoSync: {
     fn: function fn() {
-      let ret = my.getSystemInfoSync();
-      let getSystemInfoSyncProps = descObj.getSystemInfoSync.body.returnValue.props;
+      var ret = my.getSystemInfoSync();
+      var getSystemInfoSyncProps = descObj.getSystemInfoSync.body.returnValue.props;
       return utils.defineGetter(ret, getSystemInfoSyncProps, function (obj, prop) {
-        utils.warn(`getSystemInfoSync的返回值不支持 ${prop} 属性!`, {
-          apiName: `getSystemInfoSync/${prop}`,
+        utils.warn("getSystemInfoSync\u7684\u8FD4\u56DE\u503C\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "getSystemInfoSync/".concat(prop),
           errorType: getSystemInfoSyncProps[prop].type,
           type: 'api'
         });
@@ -362,25 +394,27 @@ const apiObj = {
     }
   },
   getSystemInfo: {
-    fn: function fn(obj = {}) {
-      let getSystemInfoProps = descObj.getSystemInfo.body.returnValue.props;
-      my.getSystemInfo({ ...obj,
-        success: res => {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var getSystemInfoProps = descObj.getSystemInfo.body.returnValue.props;
+      my.getSystemInfo(_objectSpread({}, obj, {
+        success: function success(res) {
           res = utils.defineGetter(res, getSystemInfoProps, function (obj, prop) {
-            utils.warn(`getSystemInfo的返回值不支持 ${prop} 属性!`, {
-              apiName: `getSystemInfo/${prop}`,
+            utils.warn("getSystemInfo\u7684\u8FD4\u56DE\u503C\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+              apiName: "getSystemInfo/".concat(prop),
               errorType: getSystemInfoProps[prop].type,
               type: 'api'
             });
           });
           obj.success && obj.success(res);
         }
-      });
+      }));
     }
   },
   showToast: {
-    fn: function fn(obj = {}) {
-      let showToastProps = descObj.showToast.body.params.props;
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var showToastProps = descObj.showToast.body.params.props;
 
       if (obj.title) {
         obj.content = obj.title;
@@ -410,9 +444,9 @@ const apiObj = {
         obj.type = "success";
       }
 
-      let params = utils.defineGetter(obj, showToastProps, function (obj, prop) {
-        utils.warn(`showToast的参数不支持 ${prop} 属性!`, {
-          apiName: `showToast/${prop}`,
+      var params = utils.defineGetter(obj, showToastProps, function (obj, prop) {
+        utils.warn("showToast\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "showToast/".concat(prop),
           errorType: showToastProps[prop].type,
           type: 'api'
         });
@@ -421,8 +455,9 @@ const apiObj = {
     }
   },
   showModal: {
-    fn: function fn(obj = {}) {
-      let showModalProps = descObj.showModal.body.params.props;
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var showModalProps = descObj.showModal.body.params.props;
 
       if (obj.cancelText !== undefined) {
         obj.cancelButtonText = obj.cancelText;
@@ -434,16 +469,15 @@ const apiObj = {
         delete obj.confirmText;
       }
 
-      let params = utils.defineGetter(obj, showModalProps, function (obj, prop) {
-        utils.warn(`showModal的参数不支持 ${prop} 属性!`, {
-          apiName: `showModal/${prop}`,
+      var params = utils.defineGetter(obj, showModalProps, function (obj, prop) {
+        utils.warn("showModal\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "showModal/".concat(prop),
           errorType: showModalProps[prop].type,
           type: 'api'
         });
       });
-      my.confirm({ ...params,
-
-        success(res) {
+      my.confirm(_objectSpread({}, params, {
+        success: function success(res) {
           if (res.confirm) {
             res.cancel = false;
           } else {
@@ -452,22 +486,22 @@ const apiObj = {
 
           obj.success && obj.success(res);
         }
-
-      });
+      }));
     }
   },
   showLoading: {
-    fn: function fn(obj = {}) {
-      let showLoadingProps = descObj.showLoading.body.params.props;
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var showLoadingProps = descObj.showLoading.body.params.props;
 
       if (obj.title) {
         obj.content = obj.title;
         delete obj.title;
       }
 
-      let params = utils.defineGetter(obj, showLoadingProps, function (obj, prop) {
-        utils.warn(`showLoading的参数不支持 ${prop} 属性!`, {
-          apiName: `showLoading/${prop}`,
+      var params = utils.defineGetter(obj, showLoadingProps, function (obj, prop) {
+        utils.warn("showLoading\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "showLoading/".concat(prop),
           errorType: showLoadingProps[prop].type,
           type: 'api'
         });
@@ -476,28 +510,29 @@ const apiObj = {
     }
   },
   showActionSheet: {
-    fn: function fn(obj = {}) {
-      let showActionSheetProps = descObj.showActionSheet.body.params.props;
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var showActionSheetProps = descObj.showActionSheet.body.params.props;
 
       if (obj.itemList) {
         obj.items = obj.itemList;
         delete obj.itemList;
       }
 
-      let params = utils.defineGetter(obj, showActionSheetProps, function (obj, prop) {
-        utils.warn(`showActionSheet的参数不支持 ${prop} 属性!`, {
-          apiName: `showActionSheet/${prop}`,
+      var params = utils.defineGetter(obj, showActionSheetProps, function (obj, prop) {
+        utils.warn("showActionSheet\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "showActionSheet/".concat(prop),
           errorType: showActionSheetProps[prop].type,
           type: 'api'
         });
       });
-      my.showActionSheet({ ...params,
-        success: res => {
+      my.showActionSheet(_objectSpread({}, params, {
+        success: function success(res) {
           res.tapIndex = res.index;
           delete res.index;
           obj.success && obj.success(res);
         }
-      });
+      }));
     }
   },
   hideToast: {
@@ -533,7 +568,9 @@ const apiObj = {
     }
   },
   showNavigationBarLoading: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       try {
         my.showNavigationBarLoading();
         obj.success && obj.success({
@@ -549,12 +586,15 @@ const apiObj = {
     }
   },
   setNavigationBarTitle: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       return my.setNavigationBar(obj);
     }
   },
   hideNavigationBarLoading: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       try {
         my.hideNavigationBarLoading();
         obj.success && obj.success({
@@ -570,19 +610,23 @@ const apiObj = {
     }
   },
   setTabBarStyle: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (obj.color && obj.color.length === 4) {
-        const color = obj.color.slice(1);
-        obj.color = `#${color}${color}`;
+        var color = obj.color.slice(1);
+        obj.color = "#".concat(color).concat(color);
       }
 
       my.setTabBarStyle(obj);
     }
   },
   setTabBarItem: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (!obj.iconPath || !obj.selectedIconPath) {
-        utils.warn(`setTabBarItem的iconPath和selectedIconPath是必传的!`, {
+        utils.warn("setTabBarItem\u7684iconPath\u548CselectedIconPath\u662F\u5FC5\u4F20\u7684!", {
           apiName: 'setTabBarItem/iconPath和selectedIconPath',
           errorType: 0,
           type: 'api'
@@ -593,7 +637,9 @@ const apiObj = {
     }
   },
   stopPullDownRefresh: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       try {
         my.stopPullDownRefresh();
         obj.success && obj.success({
@@ -609,11 +655,12 @@ const apiObj = {
     }
   },
   pageScrollTo: {
-    fn: function fn(obj = {}) {
-      let pageScrollToParams = descObj.pageScrollTo.body.params.props;
-      let params = utils.defineGetter(obj, pageScrollToParams, function (obj, prop) {
-        utils.warn(`pageScrollTo的参数不支持 ${prop} 属性!`, {
-          apiName: `pageScrollTo/${prop}`,
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var pageScrollToParams = descObj.pageScrollTo.body.params.props;
+      var params = utils.defineGetter(obj, pageScrollToParams, function (obj, prop) {
+        utils.warn("pageScrollTo\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "pageScrollTo/".concat(prop),
           errorType: pageScrollToParams[prop].type,
           type: 'api'
         });
@@ -635,7 +682,9 @@ const apiObj = {
     }
   },
   request: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (obj.header) {
         obj.headers = obj.header;
         delete obj.header;
@@ -645,8 +694,8 @@ const apiObj = {
       obj.method = obj.method.toUpperCase();
 
       if (obj.method !== 'GET' && obj.method !== 'POST') {
-        utils.warn(`request暂不支持${obj.method}请求方式`, {
-          apiName: `request/${obj.method}`,
+        utils.warn("request\u6682\u4E0D\u652F\u6301".concat(obj.method, "\u8BF7\u6C42\u65B9\u5F0F"), {
+          apiName: "request/".concat(obj.method),
           errorType: 0,
           type: 'api'
         });
@@ -661,25 +710,21 @@ const apiObj = {
         });
       }
 
-      let task = my.request({ ...obj,
-
-        success(res) {
+      var task = my.request(_objectSpread({}, obj, {
+        success: function success(res) {
           res.header = res.headers;
           res.statusCode = res.status;
           delete res.headers;
           delete res.status;
           obj.success && obj.success(res);
         },
-
-        fail(err) {
+        fail: function fail(err) {
           obj.fail && obj.fail(err);
         },
-
-        complete(res) {
+        complete: function complete(res) {
           obj.complete && obj.complete(res);
         }
-
-      });
+      }));
       task = task || {};
 
       task.abort = function () {};
@@ -692,19 +737,20 @@ const apiObj = {
     }
   },
   createMapContext: {
-    fn: function fn(obj = {}) {
-      let createMapContextProps = descObj.createMapContext.body.returnValue.props;
-      let data = my.createMapContext(obj);
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var createMapContextProps = descObj.createMapContext.body.returnValue.props;
+      var data = my.createMapContext(obj);
 
-      for (let key in createMapContextProps) {
+      for (var key in createMapContextProps) {
         if (createMapContextProps[key].type === 0) {
-          data[key] = () => {};
+          data[key] = function () {};
         }
       }
 
       return utils.defineGetter(data, createMapContextProps, function (obj, prop) {
-        utils.warn(`createMapContext的返回值不支持 ${prop} 属性!`, {
-          apiName: `createMapContext/${prop}`,
+        utils.warn("createMapContext\u7684\u8FD4\u56DE\u503C\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "createMapContext/".concat(prop),
           errorType: createMapContextProps[prop].type,
           type: 'api'
         });
@@ -713,28 +759,27 @@ const apiObj = {
   },
   createCameraContext: {
     fn: function fn(obj) {
-      const res = my.createCameraContext({ ...obj
-      });
+      var res = my.createCameraContext(_objectSpread({}, obj));
 
-      res.takePhoto = () => {
+      res.takePhoto = function () {
         utils.warn("支付宝暂不支持takePhoto", {
-          apiName: `createCameraContext/takePhoto`,
+          apiName: "createCameraContext/takePhoto",
           errorType: 0,
           type: 'api'
         });
       };
 
-      res.startRecord = () => {
+      res.startRecord = function () {
         utils.warn("支付宝暂不支持startRecord", {
-          apiName: `createCameraContext/startRecord`,
+          apiName: "createCameraContext/startRecord",
           errorType: 0,
           type: 'api'
         });
       };
 
-      res.stopRecord = () => {
+      res.stopRecord = function () {
         utils.warn("支付宝暂不支持stopRecord", {
-          apiName: `createCameraContext/stopRecord`,
+          apiName: "createCameraContext/stopRecord",
           errorType: 0,
           type: 'api'
         });
@@ -744,40 +789,42 @@ const apiObj = {
     }
   },
   previewImage: {
-    fn: function fn(obj = {}) {
-      let imgList = obj.urls || [];
-      let index = imgList.indexOf(obj.current);
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var imgList = obj.urls || [];
+      var index = imgList.indexOf(obj.current);
       obj.current = index;
       return my.previewImage(obj);
     }
   },
   compressImage: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (obj.src) {
         obj.apFilePaths = [obj.src];
         delete obj.src;
       }
 
-      my.compressImage({ ...obj,
-
-        success(res) {
+      my.compressImage(_objectSpread({}, obj, {
+        success: function success(res) {
           res.tempFilePath = res.apFilePaths[0];
           delete res.apFilePath;
           obj.success && obj.success(res);
         }
-
-      });
+      }));
     }
   },
   chooseImage: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (!obj.count) {
         obj.count = 9;
       }
 
-      my.chooseImage({ ...obj,
-
-        success(res) {
+      my.chooseImage(_objectSpread({}, obj, {
+        success: function success(res) {
           res.tempFilePaths = res.apFilePaths;
           delete res.apFilePath;
           utils.warn("暂不支持tempFiles", {
@@ -787,12 +834,13 @@ const apiObj = {
           });
           obj.success && obj.success(res);
         }
-
-      });
+      }));
     }
   },
   saveImageToPhotosAlbum: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (obj.filePath) {
         obj.url = obj.filePath;
       }
@@ -801,7 +849,9 @@ const apiObj = {
     }
   },
   openLocation: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (obj.scale) {
         utils.warn("支付宝scale的取值为3-19，默认15", {
           apiName: 'openLocation/scale',
@@ -820,16 +870,17 @@ const apiObj = {
     }
   },
   getLocation: {
-    fn: function fn(obj = {}) {
-      let type = obj.type || "wgs84";
-      let getLocationProps = descObj.getLocation.body.returnValue;
-      my.getLocation({ ...obj,
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var type = obj.type || "wgs84";
+      var getLocationProps = descObj.getLocation.body.returnValue;
+      my.getLocation(_objectSpread({}, obj, {
         type: 0,
-        success: function (res) {
-          let data = res;
+        success: function success(res) {
+          var data = res;
 
           if (type === "wgs84") {
-            let lnglat = utils.wgs84togcj02(res.longitude, res.latitude);
+            var lnglat = utils.wgs84togcj02(res.longitude, res.latitude);
             data = Object.assign(res, {
               longitude: lnglat[0],
               latitude: lnglat[1]
@@ -837,23 +888,23 @@ const apiObj = {
           }
 
           data = utils.defineGetter(data, getLocationProps, function (obj, prop) {
-            utils.warn(`getLocation的返回值不支持 ${prop} 属性!`, {
-              apiName: `getLocation/${prop}`,
+            utils.warn("getLocation\u7684\u8FD4\u56DE\u503C\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+              apiName: "getLocation/".concat(prop),
               errorType: getLocationProps[prop].type,
               type: 'api'
             });
           });
           obj.success && obj.success(data);
         }
-      });
+      }));
     }
   },
   openCard: {
     fn: function fn(obj) {
-      let openCardParams = descObj.openCard.body.params;
-      let params = utils.defineGetter(obj, openCardParams, function (obj, prop) {
-        utils.warn(`openCard的参数不支持 ${prop} 属性!`, {
-          apiName: `openCard/${prop}`,
+      var openCardParams = descObj.openCard.body.params;
+      var params = utils.defineGetter(obj, openCardParams, function (obj, prop) {
+        utils.warn("openCard\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "openCard/".concat(prop),
           errorType: openCardParams[prop].type,
           type: 'api'
         });
@@ -862,11 +913,12 @@ const apiObj = {
     }
   },
   login: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       my.getAuthCode({
         scopes: 'auth_user',
-        success: res => {
-          const resObj = {
+        success: function success(res) {
+          var resObj = {
             code: res.authCode
           };
 
@@ -884,14 +936,14 @@ const apiObj = {
             }
           }
         },
-        fail: err => {
+        fail: function fail(err) {
           if (obj.fail) {
             obj.fail(err);
           }
         },
-        complete: res => {
+        complete: function complete(res) {
           if (res.authCode) {
-            const resObj = {
+            var resObj = {
               code: res.authCode,
               errMsg: "login:ok"
             };
@@ -909,7 +961,8 @@ const apiObj = {
     }
   },
   hideKeyboard: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       my.hideKeyboard(obj);
 
       if (typeof obj.success === "function") {
@@ -922,12 +975,12 @@ const apiObj = {
     }
   },
   getNetworkType: {
-    fn: function fn(obj = {}) {
-      my.getNetworkType({ ...obj,
-
-        success(res) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      my.getNetworkType(_objectSpread({}, obj, {
+        success: function success(res) {
           res.networkType = res.networkType.toLowerCase();
-          let typeObjMap = {
+          var typeObjMap = {
             unknown: "unknown",
             wifi: "wifi",
             "2g": "2g",
@@ -943,68 +996,66 @@ const apiObj = {
 
           obj.success && obj.success(res);
         }
-
-      });
+      }));
     }
   },
   canvasToTempFilePath: {
-    fn: function fn(obj = {}) {
-      const ctx = my.createCanvasContext(obj.canvasId);
-      ctx.toTempFilePath({ ...obj,
-
-        success(res) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var ctx = my.createCanvasContext(obj.canvasId);
+      ctx.toTempFilePath(_objectSpread({}, obj, {
+        success: function success(res) {
           res.tempFilePath = res.apFilePath;
           delete res.apFilePath;
           obj.success && obj.success(res);
         }
-
-      });
+      }));
     }
   },
   canvasPutImageData: {
-    fn: function fn(obj = {}) {
-      const ctx = my.createCanvasContext(obj.canvasId);
-      ctx.putImageData({ ...obj,
-
-        success(res) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var ctx = my.createCanvasContext(obj.canvasId);
+      ctx.putImageData(_objectSpread({}, obj, {
+        success: function success(res) {
           obj.success && obj.success(res);
         }
-
-      });
+      }));
     }
   },
   canvasGetImageData: {
-    fn: function fn(obj = {}) {
-      const ctx = my.createCanvasContext(obj.canvasId);
-      ctx.getImageData({ ...obj,
-
-        success(res) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var ctx = my.createCanvasContext(obj.canvasId);
+      ctx.getImageData(_objectSpread({}, obj, {
+        success: function success(res) {
           obj.success && obj.success(res);
         }
-
-      });
+      }));
     }
   },
   saveFile: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (obj.tempFilePath) {
         obj.apFilePath = obj.tempFilePath;
         delete obj.tempFilePath;
       }
 
-      my.saveFile({ ...obj,
-
-        success(res) {
+      my.saveFile(_objectSpread({}, obj, {
+        success: function success(res) {
           res.savedFilePath = res.apFilePath;
           delete res.apFilePath;
           obj.success && obj.success(res);
         }
-
-      });
+      }));
     }
   },
   removeSavedFile: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (obj.filePath) {
         obj.apFilePath = obj.filePath;
         delete obj.filePath;
@@ -1014,11 +1065,12 @@ const apiObj = {
     }
   },
   getSavedFileList: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       my.getSavedFileList({
-        success(res) {
+        success: function success(res) {
           if (res.fileList.length) {
-            let ret = res.fileList.map(item => {
+            var ret = res.fileList.map(function (item) {
               item.filePath = item.apFilePath;
               delete item.apFilePath;
               return item;
@@ -1029,12 +1081,13 @@ const apiObj = {
             obj.success && obj.success(res);
           }
         }
-
       });
     }
   },
   getSavedFileInfo: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (obj.filePath) {
         obj.apFilePath = obj.filePath;
         delete obj.filePath;
@@ -1044,7 +1097,9 @@ const apiObj = {
     }
   },
   getFileInfo: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       if (obj.filePath) {
         obj.apFilePath = obj.filePath;
         delete obj.filePath;
@@ -1054,8 +1109,9 @@ const apiObj = {
     }
   },
   downloadFile: {
-    fn: function fn(obj = {}) {
-      let downloadFileReturnValue = descObj.downloadFile.body.returnValue;
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var downloadFileReturnValue = descObj.downloadFile.body.returnValue;
 
       if (obj.filePath !== undefined) {
         utils.warn("支付宝暂不支持 filePath", {
@@ -1065,9 +1121,8 @@ const apiObj = {
         });
       }
 
-      my.downloadFile({ ...obj,
-
-        success(res) {
+      my.downloadFile(_objectSpread({}, obj, {
+        success: function success(res) {
           res.tempFilePath = res.apFilePath;
 
           if (res.apFilePath) {
@@ -1086,23 +1141,17 @@ const apiObj = {
 
           obj.success && obj.success(res);
         }
-
-      });
-      const task = {
-        abort() {},
-
-        offHeadersReceived() {},
-
-        offProgressUpdate() {},
-
-        onHeadersReceived() {},
-
-        onProgressUpdate() {}
-
+      }));
+      var task = {
+        abort: function abort() {},
+        offHeadersReceived: function offHeadersReceived() {},
+        offProgressUpdate: function offProgressUpdate() {},
+        onHeadersReceived: function onHeadersReceived() {},
+        onProgressUpdate: function onProgressUpdate() {}
       };
       return utils.defineGetter(task, downloadFileReturnValue, function (obj, prop) {
-        utils.warn(`downloadFile的返回值不支持 ${prop} 属性!`, {
-          apiName: `downloadFile/${prop}`,
+        utils.warn("downloadFile\u7684\u8FD4\u56DE\u503C\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "downloadFile/".concat(prop),
           errorType: downloadFileReturnValue[prop].type,
           type: 'api'
         });
@@ -1110,8 +1159,9 @@ const apiObj = {
     }
   },
   uploadFile: {
-    fn: function fn(obj = {}) {
-      let uploadFileValue = descObj.uploadFile.body.returnValue;
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var uploadFileValue = descObj.uploadFile.body.returnValue;
 
       if (obj.name) {
         obj.fileName = obj.name;
@@ -1120,21 +1170,16 @@ const apiObj = {
 
       obj.fileType = 'image';
       my.uploadFile(obj);
-      const task = {
-        abort() {},
-
-        offHeadersReceived() {},
-
-        offProgressUpdate() {},
-
-        onHeadersReceived() {},
-
-        onProgressUpdate() {}
-
+      var task = {
+        abort: function abort() {},
+        offHeadersReceived: function offHeadersReceived() {},
+        offProgressUpdate: function offProgressUpdate() {},
+        onHeadersReceived: function onHeadersReceived() {},
+        onProgressUpdate: function onProgressUpdate() {}
       };
       return utils.defineGetter(task, uploadFileValue, function (obj, prop) {
-        utils.warn(`uploadFile的返回值不支持 ${prop} 属性!`, {
-          apiName: `uploadFile/${prop}`,
+        utils.warn("uploadFile\u7684\u8FD4\u56DE\u503C\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "uploadFile/".concat(prop),
           errorType: uploadFileValue[prop].type,
           type: 'api'
         });
@@ -1142,50 +1187,47 @@ const apiObj = {
     }
   },
   connectSocket: {
-    fn: function fn(obj = {}) {
-      let connectSocketParams = descObj.connectSocket.body.params;
-      let params = utils.defineGetter(obj, connectSocketParams, function (obj, prop) {
-        utils.warn(`connectSocket的参数不支持 ${prop} 属性!`, {
-          apiName: `connectSocket/${prop}`,
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var connectSocketParams = descObj.connectSocket.body.params;
+      var params = utils.defineGetter(obj, connectSocketParams, function (obj, prop) {
+        utils.warn("connectSocket\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "connectSocket/".concat(prop),
           errorType: connectSocketParams[prop].type,
           type: 'api'
         });
       });
       my.connectSocket(params);
-      const task = {
-        close(obj = {}) {
+      var task = {
+        close: function close() {
+          var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
           my.closeSocket(obj);
         },
-
-        onClose(fn) {
+        onClose: function onClose(fn) {
           my.onSocketClose(fn);
         },
-
-        onError(fn) {
+        onError: function onError(fn) {
           my.offSocketOpen(fn);
         },
-
-        onMessage(fn) {
+        onMessage: function onMessage(fn) {
           my.onSocketMessage(fn);
         },
-
-        onOpen(fn) {
+        onOpen: function onOpen(fn) {
           my.onSocketOpen(function (res) {
             fn(res);
           });
         },
-
-        send(obj = {}) {
+        send: function send() {
+          var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
           my.sendSocketMessage(obj);
         }
-
       };
       return task;
     }
   },
   onSocketOpen: {
     fn: function fn(obj) {
-      my.onSocketOpen(res => {
+      my.onSocketOpen(function (res) {
         utils.warn('onSocketOpen 成功回调缺少header', {
           apiName: 'onSocketOpen/header',
           errorType: 0,
@@ -1196,11 +1238,12 @@ const apiObj = {
     }
   },
   closeSocket: {
-    fn: function fn(obj = {}) {
-      let closeSocketParams = descObj.closeSocket.body.params;
-      let params = utils.defineGetter(obj, closeSocketParams, function (obj, prop) {
-        utils.warn(`closeSocket的参数不支持 ${prop} 属性!`, {
-          apiName: `closeSocket/${prop}`,
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var closeSocketParams = descObj.closeSocket.body.params;
+      var params = utils.defineGetter(obj, closeSocketParams, function (obj, prop) {
+        utils.warn("closeSocket\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "closeSocket/".concat(prop),
           errorType: closeSocketParams[prop].type,
           type: 'api'
         });
@@ -1210,18 +1253,18 @@ const apiObj = {
   },
   getRecorderManager: {
     fn: function fn() {
-      let getRecorderManagerProps = descObj.getRecorderManager.body.returnValue.props;
-      const RecorderManager = my.getRecorderManager();
+      var getRecorderManagerProps = descObj.getRecorderManager.body.returnValue.props;
+      var RecorderManager = my.getRecorderManager();
 
-      for (let key in getRecorderManagerProps) {
+      for (var key in getRecorderManagerProps) {
         if (getRecorderManagerProps[key]["type"] === 0) {
-          RecorderManager[key] = () => {};
+          RecorderManager[key] = function () {};
         }
       }
 
       return utils.defineGetter(RecorderManager, getRecorderManagerProps, function (obj, prop) {
-        utils.warn(`getRecorderManager的返回值不支持 ${prop} 属性!`, {
-          apiName: `getRecorderManager/${prop}`,
+        utils.warn("getRecorderManager\u7684\u8FD4\u56DE\u503C\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "getRecorderManager/".concat(prop),
           errorType: getRecorderManagerProps[prop].type,
           type: 'api'
         });
@@ -1229,7 +1272,10 @@ const apiObj = {
     }
   },
   setStorageSync: {
-    fn: function fn(key = "", data = "") {
+    fn: function fn() {
+      var key = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+      var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+
       if (key && data) {
         return my.setStorageSync({
           "key": key,
@@ -1239,23 +1285,25 @@ const apiObj = {
     }
   },
   getStorageSync: {
-    fn: function fn(key = "") {
-      const storeData = my.getStorageSync({
-        key
+    fn: function fn() {
+      var key = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
+      var storeData = my.getStorageSync({
+        key: key
       });
       return storeData.data || '';
     }
   },
   removeStorageSync: {
-    fn: function fn(key = "") {
+    fn: function fn() {
+      var key = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
       return my.removeStorageSync({
-        key
+        key: key
       });
     }
   },
   createSelectorQuery: {
     fn: function fn() {
-      let SQ = my.createSelectorQuery();
+      var SQ = my.createSelectorQuery();
 
       function Query() {
         this.query = SQ;
@@ -1278,7 +1326,7 @@ const apiObj = {
         };
 
         this.boundingClientRect = function (p) {
-          let self = this;
+          var self = this;
           this.query.boundingClientRect().exec(function (ret) {
             if (self._selectType) {
               self._selectType = 0;
@@ -1294,7 +1342,7 @@ const apiObj = {
         };
 
         this.scrollOffset = function (p) {
-          let self = this;
+          var self = this;
           this.query.scrollOffset().exec(function (ret) {
             if (self._selectType) {
               self._selectType = 0;
@@ -1311,13 +1359,14 @@ const apiObj = {
       }
 
       Query.prototype = SQ;
-      let res = new Query();
+      var res = new Query();
       return res;
     }
   },
   createAnimation: {
-    fn: function fn(obj = {}) {
-      let animation = my.createAnimation(obj);
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var animation = my.createAnimation(obj);
       animation.config.delay = animation.config.delay || 0;
       animation.option = {
         transition: animation.config,
@@ -1328,7 +1377,7 @@ const apiObj = {
   },
   getUserInfo: {
     fn: function fn(obj) {
-      let getUserInfoSuccessRes = descObj.getUserInfo.body.successRes;
+      var getUserInfoSuccessRes = descObj.getUserInfo.body.successRes;
 
       if (obj.withCredentials || obj.lang) {
         utils.warn('GetAuthUserInfo不支持 withCredentials 或 lang 参数.', {
@@ -1340,31 +1389,29 @@ const apiObj = {
 
       my.getAuthCode({
         scopes: 'auth_user',
-        success: () => {
-          my.getAuthUserInfo({ ...obj,
-
-            success(res) {
+        success: function success() {
+          my.getAuthUserInfo(_objectSpread({}, obj, {
+            success: function success(res) {
               utils.defineGetter(res, getUserInfoSuccessRes, function (obj, prop) {
-                utils.warn(`getUserInfo的参数不支持 ${prop} 属性!`, {
-                  apiName: `getUserInfo/${prop}`,
+                utils.warn("getUserInfo\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+                  apiName: "getUserInfo/".concat(prop),
                   errorType: getUserInfoSuccessRes[prop].type,
                   type: 'api'
                 });
               });
-              const _res = {};
+              var _res = {};
               _res.userInfo = res;
               _res.userInfo.avatarUrl = res.avatar;
               obj.success && obj.success(_res);
             }
-
-          });
+          }));
         }
       });
     }
   },
   reportAnalytics: {
     fn: function fn(key, value) {
-      if (typeof value !== "object") {
+      if (_typeof(value) !== "object") {
         if (!(value instanceof Object)) value = {
           data: value
         };
@@ -1374,11 +1421,12 @@ const apiObj = {
     }
   },
   requestPayment: {
-    fn: function fn(obj = {}) {
-      let requestPaymentParams = descObj.requestPayment.body.params;
-      let params = utils.defineGetter(obj, requestPaymentParams, function (obj, prop) {
-        utils.warn(`requestPayment的参数不支持 ${prop} 属性!`, {
-          apiName: `requestPayment/${prop}`,
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var requestPaymentParams = descObj.requestPayment.body.params;
+      var params = utils.defineGetter(obj, requestPaymentParams, function (obj, prop) {
+        utils.warn("requestPayment\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "requestPayment/".concat(prop),
           errorType: requestPaymentParams[prop].type,
           type: 'api'
         });
@@ -1387,17 +1435,18 @@ const apiObj = {
     }
   },
   authorize: {
-    fn: function fn(obj = {}) {
-      let authorizeParams = descObj.authorize.body.params;
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var authorizeParams = descObj.authorize.body.params;
 
       if (obj.scope) {
         delete obj.scope;
         obj.scopes = 'auth_user';
       }
 
-      let params = utils.defineGetter(obj, authorizeParams, function (obj, prop) {
-        utils.warn(`authorize的参数不支持 ${prop} 属性!`, {
-          apiName: `authorize/${prop}`,
+      var params = utils.defineGetter(obj, authorizeParams, function (obj, prop) {
+        utils.warn("authorize\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "authorize/".concat(prop),
           errorType: authorizeParams[prop].type,
           type: 'api'
         });
@@ -1407,10 +1456,10 @@ const apiObj = {
   },
   addCard: {
     fn: function fn(obj) {
-      let addCardParams = descObj.addCard.body.params;
-      let params = utils.defineGetter(obj, addCardParams, function (obj, prop) {
-        utils.warn(`addCard的参数不支持 ${prop} 属性!`, {
-          apiName: `startSoterAuthentication/${prop}`,
+      var addCardParams = descObj.addCard.body.params;
+      var params = utils.defineGetter(obj, addCardParams, function (obj, prop) {
+        utils.warn("addCard\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "startSoterAuthentication/".concat(prop),
           errorType: addCardParams[prop].type,
           type: 'api'
         });
@@ -1420,9 +1469,9 @@ const apiObj = {
   },
   startSoterAuthentication: {
     fn: function fn(obj) {
-      let startSoterAuthenticationParams = descObj.startSoterAuthentication.body.params;
-      let params = utils.defineGetter(obj, startSoterAuthenticationParams, function (obj, prop) {
-        utils.warn(`startSoterAuthentication的参数不支持 ${prop} 属性!`, {
+      var startSoterAuthenticationParams = descObj.startSoterAuthentication.body.params;
+      var params = utils.defineGetter(obj, startSoterAuthenticationParams, function (obj, prop) {
+        utils.warn("startSoterAuthentication\u7684\u53C2\u6570\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
           apiName: prop,
           errorType: startSoterAuthenticationParams[prop].type,
           type: 'api'
@@ -1432,13 +1481,14 @@ const apiObj = {
     }
   },
   _getSettings: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       /**
        * scope=[userInfo, location, album, camera, audioRecord]
        */
-      my.getSetting({ ...obj,
-
-        success(res) {
+      my.getSetting(_objectSpread({}, obj, {
+        success: function success(res) {
           res.authSetting['scope.address'] = res.authSetting.location;
           delete res.authSetting.location;
           res.authSetting['scope.record'] = res.authSetting.audioRecord;
@@ -1451,26 +1501,25 @@ const apiObj = {
           delete res.authSetting.camera;
           obj.success && obj.success(res);
         }
-
-      });
+      }));
     }
   },
   getSetting: {
-    fn: function fn(obj = {}) {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
       function setLocation(cb) {
         my.getLocation({
-          success(res) {
+          success: function success(res) {
             res.authSetting['scope.userLocation'] = true;
             cb && cb();
           }
-
         });
       }
 
       if (my.getSetting) {
-        my.getSetting({ ...obj,
-
-          success(res) {
+        my.getSetting(_objectSpread({}, obj, {
+          success: function success(res) {
             res.authSetting['scope.userLocation'] = res.authSetting.location;
             delete res.authSetting.location;
             res.authSetting['scope.record'] = res.authSetting.audioRecord;
@@ -1483,10 +1532,9 @@ const apiObj = {
             delete res.authSetting.camera;
             obj.success && obj.success(res);
           }
-
-        });
+        }));
       } else {
-        let res = {};
+        var res = {};
         res.authSetting = {};
         /**
            * scope=[userInfo, location, album, camera, audioRecord]

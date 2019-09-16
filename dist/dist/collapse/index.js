@@ -1,18 +1,20 @@
-import { VantComponent } from "../common/component";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+(0, _component.VantComponent)({
   relation: {
     name: "collapse-item",
     type: "descendant",
-
-    linked(child) {
+    linked: function linked(child) {
       this.children.push(child);
       this.updateExpanded();
     },
-
-    unlinked(child) {
-      this.children = this.children.filter(item => item !== child);
+    unlinked: function unlinked(child) {
+      this.children = this.children.filter(function (item) {
+        return item !== child;
+      });
     }
-
   },
   props: {
     value: {
@@ -28,28 +30,26 @@ VantComponent({
       value: true
     }
   },
-
-  beforeCreate() {
+  beforeCreate: function beforeCreate() {
     this.children = [];
   },
-
   methods: {
-    updateExpanded() {
+    updateExpanded: function updateExpanded() {
       if (this["children"]) {
-        this.children.forEach(child => {
+        this.children.forEach(function (child) {
           child.updateExpanded();
         });
       }
     },
-
-    switch(name, expanded) {
-      const {
-        accordion,
-        value
-      } = this.data;
+    "switch": function _switch(name, expanded) {
+      var _this$data = this.data,
+          accordion = _this$data.accordion,
+          value = _this$data.value;
 
       if (!accordion) {
-        name = expanded ? (value || []).concat(name) : (value || []).filter(activeName => activeName !== name);
+        name = expanded ? (value || []).concat(name) : (value || []).filter(function (activeName) {
+          return activeName !== name;
+        });
       } else {
         name = expanded ? name : "";
       }
@@ -57,6 +57,5 @@ VantComponent({
       this.$emit("change", name);
       this.$emit("input", name);
     }
-
   }
 });

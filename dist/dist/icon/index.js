@@ -1,5 +1,8 @@
-import { VantComponent } from "../common/component";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+(0, _component.VantComponent)({
   props: {
     info: null,
     name: String,
@@ -12,13 +15,12 @@ VantComponent({
     }
   },
   methods: {
-    onClick() {
+    onClick: function onClick() {
       this.$emit("tap");
 
       if (this.props && this.props.onTouchstart) {
         this.props.onTouchstart();
       }
     }
-
   }
 });

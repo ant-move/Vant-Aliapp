@@ -1,5 +1,8 @@
-import { VantComponent } from "../common/component";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+(0, _component.VantComponent)({
   field: true,
   classes: ["input-class", "right-icon-class"],
   props: {
@@ -60,32 +63,34 @@ VantComponent({
   data: {
     showClear: false
   },
-
-  beforeCreate() {
+  beforeCreate: function beforeCreate() {
     this.focused = false;
   },
-
   methods: {
-    onInput(event) {
-      const {
-        value = ""
-      } = event.detail || {};
+    onInput: function onInput(event) {
+      var _this = this;
+
+      var _ref = event.detail || {},
+          _ref$value = _ref.value,
+          value = _ref$value === void 0 ? "" : _ref$value;
+
       this.set({
-        value,
+        value: value,
         showClear: this.getShowClear(value)
-      }, () => {
-        this.emitChange(value);
+      }, function () {
+        _this.emitChange(value);
       });
     },
+    onFocus: function onFocus(event) {
+      var _ref2 = event.detail || {},
+          _ref2$value = _ref2.value,
+          value = _ref2$value === void 0 ? "" : _ref2$value,
+          _ref2$height = _ref2.height,
+          height = _ref2$height === void 0 ? 0 : _ref2$height;
 
-    onFocus(event) {
-      const {
-        value = "",
-        height = 0
-      } = event.detail || {};
       this.$emit("focus", {
-        value,
-        height
+        value: value,
+        height: height
       });
       this.focused = true;
       this.blurFromClear = false;
@@ -93,62 +98,62 @@ VantComponent({
         showClear: this.getShowClear()
       });
     },
+    onBlur: function onBlur(event) {
+      var _this2 = this;
 
-    onBlur(event) {
-      const {
-        value = "",
-        cursor = 0
-      } = event.detail || {};
+      var _ref3 = event.detail || {},
+          _ref3$value = _ref3.value,
+          value = _ref3$value === void 0 ? "" : _ref3$value,
+          _ref3$cursor = _ref3.cursor,
+          cursor = _ref3$cursor === void 0 ? 0 : _ref3$cursor;
+
       this.$emit("blur", {
-        value,
-        cursor
+        value: value,
+        cursor: cursor
       });
       this.focused = false;
-      const showClear = this.getShowClear();
+      var showClear = this.getShowClear();
 
       if (this.data.value === value) {
         this.set({
-          showClear
+          showClear: showClear
         });
       } else if (!this.blurFromClear) {
         // fix: the handwritten keyboard does not trigger input change
         this.set({
-          value,
-          showClear
-        }, () => {
-          this.emitChange(value);
+          value: value,
+          showClear: showClear
+        }, function () {
+          _this2.emitChange(value);
         });
       }
     },
-
-    onClickIcon() {
+    onClickIcon: function onClickIcon() {
       this.$emit("click-icon");
     },
-
-    getShowClear(value) {
+    getShowClear: function getShowClear(value) {
       value = value === undefined ? this.data.value : value;
       return this.data.clearable && this.focused && value && !this.data.readonly;
     },
+    onClear: function onClear() {
+      var _this3 = this;
 
-    onClear() {
       this.blurFromClear = true;
       this.set({
         value: "",
         showClear: this.getShowClear("")
-      }, () => {
-        this.emitChange("");
-        this.$emit("clear", "");
+      }, function () {
+        _this3.emitChange("");
+
+        _this3.$emit("clear", "");
       });
     },
-
-    onConfirm() {
+    onConfirm: function onConfirm() {
       this.$emit("confirm", this.data.value);
     },
-
-    emitChange(value) {
+    emitChange: function emitChange(value) {
       this.$emit("input", value);
       this.$emit("change", value);
     }
-
   }
 });

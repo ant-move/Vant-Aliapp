@@ -1,4 +1,10 @@
-export default [{
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _default = [{
   groupName: "基础组件",
   icon: "https://img.yzcdn.cn/vant/basic-0401.svg",
   list: [{
@@ -137,3 +143,4 @@ export default [{
     title: "GoodsAction 商品导航"
   }]
 }];
+exports["default"] = _default;

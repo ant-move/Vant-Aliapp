@@ -1,14 +1,19 @@
-const _my = require("../../__antmove/api/index.js")(my);
+"use strict";
 
-import createPage from "../../common/page";
-import Notify from "../../dist/notify/notify";
-createPage({
-  showNotify() {
-    Notify("通知内容");
+var _page = _interopRequireDefault(require("../../common/page"));
+
+var _notify = _interopRequireDefault(require("../../dist/notify/notify"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var _my = require("../../__antmove/api/index.js")(my);
+
+(0, _page["default"])({
+  showNotify: function showNotify() {
+    (0, _notify["default"])("通知内容");
   },
-
-  showNotify2() {
-    Notify({
+  showNotify2: function showNotify2() {
+    (0, _notify["default"])({
       duration: 1000,
       text: "通知内容",
       selector: ".custom-selector",
@@ -16,9 +21,7 @@ createPage({
       safeAreaInsetTop: true
     });
   },
-
-  onClickLeft() {
+  onClickLeft: function onClickLeft() {
     _my.navigateBack();
   }
-
 });

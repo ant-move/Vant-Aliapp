@@ -1,29 +1,39 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.behavior = void 0;
+
 function Behavior(behavior) {
   return behavior;
 }
 
 function setAsync(context, data) {
-  return new Promise(resolve => {
+  return new Promise(function (resolve) {
     context.setData(data, resolve);
   });
 }
 
-export const behavior = Behavior({
-  created() {
+var behavior = Behavior({
+  created: function created() {
+    var _this = this;
+
     if (!this.$options) {
       return;
     }
 
-    const cache = {};
-    const {
-      computed
-    } = this.$options();
-    const keys = Object.keys(computed);
+    var cache = {};
 
-    this.calcComputed = () => {
-      const needUpdate = {};
-      keys.forEach(key => {
-        const value = computed[key].call(this);
+    var _this$$options = this.$options(),
+        computed = _this$$options.computed;
+
+    var keys = Object.keys(computed);
+
+    this.calcComputed = function () {
+      var needUpdate = {};
+      keys.forEach(function (key) {
+        var value = computed[key].call(_this);
 
         if (cache[key] !== value) {
           cache[key] = value;
@@ -33,15 +43,15 @@ export const behavior = Behavior({
       return needUpdate;
     };
   },
-
-  attached() {
+  attached: function attached() {
     this.set();
   },
-
   methods: {
     // set data and set computed data
-    set(data, callback) {
-      const stack = [];
+    set: function set(data, callback) {
+      var _this2 = this;
+
+      var stack = [];
 
       if (data) {
         stack.push(setAsync(this, data));
@@ -51,14 +61,14 @@ export const behavior = Behavior({
         stack.push(setAsync(this, this.calcComputed()));
       }
 
-      return Promise.all(stack).then(res => {
+      return Promise.all(stack).then(function (res) {
         if (callback && typeof callback === "function") {
-          callback.call(this);
+          callback.call(_this2);
         }
 
         return res;
       });
     }
-
   }
 });
+exports.behavior = behavior;

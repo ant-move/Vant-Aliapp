@@ -1,8 +1,13 @@
-import { VantComponent } from "../common/component";
-import { button } from "../mixins/button";
-import { openType } from "../mixins/open-type";
-VantComponent({
-  mixins: [button, openType],
+"use strict";
+
+var _component = require("../common/component");
+
+var _button = require("../mixins/button");
+
+var _openType = require("../mixins/open-type");
+
+(0, _component.VantComponent)({
+  mixins: [_button.button, _openType.openType],
   props: {
     show: Boolean,
     title: String,
@@ -47,41 +52,35 @@ VantComponent({
     }
   },
   watch: {
-    show(show) {
-      !show && this.stopLoading();
+    show: function show(_show) {
+      !_show && this.stopLoading();
     }
-
   },
   methods: {
-    onConfirm() {
+    onConfirm: function onConfirm() {
       this.handleAction("confirm");
     },
-
-    onCancel() {
+    onCancel: function onCancel() {
       this.handleAction("cancel");
     },
-
-    onClickOverlay() {
+    onClickOverlay: function onClickOverlay() {
       this.onClose("overlay");
     },
-
-    handleAction(action) {
+    handleAction: function handleAction(action) {
       if (this.data.asyncClose) {
-        let _data = this.data.loading;
-        _data[`${action}`] = true;
+        var _data = this.data.loading;
+        _data["".concat(action)] = true;
         this.set(_data);
       }
 
       this.onClose(action);
     },
-
-    close() {
+    close: function close() {
       this.set({
         show: false
       });
     },
-
-    stopLoading() {
+    stopLoading: function stopLoading() {
       this.set({
         loading: {
           confirm: false,
@@ -89,8 +88,7 @@ VantComponent({
         }
       });
     },
-
-    onClose(action) {
+    onClose: function onClose(action) {
       if (!this.data.asyncClose) {
         this.close();
       }
@@ -100,12 +98,11 @@ VantComponent({
       this.$emit(action, {
         dialog: this
       });
-      const callback = this.data[action === "confirm" ? "onConfirm" : "onCancel"];
+      var callback = this.data[action === "confirm" ? "onConfirm" : "onCancel"];
 
       if (callback) {
         callback(this);
       }
     }
-
   }
 });

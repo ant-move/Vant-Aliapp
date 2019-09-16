@@ -1,7 +1,11 @@
-import { VantComponent } from "../common/component";
-import { safeArea } from "../mixins/safe-area";
-VantComponent({
-  mixins: [safeArea()],
+"use strict";
+
+var _component = require("../common/component");
+
+var _safeArea = require("../mixins/safe-area");
+
+(0, _component.VantComponent)({
+  mixins: [(0, _safeArea.safeArea)()],
   classes: ["bar-class", "price-class", "button-class"],
   props: {
     tip: {
@@ -33,12 +37,10 @@ VantComponent({
     },
     suffixLabel: String
   },
-
-  didUpdate() {
-    const {
-      price,
-      decimalLength
-    } = this.data;
+  didUpdate: function didUpdate() {
+    var _this$data = this.data,
+        price = _this$data.price,
+        decimalLength = _this$data.decimalLength;
     this.set({
       hasPrice: typeof price === "number",
       priceStr: (price / 100).toFixed(decimalLength)
@@ -47,28 +49,23 @@ VantComponent({
       hasTip: typeof this.data.tip === "string"
     });
   },
-
   methods: {
-    updatePrice() {
-      const {
-        price,
-        decimalLength
-      } = this.data;
+    updatePrice: function updatePrice() {
+      var _this$data2 = this.data,
+          price = _this$data2.price,
+          decimalLength = _this$data2.decimalLength;
       this.set({
         hasPrice: typeof price === "number",
         priceStr: (price / 100).toFixed(decimalLength)
       });
     },
-
-    updateTip() {
+    updateTip: function updateTip() {
       this.set({
         hasTip: typeof this.data.tip === "string"
       });
     },
-
-    onSubmit(event) {
+    onSubmit: function onSubmit(event) {
       this.$emit("submit", event.detail);
     }
-
   }
 });

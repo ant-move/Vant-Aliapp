@@ -1,20 +1,28 @@
-const _my = require("../../__antmove/api/index.js")(my);
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.basic = void 0;
+
+var _my = require("../../__antmove/api/index.js")(my);
 
 function Behavior(behavior) {
   return behavior;
 }
 
-export const basic = Behavior({
+var basic = Behavior({
   methods: {
-    $emit(...args) {
-      this.triggerEvent(...args);
+    $emit: function $emit() {
+      this.triggerEvent.apply(this, arguments);
     },
+    getRect: function getRect(selector, all) {
+      var _this = this;
 
-    getRect(selector, all) {
-      return new Promise(resolve => {
-        let res = _my.createSelectorQuery();
+      return new Promise(function (resolve) {
+        var res = _my.createSelectorQuery();
 
-        res.in(this)[all ? "selectAll" : "select"](selector).boundingClientRect(rect => {
+        res["in"](_this)[all ? "selectAll" : "select"](selector).boundingClientRect(function (rect) {
           if (all && Array.isArray(rect) && rect.length) {
             if (rect[0] && Array.isArray(rect[0])) {
               resolve(rect[0]);
@@ -33,6 +41,6 @@ export const basic = Behavior({
         }).exec();
       });
     }
-
   }
 });
+exports.basic = basic;

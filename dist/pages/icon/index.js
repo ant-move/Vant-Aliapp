@@ -1,11 +1,15 @@
-import icons from "../../dist/_vant/icons/src/config";
-import createPage from "../../common/page";
-createPage({
+"use strict";
+
+var _config = _interopRequireDefault(require("../../dist/_vant/icons/src/config"));
+
+var _page = _interopRequireDefault(require("../../common/page"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+(0, _page["default"])({
   data: {
-    icons,
+    icons: _config["default"],
     active: 0
   },
-
-  onSwitch(event) {}
-
+  onSwitch: function onSwitch(event) {}
 });

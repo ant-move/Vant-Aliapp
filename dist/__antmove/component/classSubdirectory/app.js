@@ -1,20 +1,19 @@
-const utils = require('../../api/utils');
+"use strict";
 
-const {
-  warnLife
-} = utils;
+var utils = require('../../api/utils');
 
-const {
-  setIfWatch
-} = require('./utils');
+var warnLife = utils.warnLife;
 
-const getUrl = function () {
-  let pages = getCurrentPages();
-  let url = pages[pages.length - 1].route;
+var _require = require('./utils'),
+    setIfWatch = _require.setIfWatch;
 
-  let _arr = url.split('/');
+var getUrl = function getUrl() {
+  var pages = getCurrentPages();
+  var url = pages[pages.length - 1].route;
 
-  let _name = _arr[_arr.length - 1];
+  var _arr = url.split('/');
+
+  var _name = _arr[_arr.length - 1];
   my.setStorageSync({
     key: '_pageMsg',
     data: {
@@ -25,7 +24,7 @@ const getUrl = function () {
 };
 
 module.exports = {
-  processTransformationApp(_opts, options) {
+  processTransformationApp: function processTransformationApp(_opts, options) {
     _opts = Object.assign(_opts, options);
 
     _opts.onLaunch = function (res) {
@@ -36,11 +35,12 @@ module.exports = {
         key: "_pageMsg"
       });
       getUrl();
-      let body = {};
+      var body = {};
 
-      function pre(params = {}) {
+      function pre() {
+        var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
         return utils.defineGetter(params, body.params, function (obj, prop) {
-          warnLife(`onLaunch's return value is not support ${prop} attribute!`, `onLaunch/${prop}`);
+          warnLife("onLaunch's return value is not support ".concat(prop, " attribute!"), "onLaunch/".concat(prop));
         });
       }
 
@@ -67,21 +67,22 @@ module.exports = {
       }
 
       if (options.onPageNotFound) {
-        warnLife(`There is no onPageNotFound life cycle`, "onPageNotFound");
+        warnLife("There is no onPageNotFound life cycle", "onPageNotFound");
       }
 
       if (options.onPageNotFound) {
-        warnLife(`There is no onPageNotFound life cycle`, "onPageNotFound");
+        warnLife("There is no onPageNotFound life cycle", "onPageNotFound");
       }
     };
 
     _opts.onShow = function (res) {
       setIfWatch(true);
-      let body = {};
+      var body = {};
 
-      function pre(params = {}) {
+      function pre() {
+        var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
         return utils.defineGetter(params, body.params, function (obj, prop) {
-          warnLife(`onShow's return value is not support ${prop} attribute!`, `onShow/${prop}`);
+          warnLife("onShow's return value is not support ".concat(prop, " attribute!"), "onShow/".concat(prop));
         });
       }
 
@@ -118,5 +119,4 @@ module.exports = {
       };
     }
   }
-
 };

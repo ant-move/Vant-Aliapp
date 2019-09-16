@@ -1,1 +1,1 @@
-{ "component": true, "usingComponents": { "van-tag": "/dist/tag/index" } }
+{ "component": true, "usingComponents": { "van-tag": "../tag/index" } }

@@ -9,7 +9,6 @@ VantComponent({
         type: "ancestor",
 
         linked(parent) {
-          console.log(parent)
             this.parent = parent;
         }
     },

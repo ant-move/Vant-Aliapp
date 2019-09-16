@@ -1,5 +1,8 @@
-import { VantComponent } from "../common/component";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+(0, _component.VantComponent)({
   relation: {
     name: "badge",
     type: "descendant"
@@ -11,25 +14,21 @@ VantComponent({
       observer: "setActive"
     }
   },
-
-  beforeCreate() {
+  beforeCreate: function beforeCreate() {
     this.badges = [];
     this.currentActive = -1;
   },
-
   methods: {
-    setActive(active) {
-      const {
-        badges,
-        currentActive
-      } = this;
+    setActive: function setActive(active) {
+      var badges = this.badges,
+          currentActive = this.currentActive;
 
       if (!badges.length) {
         return Promise.resolve();
       }
 
       this.currentActive = active;
-      const stack = [];
+      var stack = [];
 
       if (currentActive !== active && badges[currentActive]) {
         stack.push(badges[currentActive].setActive(false));
@@ -41,16 +40,15 @@ VantComponent({
 
       return Promise.all(stack);
     },
-
-    linked(target) {
+    linked: function linked(target) {
       this.badges.push(target);
       this.setActive(this.data.active);
     },
-
-    unlinked(target) {
-      this.badges = this.badges.filter(item => item !== target);
+    unlinked: function unlinked(target) {
+      this.badges = this.badges.filter(function (item) {
+        return item !== target;
+      });
       this.setActive(this.data.active);
     }
-
   }
 });

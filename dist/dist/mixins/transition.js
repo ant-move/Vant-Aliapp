@@ -1,19 +1,32 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.transition = void 0;
+
+var _utils = require("../common/utils");
+
 function Behavior(behavior) {
   return behavior;
 }
 
-import { isObj } from "../common/utils";
+var getClassNames = function getClassNames(name) {
+  return {
+    enter: "van-".concat(name, "-enter van-").concat(name, "-enter-active enter-class enter-active-class"),
+    "enter-to": "van-".concat(name, "-enter-to van-").concat(name, "-enter-active enter-to-class enter-active-class"),
+    leave: "van-".concat(name, "-leave van-").concat(name, "-leave-active leave-class leave-active-class"),
+    "leave-to": "van-".concat(name, "-leave-to van-").concat(name, "-leave-active leave-to-class leave-active-class")
+  };
+};
 
-const getClassNames = name => ({
-  enter: `van-${name}-enter van-${name}-enter-active enter-class enter-active-class`,
-  "enter-to": `van-${name}-enter-to van-${name}-enter-active enter-to-class enter-active-class`,
-  leave: `van-${name}-leave van-${name}-leave-active leave-class leave-active-class`,
-  "leave-to": `van-${name}-leave-to van-${name}-leave-active leave-to-class leave-active-class`
-});
+var nextTick = function nextTick() {
+  return new Promise(function (resolve) {
+    return setTimeout(resolve, 1000 / 30);
+  });
+};
 
-const nextTick = () => new Promise(resolve => setTimeout(resolve, 1000 / 30));
-
-export const transition = function (showDefaultValue) {
+var transition = function transition(showDefaultValue) {
   return Behavior({
     properties: {
       customStyle: String,
@@ -39,75 +52,79 @@ export const transition = function (showDefaultValue) {
       inited: false,
       display: false
     },
-
-    attached() {
+    attached: function attached() {
       if (this.data.show) {
         this.enter();
       }
     },
-
     methods: {
-      observeShow(value) {
+      observeShow: function observeShow(value) {
         if (value) {
           this.enter();
         } else {
           this.leave();
         }
       },
+      enter: function enter() {
+        var _this = this;
 
-      enter() {
-        const {
-          duration,
-          name
-        } = this.data;
-        const classNames = getClassNames(name);
-        const currentDuration = isObj(duration) ? duration.leave : duration;
+        var _this$data = this.data,
+            duration = _this$data.duration,
+            name = _this$data.name;
+        var classNames = getClassNames(name);
+        var currentDuration = (0, _utils.isObj)(duration) ? duration.leave : duration;
         this.status = "enter";
-        Promise.resolve().then(nextTick).then(() => {
-          this.checkStatus("enter");
-          this.set({
+        Promise.resolve().then(nextTick).then(function () {
+          _this.checkStatus("enter");
+
+          _this.set({
             inited: true,
             display: true,
             classes: classNames.enter,
-            currentDuration
+            currentDuration: currentDuration
           });
-        }).then(nextTick).then(() => {
-          this.checkStatus("enter");
-          this.set({
+        }).then(nextTick).then(function () {
+          _this.checkStatus("enter");
+
+          _this.set({
             classes: classNames["enter-to"]
           });
-        }).catch(() => {});
+        })["catch"](function () {});
       },
+      leave: function leave() {
+        var _this2 = this;
 
-      leave() {
-        const {
-          duration,
-          name
-        } = this.data;
-        const classNames = getClassNames(name);
-        const currentDuration = isObj(duration) ? duration.leave : duration;
+        var _this$data2 = this.data,
+            duration = _this$data2.duration,
+            name = _this$data2.name;
+        var classNames = getClassNames(name);
+        var currentDuration = (0, _utils.isObj)(duration) ? duration.leave : duration;
         this.status = "leave";
-        Promise.resolve().then(nextTick).then(() => {
-          this.checkStatus("leave");
-          this.set({
+        Promise.resolve().then(nextTick).then(function () {
+          _this2.checkStatus("leave");
+
+          _this2.set({
             classes: classNames.leave,
-            currentDuration
+            currentDuration: currentDuration
           });
-        }).then(() => setTimeout(() => this.onTransitionEnd(), currentDuration)).then(nextTick).then(() => {
-          this.checkStatus("leave");
-          this.set({
+        }).then(function () {
+          return setTimeout(function () {
+            return _this2.onTransitionEnd();
+          }, currentDuration);
+        }).then(nextTick).then(function () {
+          _this2.checkStatus("leave");
+
+          _this2.set({
             classes: classNames["leave-to"]
           });
-        }).catch(() => {});
+        })["catch"](function () {});
       },
-
-      checkStatus(status) {
+      checkStatus: function checkStatus(status) {
         if (status !== this.status) {
-          throw new Error(`incongruent status: ${status}`);
+          throw new Error("incongruent status: ".concat(status));
         }
       },
-
-      onTransitionEnd() {
+      onTransitionEnd: function onTransitionEnd() {
         if (!this.data.show) {
           this.set({
             display: false
@@ -115,7 +132,8 @@ export const transition = function (showDefaultValue) {
           this.$emit("transitionEnd");
         }
       }
-
     }
   });
 };
+
+exports.transition = transition;

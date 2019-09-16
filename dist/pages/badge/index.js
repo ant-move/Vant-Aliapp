@@ -1,12 +1,16 @@
-const _my = require("../../__antmove/api/index.js")(my);
+"use strict";
 
-import createPage from "../../common/page";
-createPage({
-  onChange(event) {
+var _page = _interopRequireDefault(require("../../common/page"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var _my = require("../../__antmove/api/index.js")(my);
+
+(0, _page["default"])({
+  onChange: function onChange(event) {
     _my.showToast({
       icon: "none",
-      title: `切换至第${event.detail}项`
+      title: "\u5207\u6362\u81F3\u7B2C".concat(event.detail, "\u9879")
     });
   }
-
 });

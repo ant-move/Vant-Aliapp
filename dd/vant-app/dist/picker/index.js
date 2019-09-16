@@ -30,7 +30,7 @@ VantComponent({
 
         setChildren(columns) {
             this.simple = columns.length && !columns[0].values;
-            this.children = this.selectAllComponents(".van-picker__column") || [];
+            this.children = this.selectAllComponents(".van-picker__column");
 
             if (Array.isArray(this.children) && this.children.length) {
                 this.setColumns().catch(() => {});
@@ -87,11 +87,6 @@ VantComponent({
 
         // get column instance by index
         getColumn(index) {
-            setTimeout(()=> {
-              this.children = this.selectAllComponents(".van-picker__column") || [];
-
-          console.log(this.children, index)
-            }, 0)
             let children = this.children && this.children[index];
             return children;
         },
@@ -105,7 +100,6 @@ VantComponent({
         // set column value by index
         setColumnValue(index, value) {
             const column = this.getColumn(index);
-            if (column === undefined) return false
 
             if (column == null) {
                 return Promise.reject(
@@ -174,7 +168,6 @@ VantComponent({
 
         // get values of all columns
         getValues() {
-          console.log(this)
             return this.children.map(child => child.getValue());
         },
 
@@ -198,8 +191,5 @@ VantComponent({
             );
             return Promise.all(stack);
         }
-    },
-    mounted () {
-      console.log('ssss', this.$id)
     }
 });

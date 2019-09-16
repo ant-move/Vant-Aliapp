@@ -1,6 +1,8 @@
-const _Component = require("../__antmove/component/componentClass.js")("Component");
+"use strict";
 
-const _my = require("../__antmove/api/index.js")(my);
+var _Component = require("../__antmove/component/componentClass.js")("Component");
+
+var _my = require("../__antmove/api/index.js")(my);
 
 _Component({
   data: {
@@ -16,7 +18,7 @@ _Component({
     }]
   },
   methods: {
-    onChange(event) {
+    onChange: function onChange(event) {
       this.setData({
         active: event.detail
       });
@@ -25,13 +27,13 @@ _Component({
         url: this.data.list[event.detail].url
       });
     },
-
-    init() {
-      const page = getCurrentPages().pop();
+    init: function init() {
+      var page = getCurrentPages().pop();
       this.setData({
-        active: this.data.list.findIndex(item => item.url === `/${page.route}`)
+        active: this.data.list.findIndex(function (item) {
+          return item.url === "/".concat(page.route);
+        })
       });
     }
-
   }
 });

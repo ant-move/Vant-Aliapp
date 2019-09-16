@@ -1,5 +1,8 @@
-import { VantComponent } from "../common/component";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+(0, _component.VantComponent)({
   field: true,
   classes: ["node-class"],
   props: {
@@ -22,34 +25,29 @@ VantComponent({
     }
   },
   watch: {
-    checked(value) {
+    checked: function checked(value) {
       this.set({
-        value
+        value: value
       });
     }
-
   },
-
-  created() {
+  created: function created() {
     this.set({
       value: this.data.checked
     });
   },
-
   methods: {
-    onClick() {
-      const {
-        activeValue,
-        inactiveValue
-      } = this.data;
+    onClick: function onClick() {
+      var _this$data = this.data,
+          activeValue = _this$data.activeValue,
+          inactiveValue = _this$data.inactiveValue;
 
       if (!this.data.disabled && !this.data.loading) {
-        const checked = this.data.checked === activeValue;
-        const value = checked ? inactiveValue : activeValue;
+        var checked = this.data.checked === activeValue;
+        var value = checked ? inactiveValue : activeValue;
         this.$emit("input", value);
         this.$emit("change", value);
       }
     }
-
   }
 });

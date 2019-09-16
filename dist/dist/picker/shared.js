@@ -1,4 +1,10 @@
-export const pickerProps = {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.pickerProps = void 0;
+var pickerProps = {
   title: String,
   loading: Boolean,
   showToolbar: Boolean,
@@ -19,3 +25,4 @@ export const pickerProps = {
     value: 44
   }
 };
+exports.pickerProps = pickerProps;

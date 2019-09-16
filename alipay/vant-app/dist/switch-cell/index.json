@@ -1,7 +1,7 @@
 {
 	"component": true,
 	"usingComponents": {
-		"van-cell": "/dist/cell/index",
-		"van-switch": "/dist/switch/index"
+		"van-cell": "../cell/index",
+		"van-switch": "../switch/index"
 	}
 }

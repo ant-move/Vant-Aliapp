@@ -1,18 +1,29 @@
-const _Component = require("../../__antmove/component/componentClass.js")("Component");
+"use strict";
 
-import { basic } from "../mixins/basic";
-import { observe } from "../mixins/observer/index";
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.VantComponent = VantComponent;
+
+var _basic = require("../mixins/basic");
+
+var _index = require("../mixins/observer/index");
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var _Component = require("../../__antmove/component/componentClass.js")("Component");
 
 function mapKeys(source, target, map) {
-  Object.keys(map).forEach(key => {
+  Object.keys(map).forEach(function (key) {
     if (source[key]) {
       target[map[key]] = source[key];
     }
   });
 }
 
-function VantComponent(vantOptions = {}) {
-  const options = {};
+function VantComponent() {
+  var vantOptions = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var options = {};
   mapKeys(vantOptions, options, {
     data: "data",
     props: "properties",
@@ -26,14 +37,10 @@ function VantComponent(vantOptions = {}) {
     classes: "externalClasses",
     didUpdate: "didUpdate"
   });
-  const {
-    relation
-  } = vantOptions;
+  var relation = vantOptions.relation;
 
   if (relation) {
-    options.relations = Object.assign(options.relations || {}, {
-      [`../${relation.name}/index`]: relation
-    });
+    options.relations = Object.assign(options.relations || {}, _defineProperty({}, "../".concat(relation.name, "/index"), relation));
   } // add default externalClasses
 
 
@@ -41,7 +48,7 @@ function VantComponent(vantOptions = {}) {
   options.externalClasses.push("custom-class"); // add default behaviors
 
   options.behaviors = options.behaviors || [];
-  options.behaviors.push(basic); // map field to form-field behavior
+  options.behaviors.push(_basic.basic); // map field to form-field behavior
 
   if (vantOptions.field) {
     options.behaviors.push("wx://form-field");
@@ -52,9 +59,7 @@ function VantComponent(vantOptions = {}) {
     multipleSlots: true,
     addGlobalClass: true
   };
-  observe(vantOptions, options);
+  (0, _index.observe)(vantOptions, options);
 
   _Component(options);
 }
-
-export { VantComponent };

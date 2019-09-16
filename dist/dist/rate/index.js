@@ -1,5 +1,8 @@
-import { VantComponent } from "../common/component";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+(0, _component.VantComponent)({
   field: true,
   classes: ["icon-class"],
   props: {
@@ -41,23 +44,18 @@ VantComponent({
     innerValue: 0
   },
   watch: {
-    value(value) {
-      if (value !== this.data.innerValue) {
+    value: function value(_value) {
+      if (_value !== this.data.innerValue) {
         this.set({
-          innerValue: value
+          innerValue: _value
         });
       }
     }
-
   },
   methods: {
-    onSelect(event) {
-      const {
-        data
-      } = this;
-      const {
-        score
-      } = event.currentTarget.dataset;
+    onSelect: function onSelect(event) {
+      var data = this.data;
+      var score = event.currentTarget.dataset.score;
 
       if (!data.disabled && !data.readonly) {
         this.set({
@@ -67,13 +65,13 @@ VantComponent({
         this.$emit("change", score + 1);
       }
     },
+    onTouchMove: function onTouchMove(event) {
+      var _this = this;
 
-    onTouchMove(event) {
-      const {
-        clientX,
-        clientY
-      } = event.touches[0];
-      let childName = "";
+      var _event$touches$ = event.touches[0],
+          clientX = _event$touches$.clientX,
+          clientY = _event$touches$.clientY;
+      var childName = "";
 
       if (this.props) {
         childName = "." + this.props.childName;
@@ -81,24 +79,27 @@ VantComponent({
         childName = "." + this.properties.childName;
       }
 
-      let nodes = this.selectAllComponents(childName);
-      this.getRect(childName, true).then(list => {
+      var nodes = this.selectAllComponents(childName);
+      this.getRect(childName, true).then(function (list) {
         if (nodes[0] && nodes[0]["props"]) {
-          list.map((item, index) => {
+          list.map(function (item, index) {
             item["dataset"] = {};
             item["dataset"]["score"] = nodes[index].props["data-score"];
           });
         }
 
-        const target = list.sort(item => item.right - item.left).find(item => clientX >= item.left && clientX <= item.right && clientY >= item.top && clientY <= item.bottom);
+        var target = list.sort(function (item) {
+          return item.right - item.left;
+        }).find(function (item) {
+          return clientX >= item.left && clientX <= item.right && clientY >= item.top && clientY <= item.bottom;
+        });
 
         if (target != null) {
-          this.onSelect(Object.assign({}, event, {
+          _this.onSelect(Object.assign({}, event, {
             currentTarget: target
           }));
         }
       });
     }
-
   }
 });

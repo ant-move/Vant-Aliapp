@@ -1,7 +1,11 @@
-import { VantComponent } from "../common/component";
-import { isObj, range } from "../common/utils";
-const DEFAULT_DURATION = 200;
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+var _utils = require("../common/utils");
+
+var DEFAULT_DURATION = 200;
+(0, _component.VantComponent)({
   classes: ["active-class"],
   props: {
     valueKey: String,
@@ -25,139 +29,110 @@ VantComponent({
     options: [],
     currentIndex: 0
   },
+  created: function created() {
+    var _this = this;
 
-  created() {
-    const {
-      defaultIndex,
-      initialOptions
-    } = this.data;
+    var _this$data = this.data,
+        defaultIndex = _this$data.defaultIndex,
+        initialOptions = _this$data.initialOptions;
     this.set({
       currentIndex: defaultIndex,
       options: initialOptions
-    }).then(() => {
-      this.setIndex(defaultIndex);
+    }).then(function () {
+      _this.setIndex(defaultIndex);
     });
   },
-
   computed: {
-    count() {
+    count: function count() {
       return this.data.options.length;
     },
-
-    baseOffset() {
-      const {
-        data
-      } = this;
+    baseOffset: function baseOffset() {
+      var data = this.data;
       return data.itemHeight * (data.visibleItemCount - 1) / 2;
     },
-
-    wrapperStyle() {
-      const {
-        data
-      } = this;
-      return [`transition: ${data.duration}ms`, `transform: translate3d(0, ${data.offset + data.baseOffset}px, 0)`, `line-height: ${data.itemHeight}px`].join("; ");
+    wrapperStyle: function wrapperStyle() {
+      var data = this.data;
+      return ["transition: ".concat(data.duration, "ms"), "transform: translate3d(0, ".concat(data.offset + data.baseOffset, "px, 0)"), "line-height: ".concat(data.itemHeight, "px")].join("; ");
     }
-
   },
   watch: {
-    defaultIndex(value) {
+    defaultIndex: function defaultIndex(value) {
       this.setIndex(value);
     }
-
   },
   methods: {
-    onTouchStart(event) {
+    onTouchStart: function onTouchStart(event) {
       this.set({
         startY: event.touches[0].clientY,
         startOffset: this.data.offset,
         duration: 0
       });
     },
-
-    onTouchMove(event) {
-      const {
-        data
-      } = this;
-      const deltaY = event.touches[0].clientY - data.startY;
+    onTouchMove: function onTouchMove(event) {
+      var data = this.data;
+      var deltaY = event.touches[0].clientY - data.startY;
       this.set({
-        offset: range(data.startOffset + deltaY, -(data.count * data.itemHeight), data.itemHeight)
+        offset: (0, _utils.range)(data.startOffset + deltaY, -(data.count * data.itemHeight), data.itemHeight)
       });
     },
-
-    onTouchEnd() {
-      const {
-        data
-      } = this;
+    onTouchEnd: function onTouchEnd() {
+      var data = this.data;
 
       if (data.offset !== data.startOffset) {
         this.set({
           duration: DEFAULT_DURATION
         });
-        const index = range(Math.round(-data.offset / data.itemHeight), 0, data.count - 1);
+        var index = (0, _utils.range)(Math.round(-data.offset / data.itemHeight), 0, data.count - 1);
         this.setIndex(index, true);
       }
     },
-
-    onClickItem(event) {
-      const {
-        index
-      } = event.currentTarget.dataset;
+    onClickItem: function onClickItem(event) {
+      var index = event.currentTarget.dataset.index;
       this.setIndex(index, true);
     },
+    adjustIndex: function adjustIndex(index) {
+      var data = this.data;
+      index = (0, _utils.range)(index, 0, data.count);
 
-    adjustIndex(index) {
-      const {
-        data
-      } = this;
-      index = range(index, 0, data.count);
-
-      for (let i = index; i < data.count; i++) {
+      for (var i = index; i < data.count; i++) {
         if (!this.isDisabled(data.options[i])) return i;
       }
 
-      for (let i = index - 1; i >= 0; i--) {
-        if (!this.isDisabled(data.options[i])) return i;
+      for (var _i = index - 1; _i >= 0; _i--) {
+        if (!this.isDisabled(data.options[_i])) return _i;
       }
     },
-
-    isDisabled(option) {
-      return isObj(option) && option.disabled;
+    isDisabled: function isDisabled(option) {
+      return (0, _utils.isObj)(option) && option.disabled;
     },
-
-    getOptionText(option) {
-      const {
-        data
-      } = this;
-      return isObj(option) && data.valueKey in option ? option[data.valueKey] : option;
+    getOptionText: function getOptionText(option) {
+      var data = this.data;
+      return (0, _utils.isObj)(option) && data.valueKey in option ? option[data.valueKey] : option;
     },
+    setIndex: function setIndex(index, userAction) {
+      var _this2 = this;
 
-    setIndex(index, userAction) {
-      const {
-        data
-      } = this;
+      var data = this.data;
       index = this.adjustIndex(index) || 0;
-      const offset = -index * data.itemHeight;
+      var offset = -index * data.itemHeight;
 
       if (index !== data.currentIndex) {
         return this.set({
-          offset,
+          offset: offset,
           currentIndex: index
-        }).then(() => {
-          userAction && this.$emit("change", index);
+        }).then(function () {
+          userAction && _this2.$emit("change", index);
         });
       }
 
       return this.set({
-        offset
+        offset: offset
       });
     },
+    setValue: function setValue(value) {
+      var options = this.data.options;
 
-    setValue(value) {
-      const {
-        options
-      } = this.data;
-
-      for (let i = 0; i < options.length; i++) {
+      for (var i = 0; i < options.length; i++) {
         if (this.getOptionText(options[i]) === value) {
           return this.setIndex(i);
         }
@@ -165,13 +140,9 @@ VantComponent({
 
       return Promise.resolve();
     },
-
-    getValue() {
-      const {
-        data
-      } = this;
+    getValue: function getValue() {
+      var data = this.data;
       return data.options[data.currentIndex];
     }
-
   }
 });

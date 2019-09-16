@@ -1,9 +1,14 @@
-import { VantComponent } from "../common/component";
-import { transition } from "../mixins/transition";
-import { safeArea } from "../mixins/safe-area";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+var _transition = require("../mixins/transition");
+
+var _safeArea = require("../mixins/safe-area");
+
+(0, _component.VantComponent)({
   classes: ["enter-class", "enter-active-class", "enter-to-class", "leave-class", "leave-active-class", "leave-to-class"],
-  mixins: [transition(false), safeArea()],
+  mixins: [(0, _transition.transition)(false), (0, _safeArea.safeArea)()],
   props: {
     transition: {
       type: String,
@@ -29,26 +34,22 @@ VantComponent({
       observer: "observeClass"
     }
   },
-
-  created() {
+  created: function created() {
     this.observeClass();
   },
-
   methods: {
-    onClickOverlay() {
+    onClickOverlay: function onClickOverlay() {
       this.$emit("click-overlay");
 
       if (this.data.closeOnClickOverlay) {
         this.$emit("close");
       }
     },
-
-    observeClass() {
-      const {
-        transition,
-        position
-      } = this.data;
-      const updateData = {
+    observeClass: function observeClass() {
+      var _this$data = this.data,
+          transition = _this$data.transition,
+          position = _this$data.position;
+      var updateData = {
         name: transition || position
       };
 
@@ -58,6 +59,5 @@ VantComponent({
 
       this.set(updateData);
     }
-
   }
 });
