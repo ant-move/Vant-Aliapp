@@ -1,7 +1,7 @@
 my.setStorageSync({
     key: "activeComponent",
     data: {
-        is: "/dist/swipe-cell/index"
+        is: "dist/swipe-cell/index"
     }
 });
 import { VantComponent } from "../common/component";

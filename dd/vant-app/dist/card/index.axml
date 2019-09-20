@@ -1,47 +1,47 @@
-<view class='card-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
-  <import-sjs _parent_ref="{{isMounted}}" from='../wxs/utils.sjs' name='utils'>
+<view class='card-index {{className}}' onChildRef='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
-  <view class='{{customClass}} van-card' _parent_ref="{{isMounted}}">
-    <view class="{{ utils.bem('card__header', { center: centered }) }}" _parent_ref="{{isMounted}}">
-      <view class='van-card__thumb' _parent_ref="{{isMounted}}" onTap='onClickThumb'>
-        <image a:if='{{ thumb }}' src='{{ thumb }}' mode='{{ thumbMode }}' lazy-load='{{ lazyLoad }}' class='van-card__img {{thumbClass}}' _parent_ref="{{isMounted}}">
+  <view class='{{customClass}} van-card'>
+    <view class="{{ utils.bem('card__header', { center: centered }) }}">
+      <view class='van-card__thumb' onTap='onClickThumb'>
+        <image a:if='{{ thumb }}' src='{{ thumb }}' mode='{{ thumbMode }}' lazy-load='{{ lazyLoad }}' class='van-card__img {{thumbClass}}'>
         </image>
-        <slot name='thumb' _parent_ref="{{isMounted}}">
+        <slot name='thumb'>
         </slot>
         <van-tag a:if='{{ tag }}' mark=" " type='danger' custom-class='van-card__tag' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
           {{ tag }}
         </van-tag>
       </view>
-      <view class='van-card__content' _parent_ref="{{isMounted}}">
-        <view a:if='{{ title }}' class='van-card__title {{titleClass}}' _parent_ref="{{isMounted}}">
+      <view class='van-card__content'>
+        <view a:if='{{ title }}' class='van-card__title {{titleClass}}'>
           {{ title }}
         </view>
-        <slot a:else  name='title' _parent_ref="{{isMounted}}">
+        <slot a:else  name='title'>
         </slot>
-        <view a:if='{{ desc }}' class='van-card__desc {{descClass}}' _parent_ref="{{isMounted}}">
+        <view a:if='{{ desc }}' class='van-card__desc {{descClass}}'>
           {{ desc }}
         </view>
-        <slot a:else  name='desc' _parent_ref="{{isMounted}}">
+        <slot a:else  name='desc'>
         </slot>
-        <slot name='tags' _parent_ref="{{isMounted}}">
+        <slot name='tags'>
         </slot>
-        <view class='van-card__bottom' _parent_ref="{{isMounted}}">
-          <view a:if='{{ price || price === 0 }}' class='van-card__price {{priceClass}}' _parent_ref="{{isMounted}}">
+        <view class='van-card__bottom'>
+          <view a:if='{{ price || price === 0 }}' class='van-card__price {{priceClass}}'>
             {{ currency }} {{ price }}
           </view>
-          <view a:if='{{ originPrice || originPrice === 0 }}' class='van-card__origin-price {{originPriceClass}}' _parent_ref="{{isMounted}}">
+          <view a:if='{{ originPrice || originPrice === 0 }}' class='van-card__origin-price {{originPriceClass}}'>
             {{ currency }} {{ originPrice }}
           </view>
-          <view a:if='{{ num }}' class='van-card__num {{numClass}}' _parent_ref="{{isMounted}}">
+          <view a:if='{{ num }}' class='van-card__num {{numClass}}'>
             x {{ num }}
           </view>
-          <slot name='bottom' _parent_ref="{{isMounted}}">
+          <slot name='bottom'>
           </slot>
         </view>
       </view>
     </view>
-    <view class='van-card__footer' _parent_ref="{{isMounted}}">
-      <slot name='footer' _parent_ref="{{isMounted}}">
+    <view class='van-card__footer'>
+      <slot name='footer'>
       </slot>
     </view>
   </view>

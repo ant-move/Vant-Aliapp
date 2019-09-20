@@ -1,10 +1,10 @@
-<view class='switch-cell-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+<view class='switch-cell-index {{className}}' onChildRef='saveChildRef0'>
   <van-cell center=" " title='{{ title }}' label='{{ label }}' border='{{ border }}' icon='{{ icon }}' custom-class='van-switch-cell' use-label-slot='{{ useLabelSlot }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
-    <slot slot='icon' name='icon' _parent_ref="{{isMounted}}">
+    <slot slot='icon' name='icon'>
     </slot>
-    <slot slot='title' name='title' _parent_ref="{{isMounted}}">
+    <slot slot='title' name='title'>
     </slot>
-    <slot slot='label' name='label' _parent_ref="{{isMounted}}">
+    <slot slot='label' name='label'>
     </slot>
     <van-switch size='{{ size }}' checked='{{ checked }}' loading='{{ loading }}' disabled='{{ disabled }}' active-color='{{ activeColor }}' inactive-color='{{ inactiveColor }}' active-value='{{ activeValue }}' inactive-value='{{ inactiveValue }}' custom-class='van-switch-cell__switch' _parent_ref="{{isMounted}}" onChange='onChange' onChildRef='saveChildRef2'>
     </van-switch>

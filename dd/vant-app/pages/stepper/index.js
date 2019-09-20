@@ -1,7 +1,7 @@
 my.setStorageSync({
     key: "activeComponent",
     data: {
-        is: "/pages/stepper/index"
+        is: "pages/stepper/index"
     }
 });
 import createPage from "../../common/page";

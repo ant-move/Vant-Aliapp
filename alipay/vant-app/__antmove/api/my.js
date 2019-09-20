@@ -1123,7 +1123,14 @@ const apiObj = {startBeaconDiscovery:{fn: function fn (obj = {}) {
             function Query () {
                 this.query = SQ;
                 this._selectType = 0; // 0: array, 1: object
-
+                this.in = function (p) {
+                    if (typeof this.query.in === 'function') {
+                        this.query.in(p)
+                        return this;
+                    } else {
+                        return this;
+                    }
+                }
                 this.select = function (p) {
                     this.query.select(p);
                     this._selectType = 1;

@@ -1,5 +1,5 @@
-<view class='info-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
-  <view a:if='{{ info !== null }}' class='{{customClass}} van-info' style='{{ customStyle }}' _parent_ref="{{isMounted}}">
+<view class='info-index {{className}}' onChildRef='saveChildRef0'>
+  <view a:if='{{ info !== null }}' class='{{customClass}} van-info' style='{{ customStyle }}'>
     {{ info }}
   </view>
 </view>

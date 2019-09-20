@@ -1,7 +1,7 @@
 my.setStorageSync({
     key: "activeComponent",
     data: {
-        is: "/dist/action-sheet/index"
+        is: "dist/action-sheet/index"
     }
 });
 import { VantComponent } from "../common/component";

@@ -1,10 +1,10 @@
-const _Component = require("/__antmove/component/componentClass.js")(
+const _Component = require("../../__antmove/component/componentClass.js")(
     "Component"
 );
 my.setStorageSync({
     key: "activeComponent",
     data: {
-        is: "/components/demo-block/index"
+        is: "components/demo-block/index"
     }
 });
 

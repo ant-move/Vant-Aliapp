@@ -7,7 +7,7 @@
   </van-search>
 </demo-block><demo-block title='高级用法' _parent_ref="{{isMounted}}" onChildRef='saveChildRef5'>
   <van-search value='{{ value }}' placeholder='请输入搜索关键词' use-action-slot=" " label='地址' shape='round' _parent_ref="{{isMounted}}" onChange='onChange' onSearch='onSearch' onChildRef='saveChildRef6'>
-    <view slot='action' _parent_ref="{{isMounted}}" onTap='onSearch'>
+    <view slot='action' onTap='onSearch'>
       搜索
     </view>
   </van-search>

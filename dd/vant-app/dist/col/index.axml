@@ -1,7 +1,7 @@
-<view class='col-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
-  <import-sjs _parent_ref="{{isMounted}}" from='../wxs/utils.sjs' name='utils'>
+<view class='col-index {{className}}' onChildRef='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
-  <view class="{{customClass}} {{ utils.bem('col', [span]) }} {{ offset ? 'van-col--offset-' + offset : '' }}" style='{{ style }}' _parent_ref="{{isMounted}}">
+  <view class="{{customClass}} {{ utils.bem('col', [span]) }} {{ offset ? 'van-col--offset-' + offset : '' }}" style='{{ style }}'>
     <slot>
     </slot>
   </view>

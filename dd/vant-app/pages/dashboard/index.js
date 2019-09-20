@@ -1,8 +1,8 @@
-const _my = require("/__antmove/api/index.js")(my);
+const _my = require("../../__antmove/api/index.js")(my);
 my.setStorageSync({
     key: "activeComponent",
     data: {
-        is: "/pages/dashboard/index"
+        is: "pages/dashboard/index"
     }
 });
 import list from "../../config";

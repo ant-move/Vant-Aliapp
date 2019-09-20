@@ -1,13 +1,13 @@
 <view class='page-container-classname'>
-                <view class='container' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
-  <view class='title' _parent_ref="{{isMounted}}">
-    <image class='logo' src='https://img.yzcdn.cn/vant/logo.png' _parent_ref="{{isMounted}}">
+                <view class='container' onChildRef='saveChildRef0'>
+  <view class='title'>
+    <image class='logo' src='https://img.yzcdn.cn/vant/logo.png'>
     </image>
-    <view class='title-text' _parent_ref="{{isMounted}}">
+    <view class='title-text'>
       Vant Aliapp
     </view>
   </view>
-  <view class='desc' _parent_ref="{{isMounted}}">
+  <view class='desc'>
     轻量、可靠的小程序 UI 组件库
   </view>
   <van-collapse a:for='{{ list }}' a:for-item='group' a:key='*this' value='{{ activeNames }}' border='{{ false }}' ref-numbers='{{ list }}' _parent_ref="{{isMounted}}" onChange='onChangeCollapse' onChildRef='saveChildRef1'>

@@ -1,7 +1,7 @@
 my.setStorageSync({
     key: "activeComponent",
     data: {
-        is: "/pages/swipe-cell/index"
+        is: "pages/swipe-cell/index"
     }
 });
 import createPage from "../../common/page";

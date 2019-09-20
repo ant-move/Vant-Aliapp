@@ -1,1 +1,1 @@
-{ "component": true, "usingComponents": { "van-cell": "/dist/cell/index" } }
+{ "component": true, "usingComponents": { "van-cell": "../cell/index" } }

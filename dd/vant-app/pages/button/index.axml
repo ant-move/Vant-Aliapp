@@ -1,7 +1,7 @@
 <view class='page-container-classname'>
-                <demo-section onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+                <demo-section onChildRef='saveChildRef0'>
   <demo-block title='按钮类型' padding=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
-    <view class='row' _parent_ref="{{isMounted}}">
+    <view class='row'>
       <van-button my-class='demo-margin-right' _parent_ref="{{isMounted}}" onChildRef='saveChildRef2'>
         默认按钮
       </van-button>

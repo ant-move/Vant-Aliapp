@@ -1,7 +1,7 @@
 my.setStorageSync({
     key: "activeComponent",
     data: {
-        is: "/pages/tree-select/index"
+        is: "pages/tree-select/index"
     }
 });
 export default {

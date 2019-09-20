@@ -1,7 +1,7 @@
 my.setStorageSync({
     key: "activeComponent",
     data: {
-        is: "/dist/dialog/index"
+        is: "dist/dialog/index"
     }
 });
 let queue = [];

@@ -1,7 +1,7 @@
 my.setStorageSync({
     key: "activeComponent",
     data: {
-        is: "/pages/dialog/index"
+        is: "pages/dialog/index"
     }
 });
 import createPage from "../../common/page";

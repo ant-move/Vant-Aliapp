@@ -19,7 +19,7 @@
     组件调用
   </van-button>
   <van-dialog use-slot=" " title='标题' show='{{ show }}' show-cancel-button=" " confirm-button-open-type='getUserInfo' _parent_ref="{{isMounted}}" onClose='onClose' onGetuserinfo='getUserInfo' onChildRef='saveChildRef10'>
-    <image class='demo-image' src='https://img.yzcdn.cn/public_files/2017/09/05/4e3ea0898b1c2c416eec8c11c5360833.jpg' _parent_ref="{{isMounted}}">
+    <image class='demo-image' src='https://img.yzcdn.cn/public_files/2017/09/05/4e3ea0898b1c2c416eec8c11c5360833.jpg'>
     </image>
   </van-dialog>
 </demo-block><van-dialog id='van-dialog' class='myvan-dialog' _parent_ref="{{isMounted}}" onChildRef='saveChildRef11'>

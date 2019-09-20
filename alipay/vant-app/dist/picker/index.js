@@ -26,12 +26,16 @@ VantComponent({
     },
 
     methods: {
+        onRelationsUpdate() {
+            // for dd
+            this.setChildren(this.data.columns);
+        },
+
         noop() {},
 
         setChildren(columns) {
             this.simple = columns.length && !columns[0].values;
             this.children = this.selectAllComponents(".van-picker__column");
-            console.log(this);
 
             if (Array.isArray(this.children) && this.children.length) {
                 this.setColumns().catch(() => {});
@@ -103,12 +107,11 @@ VantComponent({
             const column = this.getColumn(index);
 
             if (column == null) {
-                return Promise.reject(
-                    new Error("setColumnValue: 对应列不存在")
-                );
+                console.warn("setColumnValue: 对应列不存在");
+                return null;
             }
 
-            return column.setValue(value);
+            return column && column.setValue(value);
         },
 
         // get column option index by column index
@@ -122,9 +125,8 @@ VantComponent({
             const column = this.getColumn(columnIndex);
 
             if (column == null) {
-                return Promise.reject(
-                    new Error("setColumnIndex: 对应列不存在")
-                );
+                console.warn("setColumnIndex: 对应列不存在");
+                return null;
             }
 
             return column.setIndex(optionIndex);
@@ -144,9 +146,8 @@ VantComponent({
             const column = this.children[index];
 
             if (column == null) {
-                return Promise.reject(
-                    new Error("setColumnValues: 对应列不存在")
-                );
+                console.warn("setColumnValues: 对应列不存在");
+                return null;
             }
 
             const isSame =

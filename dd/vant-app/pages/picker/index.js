@@ -1,7 +1,7 @@
 my.setStorageSync({
     key: "activeComponent",
     data: {
-        is: "/pages/picker/index"
+        is: "pages/picker/index"
     }
 });
 import createPage from "../../common/page";

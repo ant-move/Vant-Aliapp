@@ -11,7 +11,7 @@
     <van-cell title='单元格' value='内容' size='large' _parent_ref="{{isMounted}}" onChildRef='saveChildRef7'>
     </van-cell>
     <van-cell title='单元格' value='内容' size='large' use-label-slot=" " border='{{ false }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef8'>
-      <view slot='label' _parent_ref="{{isMounted}}">
+      <view slot='label'>
         描述信息
       </view>
     </van-cell>
@@ -42,8 +42,8 @@
   </van-cell-group>
 </demo-block><demo-block title='高级用法' _parent_ref="{{isMounted}}" onChildRef='saveChildRef23'>
   <van-cell value='内容' icon='shop-o' is-link=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef24'>
-    <view slot='title' _parent_ref="{{isMounted}}">
-      <view class='title' _parent_ref="{{isMounted}}">
+    <view slot='title'>
+      <view class='title'>
         单元格
       </view>
       <van-tag type='danger' _parent_ref="{{isMounted}}" onChildRef='saveChildRef25'>

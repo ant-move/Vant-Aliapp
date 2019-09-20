@@ -16,7 +16,7 @@
   </van-slider>
 </demo-block><demo-block title='自定义按钮' _parent_ref="{{isMounted}}" onChildRef='saveChildRef11'>
   <van-slider value='{{ currentValue }}' custom-class='slider' use-button-slot=" " active-color='#f44' _parent_ref="{{isMounted}}" onDrag='onDrag' onChildRef='saveChildRef12'>
-    <view class='custom-button' slot='button' _parent_ref="{{isMounted}}">
+    <view class='custom-button' slot='button'>
       {{ currentValue }}
     </view>
   </van-slider>

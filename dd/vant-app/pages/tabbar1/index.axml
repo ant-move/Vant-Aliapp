@@ -2,9 +2,9 @@
                 <demo-block title='自定义图标' onChildRef='saveChildRef1' _parent_ref="{{isMounted}}">
   <van-tabbar active='{{ active2 }}' data-key='active2' custom-class='tabbar' safe-area-inset-bottom='{{ false }}' _parent_ref="{{isMounted}}" onChange='onChange' onChildRef='saveChildRef2'>
     <van-tabbar-item info='{{3}}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef3'>
-      <image slot='icon' src='{{ icon.normal }}' mode='aspectFit' _parent_ref="{{isMounted}}">
+      <image slot='icon' src='{{ icon.normal }}' mode='aspectFit'>
       </image>
-      <image slot='icon-active' src='{{ icon.active }}' mode='aspectFit' _parent_ref="{{isMounted}}">
+      <image slot='icon-active' src='{{ icon.active }}' mode='aspectFit'>
       </image>
       自定义
     </van-tabbar-item>

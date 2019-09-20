@@ -1,7 +1,7 @@
 my.setStorageSync({
     key: "activeComponent",
     data: {
-        is: "/pages/datetime-picker/index"
+        is: "pages/datetime-picker/index"
     }
 });
 import createPage from "../../common/page";

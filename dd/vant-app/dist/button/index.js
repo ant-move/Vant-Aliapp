@@ -1,8 +1,8 @@
-const _my = require("/__antmove/api/index.js")(my);
+const _my = require("../../__antmove/api/index.js")(my);
 my.setStorageSync({
     key: "activeComponent",
     data: {
-        is: "/dist/button/index"
+        is: "dist/button/index"
     }
 });
 import { VantComponent } from "../common/component";

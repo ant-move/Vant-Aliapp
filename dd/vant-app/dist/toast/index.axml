@@ -1,17 +1,17 @@
-<view class='toast-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+<view class='toast-index {{className}}' onChildRef='saveChildRef0'>
   <van-overlay a:if='{{ mask || forbidClick }}' show='{{ show }}' mask='{{ mask }}' z-index='{{ zIndex }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
   </van-overlay>
   <van-transition show='{{ show }}' custom-style='z-index: {{ zIndex }}' custom-class='van-toast__container' _parent_ref="{{isMounted}}" onChildRef='saveChildRef2'>
-    <view class="van-toast van-toast--{{ type === 'text' ? 'text' : 'icon' }} van-toast--{{ position }}" _parent_ref="{{isMounted}}" catchTouchMove='noop'>
-      <text a:if="{{ type === 'text' }}" _parent_ref="{{isMounted}}">
+    <view class="van-toast van-toast--{{ type === 'text' ? 'text' : 'icon' }} van-toast--{{ position }}" catchTouchMove='noop'>
+      <text a:if="{{ type === 'text' }}">
         {{ message }}
       </text>
-      <block a:else  _parent_ref="{{isMounted}}">
+      <block a:else >
         <van-loading a:if="{{ type === 'loading' }}" color='white' type='{{ loadingType }}' custom-class='van-toast__loading' _parent_ref="{{isMounted}}" onChildRef='saveChildRef3'>
         </van-loading>
         <van-icon a:else  class='van-toast__icon' name='{{ type }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef4'>
         </van-icon>
-        <text a:if='{{ message }}' class='van-toast__text' _parent_ref="{{isMounted}}">
+        <text a:if='{{ message }}' class='van-toast__text'>
           {{ message }}
         </text>
       </block>

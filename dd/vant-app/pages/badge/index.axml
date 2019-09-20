@@ -1,7 +1,7 @@
 <view class='page-container-classname'>
                 <demo-block title='基础用法' onChildRef='saveChildRef1' _parent_ref="{{isMounted}}">
-  <view class='container' _parent_ref="{{isMounted}}">
-    <van-badge-group custom-class='group' _parent_ref="{{isMounted}}" onChange='onChange' onChildRef='saveChildRef2'>
+  <view class='container'>
+    <van-badge-group custom-class='group' onChange='onChange' _parent_ref="{{isMounted}}" onChildRef='saveChildRef2'>
       <van-badge title='标签名称' _parent_ref="{{isMounted}}" onChildRef='saveChildRef3'>
       </van-badge>
       <van-badge title='标签名称' info='{{8}}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef4'>

@@ -1,16 +1,16 @@
-<view class='tree-select-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
-  <import-sjs _parent_ref="{{isMounted}}" from="./index.axmltsUtil.sjs" name='tsUtil'>
+<view class='tree-select-index {{className}}' onChildRef='saveChildRef0'>
+  <import-sjs from="./index.axmltsUtil.sjs" name='tsUtil'>
   </import-sjs>
-  <import-sjs _parent_ref="{{isMounted}}" from='../wxs/utils.sjs' name='utils'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
-  <view class='van-tree-select' style='height: {{ mainHeight }}px' _parent_ref="{{isMounted}}">
-    <scroll-view scroll-y=" " class='van-tree-select__nav' _parent_ref="{{isMounted}}">
-      <view a:for='{{ items }}' a:key='index' class="van-ellipsis {{mainItemClass}} {{ utils.bem('tree-select__nitem', { active: mainActiveIndex === index, disabled: item.disabled }) }} {{ mainActiveIndex === index ? 'main-active-class' : '' }} {{ item.disabled ? 'main-disabled-class' : '' }}" data-index='{{ index }}' ref-numbers='{{ items }}' _parent_ref="{{isMounted}}" onTap='onClickNav'>
+  <view class='van-tree-select' style='height: {{ mainHeight }}px'>
+    <scroll-view scroll-y=" " class='van-tree-select__nav'>
+      <view a:for='{{ items }}' a:key='index' class="van-ellipsis {{mainItemClass}} {{ utils.bem('tree-select__nitem', { active: mainActiveIndex === index, disabled: item.disabled }) }} {{ mainActiveIndex === index ? 'main-active-class' : '' }} {{ item.disabled ? 'main-disabled-class' : '' }}" data-index='{{ index }}' ref-numbers='{{ items }}' onTap='onClickNav'>
         {{ item.text }}
       </view>
     </scroll-view>
-    <scroll-view scroll-y=" " class='van-tree-select__content' style='height: {{ itemHeight }}px' _parent_ref="{{isMounted}}">
-      <view a:for='{{ subItems }}' a:key='id' class="van-ellipsis van-hairline--bottom {{contentItemClass}} {{ utils.bem('tree-select__item', { active: tsUtil.isActive(activeId, item.id), disabled: item.disabled }) }} {{ tsUtil.isActive(activeId, item.id) ? 'content-active-class' : '' }} {{ item.disabled ? 'content-disabled-class' : '' }}" data-item='{{ item }}' ref-numbers='{{ subItems }}' _parent_ref="{{isMounted}}" onTap='onSelectItem'>
+    <scroll-view scroll-y=" " class='van-tree-select__content' style='height: {{ itemHeight }}px'>
+      <view a:for='{{ subItems }}' a:key='id' class="van-ellipsis van-hairline--bottom {{contentItemClass}} {{ utils.bem('tree-select__item', { active: tsUtil.isActive(activeId, item.id), disabled: item.disabled }) }} {{ tsUtil.isActive(activeId, item.id) ? 'content-active-class' : '' }} {{ item.disabled ? 'content-disabled-class' : '' }}" data-item='{{ item }}' ref-numbers='{{ subItems }}' onTap='onSelectItem'>
         {{ item.text }}        <van-icon a:if='{{ tsUtil.isActive(activeId, item.id) }}' name='checked' size='16px' class='van-tree-select__selected' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
         </van-icon>
       </view>

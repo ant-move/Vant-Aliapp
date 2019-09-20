@@ -1,4 +1,4 @@
-<view class='radio-group-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+<view class='radio-group-index {{className}}' onChildRef='saveChildRef0'>
   <slot>
   </slot>
 </view>

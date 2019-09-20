@@ -1,5 +1,7 @@
 
+    
     module.exports = {
-        env: "production"
+        env: "production",
+        global: my
     }
     

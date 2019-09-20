@@ -1,27 +1,27 @@
 <view class='page-container-classname'>
                 <demo-block title='基础用法' onChildRef='saveChildRef1' _parent_ref="{{isMounted}}">
   <van-swipe-cell right-width='{{ 65 }}' left-width='{{ 65 }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef2'>
-    <view slot='left' _parent_ref="{{isMounted}}">
+    <view slot='left'>
       选择
     </view>
     <van-cell-group onChildRef='saveChildRef3'>
       <van-cell title='单元格' value='内容' _parent_ref="{{isMounted}}" onChildRef='saveChildRef4'>
       </van-cell>
     </van-cell-group>
-    <view slot='right' _parent_ref="{{isMounted}}">
+    <view slot='right'>
       删除
     </view>
   </van-swipe-cell>
 </demo-block><demo-block title='异步关闭' _parent_ref="{{isMounted}}" onChildRef='saveChildRef5'>
   <van-swipe-cell id='swipe-cell' right-width='{{ 65 }}' left-width='{{ 65 }}' async-close=" " _parent_ref="{{isMounted}}" onClose='onClose' onChildRef='saveChildRef6'>
-    <view slot='left' _parent_ref="{{isMounted}}">
+    <view slot='left'>
       选择
     </view>
     <van-cell-group onChildRef='saveChildRef7'>
       <van-cell title='单元格' value='内容' _parent_ref="{{isMounted}}" onChildRef='saveChildRef8'>
       </van-cell>
     </van-cell-group>
-    <view slot='right' _parent_ref="{{isMounted}}">
+    <view slot='right'>
       删除
     </view>
   </van-swipe-cell>

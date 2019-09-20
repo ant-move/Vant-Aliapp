@@ -1,7 +1,7 @@
-<view class='tab-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
-  <import-sjs _parent_ref="{{isMounted}}" from='../wxs/utils.sjs' name='utils'>
+<view class='tab-index {{className}}' onChildRef='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
-  <view a:if='{{ animated || inited }}' class="{{customClass}} {{ utils.bem('tab__pane', { active, inactive: !active }) }}" style="{{ animated || active ? '' : 'display: none;' }} {{ width ? 'width:' + width + 'px;' : '' }}" _parent_ref="{{isMounted}}">
+  <view a:if='{{ animated || inited }}' class="{{customClass}} {{ utils.bem('tab__pane', { active, inactive: !active }) }}" style="{{ animated || active ? '' : 'display: none;' }} {{ width ? 'width:' + width + 'px;' : '' }}">
     <slot>
     </slot>
   </view>

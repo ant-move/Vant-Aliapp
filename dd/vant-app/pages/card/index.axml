@@ -1,12 +1,12 @@
 <view class='page-container-classname'>
-                <view class='container' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+                <view class='container' onChildRef='saveChildRef0'>
   <demo-block title='基础用法' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
     <van-card num='{{2}}' price='{{2.00}}' desc='描述信息' title='2018秋冬新款男士休闲时尚军绿飞行夹克秋冬新款男' thumb='{{ imageURL }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef2'>
     </van-card>
   </demo-block>
   <demo-block title='高级用法' _parent_ref="{{isMounted}}" onChildRef='saveChildRef3'>
     <van-card num='{{2}}' tag='标签' price='{{2.00}}' origin-price='{{10.00}}' desc='描述信息' title='2018秋冬新款男士休闲时尚军绿飞行夹克秋冬新款男' thumb='{{ imageURL }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef4'>
-      <view slot='tags' _parent_ref="{{isMounted}}">
+      <view slot='tags'>
         <van-tag plain=" " type='danger' custom-class='tag' _parent_ref="{{isMounted}}" onChildRef='saveChildRef5'>
           标签1
         </van-tag>
@@ -14,7 +14,7 @@
           标签2
         </van-tag>
       </view>
-      <view slot='footer' class='van-card__footer' _parent_ref="{{isMounted}}">
+      <view slot='footer' class='van-card__footer'>
         <van-button size='mini' round=" " custom-class='button' _parent_ref="{{isMounted}}" onChildRef='saveChildRef7'>
           按钮
         </van-button>

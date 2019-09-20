@@ -26,7 +26,7 @@
 </demo-block><demo-block title='自定义标题内容' _parent_ref="{{isMounted}}" onChildRef='saveChildRef11'>
   <van-collapse value='{{ active3 }}' data-key='active3' _parent_ref="{{isMounted}}" onChange='onChange' onChildRef='saveChildRef12'>
     <van-collapse-item onChildRef='saveChildRef13'>
-      <view slot='title' _parent_ref="{{isMounted}}">
+      <view slot='title'>
         {{ title1 }}        <van-icon name='question-o' custom-class='van-icon-question' _parent_ref="{{isMounted}}" onChildRef='saveChildRef14'>
         </van-icon>
       </view>

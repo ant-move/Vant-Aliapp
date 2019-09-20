@@ -1,37 +1,37 @@
-<view class='cell-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
-  <import-sjs _parent_ref="{{isMounted}}" from='../wxs/utils.sjs' name='utils'>
+<view class='cell-index {{className}}' onChildRef='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
-  <view class="{{customClass}} {{ utils.bem('cell', [size, { center, required, borderless: !border, clickable: isLink || clickable }]) }}" hover-class='van-cell--hover {{hoverClass}}' hover-stay-time='{{70}}' style='{{ customStyle }}' _parent_ref="{{isMounted}}" onTap='onClick'>
+  <view class="{{customClass}} {{ utils.bem('cell', [size, { center, required, borderless: !border, clickable: isLink || clickable }]) }}" hover-class='van-cell--hover {{hoverClass}}' hover-stay-time='{{70}}' style='{{ customStyle }}' onTap='onClick'>
     <van-icon a:if='{{ icon }}' name='{{ icon }}' class='van-cell__left-icon-wrap' custom-class='van-cell__left-icon' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
     </van-icon>
-    <slot a:else  name='icon' _parent_ref="{{isMounted}}">
+    <slot a:else  name='icon'>
     </slot>
-    <view style="{{ titleWidth ? 'max-width:' + titleWidth + ';min-width:' + titleWidth : '' }}" class='van-cell__title {{titleClass}}' _parent_ref="{{isMounted}}">
-      <block a:if='{{ title }}' _parent_ref="{{isMounted}}">
+    <view style="{{ titleWidth ? 'max-width:' + titleWidth + ';min-width:' + titleWidth : '' }}" class='van-cell__title {{titleClass}}'>
+      <block a:if='{{ title }}'>
         {{ title }}
       </block>
-      <slot a:else  name='title' _parent_ref="{{isMounted}}">
+      <slot a:else  name='title'>
       </slot>
-      <view a:if='{{ label || useLabelSlot }}' class='van-cell__label {{labelClass}}' _parent_ref="{{isMounted}}">
-        <slot a:if='{{ useLabelSlot }}' name='label' _parent_ref="{{isMounted}}">
+      <view a:if='{{ label || useLabelSlot }}' class='van-cell__label {{labelClass}}'>
+        <slot a:if='{{ useLabelSlot }}' name='label'>
         </slot>
-        <block a:elif='{{ label }}' _parent_ref="{{isMounted}}">
+        <block a:elif='{{ label }}'>
           {{ label }}
         </block>
       </view>
     </view>
-    <view class='van-cell__value {{valueClass}}' _parent_ref="{{isMounted}}">
-      <block a:if='{{ value || value === 0 }}' _parent_ref="{{isMounted}}">
+    <view class='van-cell__value {{valueClass}}'>
+      <block a:if='{{ value || value === 0 }}'>
         {{ value }}
       </block>
-      <slot a:else  _parent_ref="{{isMounted}}">
+      <slot a:else >
       </slot>
     </view>
     <van-icon a:if='{{ isLink }}' name="{{ arrowDirection ? 'arrow' + '-' + arrowDirection : 'arrow' }}" class='van-cell__right-icon-wrap {{rightIconClass}}' custom-class='van-cell__right-icon' _parent_ref="{{isMounted}}" onChildRef='saveChildRef2'>
     </van-icon>
-    <slot a:else  name='right-icon' _parent_ref="{{isMounted}}">
+    <slot a:else  name='right-icon'>
     </slot>
-    <slot name='extra' _parent_ref="{{isMounted}}">
+    <slot name='extra'>
     </slot>
   </view>
 </view>

@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "antmove wx-alipay -i ./wx/vant-app -o ./alipay/vant-app",
-    "build-dd": "antmove wx-alipay -i ./wx/vant-app -o ./dd/vant-app",
+    "build": "antmove wx-alipay -i ./wx/vant-app -o ./alipay/vant-app --component2 true",
+    "build-dd": "antmove wx-alipay -i ./wx/vant-app -o ./dd/vant-app --component2 false --platform dd",
     "build-npm": "rm -rf dist && cp -R alipay/vant-app dist && babel alipay/vant-app -d dist && rm -rf dist/node_modules dist/.tea",
     "pub": "npm run build && npm publish"
   },

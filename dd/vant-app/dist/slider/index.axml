@@ -1,12 +1,12 @@
-<view class='slider-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
-  <import-sjs _parent_ref="{{isMounted}}" from='../wxs/utils.sjs' name='utils'>
+<view class='slider-index {{className}}' onChildRef='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
-  <view class="{{customClass}} {{ utils.bem('slider', { disabled }) }}" style="{{ inactiveColor ? 'background:' + inactiveColor : '' }}" _parent_ref="{{isMounted}}" onTap='onClick'>
-    <view class='van-slider__bar' style="{{ barStyle }}; {{ activeColor ? 'background:' + activeColor : '' }}" _parent_ref="{{isMounted}}">
-      <view class='van-slider__button-wrapper' _parent_ref="{{isMounted}}" onTouchStart='onTouchStart' catchTouchMove='onTouchMove' onTouchEnd='onTouchEnd' onTouchCancel='onTouchEnd'>
-        <slot a:if='{{ useButtonSlot }}' name='button' _parent_ref="{{isMounted}}">
+  <view class="{{customClass}} {{ utils.bem('slider', { disabled }) }}" style="{{ inactiveColor ? 'background:' + inactiveColor : '' }}" onTap='onClick'>
+    <view class='van-slider__bar' style="{{ barStyle }}; {{ activeColor ? 'background:' + activeColor : '' }}">
+      <view class='van-slider__button-wrapper' onTouchStart='onTouchStart' catchTouchMove='onTouchMove' onTouchEnd='onTouchEnd' onTouchCancel='onTouchEnd'>
+        <slot a:if='{{ useButtonSlot }}' name='button'>
         </slot>
-        <view a:else  class='van-slider__button' _parent_ref="{{isMounted}}">
+        <view a:else  class='van-slider__button'>
         </view>
       </view>
     </view>

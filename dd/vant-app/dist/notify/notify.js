@@ -1,7 +1,7 @@
 my.setStorageSync({
     key: "activeComponent",
     data: {
-        is: "/dist/notify/index"
+        is: "dist/notify/index"
     }
 });
 import { isObj } from "../common/utils";

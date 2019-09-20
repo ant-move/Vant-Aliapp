@@ -1,5 +1,5 @@
-<view class='badge-group-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
-  <view class='van-badge-group van-hairline--top-bottom {{customClass}}' _parent_ref="{{isMounted}}">
+<view class='badge-group-index {{className}}' onChildRef='saveChildRef0'>
+  <view class='van-badge-group van-hairline--top-bottom {{customClass}}'>
     <slot>
     </slot>
   </view>
