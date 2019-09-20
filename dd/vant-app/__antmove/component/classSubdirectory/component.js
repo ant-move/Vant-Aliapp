@@ -8,11 +8,11 @@ const SelectComponent = require('./selectComponent');
 let _id = 0;
 
 function processRelations (ctx, relationInfo = {}) {
-  let route = ctx.is;
+    let route = ctx.is;
     if (!my.canIUse('component2')) {
         route = JSON.parse(JSON.stringify(my.getStorageSync({ key: 'activeComponent' }))).data.is;
     }
-    route = route.replace(/\/node_modules\/[a-z-]+\/[a-z-]+/, '')
+    route = route.replace(/\/node_modules\/[a-z-]+\/[a-z-]+/, '');
     ctx.is = route;
     ctx.$id = _id++;
     let info = relationInfo[route] || relationInfo[route.substring(1)];
@@ -25,63 +25,63 @@ function processRelations (ctx, relationInfo = {}) {
                 methods[node.$id] = function () {
                     this.$antmove.relationApp = this.$antmove.relationApp || {
                         fns: []
-                      };
-                  node.$index = 0;
-                node.$route = route;
-                createNode.call(this, this, null, node);
-                this.$antmove.relationApp.fns.forEach((fn) => {
-                  fn.call(this)
-                })
+                    };
+                    node.$index = 0;
+                    node.$route = route;
+                    createNode.call(this, this, null, node);
+                    this.$antmove.relationApp.fns.forEach((fn) => {
+                        fn.call(this);
+                    });
 
-                let _arr = []
-                this.$antmove.relationApp.relationFns.forEach((fn)=>{
-                    if (!fn.call(this)) {
-                        _arr.push(fn);
+                    let _arr = [];
+                    this.$antmove.relationApp.relationFns.forEach((fn)=>{
+                        if (!fn.call(this)) {
+                            _arr.push(fn);
+                        }
+                    });
+
+                    this.$antmove.relationApp.relationFns = _arr;
+                    if (this.onRelationsUpdate) {
+                        this.onRelationsUpdate();
                     }
-                })
-
-                this.$antmove.relationApp.relationFns = _arr;
-                if (this.onRelationsUpdate) {
-                    this.onRelationsUpdate()
-                }
                 };
 
                 return false;
             }
             methods[node.$id] = function (ref) {
-                this.$antmove = this.$antmove || {}
-                this.$antmove.refFns = this.$antmove.refFns || {}
+                this.$antmove = this.$antmove || {};
+                this.$antmove.refFns = this.$antmove.refFns || {};
                 this.$antmove.relationApp = this.$antmove.relationApp || {
                     fns: [],
                     relationFns: []
-                  };
+                };
                 if (!this.$antmove.refFns[ref.$id]) {
                     this.$antmove.refFns[ref.$id] = true;
                     this.$antmove.relationApp.fns.push(
-                  function fn () {
-                this.selectComponentApp.preProcesscomponents(ref);
-                let ctx = this;
-                    ctx.$antmove = ctx.$antmove || {};
-                    if (ctx.$antmove[node.$id] === undefined) {
-                        ctx.$antmove[node.$id] = 0;
-                    } else {
-                        ctx.$antmove[node.$id] += 1;
-                    }
-                    node.$index = ctx.$antmove[node.$id];
-                    node.$route = route;
-                    createNode.call(ctx, ref, null, node);
+                        function fn () {
+                            this.selectComponentApp.preProcesscomponents(ref);
+                            let ctx = this;
+                            ctx.$antmove = ctx.$antmove || {};
+                            if (ctx.$antmove[node.$id] === undefined) {
+                                ctx.$antmove[node.$id] = 0;
+                            } else {
+                                ctx.$antmove[node.$id] += 1;
+                            }
+                            node.$index = ctx.$antmove[node.$id];
+                            node.$route = route;
+                            createNode.call(ctx, ref, null, node);
                     
-                  }
-                )
+                        }
+                    );
 
-                this.$antmove.relationApp.relationFns.push(function () {
-                    return ref.handleRelations && ref.handleRelations()
-                })
-            }
+                    this.$antmove.relationApp.relationFns.push(function () {
+                        return ref.handleRelations && ref.handleRelations();
+                    });
+                }
 
-                    if (this.saveChildRef0) {
-                        this.saveChildRef0()
-                    }
+                if (this.saveChildRef0) {
+                    this.saveChildRef0();
+                }
                 
             };
         });
@@ -400,8 +400,8 @@ function processInit () {
     getUrl();
     this._currentEvent = {};
     this.setData({
-      theId: this.$id
-    })
+        theId: this.$id
+    });
 }
 
 function processTriggerEvent () {
@@ -435,10 +435,10 @@ function processTriggerEvent () {
 }
 
 
-function observerHandle (observerObj, args, that ,isInit = false) {
+function observerHandle (observerObj, args, that , isInit = false) {
     Object.keys(observerObj).forEach(function (obs) {       
-    if (isInit && that.props[obs] === undefined ) return false;
-    if (args[0][obs] !== that.props[obs] && typeof observerObj[obs] === 'function') { 
+        if (isInit && that.props[obs] === undefined ) return false;
+        if (args[0][obs] !== that.props[obs] && typeof observerObj[obs] === 'function') { 
             observerObj[obs].call(that, that.props[obs], args[0][obs]);
         }
     });
@@ -526,10 +526,10 @@ module.exports = {
             }
 
             // process relations, get relation ast
-            //let relationAst = createNode.call(this, null, null, null, null, true).mountedHandles;
-            //relationAst.push(()=>{
+            // let relationAst = createNode.call(this, null, null, null, null, true).mountedHandles;
+            // relationAst.push(()=>{
             //    handleRelations.call(this);
-            //});
+            // });
         };      
         fnApp.add('onInit', function () {
             processIntersectionObserver(this);
@@ -541,7 +541,7 @@ module.exports = {
         fnApp.add('didMount', didMount);
         fnApp.add('onInit', options.created);
         fnApp.insert('onInit', function () {
-          this.getRelationNodes = function () {
+            this.getRelationNodes = function () {
                 return [];
             };
             this.selectComponentApp = new SelectComponent(this);
@@ -549,7 +549,7 @@ module.exports = {
             let self = this;
             this.handleRelations = function () {
                 handleRelations.call(self);
-            }
+            };
             this.properties = {
                 ..._opts.properties
             };
@@ -557,16 +557,16 @@ module.exports = {
             updateData.call(this);
             this.selectComponentApp.connect();
 
-            observerHandle(_opts.observerObj, [_opts.props, this.data], this ,true);
+            observerHandle(_opts.observerObj, [_opts.props, this.data], this , true);
         });
         fnApp.bind('onInit', _opts);
         fnApp.add('didMount', _opts.attached);
         fnApp.add('didMount', _opts.ready);
         fnApp.insert('didMount', function () {
-          if (!my.canIUse('component2')) {
-            _opts.onInit.call(this)
-          }
-        })
+            if (!my.canIUse('component2')) {
+                _opts.onInit.call(this);
+            }
+        });
         
 
         let didUpdate = function (...param) { 

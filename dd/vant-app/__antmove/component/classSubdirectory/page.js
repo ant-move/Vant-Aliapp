@@ -114,22 +114,22 @@ function processRelationNodes (ast = {}) {
     let $nodes = ast.$nodes;
   
     setTimeout(()=>{
-      ast.mountedHandles
-        .forEach(function (fn, i) {
-            fn();
-        });
-    ast.mountedHandles = [];
-    }, 500)
+        ast.mountedHandles
+            .forEach(function (fn, i) {
+                fn();
+            });
+        ast.mountedHandles = [];
+    }, 500);
 }
 
 
 function processRelations (ctx, relationInfo = {}) {
-  const relationApp = {
-    fns: [],
-    relationFns: []
-  };
+    const relationApp = {
+        fns: [],
+        relationFns: []
+    };
     let route = ctx.route;
-    route = route.replace(/\/node_modules\/[a-z-]+\/[a-z-]+/, '')
+    route = route.replace(/\/node_modules\/[a-z-]+\/[a-z-]+/, '');
 
     if (route[0] !== '/') route = '/' + route;
     
@@ -137,65 +137,65 @@ function processRelations (ctx, relationInfo = {}) {
     if (info) {
         processRelationHandle(info, function (node) {
             let id = node.$id;
-            ctx.$antmove = ctx.$antmove || {}
+            ctx.$antmove = ctx.$antmove || {};
             ctx.$antmove.__refFns = ctx.$antmove.__refFns || {};
             ctx.$antmove.__refFns[node.$id] = false;
             if (id === 'saveChildRef0') {
                 ctx.$antmove.__refFns[id] = true;
                 ctx[id] = function () {
-                node.$index = 0;
-                node.$route = route;
-                this.$id = this.$id || this.$viewId
-                createNode.call(this, this, null, node);
-                relationApp.fns.forEach((fn) => {
-                 fn.call(this)
-                 })
+                    node.$index = 0;
+                    node.$route = route;
+                    this.$id = this.$id || this.$viewId;
+                    createNode.call(this, this, null, node);
+                    relationApp.fns.forEach((fn) => {
+                        fn.call(this);
+                    });
 
                 
-                 let _arr = []
-                relationApp.relationFns.forEach((fn)=>{
-                    if (!fn.call(this)) {
-                        _arr.push(fn);
-                    }
-                })
+                    let _arr = [];
+                    relationApp.relationFns.forEach((fn)=>{
+                        if (!fn.call(this)) {
+                            _arr.push(fn);
+                        }
+                    });
 
-                relationApp.relationFns = _arr;
+                    relationApp.relationFns = _arr;
 
-                 let ast = this.$rootNode.getRootNode();
+                    let ast = this.$rootNode.getRootNode();
                     processRelationNodes(ast);
-                ast.isPageReady = true;
-                }
+                    ast.isPageReady = true;
+                };
                 return false;
             }
             ctx[id] = function (ref) {
                 if (!ref) return false;
                 if (!ctx.$antmove.__refFns[ref.$id]) {
-                ctx.$antmove.__refFns[ref.$id] = true;
+                    ctx.$antmove.__refFns[ref.$id] = true;
 
-                relationApp.fns.unshift(
-                  function () {
-                    let ctx = this;
-                    ctx.selectComponentApp.preProcesscomponents(ref);
-                    ctx.$antmove = ctx.$antmove || {};
-                      if (ctx.$antmove[id] === undefined) {
-                          ctx.$antmove[id] = 0;
-                      } else {
-                          ctx.$antmove[id] += 1;
-                      }
-                      node.$index = ctx.$antmove[id];
-                      node.$route = route;
-                      createNode.call(ctx, ref, null, node);
-                  }
-                )
+                    relationApp.fns.unshift(
+                        function () {
+                            let ctx = this;
+                            ctx.selectComponentApp.preProcesscomponents(ref);
+                            ctx.$antmove = ctx.$antmove || {};
+                            if (ctx.$antmove[id] === undefined) {
+                                ctx.$antmove[id] = 0;
+                            } else {
+                                ctx.$antmove[id] += 1;
+                            }
+                            node.$index = ctx.$antmove[id];
+                            node.$route = route;
+                            createNode.call(ctx, ref, null, node);
+                        }
+                    );
 
-                relationApp.relationFns.push(function () {
-                    return ref.handleRelations && ref.handleRelations()
-                })
+                    relationApp.relationFns.push(function () {
+                        return ref.handleRelations && ref.handleRelations();
+                    });
             
-            }
-                    if (ctx.saveChildRef0) {
-ctx.saveChildRef0()
-                    }
+                }
+                if (ctx.saveChildRef0) {
+                    ctx.saveChildRef0();
+                }
             };
         });
     } else {

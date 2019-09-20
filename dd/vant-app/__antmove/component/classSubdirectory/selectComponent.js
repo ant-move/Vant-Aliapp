@@ -2,8 +2,8 @@
 function selectComponent (ctx) {
     this.$ctx = ctx;
     this.$nodes = {};
-    this.$cacheComponents = {}
-    this.$activeComponents = {}
+    this.$cacheComponents = {};
+    this.$activeComponents = {};
 }
 
 selectComponent.prototype = {
@@ -15,7 +15,7 @@ selectComponent.prototype = {
             if (componentNodes[className].every((item) => {
                 return item.$id != ctx.$id;
             })) {
-            componentNodes[className].push(ctx);
+                componentNodes[className].push(ctx);
             
             }
 
@@ -26,7 +26,7 @@ selectComponent.prototype = {
 
 
         if (this.$cacheComponents[className]) {
-            this.$cacheComponents[className](componentNodes[className])
+            this.$cacheComponents[className](componentNodes[className]);
         }
 
     },
@@ -51,21 +51,21 @@ selectComponent.prototype = {
         });
     },
     remove (ctx) {
-        let components = this.$activeComponents
+        let components = this.$activeComponents;
 
-        delete components[ctx.$id]
+        delete components[ctx.$id];
     },
     selectComponent (className) {
-        return this._sortComponents(className)[0]
+        return this._sortComponents(className)[0];
     },
     selectComponents (className) {
-        return this._sortComponents(className)
+        return this._sortComponents(className);
     },
     _sortComponents (className) {
         let componentNodes = this.$nodes[className] || [];
         return componentNodes.sort((pre, next)=> {
-            return Number(pre.$id) > Number(next.$id)
-        })
+            return Number(pre.$id) > Number(next.$id);
+        });
     },
     preProcesscomponents,
     connect () {
@@ -80,7 +80,7 @@ selectComponent.prototype = {
 
         ctx.selectorWatch = function (selector, cb) {
             self.$cacheComponents[selector] = cb;
-        }
+        };
     }
 };
 

@@ -1,4 +1,3 @@
-
 Component({
     props: {
         hidden: true,
@@ -22,15 +21,5 @@ Component({
     },
     didUpdate () {
         this.watchHidden();
-    },
-    didMounted () {
-        setTimeout(()=>{
-            if (this.props._parent_ref && !this.isInitRelation) {
-                if (this.props.onChildRef) {
-                    this.isInitRelation = true;
-                    this.props.onChildRef(this);
-                }
-            }
-        }, 0)
     }
 });

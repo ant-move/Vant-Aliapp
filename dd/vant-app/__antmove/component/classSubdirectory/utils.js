@@ -2,7 +2,7 @@ module.exports = {
     connectNodes: function connectNodes (node, ast) {
        
         if (!node.$relationNode.$parent) {
-          return false;
+            return false;
         }
         let parentNodeId = node.$relationNode.$parent.$id;
         let parentNodeRoute = node.$relationNode.$parent.$route;

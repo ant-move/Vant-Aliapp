@@ -77,6 +77,14 @@ VantComponent({
         maxMinute: 'updateValue'
     },
     methods: {
+        onRelationsUpdate() {
+            // for dd
+            const innerValue = this.correctValue(this.data.value);
+        this.updateColumnValue(innerValue) &&
+            this.updateColumnValue(innerValue).then(() => {
+                this.$emit("input", innerValue);
+            });
+        },
         updateValue() {
             const { data } = this;
             const val = this.correctValue(this.data.value);

@@ -117,7 +117,7 @@ VantComponent({
             if (this.data.disabled) {
                 return;
             }
-console.log(this)
+
             const { name, expanded } = this.data;
             const index = this.parent.children.indexOf(this);
             const currentName = name == null ? index : name;

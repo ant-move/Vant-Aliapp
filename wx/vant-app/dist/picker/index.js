@@ -85,9 +85,10 @@ VantComponent({
         setColumnValue(index, value) {
             const column = this.getColumn(index);
             if (column == null) {
-                return Promise.reject(new Error('setColumnValue: 对应列不存在'));
+                console.warn('setColumnValue: 对应列不存在')
+                return null
             }
-            return column.setValue(value);
+            return column && column.setValue(value);
         },
         // get column option index by column index
         getColumnIndex(columnIndex) {
@@ -98,7 +99,8 @@ VantComponent({
         setColumnIndex(columnIndex, optionIndex) {
             const column = this.getColumn(columnIndex);
             if (column == null) {
-                return Promise.reject(new Error('setColumnIndex: 对应列不存在'));
+                console.warn('setColumnIndex: 对应列不存在')
+                return null
             }
             return column.setIndex(optionIndex);
         },
@@ -113,7 +115,8 @@ VantComponent({
             }
             const column = this.children[index];
             if (column == null) {
-                return Promise.reject(new Error('setColumnValues: 对应列不存在'));
+                console.warn('setColumnValues: 对应列不存在')
+                return null
             }
             const isSame = JSON.stringify(column.data.options) === JSON.stringify(options);
             if (isSame) {
