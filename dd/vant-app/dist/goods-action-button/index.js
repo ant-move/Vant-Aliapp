@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/goods-action-button/index"
+    }
+});
 import { VantComponent } from "../common/component";
 import { link } from "../mixins/link";
 import { button } from "../mixins/button";

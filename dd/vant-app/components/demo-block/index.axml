@@ -1,6 +1,6 @@
-<view class='demo-block-index {{className}}' onChildRef='saveChildRef0'>
-  <view class="{{customClass}} demo-block van-clearfix {{ padding ? 'demo-block--padding' : '' }}">
-    <view a:if='{{ title }}' class='demo-block__title'>
+<view class='demo-block-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+  <view class="{{customClass}} demo-block van-clearfix {{ padding ? 'demo-block--padding' : '' }}" _parent_ref="{{isMounted}}">
+    <view a:if='{{ title }}' class='demo-block__title' _parent_ref="{{isMounted}}">
       {{ title }}
     </view>
     <slot>

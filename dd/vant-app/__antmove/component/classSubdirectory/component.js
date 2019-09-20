@@ -5,40 +5,84 @@ const processRelationHandle = require('./processRelation');
 let posix = browserPath();
 const Relations = require('../../api/relations');
 const SelectComponent = require('./selectComponent');
-const { getUrl, processIntersectionObserver } = require('./utils.js')
-//const sjsObj = require('../../api/sjs/sjs');
+let _id = 0;
 
 function processRelations (ctx, relationInfo = {}) {
-    let route = ctx.is;
+  let route = ctx.is;
+    if (!my.canIUse('component2')) {
+        route = JSON.parse(JSON.stringify(my.getStorageSync({ key: 'activeComponent' }))).data.is;
+    }
+    route = route.replace(/\/node_modules\/[a-z-]+\/[a-z-]+/, '')
+    ctx.is = route;
+    ctx.$id = _id++;
     let info = relationInfo[route] || relationInfo[route.substring(1)];
+    
     if (info) {
         processRelationHandle(info, function (node) {
+            ctx.methods = ctx.methods || {};
+            let methods = ctx.methods;
             if (node.$id === 'saveChildRef0') {
-                ctx[node.$id] = function () {};
-                node.$index = 0;
+                methods[node.$id] = function () {
+                    this.$antmove.relationApp = this.$antmove.relationApp || {
+                        fns: []
+                      };
+                  node.$index = 0;
                 node.$route = route;
-                createNode.call(ctx, ctx, null, node);
+                createNode.call(this, this, null, node);
+                this.$antmove.relationApp.fns.forEach((fn) => {
+                  fn.call(this)
+                })
+
+                let _arr = []
+                this.$antmove.relationApp.relationFns.forEach((fn)=>{
+                    if (!fn.call(this)) {
+                        _arr.push(fn);
+                    }
+                })
+
+                this.$antmove.relationApp.relationFns = _arr;
+                if (this.onRelationsUpdate) {
+                    this.onRelationsUpdate()
+                }
+                };
+
                 return false;
             }
-            ctx[node.$id] = function (ref) {
-              /**
-               * 子组件挂载的时候不一定会触发，而是在 didUpdate 才触发，保证只触发一次
-               */
+            methods[node.$id] = function (ref) {
+                this.$antmove = this.$antmove || {}
+                this.$antmove.refFns = this.$antmove.refFns || {}
+                this.$antmove.relationApp = this.$antmove.relationApp || {
+                    fns: [],
+                    relationFns: []
+                  };
+                if (!this.$antmove.refFns[ref.$id]) {
+                    this.$antmove.refFns[ref.$id] = true;
+                    this.$antmove.relationApp.fns.push(
+                  function fn () {
                 this.selectComponentApp.preProcesscomponents(ref);
+                let ctx = this;
+                    ctx.$antmove = ctx.$antmove || {};
+                    if (ctx.$antmove[node.$id] === undefined) {
+                        ctx.$antmove[node.$id] = 0;
+                    } else {
+                        ctx.$antmove[node.$id] += 1;
+                    }
+                    node.$index = ctx.$antmove[node.$id];
+                    node.$route = route;
+                    createNode.call(ctx, ref, null, node);
+                    
+                  }
+                )
 
-                ctx.$antmove = ctx.$antmove || {};
-                ctx.$antmove.initChildRef = ctx.$antmove.initChildRef || {}
-              if (ctx.$antmove.initChildRef[ref.$id]) return false;
-              ctx.$antmove.initChildRef[ref.$id] = true;
-                if (ctx.$antmove[node.$id] === undefined) {
-                    ctx.$antmove[node.$id] = 0;
-                } else {
-                    ctx.$antmove[node.$id] += 1;
-                }
-                // node.$index = ctx.$antmove[node.$id];
-                node.$route = route;
-                createNode.call(ctx, ref, null, node);
+                this.$antmove.relationApp.relationFns.push(function () {
+                    return ref.handleRelations && ref.handleRelations()
+                })
+            }
 
+                    if (this.saveChildRef0) {
+                        this.saveChildRef0()
+                    }
+                
             };
         });
     } else {
@@ -46,20 +90,20 @@ function processRelations (ctx, relationInfo = {}) {
     }
 }
 
-// function getUrl () {
-//     let pages = getCurrentPages();
-//     let url = pages[pages.length - 1].route;
-//     let _arr = url.split('/');
-//     let _name = _arr[_arr.length - 1];
-//     my.setStorageSync({
-//         key: '_pageMsg',
-//         data: {
-//             pageName: _name,
-//             pagePath: url
-//         }
-//     });
-//     return url;
-// }
+function getUrl () {
+    let pages = getCurrentPages();
+    let url = pages[pages.length - 1].route;
+    let _arr = url.split('/');
+    let _name = _arr[_arr.length - 1];
+    my.setStorageSync({
+        key: '_pageMsg',
+        data: {
+            pageName: _name,
+            pagePath: url
+        }
+    });
+    return url;
+}
 
 function updateData (param) {
     let ctx = this;
@@ -94,6 +138,7 @@ function processMethods (_opts = {}) {
             };
         });
     _opts.methods = methods;
+    
     return _opts;
 }
 
@@ -106,18 +151,21 @@ function processRelationPath (self, relation) {
     return _p;
 }
 function handleRelations () {
+    let isFinished = true;
     if (this.props.theRelations) {
         Object.keys(this.props.theRelations)
             .forEach((relation)=> {
                 let _p = processRelationPath(this, relation);
                 let relationInfo = this.props.theRelations[relation];
                 let nodes = null;
-
                 if (relationInfo.type === 'child' || relationInfo.type === 'descendant') {
                     return false;
                 }
                 nodes = findRelationNode(this.$node, _p, relationInfo.type, true);
                 if (!nodes || nodes[0] === undefined) {
+                    
+                    // 有一个 relations 节点没绑上就表示还未完成
+                    isFinished = false;
                     return false;
                 }
 
@@ -137,6 +185,8 @@ function handleRelations () {
                 
             });
     }
+
+    return isFinished;
 }
 
 // process node relation callback
@@ -250,7 +300,6 @@ function findRelationNode (node, p, type, isArray = false) {
         ancestor: function (node) {
             if (!node) return ;
             let _node = null;
-  
             _node = _prcess.parent(node);
             if (!_node) {
                 _node = _prcess.ancestor(node.$parent);
@@ -350,6 +399,9 @@ function processObservers (observersObj, options, param) {
 function processInit () {
     getUrl();
     this._currentEvent = {};
+    this.setData({
+      theId: this.$id
+    })
 }
 
 function processTriggerEvent () {
@@ -400,14 +452,20 @@ function observersHandle (observersObj, args, that) {
     });
 }
 
-// function preProcesscomponents () {
-//     if (this.props.id) {
-//         this.$node.addComponentNodeId(this.props.id, this);
-//     }
-//     if (this.props.className) {
-//         this.$node.addComponentNode(this.props.className, this);
-//     }
-// }
+function processIntersectionObserver (context) {
+    context.createIntersectionObserver = function (...p) {
+        return my.createIntersectionObserver&&my.createIntersectionObserver(...p);
+    };
+}
+
+function preProcesscomponents () {
+    if (this.props.id) {
+        this.$node.addComponentNodeId(this.props.id, this);
+    }
+    if (this.props.className) {
+        this.$node.addComponentNode(this.props.className, this);
+    }
+}
 
 /**
  * 
@@ -440,7 +498,6 @@ module.exports = {
         handleProps(_opts);
         handleExternalClasses(_opts);
 
-
         let _life = compatibleLifetime(options); 
         if (options.properties) {
             collectObserver(_opts.observerObj, options.properties, options);
@@ -448,14 +505,18 @@ module.exports = {
 
         if (_opts.methods) {
             processMethods(_opts);
-        } else {
-          _opts.methods = {}
         }
-        _opts.data = _opts.data || {};
-        _opts.data.theId = Number(new Date());
-        
+        processRelations(_opts, Relations);
 
         let didMount = function () {
+            /**
+             * for child ref
+             * 
+             * 当父级组件挂载后再执行父级组件传递下来的属性回调函数
+             */
+            this.setData({
+                isMounted: true
+            });
             _life.error && warnLife(`There is no error life cycle`, "error");
             _life.move && warnLife(`There is no moved life cycle`, "moved");
             _life.pageLifetimes && warnLife(`There is no page life cycle where the component resides,including(show,hide,resize)`, "pageLifetimes");
@@ -465,17 +526,13 @@ module.exports = {
             }
 
             // process relations, get relation ast
-            let relationAst = createNode.call(this, null, null, null, null, true).mountedHandles;
-            relationAst.push(()=>{
-                handleRelations.call(this);
-            });
+            //let relationAst = createNode.call(this, null, null, null, null, true).mountedHandles;
+            //relationAst.push(()=>{
+            //    handleRelations.call(this);
+            //});
         };      
         fnApp.add('onInit', function () {
             processIntersectionObserver(this);
-            
-            this.onPageReady = function (p) {
-                _opts.onPageReady && _opts.onPageReady.call(this, p);
-            };
         });
 
         fnApp.add('deriveDataFromProps', function () {
@@ -489,19 +546,15 @@ module.exports = {
             };
             this.selectComponentApp = new SelectComponent(this);
 
+            let self = this;
+            this.handleRelations = function () {
+                handleRelations.call(self);
+            }
             this.properties = {
                 ..._opts.properties
             };
-
             processInit.call(this, _opts, options, _life, fnApp);
             updateData.call(this);
-            processRelations(this, Relations);
-
-            
-                if (this.props.onChildRef) {
-                    this.props.onChildRef(this);
-                }
-
             this.selectComponentApp.connect();
 
             observerHandle(_opts.observerObj, [_opts.props, this.data], this ,true);
@@ -509,9 +562,21 @@ module.exports = {
         fnApp.bind('onInit', _opts);
         fnApp.add('didMount', _opts.attached);
         fnApp.add('didMount', _opts.ready);
+        fnApp.insert('didMount', function () {
+          if (!my.canIUse('component2')) {
+            _opts.onInit.call(this)
+          }
+        })
         
 
         let didUpdate = function (...param) { 
+            if (this.props._parent_ref && !this.isInitRelation) {
+
+                if (this.props.onChildRef) {
+                    this.isInitRelation = true;
+                    this.props.onChildRef(this);
+                }
+            }
             updateData.call(this, param);
 
             processObservers.call(this, _opts.observersObj, options, param);
@@ -519,20 +584,12 @@ module.exports = {
         };
         fnApp.add('didUpdate', didUpdate);
         fnApp.add('didUpdate', function () {
-            handleAfterInit.call(this);  
-            if (this.props.onChildRef) {
-                this.props.onChildRef(this);
-            }      
+            handleAfterInit.call(this);        
         });
-        fnApp.insert('didMount', function () {
-            if (!my.canIUse('component2')) {
-                _opts.onInit.call(this);
-            }
-        })
 
         fnApp.bind('deriveDataFromProps', _opts);
         fnApp.bind('didUpdate', _opts); 
-        fnApp.bind('didMount', _opts, true);
+        fnApp.bind('didMount', _opts);
         fnApp.add('didUnmount', options.detached);
         fnApp.add('didUnmount', function () {
             if (this.$node) {

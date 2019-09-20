@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/slider/index"
+    }
+});
 import { VantComponent } from "../common/component";
 import { touch } from "../mixins/touch";
 VantComponent({

@@ -1,8 +1,8 @@
-<view class='cell-group-index {{className}}' onChildRef='saveChildRef0'>
-  <view a:if='{{ title }}' class='van-cell-group__title'>
+<view class='cell-group-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+  <view a:if='{{ title }}' class='van-cell-group__title' _parent_ref="{{isMounted}}">
     {{ title }}
   </view>
-  <view class="{{customClass}} van-cell-group {{ border ? 'van-hairline--top-bottom' : '' }}">
+  <view class="{{customClass}} van-cell-group {{ border ? 'van-hairline--top-bottom' : '' }}" _parent_ref="{{isMounted}}">
     <slot>
     </slot>
   </view>

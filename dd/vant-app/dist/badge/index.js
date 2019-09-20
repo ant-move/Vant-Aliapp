@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/badge/index"
+    }
+});
 import { VantComponent } from "../common/component";
 VantComponent({
     relation: {

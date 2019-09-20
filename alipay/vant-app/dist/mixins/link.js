@@ -1,5 +1,6 @@
 const _my = require("../../__antmove/api/index.js")(my);
 function Behavior(behavior) {
+    behavior.$id = Number(new Date()) + String(Math.random()).substring(2, 7);
     return behavior;
 }
 

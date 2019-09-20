@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/pages/action-sheet/index"
+    }
+});
 import createPage from "../../common/page";
 createPage({
     data: {

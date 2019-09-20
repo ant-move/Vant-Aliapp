@@ -423,20 +423,25 @@ module.exports = {
         options.properties = options.properties || {};
         let behaviors = options.behaviors || [];
         let mixins = options.mixins || [];
+        let _export = options.export || "";
         delete options.behaviors;
         delete options.mixins;
         let retMixins = {};
         
-        processBehavior(retMixins, behaviors);
-        processBehavior(retMixins, mixins); 
+        _opts.observerObj = {};  
+        _opts.observersObj = {}; 
+        _opts.behaviorsArr = [];
+
+        processBehavior(retMixins, behaviors, _opts.behaviorsArr);
+        processBehavior(retMixins, mixins, _opts.behaviorsArr); 
         mergeOptions(retMixins, options);
+        processBehaviorId(behaviors);
+        processBehaviorId(mixins);
         
         Object.keys(options)
             .forEach(function (key) {
                 _opts[key] = options[key];
             });
-        _opts.observerObj = {};  
-        _opts.observersObj = {}; 
 
         handleProps(_opts);
         handleExternalClasses(_opts);
@@ -484,12 +489,14 @@ module.exports = {
           this.getRelationNodes = function () {
                 return [];
             };
+            processComponentExport (_export, behaviors, this);
             this.selectComponentApp = new SelectComponent(this);
 
             this.properties = {
                 ..._opts.properties
             };
             processInit.call(this, _opts, options, _life, fnApp);
+            testBehaviors(behaviors);
             updateData.call(this);
             processRelations(this, Relations);
             this.selectComponentApp.connect();
@@ -641,29 +648,31 @@ function handleAfterInit () {
 /**
  * behavior
  */
-function processBehavior (_opts = {}, opts) {
+function processBehavior (_opts = {}, opts, $behaviors) {
+    let self = this;
     if (Array.isArray(opts)) {
         opts.forEach(function (item) {
-            if (typeof item === 'object') {
-                _process(_opts, item);
+            if (typeof item === 'object' && $behaviors .indexOf(item.$id) === -1) {
+                $behaviors.push(item.$id)
+                _process.call(self,_opts, item);
             }
         });
     } else {
-        if (typeof opts === 'object') {
-            _process(_opts, opts);
+        if (typeof opts === 'object'&& $behaviors.indexOf(item.$id) === -1) {
+            $behaviors.push(item.$id)
+            _process.call(self, _opts, opts);
         }
     }
-  
     function _process (__opts = {}, opt = {}) {
         if (opt.behaviors) {
-            processBehavior(__opts, opt.behaviors);
+            processBehavior.call(self, __opts, opt.behaviors, $behaviors);
             delete opt.behaviors;
         }
   
         if (opt.mixins) {
-            processBehavior(__opts, opt.mixins);
+            processBehavior(__opts, opt.mixins, $behaviors);
             delete opt.mixins;
-        }
+        } 
         mergeOptions(opt, __opts);
     }
 }
@@ -687,3 +696,48 @@ function mergeOptions (parent, child) {
             } 
         });
 }
+
+function processBehaviorId (behavior) {
+    if (Array.isArray(behavior)) {
+        behavior.forEach(function (item) {
+            if (typeof item === 'object' && item.$id) {
+                delete item.$id;
+            }
+        });
+    } else {
+        if (typeof opts === 'object' && item.$id) {
+                delete item.$id;
+        }
+    }
+}
+
+function processComponentExport (_export, behaviors, self) {
+    if (typeof _export !== "function" ) return
+    if (Array.isArray(behaviors)) {
+        behaviors.forEach(function (bhv) {
+            if (bhv === "wx://component-export") {
+                self._this = _export();
+            }
+        })
+    } else {
+        if (behaviors === "wx://component-export") {
+            self._this = _export();
+        }
+    }
+   
+  }
+
+  function testBehaviors (behaviors) {
+    console.log(behaviors)
+     if (Array.isArray(behaviors)) {
+        behaviors.forEach(function (bhv) {
+            if (bhv === "wx://form-field") {
+               warnLife("Wx://form-field in built-in behavior is not supported","behavior/form-field")
+            }
+        })
+    } else {
+        if (behaviors === "wx://form-field") {
+           warnLife("Wx://form-field in built-in behavior is not supported","behavior/form-field")
+        }
+    }
+  }

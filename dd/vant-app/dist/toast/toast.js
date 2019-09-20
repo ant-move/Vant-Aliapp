@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/toast/index"
+    }
+});
 import { isObj } from "../common/utils";
 const defaultOptions = {
     type: "text",

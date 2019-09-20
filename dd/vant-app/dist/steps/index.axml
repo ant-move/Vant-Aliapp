@@ -1,12 +1,12 @@
-<view class='steps-index {{className}}' onChildRef='saveChildRef0'>
-  <import-sjs from="./index.axmlstatus.sjs" name='status'>
+<view class='steps-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+  <import-sjs _parent_ref="{{isMounted}}" from="./index.axmlstatus.sjs" name='status'>
   </import-sjs>
-  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  <import-sjs _parent_ref="{{isMounted}}" from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
-  <view class="{{customClass}} {{ utils.bem('steps', [direction]) }}">
-    <view class='van-step__wrapper'>
-      <view a:for='{{ steps }}' a:key='index' class="{{ utils.bem('step', [direction, status(index, active)]) }} van-hairline" ref-numbers='{{ steps }}'>
-        <view class='van-step__title' style="{{ index === active ? 'color: ' + activeColor : '' }}">
+  <view class="{{customClass}} {{ utils.bem('steps', [direction]) }}" _parent_ref="{{isMounted}}">
+    <view class='van-step__wrapper' _parent_ref="{{isMounted}}">
+      <view a:for='{{ steps }}' a:key='index' class="{{ utils.bem('step', [direction, status(index, active)]) }} van-hairline" ref-numbers='{{ steps }}' _parent_ref="{{isMounted}}">
+        <view class='van-step__title' style="{{ index === active ? 'color: ' + activeColor : '' }}" _parent_ref="{{isMounted}}">
           <view>
             {{ item.text }}
           </view>
@@ -14,13 +14,13 @@
             {{ item.desc }}
           </view>
         </view>
-        <view class='van-step__circle-container'>
-          <view class='van-step__circle' a:if='{{ index !== active }}' style="{{ index < active ? 'background-color: ' + activeColor : '' }}">
+        <view class='van-step__circle-container' _parent_ref="{{isMounted}}">
+          <view class='van-step__circle' a:if='{{ index !== active }}' style="{{ index < active ? 'background-color: ' + activeColor : '' }}" _parent_ref="{{isMounted}}">
           </view>
-          <van-icon a:else  name='checked' color='{{ activeColor }}' custom-class='van-step__active' onChildRef='saveChildRef1'>
+          <van-icon a:else  name='checked' color='{{ activeColor }}' custom-class='van-step__active' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
           </van-icon>
         </view>
-        <view a:if='{{ index !== steps.length - 1 }}' class='van-step__line' style="{{ index < active ? 'background-color: ' + activeColor : '' }}">
+        <view a:if='{{ index !== steps.length - 1 }}' class='van-step__line' style="{{ index < active ? 'background-color: ' + activeColor : '' }}" _parent_ref="{{isMounted}}">
         </view>
       </view>
     </view>

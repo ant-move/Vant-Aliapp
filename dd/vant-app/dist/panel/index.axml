@@ -1,15 +1,15 @@
-<view class='panel-index {{className}}' onChildRef='saveChildRef0'>
-  <view class='van-panel van-hairline--top-bottom {{customClass}}'>
-    <van-cell a:if='{{ title || desc || status }}' title='{{ title }}' label='{{ desc }}' value='{{ status }}' custom-class='{{headerClass}}' value-class='van-panel__header-value' onChildRef='saveChildRef1'>
+<view class='panel-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+  <view class='van-panel van-hairline--top-bottom {{customClass}}' _parent_ref="{{isMounted}}">
+    <van-cell a:if='{{ title || desc || status }}' title='{{ title }}' label='{{ desc }}' value='{{ status }}' custom-class='{{headerClass}}' value-class='van-panel__header-value' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
     </van-cell>
-    <slot a:else  name='header'>
+    <slot a:else  name='header' _parent_ref="{{isMounted}}">
     </slot>
-    <view class='van-panel__content'>
+    <view class='van-panel__content' _parent_ref="{{isMounted}}">
       <slot>
       </slot>
     </view>
-    <view a:if='{{ useFooterSlot }}' class='van-panel__footer van-hairline--top {{footerClass}}'>
-      <slot name='footer'>
+    <view a:if='{{ useFooterSlot }}' class='van-panel__footer van-hairline--top {{footerClass}}' _parent_ref="{{isMounted}}">
+      <slot name='footer' _parent_ref="{{isMounted}}">
       </slot>
     </view>
   </view>

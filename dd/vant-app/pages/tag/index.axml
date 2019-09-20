@@ -1,80 +1,80 @@
 <view class='page-container-classname'>
-                <demo-block title='基础用法' padding=" " onChildRef='saveChildRef1'>
-  <van-tag my-class='demo-margin-right' onChildRef='saveChildRef2'>
+                <demo-block title='基础用法' padding=" " onChildRef='saveChildRef1' _parent_ref="{{isMounted}}">
+  <van-tag my-class='demo-margin-right' _parent_ref="{{isMounted}}" onChildRef='saveChildRef2'>
     标签
   </van-tag>
-  <van-tag my-class='demo-margin-right' type='danger' onChildRef='saveChildRef3'>
+  <van-tag my-class='demo-margin-right' type='danger' _parent_ref="{{isMounted}}" onChildRef='saveChildRef3'>
     标签
   </van-tag>
-  <van-tag my-class='demo-margin-right' type='primary' onChildRef='saveChildRef4'>
+  <van-tag my-class='demo-margin-right' type='primary' _parent_ref="{{isMounted}}" onChildRef='saveChildRef4'>
     标签
   </van-tag>
-  <van-tag type='success' onChildRef='saveChildRef5'>
+  <van-tag type='success' _parent_ref="{{isMounted}}" onChildRef='saveChildRef5'>
     标签
   </van-tag>
-</demo-block><demo-block title='空心样式' padding=" " onChildRef='saveChildRef6'>
-  <van-tag my-class='demo-margin-right' plain=" " onChildRef='saveChildRef7'>
+</demo-block><demo-block title='空心样式' padding=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef6'>
+  <van-tag my-class='demo-margin-right' plain=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef7'>
     标签
   </van-tag>
-  <van-tag my-class='demo-margin-right' plain=" " type='danger' onChildRef='saveChildRef8'>
+  <van-tag my-class='demo-margin-right' plain=" " type='danger' _parent_ref="{{isMounted}}" onChildRef='saveChildRef8'>
     标签
   </van-tag>
-  <van-tag my-class='demo-margin-right' plain=" " type='primary' onChildRef='saveChildRef9'>
+  <van-tag my-class='demo-margin-right' plain=" " type='primary' _parent_ref="{{isMounted}}" onChildRef='saveChildRef9'>
     标签
   </van-tag>
-  <van-tag plain=" " type='success' onChildRef='saveChildRef10'>
+  <van-tag plain=" " type='success' _parent_ref="{{isMounted}}" onChildRef='saveChildRef10'>
     标签
   </van-tag>
-</demo-block><demo-block title='圆角样式' padding=" " onChildRef='saveChildRef11'>
-  <van-tag my-class='demo-margin-right' round=" " onChildRef='saveChildRef12'>
+</demo-block><demo-block title='圆角样式' padding=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef11'>
+  <van-tag my-class='demo-margin-right' round=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef12'>
     标签
   </van-tag>
-  <van-tag my-class='demo-margin-right' round=" " type='danger' onChildRef='saveChildRef13'>
+  <van-tag my-class='demo-margin-right' round=" " type='danger' _parent_ref="{{isMounted}}" onChildRef='saveChildRef13'>
     标签
   </van-tag>
-  <van-tag my-class='demo-margin-right' round=" " type='primary' onChildRef='saveChildRef14'>
+  <van-tag my-class='demo-margin-right' round=" " type='primary' _parent_ref="{{isMounted}}" onChildRef='saveChildRef14'>
     标签
   </van-tag>
-  <van-tag round=" " type='success' onChildRef='saveChildRef15'>
+  <van-tag round=" " type='success' _parent_ref="{{isMounted}}" onChildRef='saveChildRef15'>
     标签
   </van-tag>
-</demo-block><demo-block title='标记样式' padding=" " onChildRef='saveChildRef16'>
-  <van-tag my-class='demo-margin-right' mark=" " onChildRef='saveChildRef17'>
+</demo-block><demo-block title='标记样式' padding=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef16'>
+  <van-tag my-class='demo-margin-right' mark=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef17'>
     标签
   </van-tag>
-  <van-tag my-class='demo-margin-right' mark=" " type='danger' onChildRef='saveChildRef18'>
+  <van-tag my-class='demo-margin-right' mark=" " type='danger' _parent_ref="{{isMounted}}" onChildRef='saveChildRef18'>
     标签
   </van-tag>
-  <van-tag my-class='demo-margin-right' mark=" " type='primary' onChildRef='saveChildRef19'>
+  <van-tag my-class='demo-margin-right' mark=" " type='primary' _parent_ref="{{isMounted}}" onChildRef='saveChildRef19'>
     标签
   </van-tag>
-  <van-tag mark=" " type='success' onChildRef='saveChildRef20'>
+  <van-tag mark=" " type='success' _parent_ref="{{isMounted}}" onChildRef='saveChildRef20'>
     标签
   </van-tag>
-</demo-block><demo-block title='自定义颜色' padding=" " onChildRef='saveChildRef21'>
-  <van-tag my-class='demo-margin-right' color='#f2826a' onChildRef='saveChildRef22'>
+</demo-block><demo-block title='自定义颜色' padding=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef21'>
+  <van-tag my-class='demo-margin-right' color='#f2826a' _parent_ref="{{isMounted}}" onChildRef='saveChildRef22'>
     标签
   </van-tag>
-  <van-tag my-class='demo-margin-right' color='#f2826a' plain=" " onChildRef='saveChildRef23'>
+  <van-tag my-class='demo-margin-right' color='#f2826a' plain=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef23'>
     标签
   </van-tag>
-  <van-tag my-class='demo-margin-right' color='#7232dd' onChildRef='saveChildRef24'>
+  <van-tag my-class='demo-margin-right' color='#7232dd' _parent_ref="{{isMounted}}" onChildRef='saveChildRef24'>
     标签
   </van-tag>
-  <van-tag my-class='demo-margin-right' color='#7232dd' plain=" " onChildRef='saveChildRef25'>
+  <van-tag my-class='demo-margin-right' color='#7232dd' plain=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef25'>
     标签
   </van-tag>
-  <van-tag color='#ffe1e1' text-color='#ad0000' onChildRef='saveChildRef26'>
+  <van-tag color='#ffe1e1' text-color='#ad0000' _parent_ref="{{isMounted}}" onChildRef='saveChildRef26'>
     标签
   </van-tag>
-</demo-block><demo-block title='标签大小' padding=" " onChildRef='saveChildRef27'>
-  <van-tag my-class='demo-margin-right' type='danger' onChildRef='saveChildRef28'>
+</demo-block><demo-block title='标签大小' padding=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef27'>
+  <van-tag my-class='demo-margin-right' type='danger' _parent_ref="{{isMounted}}" onChildRef='saveChildRef28'>
     标签
   </van-tag>
-  <van-tag my-class='demo-margin-right' type='danger' size='medium' onChildRef='saveChildRef29'>
+  <van-tag my-class='demo-margin-right' type='danger' size='medium' _parent_ref="{{isMounted}}" onChildRef='saveChildRef29'>
     标签
   </van-tag>
-  <van-tag type='danger' size='large' onChildRef='saveChildRef30'>
+  <van-tag type='danger' size='large' _parent_ref="{{isMounted}}" onChildRef='saveChildRef30'>
     标签
   </van-tag>
 </demo-block>

@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/pages/dialog/index"
+    }
+});
 import createPage from "../../common/page";
 import Dialog from "../../dist/dialog/dialog";
 const message = "代码是写出来给人看的，附带能在机器上运行";

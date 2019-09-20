@@ -31,6 +31,7 @@ VantComponent({
         setChildren(columns) {
             this.simple = columns.length && !columns[0].values;
             this.children = this.selectAllComponents(".van-picker__column");
+            console.log(this);
 
             if (Array.isArray(this.children) && this.children.length) {
                 this.setColumns().catch(() => {});

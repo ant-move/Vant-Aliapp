@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/swipe-cell/index"
+    }
+});
 import { VantComponent } from "../common/component";
 import { touch } from "../mixins/touch";
 const THRESHOLD = 0.3;

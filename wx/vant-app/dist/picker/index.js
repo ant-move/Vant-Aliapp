@@ -19,8 +19,13 @@ VantComponent({
         this.children = [];
     },
     methods: {
+        onRelationsUpdate() {
+            // for dd
+            this.setChildren(this.data.columns);
+},
         noop() { },
         setChildren (columns) {
+          
             this.simple = columns.length && !columns[0].values;
                     this.children = this.selectAllComponents(".van-picker__column");
                     if (Array.isArray(this.children) && this.children.length) {

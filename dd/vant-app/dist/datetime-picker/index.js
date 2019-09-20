@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/datetime-picker/index"
+    }
+});
 import { VantComponent } from "../common/component";
 import { isDef } from "../common/utils";
 import { pickerProps } from "../picker/shared";
@@ -119,6 +125,7 @@ VantComponent({
                 this.picker = this.selectComponent(
                     ".van-datetime-picker-" + this.data.cId
                 );
+                console.log(this, ".van-datetime-picker-" + this.data.cId)
                 const { picker } = this;
 
                 if (picker !== undefined) {
@@ -328,6 +335,7 @@ VantComponent({
             const picker = this.getPicker();
 
             if (!picker) {
+                console.warn('Missing picker')
                 return false;
             }
 
@@ -362,6 +370,13 @@ VantComponent({
             })
                 .then(() => this.updateColumns())
                 .then(() => picker.setValues(values));
+        },
+        onRelationsUpdate () {
+            const innerValue = this.correctValue(this.data.value);
+            this.updateColumnValue(innerValue) &&
+                this.updateColumnValue(innerValue).then(() => {
+                    this.$emit("input", innerValue);
+                });
         }
     },
 
@@ -372,10 +387,11 @@ VantComponent({
     },
 
     created() {
-        const innerValue = this.correctValue(this.data.value);
-        this.updateColumnValue(innerValue) &&
-            this.updateColumnValue(innerValue).then(() => {
-                this.$emit("input", innerValue);
-            });
+            const innerValue = this.correctValue(this.data.value);
+            this.updateColumnValue(innerValue) &&
+                this.updateColumnValue(innerValue).then(() => {
+                    this.$emit("input", innerValue);
+                });
+        
     }
 });

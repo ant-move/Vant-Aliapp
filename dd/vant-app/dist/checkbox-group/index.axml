@@ -1,4 +1,4 @@
-<view class='checkbox-group-index {{className}}' onChildRef='saveChildRef0'>
+<view class='checkbox-group-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
   <slot>
   </slot>
 </view>

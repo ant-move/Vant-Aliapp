@@ -1,4 +1,10 @@
 const _my = require("/__antmove/api/index.js")(my);
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/tabs/index"
+    }
+});
 import { VantComponent } from "../common/component";
 import { touch } from "../mixins/touch";
 import { nextTick } from "../common/utils";

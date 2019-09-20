@@ -49,12 +49,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "pages/notify/index",
 					"pathName": "pages/notify/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/datetime-picker/index",
+					"pathName": "pages/datetime-picker/index",
 					"scene": null
 				}
 			]

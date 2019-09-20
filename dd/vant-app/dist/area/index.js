@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/area/index"
+    }
+});
 import { VantComponent } from "../common/component";
 import { pickerProps } from "../picker/shared";
 VantComponent({

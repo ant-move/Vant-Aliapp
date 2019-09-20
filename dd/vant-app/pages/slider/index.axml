@@ -1,22 +1,22 @@
 <view class='page-container-classname'>
-                <demo-block title='基础用法' onChildRef='saveChildRef1'>
-  <van-slider value='{{50}}' custom-class='slider' onChange='onChange' onChildRef='saveChildRef2'>
+                <demo-block title='基础用法' onChildRef='saveChildRef1' _parent_ref="{{isMounted}}">
+  <van-slider value='{{50}}' custom-class='slider' _parent_ref="{{isMounted}}" onChange='onChange' onChildRef='saveChildRef2'>
   </van-slider>
-</demo-block><demo-block title='指定选择范围' onChildRef='saveChildRef3'>
-  <van-slider custom-class='slider' value='{{50}}' min='{{10}}' max='{{90}}' onChange='onChange' onChildRef='saveChildRef4'>
+</demo-block><demo-block title='指定选择范围' _parent_ref="{{isMounted}}" onChildRef='saveChildRef3'>
+  <van-slider custom-class='slider' value='{{50}}' min='{{10}}' max='{{90}}' _parent_ref="{{isMounted}}" onChange='onChange' onChildRef='saveChildRef4'>
   </van-slider>
-</demo-block><demo-block title='禁用' onChildRef='saveChildRef5'>
-  <van-slider custom-class='slider' value='{{50}}' disabled=" " onChildRef='saveChildRef6'>
+</demo-block><demo-block title='禁用' _parent_ref="{{isMounted}}" onChildRef='saveChildRef5'>
+  <van-slider custom-class='slider' value='{{50}}' disabled=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef6'>
   </van-slider>
-</demo-block><demo-block title='指定步长' onChildRef='saveChildRef7'>
-  <van-slider custom-class='slider' value='{{50}}' step='{{10}}' onChange='onChange' onChildRef='saveChildRef8'>
+</demo-block><demo-block title='指定步长' _parent_ref="{{isMounted}}" onChildRef='saveChildRef7'>
+  <van-slider custom-class='slider' value='{{50}}' step='{{10}}' _parent_ref="{{isMounted}}" onChange='onChange' onChildRef='saveChildRef8'>
   </van-slider>
-</demo-block><demo-block title='自定义样式' onChildRef='saveChildRef9'>
-  <van-slider value='{{50}}' custom-class='slider' bar-height='4px' active-color='#f44' onChildRef='saveChildRef10'>
+</demo-block><demo-block title='自定义样式' _parent_ref="{{isMounted}}" onChildRef='saveChildRef9'>
+  <van-slider value='{{50}}' custom-class='slider' bar-height='4px' active-color='#f44' _parent_ref="{{isMounted}}" onChildRef='saveChildRef10'>
   </van-slider>
-</demo-block><demo-block title='自定义按钮' onChildRef='saveChildRef11'>
-  <van-slider value='{{ currentValue }}' custom-class='slider' use-button-slot=" " active-color='#f44' onDrag='onDrag' onChildRef='saveChildRef12'>
-    <view class='custom-button' slot='button'>
+</demo-block><demo-block title='自定义按钮' _parent_ref="{{isMounted}}" onChildRef='saveChildRef11'>
+  <van-slider value='{{ currentValue }}' custom-class='slider' use-button-slot=" " active-color='#f44' _parent_ref="{{isMounted}}" onDrag='onDrag' onChildRef='saveChildRef12'>
+    <view class='custom-button' slot='button' _parent_ref="{{isMounted}}">
       {{ currentValue }}
     </view>
   </van-slider>

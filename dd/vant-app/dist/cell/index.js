@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/cell/index"
+    }
+});
 import { link } from "../mixins/link";
 import { VantComponent } from "../common/component";
 VantComponent({

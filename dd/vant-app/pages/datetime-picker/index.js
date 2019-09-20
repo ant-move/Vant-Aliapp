@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/pages/datetime-picker/index"
+    }
+});
 import createPage from "../../common/page";
 import Toast from "../../dist/toast/toast";
 createPage({

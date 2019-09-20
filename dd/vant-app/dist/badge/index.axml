@@ -1,9 +1,9 @@
-<view class='badge-index {{className}}' onChildRef='saveChildRef0'>
-  <import-sjs from='../wxs/utils.sjs' name='utils'>
+<view class='badge-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+  <import-sjs _parent_ref="{{isMounted}}" from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
-  <view class="{{ utils.bem('badge', { active }) }} van-hairline {{customClass}}" hover-class='van-badge--hover' hover-stay-time='{{70}}' onTap='onClick'>
-    <view class='van-badge__text'>
-      <van-info a:if='{{ info !== null }}' info='{{ info }}' custom-style='right: 4px' onChildRef='saveChildRef1'>
+  <view class="{{ utils.bem('badge', { active }) }} van-hairline {{customClass}}" hover-class='van-badge--hover' hover-stay-time='{{70}}' _parent_ref="{{isMounted}}" onTap='onClick'>
+    <view class='van-badge__text' _parent_ref="{{isMounted}}">
+      <van-info a:if='{{ info !== null }}' info='{{ info }}' custom-style='right: 4px' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
       </van-info>
       {{ title }}
     </view>

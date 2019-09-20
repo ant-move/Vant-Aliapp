@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/picker/index"
+    }
+});
 export const pickerProps = {
     title: String,
     loading: Boolean,

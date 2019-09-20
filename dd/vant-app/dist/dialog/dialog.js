@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/dialog/index"
+    }
+});
 let queue = [];
 
 function getContext() {

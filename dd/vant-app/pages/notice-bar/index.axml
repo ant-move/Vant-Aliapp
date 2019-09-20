@@ -1,17 +1,17 @@
 <view class='page-container-classname'>
-                <demo-block title='基础用法' onChildRef='saveChildRef1'>
-  <van-notice-bar text='{{ text }}' left-icon='//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png' onChildRef='saveChildRef2'>
+                <demo-block title='基础用法' onChildRef='saveChildRef1' _parent_ref="{{isMounted}}">
+  <van-notice-bar text='{{ text }}' left-icon='//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png' _parent_ref="{{isMounted}}" onChildRef='saveChildRef2'>
   </van-notice-bar>
-</demo-block><demo-block title='通告栏模式' onChildRef='saveChildRef3'>
-  <van-notice-bar mode='closeable' text='{{ text }}' custom-class='demo-margin-bottom' onChildRef='saveChildRef4'>
+</demo-block><demo-block title='通告栏模式' _parent_ref="{{isMounted}}" onChildRef='saveChildRef3'>
+  <van-notice-bar mode='closeable' text='{{ text }}' custom-class='demo-margin-bottom' _parent_ref="{{isMounted}}" onChildRef='saveChildRef4'>
   </van-notice-bar>
-  <van-notice-bar mode='link' text='{{ text }}' onChildRef='saveChildRef5'>
+  <van-notice-bar mode='link' text='{{ text }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef5'>
   </van-notice-bar>
-</demo-block><demo-block title='禁用滚动' onChildRef='saveChildRef6'>
-  <van-notice-bar scrollable='{{ false }}' text='{{ text }}' onChildRef='saveChildRef7'>
+</demo-block><demo-block title='禁用滚动' _parent_ref="{{isMounted}}" onChildRef='saveChildRef6'>
+  <van-notice-bar scrollable='{{ false }}' text='{{ text }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef7'>
   </van-notice-bar>
-</demo-block><demo-block title='文本换行' onChildRef='saveChildRef8'>
-  <van-notice-bar wrapable=" " scrollable='{{ false }}' text='{{ text }}' onChildRef='saveChildRef9'>
+</demo-block><demo-block title='文本换行' _parent_ref="{{isMounted}}" onChildRef='saveChildRef8'>
+  <van-notice-bar wrapable=" " scrollable='{{ false }}' text='{{ text }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef9'>
   </van-notice-bar>
 </demo-block>
             </view>

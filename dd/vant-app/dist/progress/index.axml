@@ -1,9 +1,9 @@
-<view class='progress-index {{className}}' onChildRef='saveChildRef0'>
-  <import-sjs from='./index.sjs' name='getters'>
+<view class='progress-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+  <import-sjs _parent_ref="{{isMounted}}" from='./index.sjs' name='getters'>
   </import-sjs>
-  <view class='van-progress {{customClass}}'>
-    <view class='van-progress__portion' style="width: {{ percentage }}%; background: {{ inactive ? '#cacaca' : color }}">
-      <view a:if='{{ showPivot && getters.text(pivotText, percentage) }}' style="color: {{ textColor }}; background: {{ pivotColor ? pivotColor : inactive ? '#cacaca' : color }}" class='van-progress__pivot'>
+  <view class='van-progress {{customClass}}' _parent_ref="{{isMounted}}">
+    <view class='van-progress__portion' style="width: {{ percentage }}%; background: {{ inactive ? '#cacaca' : color }}" _parent_ref="{{isMounted}}">
+      <view a:if='{{ showPivot && getters.text(pivotText, percentage) }}' style="color: {{ textColor }}; background: {{ pivotColor ? pivotColor : inactive ? '#cacaca' : color }}" class='van-progress__pivot' _parent_ref="{{isMounted}}">
         {{ getters.text(pivotText, percentage) }}
       </view>
     </view>

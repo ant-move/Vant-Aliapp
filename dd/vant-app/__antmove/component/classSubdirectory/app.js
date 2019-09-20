@@ -1,16 +1,28 @@
 const utils = require('../../api/utils');
-const globalVar = require('../../api/config').global;
 const { warnLife } = utils;
-const { setIfWatch, getUrl } = require('./utils');
+const { setIfWatch } = require('./utils');
+const getUrl = function () {
+    let pages = getCurrentPages();
+    let url = pages[pages.length - 1].route;
+    let _arr = url.split('/');
+    let _name = _arr[_arr.length - 1];
+    my.setStorageSync({
+        key: '_pageMsg',
+        data: {
+            pageName: _name,
+            pagePath: url
+        }
+    });
+};
 
 module.exports = {
     processTransformationApp (_opts, options) {
         _opts = Object.assign(_opts, options);
         _opts.onLaunch = function (res) {
-            globalVar.clearStorageSync({
+            my.clearStorageSync({
                 key: "logInfo"
             });
-            globalVar.clearStorageSync({
+            my.clearStorageSync({
                 key: "_pageMsg"
             });
             getUrl ();            

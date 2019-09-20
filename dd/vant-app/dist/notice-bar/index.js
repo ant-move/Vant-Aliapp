@@ -1,4 +1,10 @@
 const _my = require("/__antmove/api/index.js")(my);
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/notice-bar/index"
+    }
+});
 import { VantComponent } from "../common/component";
 const FONT_COLOR = "#ed6a0c";
 const BG_COLOR = "#fffbe8";

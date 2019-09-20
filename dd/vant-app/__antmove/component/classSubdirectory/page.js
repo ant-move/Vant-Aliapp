@@ -4,10 +4,68 @@ const config = require('../../api/config');
 const createNode = require('./relation');
 const Relations = require('../../api/relations');
 const processRelationHandle = require('./processRelation');
-const { connectNodes, getLogInfo, getUrl, watchShakes } = require('./utils');
+const { connectNodes } = require('./utils');
 const selectComponent = require('./selectComponent');
 
+const getUrl = function () {
+    let pages = getCurrentPages();
+    let url = pages[pages.length - 1].route;
+    let _arr = url.split('/');
+    let _name = _arr[_arr.length - 1];
+    my.setStorageSync({
+        key: '_pageMsg',
+        data: {
+            pageName: _name,
+            pagePath: url
+        }
+    });
+    return url;
+};
+const getLogInfo = function () {
+    let num = 0;
+    let info = my.getStorageSync({
+        key: '__antmove_loginfo'
+    }).data.pages;
+    info.forEach(function (v, i) {
+        num += v.logs.length;
+    });
+    return num;
+};
 
+const watchShakes = function () {
+    let pages = getCurrentPages();
+    let url = pages[pages.length - 1].route;
+    let logUrl = "pages/ant-move-runtime-logs/index"; 
+    let specificUrl = "pages/ant-move-runtime-logs/specific/index";
+    my.watchShake({
+        success: function () { 
+            let num = getLogInfo();  
+            let ifWatch = my.getStorageSync({
+                key: 'ifWatch'
+            }).data;
+            if (!ifWatch || url === logUrl || url === specificUrl || !num) {
+                watchShakes();
+                return false;
+            }
+            my.confirm({
+                title: '温馨提示',
+                content: `已收集了${num}条问题日志，是否查看?  (该弹窗和问题收集页面的代码由Antmove嵌入，上线时请记得去掉)`,
+                confirmButtonText: '赶紧看看',
+                cancelButtonText: '暂不需要',
+                success: function (res) {
+                    if (res.confirm) {
+                        my.navigateTo({
+                            url: '/pages/ant-move-runtime-logs/index'
+                        });
+                    }
+                },
+                complete: function () {
+                    watchShakes();
+                }
+            });
+        }
+    }); 
+};
 module.exports = {
     processTransformationPage (_opts, options) {
         _opts = Object.assign(_opts, options);
@@ -16,9 +74,8 @@ module.exports = {
             this.selectComponentApp = new selectComponent(this);
             this.selectComponentApp.connect();
             // 初始化节点树
-            createNode.call(this, null, null, null, true, false, false);
-            // processRelations(this, Relations);
-
+            createNode.call(this, null, null, null, true);
+            processRelations(this, Relations);
             if (typeof options.data === 'function') {
                 options.data = options.data();
             }
@@ -33,33 +90,21 @@ module.exports = {
             if (options.onLoad) {
                 options.onLoad.call(this, res);
             }
-        };      
-
-        _opts.onShow = function () {
-            if (this.$node) {
-              // 初始化节点树
-            let self = this;
-              createNode.call(self, null, null, null, true, false, false);
-            //processRelations(self, Relations);
-            
-            if (options.onShow) {
-              options.onShow.call(this)
-            }
-            }
-        }
-        
+        };
 
         _opts.onReady = function (param) {
-          
-            processRelations(this, Relations);
-            let ast = this.$node.getRootNode();
-            console.log(this.$node)
-            //processRelationNodes(ast);
+            /**
+             * for child ref
+             * 
+             * 当父级组件挂载后再执行父级组件传递下来的属性回调函数
+             */
+            this.setData({
+                isMounted: true
+            });
 
             if (options.onReady) {
                 options.onReady.call(this, param);
             }
-            ast.isPageReady = true;
         };
     }
 };
@@ -68,56 +113,89 @@ module.exports = {
 function processRelationNodes (ast = {}) {
     let $nodes = ast.$nodes;
   
-    /**
-     * componentNodes onPageReady
-     */
-    Object.keys($nodes)
-        .forEach(function (item) {
-            let node = $nodes[item];
-            //connectNodes(node, ast);
-        
-            if (node.$self && typeof node.$self.onPageReady === 'function') {
-                node.$self.onPageReady();
-            }
-        });
-
-    ast.mountedHandles
+    setTimeout(()=>{
+      ast.mountedHandles
         .forEach(function (fn, i) {
             fn();
         });
     ast.mountedHandles = [];
+    }, 500)
 }
 
 
 function processRelations (ctx, relationInfo = {}) {
+  const relationApp = {
+    fns: [],
+    relationFns: []
+  };
     let route = ctx.route;
+    route = route.replace(/\/node_modules\/[a-z-]+\/[a-z-]+/, '')
+
     if (route[0] !== '/') route = '/' + route;
+    
     let info = relationInfo[route] || relationInfo[route.substring(1)];
     if (info) {
         processRelationHandle(info, function (node) {
             let id = node.$id;
+            ctx.$antmove = ctx.$antmove || {}
+            ctx.$antmove.__refFns = ctx.$antmove.__refFns || {};
+            ctx.$antmove.__refFns[node.$id] = false;
             if (id === 'saveChildRef0') {
-                ctx[id] = function () {};
+                ctx.$antmove.__refFns[id] = true;
+                ctx[id] = function () {
                 node.$index = 0;
                 node.$route = route;
-                createNode.call(ctx, ctx, null, node);
+                this.$id = this.$id || this.$viewId
+                createNode.call(this, this, null, node);
+                relationApp.fns.forEach((fn) => {
+                 fn.call(this)
+                 })
+
+                
+                 let _arr = []
+                relationApp.relationFns.forEach((fn)=>{
+                    if (!fn.call(this)) {
+                        _arr.push(fn);
+                    }
+                })
+
+                relationApp.relationFns = _arr;
+
+                 let ast = this.$rootNode.getRootNode();
+                    processRelationNodes(ast);
+                ast.isPageReady = true;
+                }
                 return false;
             }
             ctx[id] = function (ref) {
                 if (!ref) return false;
-                ctx.$antmove = ctx.$antmove || {};
-              ctx.$antmove.initChildRef = ctx.$antmove.initChildRef || {}
-              if (ctx.$antmove.initChildRef[ref.$id]) return false;
-              ctx.$antmove.initChildRef[ref.$id] = true;
-                if (ctx.$antmove[id] === undefined) {
-                    ctx.$antmove[id] = 0;
-                } else {
-                    ctx.$antmove[id] += 1;
-                }
-                ctx.selectComponentApp.preProcesscomponents(ref);
-                node.$index = ctx.$antmove[id];
-                node.$route = route;
-                createNode.call(ctx, ref, null, node);
+                if (!ctx.$antmove.__refFns[ref.$id]) {
+                ctx.$antmove.__refFns[ref.$id] = true;
+
+                relationApp.fns.unshift(
+                  function () {
+                    let ctx = this;
+                    ctx.selectComponentApp.preProcesscomponents(ref);
+                    ctx.$antmove = ctx.$antmove || {};
+                      if (ctx.$antmove[id] === undefined) {
+                          ctx.$antmove[id] = 0;
+                      } else {
+                          ctx.$antmove[id] += 1;
+                      }
+                      node.$index = ctx.$antmove[id];
+                      node.$route = route;
+                      createNode.call(ctx, ref, null, node);
+                  }
+                )
+
+                relationApp.relationFns.push(function () {
+                    return ref.handleRelations && ref.handleRelations()
+                })
+            
+            }
+                    if (ctx.saveChildRef0) {
+ctx.saveChildRef0()
+                    }
             };
         });
     } else {

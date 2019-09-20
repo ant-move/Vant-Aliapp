@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/picker/index"
+    }
+});
 import { VantComponent } from "../common/component";
 import { pickerProps } from "./shared";
 VantComponent({
@@ -24,14 +30,26 @@ VantComponent({
     beforeCreate() {
         this.children = [];
     },
-
+    mounted () {
+        console.log(this)
+        //this.onPageReady()
+    },
     methods: {
+        onRelationsUpdate() {
+           // console.log('picker')
+            //console.log('on Page Ready', this.data, this)
+            //this.selectorWatch(".van-picker__column", () => {
+                    //console.log("page ready");
+                    this.setChildren(this.data.columns);
+                    console.log("children", this.$id, this.children, this.data.columns);
+            //});
+        },
+
         noop() {},
 
         setChildren(columns) {
             this.simple = columns.length && !columns[0].values;
             this.children = this.selectAllComponents(".van-picker__column");
-
             if (Array.isArray(this.children) && this.children.length) {
                 this.setColumns().catch(() => {});
             }
@@ -102,9 +120,11 @@ VantComponent({
             const column = this.getColumn(index);
 
             if (column == null) {
-                return Promise.reject(
-                    new Error("setColumnValue: 对应列不存在")
-                );
+                // return Promise.reject(
+                //     new Error("setColumnValue: 对应列不存在")
+                // );
+                console.warn('Relations is not ready')
+                return null;
             }
 
             return column.setValue(value);
@@ -121,9 +141,11 @@ VantComponent({
             const column = this.getColumn(columnIndex);
 
             if (column == null) {
-                return Promise.reject(
-                    new Error("setColumnIndex: 对应列不存在")
-                );
+                console.warn('Relations is not ready')
+                return null
+                // return Promise.reject(
+                //     new Error("setColumnIndex: 对应列不存在")
+                // );
             }
 
             return column.setIndex(optionIndex);
@@ -143,9 +165,11 @@ VantComponent({
             const column = this.children[index];
 
             if (column == null) {
-                return Promise.reject(
-                    new Error("setColumnValues: 对应列不存在")
-                );
+                console.warn('Relations is not ready')
+                return null
+                // return Promise.reject(
+                //     new Error("setColumnValues: 对应列不存在")
+                // );
             }
 
             const isSame =
@@ -173,10 +197,11 @@ VantComponent({
 
         // set values of all columns
         setValues(values) {
-            const stack = values.map((value, index) =>
+                const stack = values.map((value, index) =>
                 this.setColumnValue(index, value)
             );
             return Promise.all(stack);
+            
         },
 
         // get indexes of all columns

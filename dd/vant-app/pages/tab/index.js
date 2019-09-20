@@ -1,4 +1,10 @@
 const _my = require("/__antmove/api/index.js")(my);
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/pages/tab/index"
+    }
+});
 import createPage from "../../common/page";
 createPage({
     data: {

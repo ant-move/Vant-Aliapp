@@ -1,14 +1,14 @@
-<view class='checkbox-index {{className}}' onChildRef='saveChildRef0'>
-  <import-sjs from='../wxs/utils.sjs' name='utils'>
+<view class='checkbox-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+  <import-sjs _parent_ref="{{isMounted}}" from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
-  <view class='van-checkbox {{customClass}}'>
-    <view class='van-checkbox__icon-wrap' onTap='toggle'>
-      <slot a:if='{{ useIconSlot }}' name='icon'>
+  <view class='van-checkbox {{customClass}}' _parent_ref="{{isMounted}}">
+    <view class='van-checkbox__icon-wrap' _parent_ref="{{isMounted}}" onTap='toggle'>
+      <slot a:if='{{ useIconSlot }}' name='icon' _parent_ref="{{isMounted}}">
       </slot>
-      <van-icon a:else  name='success' class="{{ utils.bem('checkbox__icon', [shape, { disabled, checked: value }]) }}" style="{{ checkedColor && value && !disabled ? 'border-color:' + checkedColor + '; background-color:' + checkedColor : '' }}" custom-class='{{iconClass}}' custom-style='line-height: 20px;' onChildRef='saveChildRef1'>
+      <van-icon a:else  name='success' class="{{ utils.bem('checkbox__icon', [shape, { disabled, checked: value }]) }}" style="{{ checkedColor && value && !disabled ? 'border-color:' + checkedColor + '; background-color:' + checkedColor : '' }}" custom-class='{{iconClass}}' custom-style='line-height: 20px;' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
       </van-icon>
     </view>
-    <view class="{{labelClass}} {{ utils.bem('checkbox__label', [labelPosition, { disabled }]) }}" onTap='onClickLabel'>
+    <view class="{{labelClass}} {{ utils.bem('checkbox__label', [labelPosition, { disabled }]) }}" _parent_ref="{{isMounted}}" onTap='onClickLabel'>
       <slot>
       </slot>
     </view>

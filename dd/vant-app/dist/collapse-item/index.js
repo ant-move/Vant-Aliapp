@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/collapse-item/index"
+    }
+});
 import { VantComponent } from "../common/component";
 
 const nextTick = () => new Promise(resolve => setTimeout(resolve, 20));
@@ -111,7 +117,7 @@ VantComponent({
             if (this.data.disabled) {
                 return;
             }
-
+console.log(this)
             const { name, expanded } = this.data;
             const index = this.parent.children.indexOf(this);
             const currentName = name == null ? index : name;

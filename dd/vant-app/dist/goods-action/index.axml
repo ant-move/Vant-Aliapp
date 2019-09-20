@@ -1,7 +1,7 @@
-<view class='goods-action-index {{className}}' onChildRef='saveChildRef0'>
-  <import-sjs from='../wxs/utils.sjs' name='utils'>
+<view class='goods-action-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+  <import-sjs _parent_ref="{{isMounted}}" from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
-  <view class="{{customClass}} {{ utils.bem('goods-action', { safe: isIPhoneX && safeAreaInsetBottom }) }}">
+  <view class="{{customClass}} {{ utils.bem('goods-action', { safe: isIPhoneX && safeAreaInsetBottom }) }}" _parent_ref="{{isMounted}}">
     <slot>
     </slot>
   </view>

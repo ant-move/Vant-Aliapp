@@ -1,20 +1,20 @@
-<view class='tabbar-item-index {{className}}' onChildRef='saveChildRef0'>
-  <import-sjs from='../wxs/utils.sjs' name='utils'>
+<view class='tabbar-item-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+  <import-sjs _parent_ref="{{isMounted}}" from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
-  <view class="{{ utils.bem('tabbar-item', { active }) }} {{customClass}}" style='color: {{ active ? activeColor : inactiveColor }}' onTap='onClick'>
-    <view class="{{ utils.bem('tabbar-item__icon', { dot }) }}">
-      <van-icon a:if='{{ icon }}' name='{{ icon }}' customStyle='display: block' onChildRef='saveChildRef1'>
+  <view class="{{ utils.bem('tabbar-item', { active }) }} {{customClass}}" style='color: {{ active ? activeColor : inactiveColor }}' _parent_ref="{{isMounted}}" onTap='onClick'>
+    <view class="{{ utils.bem('tabbar-item__icon', { dot }) }}" _parent_ref="{{isMounted}}">
+      <van-icon a:if='{{ icon }}' name='{{ icon }}' customStyle='display: block' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
       </van-icon>
-      <block a:else >
-        <slot a:if='{{ active }}' name='icon-active'>
+      <block a:else  _parent_ref="{{isMounted}}">
+        <slot a:if='{{ active }}' name='icon-active' _parent_ref="{{isMounted}}">
         </slot>
-        <slot a:else  name='icon'>
+        <slot a:else  name='icon' _parent_ref="{{isMounted}}">
         </slot>
       </block>
-      <van-info a:if='{{ info !== null }}' info='{{ info }}' custom-style='margin-top: 2px' onChildRef='saveChildRef2'>
+      <van-info a:if='{{ info !== null }}' info='{{ info }}' custom-style='margin-top: 2px' _parent_ref="{{isMounted}}" onChildRef='saveChildRef2'>
       </van-info>
     </view>
-    <view class='van-tabbar-item__text'>
+    <view class='van-tabbar-item__text' _parent_ref="{{isMounted}}">
       <slot>
       </slot>
     </view>

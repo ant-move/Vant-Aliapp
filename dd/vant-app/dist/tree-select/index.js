@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/tree-select/index"
+    }
+});
 import { VantComponent } from "../common/component";
 const ITEM_HEIGHT = 44;
 VantComponent({

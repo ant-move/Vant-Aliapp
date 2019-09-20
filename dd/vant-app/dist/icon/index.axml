@@ -1,11 +1,11 @@
-<view class='icon-index {{className}}' style='display: inline-block;' onChildRef='saveChildRef0'>
-  <view is-inline='true' style='display: inline'>
-    <import-sjs from='../wxs/utils.sjs' name='utils'>
+<view class='icon-index {{className}}' style='display: inline-block;' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+  <view is-inline='true' style='display: inline' _parent_ref="{{isMounted}}">
+    <import-sjs _parent_ref="{{isMounted}}" from='../wxs/utils.sjs' name='utils'>
     </import-sjs>
-    <view is-inline='true' class="{{customClass}} {{ classPrefix }} {{ utils.isSrc(name) ? 'van-icon--image' : classPrefix + '-' + name }}" style="{{ color ? 'color: ' + color + ';' : '' }}{{ size ? 'font-size: ' + size + ';' : '' }}{{ customStyle }}" onTap='onClick'>
-      <van-info a:if='{{ info !== null }}' info='{{ info }}' custom-class='van-icon__info' onChildRef='saveChildRef1'>
+    <view is-inline='true' class="{{customClass}} {{ classPrefix }} {{ utils.isSrc(name) ? 'van-icon--image' : classPrefix + '-' + name }}" style="{{ color ? 'color: ' + color + ';' : '' }}{{ size ? 'font-size: ' + size + ';' : '' }}{{ customStyle }}" _parent_ref="{{isMounted}}" onTap='onClick'>
+      <van-info a:if='{{ info !== null }}' info='{{ info }}' custom-class='van-icon__info' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
       </van-info>
-      <image a:if='{{ utils.isSrc(name) }}' src='{{ name }}' mode='aspectFit' class='van-icon__image'>
+      <image a:if='{{ utils.isSrc(name) }}' src='{{ name }}' mode='aspectFit' class='van-icon__image' _parent_ref="{{isMounted}}">
       </image>
     </view>
   </view>

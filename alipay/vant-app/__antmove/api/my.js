@@ -287,7 +287,7 @@ const apiObj = {startBeaconDiscovery:{fn: function fn (obj = {}) {
         },},getSystemInfoSync:{fn: function fn () {
             let ret = my.getSystemInfoSync();
             let getSystemInfoSyncProps = descObj.getSystemInfoSync.body.returnValue.props;
-            return utils.defineGetter(
+            ret = utils.defineGetter(
                 ret,
                 getSystemInfoSyncProps,
                 function (obj, prop) {
@@ -301,6 +301,14 @@ const apiObj = {startBeaconDiscovery:{fn: function fn (obj = {}) {
                     );
                 }
             );
+            /**
+             * 处理Androi屏幕宽度返回值
+             */
+            if (ret.platform === "Android") {  
+                ret.screenWidth = ret.screenWidth/ret.pixelRatio;
+                ret.screenHeight = ret.screenHeight/ret.pixelRatio
+            }
+            return ret
         },},getSystemInfo:{fn: function fn (obj = {}) {
             let getSystemInfoProps = descObj.getSystemInfo.body.returnValue.props;
             my.getSystemInfo({
@@ -320,6 +328,13 @@ const apiObj = {startBeaconDiscovery:{fn: function fn (obj = {}) {
                             );
                         }
                     );
+                    /**
+                    * 处理Androi屏幕宽度返回值
+                    */
+                    if (res.platform === "Android") {
+                        res.screenWidth = res.screenWidth/res.pixelRatio;
+                        res.screenHeight = res.screenHeight/res.pixelRatio
+                    } 
                     obj.success && obj.success(res);
                 }
             });

@@ -1,3 +1,9 @@
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/notify/index"
+    }
+});
 import { isObj } from "../common/utils";
 const defaultOptions = {
     selector: ".van-notify",

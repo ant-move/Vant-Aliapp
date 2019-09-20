@@ -1,5 +1,5 @@
-<view class='collapse-index {{className}}' onChildRef='saveChildRef0'>
-  <view class="{{customClass}} van-collapse {{ border ? 'van-hairline--top-bottom' : '' }}">
+<view class='collapse-index {{className}}' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+  <view class="{{customClass}} van-collapse {{ border ? 'van-hairline--top-bottom' : '' }}" _parent_ref="{{isMounted}}">
     <slot>
     </slot>
   </view>

@@ -1,4 +1,10 @@
 const _my = require("/__antmove/api/index.js")(my);
+my.setStorageSync({
+    key: "activeComponent",
+    data: {
+        is: "/dist/button/index"
+    }
+});
 import { VantComponent } from "../common/component";
 import { button } from "../mixins/button";
 import { openType } from "../mixins/open-type";

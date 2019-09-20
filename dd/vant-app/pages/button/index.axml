@@ -1,83 +1,83 @@
 <view class='page-container-classname'>
-                <demo-section onChildRef='saveChildRef0'>
-  <demo-block title='按钮类型' padding=" " onChildRef='saveChildRef1'>
-    <view class='row'>
-      <van-button my-class='demo-margin-right' onChildRef='saveChildRef2'>
+                <demo-section onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+  <demo-block title='按钮类型' padding=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
+    <view class='row' _parent_ref="{{isMounted}}">
+      <van-button my-class='demo-margin-right' _parent_ref="{{isMounted}}" onChildRef='saveChildRef2'>
         默认按钮
       </van-button>
-      <van-button type='primary' my-class='demo-margin-right' onChildRef='saveChildRef3'>
+      <van-button type='primary' my-class='demo-margin-right' _parent_ref="{{isMounted}}" onChildRef='saveChildRef3'>
         主要按钮
       </van-button>
-      <van-button type='info' my-class='demo-margin-right' onChildRef='saveChildRef4'>
+      <van-button type='info' my-class='demo-margin-right' _parent_ref="{{isMounted}}" onChildRef='saveChildRef4'>
         信息按钮
       </van-button>
     </view>
-    <van-button type='danger' my-class='demo-margin-right' onChildRef='saveChildRef5'>
+    <van-button type='danger' my-class='demo-margin-right' _parent_ref="{{isMounted}}" onChildRef='saveChildRef5'>
       危险按钮
     </van-button>
-    <van-button type='warning' onChildRef='saveChildRef6'>
+    <van-button type='warning' _parent_ref="{{isMounted}}" onChildRef='saveChildRef6'>
       警告按钮
     </van-button>
   </demo-block>
-  <demo-block title='朴素按钮' padding=" " onChildRef='saveChildRef7'>
-    <van-button type='primary' plain=" " my-class='demo-margin-right' onChildRef='saveChildRef8'>
+  <demo-block title='朴素按钮' padding=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef7'>
+    <van-button type='primary' plain=" " my-class='demo-margin-right' _parent_ref="{{isMounted}}" onChildRef='saveChildRef8'>
       朴素按钮
     </van-button>
-    <van-button type='danger' plain=" " onChildRef='saveChildRef9'>
+    <van-button type='danger' plain=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef9'>
       朴素按钮
     </van-button>
   </demo-block>
-  <demo-block title='细边框' padding=" " onChildRef='saveChildRef10'>
-    <van-button type='primary' plain=" " hairline=" " my-class='demo-margin-right' onChildRef='saveChildRef11'>
+  <demo-block title='细边框' padding=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef10'>
+    <van-button type='primary' plain=" " hairline=" " my-class='demo-margin-right' _parent_ref="{{isMounted}}" onChildRef='saveChildRef11'>
       细边框按钮
     </van-button>
-    <van-button type='danger' plain=" " hairline=" " onChildRef='saveChildRef12'>
+    <van-button type='danger' plain=" " hairline=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef12'>
       细边框按钮
     </van-button>
   </demo-block>
-  <demo-block title='禁用状态' padding=" " onChildRef='saveChildRef13'>
-    <van-button type='primary' disabled=" " my-class='demo-margin-right' onChildRef='saveChildRef14'>
+  <demo-block title='禁用状态' padding=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef13'>
+    <van-button type='primary' disabled=" " my-class='demo-margin-right' _parent_ref="{{isMounted}}" onChildRef='saveChildRef14'>
       禁用状态
     </van-button>
-    <van-button type='danger' disabled=" " onChildRef='saveChildRef15'>
+    <van-button type='danger' disabled=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef15'>
       禁用状态
     </van-button>
   </demo-block>
-  <demo-block title='加载状态' padding=" " onChildRef='saveChildRef16'>
-    <van-button loading=" " type='primary' my-class='demo-margin-right' onChildRef='saveChildRef17'>
+  <demo-block title='加载状态' padding=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef16'>
+    <van-button loading=" " type='primary' my-class='demo-margin-right' _parent_ref="{{isMounted}}" onChildRef='saveChildRef17'>
     </van-button>
-    <van-button loading=" " type='danger' loading-text='加载中...' onChildRef='saveChildRef18'>
+    <van-button loading=" " type='danger' loading-text='加载中...' _parent_ref="{{isMounted}}" onChildRef='saveChildRef18'>
     </van-button>
   </demo-block>
-  <demo-block title='按钮形状' padding=" " onChildRef='saveChildRef19'>
-    <van-button type='primary' square=" " my-class='demo-margin-right' onChildRef='saveChildRef20'>
+  <demo-block title='按钮形状' padding=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef19'>
+    <van-button type='primary' square=" " my-class='demo-margin-right' _parent_ref="{{isMounted}}" onChildRef='saveChildRef20'>
       方形按钮
     </van-button>
-    <van-button type='danger' round=" " onChildRef='saveChildRef21'>
+    <van-button type='danger' round=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef21'>
       圆形按钮
     </van-button>
   </demo-block>
-  <demo-block title='图标按钮' padding=" " onChildRef='saveChildRef22'>
-    <van-button type='primary' icon='star-o' my-class='demo-margin-right' onChildRef='saveChildRef23'>
+  <demo-block title='图标按钮' padding=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef22'>
+    <van-button type='primary' icon='star-o' my-class='demo-margin-right' _parent_ref="{{isMounted}}" onChildRef='saveChildRef23'>
     </van-button>
-    <van-button type='primary' icon='star-o' my-class='demo-margin-right' onChildRef='saveChildRef24'>
+    <van-button type='primary' icon='star-o' my-class='demo-margin-right' _parent_ref="{{isMounted}}" onChildRef='saveChildRef24'>
       按钮
     </van-button>
-    <van-button plain=" " type='primary' icon='https://img.yzcdn.cn/vant/logo.png' onChildRef='saveChildRef25'>
+    <van-button plain=" " type='primary' icon='https://img.yzcdn.cn/vant/logo.png' _parent_ref="{{isMounted}}" onChildRef='saveChildRef25'>
       按钮
     </van-button>
   </demo-block>
-  <demo-block title='按钮尺寸' padding=" " onChildRef='saveChildRef26'>
-    <van-button size='large' block=" " custom-class='demo-margin-bottom' onChildRef='saveChildRef27'>
+  <demo-block title='按钮尺寸' padding=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef26'>
+    <van-button size='large' block=" " custom-class='demo-margin-bottom' _parent_ref="{{isMounted}}" onChildRef='saveChildRef27'>
       大号按钮
     </van-button>
-    <van-button my-class='demo-margin-right' onChildRef='saveChildRef28'>
+    <van-button my-class='demo-margin-right' _parent_ref="{{isMounted}}" onChildRef='saveChildRef28'>
       普通按钮
     </van-button>
-    <van-button size='small' my-class='demo-margin-right' onChildRef='saveChildRef29'>
+    <van-button size='small' my-class='demo-margin-right' _parent_ref="{{isMounted}}" onChildRef='saveChildRef29'>
       小型按钮
     </van-button>
-    <van-button size='mini' onChildRef='saveChildRef30'>
+    <van-button size='mini' _parent_ref="{{isMounted}}" onChildRef='saveChildRef30'>
       迷你按钮
     </van-button>
   </demo-block>

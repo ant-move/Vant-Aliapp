@@ -1,8 +1,8 @@
-<view class='loading-index {{className}}' style='display: inline-block;' onChildRef='saveChildRef0'>
-  <view is-inline='true' style='display: inline-block'>
-    <view class='van-loading {{customClass}}' style='width: {{ size }}; height: {{ size }}'>
-      <view class='van-loading__spinner van-loading__spinner--{{ type }}' style='color: {{ color }};'>
-        <view a:if="{{ type === 'spinner' }}" a:for='{{[1,1,1,1,1,1,1,1,1,1,1,1]}}' a:key='index' class='van-loading__dot' ref-numbers='{{[1,1,1,1,1,1,1,1,1,1,1,1]}}'>
+<view class='loading-index {{className}}' style='display: inline-block;' onChildRef='saveChildRef0' _parent_ref="{{isMounted}}">
+  <view is-inline='true' style='display: inline-block' _parent_ref="{{isMounted}}">
+    <view class='van-loading {{customClass}}' style='width: {{ size }}; height: {{ size }}' _parent_ref="{{isMounted}}">
+      <view class='van-loading__spinner van-loading__spinner--{{ type }}' style='color: {{ color }};' _parent_ref="{{isMounted}}">
+        <view a:if="{{ type === 'spinner' }}" a:for='{{[1,1,1,1,1,1,1,1,1,1,1,1]}}' a:key='index' class='van-loading__dot' _parent_ref="{{isMounted}}" ref-numbers='{{[1,1,1,1,1,1,1,1,1,1,1,1]}}'>
         </view>
       </view>
     </view>
