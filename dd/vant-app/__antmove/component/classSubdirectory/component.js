@@ -7,6 +7,19 @@ const Relations = require('../../api/relations');
 const SelectComponent = require('./selectComponent');
 let _id = 0;
 
+function getInfo (key, obj) {
+    let val = {};
+    Object.keys(obj)
+        .forEach(function (item) {
+            if (key === item) {
+                val = obj[item];
+            } else if (key.indexOf(item) !== -1) {
+                val = obj[item];
+            }
+        });
+    return val;
+}
+
 function processRelations (ctx, relationInfo = {}) {
     let route = ctx.is;
     if (!my.canIUse('component2')) {
@@ -15,8 +28,10 @@ function processRelations (ctx, relationInfo = {}) {
     route = route.replace(/\/node_modules\/[a-z-]+\/[a-z-]+/, '');
     ctx.is = route;
     ctx.$id = _id++;
-    let info = relationInfo[route] || relationInfo[route.substring(1)];
-    
+    if (route[0] === '/') {
+        route = route.substring(1);
+    }
+    let info = getInfo(route, relationInfo);
     if (info) {
         processRelationHandle(info, function (node) {
             ctx.methods = ctx.methods || {};
@@ -524,12 +539,6 @@ module.exports = {
             if (typeof this.triggerEvent !== 'function') {
                 processTriggerEvent.call(this);
             }
-
-            // process relations, get relation ast
-            // let relationAst = createNode.call(this, null, null, null, null, true).mountedHandles;
-            // relationAst.push(()=>{
-            //    handleRelations.call(this);
-            // });
         };      
         fnApp.add('onInit', function () {
             processIntersectionObserver(this);

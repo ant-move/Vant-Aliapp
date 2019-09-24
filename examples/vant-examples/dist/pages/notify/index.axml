@@ -1,0 +1,14 @@
+<view class='page-container-classname'>
+                <van-nav-bar title='Notify 消息通知' left-text='返回' left-arrow=" " ref='saveChildRef1' onClick-left='onClickLeft'>
+</van-nav-bar><demo-block padding=" " title='基础用法' ref='saveChildRef2'>
+  <van-button is-inline='true' onClick='showNotify' ref='saveChildRef3'>
+    显示消息通知
+  </van-button>
+</demo-block><demo-block padding=" " title='自定义配置' ref='saveChildRef4'>
+  <van-button is-inline='true' onClick='showNotify2' ref='saveChildRef5'>
+    显示自定义消息通知
+  </van-button>
+</demo-block><van-notify id='van-notify' safe-area-inset-top=" " class='van-notify' ref='saveChildRef6'>
+</van-notify><van-notify id='custom-selector' class='custom-selector' ref='saveChildRef7'>
+</van-notify>
+            </view>

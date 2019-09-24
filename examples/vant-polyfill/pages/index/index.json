@@ -1,0 +1,9 @@
+{
+	"defaultTitle": "Vant app",
+	"usingComponents": {
+		"van-cell": "/dist/dist/cell/index",
+		"van-icon": "/dist/dist/icon/index",
+		"van-collapse": "/dist/dist/collapse/index",
+		"van-collapse-item": "/dist/dist/collapse-item/index"
+	}
+}

@@ -1,0 +1,4 @@
+<view class='area-index {{className}}' ref='saveChildRef0'>
+  <van-picker class='van-area__picker' active-class='{{activeClass}}' toolbar-class='{{toolbarClass}}' column-class='{{columnClass}}' show-toolbar=" " value-key='name' title='{{ title }}' loading='{{ loading }}' columns='{{ displayColumns }}' item-height='{{ itemHeight }}' visible-item-count='{{ visibleItemCount }}' cancel-button-text='{{ cancelButtonText }}' confirm-button-text='{{ confirmButtonText }}' onChange='onChange' onConfirm='onConfirm' onCancel='onCancel' ref='saveChildRef1'>
+  </van-picker>
+</view>

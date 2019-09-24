@@ -1,0 +1,8 @@
+<view class='tag-index {{className}}' style='display: inline-block;' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view is-inline='true' class="{{customClass}} {{myClass}} {{ utils.bem('tag', [size, { mark, plain, round }]) }} {{ plain ? 'van-hairline--surround' : '' }}" style='{{ style }}'>
+    <slot>
+    </slot>
+  </view>
+</view>

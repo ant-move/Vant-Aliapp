@@ -1,0 +1,10 @@
+<view class='switch-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class="{{customClass}} {{ utils.bem('switch', { on: value === activeValue, disabled }) }}" style="font-size: {{ size }}; {{ (checked ? activeColor : inactiveColor) ? 'background-color: ' + (checked ? activeColor : inactiveColor ) : '' }}" onTap='onClick'>
+    <view class='van-switch__node {{nodeClass}}'>
+      <van-loading a:if='{{ loading }}' size='50%' custom-class='van-switch__loading' ref='saveChildRef1'>
+      </van-loading>
+    </view>
+  </view>
+</view>

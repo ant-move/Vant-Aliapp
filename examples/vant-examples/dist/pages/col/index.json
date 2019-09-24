@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "Layout 布局",
+	"usingComponents": {
+		"demo-block": "../../components/demo-block/index",
+		"van-col": "../../dist/col/index",
+		"van-row": "../../dist/row/index"
+	}
+}

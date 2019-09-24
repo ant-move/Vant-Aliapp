@@ -1,0 +1,8 @@
+<view class='tab-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view a:if='{{ animated || inited }}' class="{{customClass}} {{ utils.bem('tab__pane', { active, inactive: !active }) }}" style="{{ animated || active ? '' : 'display: none;' }} {{ width ? 'width:' + width + 'px;' : '' }}">
+    <slot>
+    </slot>
+  </view>
+</view>

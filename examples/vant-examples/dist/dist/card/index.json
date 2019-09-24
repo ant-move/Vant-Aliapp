@@ -1,0 +1,1 @@
+{ "component": true, "usingComponents": { "van-tag": "../tag/index" } }

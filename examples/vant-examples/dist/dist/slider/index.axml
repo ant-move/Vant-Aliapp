@@ -1,0 +1,14 @@
+<view class='slider-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class="{{customClass}} {{ utils.bem('slider', { disabled }) }}" style="{{ inactiveColor ? 'background:' + inactiveColor : '' }}" onTap='onClick'>
+    <view class='van-slider__bar' style="{{ barStyle }}; {{ activeColor ? 'background:' + activeColor : '' }}">
+      <view class='van-slider__button-wrapper' onTouchStart='onTouchStart' catchTouchMove='onTouchMove' onTouchEnd='onTouchEnd' onTouchCancel='onTouchEnd'>
+        <slot a:if='{{ useButtonSlot }}' name='button'>
+        </slot>
+        <view a:else  class='van-slider__button'>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

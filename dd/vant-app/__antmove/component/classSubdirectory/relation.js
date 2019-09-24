@@ -1,6 +1,6 @@
 let id = 0;
 const { connectNodes } = require("./utils");
-const astCache = {};
+let astCache = {};
 
 function createAstData () {
     let RelationAst = {
@@ -100,6 +100,28 @@ module.exports = function (
         return astCache[cacheId];
     }
 
+    let _relationData = {};
+
+    function initPageData () {
+      _relationData = createAstData();
+        this.$antmove = this.$antmove || {};
+        this.$antmove.relationData = this.$antmove.relationData || _relationData;
+        this.$antmove.astCache = this.$antmove.astCache || astCache;
+    }
+    if (!this.$page) {
+        initPageData.call(this)
+    
+    } else {
+      if (!this.$page.$antmove 
+      || !this.$page.$antmove.relationData) {
+        initPageData.call(this)
+
+      } else {
+_relationData = this.$page.$antmove.relationData;
+        astCache =  this.$page.$antmove.astCache;
+      }
+        
+    }
     RelationAst = astCache[cacheId];
     let wrapNode = null;
  

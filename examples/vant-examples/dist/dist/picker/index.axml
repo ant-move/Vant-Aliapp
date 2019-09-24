@@ -1,0 +1,27 @@
+<view class='picker-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from="./index.axmlisSimple.sjs" name='isSimple'>
+  </import-sjs>
+  <view class='van-picker {{customClass}}' disable-scroll='true'>
+    <view a:if='{{ showToolbar }}' class='van-picker__toolbar van-hairline--top-bottom {{toolbarClass}}'>
+      <view class='van-picker__cancel' hover-class='van-picker__cancel--hover' hover-stay-time='{{70}}' data-type='cancel' onTap='emit'>
+        {{ cancelButtonText }}
+      </view>
+      <view a:if='{{ title }}' class='van-picker__title van-ellipsis'>
+        {{ title }}
+      </view>
+      <view class='van-picker__confirm' hover-class='van-picker__confirm--hover' hover-stay-time='{{70}}' data-type='confirm' onTap='emit'>
+        {{ confirmButtonText }}
+      </view>
+    </view>
+    <view a:if='{{ loading }}' class='van-picker__loading'>
+      <custom-loading color='#1989fa' ref='saveChildRef1'>
+      </custom-loading>
+    </view>
+    <view class='van-picker__columns' style='height: {{ itemHeight * visibleItemCount }}px' catchTouchMove='noop'>
+      <picker-column class='van-picker__column' a:for='{{ isSimple(columns) ? [columns] : columns }}' a:key='*this' data-index='{{ index }}' custom-class='{{columnClass}}' value-key='{{ valueKey }}' initial-options='{{ isSimple(columns) ? item : item.values }}' default-index='{{ item.defaultIndex || defaultIndex }}' item-height='{{ itemHeight }}' visible-item-count='{{ visibleItemCount }}' active-class='{{activeClass}}' ref-numbers='{{ isSimple(columns) ? [columns] : columns }}' onChange='onChange' ref='saveChildRef2'>
+      </picker-column>
+      <view class='van-picker__frame van-hairline--top-bottom' style='height: {{ itemHeight }}px'>
+      </view>
+    </view>
+  </view>
+</view>

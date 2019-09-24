@@ -1,0 +1,8 @@
+{
+	"component": true,
+	"usingComponents": {
+		"picker-column": "../picker-column/index",
+		"loading": "../loading/index",
+		"custom-loading": "../../__antmove/component/custom-loading/custom-loading"
+	}
+}

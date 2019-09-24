@@ -1,0 +1,8 @@
+@import "../common/index.acss";
+:host {
+    -webkit-flex: 1;
+    flex: 1;
+}
+.goods-action-button-index {
+    width: 50%;
+}

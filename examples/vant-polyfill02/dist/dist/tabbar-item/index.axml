@@ -1,0 +1,22 @@
+<view class='tabbar-item-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class="{{ utils.bem('tabbar-item', { active }) }} {{customClass}}" style='color: {{ active ? activeColor : inactiveColor }}' onTap='onClick'>
+    <view class="{{ utils.bem('tabbar-item__icon', { dot }) }}">
+      <van-icon a:if='{{ icon }}' name='{{ icon }}' customStyle='display: block' ref='saveChildRef1'>
+      </van-icon>
+      <block a:else >
+        <slot a:if='{{ active }}' name='icon-active'>
+        </slot>
+        <slot a:else  name='icon'>
+        </slot>
+      </block>
+      <van-info a:if='{{ info !== null }}' info='{{ info }}' custom-style='margin-top: 2px' ref='saveChildRef2'>
+      </van-info>
+    </view>
+    <view class='van-tabbar-item__text'>
+      <slot>
+      </slot>
+    </view>
+  </view>
+</view>

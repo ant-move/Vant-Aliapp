@@ -1,0 +1,10 @@
+{
+	"defaultTitle": "Cell 单元格",
+	"usingComponents": {
+		"demo-block": "../../components/demo-block/index",
+		"van-cell": "../../dist/cell/index",
+		"van-cell-group": "../../dist/cell-group/index",
+		"van-icon": "../../dist/icon/index",
+		"van-tag": "../../dist/tag/index"
+	}
+}

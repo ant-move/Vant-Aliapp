@@ -1,0 +1,9 @@
+{
+	"defaultTitle": "SubmitBar 提交订单栏",
+	"usingComponents": {
+		"demo-block": "../../components/demo-block/index",
+		"van-submit-bar": "../../dist/submit-bar/index",
+		"van-tag": "../../dist/tag/index",
+		"van-toast": "../../dist/toast/index"
+	}
+}

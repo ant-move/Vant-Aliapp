@@ -1,0 +1,40 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' ref='saveChildRef1'>
+  <van-cell-group ref='saveChildRef2'>
+    <van-field value='{{ value }}' placeholder='请输入用户名' border='{{ false }}' clearable=" " ref='saveChildRef3'>
+    </van-field>
+  </van-cell-group>
+</demo-block><demo-block title='自定义类型' ref='saveChildRef4'>
+  <van-cell-group ref='saveChildRef5'>
+    <van-field value='{{ username }}' label='用户名' placeholder='请输入用户名' clearable=" " right-icon='question-o' right-icon-class='custom-icon' required=" " onClick-icon='onClickIcon' ref='saveChildRef6'>
+    </van-field>
+    <van-field value='{{ password }}' type='password' label='密码' placeholder='请输入密码' required=" " border='{{ false }}' ref='saveChildRef7'>
+    </van-field>
+  </van-cell-group>
+</demo-block><demo-block title='禁用输入框' ref='saveChildRef8'>
+  <van-cell-group ref='saveChildRef9'>
+    <van-field value='输入框已禁用' label='用户名' left-icon='contact' disabled=" " border='{{ false }}' ref='saveChildRef10'>
+    </van-field>
+  </van-cell-group>
+</demo-block><demo-block title='错误提示' ref='saveChildRef11'>
+  <van-cell-group ref='saveChildRef12'>
+    <van-field value='{{ username2 }}' label='用户名' placeholder='请输入用户名' error=" " ref='saveChildRef13'>
+    </van-field>
+    <van-field value='{{ phone }}' label='手机号' placeholder='请输入手机号' error-message='手机号格式错误' border='{{ false }}' ref='saveChildRef14'>
+    </van-field>
+  </van-cell-group>
+</demo-block><demo-block title='高度自适应' ref='saveChildRef15'>
+  <van-cell-group ref='saveChildRef16'>
+    <van-field value='{{ message }}' label='留言' type='textarea' placeholder='请输入留言' rows='{{1}}' autosize=" " border='{{ false }}' ref='saveChildRef17'>
+    </van-field>
+  </van-cell-group>
+</demo-block><demo-block title='插入按钮' ref='saveChildRef18'>
+  <van-cell-group ref='saveChildRef19'>
+    <van-field value='{{ sms }}' center=" " clearable=" " label='短信验证码' placeholder='请输入短信验证码' use-button-slot=" " border='{{ false }}' onChange='onFieldChange' onBlur='onFieldBlur' ref='saveChildRef20'>
+      <van-button slot='button' size='small' type='primary' custom-class='button' onTap='onSendSms' ref='saveChildRef21'>
+        发送验证码
+      </van-button>
+    </van-field>
+  </van-cell-group>
+</demo-block>
+            </view>

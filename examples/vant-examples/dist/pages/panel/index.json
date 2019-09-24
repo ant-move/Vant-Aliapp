@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "Panel 面板",
+	"usingComponents": {
+		"demo-block": "../../components/demo-block/index",
+		"van-button": "../../dist/button/index",
+		"van-panel": "../../dist/panel/index"
+	}
+}

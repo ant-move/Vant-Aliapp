@@ -1,0 +1,22 @@
+<view class='collapse-item-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class="van-collapse-item {{customClass}} {{ index !== 0 ? 'van-hairline--top' : '' }}">
+    <van-cell title='{{ title }}' title-class='{{titleClass}}' icon='{{ icon }}' value='{{ value }}' label='{{ label }}' is-link='{{ isLink }}' clickable='{{ clickable }}' border='{{ border && expanded }}' class="{{ utils.bem('collapse-item__title', { disabled, expanded }) }}" right-icon-class='van-cell__right-icon' custom-class='van-cell' hover-class='van-cell--hover' onClick='onClick' ref='saveChildRef1'>
+      <slot name='title' slot='title'>
+      </slot>
+      <slot name='icon' slot='icon'>
+      </slot>
+      <slot name='value'>
+      </slot>
+      <slot name='right-icon' slot='right-icon'>
+      </slot>
+    </van-cell>
+    <view class="{{ utils.bem('collapse-item__wrapper', { transition }) }}" style='height: {{ contentHeight }};' onTransitionend='onTransitionEnd'>
+      <view class='van-collapse-item__content van-collapse-item__content_{{theId}} {{contentClass}}'>
+        <slot>
+        </slot>
+      </view>
+    </view>
+  </view>
+</view>

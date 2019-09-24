@@ -1,0 +1,22 @@
+<view class='search-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class="{{ utils.bem('search', { withaction: showAction || useActionSlot }) }} {{customClass}}" style='background: {{ background }}'>
+    <view class="{{ utils.bem('search__content', [shape]) }}">
+      <view class='van-search__label' a:if='{{ label }}'>
+        {{ label }}
+      </view>
+      <slot a:else  name='label'>
+      </slot>
+      <van-field clearable='true' type='search' left-icon='search' focus='{{ focus }}' error='{{ error }}' border='{{ false }}' confirm-type='search' class='van-search__field {{fieldClass}}' value='{{ value }}' disabled='{{ disabled }}' readonly='{{ readonly }}' maxlength='{{ maxlength }}' input-align='{{ inputAlign }}' input-class='{{inputClass}}' placeholder='{{ placeholder }}' placeholder-style='{{ placeholderStyle }}' custom-style='padding: 5px 10px 5px 0; background-color: transparent;' onBlur='onBlur' onFocus='onFocus' onChange='onChange' onConfirm='onSearch' onClear='onClear' ref='saveChildRef1'>
+      </van-field>
+    </view>
+    <view a:if='{{ showAction || useActionSlot }}' class='van-search__action' hover-class='van-search__action--hover' hover-stay-time='{{70}}'>
+      <slot a:if='{{ useActionSlot }}' name='action'>
+      </slot>
+      <view a:else  class='{{cancelClass}}' onTap='onCancel'>
+        取消
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+<view class='tabbar-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class="{{customClass}} {{ border ? 'van-hairline--top-bottom' : '' }} {{ utils.bem('tabbar', { fixed, safe: isIPhoneX && safeAreaInsetBottom }) }}" style="{{ zIndex ? 'z-index: ' + zIndex : '' }}">
+    <slot>
+    </slot>
+  </view>
+</view>

@@ -1,0 +1,26 @@
+<view class='action-sheet-index {{className}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <van-popup show='{{ show }}' position='bottom' z-index='{{ zIndex }}' overlay='{{ overlay }}' custom-class='van-action-sheet' safe-area-inset-bottom='{{ safeAreaInsetBottom }}' close-on-click-overlay='{{ closeOnClickOverlay }}' onClose='onClose' ref='saveChildRef1'>
+    <view a:if='{{ title }}' class='van-hairline--bottom van-action-sheet__header'>
+      {{ title }}      <van-icon name='close' custom-class='van-action-sheet__close' onClick='onClose' ref='saveChildRef2'>
+      </van-icon>
+    </view>
+    <view a:if='{{ actions && actions.length }}'>
+      <button a:for='{{ actions }}' a:key='index' open-type='{{ item.openType }}' class="{{ utils.bem('action-sheet__item', { disabled: item.disabled || item.loading }) }} van-hairline--top {{ item.className || '' }}" hover-class='van-action-sheet__item--hover' data-index='{{ index }}' ref-numbers='{{ actions }}' onTap='onSelect'>
+        <block a:if='{{ !item.loading }}'>
+          {{ item.name }}          <text a:if='{{ item.subname }}' class='van-action-sheet__subname'>
+            {{ item.subname }}
+          </text>
+        </block>
+        <van-loading a:else  size='20px' ref='saveChildRef3'>
+        </van-loading>
+      </button>
+    </view>
+    <slot>
+    </slot>
+    <view a:if='{{ cancelText }}' class='van-action-sheet__cancel' hover-class='van-action-sheet__cancel--hover' hover-stay-time='{{70}}' onTap='onCancel'>
+      {{ cancelText }}
+    </view>
+  </van-popup>
+</view>

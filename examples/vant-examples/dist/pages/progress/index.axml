@@ -1,0 +1,16 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' ref='saveChildRef1'>
+  <van-progress custom-class='progress' percentage='{{50}}' ref='saveChildRef2'>
+  </van-progress>
+</demo-block><demo-block title='置灰' ref='saveChildRef3'>
+  <van-progress custom-class='progress' inactive=" " percentage='{{50}}' ref='saveChildRef4'>
+  </van-progress>
+</demo-block><demo-block title='样式定制' ref='saveChildRef5'>
+  <van-progress custom-class='progress' pivot-text='橙色' color='#f2826a' percentage='{{25}}' ref='saveChildRef6'>
+  </van-progress>
+  <van-progress custom-class='progress' pivot-text='红色' color='#f44' percentage='{{50}}' ref='saveChildRef7'>
+  </van-progress>
+  <van-progress custom-class='progress' percentage='{{75}}' pivot-text='紫色' pivot-color='#7232dd' color='linear-gradient(to right, #be99ff, #7232dd)' ref='saveChildRef8'>
+  </van-progress>
+</demo-block>
+            </view>

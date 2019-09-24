@@ -1,0 +1,22 @@
+<view class='page-container-classname'>
+                <view class='container' ref='saveChildRef0'>
+  <view class='title'>
+    <image class='logo' src='https://img.yzcdn.cn/vant/logo.png'>
+    </image>
+    <view class='title-text'>
+      Vant Aliapp
+    </view>
+  </view>
+  <view class='desc'>
+    轻量、可靠的小程序 UI 组件库
+  </view>
+  <van-collapse a:for='{{ list }}' a:for-item='group' a:key='*this' value='{{ activeNames }}' border='{{ false }}' ref-numbers='{{ list }}' onChange='onChangeCollapse' ref='saveChildRef1'>
+    <van-collapse-item clickable=" " is-link='{{ false }}' custom-class='mobile-nav' title-class='mobile-nav__title' content-class='mobile-nav__content' title='{{ group.groupName }}' name='{{ group.groupName }}' ref='saveChildRef2'>
+      <van-icon name='{{ group.icon }}' slot='right-icon' custom-class='mobile-nav__icon' ref='saveChildRef3'>
+      </van-icon>
+      <van-cell a:for='{{ group.list }}' a:key='*this' is-link=" " url='/pages{{ item.path }}/index' data-url='/pages{{ item.path }}/index' data-switch-tab='{{ true }}' title='{{ item.title }}' ref-numbers='{{ group.list }}' onClick='onClick' ref='saveChildRef4'>
+      </van-cell>
+    </van-collapse-item>
+  </van-collapse>
+</view>
+            </view>

@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "NavBar 导航栏",
+	"usingComponents": {
+		"demo-block": "../../components/demo-block/index",
+		"van-icon": "../../dist/icon/index",
+		"van-nav-bar": "../../dist/nav-bar/index"
+	}
+}

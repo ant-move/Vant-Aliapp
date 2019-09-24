@@ -1,0 +1,10 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/area/index"
+  ],
+  "window": {
+    "defaultTitle": "App",
+    "titleBarColor": "#323239"
+  }
+}

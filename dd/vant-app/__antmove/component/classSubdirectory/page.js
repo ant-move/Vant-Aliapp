@@ -32,6 +32,7 @@ const getLogInfo = function () {
     return num;
 };
 
+
 const watchShakes = function () {
     let pages = getCurrentPages();
     let url = pages[pages.length - 1].route;

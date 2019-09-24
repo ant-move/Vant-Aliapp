@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "Picker 选择器",
+	"usingComponents": {
+		"demo-block": "../../components/demo-block/index",
+		"van-toast": "../../dist/toast/index",
+		"van-picker": "../../dist/picker/index"
+	}
+}

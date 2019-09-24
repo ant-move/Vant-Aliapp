@@ -1,0 +1,48 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' ref='saveChildRef1'>
+  <van-tabbar active='{{ active }}' data-key='active' custom-class='tabbar' safe-area-inset-bottom='{{ false }}' onChange='onChange' ref='saveChildRef2'>
+    <van-tabbar-item icon='home-o' ref='saveChildRef3'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item icon='search' ref='saveChildRef4'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item icon='friends-o' ref='saveChildRef5'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item icon='setting-o' ref='saveChildRef6'>
+      标签
+    </van-tabbar-item>
+  </van-tabbar>
+</demo-block><demo-block title='通过名称匹配' ref='saveChildRef7'>
+  <van-tabbar active='{{ active2 }}' data-key='active2' custom-class='tabbar' safe-area-inset-bottom='{{ false }}' onChange='onChange' ref='saveChildRef8'>
+    <van-tabbar-item name='home' icon='home-o' ref='saveChildRef9'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item name='search' icon='search' ref='saveChildRef10'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item name='friends' icon='friends-o' ref='saveChildRef11'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item name='setting' icon='setting-o' ref='saveChildRef12'>
+      标签
+    </van-tabbar-item>
+  </van-tabbar>
+</demo-block><demo-block title='显示徽标' ref='saveChildRef13'>
+  <van-tabbar active='{{ active3 }}' data-key='active3' custom-class='tabbar' safe-area-inset-bottom='{{ false }}' onChange='onChange' ref='saveChildRef14'>
+    <van-tabbar-item icon='home-o' ref='saveChildRef15'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item icon='search' dot=" " ref='saveChildRef16'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item icon='friends-o' info='{{5}}' ref='saveChildRef17'>
+      标签
+    </van-tabbar-item>
+    <van-tabbar-item icon='setting-o' info='{{20}}' ref='saveChildRef18'>
+      标签
+    </van-tabbar-item>
+  </van-tabbar>
+</demo-block>
+            </view>

@@ -1,0 +1,4 @@
+<view class='overlay-index {{className}}' ref='saveChildRef0'>
+  <van-transition show='{{ show }}' custom-class='van-overlay' custom-style="z-index: {{ zIndex }}; {{ mask ? 'background-color: rgba(0, 0, 0, .7);' : '' }}; {{ customStyle }}" duration='{{ duration }}' onTap='onClick' catchTouchMove='noop' ref='saveChildRef1'>
+  </van-transition>
+</view>

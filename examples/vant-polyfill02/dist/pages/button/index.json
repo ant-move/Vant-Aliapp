@@ -1,0 +1,7 @@
+{
+	"defaultTitle": "Button 按钮",
+	"usingComponents": {
+		"demo-block": "../../components/demo-block/index",
+		"van-button": "../../dist/button/index"
+	}
+}

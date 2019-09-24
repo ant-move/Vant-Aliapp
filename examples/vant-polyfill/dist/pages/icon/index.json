@@ -1,0 +1,9 @@
+{
+	"defaultTitle": "Icon 图标",
+	"usingComponents": {
+		"van-col": "../../dist/col/index",
+		"van-icon": "../../dist/icon/index",
+		"van-tab": "../../dist/tab/index",
+		"van-tabs": "../../dist/tabs/index"
+	}
+}

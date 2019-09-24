@@ -1,0 +1,12 @@
+@import "../common/index.acss";
+.van-tab__pane {
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.van-tab__pane--active {
+    height: auto;
+}
+.van-tab__pane--inactive {
+    height: 0;
+    overflow: visible;
+}

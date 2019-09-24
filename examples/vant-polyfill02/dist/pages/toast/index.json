@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "Toast 轻提示",
+	"usingComponents": {
+		"demo-block": "../../components/demo-block/index",
+		"van-button": "../../dist/button/index",
+		"van-toast": "../../dist/toast/index"
+	}
+}

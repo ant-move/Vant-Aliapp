@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "DatetimePicker 时间选择",
+	"usingComponents": {
+		"demo-block": "../../components/demo-block/index",
+		"van-toast": "../../dist/toast/index",
+		"van-datetime-picker": "../../dist/datetime-picker/index"
+	}
+}

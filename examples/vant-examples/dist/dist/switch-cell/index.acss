@@ -1,0 +1,8 @@
+@import "../common/index.acss";
+.van-switch-cell {
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+.van-switch-cell__switch {
+    vertical-align: middle;
+}

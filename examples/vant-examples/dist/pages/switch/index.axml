@@ -1,0 +1,22 @@
+<view class='page-container-classname'>
+                <demo-block title='基础用法' padding=" " ref='saveChildRef1'>
+  <van-switch checked='{{ checked }}' onChange='onChange' ref='saveChildRef2'>
+  </van-switch>
+</demo-block><demo-block title='禁用状态' padding=" " ref='saveChildRef3'>
+  <van-switch checked='{{ checked }}' disabled=" " onChange='onChange' ref='saveChildRef4'>
+  </van-switch>
+</demo-block><demo-block title='加载状态' padding=" " ref='saveChildRef5'>
+  <van-switch checked='{{ checked }}' loading=" " onChange='onChange' ref='saveChildRef6'>
+  </van-switch>
+</demo-block><demo-block title='自定义大小' padding=" " ref='saveChildRef7'>
+  <van-switch checked='{{ checked }}' size='24px' onChange='onChange' ref='saveChildRef8'>
+  </van-switch>
+</demo-block><demo-block title='自定义颜色' padding=" " ref='saveChildRef9'>
+  <van-switch checked='{{ checked }}' active-color='#07c160' inactive-color='#f44' onChange='onChange' ref='saveChildRef10'>
+  </van-switch>
+</demo-block><demo-block title='异步控制' padding=" " ref='saveChildRef11'>
+  <van-switch checked='{{ checked2 }}' size='36px' onChange='onChange2' ref='saveChildRef12'>
+  </van-switch>
+</demo-block><van-dialog id='van-dialog' ref='saveChildRef13'>
+</van-dialog>
+            </view>

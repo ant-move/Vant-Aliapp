@@ -1,0 +1,10 @@
+{
+	"defaultTitle": "Checkbox 复选框",
+	"usingComponents": {
+		"demo-block": "../../components/demo-block/index",
+		"van-cell": "../../dist/cell/index",
+		"van-cell-group": "../../dist/cell-group/index",
+		"van-checkbox": "../../dist/checkbox/index",
+		"van-checkbox-group": "../../dist/checkbox-group/index"
+	}
+}
