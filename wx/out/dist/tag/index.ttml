@@ -1,0 +1,5 @@
+<wxs src='../wxs/utils.wxs' module='utils'>
+</wxs><view is-inline='true' class="custom-class my-class {{ utils.bem('tag', [size, { mark, plain, round }]) }} {{ plain ? 'van-hairline--surround' : '' }}" style='{{ style }}'>
+  <slot>
+  </slot>
+</view>

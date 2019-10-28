@@ -1,0 +1,9 @@
+{
+	"defaultTitle": "Vant Aliapp",
+	"usingComponents": {
+		"van-cell": "../../dist/cell/index",
+		"van-icon": "../../dist/icon/index",
+		"van-collapse": "../../dist/collapse/index",
+		"van-collapse-item": "../../dist/collapse-item/index"
+	}
+}

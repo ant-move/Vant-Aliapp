@@ -7,7 +7,7 @@ function Behavior(behavior) {
 export const basic = Behavior({
     methods: {
         $emit(...args) {
-            this.triggerEvent(...args);
+           this.triggerEvent && this.triggerEvent(...args);
         },
 
         getRect(selector, all) {

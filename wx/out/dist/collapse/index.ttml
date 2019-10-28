@@ -1,0 +1,4 @@
+<view class="custom-class van-collapse {{ border ? 'van-hairline--top-bottom' : '' }}">
+  <slot>
+  </slot>
+</view>

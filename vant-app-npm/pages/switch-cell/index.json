@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "SwitchCell 开关单元格",
+	"usingComponents": {
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-cell-group": "vant-aliapp/dist/dist/cell-group/index",
+		"van-switch-cell": "vant-aliapp/dist/dist/switch-cell/index"
+	}
+}

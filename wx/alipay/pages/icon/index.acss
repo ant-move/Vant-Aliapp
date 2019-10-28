@@ -1,0 +1,31 @@
+.page-container-classname {
+    padding-bottom: 0;
+}
+
+.col {
+    text-align: center;
+    height: 100px;
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+}
+.col-index {
+    display: inline;
+}
+.icon {
+    display: block;
+    color: #323233;
+    margin: 20px 0 10px;
+}
+
+.text {
+    font-size: 12px;
+    padding: 0 5px;
+    line-height: 14px;
+    color: #7d7e80;
+}
+
+.demo-tab-pane {
+    margin: 20px;
+    background-color: #fff;
+}

@@ -1,0 +1,6 @@
+{
+	"component": true,
+	"transparentTitle": "always",
+	"defaultTitle": "",
+	"usingComponents": { "van-overlay": "../overlay/index" }
+}

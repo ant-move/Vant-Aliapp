@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "Layout 布局",
+	"usingComponents": {
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-col": "vant-aliapp/dist/dist/col/index",
+		"van-row": "vant-aliapp/dist/dist/row/index"
+	}
+}

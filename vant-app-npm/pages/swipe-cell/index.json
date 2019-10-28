@@ -1,0 +1,10 @@
+{
+	"defaultTitle": "SwipeCell 滑动单元格",
+	"usingComponents": {
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-cell": "vant-aliapp/dist/dist/cell/index",
+		"van-cell-group": "vant-aliapp/dist/dist/cell-group/index",
+		"van-dialog": "vant-aliapp/dist/dist/dialog/index",
+		"van-swipe-cell": "vant-aliapp/dist/dist/swipe-cell/index"
+	}
+}

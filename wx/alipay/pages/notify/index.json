@@ -1,0 +1,11 @@
+{
+	"navigationStyle": "custom",
+	"transparentTitle": "always",
+	"defaultTitle": "",
+	"usingComponents": {
+		"demo-block": "../../components/demo-block/index",
+		"van-button": "../../dist/button/index",
+		"van-nav-bar": "../../dist/nav-bar/index",
+		"van-notify": "../../dist/notify/index"
+	}
+}

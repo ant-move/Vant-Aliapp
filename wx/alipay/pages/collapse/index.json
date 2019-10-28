@@ -1,0 +1,9 @@
+{
+	"defaultTitle": "Collapse 折叠面板",
+	"usingComponents": {
+		"demo-block": "../../components/demo-block/index",
+		"van-icon": "../../dist/icon/index",
+		"van-collapse": "../../dist/collapse/index",
+		"van-collapse-item": "../../dist/collapse-item/index"
+	}
+}

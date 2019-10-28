@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "Badge 徽章",
+	"usingComponents": {
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-badge": "vant-aliapp/dist/dist/badge/index",
+		"van-badge-group": "vant-aliapp/dist/dist/badge-group/index"
+	}
+}

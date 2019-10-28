@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "Switch 开关",
+	"usingComponents": {
+		"demo-block": "../../components/demo-block/index",
+		"van-dialog": "../../dist/dialog/index",
+		"van-switch": "../../dist/switch/index"
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "ActionSheet 上拉菜单",
+	"usingComponents": {
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-action-sheet": "vant-aliapp/dist/dist/action-sheet/index",
+		"van-button": "vant-aliapp/dist/dist/button/index"
+	}
+}

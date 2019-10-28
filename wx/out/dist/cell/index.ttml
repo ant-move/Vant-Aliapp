@@ -1,0 +1,34 @@
+<wxs src='../wxs/utils.wxs' module='utils'>
+</wxs><view class="custom-class {{ utils.bem('cell', [size, { center, required, borderless: !border, clickable: isLink || clickable }]) }}" hover-class='van-cell--hover hover-class' hover-stay-time='{{70}}' style='{{ customStyle }}' bind:tap='onClick'>
+  <van-icon tt:if='{{ icon }}' name='{{ icon }}' class='van-cell__left-icon-wrap' custom-class='van-cell__left-icon'>
+  </van-icon>
+  <slot tt:else  name='icon'>
+  </slot>
+  <view style="{{ titleWidth ? 'max-width:' + titleWidth + ';min-width:' + titleWidth : '' }}" class='van-cell__title title-class'>
+    <block tt:if='{{ title }}'>
+      {{ title }}
+    </block>
+    <slot tt:else  name='title'>
+    </slot>
+    <view tt:if='{{ label || useLabelSlot }}' class='van-cell__label label-class'>
+      <slot tt:if='{{ useLabelSlot }}' name='label'>
+      </slot>
+      <block tt:elif='{{ label }}'>
+        {{ label }}
+      </block>
+    </view>
+  </view>
+  <view class='van-cell__value value-class'>
+    <block tt:if='{{ value || value === 0 }}'>
+      {{ value }}
+    </block>
+    <slot tt:else >
+    </slot>
+  </view>
+  <van-icon tt:if='{{ isLink }}' name="{{ arrowDirection ? 'arrow' + '-' + arrowDirection : 'arrow' }}" class='van-cell__right-icon-wrap right-icon-class' custom-class='van-cell__right-icon'>
+  </van-icon>
+  <slot tt:else  name='right-icon'>
+  </slot>
+  <slot name='extra'>
+  </slot>
+</view>

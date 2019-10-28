@@ -1,0 +1,4 @@
+@import "../common/index.ttss";
+.van-badge-group {
+    width: 85px;
+}

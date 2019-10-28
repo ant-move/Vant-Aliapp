@@ -1,0 +1,11 @@
+<wxs src='../wxs/utils.wxs' module='utils'>
+</wxs><view class="custom-class {{ utils.bem('slider', { disabled }) }}" style="{{ inactiveColor ? 'background:' + inactiveColor : '' }}" bind:tap='onClick'>
+  <view class='van-slider__bar' style="{{ barStyle }}; {{ activeColor ? 'background:' + activeColor : '' }}">
+    <view class='van-slider__button-wrapper' bind:touchstart='onTouchStart' catch:touchmove='onTouchMove' bind:touchend='onTouchEnd' bind:touchcancel='onTouchEnd'>
+      <slot tt:if='{{ useButtonSlot }}' name='button'>
+      </slot>
+      <view tt:else  class='van-slider__button'>
+      </view>
+    </view>
+  </view>
+</view>

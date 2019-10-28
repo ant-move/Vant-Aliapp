@@ -1,0 +1,7 @@
+{
+	"defaultTitle": "Button 按钮",
+	"usingComponents": {
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-button": "vant-aliapp/dist/dist/button/index"
+	}
+}

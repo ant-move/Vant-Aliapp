@@ -1,0 +1,29 @@
+<van-tabs active='{{ active }}' color='#1989fa' bind:change='onSwitch'>
+  <van-tab title='基础图标' custom-class='demo-tab-pane'>
+    <van-col tt:for='{{ icons.basic }}' tt:key='index' custom-class='col' span='{{6}}'>
+      <van-icon name='{{ item }}' size='32px' custom-class='icon'>
+      </van-icon>
+      <view class='text'>
+        {{ item }}
+      </view>
+    </van-col>
+  </van-tab>
+  <van-tab title='线框风格' custom-class='demo-tab-pane'>
+    <van-col tt:for='{{ icons.outline }}' tt:key='index' custom-class='col' span='{{6}}'>
+      <van-icon name='{{ item }}' size='32px' custom-class='icon'>
+      </van-icon>
+      <view class='text'>
+        {{ item }}
+      </view>
+    </van-col>
+  </van-tab>
+  <van-tab title='实底风格' custom-class='demo-tab-pane'>
+    <van-col tt:for='{{ icons.filled }}' tt:key='index' custom-class='col' span='{{6}}'>
+      <van-icon name='{{ item }}' size='32px' custom-class='icon'>
+      </van-icon>
+      <view class='text'>
+        {{ item }}
+      </view>
+    </van-col>
+  </van-tab>
+</van-tabs>

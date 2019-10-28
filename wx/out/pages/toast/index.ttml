@@ -1,0 +1,24 @@
+<demo-block title='文字提示' padding=" ">
+  <van-button is-inline='true' bind:tap='showToast' class='demo-margin-right'>
+    文字提示
+  </van-button>
+  <van-button is-inline='true' bind:tap='showLongToast'>
+    长文字提示
+  </van-button>
+</demo-block><demo-block title='加载提示' padding=" ">
+  <van-button is-inline='true' bind:tap='showLoadingToast'>
+    加载提示
+  </van-button>
+</demo-block><demo-block title='成功/失败提示' padding=" ">
+  <van-button is-inline='true' bind:tap='showSuccessToast' class='demo-margin-right'>
+    成功提示
+  </van-button>
+  <van-button is-inline='true' bind:tap='showFailToast'>
+    失败提示
+  </van-button>
+</demo-block><demo-block title='高级用法' padding=" ">
+  <van-button is-inline='true' bind:tap='showCustomizedToast'>
+    高级用法
+  </van-button>
+</demo-block><van-toast class='van-toast'>
+</van-toast>

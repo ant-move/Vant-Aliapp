@@ -1,0 +1,11 @@
+{
+	"navigationStyle": "custom",
+	"transparentTitle": "always",
+	"defaultTitle": "",
+	"usingComponents": {
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-button": "vant-aliapp/dist/dist/button/index",
+		"van-nav-bar": "vant-aliapp/dist/dist/nav-bar/index",
+		"van-notify": "vant-aliapp/dist/dist/notify/index"
+	}
+}

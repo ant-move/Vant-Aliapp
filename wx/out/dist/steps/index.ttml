@@ -1,0 +1,24 @@
+<wxs module='status' src="./index.ttmlstatus.js">
+</wxs><wxs src='../wxs/utils.wxs' module='utils'>
+</wxs><view class="custom-class {{ utils.bem('steps', [direction]) }}">
+  <view class='van-step__wrapper'>
+    <view tt:for='{{ steps }}' tt:key='index' class="{{ utils.bem('step', [direction, status(index, active)]) }} van-hairline">
+      <view class='van-step__title' style="{{ index === active ? 'color: ' + activeColor : '' }}">
+        <view>
+          {{ item.text }}
+        </view>
+        <view>
+          {{ item.desc }}
+        </view>
+      </view>
+      <view class='van-step__circle-container'>
+        <view class='van-step__circle' tt:if='{{ index !== active }}' style="{{ index < active ? 'background-color: ' + activeColor : '' }}">
+        </view>
+        <van-icon tt:else  name='checked' color='{{ activeColor }}' custom-class='van-step__active'>
+        </van-icon>
+      </view>
+      <view tt:if='{{ index !== steps.length - 1 }}' class='van-step__line' style="{{ index < active ? 'background-color: ' + activeColor : '' }}">
+      </view>
+    </view>
+  </view>
+</view>

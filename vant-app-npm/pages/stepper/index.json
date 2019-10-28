@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "Stepper 步进器",
+	"usingComponents": {
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-stepper": "vant-aliapp/dist/dist/stepper/index",
+		"van-toast": "vant-aliapp/dist/dist/toast/index"
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"defaultTitle": "Field 输入框",
+	"usingComponents": {
+		"demo-block": "../../components/demo-block/index",
+		"van-button": "../../dist/button/index",
+		"van-cell-group": "../../dist/cell-group/index",
+		"van-field": "../../dist/field/index"
+	}
+}

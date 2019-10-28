@@ -1,0 +1,7 @@
+<van-tabbar active='{{ active }}' bind:change='onChange'>
+  <van-tabbar-item tt:for='{{ list }}' tt:key='index' icon='{{ item.icon }}'>
+    {{
+    item.text
+  }}
+  </van-tabbar-item>
+</van-tabbar>

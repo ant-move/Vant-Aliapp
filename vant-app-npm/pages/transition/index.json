@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "Transition 动画",
+	"usingComponents": {
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-cell": "vant-aliapp/dist/dist/cell/index",
+		"van-transition": "vant-aliapp/dist/dist/transition/index"
+	}
+}

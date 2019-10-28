@@ -1,0 +1,39 @@
+<view class='page-container-classname'>
+                <demo-block title='基本用法' padding=" " >
+  <van-radio-group value='{{ radio1 }}' data-key='radio1' custom-class='demo-radio-group' onChange='onChange' >
+    <van-radio name='{{1}}' custom-class='demo-radio' >
+      单选框 1
+    </van-radio>
+    <van-radio name='{{2}}' custom-class='demo-radio' >
+      单选框 2
+    </van-radio>
+  </van-radio-group>
+</demo-block><demo-block title='禁用状态' padding=" " >
+  <van-radio-group disabled=" " value='{{ radio2 }}' data-key='radio2' custom-class='demo-radio-group' onChange='onChange' >
+    <van-radio name='{{1}}' custom-class='demo-radio' >
+      单选框 1
+    </van-radio>
+    <van-radio name='{{2}}' custom-class='demo-radio' >
+      单选框 2
+    </van-radio>
+  </van-radio-group>
+</demo-block><demo-block title='自定义颜色' padding=" " >
+  <van-radio name='{{1}}' value='{{1}}' custom-class='demo-radio' checked-color='#07c160' >
+    单选框
+  </van-radio>
+</demo-block><demo-block title='自定义图标' padding=" " >
+  <van-checkbox use-icon-slot=" " value='{{1}}' name='{{1}}' >
+    自定义图标    <image slot='icon' src="{{ radio3 === '1' ? icon.active : icon.normal }}" class='icon' mode='widthFix'>
+    </image>
+  </van-checkbox>
+</demo-block><demo-block title='与 Cell 组件一起使用' >
+  <van-radio-group value='{{ radio3 }}' >
+    <van-cell-group >
+      <van-cell a:for='{{ list }}' a:key='*this' title='单选框 {{ item }}' value-class='value-class' clickable=" " data-name='{{ item }}' onClick='onClick' >
+        <van-radio name='{{ item }}' >
+        </van-radio>
+      </van-cell>
+    </van-cell-group>
+  </van-radio-group>
+</demo-block>
+            </view>

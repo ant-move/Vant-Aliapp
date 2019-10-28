@@ -1,0 +1,13 @@
+<view class='page-container-classname'>
+                <demo-block title='Circular' padding=" " >
+  <van-loading is-inline='true' custom-class='loading' >
+  </van-loading>
+  <van-loading is-inline='true' custom-class='loading shadow' color='#fff' >
+  </van-loading>
+</demo-block><demo-block title='Spinner' padding=" " >
+  <van-loading is-inline='true' custom-class='loading' type='spinner' >
+  </van-loading>
+  <van-loading is-inline='true' custom-class='loading shadow' type='spinner' color='#fff' >
+  </van-loading>
+</demo-block>
+            </view>

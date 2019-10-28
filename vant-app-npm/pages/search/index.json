@@ -1,0 +1,7 @@
+{
+	"defaultTitle": "Search 搜索",
+	"usingComponents": {
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-search": "vant-aliapp/dist/dist/search/index"
+	}
+}

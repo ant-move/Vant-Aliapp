@@ -1,0 +1,7 @@
+{
+	"defaultTitle": "Loading 加载",
+	"usingComponents": {
+		"demo-block": "../../components/demo-block/index",
+		"van-loading": "../../dist/loading/index"
+	}
+}
