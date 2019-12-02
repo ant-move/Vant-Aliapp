@@ -1,6 +1,6 @@
 // 判断子项是否被选中
 function isArray(array) {
-  return array instanceof Array;
+  return typeof array === 'object';
 }
 
 function isActive(activeList, itemId) {
@@ -13,4 +13,6 @@ function isActive(activeList, itemId) {
   }
 }
 
-export var isActive = isActive;
+export default {
+  isActive: isActive
+};

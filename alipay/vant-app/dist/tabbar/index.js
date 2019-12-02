@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/tabbar/index"
-    }
-});
 import { VantComponent } from "../common/component";
 import { safeArea } from "../mixins/safe-area";
 VantComponent({

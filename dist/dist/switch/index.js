@@ -2,6 +2,12 @@
 
 var _component = require("../common/component");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/switch/index"
+  }
+});
 (0, _component.VantComponent)({
   field: true,
   classes: ["node-class"],

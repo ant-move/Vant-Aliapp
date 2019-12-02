@@ -2,6 +2,12 @@
 
 var _component = require("../common/component");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/checkbox-group/index"
+  }
+});
 (0, _component.VantComponent)({
   field: true,
   relation: {

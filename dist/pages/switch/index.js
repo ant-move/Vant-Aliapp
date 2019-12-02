@@ -6,6 +6,12 @@ var _dialog = _interopRequireDefault(require("../../dist/dialog/dialog"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "pages/switch/index"
+  }
+});
 (0, _page["default"])({
   data: {
     checked: true,

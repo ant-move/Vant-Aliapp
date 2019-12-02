@@ -6,6 +6,12 @@ var _toast = _interopRequireDefault(require("../../dist/toast/toast"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "pages/datetime-picker/index"
+  }
+});
 (0, _page["default"])({
   data: {
     minHour: 10,
@@ -14,7 +20,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
     maxDate: new Date(2019, 10, 1).getTime(),
     currentDate1: new Date(2018, 2, 31).getTime(),
     currentDate2: null,
-    currentDate3: new Date(2018, 0, 1),
+    currentDate3: new Date(2018, 0, 1).getTime(),
     currentDate4: "12:00",
     loading: false,
     formatter: function formatter(type, value) {

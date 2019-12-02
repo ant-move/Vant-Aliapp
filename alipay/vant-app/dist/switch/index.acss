@@ -1,5 +1,6 @@
 @import "../common/index.acss";
-.van-switch {
+
+.switch-index .van-switch {
     display: inline-block;
     position: relative;
     width: 2em;
@@ -8,12 +9,14 @@
     box-sizing: initial;
     transition: background-color 0.3s;
 }
-.van-switch,
-.van-switch__node {
+
+.switch-index .van-switch,
+.switch-index .van-switch__node {
     height: 1em;
     background-color: #fff;
 }
-.van-switch__node {
+
+.switch-index .van-switch__node {
     top: 0;
     left: 0;
     position: absolute;
@@ -24,18 +27,22 @@
     box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.1),
         0 3px 3px 0 rgba(0, 0, 0, 0.05);
 }
-.van-switch__loading {
+
+.switch-index .van-switch__loading {
     top: 25%;
     left: 25%;
     position: absolute !important;
 }
-.van-switch--on {
+
+.switch-index .van-switch--on {
     background-color: #1989fa;
 }
-.van-switch--on .van-switch__node {
+
+.switch-index .van-switch--on .van-switch__node {
     -webkit-transform: translateX(1em);
     transform: translateX(1em);
 }
-.van-switch--disabled {
+
+.switch-index .van-switch--disabled {
     opacity: 0.4;
 }

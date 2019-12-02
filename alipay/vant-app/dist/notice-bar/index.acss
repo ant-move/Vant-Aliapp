@@ -1,5 +1,6 @@
 @import "../common/index.acss";
-.van-notice-bar {
+
+.notice-bar-index .van-notice-bar {
     display: -webkit-flex;
     display: flex;
     height: 40px;
@@ -9,22 +10,27 @@
     -webkit-align-items: center;
     align-items: center;
 }
-.van-notice-bar--withicon {
+
+.notice-bar-index .van-notice-bar--withicon {
     position: relative;
     padding-right: 40px;
 }
-.van-notice-bar--wrapable {
+
+.notice-bar-index .van-notice-bar--wrapable {
     height: auto;
     padding: 8px 15px;
 }
-.van-notice-bar--wrapable .van-notice-bar__wrap {
+
+.notice-bar-index .van-notice-bar--wrapable .van-notice-bar__wrap {
     height: auto;
 }
-.van-notice-bar--wrapable .van-notice-bar__content {
+
+.notice-bar-index .van-notice-bar--wrapable .van-notice-bar__content {
     position: relative;
     white-space: normal;
 }
-.van-notice-bar__left-icon {
+
+.notice-bar-index .van-notice-bar__left-icon {
     display: -webkit-flex;
     display: flex;
     margin-right: 4px;
@@ -32,23 +38,27 @@
     -webkit-align-items: center;
     align-items: center;
 }
-.van-notice-bar__right-icon {
+
+.notice-bar-index .van-notice-bar__right-icon {
     position: absolute;
     top: 10px;
     right: 15px;
     font-size: 16px;
 }
-.van-notice-bar__wrap {
+
+.notice-bar-index .van-notice-bar__wrap {
     position: relative;
     height: 24px;
     overflow: hidden;
     -webkit-flex: 1;
     flex: 1;
 }
-.van-notice-bar__content {
+
+.notice-bar-index .van-notice-bar__content {
     position: absolute;
     white-space: nowrap;
 }
-.van-notice-bar__content.van-ellipsis {
+
+.notice-bar-index .van-notice-bar__content.van-ellipsis {
     max-width: 100%;
 }

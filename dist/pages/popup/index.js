@@ -8,6 +8,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var _my = require("../../__antmove/api/index.js")(my);
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "pages/popup/index"
+  }
+});
 (0, _page["default"])({
   data: {
     show: {

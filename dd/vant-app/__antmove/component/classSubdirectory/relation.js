@@ -101,27 +101,28 @@ module.exports = function (
     }
 
     let _relationData = {};
-
-    function initPageData () {
-      _relationData = createAstData();
-        this.$antmove = this.$antmove || {};
-        this.$antmove.relationData = this.$antmove.relationData || _relationData;
-        this.$antmove.astCache = this.$antmove.astCache || astCache;
+    function initData (isComponent = false) {
+        let _ctx = this;
+        _relationData = createAstData();
+        if (isComponent) {
+            _ctx = this.$page;
+        }
+        _ctx.$antmove = _ctx.$antmove || {};
+        _ctx.$antmove.relationData = _relationData;
+        _ctx.$antmove.astCache = astCache;
     }
     if (!this.$page) {
-        initPageData.call(this)
-    
+        initData.call(this);
     } else {
-      if (!this.$page.$antmove 
-      || !this.$page.$antmove.relationData) {
-        initPageData.call(this)
-
-      } else {
-_relationData = this.$page.$antmove.relationData;
+        if (!this.$page.$antmove
+            || !this.$page.$antmove.relationData) {
+            initData.call(this, true);
+        }
+        _relationData = this.$page.$antmove.relationData;
         astCache =  this.$page.$antmove.astCache;
-      }
-        
+
     }
+
     RelationAst = astCache[cacheId];
     let wrapNode = null;
  

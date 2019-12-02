@@ -14,6 +14,11 @@ Vant Aliapp 是移动端 Vue 组件库 [Vant](https://github.com/youzan/vant) �
 * [Vant Aliapp 官网](https://ant-move.github.io/vant-ailapp-docs/#/intro)
 * [Vant Weapp 官网](https://youzan.github.io/vant-weapp/#/intro)
 
+## npm
+
+* [dd](https://www.npmjs.com/package/vant-aliapp-dd)
+* [alipay](https://www.npmjs.com/package/vant-aliapp)
+
 ## 使用之前
 
 在开始使用 Vant Aliapp 之前，你需要先阅读 [支付宝小程序自定义组件](https://docs.alipay.com/mini/framework/custom-component-overview) 的相关文档。

@@ -8,6 +8,12 @@ var _button = require("../mixins/button");
 
 var _openType = require("../mixins/open-type");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/goods-action-icon/index"
+  }
+});
 (0, _component.VantComponent)({
   classes: ["icon-class", "text-class"],
   mixins: [_link.link, _button.button, _openType.openType],

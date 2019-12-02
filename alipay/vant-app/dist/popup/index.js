@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/popup/index"
-    }
-});
 import { VantComponent } from "../common/component";
 import { transition } from "../mixins/transition";
 import { safeArea } from "../mixins/safe-area";

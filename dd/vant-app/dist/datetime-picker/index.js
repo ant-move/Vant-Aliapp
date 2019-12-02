@@ -108,8 +108,8 @@ VantComponent({
         onRelationsUpdate() {
             // for dd
             const innerValue = this.correctValue(this.data.value);
-            this.onUpdateColumnValue(innerValue) &&
-                this.onUpdateColumnValue(innerValue).then(() => {
+            this.updateColumnValue(innerValue) &&
+                this.updateColumnValue(innerValue).then(() => {
                     this.$emit("input", innerValue);
                 });
         },
@@ -120,8 +120,8 @@ VantComponent({
             const isEqual = val === data.innerValue;
 
             if (!isEqual) {
-                this.onUpdateColumnValue(val) &&
-                    this.onUpdateColumnValue(val).then(() => {
+                this.updateColumnValue(val) &&
+                    this.updateColumnValue(val).then(() => {
                         this.$emit("input", val);
                     });
             } else {
@@ -330,14 +330,14 @@ VantComponent({
             }
 
             value = this.correctValue(value);
-            this.onUpdateColumnValue(value) &&
-                this.onUpdateColumnValue(value).then(() => {
+            this.updateColumnValue(value) &&
+                this.updateColumnValue(value).then(() => {
                     this.$emit("input", value);
                     this.$emit("change", picker);
                 });
         },
 
-        onUpdateColumnValue(value) {
+        updateColumnValue(value) {
             let values = [];
             const { type, formatter = defaultFormatter } = this.data;
             const picker = this.getPicker();
@@ -388,8 +388,8 @@ VantComponent({
 
     created() {
         const innerValue = this.correctValue(this.data.value);
-        this.onUpdateColumnValue(innerValue) &&
-            this.onUpdateColumnValue(innerValue).then(() => {
+        this.updateColumnValue(innerValue) &&
+            this.updateColumnValue(innerValue).then(() => {
                 this.$emit("input", innerValue);
             });
     }

@@ -6,6 +6,12 @@ var _button = require("../mixins/button");
 
 var _openType = require("../mixins/open-type");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/dialog/index"
+  }
+});
 (0, _component.VantComponent)({
   mixins: [_button.button, _openType.openType],
   props: {

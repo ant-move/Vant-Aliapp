@@ -4,6 +4,12 @@ var _component = require("../common/component");
 
 var _touch = require("../mixins/touch");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/slider/index"
+  }
+});
 (0, _component.VantComponent)({
   mixins: [_touch.touch],
   props: {

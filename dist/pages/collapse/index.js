@@ -6,6 +6,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "pages/collapse/index"
+  }
+});
 (0, _page["default"])({
   data: {
     active1: [0],

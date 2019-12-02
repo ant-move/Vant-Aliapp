@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/progress/index"
-    }
-});
 import { VantComponent } from "../common/component";
 import { BLUE } from "../common/color";
 VantComponent({

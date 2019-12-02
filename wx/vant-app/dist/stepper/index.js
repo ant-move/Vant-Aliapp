@@ -6,8 +6,10 @@ VantComponent({
         'plus-class',
         'minus-class'
     ],
+    data:{
+        value: null
+    },
     props: {
-        value: null,
         integer: Boolean,
         disabled: Boolean,
         inputWidth: String,

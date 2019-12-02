@@ -1,17 +1,20 @@
 @import "../common/index.acss";
-.van-progress {
+
+.progress-index .van-progress {
     position: relative;
     height: 4px;
     background: #e5e5e5;
     border-radius: 4px;
 }
-.van-progress__portion {
+
+.progress-index .van-progress__portion {
     position: absolute;
     left: 0;
     height: 100%;
     border-radius: inherit;
 }
-.van-progress__pivot {
+
+.progress-index .van-progress__pivot {
     position: absolute;
     top: 50%;
     right: 0;

@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "pages/checkbox/index"
-    }
-});
 import createPage from "../../common/page";
 createPage({
     data: {

@@ -47,6 +47,9 @@ VantComponent({
             if (!item.disabled) {
                 this.$emit('click-item', item);
             }
+            this.set({
+              activeId:this.data.activeId
+            })
         },
         // 当一个导航被点击时
         onClickNav(event) {

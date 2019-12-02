@@ -1,9 +1,9 @@
-<view class='action-sheet-index {{className}}' onChildRef='saveChildRef0'>
+<view class='action-sheet-index {{className}}' ref='saveChildRef0'>
   <import-sjs from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
-  <van-popup show='{{ show }}' position='bottom' z-index='{{ zIndex }}' overlay='{{ overlay }}' custom-class='van-action-sheet' safe-area-inset-bottom='{{ safeAreaInsetBottom }}' close-on-click-overlay='{{ closeOnClickOverlay }}' _parent_ref="{{isMounted}}" onClose='onClose' onChildRef='saveChildRef1'>
+  <van-popup show='{{ show }}' position='bottom' z-index='{{ zIndex }}' overlay='{{ overlay }}' custom-class='van-action-sheet' safe-area-inset-bottom='{{ safeAreaInsetBottom }}' close-on-click-overlay='{{ closeOnClickOverlay }}' onClose='onClose' ref='saveChildRef1'>
     <view a:if='{{ title }}' class='van-hairline--bottom van-action-sheet__header'>
-      {{ title }}      <van-icon name='close' custom-class='van-action-sheet__close' _parent_ref="{{isMounted}}" onClick='onClose' onChildRef='saveChildRef2'>
+      {{ title }}      <van-icon name='close' custom-class='van-action-sheet__close' onClick='onClose' ref='saveChildRef2'>
       </van-icon>
     </view>
     <view a:if='{{ actions && actions.length }}'>
@@ -13,7 +13,7 @@
             {{ item.subname }}
           </text>
         </block>
-        <van-loading a:else  size='20px' _parent_ref="{{isMounted}}" onChildRef='saveChildRef3'>
+        <van-loading a:else  size='20px' ref='saveChildRef3'>
         </van-loading>
       </button>
     </view>

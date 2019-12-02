@@ -1,10 +1,4 @@
 const _my = require("../../__antmove/api/index.js")(my);
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/tabs/index"
-    }
-});
 import { VantComponent } from "../common/component";
 import { touch } from "../mixins/touch";
 import { nextTick } from "../common/utils";
@@ -96,6 +90,10 @@ VantComponent({
 
     beforeCreate() {
         this.child = [];
+        let num = Number(new Date());
+        this.setData({
+            num
+        });
     },
 
     mounted() {
@@ -163,10 +161,6 @@ VantComponent({
                 lineWidth,
                 lineHeight
             } = this.data;
-            let num = Number(new Date());
-            this.setData({
-                num
-            });
             this.getRect(`.vant_tabs_${this.data.num}`, true).then(rects => {
                 const rect = rects[active];
                 if (!rect) return false;

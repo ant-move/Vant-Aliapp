@@ -1,17 +1,17 @@
 <view class='page-container-classname'>
-                <demo-block title='基础用法' ref='saveChildRef1'>
-  <van-cell-group ref='saveChildRef2'>
-    <van-switch-cell title='标题' checked='{{ checked }}' onChange='onChange' ref='saveChildRef3'>
+                <demo-block title='基础用法' onChildRef='saveChildRef1' _parent_ref="{{isMounted}}">
+  <van-cell-group onChildRef='saveChildRef2'>
+    <van-switch-cell title='标题' checked='{{ checked }}' _parent_ref="{{isMounted}}" onChange='onChange' onChildRef='saveChildRef3'>
     </van-switch-cell>
   </van-cell-group>
-</demo-block><demo-block title='禁用状态' ref='saveChildRef4'>
-  <van-cell-group ref='saveChildRef5'>
-    <van-switch-cell disabled=" " title='标题' checked='{{ checked }}' onChange='onChange' ref='saveChildRef6'>
+</demo-block><demo-block title='禁用状态' _parent_ref="{{isMounted}}" onChildRef='saveChildRef4'>
+  <van-cell-group onChildRef='saveChildRef5'>
+    <van-switch-cell disabled=" " title='标题' checked='{{ checked }}' _parent_ref="{{isMounted}}" onChange='onChange' onChildRef='saveChildRef6'>
     </van-switch-cell>
   </van-cell-group>
-</demo-block><demo-block title='加载状态' ref='saveChildRef7'>
-  <van-cell-group ref='saveChildRef8'>
-    <van-switch-cell loading=" " title='标题' checked='{{ checked }}' onChange='onChange' ref='saveChildRef9'>
+</demo-block><demo-block title='加载状态' _parent_ref="{{isMounted}}" onChildRef='saveChildRef7'>
+  <van-cell-group onChildRef='saveChildRef8'>
+    <van-switch-cell loading=" " title='标题' checked='{{ checked }}' _parent_ref="{{isMounted}}" onChange='onChange' onChildRef='saveChildRef9'>
     </van-switch-cell>
   </van-cell-group>
 </demo-block>

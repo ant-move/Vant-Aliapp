@@ -1,4 +1,4 @@
-<view class='demo-block-index {{className}}' ref='saveChildRef0'>
+<view class='demo-block-index {{className}}' onChildRef='saveChildRef0'>
   <view class="{{customClass}} demo-block van-clearfix {{ padding ? 'demo-block--padding' : '' }}">
     <view a:if='{{ title }}' class='demo-block__title'>
       {{ title }}

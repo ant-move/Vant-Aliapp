@@ -1,10 +1,4 @@
 const _my = require("../../__antmove/api/index.js")(my);
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "pages/notify/index"
-    }
-});
 import createPage from "../../common/page";
 import Notify from "../../dist/notify/notify";
 createPage({

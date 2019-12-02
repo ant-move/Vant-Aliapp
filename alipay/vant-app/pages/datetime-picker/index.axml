@@ -1,16 +1,16 @@
 <view class='page-container-classname'>
-                <demo-block title='选择完整时间' onChildRef='saveChildRef1' _parent_ref="{{isMounted}}">
-  <van-datetime-picker type='datetime' data-type='datetime' loading='{{ loading }}' value='{{ currentDate1 }}' min-date='{{ minDate }}' _parent_ref="{{isMounted}}" onInput='onInput' onChildRef='saveChildRef2'>
+                <demo-block title='选择完整时间' ref='saveChildRef1'>
+  <van-datetime-picker type='datetime' data-type='datetime' loading='{{ loading }}' value='{{ currentDate1 }}' min-date='{{ minDate }}' onInput='onInput' ref='saveChildRef2'>
   </van-datetime-picker>
-</demo-block><demo-block title='选择日期（年月日）' _parent_ref="{{isMounted}}" onChildRef='saveChildRef3'>
-  <van-datetime-picker type='date' data-type='date' value='{{ currentDate2 }}' min-date='{{ minDate }}' formatter='{{ formatter }}' _parent_ref="{{isMounted}}" onInput='onInput' onChildRef='saveChildRef4'>
+</demo-block><demo-block title='选择日期（年月日）' ref='saveChildRef3'>
+  <van-datetime-picker type='date' data-type='date' value='{{ currentDate2 }}' min-date='{{ minDate }}' formatter='{{ formatter }}' onInput='onInput' ref='saveChildRef4'>
   </van-datetime-picker>
-</demo-block><demo-block title='选择日期（年月）' _parent_ref="{{isMounted}}" onChildRef='saveChildRef5'>
-  <van-datetime-picker type='year-month' data-type='year-month' value='{{ currentDate3 }}' min-date='{{ minDate }}' _parent_ref="{{isMounted}}" onInput='onInput' onChildRef='saveChildRef6'>
+</demo-block><demo-block title='选择日期（年月）' ref='saveChildRef5'>
+  <van-datetime-picker type='year-month' data-type='year-month' value='{{ currentDate3 }}' min-date='{{ minDate }}' onInput='onInput' ref='saveChildRef6'>
   </van-datetime-picker>
-</demo-block><demo-block title='选择时间' _parent_ref="{{isMounted}}" onChildRef='saveChildRef7'>
-  <van-datetime-picker type='time' data-type='time' value='{{ currentDate4 }}' min-hour='{{ minHour }}' max-hour='{{ maxHour }}' _parent_ref="{{isMounted}}" onInput='onInput' onChildRef='saveChildRef8'>
+</demo-block><demo-block title='选择时间' ref='saveChildRef7'>
+  <van-datetime-picker type='time' data-type='time' value='{{ currentDate4 }}' min-hour='{{ minHour }}' max-hour='{{ maxHour }}' onInput='onInput' ref='saveChildRef8'>
   </van-datetime-picker>
-</demo-block><van-toast class='van-toast' _parent_ref="{{isMounted}}" onChildRef='saveChildRef9'>
+</demo-block><van-toast class='van-toast' ref='saveChildRef9'>
 </van-toast>
             </view>

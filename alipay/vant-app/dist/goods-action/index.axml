@@ -1,4 +1,4 @@
-<view class='goods-action-index {{className}}' onChildRef='saveChildRef0'>
+<view class='goods-action-index {{className}}' ref='saveChildRef0'>
   <import-sjs from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
   <view class="{{customClass}} {{ utils.bem('goods-action', { safe: isIPhoneX && safeAreaInsetBottom }) }}">

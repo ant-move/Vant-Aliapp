@@ -2,15 +2,18 @@
 
 module.exports = {
   connectNodes: function connectNodes(node, ast) {
-    if (!node.$relationNode.$parent) return false;
+    if (!node.$relationNode.$parent) {
+      return false;
+    }
+
     var parentNodeId = node.$relationNode.$parent.$id;
     var parentNodeRoute = node.$relationNode.$parent.$route;
     var index = node.$relationNode.$parent.$index;
     var refNumbers = node.$self.props.refNumbers && node.$self.props.refNumbers.length || 1;
-    var parentArray = ast.$refNodes[parentNodeRoute][parentNodeId];
+    var parentArray = ast.$refNodes[parentNodeRoute] && ast.$refNodes[parentNodeRoute][parentNodeId];
     var parent = null;
 
-    if (refNumbers > 1) {
+    if (parentArray && refNumbers > 1) {
       parentArray.forEach(function (_parent) {
         if (_parent.$children.length !== refNumbers && !parent) {
           parent = _parent;
@@ -18,11 +21,11 @@ module.exports = {
         }
       });
     } else {
-      parent = parentArray[0];
+      parent = parentArray && parentArray[0];
     }
 
     if (parent) {
-      node.setParent(parent);
+      node.setParent(parent, true);
     }
   },
   setIfWatch: setIfWatch

@@ -4,6 +4,12 @@ var _component = require("../common/component");
 
 var _shared = require("./shared");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/picker/index"
+  }
+});
 (0, _component.VantComponent)({
   classes: ["active-class", "toolbar-class", "column-class"],
   props: Object.assign({}, _shared.pickerProps, {
@@ -27,13 +33,20 @@ var _shared = require("./shared");
   beforeCreate: function beforeCreate() {
     this.children = [];
   },
+  created: function created() {
+    this.setChildren(this.data.columns);
+  },
   methods: {
+    onRelationsUpdate: function onRelationsUpdate() {
+      // for dd
+      this.setChildren(this.data.columns);
+    },
     noop: function noop() {},
     setChildren: function setChildren(columns) {
       this.simple = columns.length && !columns[0].values;
       this.children = this.selectAllComponents(".van-picker__column");
 
-      if (Array.isArray(this.children) && this.children.length) {
+      if (Array.isArray(this.children) && this.children.length && this.children.length === this.data.columns.length) {
         this.setColumns()["catch"](function () {});
       }
     },
@@ -93,10 +106,11 @@ var _shared = require("./shared");
       var column = this.getColumn(index);
 
       if (column == null) {
-        return Promise.reject(new Error("setColumnValue: 对应列不存在"));
+        console.warn("setColumnValue: 对应列不存在");
+        return null;
       }
 
-      return column.setValue(value);
+      return column && column.setValue(value);
     },
     // get column option index by column index
     getColumnIndex: function getColumnIndex(columnIndex) {
@@ -108,7 +122,8 @@ var _shared = require("./shared");
       var column = this.getColumn(columnIndex);
 
       if (column == null) {
-        return Promise.reject(new Error("setColumnIndex: 对应列不存在"));
+        console.warn("setColumnIndex: 对应列不存在");
+        return null;
       }
 
       return column.setIndex(optionIndex);
@@ -128,7 +143,8 @@ var _shared = require("./shared");
       var column = this.children[index];
 
       if (column == null) {
-        return Promise.reject(new Error("setColumnValues: 对应列不存在"));
+        console.warn("setColumnValues: 对应列不存在");
+        return null;
       }
 
       var isSame = JSON.stringify(column.data.options) === JSON.stringify(options);

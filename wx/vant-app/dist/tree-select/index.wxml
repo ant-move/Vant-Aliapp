@@ -3,7 +3,7 @@
 <wxs module="tsUtil">
 // 判断子项是否被选中
 function isArray (array) {
-  return array instanceof Array;
+  return typeof array === 'object';
 }
 function isActive (activeList, itemId) {
   if (typeof activeList === 'undefined' || activeList == null) return false;
@@ -15,7 +15,9 @@ function isActive (activeList, itemId) {
   }
 }
 
-module.exports.isActive = isActive;
+module.exports = {
+  isActive: isActive
+};
 </wxs>
 
 <view
@@ -46,12 +48,12 @@ module.exports.isActive = isActive;
       bind:tap="onSelectItem"
     >
       {{ item.text }}
-      <van-icon
+      <!-- <van-icon
         wx:if="{{ tsUtil.isActive(activeId, item.id) }}"
         name="checked"
         size="16px"
         class="van-tree-select__selected"
-      />
+      /> -->
     </view>
   </scroll-view>
 </view>

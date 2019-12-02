@@ -3,7 +3,8 @@
 function selectComponent(ctx) {
   this.$ctx = ctx;
   this.$nodes = {};
-  this.$cacheNodes = {};
+  this.$cacheComponents = {};
+  this.$activeComponents = {};
 }
 
 selectComponent.prototype = {
@@ -12,28 +13,32 @@ selectComponent.prototype = {
     var componentNodes = this.$nodes;
 
     if (componentNodes[className]) {
-      componentNodes[className].push(ctx);
+      if (componentNodes[className].every(function (item) {
+        return item.$id != ctx.$id;
+      })) {
+        componentNodes[className].push(ctx);
+      }
     } else {
       componentNodes[className] = [ctx];
     }
 
-    this.$cacheNodes[ctx.$id] = {
-      className: className
-    };
+    if (this.$cacheComponents[className]) {
+      this.$cacheComponents[className](componentNodes[className]);
+    }
   },
   addComponentNodeId: function addComponentNodeId(id, ctx) {
     id = '#' + id;
     var componentNodes = this.$nodes;
 
     if (componentNodes[id]) {
-      componentNodes[id].push(ctx);
+      if (componentNodes[id].every(function (item) {
+        return item.$id != ctx.$id;
+      })) {
+        componentNodes[id].push(ctx);
+      }
     } else {
       componentNodes[id] = [ctx];
     }
-
-    this.$cacheNodes[ctx.$id] = {
-      id: id
-    };
   },
   addComponentNode: function addComponentNode() {
     var _this = this;
@@ -45,13 +50,21 @@ selectComponent.prototype = {
       _this._addComponentNode(classNameStr, ctx);
     });
   },
+  remove: function remove(ctx) {
+    var components = this.$activeComponents;
+    delete components[ctx.$id];
+  },
   selectComponent: function selectComponent(className) {
-    var componentNodes = this.$nodes;
-    return componentNodes[className] && componentNodes[className][0];
+    return this._sortComponents(className)[0];
   },
   selectComponents: function selectComponents(className) {
-    var componentNodes = this.$nodes;
-    return componentNodes[className];
+    return this._sortComponents(className);
+  },
+  _sortComponents: function _sortComponents(className) {
+    var componentNodes = this.$nodes[className] || [];
+    return componentNodes.sort(function (pre, next) {
+      return Number(pre.$id) > Number(next.$id);
+    });
   },
   preProcesscomponents: preProcesscomponents,
   connect: function connect() {
@@ -63,18 +76,17 @@ selectComponent.prototype = {
     };
 
     ctx.selectAllComponents = function () {
-      return self.selectComponents.apply(self, arguments);
+      return self.selectComponents.apply(self, arguments) || [];
+    };
+
+    ctx.selectorWatch = function (selector, cb) {
+      self.$cacheComponents[selector] = cb;
     };
   }
 };
 
 function preProcesscomponents(ctx) {
-  var _this2 = this;
-
-  var selectorObj = this.$cacheNodes[ctx.$id];
-  selectorObj && Object.keys(selectorObj).forEach(function (item) {
-    _this2.$nodes[item] = [];
-  });
+  this.$activeComponents[ctx.$id] = true;
 
   if (ctx.props.id) {
     this.addComponentNodeId(ctx.props.id, ctx);

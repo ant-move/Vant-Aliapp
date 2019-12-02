@@ -1,7 +1,7 @@
 <view class='rate-index {{className}}' onChildRef='saveChildRef0'>
   <import-sjs from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
-  <view class='van-rate {{customClass}}' onTouchMove='onTouchMove'>
+  <view class='van-rate {{customClass}}' catchTouchMove='onTouchMove'>
     <view class='van-rate__item' a:for='{{ count }}' a:key='index' style='font-size: {{ size}}px;' ref-numbers='{{ count }}'>
       <van-icon name='{{ index + 1 <= innerValue ? icon : voidIcon }}' class='van-rate__icon {{childName}}' custom-class='{{iconClass}}' data-score='{{ index }}' color='{{ disabled ? disabledColor : index + 1 <= innerValue ? color : voidColor }}' _parent_ref="{{isMounted}}" onTap='onSelect' onChildRef='saveChildRef1'>
       </van-icon>

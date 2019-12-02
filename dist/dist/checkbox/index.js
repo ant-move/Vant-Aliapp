@@ -2,6 +2,13 @@
 
 var _component = require("../common/component");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/checkbox/index"
+  }
+});
+
 function emit(target, value) {
   target.$emit("input", value);
   target.$emit("change", value);

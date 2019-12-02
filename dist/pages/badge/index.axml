@@ -1,14 +1,14 @@
 <view class='page-container-classname'>
-                <demo-block title='基础用法' ref='saveChildRef1'>
+                <demo-block title='基础用法' onChildRef='saveChildRef1' _parent_ref="{{isMounted}}">
   <view class='container'>
-    <van-badge-group custom-class='group' onChange='onChange' ref='saveChildRef2'>
-      <van-badge title='标签名称' ref='saveChildRef3'>
+    <van-badge-group custom-class='group' onChange='onChange' _parent_ref="{{isMounted}}" onChildRef='saveChildRef2'>
+      <van-badge title='标签名称' _parent_ref="{{isMounted}}" onChildRef='saveChildRef3'>
       </van-badge>
-      <van-badge title='标签名称' info='{{8}}' ref='saveChildRef4'>
+      <van-badge title='标签名称' info='{{8}}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef4'>
       </van-badge>
-      <van-badge title='标签名称' info='{{99}}' ref='saveChildRef5'>
+      <van-badge title='标签名称' info='{{99}}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef5'>
       </van-badge>
-      <van-badge title='标签名称' info='99+' ref='saveChildRef6'>
+      <van-badge title='标签名称' info='99+' _parent_ref="{{isMounted}}" onChildRef='saveChildRef6'>
       </van-badge>
     </van-badge-group>
   </view>

@@ -1,5 +1,6 @@
 @import "../common/index.acss";
-.van-tabbar {
+
+.tabbar-index .van-tabbar {
     display: -webkit-flex;
     display: flex;
     width: 100%;
@@ -8,12 +9,12 @@
     justify-content: space-around;
 }
 
-.van-tabbar--fixed {
+.tabbar-index .van-tabbar--fixed {
     position: fixed;
     bottom: 0;
     left: 0;
 }
 
-.van-tabbar--safe {
+.tabbar-index .van-tabbar--safe {
     padding-bottom: 34px;
 }

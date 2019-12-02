@@ -1,4 +1,4 @@
-<view class='cell-group-index {{className}}' ref='saveChildRef0'>
+<view class='cell-group-index {{className}}' onChildRef='saveChildRef0'>
   <view a:if='{{ title }}' class='van-cell-group__title'>
     {{ title }}
   </view>

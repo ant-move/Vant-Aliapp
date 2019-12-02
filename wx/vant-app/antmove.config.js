@@ -1,16 +1,10 @@
 module.exports = {
     "input": "./",
-    "output": "../alipay",
+    "output": "../../dd/aliapp-vant-1129",
     "env": "production",
     "component2": false,
-    "platform": "alipay",
-    "scope": false,
+    "platform": "dd",
+    "scope": true,
     "type": "wx-alipay",
-    "component": false,
-    "npm": {
-        "vant-weapp": {
-            "name": "vant-aliapp",
-            "version": "1.0.14"
-        }
-    }
+    "component": false
 }

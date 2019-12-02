@@ -1,5 +1,7 @@
 "use strict";
 
+var my = dd;
+
 var utils = require("./utils");
 
 var infoObj = {
@@ -2729,6 +2731,33 @@ var infoObj = {
       alipay: "https://docs.alipay.com/mini/api/ncgsga"
     },
     body: {}
+  },
+  hideHomeButton: {
+    status: 1,
+    desc: "隐藏返回首页按钮",
+    url: {
+      wechat: "https://developers.weixin.qq.com/miniprogram/dev/api/ui/navigation-bar/wx.hideHomeButton.html",
+      alipay: "https://docs.alipay.com/mini/api/ui-navigate"
+    },
+    body: {
+      msg: "封装后不支持回调",
+      params: {
+        props: {
+          success: {
+            type: 0,
+            desc: "接口调用成功的回调函数"
+          },
+          fail: {
+            type: 0,
+            desc: "接口调用失败的回调函数"
+          },
+          complete: {
+            type: 0,
+            desc: "接口调用结束的回调函数（调用成功、失败都会执行）"
+          }
+        }
+      }
+    }
   },
   setBackgroundTextStyle: {
     status: 0,

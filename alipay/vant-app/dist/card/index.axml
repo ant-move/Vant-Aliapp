@@ -1,4 +1,4 @@
-<view class='card-index {{className}}' onChildRef='saveChildRef0'>
+<view class='card-index {{className}}' ref='saveChildRef0'>
   <import-sjs from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
   <view class='{{customClass}} van-card'>
@@ -8,7 +8,7 @@
         </image>
         <slot name='thumb'>
         </slot>
-        <van-tag a:if='{{ tag }}' mark=" " type='danger' custom-class='van-card__tag' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
+        <van-tag a:if='{{ tag }}' mark=" " type='danger' custom-class='van-card__tag' ref='saveChildRef1'>
           {{ tag }}
         </van-tag>
       </view>

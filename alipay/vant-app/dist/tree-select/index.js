@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/tree-select/index"
-    }
-});
 import { VantComponent } from "../common/component";
 const ITEM_HEIGHT = 44;
 VantComponent({
@@ -56,6 +50,10 @@ VantComponent({
             if (!item.disabled) {
                 this.$emit("click-item", item);
             }
+
+            this.set({
+                activeId: this.data.activeId
+            });
         },
 
         // 当一个导航被点击时

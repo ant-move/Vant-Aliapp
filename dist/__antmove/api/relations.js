@@ -367,10 +367,7 @@ module.exports = {
   },
   'dist/tree-select/index': {
     id: 'saveChildRef0',
-    children: [{
-      id: 'saveChildRef1',
-      children: []
-    }]
+    children: []
   },
   'pages/action-sheet/index': {
     id: 'saveChildRef0',

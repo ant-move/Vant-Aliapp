@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "pages/tree-select/index"
-    }
-});
 import createPage from "../../common/page";
 import config from "./config";
 createPage({

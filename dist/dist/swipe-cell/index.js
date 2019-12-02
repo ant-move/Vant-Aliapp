@@ -4,6 +4,12 @@ var _component = require("../common/component");
 
 var _touch = require("../mixins/touch");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/swipe-cell/index"
+  }
+});
 var THRESHOLD = 0.3;
 (0, _component.VantComponent)({
   props: {

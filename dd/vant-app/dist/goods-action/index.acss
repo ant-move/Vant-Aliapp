@@ -1,5 +1,6 @@
 @import "../common/index.acss";
-.van-goods-action {
+
+.goods-action-index .van-goods-action {
     position: fixed;
     right: 0;
     bottom: 0;
@@ -8,6 +9,7 @@
     display: flex;
     background-color: #fff;
 }
-.van-goods-action--safe {
+
+.goods-action-index .van-goods-action--safe {
     padding-bottom: 34px;
 }

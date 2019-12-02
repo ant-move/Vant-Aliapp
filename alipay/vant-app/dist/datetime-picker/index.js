@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/datetime-picker/index"
-    }
-});
 import { VantComponent } from "../common/component";
 import { isDef } from "../common/utils";
 import { pickerProps } from "../picker/shared";

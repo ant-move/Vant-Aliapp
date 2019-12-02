@@ -1,9 +1,11 @@
 @import "../common/index.acss";
-.van-goods-action-icon {
+
+.goods-action-icon-index .van-goods-action-icon {
     width: 50px !important;
     border: none !important;
 }
-.van-goods-action-icon__content {
+
+.goods-action-icon-index .van-goods-action-icon__content {
     display: -webkit-flex;
     display: flex;
     height: 100%;
@@ -15,6 +17,7 @@
     -webkit-justify-content: center;
     justify-content: center;
 }
-.van-goods-action-icon__icon {
+
+.goods-action-icon-index .van-goods-action-icon__icon {
     margin-bottom: 4px;
 }

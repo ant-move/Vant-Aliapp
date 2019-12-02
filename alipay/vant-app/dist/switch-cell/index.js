@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/switch-cell/index"
-    }
-});
 import { VantComponent } from "../common/component";
 VantComponent({
     field: true,

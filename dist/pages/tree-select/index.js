@@ -14,6 +14,12 @@ function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "pages/tree-select/index"
+  }
+});
 (0, _page["default"])({
   data: {
     items: [{

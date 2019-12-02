@@ -20,7 +20,7 @@
       <slot name='nav-right'>
       </slot>
     </view>
-    <view class='van-tabs__content' onTouchStart='onTouchStart' onTouchMove='onTouchMove' onTouchEnd='onTouchEnd' onTouchCancel='onTouchEnd'>
+    <view class='van-tabs__content' catchTouchStart='onTouchStart' catchTouchMove='onTouchMove' catchTouchEnd='onTouchEnd' catchTouchCancel='onTouchEnd'>
       <view class='van-tabs__track' style='{{ trackStyle }}'>
         <slot>
         </slot>

@@ -1,9 +1,0 @@
-<wxs src='../wxs/utils.wxs' module='utils'>
-</wxs><view class='van-rate custom-class' bind:touchmove='onTouchMove'>
-  <view class='van-rate__item' tt:for='{{ count }}' tt:key='index' style='font-size: {{ size}}px;'>
-    <van-icon name='{{ index + 1 <= innerValue ? icon : voidIcon }}' class='van-rate__icon {{childName}}' custom-class='icon-class' data-score='{{ index }}' color='{{ disabled ? disabledColor : index + 1 <= innerValue ? color : voidColor }}' bind:tap='onSelect'>
-    </van-icon>
-    <van-icon tt:if='{{ allowHalf }}' name='{{ index + 0.5 <= innerValue ? icon : voidIcon }}' class="{{ utils.bem('rate__icon', ['half']) }} {{childName}}" custom-class='icon-class ' data-score='{{ index - 0.5 }}' color='{{ disabled ? disabledColor : index + 0.5 <= innerValue ? color : voidColor }}' bind:tap='onSelect'>
-    </van-icon>
-  </view>
-</view>

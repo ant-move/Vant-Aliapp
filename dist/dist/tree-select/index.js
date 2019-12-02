@@ -2,6 +2,12 @@
 
 var _component = require("../common/component");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/tree-select/index"
+  }
+});
 var ITEM_HEIGHT = 44;
 (0, _component.VantComponent)({
   classes: ["main-item-class", "content-item-class", "main-active-class", "content-active-class", "main-disabled-class", "content-disabled-class"],
@@ -46,6 +52,10 @@ var ITEM_HEIGHT = 44;
       if (!item.disabled) {
         this.$emit("click-item", item);
       }
+
+      this.set({
+        activeId: this.data.activeId
+      });
     },
     // 当一个导航被点击时
     onClickNav: function onClickNav(event) {

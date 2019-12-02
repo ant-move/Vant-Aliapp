@@ -4,6 +4,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/dialog/index"
+  }
+});
 var queue = [];
 
 function getContext() {

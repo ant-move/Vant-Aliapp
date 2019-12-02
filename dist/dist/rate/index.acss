@@ -1,18 +1,22 @@
 @import "../common/index.acss";
-.van-rate {
+
+.rate-index .van-rate {
     -webkit-user-select: none;
     user-select: none;
 }
-.van-rate__item {
+
+.rate-index .van-rate__item {
     position: relative;
     display: inline-block;
     padding: 0 2px;
 }
-.van-rate__icon {
+
+.rate-index .van-rate__icon {
     display: block;
     height: 1em;
 }
-.van-rate__icon--half {
+
+.rate-index .van-rate__icon--half {
     position: absolute;
     top: 0;
     left: 2px;

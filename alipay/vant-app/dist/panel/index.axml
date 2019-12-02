@@ -1,6 +1,6 @@
-<view class='panel-index {{className}}' onChildRef='saveChildRef0'>
+<view class='panel-index {{className}}' ref='saveChildRef0'>
   <view class='van-panel van-hairline--top-bottom {{customClass}}'>
-    <van-cell a:if='{{ title || desc || status }}' title='{{ title }}' label='{{ desc }}' value='{{ status }}' custom-class='{{headerClass}}' value-class='van-panel__header-value' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
+    <van-cell a:if='{{ title || desc || status }}' title='{{ title }}' label='{{ desc }}' value='{{ status }}' custom-class='{{headerClass}}' value-class='van-panel__header-value' ref='saveChildRef1'>
     </van-cell>
     <slot a:else  name='header'>
     </slot>

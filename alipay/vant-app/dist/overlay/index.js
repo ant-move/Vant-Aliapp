@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/overlay/index"
-    }
-});
 import { VantComponent } from "../common/component";
 VantComponent({
     props: {

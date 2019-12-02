@@ -12,6 +12,12 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/area/index"
+  }
+});
 (0, _component.VantComponent)({
   classes: ["active-class", "toolbar-class", "column-class"],
   props: Object.assign({}, _shared.pickerProps, {

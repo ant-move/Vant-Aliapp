@@ -1,9 +1,11 @@
 @import "../common/index.acss";
-:host {
+
+.tabbar-item-index :host {
     -webkit-flex: 1;
     flex: 1;
 }
-.van-tabbar-item {
+
+.tabbar-item-index .van-tabbar-item {
     color: #7d7e80;
     height: 100%;
     display: -webkit-flex;
@@ -17,12 +19,14 @@
     -webkit-justify-content: center;
     justify-content: center;
 }
-.van-tabbar-item__icon {
+
+.tabbar-item-index .van-tabbar-item__icon {
     font-size: 18px;
     margin-bottom: 5px;
     position: relative;
 }
-.van-tabbar-item__icon--dot:after {
+
+.tabbar-item-index .van-tabbar-item__icon--dot:after {
     top: 0;
     right: -8px;
     width: 8px;
@@ -32,11 +36,13 @@
     border-radius: 100%;
     background-color: #f44;
 }
-.van-tabbar-item__icon image {
+
+.tabbar-item-index .van-tabbar-item__icon image {
     width: 30px;
     height: 18px;
     display: block;
 }
-.van-tabbar-item--active {
+
+.tabbar-item-index .van-tabbar-item--active {
     color: #1989fa;
 }

@@ -522,12 +522,7 @@ module.exports = {
     ,'dist/tree-select/index': 
     {
         id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
         children: []
-    }
-    ]
     }
     ,'pages/action-sheet/index': 
     {

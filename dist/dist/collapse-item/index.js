@@ -2,6 +2,13 @@
 
 var _component = require("../common/component");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/collapse-item/index"
+  }
+});
+
 var nextTick = function nextTick() {
   return new Promise(function (resolve) {
     return setTimeout(resolve, 20);

@@ -8,6 +8,9 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+var my = dd;
+my.request = my.httpRequest;
+
 var utils = require("./utils");
 
 var descObj = require("./desc.js");
@@ -384,13 +387,23 @@ var apiObj = {
     fn: function fn() {
       var ret = my.getSystemInfoSync();
       var getSystemInfoSyncProps = descObj.getSystemInfoSync.body.returnValue.props;
-      return utils.defineGetter(ret, getSystemInfoSyncProps, function (obj, prop) {
+      ret = utils.defineGetter(ret, getSystemInfoSyncProps, function (obj, prop) {
         utils.warn("getSystemInfoSync\u7684\u8FD4\u56DE\u503C\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
           apiName: "getSystemInfoSync/".concat(prop),
           errorType: getSystemInfoSyncProps[prop].type,
           type: 'api'
         });
       });
+      /**
+       * 处理Androi屏幕宽度返回值
+       */
+
+      if (ret.platform === "Android") {
+        ret.screenWidth = ret.screenWidth / ret.pixelRatio;
+        ret.screenHeight = ret.screenHeight / ret.pixelRatio;
+      }
+
+      return ret;
     }
   },
   getSystemInfo: {
@@ -406,6 +419,15 @@ var apiObj = {
               type: 'api'
             });
           });
+          /**
+          * 处理Androi屏幕宽度返回值
+          */
+
+          if (res.platform === "Android") {
+            res.screenWidth = res.screenWidth / res.pixelRatio;
+            res.screenHeight = res.screenHeight / res.pixelRatio;
+          }
+
           obj.success && obj.success(res);
         }
       }));
@@ -1168,7 +1190,20 @@ var apiObj = {
         delete obj.name;
       }
 
+      var pathArr = obj.filePath.split('.');
       obj.fileType = 'image';
+      var fileType = {
+        'video': ['ogg', 'avi', 'wma', 'rmvb', 'rm', 'flash', 'mp4', '3gp'],
+        'audio': ['wav', 'mp3']
+      };
+      var typeName = pathArr[pathArr.length - 1];
+      Object.keys(fileType).forEach(function (key) {
+        fileType[key].forEach(function (item) {
+          if (typeName.toLowerCase() === item) {
+            obj.fileType = key;
+          }
+        });
+      });
       my.uploadFile(obj);
       var task = {
         abort: function abort() {},
@@ -1308,6 +1343,15 @@ var apiObj = {
       function Query() {
         this.query = SQ;
         this._selectType = 0; // 0: array, 1: object
+
+        this["in"] = function (p) {
+          if (typeof this.query["in"] === 'function') {
+            this.query["in"](p);
+            return this;
+          } else {
+            return this;
+          }
+        };
 
         this.select = function (p) {
           this.query.select(p);
@@ -1546,6 +1590,20 @@ var apiObj = {
           });
         }
       }
+    }
+  },
+  hideHomeButton: {
+    fn: function fn() {
+      var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      var hideHomeButtonProps = descObj.hideHomeButton.body.params.props;
+      var param = utils.defineGetter(obj, hideHomeButtonProps, function (obj, prop) {
+        utils.warn("hideHomeButton\u7684\u8FD4\u56DE\u503C\u4E0D\u652F\u6301 ".concat(prop, " \u5C5E\u6027!"), {
+          apiName: "hideHomeButton/".concat(prop),
+          errorType: hideHomeButtonProps[prop].type,
+          type: 'api'
+        });
+      });
+      return my.hideBackHome(param);
     }
   }
 };

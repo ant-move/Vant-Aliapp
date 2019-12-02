@@ -8,6 +8,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 var _my = require("../../__antmove/api/index.js")(my);
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "pages/dashboard/index"
+  }
+});
 (0, _page["default"])({
   data: {
     list: _config["default"],

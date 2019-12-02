@@ -1,5 +1,6 @@
 @import "../common/index.acss";
-.van-badge {
+
+.badge-index .van-badge {
     display: block;
     padding: 20px 12px 20px 9px;
     overflow: hidden;
@@ -13,24 +14,30 @@
     -webkit-user-select: none;
     user-select: none;
 }
-.van-badge--hover {
+
+.badge-index .van-badge--hover {
     background-color: #f2f3f5;
 }
-.van-badge:after {
+
+.badge-index .van-badge:after {
     border-bottom-width: 1px;
 }
-.van-badge--active {
+
+.badge-index .van-badge--active {
     font-weight: 700;
     color: #333;
     border-color: #f44;
 }
-.van-badge--active:after {
+
+.badge-index .van-badge--active:after {
     border-right-width: 1px;
 }
-.van-badge--active,
-.van-badge--active.van-badge--hover {
+
+.badge-index .van-badge--active,
+.badge-index .van-badge--active.van-badge--hover {
     background-color: #fff;
 }
-.van-badge__text {
+
+.badge-index .van-badge__text {
     position: relative;
 }

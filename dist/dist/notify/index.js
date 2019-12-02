@@ -6,6 +6,12 @@ var _color = require("../common/color");
 
 var _safeArea = require("../mixins/safe-area");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/notify/index"
+  }
+});
 (0, _component.VantComponent)({
   mixins: [(0, _safeArea.safeArea)()],
   props: {

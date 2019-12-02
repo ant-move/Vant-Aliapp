@@ -1,6 +1,6 @@
-<view class='custom-tab-bar-index {{className}}' ref='saveChildRef0'>
-  <van-tabbar active='{{ active }}' onChange='onChange' ref='saveChildRef1'>
-    <van-tabbar-item a:for='{{ list }}' a:key='*this' icon='{{ item.icon }}' ref-numbers='{{ list }}' ref='saveChildRef2'>
+<view class='custom-tab-bar-index {{className}}' onChildRef='saveChildRef0'>
+  <van-tabbar active='{{ active }}' _parent_ref="{{isMounted}}" onChange='onChange' onChildRef='saveChildRef1'>
+    <van-tabbar-item a:for='{{ list }}' a:key='*this' icon='{{ item.icon }}' ref-numbers='{{ list }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef2'>
       {{
     item.text
   }}

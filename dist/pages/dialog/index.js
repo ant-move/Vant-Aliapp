@@ -6,6 +6,12 @@ var _dialog = _interopRequireDefault(require("../../dist/dialog/dialog"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "pages/dialog/index"
+  }
+});
 var message = "代码是写出来给人看的，附带能在机器上运行";
 (0, _page["default"])({
   data: {

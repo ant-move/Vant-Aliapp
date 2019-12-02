@@ -16,6 +16,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var _my = require("../../__antmove/api/index.js")(my);
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/tabs/index"
+  }
+});
 (0, _component.VantComponent)({
   mixins: [_touch.touch],
   classes: ["nav-class", "tab-class", "tab-active-class", "line-class"],
@@ -100,6 +106,10 @@ var _my = require("../../__antmove/api/index.js")(my);
   },
   beforeCreate: function beforeCreate() {
     this.child = [];
+    var num = Number(new Date());
+    this.setData({
+      num: num
+    });
   },
   mounted: function mounted() {
     var _this = this;
@@ -166,10 +176,6 @@ var _my = require("../../__antmove/api/index.js")(my);
           duration = _this$data.duration,
           lineWidth = _this$data.lineWidth,
           lineHeight = _this$data.lineHeight;
-      var num = Number(new Date());
-      this.setData({
-        num: num
-      });
       this.getRect(".vant_tabs_".concat(this.data.num), true).then(function (rects) {
         var rect = rects[active];
         if (!rect) return false;

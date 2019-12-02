@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/panel/index"
-    }
-});
 import { VantComponent } from "../common/component";
 VantComponent({
     classes: ["header-class", "footer-class"],

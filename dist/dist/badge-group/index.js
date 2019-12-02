@@ -2,6 +2,12 @@
 
 var _component = require("../common/component");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/badge-group/index"
+  }
+});
 (0, _component.VantComponent)({
   relation: {
     name: "badge",

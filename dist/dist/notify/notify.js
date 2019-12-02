@@ -7,6 +7,12 @@ exports["default"] = Notify;
 
 var _utils = require("../common/utils");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/notify/index"
+  }
+});
 var defaultOptions = {
   selector: ".van-notify",
   duration: 3000

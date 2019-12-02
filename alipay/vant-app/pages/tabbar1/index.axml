@@ -1,32 +1,32 @@
 <view class='page-container-classname'>
-                <demo-block title='自定义图标' onChildRef='saveChildRef1' _parent_ref="{{isMounted}}">
-  <van-tabbar active='{{ active2 }}' data-key='active2' custom-class='tabbar' safe-area-inset-bottom='{{ false }}' _parent_ref="{{isMounted}}" onChange='onChange' onChildRef='saveChildRef2'>
-    <van-tabbar-item info='{{3}}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef3'>
+                <demo-block title='自定义图标' ref='saveChildRef1'>
+  <van-tabbar active='{{ active2 }}' data-key='active2' custom-class='tabbar' safe-area-inset-bottom='{{ false }}' onChange='onChange' ref='saveChildRef2'>
+    <van-tabbar-item info='{{3}}' ref='saveChildRef3'>
       <image slot='icon' src='{{ icon.normal }}' mode='aspectFit'>
       </image>
       <image slot='icon-active' src='{{ icon.active }}' mode='aspectFit'>
       </image>
       自定义
     </van-tabbar-item>
-    <van-tabbar-item icon='search' _parent_ref="{{isMounted}}" onChildRef='saveChildRef4'>
+    <van-tabbar-item icon='search' ref='saveChildRef4'>
       标签
     </van-tabbar-item>
-    <van-tabbar-item icon='setting-o' _parent_ref="{{isMounted}}" onChildRef='saveChildRef5'>
+    <van-tabbar-item icon='setting-o' ref='saveChildRef5'>
       标签
     </van-tabbar-item>
   </van-tabbar>
-</demo-block><demo-block title='自定义颜色' _parent_ref="{{isMounted}}" onChildRef='saveChildRef6'>
-  <van-tabbar active='{{ active }}' data-key='active' custom-class='tabbar' safe-area-inset-bottom='{{ false }}' active-color='#07c160' inactive-color='#000' _parent_ref="{{isMounted}}" onChange='onChange' onChildRef='saveChildRef7'>
-    <van-tabbar-item icon='home-o' _parent_ref="{{isMounted}}" onChildRef='saveChildRef8'>
+</demo-block><demo-block title='自定义颜色' ref='saveChildRef6'>
+  <van-tabbar active='{{ active }}' data-key='active' custom-class='tabbar' safe-area-inset-bottom='{{ false }}' active-color='#07c160' inactive-color='#000' onChange='onChange' ref='saveChildRef7'>
+    <van-tabbar-item icon='home-o' ref='saveChildRef8'>
       标签
     </van-tabbar-item>
-    <van-tabbar-item icon='search' _parent_ref="{{isMounted}}" onChildRef='saveChildRef9'>
+    <van-tabbar-item icon='search' ref='saveChildRef9'>
       标签
     </van-tabbar-item>
-    <van-tabbar-item icon='friends-o' _parent_ref="{{isMounted}}" onChildRef='saveChildRef10'>
+    <van-tabbar-item icon='friends-o' ref='saveChildRef10'>
       标签
     </van-tabbar-item>
-    <van-tabbar-item icon='setting-o' _parent_ref="{{isMounted}}" onChildRef='saveChildRef11'>
+    <van-tabbar-item icon='setting-o' ref='saveChildRef11'>
       标签
     </van-tabbar-item>
   </van-tabbar>

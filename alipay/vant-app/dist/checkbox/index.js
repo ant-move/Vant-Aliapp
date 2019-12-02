@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/checkbox/index"
-    }
-});
 import { VantComponent } from "../common/component";
 
 function emit(target, value) {

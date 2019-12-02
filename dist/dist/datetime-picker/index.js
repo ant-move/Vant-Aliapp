@@ -16,6 +16,12 @@ function _iterableToArrayLimit(arr, i) { var _arr = []; var _n = true; var _d = 
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/datetime-picker/index"
+  }
+});
 var currentYear = new Date().getFullYear();
 
 function isValidDate(date) {
@@ -116,8 +122,17 @@ var defaultFormatter = function defaultFormatter(_, value) {
     maxMinute: "updateValue"
   },
   methods: {
-    updateValue: function updateValue() {
+    onRelationsUpdate: function onRelationsUpdate() {
       var _this = this;
+
+      // for dd
+      var innerValue = this.correctValue(this.data.value);
+      this.updateColumnValue(innerValue) && this.updateColumnValue(innerValue).then(function () {
+        _this.$emit("input", innerValue);
+      });
+    },
+    updateValue: function updateValue() {
+      var _this2 = this;
 
       var data = this.data;
       var val = this.correctValue(this.data.value);
@@ -125,7 +140,7 @@ var defaultFormatter = function defaultFormatter(_, value) {
 
       if (!isEqual) {
         this.updateColumnValue(val) && this.updateColumnValue(val).then(function () {
-          _this.$emit("input", val);
+          _this2.$emit("input", val);
         });
       } else {
         this.updateColumns();
@@ -289,7 +304,7 @@ var defaultFormatter = function defaultFormatter(_, value) {
       this.$emit("confirm", this.data.innerValue);
     },
     onChange: function onChange() {
-      var _this2 = this;
+      var _this3 = this;
 
       var data = this.data;
       var value;
@@ -323,13 +338,13 @@ var defaultFormatter = function defaultFormatter(_, value) {
 
       value = this.correctValue(value);
       this.updateColumnValue(value) && this.updateColumnValue(value).then(function () {
-        _this2.$emit("input", value);
+        _this3.$emit("input", value);
 
-        _this2.$emit("change", picker);
+        _this3.$emit("change", picker);
       });
     },
     updateColumnValue: function updateColumnValue(value) {
-      var _this3 = this;
+      var _this4 = this;
 
       var values = [];
       var _this$data = this.data,
@@ -361,7 +376,7 @@ var defaultFormatter = function defaultFormatter(_, value) {
       return this.set({
         innerValue: value
       }).then(function () {
-        return _this3.updateColumns();
+        return _this4.updateColumns();
       }).then(function () {
         return picker.setValues(values);
       });
@@ -373,11 +388,11 @@ var defaultFormatter = function defaultFormatter(_, value) {
     });
   },
   created: function created() {
-    var _this4 = this;
+    var _this5 = this;
 
     var innerValue = this.correctValue(this.data.value);
     this.updateColumnValue(innerValue) && this.updateColumnValue(innerValue).then(function () {
-      _this4.$emit("input", innerValue);
+      _this5.$emit("input", innerValue);
     });
   }
 });

@@ -8,6 +8,7 @@ exports.transition = void 0;
 var _utils = require("../common/utils");
 
 function Behavior(behavior) {
+  behavior.$id = Number(new Date()) + String(Math.random()).substring(2, 7);
   return behavior;
 }
 

@@ -1,5 +1,6 @@
 @import "../common/index.acss";
-.van-info {
+
+.info-index .van-info {
     position: absolute;
     top: -8px;
     right: 0;

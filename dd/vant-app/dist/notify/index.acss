@@ -1,5 +1,6 @@
 @import "../common/index.acss";
-.van-notify {
+
+.notify-index .van-notify {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,6 +12,6 @@
     box-sizing: border-box;
 }
 
-.van-notify__safe-top {
+.notify-index .van-notify__safe-top {
     height: 44px;
 }

@@ -6,6 +6,12 @@ var _color = require("../common/color");
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/tag/index"
+  }
+});
 var DEFAULT_COLOR = "#999";
 var COLOR_MAP = {
   danger: _color.RED,

@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/picker-column/index"
-    }
-});
 import { VantComponent } from "../common/component";
 import { isObj, range } from "../common/utils";
 const DEFAULT_DURATION = 200;

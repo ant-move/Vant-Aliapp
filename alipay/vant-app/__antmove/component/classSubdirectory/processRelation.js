@@ -28,6 +28,7 @@ module.exports = function link (opts = {}, cb) {
     if (typeof cb === 'function') {
         cb(node);
     }
+
     if (Array.isArray(opts.children)) {
         opts.children.forEach(function (child) {
             node.appendChild(link(child, cb));

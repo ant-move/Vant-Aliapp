@@ -1,5 +1,0 @@
-<wxs src='../wxs/utils.wxs' module='utils'>
-</wxs><view class="custom-class {{ border ? 'van-hairline--top-bottom' : '' }} {{ utils.bem('tabbar', { fixed, safe: isIPhoneX && safeAreaInsetBottom }) }}" style="{{ zIndex ? 'z-index: ' + zIndex : '' }}">
-  <slot>
-  </slot>
-</view>

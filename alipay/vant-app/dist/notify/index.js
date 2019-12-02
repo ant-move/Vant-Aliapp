@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/notify/index"
-    }
-});
 import { VantComponent } from "../common/component";
 import { RED } from "../common/color";
 import { safeArea } from "../mixins/safe-area";

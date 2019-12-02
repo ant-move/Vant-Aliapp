@@ -10,6 +10,8 @@ var myApi = require('./my');
 
 var utils = require('./utils.js');
 
+var globalVar = require('./config').global;
+
 var hasProxy = typeof Proxy !== 'undefined';
 
 var _Proxy = function _Proxy() {};
@@ -20,7 +22,7 @@ if (hasProxy) _Proxy = Proxy;
  */
 
 function warnApi(api) {
-  var iscanIuse = my.canIUse(api);
+  var iscanIuse = globalVar.canIUse(api);
 
   if (!iscanIuse) {
     utils.warn("\u652F\u4ED8\u5B9D\u6682\u4E0D\u652F\u6301".concat(api), {
@@ -103,10 +105,10 @@ myApi.getUserInfoWrap = {
 
     var _fn = arguments.length > 1 ? arguments[1] : undefined;
 
-    my.getAuthCode({
+    globalVar.getAuthCode({
       scopes: 'auth_user',
       success: function success() {
-        my.getAuthUserInfo({
+        globalVar.getAuthUserInfo({
           success: function success(userInfo) {
             _fn && _fn(_objectSpread({}, e, {
               detail: {
@@ -134,7 +136,7 @@ myApi.getPhoneNumberWrap = {
 
     var _fn2 = arguments.length > 1 ? arguments[1] : undefined;
 
-    my.getPhoneNumber({
+    globalVar.getPhoneNumber({
       success: function success(res) {
         var encryptedData = res.response;
         e = _objectSpread({}, e, {

@@ -1,8 +1,12 @@
 "use strict";
 
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
@@ -11,10 +15,6 @@ function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread n
 function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 var utils = require('../../api/utils');
 
@@ -26,42 +26,128 @@ var createNode = require('./relation');
 
 var processRelationHandle = require('./processRelation');
 
-var posix = browserPath();
-
 var Relations = require('../../api/relations');
 
 var SelectComponent = require('./selectComponent');
 
+var _id = 0;
+
+var _require = require('../utils'),
+    getUrl = _require.getUrl,
+    updateData = _require.updateData,
+    processMethods = _require.processMethods,
+    processRelationPath = _require.processRelationPath,
+    _relationNode = _require._relationNode,
+    findRelationNode = _require.findRelationNode,
+    compatibleLifetime = _require.compatibleLifetime,
+    collectObserver = _require.collectObserver,
+    collectObservers = _require.collectObservers,
+    processTriggerEvent = _require.processTriggerEvent,
+    observerHandle = _require.observerHandle,
+    handleProps = _require.handleProps,
+    handleExternalClasses = _require.handleExternalClasses,
+    handleAfterInit = _require.handleAfterInit,
+    mergeOptions = _require.mergeOptions;
+
+function getInfo(key, obj) {
+  var val = {};
+  Object.keys(obj).forEach(function (item) {
+    if (key === item) {
+      val = obj[item];
+    } else if (key.indexOf(item) !== -1) {
+      val = obj[item];
+    }
+  });
+  return val;
+}
+
 function processRelations(ctx) {
   var relationInfo = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var route = ctx.is;
+
+  if (!my.canIUse('component2')) {
+    route = JSON.parse(JSON.stringify(my.getStorageSync({
+      key: 'activeComponent'
+    }))).data.is;
+  }
+
   route = route.replace(/\/node_modules\/[a-z-]+\/[a-z-]+/, '');
-  var info = relationInfo[route] || relationInfo[route.substring(1)];
+  ctx.is = route;
+  ctx.$id = _id++;
+
+  if (route[0] === '/') {
+    route = route.substring(1);
+  }
+
+  var info = getInfo(route, relationInfo);
 
   if (info) {
     processRelationHandle(info, function (node) {
-      if (node.$id === 'saveChildRef0') {
-        ctx[node.$id] = function () {};
+      ctx.methods = ctx.methods || {};
+      var methods = ctx.methods;
 
-        node.$index = 0;
-        node.$route = route;
-        createNode.call(ctx, ctx, null, node);
+      if (node.$id === 'saveChildRef0') {
+        methods[node.$id] = function () {
+          var _this = this;
+
+          this.$antmove.relationApp = this.$antmove.relationApp || {
+            fns: []
+          };
+          node.$index = 0;
+          node.$route = route;
+          createNode.call(this, this, null, node);
+          this.$antmove.relationApp.fns.forEach(function (fn) {
+            fn.call(_this);
+          });
+          var _arr = [];
+          this.$antmove.relationApp.relationFns.forEach(function (fn) {
+            if (!fn.call(_this)) {
+              _arr.push(fn);
+            }
+          });
+          this.$antmove.relationApp.relationFns = _arr;
+
+          if (this.onRelationsUpdate) {
+            this.onRelationsUpdate();
+          }
+        };
+
         return false;
       }
 
-      ctx[node.$id] = function (ref) {
-        ctx.$antmove = ctx.$antmove || {};
+      methods[node.$id] = function (ref) {
+        this.$antmove = this.$antmove || {};
+        this.$antmove.refFns = this.$antmove.refFns || {};
+        this.$antmove.relationApp = this.$antmove.relationApp || {
+          fns: [],
+          relationFns: []
+        };
 
-        if (ctx.$antmove[node.$id] === undefined) {
-          ctx.$antmove[node.$id] = 0;
-        } else {
-          ctx.$antmove[node.$id] += 1;
+        if (!this.$antmove.refFns[ref.$id]) {
+          this.$antmove.refFns[ref.$id] = true;
+          this.$antmove.relationApp.fns.push(function fn() {
+            this.selectComponentApp.preProcesscomponents(ref);
+            var ctx = this;
+            ctx.$antmove = ctx.$antmove || {};
+
+            if (ctx.$antmove[node.$id] === undefined) {
+              ctx.$antmove[node.$id] = 0;
+            } else {
+              ctx.$antmove[node.$id] += 1;
+            }
+
+            node.$index = ctx.$antmove[node.$id];
+            node.$route = route;
+            createNode.call(ctx, ref, null, node);
+          });
+          this.$antmove.relationApp.relationFns.push(function () {
+            return ref.handleRelations && ref.handleRelations();
+          });
         }
 
-        this.selectComponentApp.preProcesscomponents(ref);
-        node.$index = ctx.$antmove[node.$id];
-        node.$route = route;
-        createNode.call(ctx, ref, null, node);
+        if (this.saveChildRef0) {
+          this.saveChildRef0();
+        }
       };
     });
   } else {
@@ -69,80 +155,10 @@ function processRelations(ctx) {
   }
 }
 
-function getUrl() {
-  var pages = getCurrentPages();
-  var url = pages[pages.length - 1].route;
-
-  var _arr = url.split('/');
-
-  var _name = _arr[_arr.length - 1];
-  my.setStorageSync({
-    key: '_pageMsg',
-    data: {
-      pageName: _name,
-      pagePath: url
-    }
-  });
-  return url;
-}
-
-function updateData(param) {
-  var _this = this;
-
-  var ctx = this;
-
-  if (_typeof(ctx.properties) === 'object') {
-    ctx.properties.name = ctx.properties.name || '';
-    ctx.properties.value = ctx.properties.value || null;
-    Object.keys(ctx.properties).forEach(function (item) {
-      // didupdate
-      if (param && param[0][item] === _this.props[item]) return false;
-
-      if (ctx.props[item] !== undefined && typeof ctx.props[item] !== 'function' && item[0] !== '$' && ctx.data[item] !== ctx.props[item]) {
-        ctx.setData(_defineProperty({}, item, ctx.props[item]));
-      }
-    });
-  }
-}
-
-function processMethods() {
-  var _opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-  var methods = {};
-  Object.keys(_opts.methods || {}).forEach(function (method) {
-    var fn = _opts.methods[method];
-
-    methods[method] = function () {
-      for (var _len = arguments.length, p = new Array(_len), _key = 0; _key < _len; _key++) {
-        p[_key] = arguments[_key];
-      }
-
-      if (p[0] && _typeof(p[0]) === 'object' && p[0].timeStamp && p[0].target) {
-        this._currentEvent = p[0];
-      }
-
-      return fn.apply(this, p);
-    };
-  });
-  _opts.methods = methods;
-  return _opts;
-}
-
-function processRelationPath(self, relation) {
-  var from = self.is,
-      to = relation;
-
-  if (to[0] === '.') {
-    to = '../' + to;
-  }
-
-  var _p = posix.join(from, to);
-
-  return _p;
-}
-
 function handleRelations() {
   var _this2 = this;
+
+  var isFinished = true;
 
   if (this.props.theRelations) {
     Object.keys(this.props.theRelations).forEach(function (relation) {
@@ -158,6 +174,8 @@ function handleRelations() {
       nodes = findRelationNode(_this2.$node, _p, relationInfo.type, true);
 
       if (!nodes || nodes[0] === undefined) {
+        // 有一个 relations 节点没绑上就表示还未完成
+        isFinished = false;
         return false;
       }
 
@@ -176,158 +194,8 @@ function handleRelations() {
       });
     });
   }
-} // process node relation callback
 
-
-function _relationNode(node, info) {
-  var relationInfo = info.relationInfo,
-      relation = info.relation,
-      _p = info._p; // 触发父级组件的 relations
-
-  var type = relationInfo.type;
-  var parentType = '';
-
-  if (type === 'parent') {
-    parentType = 'child';
-  } else if (type === 'ancestor') {
-    parentType = 'descendant';
-  }
-
-  var parentCtx = node.$self;
-  var childCtx = this;
-
-  if (_typeof(parentCtx.props.theRelations) === 'object') {
-    Object.keys(parentCtx.props.theRelations).forEach(function (relation) {
-      var relationInfo = parentCtx.props.theRelations[relation];
-
-      if (relationInfo.type === parentType) {
-        _relationNode.call(parentCtx, childCtx.$node, {
-          relationInfo: relationInfo,
-          relation: relation,
-          _p: processRelationPath(parentCtx, relation)
-        });
-
-        return true;
-      }
-    });
-  }
-
-  node = node.$self;
-  this._storeRelationNodes = this._storeRelationNodes || {};
-
-  if (this._storeRelationNodes[_p]) {
-    this._storeRelationNodes[_p].push(node);
-  } else {
-    this._storeRelationNodes[_p] = [node];
-  }
-
-  if (this._storeRelationNodes[relation]) {
-    this._storeRelationNodes[relation].push(node);
-  } else {
-    this._storeRelationNodes[relation] = [node];
-  }
-
-  var ctx = this || {};
-
-  this.getRelationNodes = function (_p) {
-    this._storeRelationNodes = this._storeRelationNodes || {};
-    return this._storeRelationNodes[_p] || [];
-  };
-
-  if (typeof relationInfo.linked === 'function') {
-    relationInfo.linked.call(ctx, node);
-  }
-
-  if (typeof relationInfo.linkChanged === 'function') {
-    var self = this;
-    ctx._lifes = ctx._lifes || {};
-    ctx._lifes.didUpdate = ctx._lifes.didUpdate || [];
-
-    ctx._lifes.didUpdate.push(function () {
-      relationInfo.linkChanged.call(self, node);
-    });
-  }
-
-  if (typeof relationInfo.unlinked === 'function') {
-    var _self = this;
-
-    ctx._lifes = ctx._lifes || {};
-    ctx._lifes.didUnmount = ctx._lifes.didUnmount || [];
-
-    ctx._lifes.didUnmount.push(function () {
-      relationInfo.unlinked.call(_self, node);
-    });
-  }
-}
-
-function findRelationNode(node, p, type) {
-  var isArray = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  // parent child ancestor descendant
-  var nodes = [];
-  var _prcess = {
-    parent: function parent(node) {
-      if (!node || !node.$parent) return;
-
-      var _p = node.$parent.$self.is || node.$parent.$self.route;
-
-      if (_p === p) {
-        return node.$parent;
-      }
-    },
-    child: function child(node) {
-      var _child = null;
-      node.$children.forEach(function (child) {
-        var _p = child.$self.is;
-
-        if (_p === p) {
-          _child = child;
-
-          if (!isArray) {
-            return _child;
-          }
-
-          nodes.push(_child);
-        }
-      });
-      return _child;
-    },
-    ancestor: function ancestor(node) {
-      if (!node) return;
-      var _node = null;
-      _node = _prcess.parent(node);
-
-      if (!_node) {
-        _node = _prcess.ancestor(node.$parent);
-      }
-
-      return _node;
-    },
-    descendant: function descendant(node) {
-      var _node = null;
-      _node = _prcess.child(node);
-
-      if (!_node) {
-        node.$children.forEach(function (c) {
-          _node = _prcess.child(c);
-
-          if (!_node) {
-            _node = _prcess.descendant(c);
-          }
-        });
-      }
-
-      return _node;
-    }
-  };
-
-  var ret = _prcess[type](node);
-
-  if (isArray) {
-    if (type === 'parent' || type === 'ancestor') return [ret];
-    return nodes;
-  }
-
-  return ret;
+  return isFinished;
 }
 
 function behaviorsAssign(_opts, item, res) {
@@ -342,58 +210,6 @@ function behaviorsAssign(_opts, item, res) {
   return obj;
 }
 
-function compatibleLifetime(options) {
-  var _life = {};
-
-  if (options && options.lifetimes) {
-    _life = options.lifetimes;
-  } else if (options) {
-    _life = options;
-  }
-
-  return _life;
-}
-
-function collectObserver(observerObj, option, ctx) {
-  Object.keys(option).forEach(function (prop) {
-    if (_typeof(option[prop]) !== 'object' || !option[prop]) return false;
-
-    if (option[prop].observer) {
-      if (typeof option[prop].observer === 'string') {
-        observerObj[prop] = ctx.methods[option[prop].observer];
-      } else {
-        observerObj[prop] = option[prop].observer;
-      }
-    }
-  });
-  return observerObj;
-}
-
-function collectObservers(observersObj, options, param) {
-  var self = this;
-
-  var _loop = function _loop(key) {
-    var keyArr = key.split(",");
-    var arr = [];
-    keyArr.forEach(function (its) {
-      its = its.trim();
-      arr.push(self.data[its]);
-    });
-    keyArr.forEach(function (its) {
-      its = its.trim();
-      observersObj[its] = Object.create(null);
-      observersObj[its].fn = options.observers[key];
-      observersObj[its].arr = arr;
-    });
-  };
-
-  for (var key in options.observers) {
-    _loop(key);
-  }
-
-  observersHandle(observersObj, param, self);
-}
-
 function processObservers(observersObj, options, param) {
   if (options.observers) {
     collectObservers.call(this, observersObj, options, param);
@@ -403,58 +219,8 @@ function processObservers(observersObj, options, param) {
 function processInit() {
   getUrl();
   this._currentEvent = {};
-}
-
-function processTriggerEvent() {
-  this.triggerEvent = function (event) {
-    var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-    var opts = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-    var e = this._currentEvent;
-    var eventType = event[0].toLowerCase() + event.substring(1);
-    event = 'on' + event[0].toUpperCase() + event.substring(1);
-    e.type = eventType;
-    e = processDataSet(e, this.props);
-    event = event.replace(/-\w+/, function (name) {
-      name = name[1].toUpperCase() + name.substring(2);
-      return name;
-    });
-
-    if (typeof this.props[event] === 'function') {
-      if (e) {
-        e.detail = e.detail || {};
-
-        if (Array.isArray(data)) {
-          e.detail = data;
-        } else if (_typeof(data) === 'object') {
-          e.detail = _objectSpread({}, e.detail, {}, data);
-        } else {
-          e.detail = data;
-        }
-      }
-
-      this.props[event](e, data, opts);
-    }
-  };
-}
-
-function observerHandle(observerObj, args, that) {
-  var isInit = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
-  Object.keys(observerObj).forEach(function (obs) {
-    if (isInit && that.props[obs] === undefined) return false;
-
-    if (args[0][obs] !== that.props[obs] && typeof observerObj[obs] === 'function') {
-      observerObj[obs].call(that, that.props[obs], args[0][obs]);
-    }
-  });
-}
-
-function observersHandle(observersObj, args, that) {
-  Object.keys(observersObj).forEach(function (obs) {
-    if (typeof observersObj[obs].fn === 'function' && args[1][obs] !== that.data[obs]) {
-      var _observersObj$obs$fn;
-
-      (_observersObj$obs$fn = observersObj[obs].fn).call.apply(_observersObj$obs$fn, [that].concat(_toConsumableArray(observersObj[obs].arr)));
-    }
+  this.setData({
+    theId: this.$id
   });
 }
 
@@ -462,7 +228,7 @@ function processIntersectionObserver(context) {
   context.createIntersectionObserver = function () {
     var _my;
 
-    return (_my = my).createIntersectionObserver.apply(_my, arguments);
+    return my.createIntersectionObserver && (_my = my).createIntersectionObserver.apply(_my, arguments);
   };
 }
 
@@ -511,12 +277,19 @@ module.exports = {
 
     if (_opts.methods) {
       processMethods(_opts);
-    } // processRef(_opts);
+    }
 
+    processRelations(_opts, Relations);
 
     var didMount = function didMount() {
-      var _this3 = this;
-
+      /**
+       * for child ref
+       * 
+       * 当父级组件挂载后再执行父级组件传递下来的属性回调函数
+       */
+      this.setData({
+        isMounted: true
+      });
       _life.error && warnLife("There is no error life cycle", "error");
       _life.move && warnLife("There is no moved life cycle", "moved");
       _life.pageLifetimes && warnLife("There is no page life cycle where the component resides,including(show,hide,resize)", "pageLifetimes");
@@ -524,21 +297,11 @@ module.exports = {
 
       if (typeof this.triggerEvent !== 'function') {
         processTriggerEvent.call(this);
-      } // process relations, get relation ast
-
-
-      var relationAst = createNode.call(this, null, null, null, null, true).mountedHandles;
-      relationAst.push(function () {
-        handleRelations.call(_this3);
-      });
+      }
     };
 
     fnApp.add('onInit', function () {
       processIntersectionObserver(this);
-
-      this.onPageReady = function (p) {
-        _opts.onPageReady && _opts.onPageReady.call(this, p);
-      };
     });
     fnApp.add('deriveDataFromProps', function () {});
     fnApp.add('didMount', didMount);
@@ -549,20 +312,37 @@ module.exports = {
       };
 
       this.selectComponentApp = new SelectComponent(this);
+      var self = this;
+
+      this.handleRelations = function () {
+        handleRelations.call(self);
+      };
+
       this.properties = _objectSpread({}, _opts.properties);
       processInit.call(this, _opts, options, _life, fnApp);
       updateData.call(this);
-      processRelations(this, Relations);
       this.selectComponentApp.connect();
       observerHandle(_opts.observerObj, [_opts.props, this.data], this, true);
     });
     fnApp.bind('onInit', _opts);
     fnApp.add('didMount', _opts.attached);
     fnApp.add('didMount', _opts.ready);
+    fnApp.insert('didMount', function () {
+      if (!my.canIUse('component2')) {
+        _opts.onInit.call(this);
+      }
+    });
 
     var didUpdate = function didUpdate() {
-      for (var _len2 = arguments.length, param = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-        param[_key2] = arguments[_key2];
+      if (this.props._parent_ref && !this.isInitRelation) {
+        if (this.props.onChildRef) {
+          this.isInitRelation = true;
+          this.props.onChildRef(this);
+        }
+      }
+
+      for (var _len = arguments.length, param = new Array(_len), _key = 0; _key < _len; _key++) {
+        param[_key] = arguments[_key];
       }
 
       updateData.call(this, param);
@@ -589,114 +369,8 @@ module.exports = {
   }
 };
 
-function processDataSet(e) {
-  var props = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-  if (e.timeStamp === undefined) {
-    e = _objectSpread({}, e, {
-      target: {
-        dataset: {}
-      },
-      currentTarget: {
-        dataset: {}
-      }
-    });
-  }
-
-  Object.keys(props).forEach(function (prop) {
-    if (prop.match(/^data-/)) {
-      var originProp = prop;
-      prop = prop.replace(/[A-Z]/g, function ($) {
-        return $.toLowerCase();
-      });
-      prop = prop.split('-');
-      prop.shift();
-      prop = prop.join('');
-      e.target.dataset[prop] = props[originProp];
-      e.currentTarget.dataset[prop] = props[originProp];
-    }
-  });
-  return e;
-}
-
-function handleProps() {
-  var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  opts.props = opts.props || {};
-
-  if (opts.relations) {
-    opts.props.theRelations = opts.relations;
-  }
-
-  if (!opts.properties) return false;
-  Object.keys(opts.properties).forEach(function (prop) {
-    var val = opts.properties[prop];
-
-    if (!val) {
-      opts.props[prop] = val;
-      return false;
-    }
-
-    if (typeof val === 'function') {
-      var _obj;
-
-      var obj = (_obj = {}, _defineProperty(_obj, Boolean, false), _defineProperty(_obj, String, ''), _defineProperty(_obj, Array, []), _defineProperty(_obj, Object, {}), _obj);
-      opts.props[prop] = obj[val];
-      return false;
-    }
-
-    if (val.hasOwnProperty('value')) {
-      opts.props[prop] = val.value;
-    } else if (val.type !== 'observer') {
-      var _info;
-
-      var info = (_info = {}, _defineProperty(_info, String, ''), _defineProperty(_info, Number, 0), _defineProperty(_info, Object, {}), _defineProperty(_info, null, null), _info);
-      opts.props[prop] = info[val.type];
-    }
-  });
-}
-
 function handleData() {
   var otps = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-}
-
-function handleExternalClasses() {
-  var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var arr = opts.externalClasses || [];
-  var _class = [];
-  arr.forEach(function (a) {
-    _class.push(_transform(a) || '');
-  });
-  opts.data = opts.data || {};
-  opts.data.__classNames = _class;
-  opts.data.__classes = '';
-
-  function _transform() {
-    var str = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-    str = str.replace(/-(\w)/g, function () {
-      for (var _len3 = arguments.length, $ = new Array(_len3), _key3 = 0; _key3 < _len3; _key3++) {
-        $[_key3] = arguments[_key3];
-      }
-
-      return $[1].toUpperCase();
-    });
-    return str || '';
-  }
-
-  return opts;
-}
-
-function handleAfterInit() {
-  var _this4 = this;
-
-  var classStr = '';
-
-  this.data.__classNames.forEach(function (key) {
-    classStr += _this4.props[key] || '';
-  });
-
-  this.setData({
-    _classes: classStr
-  });
 }
 /**
  * behavior
@@ -737,27 +411,4 @@ function processBehavior() {
 
     mergeOptions(opt, __opts);
   }
-}
-
-function mergeOptions(parent, child) {
-  Object.keys(parent).forEach(function (key) {
-    var val = parent[key];
-    var _val = child[key];
-    if (Array.isArray(_val)) return false;
-    if (child[key] === undefined) child[key] = parent[key];
-
-    if (_typeof(val) === 'object' && _typeof(_val) === 'object') {
-      child[key] = Object.assign({}, _val, val);
-    } else if (typeof val === 'function' && typeof _val === 'function') {
-      child[key] = function () {
-        for (var _len4 = arguments.length, p = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
-          p[_key4] = arguments[_key4];
-        }
-
-        val.apply(this, p);
-
-        _val.apply(this, p);
-      };
-    }
-  });
 }

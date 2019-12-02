@@ -1,5 +1,6 @@
 @import "../common/index.acss";
-.van-submit-bar {
+
+.submit-bar-index .van-submit-bar {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -9,7 +10,7 @@
     user-select: none;
 }
 
-.van-submit-bar__tip {
+.submit-bar-index .van-submit-bar__tip {
     padding: 10px;
     font-size: 12px;
     line-height: 1.5;
@@ -18,23 +19,23 @@
     display: flex;
 }
 
-.van-submit-bar__tip:empty {
+.submit-bar-index .van-submit-bar__tip:empty {
     display: none;
 }
 
-.van-submit-bar__tip-icon {
+.submit-bar-index .van-submit-bar__tip-icon {
     width: 12px;
     height: 12px;
     margin-right: 4px;
     vertical-align: middle;
 }
 
-.van-submit-bar__tip-text {
+.submit-bar-index .van-submit-bar__tip-text {
     display: inline;
     vertical-align: middle;
 }
 
-.van-submit-bar__bar {
+.submit-bar-index .van-submit-bar__bar {
     display: -webkit-flex;
     display: flex;
     height: 50px;
@@ -46,11 +47,11 @@
     justify-content: flex-end;
 }
 
-.van-submit-bar__bar--safe {
+.submit-bar-index .van-submit-bar__bar--safe {
     padding-bottom: 34px;
 }
 
-.van-submit-bar__text {
+.submit-bar-index .van-submit-bar__text {
     padding-right: 12px;
     font-weight: 500;
     color: #333;
@@ -59,19 +60,19 @@
     text-align: right;
 }
 
-.van-submit-bar__price {
+.submit-bar-index .van-submit-bar__price {
     font-size: 18px;
     color: #f44;
 }
 
-.van-submit-bar__currency {
+.submit-bar-index .van-submit-bar__currency {
     font-size: 14px;
 }
 
-.van-submit-bar__suffix-label {
+.submit-bar-index .van-submit-bar__suffix-label {
     margin-left: 5px;
 }
 
-.van-submit-bar__button {
+.submit-bar-index .van-submit-bar__button {
     width: 110px;
 }

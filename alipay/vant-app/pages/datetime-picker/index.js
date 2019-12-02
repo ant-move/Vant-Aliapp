@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "pages/datetime-picker/index"
-    }
-});
 import createPage from "../../common/page";
 import Toast from "../../dist/toast/toast";
 createPage({
@@ -14,7 +8,7 @@ createPage({
         maxDate: new Date(2019, 10, 1).getTime(),
         currentDate1: new Date(2018, 2, 31).getTime(),
         currentDate2: null,
-        currentDate3: new Date(2018, 0, 1),
+        currentDate3: new Date(2018, 0, 1).getTime(),
         currentDate4: "12:00",
         loading: false,
 

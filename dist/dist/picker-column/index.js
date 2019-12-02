@@ -4,6 +4,12 @@ var _component = require("../common/component");
 
 var _utils = require("../common/utils");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/picker-column/index"
+  }
+});
 var DEFAULT_DURATION = 200;
 (0, _component.VantComponent)({
   classes: ["active-class"],

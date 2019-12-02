@@ -18,6 +18,9 @@ VantComponent({
     beforeCreate() {
         this.children = [];
     },
+    created(){
+        this.setChildren(this.data.columns)
+    },
     methods: {
         onRelationsUpdate() {
             // for dd
@@ -28,7 +31,7 @@ VantComponent({
           
             this.simple = columns.length && !columns[0].values;
                     this.children = this.selectAllComponents(".van-picker__column");
-                    if (Array.isArray(this.children) && this.children.length) {
+                    if (Array.isArray(this.children) && this.children.length && this.children.length === this.data.columns.length) {
                         this.setColumns().catch(() => {});
                     }
         },

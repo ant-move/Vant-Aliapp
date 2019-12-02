@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "pages/tree-select/index"
-    }
-});
 export default {
     pro1Name: "浙江",
     pro1: [

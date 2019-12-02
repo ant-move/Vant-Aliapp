@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/tag/index"
-    }
-});
 import { VantComponent } from "../common/component";
 import { RED, BLUE, GREEN } from "../common/color";
 const DEFAULT_COLOR = "#999";

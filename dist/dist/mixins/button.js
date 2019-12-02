@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.button = void 0;
 
 function Behavior(behavior) {
+  behavior.$id = Number(new Date()) + String(Math.random()).substring(2, 7);
   return behavior;
 }
 

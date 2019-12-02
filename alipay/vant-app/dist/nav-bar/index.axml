@@ -1,10 +1,10 @@
-<view class='nav-bar-index {{className}}' onChildRef='saveChildRef0'>
+<view class='nav-bar-index {{className}}' ref='saveChildRef0'>
   <import-sjs from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
   <view class="{{ utils.bem('nav-bar', { fixed }) }} {{customClass}} {{ border ? 'van-hairline--bottom' : '' }}" style="z-index: {{ zIndex }}; {{ safeAreaInsetTop ? 'padding-top: ' + statusBarHeight + 'px;' : '' }}">
     <view class='van-nav-bar__left' onTap='onClickLeft'>
       <block a:if='{{ leftArrow || leftText }}'>
-        <van-icon a:if='{{ leftArrow }}' size='16px' name='arrow-left' custom-class='van-nav-bar__arrow' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
+        <van-icon a:if='{{ leftArrow }}' size='16px' name='arrow-left' custom-class='van-nav-bar__arrow' ref='saveChildRef1'>
         </van-icon>
         <view a:if='{{ leftText }}' class='van-nav-bar__text' hover-class='van-nav-bar__text--hover' hover-stay-time='{{70}}'>
           {{ leftText }}

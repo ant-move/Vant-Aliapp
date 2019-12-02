@@ -1,4 +1,4 @@
-<view class='stepper-index {{className}}' ref='saveChildRef0'>
+<view class='stepper-index {{className}}' onChildRef='saveChildRef0'>
   <import-sjs from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
   <view class='van-stepper {{customClass}}'>

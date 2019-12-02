@@ -1,15 +1,11 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/stepper/index"
-    }
-});
 import { VantComponent } from "../common/component";
 VantComponent({
     field: true,
     classes: ["input-class", "plus-class", "minus-class"],
+    data: {
+        value: null
+    },
     props: {
-        value: null,
         integer: Boolean,
         disabled: Boolean,
         inputWidth: String,

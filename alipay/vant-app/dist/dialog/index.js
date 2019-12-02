@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/dialog/index"
-    }
-});
 import { VantComponent } from "../common/component";
 import { button } from "../mixins/button";
 import { openType } from "../mixins/open-type";

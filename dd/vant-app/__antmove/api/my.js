@@ -991,7 +991,20 @@ const apiObj = {startBeaconDiscovery:{fn: function fn (obj = {}) {
                 obj.fileName = obj.name;
                 delete obj.name;
             }
+            const pathArr =  obj.filePath.split('.');
             obj.fileType = 'image';
+            const fileType = {
+                'video': ['ogg', 'avi', 'wma', 'rmvb', 'rm', 'flash', 'mp4', '3gp'],
+                'audio': ['wav', 'mp3'],
+            };
+            let typeName = pathArr[pathArr.length-1];
+            Object.keys(fileType).forEach(key => {
+                fileType[key].forEach (item => {
+                    if (typeName.toLowerCase() === item) {
+                        obj.fileType = key;
+                    }
+                });
+            });
             my.uploadFile(obj);
             const task = {
                 abort () { },
@@ -1363,5 +1376,18 @@ const apiObj = {startBeaconDiscovery:{fn: function fn (obj = {}) {
                     });
                 }
             }
+        },},hideHomeButton:{fn: function fn (obj = {}) {
+            let hideHomeButtonProps = descObj.hideHomeButton.body.params.props
+            let param = utils.defineGetter(obj, hideHomeButtonProps, function (obj, prop) {
+                    utils.warn(
+                        `hideHomeButton的返回值不支持 ${prop} 属性!`,
+                        {
+                            apiName: `hideHomeButton/${prop}`,
+                            errorType: hideHomeButtonProps[prop].type,
+                            type: 'api'
+                        }
+                    )
+                });
+           return my.hideBackHome(param);
         },},}
 module.exports = apiObj;

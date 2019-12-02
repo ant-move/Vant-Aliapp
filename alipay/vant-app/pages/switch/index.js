@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "pages/switch/index"
-    }
-});
 import createPage from "../../common/page";
 import Dialog from "../../dist/dialog/dialog";
 createPage({

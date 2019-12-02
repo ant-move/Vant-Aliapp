@@ -1,4 +1,4 @@
-<view class='swipe-cell-index {{className}}' ref='saveChildRef0'>
+<view class='swipe-cell-index {{className}}' onChildRef='saveChildRef0'>
   <view class='van-swipe-cell' data-key='cell' catchTap='onClick' onTouchStart='startDrag' catchTouchMove='onDrag' catchTouchEnd='endDrag' catchTouchCancel='endDrag'>
     <view style='{{ wrapperStyle }}'>
       <view a:if='{{ leftWidth }}' class='van-swipe-cell__left' data-key='left' catchTap='onClick'>

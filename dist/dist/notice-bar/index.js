@@ -12,6 +12,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 var _my = require("../../__antmove/api/index.js")(my);
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/notice-bar/index"
+  }
+});
 var FONT_COLOR = "#ed6a0c";
 var BG_COLOR = "#fffbe8";
 (0, _component.VantComponent)({

@@ -1,4 +1,4 @@
-<view class='badge-group-index {{className}}' ref='saveChildRef0'>
+<view class='badge-group-index {{className}}' onChildRef='saveChildRef0'>
   <view class='van-badge-group van-hairline--top-bottom {{customClass}}'>
     <slot>
     </slot>

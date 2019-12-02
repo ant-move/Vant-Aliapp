@@ -1,38 +1,38 @@
 <view class='page-container-classname'>
-                <demo-block title='基础用法' padding=" " ref='saveChildRef1'>
-  <van-row ref='saveChildRef2'>
-    <van-col span='{{8}}' custom-class='dark' ref='saveChildRef3'>
+                <demo-block title='基础用法' padding=" " onChildRef='saveChildRef1' _parent_ref="{{isMounted}}">
+  <van-row onChildRef='saveChildRef2'>
+    <van-col span='{{8}}' custom-class='dark' _parent_ref="{{isMounted}}" onChildRef='saveChildRef3'>
       span: 8
     </van-col>
-    <van-col span='{{8}}' custom-class='light' ref='saveChildRef4'>
+    <van-col span='{{8}}' custom-class='light' _parent_ref="{{isMounted}}" onChildRef='saveChildRef4'>
       span: 8
     </van-col>
-    <van-col span='{{8}}' custom-class='dark' ref='saveChildRef5'>
+    <van-col span='{{8}}' custom-class='dark' _parent_ref="{{isMounted}}" onChildRef='saveChildRef5'>
       span: 8
     </van-col>
   </van-row>
-  <van-row ref='saveChildRef6'>
-    <van-col span='{{4}}' custom-class='dark' ref='saveChildRef7'>
+  <van-row onChildRef='saveChildRef6'>
+    <van-col span='{{4}}' custom-class='dark' _parent_ref="{{isMounted}}" onChildRef='saveChildRef7'>
       span: 4
     </van-col>
-    <van-col span='{{10}}' offset='{{4}}' custom-class='light' ref='saveChildRef8'>
+    <van-col span='{{10}}' offset='{{4}}' custom-class='light' _parent_ref="{{isMounted}}" onChildRef='saveChildRef8'>
       offset: 4, span: 10
     </van-col>
   </van-row>
-  <van-row ref='saveChildRef9'>
-    <van-col offset='{{12}}' span='{{12}}' custom-class='dark' ref='saveChildRef10'>
+  <van-row onChildRef='saveChildRef9'>
+    <van-col offset='{{12}}' span='{{12}}' custom-class='dark' _parent_ref="{{isMounted}}" onChildRef='saveChildRef10'>
       offset: 12, span: 12
     </van-col>
   </van-row>
-</demo-block><demo-block title='在列元素之间增加间距' padding=" " ref='saveChildRef11'>
-  <van-row gutter='{{20}}' ref='saveChildRef12'>
-    <van-col span='{{8}}' custom-class='dark' ref='saveChildRef13'>
+</demo-block><demo-block title='在列元素之间增加间距' padding=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef11'>
+  <van-row gutter='{{20}}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef12'>
+    <van-col span='{{8}}' custom-class='dark' _parent_ref="{{isMounted}}" onChildRef='saveChildRef13'>
       span: 8
     </van-col>
-    <van-col span='{{8}}' custom-class='light' ref='saveChildRef14'>
+    <van-col span='{{8}}' custom-class='light' _parent_ref="{{isMounted}}" onChildRef='saveChildRef14'>
       span: 8
     </van-col>
-    <van-col span='{{8}}' custom-class='dark' ref='saveChildRef15'>
+    <van-col span='{{8}}' custom-class='dark' _parent_ref="{{isMounted}}" onChildRef='saveChildRef15'>
       span: 8
     </van-col>
   </van-row>

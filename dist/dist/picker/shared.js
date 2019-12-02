@@ -4,6 +4,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.pickerProps = void 0;
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/picker/index"
+  }
+});
 var pickerProps = {
   title: String,
   loading: Boolean,

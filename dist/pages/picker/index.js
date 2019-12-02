@@ -6,6 +6,12 @@ var _toast = _interopRequireDefault(require("../../dist/toast/toast"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "pages/picker/index"
+  }
+});
 (0, _page["default"])({
   data: {
     column1: ["杭州", "宁波", "温州", "嘉兴", "湖州"],

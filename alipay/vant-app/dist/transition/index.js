@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/transition/index"
-    }
-});
 import { VantComponent } from "../common/component";
 import { transition } from "../mixins/transition";
 VantComponent({

@@ -4,6 +4,12 @@ var _link = require("../mixins/link");
 
 var _component = require("../common/component");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/cell/index"
+  }
+});
 (0, _component.VantComponent)({
   classes: ["title-class", "label-class", "value-class", "right-icon-class", "hover-class"],
   mixins: [_link.link],

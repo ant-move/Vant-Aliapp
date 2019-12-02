@@ -6,6 +6,12 @@ var _transition = require("../mixins/transition");
 
 var _safeArea = require("../mixins/safe-area");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/popup/index"
+  }
+});
 (0, _component.VantComponent)({
   classes: ["enter-class", "enter-active-class", "enter-to-class", "leave-class", "leave-active-class", "leave-to-class"],
   mixins: [(0, _transition.transition)(false), (0, _safeArea.safeArea)()],

@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "pages/radio/index"
-    }
-});
 import createPage from "../../common/page";
 createPage({
     data: {

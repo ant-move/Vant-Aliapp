@@ -96,6 +96,10 @@ VantComponent({
 
     beforeCreate() {
         this.child = [];
+        let num = Number(new Date());
+        this.setData({
+            num
+        });
     },
 
     mounted() {
@@ -163,10 +167,6 @@ VantComponent({
                 lineWidth,
                 lineHeight
             } = this.data;
-            let num = Number(new Date());
-            this.setData({
-                num
-            });
             this.getRect(`.vant_tabs_${this.data.num}`, true).then(rects => {
                 const rect = rects[active];
                 if (!rect) return false;

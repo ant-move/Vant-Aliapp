@@ -1,60 +1,60 @@
 <view class='page-container-classname'>
-                <demo-block title='基础用法' onChildRef='saveChildRef1' _parent_ref="{{isMounted}}">
-  <van-cell-group onChildRef='saveChildRef2'>
-    <van-cell title='单元格' value='内容' _parent_ref="{{isMounted}}" onChildRef='saveChildRef3'>
+                <demo-block title='基础用法' ref='saveChildRef1'>
+  <van-cell-group ref='saveChildRef2'>
+    <van-cell title='单元格' value='内容' ref='saveChildRef3'>
     </van-cell>
-    <van-cell title='单元格' value='内容' label='描述信息' border='{{ false }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef4'>
+    <van-cell title='单元格' value='内容' label='描述信息' border='{{ false }}' ref='saveChildRef4'>
     </van-cell>
   </van-cell-group>
-</demo-block><demo-block title='单元格大小' _parent_ref="{{isMounted}}" onChildRef='saveChildRef5'>
-  <van-cell-group onChildRef='saveChildRef6'>
-    <van-cell title='单元格' value='内容' size='large' _parent_ref="{{isMounted}}" onChildRef='saveChildRef7'>
+</demo-block><demo-block title='单元格大小' ref='saveChildRef5'>
+  <van-cell-group ref='saveChildRef6'>
+    <van-cell title='单元格' value='内容' size='large' ref='saveChildRef7'>
     </van-cell>
-    <van-cell title='单元格' value='内容' size='large' use-label-slot=" " border='{{ false }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef8'>
+    <van-cell title='单元格' value='内容' size='large' use-label-slot=" " border='{{ false }}' ref='saveChildRef8'>
       <view slot='label'>
         描述信息
       </view>
     </van-cell>
   </van-cell-group>
-</demo-block><demo-block title='展示图标' _parent_ref="{{isMounted}}" onChildRef='saveChildRef9'>
-  <van-cell title='单元格' value='内容' icon='location-o' border='{{ false }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef10'>
+</demo-block><demo-block title='展示图标' ref='saveChildRef9'>
+  <van-cell title='单元格' value='内容' icon='location-o' border='{{ false }}' ref='saveChildRef10'>
   </van-cell>
-</demo-block><demo-block title='展示箭头' _parent_ref="{{isMounted}}" onChildRef='saveChildRef11'>
-  <van-cell title='单元格' is-link=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef12'>
+</demo-block><demo-block title='展示箭头' ref='saveChildRef11'>
+  <van-cell title='单元格' is-link=" " ref='saveChildRef12'>
   </van-cell>
-  <van-cell title='单元格' value='内容' is-link=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef13'>
+  <van-cell title='单元格' value='内容' is-link=" " ref='saveChildRef13'>
   </van-cell>
-  <van-cell title='单元格' is-link=" " arrow-direction='down' value='内容' border='{{ false }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef14'>
+  <van-cell title='单元格' is-link=" " arrow-direction='down' value='内容' border='{{ false }}' ref='saveChildRef14'>
   </van-cell>
-</demo-block><demo-block title='页面跳转' _parent_ref="{{isMounted}}" onChildRef='saveChildRef15'>
-  <van-cell title='单元格' is-link=" " url='/pages/dashboard/index' _parent_ref="{{isMounted}}" onChildRef='saveChildRef16'>
+</demo-block><demo-block title='页面跳转' ref='saveChildRef15'>
+  <van-cell title='单元格' is-link=" " url='/pages/dashboard/index' ref='saveChildRef16'>
   </van-cell>
-  <van-cell title='单元格' is-link=" " url='/pages/dashboard/index' link-type='redirectTo' _parent_ref="{{isMounted}}" onChildRef='saveChildRef17'>
+  <van-cell title='单元格' is-link=" " url='/pages/dashboard/index' link-type='redirectTo' ref='saveChildRef17'>
   </van-cell>
-</demo-block><demo-block title='分组标题' _parent_ref="{{isMounted}}" onChildRef='saveChildRef18'>
-  <van-cell-group title='分组 1' _parent_ref="{{isMounted}}" onChildRef='saveChildRef19'>
-    <van-cell title='单元格' value='内容' _parent_ref="{{isMounted}}" onChildRef='saveChildRef20'>
+</demo-block><demo-block title='分组标题' ref='saveChildRef18'>
+  <van-cell-group title='分组 1' ref='saveChildRef19'>
+    <van-cell title='单元格' value='内容' ref='saveChildRef20'>
     </van-cell>
   </van-cell-group>
-  <van-cell-group title='分组 2' _parent_ref="{{isMounted}}" onChildRef='saveChildRef21'>
-    <van-cell title='单元格' value='内容' _parent_ref="{{isMounted}}" onChildRef='saveChildRef22'>
+  <van-cell-group title='分组 2' ref='saveChildRef21'>
+    <van-cell title='单元格' value='内容' ref='saveChildRef22'>
     </van-cell>
   </van-cell-group>
-</demo-block><demo-block title='高级用法' _parent_ref="{{isMounted}}" onChildRef='saveChildRef23'>
-  <van-cell value='内容' icon='shop-o' is-link=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef24'>
+</demo-block><demo-block title='高级用法' ref='saveChildRef23'>
+  <van-cell value='内容' icon='shop-o' is-link=" " ref='saveChildRef24'>
     <view slot='title'>
       <view class='title'>
         单元格
       </view>
-      <van-tag type='danger' _parent_ref="{{isMounted}}" onChildRef='saveChildRef25'>
+      <van-tag type='danger' ref='saveChildRef25'>
         标签
       </van-tag>
     </view>
   </van-cell>
-  <van-cell title='单元格' icon='location-o' is-link=" " _parent_ref="{{isMounted}}" onChildRef='saveChildRef26'>
+  <van-cell title='单元格' icon='location-o' is-link=" " ref='saveChildRef26'>
   </van-cell>
-  <van-cell title='单元格' border='{{ false }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef27'>
-    <van-icon slot='right-icon' name='search' _parent_ref="{{isMounted}}" onChildRef='saveChildRef28'>
+  <van-cell title='单元格' border='{{ false }}' ref='saveChildRef27'>
+    <van-icon slot='right-icon' name='search' ref='saveChildRef28'>
     </van-icon>
   </van-cell>
 </demo-block>

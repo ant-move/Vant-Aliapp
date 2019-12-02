@@ -1,11 +1,11 @@
-<view class='submit-bar-index {{className}}' onChildRef='saveChildRef0'>
+<view class='submit-bar-index {{className}}' ref='saveChildRef0'>
   <import-sjs from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
   <view class='van-submit-bar {{customClass}}'>
     <slot name='top'>
     </slot>
     <view class='van-submit-bar__tip'>
-      <van-icon a:if='{{ tipIcon }}' size='12px' name='{{ tipIcon }}' custom-class='van-submit-bar__tip-icon' _parent_ref="{{isMounted}}" onChildRef='saveChildRef1'>
+      <van-icon a:if='{{ tipIcon }}' size='12px' name='{{ tipIcon }}' custom-class='van-submit-bar__tip-icon' ref='saveChildRef1'>
       </van-icon>
       <view a:if='{{ hasTip }}' class='van-submit-bar__tip-text'>
         {{ tip }}
@@ -32,7 +32,7 @@
           {{ suffixLabel }}
         </text>
       </view>
-      <van-button my-class='van-submit-bar__button' square=" " size='large' type='{{ buttonType }}' loading='{{ loading }}' disabled='{{ disabled }}' class='van-submit-bar__button' custom-class='{{buttonClass}}' _parent_ref="{{isMounted}}" onClick='onSubmit' onChildRef='saveChildRef2'>
+      <van-button my-class='van-submit-bar__button' square=" " size='large' type='{{ buttonType }}' loading='{{ loading }}' disabled='{{ disabled }}' class='van-submit-bar__button' custom-class='{{buttonClass}}' onClick='onSubmit' ref='saveChildRef2'>
         {{ loading ? '' : buttonText }}
       </van-button>
     </view>

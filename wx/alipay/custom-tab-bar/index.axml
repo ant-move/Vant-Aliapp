@@ -1,9 +1,0 @@
-<view class='custom-tab-bar-index {{className}}' onChildRef='saveChildRef0'>
-  <van-tabbar active='{{ active }}' _parent_ref="{{isMounted}}" onChange='onChange' onChildRef='saveChildRef1'>
-    <van-tabbar-item a:for='{{ list }}' a:key='*this' icon='{{ item.icon }}' ref-numbers='{{ list }}' _parent_ref="{{isMounted}}" onChildRef='saveChildRef2'>
-      {{
-    item.text
-  }}
-    </van-tabbar-item>
-  </van-tabbar>
-</view>

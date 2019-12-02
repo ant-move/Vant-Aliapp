@@ -1,16 +1,16 @@
 <view class='page-container-classname'>
-                <demo-block title='基础用法' onChildRef='saveChildRef1' _parent_ref="{{isMounted}}">
-  <van-submit-bar price='{{ 3050 }}' button-text='提交订单' custom-class='van-submit-bar' safe-area-inset-bottom='{{ false }}' _parent_ref="{{isMounted}}" onSubmit='onClickButton' onChildRef='saveChildRef2'>
+                <demo-block title='基础用法' ref='saveChildRef1'>
+  <van-submit-bar price='{{ 3050 }}' button-text='提交订单' custom-class='van-submit-bar' safe-area-inset-bottom='{{ false }}' onSubmit='onClickButton' ref='saveChildRef2'>
   </van-submit-bar>
-</demo-block><demo-block title='禁用状态' _parent_ref="{{isMounted}}" onChildRef='saveChildRef3'>
-  <van-submit-bar disabled=" " price='{{ 3050 }}' button-text='提交订单' tip='您的收货地址不支持同城送, 我们已为您推荐快递' tip-icon='//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png' custom-class='van-submit-bar' safe-area-inset-bottom='{{ false }}' _parent_ref="{{isMounted}}" onSubmit='onClickButton' onChildRef='saveChildRef4'>
+</demo-block><demo-block title='禁用状态' ref='saveChildRef3'>
+  <van-submit-bar disabled=" " price='{{ 3050 }}' button-text='提交订单' tip='您的收货地址不支持同城送, 我们已为您推荐快递' tip-icon='//img.yzcdn.cn/public_files/2017/8/10/6af5b7168eed548100d9041f07b7c616.png' custom-class='van-submit-bar' safe-area-inset-bottom='{{ false }}' onSubmit='onClickButton' ref='saveChildRef4'>
   </van-submit-bar>
-</demo-block><demo-block title='加载状态' _parent_ref="{{isMounted}}" onChildRef='saveChildRef5'>
-  <van-submit-bar loading=" " price='{{ 3050 }}' button-text='提交订单' custom-class='van-submit-bar' safe-area-inset-bottom='{{ false }}' _parent_ref="{{isMounted}}" onSubmit='onClickButton' onChildRef='saveChildRef6'>
+</demo-block><demo-block title='加载状态' ref='saveChildRef5'>
+  <van-submit-bar loading=" " price='{{ 3050 }}' button-text='提交订单' custom-class='van-submit-bar' safe-area-inset-bottom='{{ false }}' onSubmit='onClickButton' ref='saveChildRef6'>
   </van-submit-bar>
-</demo-block><demo-block title='高级用法' _parent_ref="{{isMounted}}" onChildRef='saveChildRef7'>
-  <van-submit-bar price='{{ 3050 }}' button-text='提交订单' custom-class='van-submit-bar' tip='{{ true }}' safe-area-inset-bottom='{{ false }}' _parent_ref="{{isMounted}}" onSubmit='onClickButton' onChildRef='saveChildRef8'>
-    <van-tag type='primary' custom-class='van-tag' _parent_ref="{{isMounted}}" onChildRef='saveChildRef9'>
+</demo-block><demo-block title='高级用法' ref='saveChildRef7'>
+  <van-submit-bar price='{{ 3050 }}' button-text='提交订单' custom-class='van-submit-bar' tip='{{ true }}' safe-area-inset-bottom='{{ false }}' onSubmit='onClickButton' ref='saveChildRef8'>
+    <van-tag type='primary' custom-class='van-tag' ref='saveChildRef9'>
       标签
     </van-tag>
     <view slot='tip'>
@@ -19,6 +19,6 @@
       </text>
     </view>
   </van-submit-bar>
-</demo-block><van-toast class='van-toast' _parent_ref="{{isMounted}}" onChildRef='saveChildRef10'>
+</demo-block><van-toast class='van-toast' ref='saveChildRef10'>
 </van-toast>
             </view>

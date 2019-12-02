@@ -1,9 +1,3 @@
-my.setStorageSync({
-    key: "activeComponent",
-    data: {
-        is: "dist/collapse-item/index"
-    }
-});
 import { VantComponent } from "../common/component";
 
 const nextTick = () => new Promise(resolve => setTimeout(resolve, 20));

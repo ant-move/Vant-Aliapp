@@ -8,6 +8,12 @@ var _openType = require("../mixins/open-type");
 
 var _my = require("../../__antmove/api/index.js")(my);
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/button/index"
+  }
+});
 (0, _component.VantComponent)({
   mixins: [_button.button, _openType.openType],
   classes: ["hover-class", "loading-class", "my-class"],

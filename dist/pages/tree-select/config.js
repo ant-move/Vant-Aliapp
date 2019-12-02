@@ -4,6 +4,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "pages/tree-select/index"
+  }
+});
 var _default = {
   pro1Name: "浙江",
   pro1: [{

@@ -7,6 +7,12 @@ exports["default"] = void 0;
 
 var _utils = require("../common/utils");
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "dist/toast/index"
+  }
+});
 var defaultOptions = {
   type: "text",
   mask: false,

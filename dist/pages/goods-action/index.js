@@ -6,6 +6,12 @@ var _toast = _interopRequireDefault(require("../../dist/toast/toast"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+my.setStorageSync({
+  key: "activeComponent",
+  data: {
+    is: "pages/goods-action/index"
+  }
+});
 (0, _page["default"])({
   onClickIcon: function onClickIcon() {
     // wx.showToast({ title: '点击图标', icon: 'none' });

@@ -1,5 +1,6 @@
 @import "../common/index.acss";
-.van-overlay {
+
+.overlay-index .van-overlay {
     position: fixed;
     top: 0;
     right: 0;
