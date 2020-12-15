@@ -10,6 +10,4 @@ function keys(obj) {
     });
 }
 
-module.exports = {
-  keys: keys
-};
+module.exports.keys = keys;

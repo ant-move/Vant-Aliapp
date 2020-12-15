@@ -14,12 +14,13 @@ page {
 .right-nav {
   padding: 0 10px;
   line-height: 44px !important;
+  background-color: #fff;
 }
 
-.tab-class {
+.special-tab {
   transition: all 0.25s ease-in-out;
 }
 
-.tab-active-class {
+.special-tab-active {
   font-size: 1.05em !important;
 }

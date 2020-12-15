@@ -1,7 +1,0 @@
-{
-	"defaultTitle": "Tag 标记",
-	"usingComponents": {
-		"demo-block": "../../components/demo-block/index",
-		"van-tag": "../../dist/tag/index"
-	}
-}

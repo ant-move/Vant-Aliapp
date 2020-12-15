@@ -1,12 +1,14 @@
-
-  
-  <wxs unscope-style src="../wxs/utils.wxs" module="utils" />
+<wxs src="../wxs/utils.wxs" module="utils" />
+<view is-alipay unscope-style style="{{style}}" class='{{className}} {{utils.bem("button", [{block}]).match(/van-button--block/) ? "button-index-block" : "button-index-inlineflex"}}'>
   <button
     id="{{ id }}"
-    class="{{className}} my-class custom-class {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, hairline, unclickable: disabled || loading }]) }} {{ hairline ? 'van-hairline--surround' : '' }} {{className}}"
-    open-type="{{ openType }}"
+    data-detail="{{ dataset }}"
+    class="custom-class {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, hairline, unclickable: disabled || loading }]) }} {{ hairline ? 'van-hairline--surround' : '' }}"
     hover-class="van-button--active hover-class"
     lang="{{ lang }}"
+    form-type="{{ formType }}"
+    style="{{ baseStyle }} {{ customStyle }}"
+    open-type="{{ disabled ? '' : openType }}"
     business-id="{{ businessId }}"
     session-from="{{ sessionFrom }}"
     send-message-title="{{ sendMessageTitle }}"
@@ -15,7 +17,7 @@
     show-message-card="{{ showMessageCard }}"
     app-parameter="{{ appParameter }}"
     aria-label="{{ ariaLabel }}"
-    bindtap="onClick"
+    bindtap="{{ !disabled ? 'onClick' : 'noop' }}"
     bindgetuserinfo="bindGetUserInfo"
     bindcontact="bindContact"
     bindgetphonenumber="bindGetPhoneNumber"
@@ -27,12 +29,10 @@
       <van-loading
         custom-class="loading-class"
         size="{{ loadingSize }}"
-        color="{{ type === 'default' ? '#c9c9c9' : '' }}"
+        type="{{ loadingType }}"
+        color="{{ loadingColor(type,color,plain) }}"
       />
-      <view
-        wx:if="{{ loadingText }}"
-        class="van-button__loading-text"
-      >
+      <view wx:if="{{ loadingText }}" class="van-button__loading-text">
         {{ loadingText }}
       </view>
     </block>
@@ -41,6 +41,59 @@
         wx:if="{{ icon }}"
         size="1.2em"
         name="{{ icon }}"
+        class-prefix="{{ classPrefix }}"
+        class="van-button__icon"
+        custom-style="line-height: inherit;"
+      />
+      <view class="van-button__text">
+        <slot />
+      </view>
+    </block>
+  </button>
+</view>
+  <button
+    is-wx
+    id="{{ id }}"
+    data-detail="{{ dataset }}"
+    class="custom-class {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, hairline, unclickable: disabled || loading }]) }} {{ hairline ? 'van-hairline--surround' : '' }}"
+    hover-class="van-button--active hover-class"
+    lang="{{ lang }}"
+    form-type="{{ formType }}"
+    style="{{ baseStyle }} {{ customStyle }}"
+    open-type="{{ disabled ? '' : openType }}"
+    business-id="{{ businessId }}"
+    session-from="{{ sessionFrom }}"
+    send-message-title="{{ sendMessageTitle }}"
+    send-message-path="{{ sendMessagePath }}"
+    send-message-img="{{ sendMessageImg }}"
+    show-message-card="{{ showMessageCard }}"
+    app-parameter="{{ appParameter }}"
+    aria-label="{{ ariaLabel }}"
+    bindtap="{{ !disabled ? 'onClick' : 'noop' }}"
+    bindgetuserinfo="bindGetUserInfo"
+    bindcontact="bindContact"
+    bindgetphonenumber="bindGetPhoneNumber"
+    binderror="bindError"
+    bindlaunchapp="bindLaunchApp"
+    bindopensetting="bindOpenSetting"
+  >
+    <block wx:if="{{ loading }}">
+      <van-loading
+        custom-class="loading-class"
+        size="{{ loadingSize }}"
+        type="{{ loadingType }}"
+        color="{{ loadingColor(type,color,plain) }}"
+      />
+      <view wx:if="{{ loadingText }}" class="van-button__loading-text">
+        {{ loadingText }}
+      </view>
+    </block>
+    <block wx:else>
+      <van-icon
+        wx:if="{{ icon }}"
+        size="1.2em"
+        name="{{ icon }}"
+        class-prefix="{{ classPrefix }}"
         class="van-button__icon"
         custom-style="line-height: inherit;"
       />
@@ -50,3 +103,17 @@
     </block>
   </button>
 
+<wxs module="loadingColor">
+function get(type, color,plain) {
+  if(plain) {
+    return color ? color: '#c9c9c9';
+  }
+
+  if(type === 'default') {
+    return '#c9c9c9';
+  }
+  return 'white';
+}
+
+module.exports = get;
+</wxs>

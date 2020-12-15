@@ -1,8 +1,0 @@
-{
-	"defaultTitle": "Steps 步骤条",
-	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-button": "vant-aliapp/dist/dist/button/index",
-		"van-steps": "vant-aliapp/dist/dist/steps/index"
-	}
-}

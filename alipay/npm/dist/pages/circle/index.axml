@@ -1,0 +1,24 @@
+<view class='page-container-classname' ref='saveChildRef0'>
+  <demo-block title='基础用法' ref='saveChildRef1'>
+    <van-circle type='2d' value='{{ value }}' text='{{ value }}%' ref='saveChildRef3' id='canvas1'>
+    </van-circle>
+  </demo-block>
+  <demo-block title='样式定制' ref='saveChildRef4'>
+    <van-circle value='{{ value }}' stroke-width='{{ 6 }}' type='2d' text='宽度定制' ref='saveChildRef10' id='canvas2'>
+    </van-circle>
+    <van-circle value='{{ value }}' layer-color='#eee' type='2d' color='#ee0a24' text='颜色定制' ref='saveChildRef11' id='canvas3'>
+    </van-circle>
+    <van-circle value='{{ value }}' type='2d' color='{{ gradientColor }}' text='渐变色' ref='saveChildRef12' id='canvas4'>
+    </van-circle>
+    <van-circle value='{{ value }}' type='2d' color='#07c160' clockwise='{{ false }}' text='逆时针' ref='saveChildRef13' id='canvas5'>
+    </van-circle>
+    <van-circle value='{{ value }}' type='2d' size='{{120}}' text='大小定制' ref='saveChildRef14' id='canvas6'>
+    </van-circle>
+  </demo-block>
+  <van-button type='primary' size='small' data-step='10' onClick='run' ref='saveChildRef15'>
+    增加
+  </van-button>
+  <van-button type='danger' size='small' data-step='-10' onClick='run' ref='saveChildRef16'>
+    减少
+  </van-button>
+</view>

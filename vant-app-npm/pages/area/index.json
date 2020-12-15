@@ -1,8 +1,0 @@
-{
-	"defaultTitle": "Area 省市区选择",
-	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-area": "vant-aliapp/dist/dist/area/index",
-		"van-toast": "vant-aliapp/dist/dist/toast/index"
-	}
-}

@@ -1,0 +1,34 @@
+<view class='month-index {{className}}' style='{{style}}' ref='saveChildRef0'>
+  <import-sjs from='/dist/wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <import-sjs from='./index.sjs' name='computed'>
+  </import-sjs>
+  <view class='van-calendar__month' style='{{ computed.getMonthStyle(visible, date, rowHeight) }}'>
+    <view a:if='{{ showMonthTitle }}' class='van-calendar__month-title'>
+      {{ computed.formatMonthTitle(date) }}
+    </view>
+    <view a:if='{{ visible }}' class='van-calendar__days'>
+      <view a:if='{{ showMark }}' class='van-calendar__month-mark'>
+        {{ computed.getMark(date) }}
+      </view>
+      <view a:for='{{ days }}' a:key='{{index}}' style='{{ computed.getDayStyle(item.type, index, date, rowHeight, color) }}' class="{{ utils.bem('calendar__day', [item.type]) }} {{ item.className }}" data-index='{{ index }}' ref-numbers='{{ days }}' onTap='antmoveAction' data-antmove-tap='onClick'>
+        <view a:if="{{ item.type === 'selected' }}" class='van-calendar__selected-day' style='background: {{ color }}'>
+          <view a:if='{{ item.topInfo }}' class='van-calendar__top-info'>
+            {{ item.topInfo }}
+          </view>
+          {{ item.text }}          <view a:if='{{ item.bottomInfo }}' class='van-calendar__bottom-info'>
+            {{ item.bottomInfo }}
+          </view>
+        </view>
+        <view a:else >
+          <view a:if='{{ item.topInfo }}' class='van-calendar__top-info'>
+            {{ item.topInfo }}
+          </view>
+          {{ item.text }}          <view a:if='{{ item.bottomInfo }}' class='van-calendar__bottom-info'>
+            {{ item.bottomInfo }}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

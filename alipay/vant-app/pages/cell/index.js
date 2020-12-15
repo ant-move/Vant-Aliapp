@@ -1,2 +1,2 @@
-import createPage from "../../common/page";
-createPage();
+import Page from "../../common/page";
+Page();

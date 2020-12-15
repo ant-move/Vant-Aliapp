@@ -1,33 +1,27 @@
 export const basic = Behavior({
-    methods: {
-        $emit(...args) {
-            this.triggerEvent(...args);
-        },
-      getRect(selector, all) {
-        return new Promise(resolve => {
-          let res = wx.createSelectorQuery();
-          res.in(this)
-          [all ? "selectAll" : "select"](selector)
-            .boundingClientRect(rect => {
-              if (all && Array.isArray(rect) && rect.length) {
-                if (rect[0] && Array.isArray(rect[0])) {
-                  resolve(rect[0]);
-                } else {
-                  resolve(rect);
-                }
-              }
-
-              if (!all && rect) {
-                if (rect[0] && Array.isArray(rect[0])) {
-                  resolve(rect[0]);
-                } else {
-                  resolve(rect);
-                }
-
-              }
-            })
-            .exec();
-        });
-      }
-    }
+  methods: {
+    $emit(name, detail, options) {
+      this.triggerEvent(name, detail, options);
+    },
+    set(data, callback) {
+      this.setData(data, callback);
+      return new Promise((resolve) => wx.nextTick(resolve));
+    },
+    getRect(selector, all) {
+      return new Promise((resolve) => {
+        wx.createSelectorQuery()
+          .in(this)
+          [all ? 'selectAll' : 'select'](selector)
+          .boundingClientRect((rect) => {
+            if (all && Array.isArray(rect) && rect.length) {
+              resolve(rect);
+            }
+            if (!all && rect) {
+              resolve(rect);
+            }
+          })
+          .exec();
+      });
+    },
+  },
 });

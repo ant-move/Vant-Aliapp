@@ -1,0 +1,11 @@
+.grid-index {
+    display: block;
+    height: initial;
+}
+@import "../common/index.acss";
+
+.grid-index .van-grid {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+}

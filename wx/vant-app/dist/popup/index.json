@@ -1,8 +1,7 @@
 {
   "component": true,
-  "transparentTitle": "always",
-  "defaultTitle": "",
   "usingComponents": {
+    "van-icon": "../icon/index",
     "van-overlay": "../overlay/index"
   }
 }

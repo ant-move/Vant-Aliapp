@@ -1,7 +1,8 @@
-import createPage from '../../common/page';
+import Page from '../../common/page';
 
-createPage({
+Page({
   data: {
-    text: '足协杯战线连续第2年上演广州德比战，上赛季半决赛上恒大以两回合5-3的总比分淘汰富力。'
-  }
+    text: '在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。',
+    shortText: '技术是开发它的人的共同灵魂。',
+  },
 });

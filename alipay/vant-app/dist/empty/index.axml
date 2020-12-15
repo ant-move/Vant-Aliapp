@@ -1,0 +1,25 @@
+<view class='empty-index {{className}}' style='{{style}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class='{{customClass}} van-empty'>
+    <view class='van-empty__image'>
+      <slot name='image'>
+      </slot>
+    </view>
+    <view class='van-empty__image'>
+      <image a:if='{{ imageUrl }}' class='van-empty__image__img' src='{{ imageUrl }}'>
+      </image>
+    </view>
+    <view class='van-empty__description'>
+      <slot name='description'>
+      </slot>
+    </view>
+    <view class='van-empty__description'>
+      {{ description }}
+    </view>
+    <view class='van-empty__bottom'>
+      <slot>
+      </slot>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,56 @@
+<view class='page-container-classname' ref='saveChildRef0'>
+  <demo-block title='基本用法' ref='saveChildRef1'>
+    <van-grid ref='saveChildRef2'>
+      <van-grid-item icon='photo-o' text='文字' a:for='{{ array4 }}' a:key='{{*this}}' ref-numbers='{{ array4 }}' ref='saveChildRef3'>
+      </van-grid-item>
+    </van-grid>
+  </demo-block>
+  <demo-block title='自定义列数' ref='saveChildRef4'>
+    <van-grid column-num='3' ref='saveChildRef5'>
+      <van-grid-item icon='photo-o' text='文字' a:for='{{ array6 }}' a:key='{{*this}}' ref-numbers='{{ array6 }}' ref='saveChildRef6'>
+      </van-grid-item>
+    </van-grid>
+  </demo-block>
+  <demo-block title='自定义内容' ref='saveChildRef7'>
+    <van-grid column-num='3' border='{{ false }}' ref='saveChildRef8'>
+      <van-grid-item use-slot=" " a:for='{{ array3 }}' a:for-item='item' a:key='{{*this}}' ref-numbers='{{ array3 }}' ref='saveChildRef9'>
+        <image style='width: 100%; height: 90px;' src='https://img.yzcdn.cn/vant/apple-{{ item + 1 }}.jpg'>
+        </image>
+      </van-grid-item>
+    </van-grid>
+  </demo-block>
+  <demo-block title='正方形格子' ref='saveChildRef10'>
+    <van-grid square=" " ref='saveChildRef11'>
+      <van-grid-item icon='photo-o' text='文字' a:for='{{ array8 }}' a:key='{{*this}}' ref-numbers='{{ array8 }}' ref='saveChildRef12'>
+      </van-grid-item>
+    </van-grid>
+  </demo-block>
+  <demo-block title='格子间距' ref='saveChildRef13'>
+    <van-grid gutter='{{ 10 }}' ref='saveChildRef14'>
+      <van-grid-item icon='photo-o' text='文字' a:for='{{ array8 }}' a:key='{{*this}}' ref-numbers='{{ array8 }}' ref='saveChildRef15'>
+      </van-grid-item>
+    </van-grid>
+  </demo-block>
+  <demo-block title='内容横排' ref='saveChildRef16'>
+    <van-grid direction='horizontal' column-num='3' ref='saveChildRef17'>
+      <van-grid-item icon='photo-o' text='文字' a:for='{{ array3 }}' a:key='{{*this}}' ref-numbers='{{ array3 }}' ref='saveChildRef18'>
+      </van-grid-item>
+    </van-grid>
+  </demo-block>
+  <demo-block title='页面跳转' ref='saveChildRef19'>
+    <van-grid clickable=" " column-num='2' ref='saveChildRef20'>
+      <van-grid-item icon='home-o' link-type='navigateTo' url='/pages/dashboard/index' text='Navigate 跳转' ref='saveChildRef21'>
+      </van-grid-item>
+      <van-grid-item icon='search' link-type='reLaunch' url='/pages/dashboard/index' text='ReLaunch 跳转' ref='saveChildRef22'>
+      </van-grid-item>
+    </van-grid>
+  </demo-block>
+  <demo-block title='徽标提示' ref='saveChildRef23'>
+    <van-grid column-num='2' ref='saveChildRef24'>
+      <van-grid-item icon='home-o' text='文字' dot=" " ref='saveChildRef25'>
+      </van-grid-item>
+      <van-grid-item icon='search' text='文字' badge='99+' ref='saveChildRef26'>
+      </van-grid-item>
+    </van-grid>
+  </demo-block>
+</view>

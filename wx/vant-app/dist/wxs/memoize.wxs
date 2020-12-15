@@ -4,51 +4,59 @@
  */
 
 function isPrimitive(value) {
-  var type = typeof value;
+  var type = typeof value
   return (
     type === 'boolean' ||
     type === 'number' ||
     type === 'string' ||
     type === 'undefined' ||
     value === null
-  );
+  )
 }
 
 // mock simple fn.call in wxs
-function call(fn, args) {
-  if (args.length === 2) {
+function call(fn, args, len) {
+
+  if (len === 2) {
     return fn(args[0], args[1]);
   }
 
-  if (args.length === 1) {
+  if (len === 1) {
     return fn(args[0]);
   }
 
-  return fn();
+  return fn()
 }
 
-function serializer(args) {
-  if (args.length === 1 && isPrimitive(args[0])) {
+function serializer(args, len) {
+  if (len === 1 && isPrimitive(args[0])) {
     return args[0];
   }
+  var length = 0
+  if (args[1] !== undefined) {
+    length = 2
+  } else if (args[0] !== undefined) {
+    length = 1
+  }
   var obj = {};
-  for (var i = 0; i < args.length; i++) {
+  for (var i = 0; i < len; i++) {
     obj['key' + i] = args[i];
   }
-  return JSON.stringify(obj);
+
+  return JSON.stringify(obj)
 }
 
 function memoize(fn) {
-  var cache = {};
+  var cache = {}
 
   return function() {
-    var key = serializer(arguments);
+    var key = serializer(arguments, arguments.length);
     if (cache[key] === undefined) {
-      cache[key] = call(fn, arguments);
+      cache[key] = call(fn, arguments, arguments.length );
     }
 
-    return cache[key];
-  };
+    return cache[key]
+  }
 }
 
 module.exports.memoize = memoize;

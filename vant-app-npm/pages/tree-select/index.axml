@@ -1,6 +1,0 @@
-<view class='page-container-classname'>
-                <demo-block title='基础用法' >
-  <van-tree-select items='{{ items }}' main-active-index='{{ mainActiveIndex }}' active-id='{{ activeId }}' content-item-class='content-item-class' onClick-item='onClickItem' onClick-nav='onClickNav'>
-  </van-tree-select>
-</demo-block>
-            </view>

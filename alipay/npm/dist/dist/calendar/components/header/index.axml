@@ -1,0 +1,18 @@
+<view class='header-index {{className}}' style='{{style}}' ref='saveChildRef0'>
+  <view class='van-calendar__header'>
+    <block a:if='{{ showTitle }}'>
+      <view class='van-calendar__header-title'>
+        <slot name='title'>
+        </slot>
+      </view>
+      <view class='van-calendar__header-title'>
+        {{ title }}
+      </view>
+    </block>
+    <view class='van-calendar__weekdays'>
+      <view a:for='{{ weekdays }}' a:key='{{index}}' class='van-calendar__weekday' ref-numbers='{{ weekdays }}'>
+        {{ item }}
+      </view>
+    </view>
+  </view>
+</view>

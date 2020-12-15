@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "Circle 进度条",
+	"usingComponents": {
+		"demo-block": "/components/demo-block/index",
+		"van-button": "/dist/button/index",
+		"van-circle": "/dist/circle/index"
+	}
+}

@@ -1,3 +1,16 @@
-import createPage from '../../common/page';
+import Page from '../../common/page';
 
-createPage();
+Page({
+  data: {
+    show: {
+      success: true,
+      primary: true
+    }
+  },
+
+  onClose(event) {
+    this.setData({
+      [`show.${event.target.id}`]: false
+    });
+  }
+});

@@ -1,0 +1,11 @@
+{
+	"defaultTitle": "Dropdown Menu",
+	"usingComponents": {
+		"demo-block": "/components/demo-block/index",
+		"van-button": "/dist/button/index",
+		"van-cell": "/dist/cell/index",
+		"van-switch": "/dist/switch/index",
+		"van-dropdown-menu": "/dist/dropdown-menu/index",
+		"van-dropdown-item": "/dist/dropdown-item/index"
+	}
+}

@@ -1,7 +1,7 @@
-import createPage from '../../common/page';
+import Page from '../../common/page';
 import Dialog from '../../dist/dialog/dialog';
 
-createPage({
+Page({
   data: {
     checked: true,
     checked2: true

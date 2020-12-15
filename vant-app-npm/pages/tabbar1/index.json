@@ -1,8 +1,0 @@
-{
-	"defaultTitle": "Tabbar 标签栏",
-	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-tabbar": "vant-aliapp/dist/dist/tabbar/index",
-		"van-tabbar-item": "vant-aliapp/dist/dist/tabbar-item/index"
-	}
-}

@@ -1,9 +1,0 @@
-{
-	"defaultTitle": "Collapse 折叠面板",
-	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-icon": "vant-aliapp/dist/dist/icon/index",
-		"van-collapse": "vant-aliapp/dist/dist/collapse/index",
-		"van-collapse-item": "vant-aliapp/dist/dist/collapse-item/index"
-	}
-}

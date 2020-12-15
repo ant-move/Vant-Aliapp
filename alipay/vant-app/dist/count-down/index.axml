@@ -1,0 +1,9 @@
+<view class='count-down-index {{className}}' style='{{style}}' ref='saveChildRef0'>
+  <view class='van-count-down'>
+    <slot a:if='{{ useSlot }}'>
+    </slot>
+    <block a:else >
+      {{ formattedTime }}
+    </block>
+  </view>
+</view>

@@ -1,4 +1,4 @@
 {
 	"component": true,
-	"usingComponents": { "van-transition": "../transition/index" }
+	"usingComponents": { "van-transition": "/dist/transition/index" }
 }

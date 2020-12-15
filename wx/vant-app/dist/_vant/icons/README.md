@@ -1,35 +1,23 @@
-<p>
-    <a href="https://github.com/youzan/"><img alt="logo" width="36" height="36" src="https://img.yzcdn.cn/public_files/2017/02/09/e84aa8cbbf7852688c86218c1f3bbf17.png" alt="youzan">
-    </a>
-</p>
-<p align="center">
-    <img alt="logo" src="https://img.yzcdn.cn/vant/logo.png" width="120" height="120" style="margin-bottom: 10px;">
-</p>
-
-<h1 align="center" style="margin: 30px 0 35px;">Vant Icons</h1>
+# Vant Icons
 
 ## Install
 
 #### NPM
 
 ```shell
-npm i _vant/icons -S
+npm i @vant/icons -S
 ```
 
 #### YARN
 
 ```shell
-yarn add _vant/icons
+yarn add @vant/icons
 ```
 
 ## Document
 
 - [Usage in Vue](https://youzan.github.io/vant/#/zh-CN/icon)
 - [Usage in Weapp](https://youzan.github.io/vant-weapp/#/icon)
-
-## Preview
-
-<img src="https://b.yzcdn.cn/vant-icons/icon_preview_1212.png" width="100%">
 
 ## Contribution
 
@@ -42,4 +30,5 @@ yarn add _vant/icons
 
 1. Add new icon to assets/icons.sketch
 2. Add icon name to src/config.js
-3. Make a Pull Request
+3. Add icon codepoints to build/codepoints.js
+4. Make a Pull Request

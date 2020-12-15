@@ -1,0 +1,55 @@
+<view class='page-container-classname' ref='saveChildRef0'>
+  <demo-block custom-class='white' title='基础用法' ref='saveChildRef1'>
+    <van-dropdown-menu ref='saveChildRef2'>
+      <van-dropdown-item value='{{ value1 }}' options='{{ option1 }}' ref='saveChildRef3'>
+      </van-dropdown-item>
+      <van-dropdown-item value='{{ value2 }}' options='{{ option2 }}' ref='saveChildRef4'>
+      </van-dropdown-item>
+    </van-dropdown-menu>
+  </demo-block>
+  <demo-block custom-class='white' title='自定义菜单内容' ref='saveChildRef5'>
+    <van-dropdown-menu ref='saveChildRef6'>
+      <van-dropdown-item value='{{ value1 }}' options='{{ option1 }}' ref='saveChildRef7'>
+      </van-dropdown-item>
+      <van-dropdown-item id='item' title='{{ itemTitle }}' ref='saveChildRef8'>
+        <van-cell title='{{ switchTitle1 }}' ref='saveChildRef9'>
+          <van-switch slot='right-icon' size='24px' style='height: 26px' checked='{{ switch1 }}' active-color='#ee0a24' onChange='onSwitch1Change' ref='saveChildRef10'>
+          </van-switch>
+        </van-cell>
+        <van-cell title='{{ switchTitle2 }}' ref='saveChildRef11'>
+          <van-switch slot='right-icon' size='24px' style='height: 26px' checked='{{ switch2 }}' active-color='#ee0a24' onChange='onSwitch2Change' ref='saveChildRef12'>
+          </van-switch>
+        </van-cell>
+        <view style='padding: 5px 16px;'>
+          <van-button type='danger' block=" " round=" " onClick='onConfirm' ref='saveChildRef13'>
+            确认
+          </van-button>
+        </view>
+      </van-dropdown-item>
+    </van-dropdown-menu>
+  </demo-block>
+  <demo-block custom-class='white' title='自定义选中状态颜色' ref='saveChildRef14'>
+    <van-dropdown-menu active-color='#1989fa' ref='saveChildRef15'>
+      <van-dropdown-item value='{{ value1 }}' options='{{ option1 }}' ref='saveChildRef16'>
+      </van-dropdown-item>
+      <van-dropdown-item value='{{ value2 }}' options='{{ option2 }}' ref='saveChildRef17'>
+      </van-dropdown-item>
+    </van-dropdown-menu>
+  </demo-block>
+  <demo-block custom-class='white' title='向上展开' ref='saveChildRef18'>
+    <van-dropdown-menu direction='up' ref='saveChildRef19'>
+      <van-dropdown-item value='{{ value1 }}' options='{{ option1 }}' ref='saveChildRef20'>
+      </van-dropdown-item>
+      <van-dropdown-item value='{{ value2 }}' options='{{ option2 }}' ref='saveChildRef21'>
+      </van-dropdown-item>
+    </van-dropdown-menu>
+  </demo-block>
+  <demo-block custom-class='white' title='禁用菜单' ref='saveChildRef22'>
+    <van-dropdown-menu ref='saveChildRef23'>
+      <van-dropdown-item value='{{ value1 }}' disabled=" " options='{{ option1 }}' ref='saveChildRef24'>
+      </van-dropdown-item>
+      <van-dropdown-item value='{{ value2 }}' disabled=" " options='{{ option2 }}' ref='saveChildRef25'>
+      </van-dropdown-item>
+    </van-dropdown-menu>
+  </demo-block>
+</view>

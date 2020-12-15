@@ -1,0 +1,10 @@
+{
+	"defaultTitle": "Image 图片",
+	"usingComponents": {
+		"demo-block": "/components/demo-block/index",
+		"van-col": "/dist/col/index",
+		"van-image": "/dist/image/index",
+		"van-loading": "/dist/loading/index",
+		"van-row": "/dist/row/index"
+	}
+}

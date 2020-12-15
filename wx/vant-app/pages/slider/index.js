@@ -1,6 +1,6 @@
-import createPage from '../../common/page';
+import Page from '../../common/page';
 
-createPage({
+Page({
   data: {
     currentValue: 50
   },

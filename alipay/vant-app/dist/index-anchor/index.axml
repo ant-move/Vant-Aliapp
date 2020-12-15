@@ -1,0 +1,12 @@
+<view class='index-anchor-index {{className}}' style='{{style}}' ref='saveChildRef0'>
+  <view class='van-index-anchor-wrapper' style='{{ wrapperStyle }}'>
+    <view class="van-index-anchor {{ active ? 'van-index-anchor--active van-hairline--bottom' : '' }}" style='{{ anchorStyle }}'>
+      <slot a:if='{{ useSlot }}'>
+      </slot>
+      <block a:else >
+        <text>
+          {{ index }}        </text>
+      </block>
+    </view>
+  </view>
+</view>

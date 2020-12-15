@@ -1,0 +1,31 @@
+<van-tabs active='{{ activeTab }}' ref='saveChildRef1' onChange='onChange'>
+  <van-tab title='基础用法' ref='saveChildRef2'>
+    <van-index-bar a:if='{{ activeTab === 0 }}' scroll-top='{{ scrollTop }}' ref='saveChildRef3'>
+      <view a:for='{{ indexList }}' a:for-item='item' a:key='{{item}}' ref-numbers='{{ indexList }}'>
+        <van-index-anchor index='{{ item }}' ref='saveChildRef4'>
+        </van-index-anchor>
+        <van-cell title='文本' ref='saveChildRef5'>
+        </van-cell>
+        <van-cell title='文本' ref='saveChildRef6'>
+        </van-cell>
+        <van-cell title='文本' ref='saveChildRef7'>
+        </van-cell>
+      </view>
+    </van-index-bar>
+  </van-tab>
+  <van-tab title='自定义索引列表' ref='saveChildRef8'>
+    <van-index-bar a:if='{{ activeTab === 1 }}' index-list='{{ customIndexList }}' scroll-top='{{ scrollTop }}' ref='saveChildRef9'>
+      <view a:for='{{ customIndexList }}' a:key='{{index}}' ref-numbers='{{ customIndexList }}'>
+        <van-index-anchor use-slot=" " index='{{ item }}' ref='saveChildRef10'>
+          <text>
+            标题{{ item }}          </text>
+        </van-index-anchor>        <van-cell title='文本' ref='saveChildRef11'>
+        </van-cell>
+        <van-cell title='文本' ref='saveChildRef12'>
+        </van-cell>
+        <van-cell title='文本' ref='saveChildRef13'>
+        </van-cell>
+      </view>
+    </van-index-bar>
+  </van-tab>
+</van-tabs>

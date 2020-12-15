@@ -1,0 +1,69 @@
+<view class='page-container-classname' ref='saveChildRef0'>
+  <demo-block title='基础用法' padding=" " ref='saveChildRef1'>
+    <van-row ref='saveChildRef2'>
+      <van-image width='100' height='100' src='{{ src }}' ref='saveChildRef3'>
+      </van-image>
+    </van-row>
+  </demo-block>
+  <demo-block title='填充模式' padding=" " ref='saveChildRef4'>
+    <van-row gutter='20' ref='saveChildRef5'>
+      <van-col a:for='{{ fits }}' a:for-item='fit' a:key='{{*this}}' span='8' ref-numbers='{{ fits }}' ref='saveChildRef6'>
+        <van-image fit='{{ fit }}' width='100%' height='27vw' src='{{ src }}' ref='saveChildRef7'>
+        </van-image>
+        <view class='text'>
+          {{ fit }}
+        </view>
+      </van-col>
+    </van-row>
+  </demo-block>
+  <demo-block title='圆形图片' padding=" " ref='saveChildRef8'>
+    <van-row gutter='20' ref='saveChildRef9'>
+      <van-col a:for='{{ fits }}' a:for-item='fit' a:key='{{*this}}' span='8' ref-numbers='{{ fits }}' ref='saveChildRef10'>
+        <van-image round=" " fit='{{ fit }}' width='100%' height='27vw' src='{{ src }}' ref='saveChildRef11'>
+        </van-image>
+        <view class='text'>
+          {{ fit }}
+        </view>
+      </van-col>
+    </van-row>
+  </demo-block>
+  <demo-block title='加载中提示' padding=" " ref='saveChildRef12'>
+    <van-row gutter='20' ref='saveChildRef13'>
+      <van-col span='8' ref='saveChildRef14'>
+        <van-image width='100%' height='27vw' ref='saveChildRef15'>
+        </van-image>
+        <view class='text'>
+          默认提示
+        </view>
+      </van-col>
+      <van-col span='8' ref='saveChildRef16'>
+        <van-image width='100%' height='27vw' use-loading-slot=" " ref='saveChildRef17'>
+          <van-loading slot='loading' type='spinner' size='20' vertical=" " ref='saveChildRef18'>
+          </van-loading>
+        </van-image>
+        <view class='text'>
+          自定义提示
+        </view>
+      </van-col>
+    </van-row>
+  </demo-block>
+  <demo-block title='加载失败提示' padding=" " ref='saveChildRef19'>
+    <van-row gutter='20' ref='saveChildRef20'>
+      <van-col span='8' ref='saveChildRef21'>
+        <van-image width='100%' height='27vw' src='x' ref='saveChildRef22'>
+        </van-image>
+        <view class='text'>
+          默认提示
+        </view>
+      </van-col>
+      <van-col span='8' ref='saveChildRef23'>
+        <van-image width='100%' height='27vw' src='x' use-error-slot=" " ref='saveChildRef24'>
+          <text slot='error'>
+            加载失败          </text>
+        </van-image>        <view class='text'>
+          自定义提示
+        </view>
+      </van-col>
+    </van-row>
+  </demo-block>
+</view>

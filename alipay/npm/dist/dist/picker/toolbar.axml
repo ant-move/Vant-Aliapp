@@ -1,0 +1,15 @@
+<template name='toolbar' ref='saveChildRef0'>
+  <view a:if='{{ showToolbar }}' class='van-picker__toolbar toolbar-class'>
+    <view class='van-picker__cancel' hover-class='van-picker__cancel--hover' hover-stay-time='70' data-type='cancel' onTap='antmoveAction' data-antmove-tap='emit'>
+      {{ cancelButtonText }}
+    </view>
+    <view a:if='{{ title }}' class='van-picker__title van-ellipsis'>
+      {{
+      title
+    }}
+    </view>
+    <view class='van-picker__confirm' hover-class='van-picker__confirm--hover' hover-stay-time='70' data-type='confirm' onTap='antmoveAction' data-antmove-tap='emit'>
+      {{ confirmButtonText }}
+    </view>
+  </view>
+</template>

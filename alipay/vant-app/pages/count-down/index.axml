@@ -1,0 +1,35 @@
+<view class='page-container-classname' ref='saveChildRef0'>
+  <demo-block title='基础用法' ref='saveChildRef1'>
+    <van-count-down time='{{ time }}' ref='saveChildRef2'>
+    </van-count-down>
+  </demo-block>
+  <demo-block title='自定义格式' ref='saveChildRef3'>
+    <van-count-down time='{{ time }}' format='DD 天 HH 时 mm 分 ss 秒' ref='saveChildRef4'>
+    </van-count-down>
+  </demo-block>
+  <demo-block title='毫秒级渲染' ref='saveChildRef5'>
+    <van-count-down millisecond=" " time='{{ time }}' format='HH:mm:ss:SSS' ref='saveChildRef6'>
+    </van-count-down>
+  </demo-block>
+  <demo-block title='自定义样式' ref='saveChildRef7'>
+    <van-count-down use-slot=" " time='{{ time }}' onChange='onChange' ref='saveChildRef8'>
+      <text class='item'>
+        {{ timeData.hours }}      </text>      <text class='item'>
+        {{ timeData.minutes }}      </text>      <text class='item'>
+        {{ timeData.seconds }}      </text>
+    </van-count-down>
+  </demo-block>  <demo-block title='手动控制' ref='saveChildRef9'>
+    <van-count-down class='control-count-down' millisecond=" " time='{{ 3000 }}' auto-start='{{ false }}' format='ss:SSS' onFinish='finished' ref='saveChildRef10'>
+    </van-count-down>
+    <van-grid clickable=" " column-num='3' ref='saveChildRef11'>
+      <van-grid-item text='开始' icon='play-circle-o' onClick='start' ref='saveChildRef12'>
+      </van-grid-item>
+      <van-grid-item text='暂停' icon='pause-circle-o' onClick='pause' ref='saveChildRef13'>
+      </van-grid-item>
+      <van-grid-item text='重置' icon='replay' onClick='reset' ref='saveChildRef14'>
+      </van-grid-item>
+    </van-grid>
+  </demo-block>
+  <van-toast id='van-toast' ref='saveChildRef15'>
+  </van-toast>
+</view>

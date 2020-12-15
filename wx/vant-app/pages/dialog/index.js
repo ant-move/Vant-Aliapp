@@ -1,60 +1,79 @@
-import createPage from '../../common/page';
+import Page from '../../common/page';
 import Dialog from '../../dist/dialog/dialog';
 
 const message = '代码是写出来给人看的，附带能在机器上运行';
 
-createPage({
+Page({
   data: {
-    show: false
+    show: false,
   },
 
   showCustomDialog() {
     this.setData({ show: true });
   },
 
-  onClickAlert() {
-    Dialog.alert({
-      title: '标题',
-      message
-    });
-  },
-
   getUserInfo(event) {
     console.log(event.detail);
   },
 
+  onClickThemeAlert() {
+    Dialog.alert({
+      title: '标题',
+      theme: 'round-button',
+      message,
+    });
+  },
+
+  onClickThemeAlert2() {
+    Dialog.alert({
+      theme: 'round-button',
+      message,
+    });
+  },
+
+  onClickAlert() {
+    Dialog.alert({
+      title: '标题',
+      message,
+    });
+  },
+
   onClickAlert2() {
     Dialog.alert({
-      message
+      message,
     });
   },
 
   onClickConfirm() {
     Dialog.confirm({
       title: '标题',
-      message
+      message,
     });
   },
 
   onClickAsyncClose() {
+    const beforeClose = (action) =>
+      new Promise((resolve) => {
+        setTimeout(() => {
+          if (action === 'confirm') {
+            resolve(true);
+          } else {
+            // 拦截取消操作
+            resolve(false);
+          }
+        }, 1000);
+      });
+
     Dialog.confirm({
       title: '标题',
       message,
-      asyncClose: true
-    })
-      .then(() => {
-        setTimeout(() => {
-          Dialog.close();
-        }, 1000);
-      })
-      .catch(() => {
-        Dialog.close();
-      });
+      beforeClose,
+    });
   },
 
-  onClose(event) {
+  onClose() {
     this.setData({
-      show: false
+      show: false,
     });
-  }
+  },
 });

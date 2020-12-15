@@ -1,0 +1,36 @@
+<view class='page-container-classname' ref='saveChildRef0'>
+  <demo-block title='基础用法' ref='saveChildRef1'>
+    <van-sticky ref='saveChildRef2'>
+      <van-button type='primary' custom-style='margin-left: 15px' ref='saveChildRef3'>
+        基础用法
+      </van-button>
+    </van-sticky>
+  </demo-block>
+  <demo-block title='吸顶距离' ref='saveChildRef4'>
+    <van-sticky offset-top='{{ 50 }}' ref='saveChildRef5'>
+      <van-button type='info' custom-style='margin-left: 115px' ref='saveChildRef6'>
+        吸顶距离
+      </van-button>
+    </van-sticky>
+  </demo-block>
+  <demo-block title='指定容器' ref='saveChildRef7'>
+    <view id='container' style='height: 150px; background-color: #fff;'>
+      <van-sticky container='{{ container }}' ref='saveChildRef8'>
+        <van-button type='warning' custom-style='margin-left: 215px;' ref='saveChildRef9'>
+          指定容器
+        </van-button>
+      </van-sticky>
+    </view>
+  </demo-block>
+  <demo-block title='嵌套在 scroll-view 内使用' ref='saveChildRef10'>
+    <scroll-view scroll-y=" " id='scroller' style='height: 200px; background-color: #fff;' onScroll='onScroll'>
+      <view style='height: 400px; padding-top: 50px;'>
+        <van-sticky scroll-top='{{ scrollTop }}' offset-top='{{ offsetTop }}' ref='saveChildRef11'>
+          <van-button type='warning' ref='saveChildRef12'>
+            嵌套在 scroll-view 内
+          </van-button>
+        </van-sticky>
+      </view>
+    </scroll-view>
+  </demo-block>
+</view>

@@ -2,7 +2,8 @@
   wx:if="{{ inited }}"
   class="van-transition custom-class {{ classes }}"
   style="-webkit-transition-duration:{{ currentDuration }}ms; transition-duration:{{ currentDuration }}ms; {{ display ? '' : 'display: none;' }} {{ customStyle }}"
-  bind:transitionend="onTransitionEnd"  onTap="onTap"
+  bind:transitionend="onTransitionEnd" 
+  bind:tap='dealTap'
 >
   <slot />
 </view>

@@ -1,0 +1,46 @@
+<view class='page-container-classname' ref='saveChildRef0'>
+  <demo-block title='基础用法' padding=" " ref='saveChildRef1'>
+    <van-uploader name='1' file-list='{{ fileList1 }}' onAfter-read='afterRead' onDelete='delete' onClick-preview='clickPreview' ref='saveChildRef2'>
+    </van-uploader>
+  </demo-block>
+  <demo-block title='上传视频' padding=" " ref='saveChildRef3'>
+    <van-uploader name='7' accept='video' file-list='{{ fileList7 }}' onAfter-read='afterRead' onDelete='delete' ref='saveChildRef4'>
+    </van-uploader>
+  </demo-block>
+  <demo-block title='文件预览' padding=" " ref='saveChildRef5'>
+    <van-uploader name='2' file-list='{{ fileList2 }}' multiple=" " onAfter-read='afterRead' onDelete='delete' onClick-preview='clickPreview' ref='saveChildRef6'>
+    </van-uploader>
+  </demo-block>
+  <demo-block title='隐藏上传按钮' padding=" " ref='saveChildRef7'>
+    <van-uploader name='2' file-list='{{ fileList2 }}' multiple=" " show-upload='{{ false }}' onAfter-read='afterRead' onDelete='delete' onClick-preview='clickPreview' ref='saveChildRef8'>
+    </van-uploader>
+  </demo-block>
+  <demo-block title='上传状态' padding=" " ref='saveChildRef9'>
+    <van-uploader name='8' file-list='{{ fileList8 }}' multiple=" " max-count='{{ 2 }}' onAfter-read='afterRead' onDelete='delete' onClick-preview='clickPreview' ref='saveChildRef10'>
+    </van-uploader>
+  </demo-block>
+  <demo-block title='限制上传数量' padding=" " ref='saveChildRef11'>
+    <van-uploader name='3' file-list='{{ fileList3 }}' multiple=" " max-count='{{ 2 }}' onAfter-read='afterRead' onDelete='delete' onClick-preview='clickPreview' ref='saveChildRef12'>
+    </van-uploader>
+  </demo-block>
+  <demo-block title='自定义上传样式' padding=" " ref='saveChildRef13'>
+    <van-uploader name='4' file-list='{{ fileList4 }}' max-count='{{ 2 }}' use-slot='{{ true }}' onAfter-read='afterRead' onDelete='delete' onClick-preview='clickPreview' ref='saveChildRef14'>
+      <van-button icon='photo' type='primary' ref='saveChildRef15'>
+        上传图片
+      </van-button>
+    </van-uploader>
+  </demo-block>
+  <demo-block title='上传前校验' padding=" " ref='saveChildRef16'>
+    <van-uploader name='5' file-list='{{ fileList5 }}' use-before-read='{{ true }}' onBefore-read='beforeRead' onAfter-read='afterRead' onDelete='delete' onClick-preview='clickPreview' ref='saveChildRef17'>
+    </van-uploader>
+  </demo-block>
+  <demo-block title='云存储上传' padding=" " ref='saveChildRef18'>
+    <van-uploader name='6' file-list='{{ fileList6 }}' use-before-read='{{ true }}' onBefore-read='beforeRead' onAfter-read='afterRead' onDelete='delete' onClick-preview='clickPreview' ref='saveChildRef19'>
+    </van-uploader>
+    <view class='demo-margin-bottom'>
+      <van-button type='primary' onClick='uploadToCloud' ref='saveChildRef20'>
+        上传至云存储
+      </van-button>
+    </view>
+  </demo-block>
+</view>

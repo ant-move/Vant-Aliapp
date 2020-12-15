@@ -1,7 +1,7 @@
-import createPage from '../../common/page';
+import Page from '../../common/page';
 import Toast from '../../dist/toast/toast';
 
-createPage({
+Page({
   onClickButton() {
     Toast('点击按钮');
   },

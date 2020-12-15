@@ -1,0 +1,31 @@
+<view class='share-sheet-index {{className}}' style='{{style}}' ref='saveChildRef0'>
+  <import-sjs from='./index.sjs' name='computed'>
+  </import-sjs>
+  <van-popup round=" " class='van-share-sheet' show='{{ show }}' position='bottom' overlay='{{ overlay }}' duration='{{ duration }}' z-index='{{ zIndex }}' overlay-style='{{ overlayStyle }}' close-on-click-overlay='{{ closeOnClickOverlay }}' safe-area-inset-bottom='{{ safeAreaInsetBottom }}' onClose='onClose' onClick-overlay='onClickOverlay' ref='saveChildRef1'>
+    <view class='van-share-sheet__header'>
+      <view class='van-share-sheet__title'>
+        <slot name='title'>
+        </slot>
+      </view>
+      <view a:if='{{ title }}' class='van-share-sheet__title'>
+        {{ title }}
+      </view>
+      <view class='van-share-sheet__description'>
+        <slot name='description'>
+        </slot>
+      </view>
+      <view a:if='{{ description }}' class='van-share-sheet__description'>
+        {{ description }}
+      </view>
+    </view>
+    <block a:if='{{ computed.isMulti(options) }}'>
+      <options a:for='{{ options }}' show-border='{{ index !== 0 }}' a:key='{{*this}}' options='{{ item }}' onSelect='onSelect' ref-numbers='{{ options }}' ref='saveChildRef2'>
+      </options>
+    </block>
+    <options a:else  options='{{ options }}' onSelect='onSelect' ref='saveChildRef3'>
+    </options>
+    <btn type='button' class='van-share-sheet__cancel button-style' onTap='antmoveAction' data-antmove-tap='onCancel'>
+      {{ cancelText }}
+    </btn>
+  </van-popup>
+</view>

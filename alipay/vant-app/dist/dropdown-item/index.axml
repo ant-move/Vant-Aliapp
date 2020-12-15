@@ -1,0 +1,17 @@
+<view class='dropdown-item-index {{className}}' style='{{style}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view a:if='{{ showWrapper }}' class="{{ utils.bem('dropdown-item', direction) }}" style='{{ wrapperStyle }}'>
+    <van-popup show='{{ showPopup }}' custom-style='position: absolute;{{ popupStyle }}' overlay-style='position: absolute;' overlay='{{ overlay }}' position="{{ direction === 'down' ? 'top' : 'bottom' }}" duration='{{ transition ? duration : 0 }}' close-on-click-overlay='{{ closeOnClickOverlay }}' onEnter='onOpen' onLeave='onClose' onClose='toggle' onAfter-enter='onOpened' onAfter-leave='onClosed' ref='saveChildRef1'>
+      <van-cell a:for='{{ options }}' a:key='{{*this}}' data-option='{{ item }}' class="{{ utils.bem('dropdown-item__option', { active: item.value === value } ) }}" clickable=" " icon='{{ item.icon }}' onClick='onOptionTap' ref-numbers='{{ options }}' ref='saveChildRef2'>
+        <view slot='title' class='van-dropdown-item__title' style="{{ item.value === value  ? 'color:' + activeColor : '' }}">
+          {{ item.text }}
+        </view>
+        <van-icon a:if='{{ item.value === value }}' name='success' class='van-dropdown-item__icon' color='{{ activeColor }}' ref='saveChildRef3'>
+        </van-icon>
+      </van-cell>
+      <slot>
+      </slot>
+    </van-popup>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "Overlay 遮罩层",
+	"usingComponents": {
+		"demo-block": "/components/demo-block/index",
+		"van-button": "/dist/button/index",
+		"van-overlay": "/dist/overlay/index"
+	}
+}

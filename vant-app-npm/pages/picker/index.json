@@ -1,8 +1,0 @@
-{
-	"defaultTitle": "Picker 选择器",
-	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-toast": "vant-aliapp/dist/dist/toast/index",
-		"van-picker": "vant-aliapp/dist/dist/picker/index"
-	}
-}

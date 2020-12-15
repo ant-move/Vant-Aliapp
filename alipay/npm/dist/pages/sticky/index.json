@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "Sticky 粘性布局",
+	"usingComponents": {
+		"demo-block": "/components/demo-block/index",
+		"van-button": "/dist/button/index",
+		"van-sticky": "/dist/sticky/index"
+	}
+}

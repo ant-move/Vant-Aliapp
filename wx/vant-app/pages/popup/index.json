@@ -1,6 +1,3 @@
 {
-  "navigationBarTitleText": "",
-  "navigationStyle": "custom",
-  "transparentTitle": "always"
-
+  "navigationBarTitleText": "Popup 弹出层"
 }

@@ -1,24 +1,22 @@
-import createPage from '../../common/page';
+import Page from '../../common/page';
 
-createPage({
+Page({
   data: {
     checkbox1: true,
     checkbox2: true,
     checkbox3: true,
+    checkboxLabel: true,
+    checkboxSize: true,
+    checkboxShape: true,
     list: ['a', 'b', 'c'],
     result: ['a', 'b'],
     result2: [],
     result3: [],
-    icon: {
-      normal:
-        'https://img.yzcdn.cn/public_files/2017/10/13/c547715be149dd3faa817e4a948b40c4.png',
-      active:
-        'https://img.yzcdn.cn/public_files/2017/10/13/793c77793db8641c4c325b7f25bf130d.png'
-    }
+    activeIcon: 'https://img.yzcdn.cn/vant/user-active.png',
+    inactiveIcon: 'https://img.yzcdn.cn/vant/user-inactive.png'
   },
 
   onChange(event) {
-      console.log(event)
     const { key } = event.currentTarget.dataset;
     this.setData({ [key]: event.detail });
   },
@@ -33,7 +31,6 @@ createPage({
   toggle(event) {
     const { index } = event.currentTarget.dataset;
     const checkbox = this.selectComponent(`.checkboxes-${index}`);
-    console.log('toggle')
     checkbox.toggle();
   },
 

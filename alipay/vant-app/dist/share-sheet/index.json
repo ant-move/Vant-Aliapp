@@ -1,0 +1,8 @@
+{
+	"component": true,
+	"usingComponents": {
+		"van-popup": "/dist/popup/index",
+		"options": "./options",
+		"btn": "/__antmove/component/btn/btn"
+	}
+}

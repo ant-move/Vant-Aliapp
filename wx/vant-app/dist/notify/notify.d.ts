@@ -1,12 +1,20 @@
 interface NotifyOptions {
-    text: string;
-    color?: string;
-    backgroundColor?: string;
-    duration?: number;
-    selector?: string;
-    context?: any;
-    safeAreaInsetTop?: boolean;
-    zIndex?: number;
+  type?: 'primary' | 'success' | 'danger' | 'warning';
+  color?: string;
+  zIndex?: number;
+  top?: number;
+  message: string;
+  context?: any;
+  duration?: number;
+  selector?: string;
+  background?: string;
+  safeAreaInsetTop?: boolean;
+  onClick?: () => void;
+  onOpened?: () => void;
+  onClose?: () => void;
 }
-export default function Notify(options: NotifyOptions | string): void;
-export {};
+declare function Notify(options: NotifyOptions | string): any;
+declare namespace Notify {
+  var clear: (options?: NotifyOptions | undefined) => void;
+}
+export default Notify;

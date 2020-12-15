@@ -1,0 +1,20 @@
+<view class='page-container-classname' ref='saveChildRef0'>
+  <demo-block title='基础用法' padding=" " ref='saveChildRef1'>
+    <van-button type='primary' onClick='onClickShow' ref='saveChildRef2'>
+      显示遮罩层
+    </van-button>
+    <van-overlay show='{{ show }}' onClick='onClickHide' ref='saveChildRef3'>
+    </van-overlay>
+  </demo-block>
+  <demo-block title='嵌入内容' padding=" " ref='saveChildRef4'>
+    <van-button type='primary' onClick='onClickShowEmbedded' ref='saveChildRef5'>
+      嵌入内容
+    </van-button>
+    <van-overlay show='{{ showEmbedded }}' onClick='onClickHideEmbedded' ref='saveChildRef6'>
+      <view class='wrapper'>
+        <view class='block' catchTap='antmoveAction' data-antmove-tap='noop'>
+        </view>
+      </view>
+    </van-overlay>
+  </demo-block>
+</view>

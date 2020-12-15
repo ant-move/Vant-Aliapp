@@ -1,7 +1,7 @@
-import createPage from '../../common/page';
+import Page from '../../common/page';
 import Toast from '../../dist/toast/toast';
 
-createPage({
+Page({
   showToast() {
     Toast('提示内容');
   },
@@ -11,7 +11,15 @@ createPage({
   },
 
   showLoadingToast() {
-    Toast.loading({ mask: true, message: '加载中...' });
+    Toast.loading({ message: '加载中...', forbidClick: true });
+  },
+
+  showCustomLoadingToast() {
+    Toast.loading({
+      message: '加载中...',
+      forbidClick: true,
+      loadingType: 'spinner',
+    });
   },
 
   showSuccessToast() {
@@ -22,13 +30,12 @@ createPage({
     Toast.fail('失败提示');
   },
 
-  showCustomizedToast(duration) {
-    const text = second => `倒计时 ${second} 秒`;
+  showCustomizedToast() {
+    const text = (second) => `倒计时 ${second} 秒`;
     const toast = Toast.loading({
       duration: 0,
       forbidClick: true,
-      loadingType: 'spinner',
-      message: text(3)
+      message: text(3),
     });
 
     let second = 3;
@@ -41,5 +48,5 @@ createPage({
         Toast.clear();
       }
     }, 1000);
-  }
+  },
 });

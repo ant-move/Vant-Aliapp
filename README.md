@@ -42,7 +42,7 @@ yarn add vant-aliapp --production
 
 ### 下载代码使用
 
-直接通过 git 下载 Vant Aliapp 源代码，并将`dist`目录拷贝到自己的项目中
+直接通过 git 下载 Vant Aliapp 源代码，并将`alipay/vant-app`目录拷贝到自己的项目中
 ```bash
 git clone https://github.com/ant-move/Vant-Aliapp.git
 ```
@@ -54,7 +54,7 @@ git clone https://github.com/ant-move/Vant-Aliapp.git
 ```json
 {
   "usingComponents": {
-    "van-button": "/path/to/vant-weapp/dist/button/index"
+    "van-button": "/path/to/vant-app/dist/button/index"
   }
 }
 ```

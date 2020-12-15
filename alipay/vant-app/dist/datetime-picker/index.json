@@ -1,1 +1,1 @@
-{ "component": true, "usingComponents": { "van-picker": "../picker/index" } }
+{ "component": true, "usingComponents": { "van-picker": "/dist/picker/index" } }

@@ -1,0 +1,20 @@
+<view class='share-sheet-options {{className}}' style='{{style}}' ref='saveChildRef0'>
+  <import-sjs from='./options.sjs' name='computed'>
+  </import-sjs>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class="{{ utils.bem('share-sheet__options', { border: showBorder }) }}">
+    <view a:for='{{ options }}' a:key='{{index}}' class='van-share-sheet__option' data-index='{{ index }}' ref-numbers='{{ options }}' onTap='antmoveAction' data-antmove-tap='onSelect'>
+      <btn class='van-share-sheet__button' open-type='{{ item.openType }}'>
+        <image src='{{ computed.getIconURL(item.icon) }}' class='van-share-sheet__icon'>
+        </image>
+      </btn>
+      <view a:if='{{ item.name }}' class='van-share-sheet__name'>
+        {{ item.name }}
+      </view>
+      <view a:if='{{ item.description }}' class='van-share-sheet__option-description'>
+        {{ item.description }}
+      </view>
+    </view>
+  </view>
+</view>

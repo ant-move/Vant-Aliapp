@@ -1,0 +1,58 @@
+<view class='page-container-classname' ref='saveChildRef0'>
+  <van-grid column-num='{{ 2 }}' border='{{ false }}' ref='saveChildRef1'>
+    <van-grid-item use-slot=" " ref='saveChildRef2'>
+      <view class='demo-sidebar-title'>
+        基础用法
+      </view>
+      <van-sidebar custom-class='custom-sidebar' ref='saveChildRef3'>
+        <van-sidebar-item title='标签名' ref='saveChildRef4'>
+        </van-sidebar-item>
+        <van-sidebar-item title='标签名' ref='saveChildRef5'>
+        </van-sidebar-item>
+        <van-sidebar-item title='标签名' ref='saveChildRef6'>
+        </van-sidebar-item>
+      </van-sidebar>
+    </van-grid-item>
+    <van-grid-item use-slot=" " ref='saveChildRef7'>
+      <view class='demo-sidebar-title'>
+        徽标提示
+      </view>
+      <van-sidebar custom-class='custom-sidebar' ref='saveChildRef8'>
+        <van-sidebar-item title='标签名' dot=" " ref='saveChildRef9'>
+        </van-sidebar-item>
+        <van-sidebar-item title='标签名' badge='5' ref='saveChildRef10'>
+        </van-sidebar-item>
+        <van-sidebar-item title='标签名' badge='99+' ref='saveChildRef11'>
+        </van-sidebar-item>
+      </van-sidebar>
+    </van-grid-item>
+    <van-grid-item use-slot=" " ref='saveChildRef12'>
+      <view class='demo-sidebar-title'>
+        禁用选项
+      </view>
+      <van-sidebar custom-class='custom-sidebar' ref='saveChildRef13'>
+        <van-sidebar-item title='标签名' ref='saveChildRef14'>
+        </van-sidebar-item>
+        <van-sidebar-item title='标签名' disabled=" " ref='saveChildRef15'>
+        </van-sidebar-item>
+        <van-sidebar-item title='标签名' ref='saveChildRef16'>
+        </van-sidebar-item>
+      </van-sidebar>
+    </van-grid-item>
+    <van-grid-item use-slot=" " ref='saveChildRef17'>
+      <view class='demo-sidebar-title'>
+        监听切换事件
+      </view>
+      <van-sidebar custom-class='custom-sidebar' onChange='onChange' ref='saveChildRef18'>
+        <van-sidebar-item title='标签名 1' ref='saveChildRef19'>
+        </van-sidebar-item>
+        <van-sidebar-item title='标签名 2' ref='saveChildRef20'>
+        </van-sidebar-item>
+        <van-sidebar-item title='标签名 3' ref='saveChildRef21'>
+        </van-sidebar-item>
+      </van-sidebar>
+    </van-grid-item>
+  </van-grid>
+  <van-notify id='van-notify' ref='saveChildRef22'>
+  </van-notify>
+</view>

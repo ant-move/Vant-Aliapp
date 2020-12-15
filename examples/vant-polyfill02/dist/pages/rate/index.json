@@ -1,7 +1,0 @@
-{
-	"defaultTitle": "Rate 评分",
-	"usingComponents": {
-		"demo-block": "../../components/demo-block/index",
-		"van-rate": "../../dist/rate/index"
-	}
-}

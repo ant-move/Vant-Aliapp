@@ -1,0 +1,10 @@
+{
+	"defaultTitle": "IndexBar 索引栏",
+	"usingComponents": {
+		"van-cell": "/dist/cell/index",
+		"van-tab": "/dist/tab/index",
+		"van-tabs": "/dist/tabs/index",
+		"van-index-bar": "/dist/index-bar/index",
+		"van-index-anchor": "/dist/index-anchor/index"
+	}
+}

@@ -1,5 +1,5 @@
 <van-picker
-  class="van-datetime-picker  van-datetime-picker-{{cId}}"
+  class="van-datetime-picker"
   active-class="active-class"
   toolbar-class="toolbar-class"
   column-class="column-class"

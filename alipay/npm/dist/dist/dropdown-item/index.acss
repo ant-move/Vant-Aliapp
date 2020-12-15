@@ -1,0 +1,39 @@
+.dropdown-item-index {
+    display: block;
+    height: initial;
+}
+@import "../common/index.acss";
+
+.dropdown-item-index .van-dropdown-item {
+    position: fixed;
+    right: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.dropdown-item-index .van-dropdown-item__option {
+    text-align: left;
+}
+
+.dropdown-item-index
+    .van-dropdown-item__option--active
+    .van-dropdown-item__icon,
+.dropdown-item-index
+    .van-dropdown-item__option--active
+    .van-dropdown-item__title {
+    color: #ee0a24;
+    color: var(--dropdown-menu-option-active-color, #ee0a24);
+}
+
+.dropdown-item-index .van-dropdown-item--up {
+    top: 0;
+}
+
+.dropdown-item-index .van-dropdown-item--down {
+    bottom: 0;
+}
+
+.dropdown-item-index .van-dropdown-item__icon {
+    display: block;
+    line-height: inherit;
+}

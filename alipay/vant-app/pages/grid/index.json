@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "Grid 宫格",
+	"usingComponents": {
+		"demo-block": "/components/demo-block/index",
+		"van-grid": "/dist/grid/index",
+		"van-grid-item": "/dist/grid-item/index"
+	}
+}

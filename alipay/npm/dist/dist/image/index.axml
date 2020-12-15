@@ -1,0 +1,17 @@
+<import-sjs ref='saveChildRef0' from='../wxs/utils.sjs' name='utils'>
+</import-sjs><view style='{{ viewStyle }}' class="{{customClass}} {{ utils.bem('image', { round })}}" unscope-style=" " onTap='antmoveAction' data-antmove-tap='onClick'>
+  <image a:if='{{ !error }}' src='{{ src }}' mode='{{ mode }}' lazy-load='{{ lazyLoad }}' class='{{imageClass}} van-image__img' onLoad='onLoad' onError='onError'>
+  </image>
+  <view a:if='{{ loading && showLoading }}' class='{{loadingClass}} van-image__loading'>
+    <slot a:if='{{ useLoadingSlot }}' name='loading'>
+    </slot>
+    <van-icon a:else  name='photo' class='van-image__loading-icon' ref='saveChildRef1'>
+    </van-icon>
+  </view>
+  <view a:if='{{ error && showError }}' class='{{errorClass}} van-image__error'>
+    <slot a:if='{{ useErrorSlot }}' name='error'>
+    </slot>
+    <van-icon a:else  name='photo-fail' class='van-image__error-icon' ref='saveChildRef2'>
+    </van-icon>
+  </view>
+</view>

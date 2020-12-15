@@ -1,7 +1,7 @@
-import createPage from '../../common/page';
+import Page from '../../common/page';
 import Toast from '../../dist/toast/toast';
 
-createPage({
+Page({
   data: {
     column1: ['杭州', '宁波', '温州', '嘉兴', '湖州'],
     column2: [
@@ -27,7 +27,6 @@ createPage({
   },
 
   onChange1(event) {
-      console.log(event)
     const { value, index } = event.detail;
     Toast(`Value: ${value}, Index：${index}`);
   },

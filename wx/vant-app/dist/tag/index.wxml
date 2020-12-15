@@ -1,8 +1,15 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 
-<view is-inline="true"
-  class="custom-class my-class {{ utils.bem('tag', [size, { mark, plain, round }]) }} {{ plain ? 'van-hairline--surround' : '' }}"
-  style="{{ style }}"
+<view
+  is-inline="inline-flex"
+  class="custom-class {{ utils.bem('tag', [type, size, { mark, plain, round }]) }}"
+  style="{{ color && !plain ? 'background-color: ' + color + ';' : '' }}{{ textColor || (color && plain) ? 'color: ' + (textColor || color) : '' }}"
 >
   <slot />
+  <van-icon
+    wx:if="{{ closeable }}"
+    name="cross"
+    custom-class="van-tag__close"
+    bind:click="onClose"
+  />
 </view>

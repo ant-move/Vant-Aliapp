@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "Calendar 日历",
+	"usingComponents": {
+		"demo-block": "/components/demo-block/index",
+		"van-cell": "/dist/cell/index",
+		"van-calendar": "/dist/calendar/index"
+	}
+}

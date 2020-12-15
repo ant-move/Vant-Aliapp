@@ -34,4 +34,5 @@ function bem(name, conf) {
   traversing(mods, conf);
   return join(name, mods);
 }
+
 module.exports.bem = bem;

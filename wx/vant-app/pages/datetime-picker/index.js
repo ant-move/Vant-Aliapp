@@ -1,7 +1,7 @@
-import createPage from '../../common/page';
+import Page from '../../common/page';
 import Toast from '../../dist/toast/toast';
 
-createPage({
+Page({
   data: {
     minHour: 10,
     maxHour: 20,
@@ -9,16 +9,24 @@ createPage({
     maxDate: new Date(2019, 10, 1).getTime(),
     currentDate1: new Date(2018, 2, 31).getTime(),
     currentDate2: null,
-    currentDate3: new Date(2018, 0, 1).getTime(),
+    currentDate3: new Date(2018, 0, 1),
     currentDate4: '12:00',
     loading: false,
     formatter(type, value) {
       if (type === 'year') {
         return `${value}年`;
-      } else if (type === 'month') {
+      }
+      if (type === 'month') {
         return `${value}月`;
       }
       return value;
+    },
+    filter(type, options) {
+      if (type === 'minute') {
+        return options.filter(option => option % 5 === 0);
+      }
+
+      return options;
     }
   },
 

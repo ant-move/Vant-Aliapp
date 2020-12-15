@@ -1,0 +1,33 @@
+<view class='page-container-classname' ref='saveChildRef0'>
+  <demo-block title='基础用法' padding=" " ref='saveChildRef1'>
+    <van-empty description='描述文字' ref='saveChildRef2'>
+    </van-empty>
+  </demo-block>
+  <demo-block title='图片类型' ref='saveChildRef3'>
+    <van-tabs active='{{ activeTab }}' onChange='onChange' ref='saveChildRef4'>
+      <van-tab title='通用错误' ref='saveChildRef5'>
+        <van-empty image='error' description='描述文字' ref='saveChildRef6'>
+        </van-empty>
+      </van-tab>
+      <van-tab title='网络错误' ref='saveChildRef7'>
+        <van-empty image='network' description='描述文字' ref='saveChildRef8'>
+        </van-empty>
+      </van-tab>
+      <van-tab title='搜索提示' ref='saveChildRef9'>
+        <van-empty image='search' description='描述文字' ref='saveChildRef10'>
+        </van-empty>
+      </van-tab>
+    </van-tabs>
+  </demo-block>
+  <demo-block title='自定义图片' padding=" " ref='saveChildRef11'>
+    <van-empty custom-class='custom-image' image='https://img.yzcdn.cn/vant/custom-empty-image.png' description='描述文字' ref='saveChildRef12'>
+    </van-empty>
+  </demo-block>
+  <demo-block title='底部内容' padding=" " ref='saveChildRef13'>
+    <van-empty description='描述文字' ref='saveChildRef14'>
+      <van-button round=" " type='danger' custom-class='bottom-button' ref='saveChildRef15'>
+        按钮
+      </van-button>
+    </van-empty>
+  </demo-block>
+</view>

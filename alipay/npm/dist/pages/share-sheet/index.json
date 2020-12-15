@@ -1,0 +1,9 @@
+{
+	"defaultTitle": "Card 商品卡片",
+	"usingComponents": {
+		"demo-block": "/components/demo-block/index",
+		"van-cell": "/dist/cell/index",
+		"van-toast": "/dist/toast/index",
+		"van-share-sheet": "/dist/share-sheet/index"
+	}
+}

@@ -1,7 +1,0 @@
-.page-container-classname {
-    background-color: #fff;
-}
-
-.van-rate {
-    margin-left: 15px;
-}

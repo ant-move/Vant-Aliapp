@@ -1,0 +1,10 @@
+.sidebar-index {
+    display: block;
+    height: initial;
+}
+@import "../common/index.acss";
+
+.sidebar-index .van-sidebar {
+    width: 80px;
+    width: var(--sidebar-width, 80px);
+}

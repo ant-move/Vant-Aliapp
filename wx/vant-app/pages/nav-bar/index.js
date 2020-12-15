@@ -1,6 +1,6 @@
-import createPage from '../../common/page';
+import Page from '../../common/page';
 
-createPage({
+Page({
   onClickLeft() {
     wx.showToast({ title: '点击返回', icon: 'none' });
   },

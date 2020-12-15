@@ -1,4 +1,0 @@
-<view class='checkbox-group-index {{className}}' ref='saveChildRef0'>
-  <slot>
-  </slot>
-</view>

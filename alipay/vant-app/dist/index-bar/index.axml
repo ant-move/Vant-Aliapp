@@ -1,0 +1,11 @@
+<view class='index-bar-index {{className}}' style='{{style}}' ref='saveChildRef0'>
+  <view class='van-index-bar'>
+    <slot>
+    </slot>
+    <view a:if='{{ showSidebar }}' class='van-index-bar__sidebar' catchTap='antmoveAction' data-antmove-tap='onClick' catchTouchMove='antmoveAction' data-antmove-touchmove='onTouchMove' catchTouchEnd='antmoveAction' data-antmove-touchend='onTouchStop' catchTouchCancel='antmoveAction' data-antmove-touchcancel='onTouchStop'>
+      <view a:for='{{ indexList }}' a:key='{{index}}' class='van-index-bar__index' style="z-index: {{ zIndex + 1 }}; color: {{ activeAnchorIndex === index ? highlightColor : '' }}" data-index='{{ index }}' ref-numbers='{{ indexList }}'>
+        {{ item }}
+      </view>
+    </view>
+  </view>
+</view>

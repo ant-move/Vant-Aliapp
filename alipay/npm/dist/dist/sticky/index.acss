@@ -1,0 +1,15 @@
+.sticky-index {
+    display: block;
+    height: initial;
+}
+@import "../common/index.acss";
+
+.sticky-index .van-sticky {
+    position: relative;
+}
+
+.sticky-index .van-sticky-wrap--fixed {
+    position: fixed;
+    right: 0;
+    left: 0;
+}

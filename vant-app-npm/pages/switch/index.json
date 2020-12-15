@@ -1,8 +1,0 @@
-{
-	"defaultTitle": "Switch 开关",
-	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-dialog": "vant-aliapp/dist/dist/dialog/index",
-		"van-switch": "vant-aliapp/dist/dist/switch/index"
-	}
-}

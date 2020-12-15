@@ -1,0 +1,7 @@
+{
+	"defaultTitle": "Divider 分割线",
+	"usingComponents": {
+		"demo-block": "/components/demo-block/index",
+		"van-divider": "/dist/divider/index"
+	}
+}

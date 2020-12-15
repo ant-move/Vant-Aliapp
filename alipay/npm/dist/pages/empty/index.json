@@ -1,0 +1,10 @@
+{
+	"defaultTitle": "Empty 空状态",
+	"usingComponents": {
+		"demo-block": "/components/demo-block/index",
+		"van-button": "/dist/button/index",
+		"van-empty": "/dist/empty/index",
+		"van-tab": "/dist/tab/index",
+		"van-tabs": "/dist/tabs/index"
+	}
+}

@@ -1,7 +1,0 @@
-{
-	"defaultTitle": "NoticeBar 通告栏",
-	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-notice-bar": "vant-aliapp/dist/dist/notice-bar/index"
-	}
-}

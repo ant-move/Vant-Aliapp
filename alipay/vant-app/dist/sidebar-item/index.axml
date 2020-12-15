@@ -1,0 +1,15 @@
+<view class='sidebar-item-index {{className}}' style='{{style}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class="{{ utils.bem('sidebar-item', { selected, disabled }) }} {{ selected ? 'active-class' : '' }} {{ disabled ? 'disabled-class' : '' }} {{customClass}}" hover-class='van-sidebar-item--hover' hover-stay-time='70' onTap='antmoveAction' data-antmove-tap='onClick'>
+    <view class='van-sidebar-item__text'>
+      <van-info a:if='{{ badge != null || info !== null || dot }}' dot='{{ dot }}' info='{{ badge != null ? badge : info }}' ref='saveChildRef1'>
+      </van-info>
+      <view a:if='{{ title }}'>
+        {{ title }}
+      </view>
+      <slot a:else  name='title'>
+      </slot>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,18 @@
+<view class='skeleton-index {{className}}' style='{{style}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view a:if='{{ loading }}' class="{{customClass}} {{ utils.bem('skeleton', [{animate}]) }}">
+    <view a:if='{{ avatar }}' class="{{avatarClass}} {{ utils.bem('skeleton__avatar', [avatarShape])}}" style="{{ 'width:' + avatarSize + ';height:' + avatarSize }}">
+    </view>
+    <view class="{{ utils.bem('skeleton__content')}}">
+      <view a:if='{{ title }}' class="{{titleClass}} {{ utils.bem('skeleton__title') }}" style="{{ 'width:' + titleWidth }}">
+      </view>
+      <view a:for='{{ rowArray }}' a:key='{{index}}' a:for-index='index' class="{{rowClass}} {{ utils.bem('skeleton__row') }}" style="{{ 'width:' + (isArray ? rowWidth[index] : rowWidth) }}" ref-numbers='{{ rowArray }}'>
+      </view>
+    </view>
+  </view>
+  <view a:else  class="{{ utils.bem('skeleton__content')}}">
+    <slot>
+    </slot>
+  </view>
+</view>

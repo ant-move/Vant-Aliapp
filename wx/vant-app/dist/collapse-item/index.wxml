@@ -31,12 +31,12 @@
     />
   </van-cell>
   <view
-    class="{{ utils.bem('collapse-item__wrapper', { transition }) }}"
-    style="height: {{ contentHeight }};"
-    bind:transitionend="onTransitionEnd"
+    class="{{ utils.bem('collapse-item__wrapper') }}"
+    style="height: 0;"
+    animation="{{ animation }}"
   >
     <view
-      class="van-collapse-item__content van-collapse-item__content_{{theId}} content-class"
+      class="van-collapse-item__content content-class"
     >
       <slot />
     </view>

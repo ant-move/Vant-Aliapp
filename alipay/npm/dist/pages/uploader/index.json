@@ -1,0 +1,8 @@
+{
+	"defaultTitle": "Uploader 文件上传",
+	"usingComponents": {
+		"demo-block": "/components/demo-block/index",
+		"van-button": "/dist/button/index",
+		"van-uploader": "/dist/uploader/index"
+	}
+}

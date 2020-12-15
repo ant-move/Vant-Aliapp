@@ -1,0 +1,28 @@
+<view class='page-container-classname' ref='saveChildRef0'>
+  <demo-block card=" " title='基础用法' ref='saveChildRef1'>
+    <van-cell is-link=" " title='显示分享面板' data-type='basic' onClick='onShowShareSheet' ref='saveChildRef2'>
+    </van-cell>
+    <van-share-sheet show='{{ show.basic }}' title='立即分享给好友' options='{{ options }}' onClose='onClose' onSelect='onSelect' ref='saveChildRef3'>
+    </van-share-sheet>
+  </demo-block>
+  <demo-block card=" " title='展示多行选项' ref='saveChildRef4'>
+    <van-cell is-link=" " title='显示分享面板' data-type='multiLine' onClick='onShowShareSheet' ref='saveChildRef5'>
+    </van-cell>
+    <van-share-sheet show='{{ show.multiLine }}' title='立即分享给好友' options='{{ multiLineOptions }}' onClose='onClose' onSelect='onSelect' ref='saveChildRef6'>
+    </van-share-sheet>
+  </demo-block>
+  <demo-block card=" " title='自定义图标' ref='saveChildRef7'>
+    <van-cell is-link=" " title='显示分享面板' data-type='customIcon' onClick='onShowShareSheet' ref='saveChildRef8'>
+    </van-cell>
+    <van-share-sheet show='{{ show.customIcon }}' options='{{ customIconOptions }}' onClose='onClose' onSelect='onSelect' ref='saveChildRef9'>
+    </van-share-sheet>
+  </demo-block>
+  <demo-block card=" " title='展示描述信息' ref='saveChildRef10'>
+    <van-cell is-link=" " title='显示分享面板' data-type='withDesc' onClick='onShowShareSheet' ref='saveChildRef11'>
+    </van-cell>
+    <van-share-sheet show='{{ show.withDesc }}' title='立即分享给好友' options='{{ optionsWithDesc }}' description='描述信息' onClose='onClose' onSelect='onSelect' ref='saveChildRef12'>
+    </van-share-sheet>
+  </demo-block>
+  <van-toast id='van-toast' ref='saveChildRef13'>
+  </van-toast>
+</view>

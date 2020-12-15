@@ -1,0 +1,10 @@
+{
+	"defaultTitle": "CountDown 倒计时",
+	"usingComponents": {
+		"demo-block": "/components/demo-block/index",
+		"van-count-down": "/dist/count-down/index",
+		"van-toast": "/dist/toast/index",
+		"van-grid": "/dist/grid/index",
+		"van-grid-item": "/dist/grid-item/index"
+	}
+}

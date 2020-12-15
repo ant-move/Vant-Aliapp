@@ -1,0 +1,25 @@
+<view class='grid-item-index {{className}}' style='{{style}}' ref='saveChildRef0'>
+  <import-sjs from='../wxs/utils.sjs' name='utils'>
+  </import-sjs>
+  <view class="{{customClass}} {{ utils.bem('grid-item', { square }) }}" style='{{ viewStyle }}' onTap='antmoveAction' data-antmove-tap='onClick'>
+    <view class="{{contentClass}} {{ utils.bem('grid-item__content', [direction, { center, square, clickable, surround: border && gutter }]) }} {{ border ? 'van-hairline--surround' : '' }}" style='{{ contentStyle }}'>
+      <block a:if='{{ useSlot }}'>
+        <slot>
+        </slot>
+      </block>
+      <block a:else >
+        <view class='van-grid-item__icon {{iconClass}}'>
+          <van-icon a:if='{{ icon }}' name='{{ icon }}' color='{{ iconColor }}' dot='{{ dot }}' info='{{ badge || info }}' size='{{ iconSize }}' ref='saveChildRef1'>
+          </van-icon>
+          <slot a:else  name='icon'>
+          </slot>
+        </view>
+        <view class='van-grid-item__text {{textClass}}'>
+          <text a:if='{{ text }}'>
+            {{ text }}          </text>          <slot a:else  name='text'>
+          </slot>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

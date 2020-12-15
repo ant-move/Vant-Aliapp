@@ -1,6 +1,6 @@
-import createPage from '../../common/page';
+import Page from '../../common/page';
 
-createPage({
+Page({
   data: {
     value: ''
   },
@@ -11,7 +11,16 @@ createPage({
     });
   },
 
-  onSearch(event) {
+  onSearch() {
+    if (this.data.value) {
+      wx.showToast({
+        title: '搜索：' + this.data.value,
+        icon: 'none'
+      });
+    }
+  },
+
+  onClick() {
     if (this.data.value) {
       wx.showToast({
         title: '搜索：' + this.data.value,

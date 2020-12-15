@@ -1,4 +1,0 @@
-@import "../common/index.acss";
-.van-badge-group {
-    width: 85px;
-}
