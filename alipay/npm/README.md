@@ -42,7 +42,7 @@ yarn add vant-aliapp --production
 
 ### 下载代码使用
 
-直接通过 git 下载 Vant Aliapp 源代码，并将`alipay/vant-app`目录拷贝到自己的项目中
+直接通过 git 下载 Vant Aliapp 源代码，并将`alipay/npm`目录拷贝到自己的项目中
 ```bash
 git clone https://github.com/ant-move/Vant-Aliapp.git
 ```
@@ -68,7 +68,7 @@ git clone https://github.com/ant-move/Vant-Aliapp.git
 ```
 ## 在开发者工具中预览
 
-下载本项目到本地，使用支付宝 IDE 打开 `alipay/vant-app` 即可预览。
+下载本项目到本地，使用支付宝 IDE 打开 `alipay/vant-app` ，安装依赖，即可预览。
 
 > 预览时请在项目详情设置中开启 `component2` 编译，详情可参考[支付宝小程序自定义组件使用介绍](https://docs.alipay.com/mini/framework/custom-component-overview#%E4%BD%BF%E7%94%A8%E9%A1%BB%E7%9F%A5)。
 

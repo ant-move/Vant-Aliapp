@@ -1,4 +1,0 @@
-<view class='radio-group-index {{className}}' style='{{style}}' ref='saveChildRef0'>
-  <slot>
-  </slot>
-</view>

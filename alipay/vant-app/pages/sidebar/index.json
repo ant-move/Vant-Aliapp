@@ -1,10 +1,10 @@
 {
 	"defaultTitle": "Sidebar 侧边导航",
 	"usingComponents": {
-		"van-notify": "/dist/notify/index",
-		"van-sidebar": "/dist/sidebar/index",
-		"van-sidebar-item": "/dist/sidebar-item/index",
-		"van-grid": "/dist/grid/index",
-		"van-grid-item": "/dist/grid-item/index"
+		"van-notify": "vant-aliapp/dist/dist/notify/index",
+		"van-sidebar": "vant-aliapp/dist/dist/sidebar/index",
+		"van-sidebar-item": "vant-aliapp/dist/dist/sidebar-item/index",
+		"van-grid": "vant-aliapp/dist/dist/grid/index",
+		"van-grid-item": "vant-aliapp/dist/dist/grid-item/index"
 	}
 }

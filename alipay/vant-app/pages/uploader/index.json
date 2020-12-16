@@ -1,8 +1,8 @@
 {
 	"defaultTitle": "Uploader 文件上传",
 	"usingComponents": {
-		"demo-block": "/components/demo-block/index",
-		"van-button": "/dist/button/index",
-		"van-uploader": "/dist/uploader/index"
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-button": "vant-aliapp/dist/dist/button/index",
+		"van-uploader": "vant-aliapp/dist/dist/uploader/index"
 	}
 }

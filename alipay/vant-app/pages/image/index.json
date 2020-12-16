@@ -1,10 +1,10 @@
 {
 	"defaultTitle": "Image 图片",
 	"usingComponents": {
-		"demo-block": "/components/demo-block/index",
-		"van-col": "/dist/col/index",
-		"van-image": "/dist/image/index",
-		"van-loading": "/dist/loading/index",
-		"van-row": "/dist/row/index"
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-col": "vant-aliapp/dist/dist/col/index",
+		"van-image": "vant-aliapp/dist/dist/image/index",
+		"van-loading": "vant-aliapp/dist/dist/loading/index",
+		"van-row": "vant-aliapp/dist/dist/row/index"
 	}
 }

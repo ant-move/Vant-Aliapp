@@ -1,8 +1,8 @@
 {
 	"defaultTitle": "Stepper 步进器",
 	"usingComponents": {
-		"van-cell": "/dist/cell/index",
-		"van-stepper": "/dist/stepper/index",
-		"van-toast": "/dist/toast/index"
+		"van-cell": "vant-aliapp/dist/dist/cell/index",
+		"van-stepper": "vant-aliapp/dist/dist/stepper/index",
+		"van-toast": "vant-aliapp/dist/dist/toast/index"
 	}
 }

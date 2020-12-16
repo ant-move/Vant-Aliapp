@@ -1,8 +1,10 @@
-<view class='{{className}}' onTap='tapHandler' catchTap='catchtapHandler'>
+<view onTap='tapHandler' catchTap='catchtapHandler'>
     <input
         value='{{value}}'
         class='{{className}}'
         type='{{type}}',
+        style='{{style}}',
+        name='{{name}}',    
         password='{{password}}',
         placeholder='{{placeholder}}',
         placeholder-style='{{placeholderStyly}}',

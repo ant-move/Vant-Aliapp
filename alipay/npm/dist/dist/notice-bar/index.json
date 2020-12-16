@@ -1,7 +1,7 @@
 {
 	"component": true,
 	"usingComponents": {
-		"van-icon": "/dist/icon/index",
-		"custom-navigator": "/__antmove/component/custom-navigator/custom-navigator"
+		"van-icon": "../icon/index",
+		"custom-navigator": "../../__antmove/component/custom-navigator/custom-navigator"
 	}
 }

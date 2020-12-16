@@ -1,8 +1,0 @@
-<view class='goods-action-button-index {{className}}' style='{{style}}' ref='saveChildRef0'>
-  <import-sjs from='../wxs/utils.sjs' name='utils'>
-  </import-sjs>
-  <van-button id='{{ id }}' lang='{{ lang }}' type='{{ type }}' color='{{ color }}' plain='{{ plain }}' loading='{{ loading }}' disabled='{{ disabled }}' open-type='{{ openType }}' class="{{ utils.bem('goods-action-button', [type, { first: isFirst, last: isLast, plain: plain }])}}" custom-class='van-goods-action-button__inner' business-id='{{ businessId }}' session-from='{{ sessionFrom }}' app-parameter='{{ appParameter }}' send-message-img='{{ sendMessageImg }}' send-message-path='{{ sendMessagePath }}' show-message-card='{{ showMessageCard }}' send-message-title='{{ sendMessageTitle }}' onClick='onClick' onError='bindError' onContact='bindContact' onOpensetting='bindOpenSetting' onGetuserinfo='bindGetUserInfo' onGetphonenumber='bindGetPhoneNumber' onLaunchapp='bindLaunchApp' ref='saveChildRef1'>
-    {{ text }}    <slot>
-    </slot>
-  </van-button>
-</view>

@@ -181,11 +181,10 @@ export default [
                 path: "/tag",
                 title: "Tag 标记"
             },
-            // TODO: fix tree select bug
-            // {
-            //     path: "/tree-select",
-            //     title: "TreeSelect 分类选择"
-            // }
+            {
+                path: "/tree-select",
+                title: "TreeSelect 分类选择"
+            }
         ]
     },
     {

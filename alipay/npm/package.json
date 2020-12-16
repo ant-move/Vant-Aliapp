@@ -1,6 +1,6 @@
 {
   "name": "vant-aliapp",
-  "version": "1.0.16",
+  "version": "1.0.18",
   "description": "vant alipay mini app components",
   "publishConfig": {
     "access": "public",

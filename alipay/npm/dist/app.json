@@ -30,6 +30,7 @@
 		"pages/tag/index",
 		"pages/toast/index",
 		"pages/transition/index",
+		"pages/tree-select/index",
 		"pages/area/index",
 		"pages/submit-bar/index",
 		"pages/radio/index",

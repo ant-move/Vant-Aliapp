@@ -1,5 +1,5 @@
 import Page from "../../common/page";
-import Toast from "../../dist/toast/toast";
+import Toast from "vant-aliapp/dist/dist/toast/toast";
 Page({
     onClickButton() {
         Toast("点击按钮");

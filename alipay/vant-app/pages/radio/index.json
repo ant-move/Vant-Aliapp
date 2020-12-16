@@ -1,10 +1,10 @@
 {
 	"defaultTitle": "Radio 单选框",
 	"usingComponents": {
-		"demo-block": "/components/demo-block/index",
-		"van-cell": "/dist/cell/index",
-		"van-cell-group": "/dist/cell-group/index",
-		"van-radio": "/dist/radio/index",
-		"van-radio-group": "/dist/radio-group/index"
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-cell": "vant-aliapp/dist/dist/cell/index",
+		"van-cell-group": "vant-aliapp/dist/dist/cell-group/index",
+		"van-radio": "vant-aliapp/dist/dist/radio/index",
+		"van-radio-group": "vant-aliapp/dist/dist/radio-group/index"
 	}
 }

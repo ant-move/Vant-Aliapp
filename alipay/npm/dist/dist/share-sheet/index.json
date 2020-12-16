@@ -1,8 +1,8 @@
 {
 	"component": true,
 	"usingComponents": {
-		"van-popup": "/dist/popup/index",
+		"van-popup": "../popup/index",
 		"options": "./options",
-		"btn": "/__antmove/component/btn/btn"
+		"btn": "../../__antmove/component/btn/btn"
 	}
 }

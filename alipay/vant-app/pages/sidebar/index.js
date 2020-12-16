@@ -1,5 +1,5 @@
 import Page from "../../common/page";
-import Notify from "../../dist/notify/notify";
+import Notify from "vant-aliapp/dist/dist/notify/notify";
 Page({
     onChange(event) {
         Notify({

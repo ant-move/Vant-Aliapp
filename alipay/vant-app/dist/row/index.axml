@@ -1,6 +1,0 @@
-<view class='row-index {{className}}' style='{{style}}' ref='saveChildRef0'>
-  <view class='{{customClass}} van-row' style='{{ viewStyle }}'>
-    <slot>
-    </slot>
-  </view>
-</view>

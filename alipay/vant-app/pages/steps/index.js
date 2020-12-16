@@ -1,6 +1,6 @@
 import Page from "../../common/page";
-import Toast from "../../dist/toast/toast";
-import icons from "../../dist/_vant/icons/src/config";
+import Toast from "vant-aliapp/dist/dist/toast/toast";
+import icons from "vant-aliapp/dist/dist/_vant/icons/src/config";
 const steps = [
     {
         text: "步骤一",

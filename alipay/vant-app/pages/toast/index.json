@@ -1,8 +1,8 @@
 {
 	"defaultTitle": "Toast 轻提示",
 	"usingComponents": {
-		"demo-block": "/components/demo-block/index",
-		"van-button": "/dist/button/index",
-		"van-toast": "/dist/toast/index"
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-button": "vant-aliapp/dist/dist/button/index",
+		"van-toast": "vant-aliapp/dist/dist/toast/index"
 	}
 }

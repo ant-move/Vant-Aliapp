@@ -1,8 +1,0 @@
-<view class='tab-index {{className}}' style='{{style}}' ref='saveChildRef0'>
-  <import-sjs from='../wxs/utils.sjs' name='utils'>
-  </import-sjs>
-  <view class="{{customClass}} {{ utils.bem('tab__pane', { active, inactive: !active }) }}" style="{{ shouldShow ? '' : 'display: none;' }}">
-    <slot a:if='{{ shouldRender }}'>
-    </slot>
-  </view>
-</view>

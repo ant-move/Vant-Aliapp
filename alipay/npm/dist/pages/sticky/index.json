@@ -1,8 +1,8 @@
 {
 	"defaultTitle": "Sticky 粘性布局",
 	"usingComponents": {
-		"demo-block": "/components/demo-block/index",
-		"van-button": "/dist/button/index",
-		"van-sticky": "/dist/sticky/index"
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-button": "vant-aliapp/dist/dist/button/index",
+		"van-sticky": "vant-aliapp/dist/dist/sticky/index"
 	}
 }

@@ -1,5 +1,5 @@
 import Page from "../../common/page";
-import Dialog from "../../dist/dialog/dialog";
+import Dialog from "vant-aliapp/dist/dist/dialog/dialog";
 const message = "代码是写出来给人看的，附带能在机器上运行";
 Page({
     data: {

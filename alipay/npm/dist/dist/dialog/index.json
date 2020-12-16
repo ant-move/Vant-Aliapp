@@ -1,9 +1,9 @@
 {
 	"component": true,
 	"usingComponents": {
-		"van-popup": "/dist/popup/index",
-		"van-button": "/dist/button/index",
-		"van-goods-action": "/dist/goods-action/index",
-		"van-goods-action-button": "/dist/goods-action-button/index"
+		"van-popup": "../popup/index",
+		"van-button": "../button/index",
+		"van-goods-action": "../goods-action//index",
+		"van-goods-action-button": "../goods-action-button/index"
 	}
 }

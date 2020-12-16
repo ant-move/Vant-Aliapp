@@ -1,8 +1,8 @@
 {
 	"defaultTitle": "Popup 弹出层",
 	"usingComponents": {
-		"demo-block": "/components/demo-block/index",
-		"van-cell": "/dist/cell/index",
-		"van-popup": "/dist/popup/index"
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-cell": "vant-aliapp/dist/dist/cell/index",
+		"van-popup": "vant-aliapp/dist/dist/popup/index"
 	}
 }

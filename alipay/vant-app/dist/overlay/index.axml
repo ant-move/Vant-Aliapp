@@ -1,6 +1,0 @@
-<view class='overlay-index {{className}}' style='{{style}}' ref='saveChildRef0'>
-  <van-transition show='{{ show }}' custom-class='van-overlay' custom-style='z-index: {{ zIndex }}; {{ customStyle }}' duration='{{ duration }}' onClick='onClick' catchTouchMove='antmoveAction' data-antmove-touchmove='noop' ref='saveChildRef1'>
-    <slot>
-    </slot>
-  </van-transition>
-</view>

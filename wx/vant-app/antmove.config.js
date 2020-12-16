@@ -11,19 +11,20 @@ module.exports = {
     "useRuntimeLog": false,
     "watch": false,
     "ignoreNpm": true,
+    "libraryName": "vant-aliapp/dist",
     "input": "./",
-    "output": "../out"
+    "output": "../../alipay/npm/dist"
 ,
     "hooks": {
         "appJson": function plugin(appJson) {
-          return appJson
-        }
+      return appJson
+    }
 
     },
     "babel": {
-        "plugins": function() {
-          return []
-        }
+        "plugins": function () {
+      return []
+    }
     },
         "plugins": []
 }

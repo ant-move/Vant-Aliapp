@@ -1,4 +1,4 @@
-import icons from "../../dist/_vant/icons/src/config";
+import icons from "vant-aliapp/dist/dist/_vant/icons/src/config";
 import Page from "../../common/page";
 Page({
     data: {

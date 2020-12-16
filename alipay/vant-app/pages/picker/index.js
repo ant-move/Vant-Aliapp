@@ -1,5 +1,5 @@
 import Page from "../../common/page";
-import Toast from "../../dist/toast/toast";
+import Toast from "vant-aliapp/dist/dist/toast/toast";
 Page({
     data: {
         column1: ["杭州", "宁波", "温州", "嘉兴", "湖州"],

@@ -1,5 +1,5 @@
 import Page from "../../common/page";
-import Dialog from "../../dist/dialog/dialog";
+import Dialog from "vant-aliapp/dist/dist/dialog/dialog";
 Page({
     data: {
         checked: true,

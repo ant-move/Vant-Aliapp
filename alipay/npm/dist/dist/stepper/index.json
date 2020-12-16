@@ -1,6 +1,6 @@
 {
 	"component": true,
 	"usingComponents": {
-		"custom-input": "/__antmove/component/custom-input/custom-input"
+		"custom-input": "../../__antmove/component/custom-input/custom-input"
 	}
 }

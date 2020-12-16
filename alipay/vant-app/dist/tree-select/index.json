@@ -1,8 +1,0 @@
-{
-	"component": true,
-	"usingComponents": {
-		"van-icon": "/dist/icon/index",
-		"van-sidebar": "/dist/sidebar/index",
-		"van-sidebar-item": "/dist/sidebar-item/index"
-	}
-}

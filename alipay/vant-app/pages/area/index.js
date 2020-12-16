@@ -1,5 +1,5 @@
 import Page from "../../common/page";
-import Toast from "../../dist/toast/toast";
+import Toast from "vant-aliapp/dist/dist/toast/toast";
 import database from "../../database_area";
 let db;
 Page({

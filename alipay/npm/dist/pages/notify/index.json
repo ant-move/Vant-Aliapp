@@ -1,8 +1,8 @@
 {
 	"defaultTitle": "Notify 消息通知",
 	"usingComponents": {
-		"demo-block": "/components/demo-block/index",
-		"van-button": "/dist/button/index",
-		"van-notify": "/dist/notify/index"
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-button": "vant-aliapp/dist/dist/button/index",
+		"van-notify": "vant-aliapp/dist/dist/notify/index"
 	}
 }

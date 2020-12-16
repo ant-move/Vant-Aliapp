@@ -1,10 +1,10 @@
 {
 	"defaultTitle": "IndexBar 索引栏",
 	"usingComponents": {
-		"van-cell": "/dist/cell/index",
-		"van-tab": "/dist/tab/index",
-		"van-tabs": "/dist/tabs/index",
-		"van-index-bar": "/dist/index-bar/index",
-		"van-index-anchor": "/dist/index-anchor/index"
+		"van-cell": "vant-aliapp/dist/dist/cell/index",
+		"van-tab": "vant-aliapp/dist/dist/tab/index",
+		"van-tabs": "vant-aliapp/dist/dist/tabs/index",
+		"van-index-bar": "vant-aliapp/dist/dist/index-bar/index",
+		"van-index-anchor": "vant-aliapp/dist/dist/index-anchor/index"
 	}
 }

@@ -1,10 +1,10 @@
 {
 	"defaultTitle": "Collapse 折叠面板",
 	"usingComponents": {
-		"demo-block": "/components/demo-block/index",
-		"van-icon": "/dist/icon/index",
-		"van-toast": "/dist/toast/index",
-		"van-collapse": "/dist/collapse/index",
-		"van-collapse-item": "/dist/collapse-item/index"
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-icon": "vant-aliapp/dist/dist/icon/index",
+		"van-toast": "vant-aliapp/dist/dist/toast/index",
+		"van-collapse": "vant-aliapp/dist/dist/collapse/index",
+		"van-collapse-item": "vant-aliapp/dist/dist/collapse-item/index"
 	}
 }

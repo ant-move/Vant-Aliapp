@@ -9,6 +9,15 @@ VantComponent({
     'leave-active-class',
     'leave-to-class',
   ],
+  props:{
+    inited:{
+        type:Boolean,
+        
+    },
+    display:{
+        type:Boolean
+    }
+},
   mixins: [transition(true)],
   methods: {
     dealTap() {

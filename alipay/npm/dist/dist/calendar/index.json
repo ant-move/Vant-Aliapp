@@ -3,8 +3,8 @@
 	"usingComponents": {
 		"header": "./components/header/index",
 		"month": "./components/month/index",
-		"van-button": "/dist/button/index",
-		"van-popup": "/dist/popup/index",
-		"van-toast": "/dist/toast/index"
+		"van-button": "../button/index",
+		"van-popup": "../popup/index",
+		"van-toast": "../toast/index"
 	}
 }

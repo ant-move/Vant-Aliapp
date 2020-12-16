@@ -1,8 +1,8 @@
 {
 	"defaultTitle": "NavBar 导航栏",
 	"usingComponents": {
-		"demo-block": "/components/demo-block/index",
-		"van-icon": "/dist/icon/index",
-		"van-nav-bar": "/dist/nav-bar/index"
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-icon": "vant-aliapp/dist/dist/icon/index",
+		"van-nav-bar": "vant-aliapp/dist/dist/nav-bar/index"
 	}
 }

@@ -7,6 +7,8 @@
   custom-style="{{ overlayStyle }}"
   duration="{{ duration }}"
   bind:click="onClickOverlay"
+  inited='{{inited}}' 
+  display='{{display}}'
 />
 <view
   wx:if="{{ inited }}"

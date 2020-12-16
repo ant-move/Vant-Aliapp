@@ -1,13 +1,20 @@
 const utils = require('../../api/utils')
 const processDataSet = require('../utils/processDataSet')
-const appJson = require('/app.json') // eslint-disable-line
+
+let styleV2 = false
+try {
+  const appJson = require('/app.json') // eslint-disable-line
+  styleV2 = appJson.style === 'v2'
+} catch (e) {
+  // noop
+}
 
 Component({
   data: {
     isUpdating: false,
     scope: '',
     getAuthorize: '',
-    styleV2: appJson.style === 'v2',
+    styleV2,
   },
   props: {
     size: 'default',

@@ -1,8 +1,0 @@
-{
-	"component": true,
-	"usingComponents": {
-		"van-cell": "/dist/cell/index",
-		"van-icon": "/dist/icon/index",
-		"custom-input": "/__antmove/component/custom-input/custom-input"
-	}
-}

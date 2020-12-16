@@ -1,9 +1,9 @@
 {
 	"defaultTitle": "Card 商品卡片",
 	"usingComponents": {
-		"demo-block": "/components/demo-block/index",
-		"van-button": "/dist/button/index",
-		"van-card": "/dist/card/index",
-		"van-tag": "/dist/tag/index"
+		"demo-block": "vant-aliapp/dist/components/demo-block/index",
+		"van-button": "vant-aliapp/dist/dist/button/index",
+		"van-card": "vant-aliapp/dist/dist/card/index",
+		"van-tag": "vant-aliapp/dist/dist/tag/index"
 	}
 }

@@ -16,6 +16,7 @@ Component({
     cursor: 0,
     selectionStart: -1,
     selectionEnd: -1,
+    name: '',
     onInput: () => {},
     onFocus: () => {},
     onBlur: () => {},

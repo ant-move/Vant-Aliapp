@@ -5,6 +5,8 @@
   duration="{{ duration }}"
   bind:click="onClick"
   catch:touchmove="noop"
+  inited='{{inited}}' 
+  display='{{display}}'
 >
   <slot></slot>
 </van-transition>

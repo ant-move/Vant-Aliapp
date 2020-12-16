@@ -1,5 +1,5 @@
 <view class='month-index {{className}}' style='{{style}}' ref='saveChildRef0'>
-  <import-sjs from='/dist/wxs/utils.sjs' name='utils'>
+  <import-sjs from='../../../wxs/utils.sjs' name='utils'>
   </import-sjs>
   <import-sjs from='./index.sjs' name='computed'>
   </import-sjs>

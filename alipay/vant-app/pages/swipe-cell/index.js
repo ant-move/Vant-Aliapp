@@ -1,6 +1,6 @@
 import Page from "../../common/page";
-import Dialog from "../../dist/dialog/dialog";
-import Notify from "../../dist/notify/notify";
+import Dialog from "vant-aliapp/dist/dist/dialog/dialog";
+import Notify from "vant-aliapp/dist/dist/notify/notify";
 Page({
     onClose(event) {
         const { position, instance } = event.detail;
