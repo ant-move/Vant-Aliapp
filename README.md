@@ -9,23 +9,17 @@ Vant Aliapp 是移动端 Vue 组件库 [Vant](https://github.com/youzan/vant) �
 
 > Vant Aliapp 通过 [Antmove](https://ant-move.github.io/website/) 小程序转换器基于 [Vant-Weapp](https://youzan.github.io/vant-weapp/#/intro) 转换得到，并做了少量的兼容适配调整。
 
-## 文档
-
-* [Vant Aliapp 官网](https://ant-move.github.io/vant-ailapp-docs/#/intro)
-* [Vant Weapp 官网](https://youzan.github.io/vant-weapp/#/intro)
-
-## npm
-
-* [dd](https://www.npmjs.com/package/vant-aliapp-dd)
-* [alipay](https://www.npmjs.com/package/vant-aliapp)
-
 ## 使用之前
 
 在开始使用 Vant Aliapp 之前，你需要先阅读 [支付宝小程序自定义组件](https://docs.alipay.com/mini/framework/custom-component-overview) 的相关文档。
 
+## npm
+
+* [alipay](https://www.npmjs.com/package/vant-aliapp)
+* [钉钉](https://www.npmjs.com/package/vant-aliapp-dd)
 ## 安装
 
-### 通过 npm 安装使用
+### 通过 npm 安装使用（推荐）
 
 * 通过 npm 安装
 ```bash
