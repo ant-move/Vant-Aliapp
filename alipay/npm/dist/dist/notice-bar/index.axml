@@ -11,7 +11,7 @@
         {{ text }}
       </view>
     </view>
-    <van-icon a:if="{{ mode === 'closeable' }}" class='van-notice-bar__right-icon' name='cross' catchTap='antmoveAction' data-antmove-tap='onClickIcon' ref='saveChildRef2'>
+    <van-icon a:if="{{ mode === 'closeable' }}" class='van-notice-bar__right-icon' name='cross' onClick='onClickIcon' ref='saveChildRef2'>
     </van-icon>
     <custom-navigator a:elif="{{ mode === 'link' }}" url='{{ url }}' open-type='{{ openType }}'>
       <van-icon class='van-notice-bar__right-icon' name='arrow' ref='saveChildRef3'>

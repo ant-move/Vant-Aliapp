@@ -1,5 +1,5 @@
 <view class='tabs-index {{className}}' style='{{style}}' ref='saveChildRef0'>
-  <import-sjs from='./index.sjs' name='getters'>
+  <import-sjs from='./index.sjs' name='computed'>
   </import-sjs>
   <import-sjs from='../wxs/utils.sjs' name='utils'>
   </import-sjs>
@@ -9,10 +9,10 @@
         <slot name='nav-left'>
         </slot>
         <scroll-view scroll-x='{{ scrollable }}' scroll-with-animation=" " scroll-left='{{ scrollLeft }}' class="{{ utils.bem('tabs__scroll', [type]) }}" style="{{ color ? 'border-color: ' + color : '' }}">
-          <view class="{{ utils.bem('tabs__nav', [type, { complete: !ellipsis }]) }} {{navClass}}" style='{{ getters.tabCardTypeBorderStyle(color, type) }}'>
-            <view a:if="{{ type === 'line' }}" class='van-tabs__line' style='{{ getters.lineStyle({ color, lineOffsetLeft, lineHeight, skipTransition, duration, lineWidth }) }}'>
+          <view class="{{ utils.bem('tabs__nav', [type, { complete: !ellipsis }]) }} {{navClass}}" style='{{ computed.navStyle(color, type) }}'>
+            <view a:if="{{ type === 'line' }}" class='van-tabs__line' style='{{ computed.lineStyle({ color, lineOffsetLeft, lineHeight, skipTransition, duration, lineWidth }) }}'>
             </view>
-            <view a:for='{{ tabs }}' a:key='{{index}}' data-index='{{ index }}' class="{{ getters.tabClass(index === currentIndex, ellipsis) }} {{ utils.bem('tab', { active: index === currentIndex, disabled: item.disabled, complete: !ellipsis }) }}" style='{{ getters.tabStyle(index === currentIndex, ellipsis, color, type, item.disabled, titleActiveColor, titleInactiveColor, swipeThreshold, scrollable) }}' ref-numbers='{{ tabs }}' onTap='antmoveAction' data-antmove-tap='onTap'>
+            <view a:for='{{ tabs }}' a:key='{{index}}' data-index='{{ index }}' class="{{ computed.tabClass(index === currentIndex, ellipsis) }} {{ utils.bem('tab', { active: index === currentIndex, disabled: item.disabled, complete: !ellipsis }) }}" style='{{ computed.tabStyle({ active: index === currentIndex, ellipsis, color, type, disabled: item.disabled, titleActiveColor, titleInactiveColor, swipeThreshold, scrollable }) }}' ref-numbers='{{ tabs }}' onTap='antmoveAction' data-antmove-tap='onTap'>
               <view class="{{ ellipsis ? 'van-ellipsis' : '' }}" style='{{ item.titleStyle }}'>
                 {{ item.title }}                <van-info a:if='{{ item.info !== null || item.dot }}' info='{{ item.info }}' dot='{{ item.dot }}' custom-class='van-tab__title__info' ref='saveChildRef2'>
                 </van-info>
@@ -25,7 +25,7 @@
       </view>
     </van-sticky>
     <view class='van-tabs__content' catchTouchStart='antmoveAction' data-antmove-touchstart='onTouchStart' catchTouchMove='antmoveAction' data-antmove-touchmove='onTouchMove' catchTouchEnd='antmoveAction' data-antmove-touchend='onTouchEnd' catchTouchCancel='antmoveAction' data-antmove-touchcancel='onTouchEnd'>
-      <view class="{{ utils.bem('tabs__track', [{ animated }]) }} van-tabs__track" style='{{ getters.trackStyle({ duration, currentIndex, animated }) }}'>
+      <view class="{{ utils.bem('tabs__track', [{ animated }]) }} van-tabs__track" style='{{ computed.trackStyle({ duration, currentIndex, animated }) }}'>
         <slot>
         </slot>
       </view>

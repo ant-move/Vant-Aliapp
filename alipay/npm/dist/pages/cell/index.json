@@ -1,10 +1,10 @@
 {
 	"defaultTitle": "Cell 单元格",
 	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-cell": "vant-aliapp/dist/dist/cell/index",
-		"van-cell-group": "vant-aliapp/dist/dist/cell-group/index",
-		"van-icon": "vant-aliapp/dist/dist/icon/index",
-		"van-tag": "vant-aliapp/dist/dist/tag/index"
+		"demo-block": "vant-aliapp/components/demo-block/index",
+		"van-cell": "vant-aliapp/dist/cell/index",
+		"van-cell-group": "vant-aliapp/dist/cell-group/index",
+		"van-icon": "vant-aliapp/dist/icon/index",
+		"van-tag": "vant-aliapp/dist/tag/index"
 	}
 }

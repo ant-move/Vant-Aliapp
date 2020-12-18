@@ -1,7 +1,7 @@
 {
 	"defaultTitle": "Progress 进度条",
 	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-progress": "vant-aliapp/dist/dist/progress/index"
+		"demo-block": "vant-aliapp/components/demo-block/index",
+		"van-progress": "vant-aliapp/dist/progress/index"
 	}
 }

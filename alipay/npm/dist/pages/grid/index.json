@@ -1,8 +1,8 @@
 {
 	"defaultTitle": "Grid 宫格",
 	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-grid": "vant-aliapp/dist/dist/grid/index",
-		"van-grid-item": "vant-aliapp/dist/dist/grid-item/index"
+		"demo-block": "vant-aliapp/components/demo-block/index",
+		"van-grid": "vant-aliapp/dist/grid/index",
+		"van-grid-item": "vant-aliapp/dist/grid-item/index"
 	}
 }

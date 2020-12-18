@@ -1,9 +1,9 @@
 {
 	"defaultTitle": "Tab 标签页",
 	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-icon": "vant-aliapp/dist/dist/icon/index",
-		"van-tab": "vant-aliapp/dist/dist/tab/index",
-		"van-tabs": "vant-aliapp/dist/dist/tabs/index"
+		"demo-block": "vant-aliapp/components/demo-block/index",
+		"van-icon": "vant-aliapp/dist/icon/index",
+		"van-tab": "vant-aliapp/dist/tab/index",
+		"van-tabs": "vant-aliapp/dist/tabs/index"
 	}
 }

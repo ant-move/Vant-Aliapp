@@ -1,10 +1,10 @@
 {
 	"defaultTitle": "CountDown 倒计时",
 	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-count-down": "vant-aliapp/dist/dist/count-down/index",
-		"van-toast": "vant-aliapp/dist/dist/toast/index",
-		"van-grid": "vant-aliapp/dist/dist/grid/index",
-		"van-grid-item": "vant-aliapp/dist/dist/grid-item/index"
+		"demo-block": "vant-aliapp/components/demo-block/index",
+		"van-count-down": "vant-aliapp/dist/count-down/index",
+		"van-toast": "vant-aliapp/dist/toast/index",
+		"van-grid": "vant-aliapp/dist/grid/index",
+		"van-grid-item": "vant-aliapp/dist/grid-item/index"
 	}
 }

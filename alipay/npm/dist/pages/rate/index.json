@@ -1,7 +1,7 @@
 {
 	"defaultTitle": "Rate 评分",
 	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-rate": "vant-aliapp/dist/dist/rate/index"
+		"demo-block": "vant-aliapp/components/demo-block/index",
+		"van-rate": "vant-aliapp/dist/rate/index"
 	}
 }

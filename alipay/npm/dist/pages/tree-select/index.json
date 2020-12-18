@@ -1,8 +1,8 @@
 {
 	"defaultTitle": "TreeSelect 分类选择",
 	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-image": "vant-aliapp/dist/dist/image/index",
-		"van-tree-select": "vant-aliapp/dist/dist/tree-select/index"
+		"demo-block": "vant-aliapp/components/demo-block/index",
+		"van-image": "vant-aliapp/dist/image/index",
+		"van-tree-select": "vant-aliapp/dist/tree-select/index"
 	}
 }

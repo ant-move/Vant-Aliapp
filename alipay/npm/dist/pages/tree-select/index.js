@@ -64,8 +64,7 @@ Page({
             activeIdMulti.push(detail.id);
         }
 
-        console.log(activeIdMulti);
-        this.setData({
+        this.$spliceData({
             activeIdMulti
         });
     }

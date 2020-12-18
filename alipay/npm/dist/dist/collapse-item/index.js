@@ -40,7 +40,7 @@ VantComponent({
         wx.nextTick(() => {
             this.updateExpanded();
             this.inited = true;
-        }, 200);
+        }, 260);
     },
 
     methods: {

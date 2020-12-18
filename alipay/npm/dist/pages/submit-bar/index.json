@@ -1,9 +1,9 @@
 {
 	"defaultTitle": "SubmitBar 提交订单栏",
 	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-submit-bar": "vant-aliapp/dist/dist/submit-bar/index",
-		"van-tag": "vant-aliapp/dist/dist/tag/index",
-		"van-toast": "vant-aliapp/dist/dist/toast/index"
+		"demo-block": "vant-aliapp/components/demo-block/index",
+		"van-submit-bar": "vant-aliapp/dist/submit-bar/index",
+		"van-tag": "vant-aliapp/dist/tag/index",
+		"van-toast": "vant-aliapp/dist/toast/index"
 	}
 }

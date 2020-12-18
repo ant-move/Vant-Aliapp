@@ -1,10 +1,13 @@
 {
   "name": "vant-aliapp",
-  "version": "1.0.18",
+  "version": "1.0.20",
   "description": "vant alipay mini app components",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "postinstall": "node ./postinstall.js"
   },
   "author": "amap-appx@service.autonavi.com",
   "license": "GPL-3.0"

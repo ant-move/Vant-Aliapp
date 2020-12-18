@@ -1,11 +1,11 @@
 {
 	"defaultTitle": "Dropdown Menu",
 	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-button": "vant-aliapp/dist/dist/button/index",
-		"van-cell": "vant-aliapp/dist/dist/cell/index",
-		"van-switch": "vant-aliapp/dist/dist/switch/index",
-		"van-dropdown-menu": "vant-aliapp/dist/dist/dropdown-menu/index",
-		"van-dropdown-item": "vant-aliapp/dist/dist/dropdown-item/index"
+		"demo-block": "vant-aliapp/components/demo-block/index",
+		"van-button": "vant-aliapp/dist/button/index",
+		"van-cell": "vant-aliapp/dist/cell/index",
+		"van-switch": "vant-aliapp/dist/switch/index",
+		"van-dropdown-menu": "vant-aliapp/dist/dropdown-menu/index",
+		"van-dropdown-item": "vant-aliapp/dist/dropdown-item/index"
 	}
 }

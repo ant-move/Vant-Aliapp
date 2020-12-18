@@ -1,5 +1,6 @@
 const _my = require("../../__antmove/api/index.js")(my);
 const wx = _my;
+import { getRect } from "../common/utils";
 import { VantComponent } from "../common/component";
 VantComponent({
     relation: {
@@ -18,17 +19,13 @@ VantComponent({
     },
     methods: {
         scrollIntoView(scrollTop) {
-            this.getBoundingClientRect().then(rect => {
+            getRect.call(this, ".van-index-anchor-wrapper").then(rect => {
                 wx.pageScrollTo({
                     duration: 0,
                     scrollTop:
                         scrollTop + rect.top - this.parent.data.stickyOffsetTop
                 });
             });
-        },
-
-        getBoundingClientRect() {
-            return this.getRect(".van-index-anchor-wrapper");
         }
     }
 });

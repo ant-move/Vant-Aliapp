@@ -1,9 +1,9 @@
 {
 	"defaultTitle": "Card 商品卡片",
 	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-cell": "vant-aliapp/dist/dist/cell/index",
-		"van-toast": "vant-aliapp/dist/dist/toast/index",
-		"van-share-sheet": "vant-aliapp/dist/dist/share-sheet/index"
+		"demo-block": "vant-aliapp/components/demo-block/index",
+		"van-cell": "vant-aliapp/dist/cell/index",
+		"van-toast": "vant-aliapp/dist/toast/index",
+		"van-share-sheet": "vant-aliapp/dist/share-sheet/index"
 	}
 }

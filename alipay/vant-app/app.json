@@ -58,7 +58,7 @@
 		"backgroundTextStyle": "dark",
 		"backgroundColor": "#f8f8f8",
 		"titleBarColor": "#ffffff",
-		"defaultTitle": "Vant Weapp"
+		"defaultTitle": "Vant Aliapp"
 	},
 	"usingComponents": {
 		"demo-block": "vant-aliapp/dist/components/demo-block/index",

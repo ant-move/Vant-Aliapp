@@ -4,7 +4,7 @@
       <image mode='aspectFit' class='demo-home__image' src='https://img.yzcdn.cn/vant/logo.png'>
       </image>
       <view class='demo-home__text'>
-        Vant Weapp
+        Vant Aliapp
       </view>
     </view>
     <view class='demo-home__desc'>

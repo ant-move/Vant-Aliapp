@@ -1,8 +1,8 @@
 {
 	"defaultTitle": "Overlay 遮罩层",
 	"usingComponents": {
-		"demo-block": "vant-aliapp/dist/components/demo-block/index",
-		"van-button": "vant-aliapp/dist/dist/button/index",
-		"van-overlay": "vant-aliapp/dist/dist/overlay/index"
+		"demo-block": "vant-aliapp/components/demo-block/index",
+		"van-button": "vant-aliapp/dist/button/index",
+		"van-overlay": "vant-aliapp/dist/overlay/index"
 	}
 }
