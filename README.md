@@ -9,6 +9,12 @@ Vant Aliapp 是移动端 Vue 组件库 [Vant](https://github.com/youzan/vant) �
 
 > Vant Aliapp 通过 [Antmove](https://ant-move.github.io/website/) 小程序转换器基于 [Vant-Weapp](https://youzan.github.io/vant-weapp/#/intro) 转换得到，并做了少量的兼容适配调整。
 
+## 预览
+
+支付宝扫描下方小程序二维码，体验组件库示例：
+
+<img src="https://img.alicdn.com/imgextra/i4/O1CN01r9dDA41VrqnQePDfN_!!6000000002707-2-tps-296-294.png" width="200" height="200" style="margin-top: 10px;" >
+
 ## 使用之前
 
 在开始使用 Vant Aliapp 之前，你需要先阅读 [支付宝小程序自定义组件](https://docs.alipay.com/mini/framework/custom-component-overview) 的相关文档。
