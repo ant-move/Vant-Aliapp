@@ -1,39 +1,49 @@
 import Page from "../../common/page";
 Page({
-    data: {
-        checkbox1: true,
-        checkbox2: true,
-        checkbox3: true,
-        checkboxLabel: true,
-        checkboxSize: true,
-        checkboxShape: true,
-        list: ["a", "b", "c"],
-        result: ["a", "b"],
-        result2: [],
-        result3: [],
-        activeIcon: "https://img.yzcdn.cn/vant/user-active.png",
-        inactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
-    },
+  data: {
+    checkbox1: true,
+    checkbox2: true,
+    checkbox3: true,
+    checkboxLabel: true,
+    checkboxSize: true,
+    checkboxShape: true,
+    list: ["a", "b", "c"],
+    result: ["a", "b"],
+    result2: [],
+    result3: [],
+    activeIcon: "https://img.yzcdn.cn/vant/user-active.png",
+    inactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
+  },
 
-    onChange(event) {
-        const { key } = event.currentTarget.dataset;
-        this.setData({
-            [key]: event.detail
-        });
-    },
+  onChange(event) {
+    const {
+      key
+    } = event.currentTarget.dataset;
+    this.setData({
+      [key]: event.detail
+    });
+  },
 
-    onClick(event) {
-        const { value } = event.currentTarget.dataset;
-        this.setData({
-            radio3: value
-        });
-    },
+  onClick(event) {
+    const {
+      value
+    } = event.currentTarget.dataset;
+    this.setData({
+      radio3: value
+    });
+  },
 
-    toggle(event) {
-        const { index } = event.currentTarget.dataset;
-        const checkbox = this.selectComponent(`.checkboxes-${index}`);
-        checkbox.toggle();
-    },
+  toggle(event) {
+    const {
+      index
+    } = event.currentTarget.dataset;
+    const checkbox = this.selectComponent(`.checkboxes-${index}`);
+    checkbox.toggle();
+  },
 
-    noop() {}
+  noop() {},
+
+  antmoveAction: function () {
+    //执行时动态赋值，请勿删除
+  }
 });

@@ -58,11 +58,6 @@ VantComponent({
   created() {
     this.scrollTop = 0;
   },
-  destroyed() {
-    if (this.timer != null) {
-      clearTimeout(this.timer)
-    }
-  },
   methods: {
     updateData() {
       wx.nextTick(() => {

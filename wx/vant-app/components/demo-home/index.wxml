@@ -3,7 +3,7 @@
     class="demo-home__title"
   >
     <image mode="aspectFit" class="demo-home__image" src="https://img.yzcdn.cn/vant/logo.png" />
-    <view class="demo-home__text">Vant Weapp</view>
+    <view class="demo-home__text">Vant Aliapp</view>
   </view>
   <view class="demo-home__desc">
     轻量、可靠的小程序 UI 组件库

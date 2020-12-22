@@ -1,4 +1,5 @@
-import { VantComponent } from '../common/component';
+import { getRect } from '../common/utils'
+import { VantComponent } from '../common/component'
 VantComponent({
   relation: {
     name: 'index-bar',
@@ -16,15 +17,12 @@ VantComponent({
   },
   methods: {
     scrollIntoView(scrollTop) {
-      this.getBoundingClientRect().then((rect) => {
+      getRect.call(this, '.van-index-anchor-wrapper').then((rect) => {
         wx.pageScrollTo({
           duration: 0,
           scrollTop: scrollTop + rect.top - this.parent.data.stickyOffsetTop,
-        });
-      });
-    },
-    getBoundingClientRect() {
-      return this.getRect('.van-index-anchor-wrapper');
+        })
+      })
     },
   },
-});
+})

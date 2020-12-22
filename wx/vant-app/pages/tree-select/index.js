@@ -62,7 +62,10 @@ Page({
     } else {
       activeIdMulti.push(detail.id);
     }
-    console.log(activeIdMulti)
-    this.setData({ activeIdMulti });
+    if (wx.__target__ === 'alipay') {
+      this.$spliceData({activeIdMulti})
+    } else {
+      this.setData({ activeIdMulti });
+    }
   },
 });

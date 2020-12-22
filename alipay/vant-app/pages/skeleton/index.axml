@@ -19,7 +19,7 @@
             关于 Vant Aliapp
           </view>
           <view class='domo-content-p'>
-            Vant Aliapp 是移动端 Vue 组件库 Vant 的支付宝小程序版本，两者基于相同的视觉规范，提供一致的 API 接口，助力开发者快速搭建小程序应用。
+            Vant Aliapp 是移动端 Vue 组件库 Vant 的小程序版本，两者基于相同的视觉规范，提供一致的 API 接口，助力开发者快速搭建小程序应用。
           </view>
         </view>
       </view>

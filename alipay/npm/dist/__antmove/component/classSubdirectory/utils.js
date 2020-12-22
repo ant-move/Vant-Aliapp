@@ -71,13 +71,13 @@ module.exports = {
     let parent = null
     if (refNumbers > 1) {
       parentArray.forEach((_parent) => {
-        if (_parent.$children.length !== refNumbers && !parent) {
+        if (_parent.$children.length < refNumbers && !parent) {
           parent = _parent
           return true
         }
       })
     } else {
-      parent = parentArray[0]
+      parent = parentArray[parentArray.length - 1]
     }
     if (parent) {
       node.setParent(parent)

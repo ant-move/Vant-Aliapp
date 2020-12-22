@@ -24,7 +24,7 @@
     wx:if="{{ mode === 'closeable' }}"
     class="van-notice-bar__right-icon"
     name="cross"
-    catch:tap="onClickIcon"
+    bind:click="onClickIcon"
   />
   <navigator
     wx:elif="{{ mode === 'link' }}"

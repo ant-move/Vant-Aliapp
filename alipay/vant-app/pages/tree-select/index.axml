@@ -7,7 +7,7 @@
     <van-tree-select max='2' items='{{ items }}' main-active-index='{{ mainActiveIndexMulti }}' active-id='{{ activeIdMulti }}' onClick-item='onClickItemMulti' onClick-nav='onClickNavMulti' ref='saveChildRef4'>
     </van-tree-select>
   </demo-block>
-  <!-- <demo-block title='自定义内容' ref='saveChildRef5'>
+  <demo-block title='自定义内容' ref='saveChildRef5'>
     <van-tree-select items="{{ [{ text: '分组 1' }, { text: '分组 2' }] }}" height='55vw' main-active-index='{{ mainActiveIndex }}' active-id='{{ activeId }}' onClick-item='onClickItem' onClick-nav='onClickNav' ref='saveChildRef6'>
       <van-image a:if='{{ mainActiveIndex === 0 }}' src='https://img.yzcdn.cn/vant/apple-1.jpg' width='100%' height='100%' slot='content' ref='saveChildRef7'>
       </van-image>
@@ -18,5 +18,5 @@
   <demo-block title='徽标提示' ref='saveChildRef9'>
     <van-tree-select items='{{ badgeItems }}' main-active-index='{{ mainActiveIndex }}' active-id='{{ activeId }}' onClick-item='onClickItem' onClick-nav='onClickNav' ref='saveChildRef10'>
     </van-tree-select>
-  </demo-block> -->
+  </demo-block>
 </view>

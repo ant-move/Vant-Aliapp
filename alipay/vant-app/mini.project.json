@@ -1,6 +1,4 @@
 {
-    "component2": true,
-    "node_modules_es6_whitelist": [
-      "vant-aliapp"
-    ]
+  "component2": true,
+   "node_modules_es6_whitelist": ["vant-aliapp"]
 }

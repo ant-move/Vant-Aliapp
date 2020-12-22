@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "Vant Weapp",
+  "navigationBarTitleText": "Vant Aliapp",
   "usingComponents": {
     "demo-home": "../../components/demo-home/index"
   }

@@ -20,7 +20,7 @@
       </custom-loading>
     </view>
     <view class='van-picker__columns' style='height: {{ itemHeight * visibleItemCount }}px' catchTouchMove='antmoveAction' data-antmove-touchmove='noop'>
-      <picker-column class='van-picker__column' a:for='{{ isSimple(columns) ? [columns] : columns }}' a:key='{{*this}}' data-index='{{ index }}' custom-class='{{columnClass}}' value-key='{{ valueKey }}' initial-options='{{ isSimple(columns) ? item : item.values }}' default-index='{{ item.defaultIndex || defaultIndex }}' item-height='{{ itemHeight }}' visible-item-count='{{ visibleItemCount }}' active-class='{{activeClass}}' onChange='onChange' ref-numbers='{{ isSimple(columns) ? [columns] : columns }}' ref='saveChildRef2'>
+      <picker-column class='van-picker__column' a:for='{{ isSimple(columns) ? [columns] : columns }}' a:key='{{*this}}' data-index='{{ index }}' custom-class='{{columnClass}}' value-key='{{ valueKey }}' initial-options='{{ isSimple(columns) ? item : item.values }}' default-index='{{ item.defaultIndex || defaultIndex }}' item-height='{{ itemHeight }}' visible-item-count='{{ visibleItemCount }}' active-class='{{activeClass}}' onChange='onChange' ref-numbers='{{ isSimple(columns) ? [columns] : columns }}' ref='saveChildRef1'>
       </picker-column>
       <view class='van-picker__mask' style='background-size: 100% {{ (itemHeight * visibleItemCount - itemHeight) / 2 }}px'>
       </view>

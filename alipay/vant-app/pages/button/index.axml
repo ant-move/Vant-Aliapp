@@ -28,10 +28,10 @@
   </demo-block>
   <demo-block title='细边框' padding=" " ref='saveChildRef10'>
     <van-button type='primary' plain=" " hairline=" " class='demo-margin-right' ref='saveChildRef11'>
-      细边框按钮
+      细框按钮
     </van-button>
     <van-button type='info' plain=" " hairline=" " ref='saveChildRef12'>
-      细边框按钮
+      细框按钮
     </van-button>
   </demo-block>
   <demo-block title='禁用状态' padding=" " ref='saveChildRef13'>

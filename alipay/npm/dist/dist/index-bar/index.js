@@ -1,4 +1,5 @@
 const _my = require("../../__antmove/api/index.js")(my);
+
 const wx = _my;
 import { GREEN } from "../common/color";
 import { VantComponent } from "../common/component";
@@ -6,306 +7,290 @@ import { getRect } from "../common/utils";
 import { pageScrollMixin } from "../mixins/page-scroll";
 
 const indexList = () => {
-    const list = [];
-    const charCodeOfA = "A".charCodeAt(0);
+  const list = [];
+  const charCodeOfA = "A".charCodeAt(0);
 
-    for (let i = 0; i < 26; i++) {
-        list.push(String.fromCharCode(charCodeOfA + i));
-    }
+  for (let i = 0; i < 26; i++) {
+    list.push(String.fromCharCode(charCodeOfA + i));
+  }
 
-    return list;
+  return list;
 };
 
 VantComponent({
-    relation: {
-        name: "index-anchor",
-        type: "descendant",
-        current: "index-bar",
+  relation: {
+    name: "index-anchor",
+    type: "descendant",
+    current: "index-bar",
 
-        linked() {
-            this.updateData();
-        },
+    linked() {
+      this.updateData();
+    },
 
-        unlinked() {
-            this.updateData();
-        }
+    unlinked() {
+      this.updateData();
+    }
+
+  },
+  props: {
+    sticky: {
+      type: Boolean,
+      value: true
     },
-    props: {
-        sticky: {
-            type: Boolean,
-            value: true
-        },
-        zIndex: {
-            type: Number,
-            value: 1
-        },
-        highlightColor: {
-            type: String,
-            value: GREEN
-        },
-        stickyOffsetTop: {
-            type: Number,
-            value: 0
-        },
-        indexList: {
-            type: Array,
-            value: indexList()
-        }
+    zIndex: {
+      type: Number,
+      value: 1
     },
-    mixins: [
-        pageScrollMixin(function(event) {
-            this.scrollTop =
-                (event === null || event === void 0
-                    ? void 0
-                    : event.scrollTop) || 0;
+    highlightColor: {
+      type: String,
+      value: GREEN
+    },
+    stickyOffsetTop: {
+      type: Number,
+      value: 0
+    },
+    indexList: {
+      type: Array,
+      value: indexList()
+    }
+  },
+  mixins: [pageScrollMixin(function (event) {
+    this.scrollTop = (event === null || event === void 0 ? void 0 : event.scrollTop) || 0;
+    this.onScroll();
+  })],
+  data: {
+    activeAnchorIndex: null,
+    showSidebar: false
+  },
+
+  created() {
+    this.scrollTop = 0;
+  },
+
+  methods: {
+    updateData() {
+      wx.nextTick(() => {
+        if (this.timer != null) {
+          clearTimeout(this.timer);
+        }
+
+        this.timer = setTimeout(() => {
+          this.setData({
+            showSidebar: !!this.children.length
+          });
+          this.setRect().then(() => {
             this.onScroll();
-        })
-    ],
-    data: {
-        activeAnchorIndex: null,
-        showSidebar: false
+          });
+        }, 0);
+      });
     },
 
-    created() {
-        this.scrollTop = 0;
+    setRect() {
+      return Promise.all([this.setAnchorsRect(), this.setListRect(), this.setSiderbarRect()]);
     },
 
-    methods: {
-        updateData() {
-            wx.nextTick(() => {
-                if (this.timer != null) {
-                    clearTimeout(this.timer);
-                }
+    setAnchorsRect() {
+      return Promise.all(this.children.map(anchor => getRect.call(anchor, ".van-index-anchor-wrapper").then(rect => {
+        if (!rect) return;
+        Object.assign(anchor, {
+          height: rect.height,
+          top: rect.top + this.scrollTop
+        });
+      })));
+    },
 
-                this.timer = setTimeout(() => {
-                    this.setData({
-                        showSidebar: !!this.children.length
-                    });
-                    this.setRect().then(() => {
-                        this.onScroll();
-                    });
-                }, 0);
-            });
-        },
+    setListRect() {
+      return getRect.call(this, ".van-index-bar").then(rect => {
+        if (!rect) return;
+        Object.assign(this, {
+          height: rect.height,
+          top: rect.top + this.scrollTop
+        });
+      });
+    },
 
-        setRect() {
-            return Promise.all([
-                this.setAnchorsRect(),
-                this.setListRect(),
-                this.setSiderbarRect()
-            ]);
-        },
+    setSiderbarRect() {
+      return getRect.call(this, ".van-index-bar__sidebar").then(res => {
+        if (!res) return;
+        this.sidebar = {
+          height: res.height,
+          top: res.top
+        };
+      });
+    },
 
-        setAnchorsRect() {
-            return Promise.all(
-                this.children.map(anchor =>
-                    getRect
-                        .call(anchor, ".van-index-anchor-wrapper")
-                        .then(rect => {
-                            if (!rect) return;
-                            Object.assign(anchor, {
-                                height: rect.height,
-                                top: rect.top + this.scrollTop
-                            });
-                        })
-                )
-            );
-        },
+    setDiffData({
+      target,
+      data
+    }) {
+      const diffData = {};
+      Object.keys(data).forEach(key => {
+        if (target.data[key] !== data[key]) {
+          diffData[key] = data[key];
+        }
+      });
 
-        setListRect() {
-            return getRect.call(this, ".van-index-bar").then(rect => {
-                if (!rect) return;
-                Object.assign(this, {
-                    height: rect.height,
-                    top: rect.top + this.scrollTop
-                });
-            });
-        },
+      if (Object.keys(diffData).length) {
+        target.setData(diffData);
+      }
+    },
 
-        setSiderbarRect() {
-            return getRect.call(this, ".van-index-bar__sidebar").then(res => {
-                if (!res) return;
-                this.sidebar = {
-                    height: res.height,
-                    top: res.top
-                };
-            });
-        },
+    getAnchorRect(anchor) {
+      return getRect.call(anchor, ".van-index-anchor-wrapper").then(rect => ({
+        height: rect.height,
+        top: rect.top
+      }));
+    },
 
-        setDiffData({ target, data }) {
-            const diffData = {};
-            Object.keys(data).forEach(key => {
-                if (target.data[key] !== data[key]) {
-                    diffData[key] = data[key];
-                }
-            });
+    getActiveAnchorIndex() {
+      const {
+        children,
+        scrollTop
+      } = this;
+      const {
+        sticky,
+        stickyOffsetTop
+      } = this.data;
 
-            if (Object.keys(diffData).length) {
-                target.setData(diffData);
-            }
-        },
+      for (let i = this.children.length - 1; i >= 0; i--) {
+        const preAnchorHeight = i > 0 ? children[i - 1].height : 0;
+        const reachTop = sticky ? preAnchorHeight + stickyOffsetTop : 0;
 
-        getAnchorRect(anchor) {
-            return getRect
-                .call(anchor, ".van-index-anchor-wrapper")
-                .then(rect => ({
-                    height: rect.height,
-                    top: rect.top
-                }));
-        },
+        if (reachTop + scrollTop >= children[i].top) {
+          return i;
+        }
+      }
 
-        getActiveAnchorIndex() {
-            const { children, scrollTop } = this;
-            const { sticky, stickyOffsetTop } = this.data;
+      return -1;
+    },
 
-            for (let i = this.children.length - 1; i >= 0; i--) {
-                const preAnchorHeight = i > 0 ? children[i - 1].height : 0;
-                const reachTop = sticky ? preAnchorHeight + stickyOffsetTop : 0;
+    onScroll() {
+      const {
+        children = [],
+        scrollTop
+      } = this;
 
-                if (reachTop + scrollTop >= children[i].top) {
-                    return i;
-                }
-            }
+      if (!children.length) {
+        return;
+      }
 
-            return -1;
-        },
+      const {
+        sticky,
+        stickyOffsetTop,
+        zIndex,
+        highlightColor
+      } = this.data;
+      const active = this.getActiveAnchorIndex();
+      this.setDiffData({
+        target: this,
+        data: {
+          activeAnchorIndex: active
+        }
+      });
 
-        onScroll() {
-            const { children = [], scrollTop } = this;
+      if (sticky) {
+        let isActiveAnchorSticky = false;
 
-            if (!children.length) {
-                return;
-            }
+        if (active !== -1) {
+          isActiveAnchorSticky = children[active].top <= stickyOffsetTop + scrollTop;
+        }
 
-            const {
-                sticky,
-                stickyOffsetTop,
-                zIndex,
-                highlightColor
-            } = this.data;
-            const active = this.getActiveAnchorIndex();
-            this.setDiffData({
-                target: this,
-                data: {
-                    activeAnchorIndex: active
-                }
-            });
-
-            if (sticky) {
-                let isActiveAnchorSticky = false;
-
-                if (active !== -1) {
-                    isActiveAnchorSticky =
-                        children[active].top <= stickyOffsetTop + scrollTop;
-                }
-
-                children.forEach((item, index) => {
-                    if (index === active) {
-                        let wrapperStyle = "";
-                        let anchorStyle = `
+        children.forEach((item, index) => {
+          if (index === active) {
+            let wrapperStyle = "";
+            let anchorStyle = `
               color: ${highlightColor};
             `;
 
-                        if (isActiveAnchorSticky) {
-                            wrapperStyle = `
+            if (isActiveAnchorSticky) {
+              wrapperStyle = `
                 height: ${children[index].height}px;
               `;
-                            anchorStyle = `
+              anchorStyle = `
                 position: fixed;
                 top: ${stickyOffsetTop}px;
                 z-index: ${zIndex};
                 color: ${highlightColor};
               `;
-                        }
+            }
 
-                        this.setDiffData({
-                            target: item,
-                            data: {
-                                active: true,
-                                anchorStyle,
-                                wrapperStyle
-                            }
-                        });
-                    } else if (index === active - 1) {
-                        const currentAnchor = children[index];
-                        const currentOffsetTop = currentAnchor.top;
-                        const targetOffsetTop =
-                            index === children.length - 1
-                                ? this.top
-                                : children[index + 1].top;
-                        const parentOffsetHeight =
-                            targetOffsetTop - currentOffsetTop;
-                        const translateY =
-                            parentOffsetHeight - currentAnchor.height;
-                        const anchorStyle = `
+            this.setDiffData({
+              target: item,
+              data: {
+                active: true,
+                anchorStyle,
+                wrapperStyle
+              }
+            });
+          } else if (index === active - 1) {
+            const currentAnchor = children[index];
+            const currentOffsetTop = currentAnchor.top;
+            const targetOffsetTop = index === children.length - 1 ? this.top : children[index + 1].top;
+            const parentOffsetHeight = targetOffsetTop - currentOffsetTop;
+            const translateY = parentOffsetHeight - currentAnchor.height;
+            const anchorStyle = `
               position: relative;
               transform: translate3d(0, ${translateY}px, 0);
               z-index: ${zIndex};
               color: ${highlightColor};
             `;
-                        this.setDiffData({
-                            target: item,
-                            data: {
-                                active: true,
-                                anchorStyle
-                            }
-                        });
-                    } else {
-                        this.setDiffData({
-                            target: item,
-                            data: {
-                                active: false,
-                                anchorStyle: "",
-                                wrapperStyle: ""
-                            }
-                        });
-                    }
-                });
-            }
-        },
+            this.setDiffData({
+              target: item,
+              data: {
+                active: true,
+                anchorStyle
+              }
+            });
+          } else {
+            this.setDiffData({
+              target: item,
+              data: {
+                active: false,
+                anchorStyle: "",
+                wrapperStyle: ""
+              }
+            });
+          }
+        });
+      }
+    },
 
-        onClick(event) {
-            this.scrollToAnchor(event.target.dataset.index);
-        },
+    onClick(event) {
+      this.scrollToAnchor(event.target.dataset.index);
+    },
 
-        onTouchMove(event) {
-            const sidebarLength = this.children.length;
-            const touch = event.touches[0];
-            const itemHeight = this.sidebar.height / sidebarLength;
-            let index = Math.floor(
-                (touch.clientY - this.sidebar.top) / itemHeight
-            );
+    onTouchMove(event) {
+      const sidebarLength = this.children.length;
+      const touch = event.touches[0];
+      const itemHeight = this.sidebar.height / sidebarLength;
+      let index = Math.floor((touch.clientY - this.sidebar.top) / itemHeight);
 
-            if (index < 0) {
-                index = 0;
-            } else if (index > sidebarLength - 1) {
-                index = sidebarLength - 1;
-            }
+      if (index < 0) {
+        index = 0;
+      } else if (index > sidebarLength - 1) {
+        index = sidebarLength - 1;
+      }
 
-            this.scrollToAnchor(index);
-        },
+      this.scrollToAnchor(index);
+    },
 
-        onTouchStop() {
-            this.scrollToAnchorIndex = null;
-        },
+    onTouchStop() {
+      this.scrollToAnchorIndex = null;
+    },
 
-        scrollToAnchor(index) {
-            if (
-                typeof index !== "number" ||
-                this.scrollToAnchorIndex === index
-            ) {
-                return;
-            }
+    scrollToAnchor(index) {
+      if (typeof index !== "number" || this.scrollToAnchorIndex === index) {
+        return;
+      }
 
-            this.scrollToAnchorIndex = index;
-            const anchor = this.children.find(
-                item => item.data.index === this.data.indexList[index]
-            );
+      this.scrollToAnchorIndex = index;
+      const anchor = this.children.find(item => item.data.index === this.data.indexList[index]);
 
-            if (anchor) {
-                anchor.scrollIntoView(this.scrollTop);
-                this.$emit("select", anchor.data.index);
-            }
-        }
+      if (anchor) {
+        anchor.scrollIntoView(this.scrollTop);
+        this.$emit("select", anchor.data.index);
+      }
     }
+
+  }
 });

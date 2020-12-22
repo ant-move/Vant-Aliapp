@@ -13,6 +13,7 @@
     bind:touchend="onTouchEnd"
   />
   <input
+    no-custom
     type="{{ integer ? 'number' : 'digit' }}"
     class="input-class {{ utils.bem('stepper__input', { disabled: disabled || disableInput }) }}"
     style="width: {{ utils.addUnit(inputWidth) }}; height: {{ utils.addUnit(buttonSize) }}"

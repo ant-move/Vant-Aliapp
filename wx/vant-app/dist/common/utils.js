@@ -1,56 +1,56 @@
-import { isNumber, isPlainObject } from './validator';
+import { isNumber, isPlainObject, isPromise } from './validator'
 export function isDef(value) {
-  return value !== undefined && value !== null;
+  return value !== undefined && value !== null
 }
 export function isObj(x) {
-  const type = typeof x;
-  return x !== null && (type === 'object' || type === 'function');
+  const type = typeof x
+  return x !== null && (type === 'object' || type === 'function')
 }
 export function range(num, min, max) {
-  return Math.min(Math.max(num, min), max);
+  return Math.min(Math.max(num, min), max)
 }
 export function nextTick(fn) {
   setTimeout(() => {
-    fn();
-  }, 1000 / 30);
+    fn()
+  }, 1000 / 30)
 }
-let systemInfo;
+let systemInfo
 export function getSystemInfoSync() {
   if (systemInfo == null) {
-    systemInfo = wx.getSystemInfoSync();
+    systemInfo = wx.getSystemInfoSync()
   }
-  return systemInfo;
+  return systemInfo
 }
 export function addUnit(value) {
   if (!isDef(value)) {
-    return undefined;
+    return undefined
   }
-  value = String(value);
-  return isNumber(value) ? `${value}px` : value;
+  value = String(value)
+  return isNumber(value) ? `${value}px` : value
 }
 export function requestAnimationFrame(cb) {
-  const systemInfo = getSystemInfoSync();
+  const systemInfo = getSystemInfoSync()
   if (systemInfo.platform === 'devtools') {
-    return nextTick(cb);
+    return nextTick(cb)
   }
   return wx
     .createSelectorQuery()
     .selectViewport()
     .boundingClientRect()
     .exec(() => {
-      cb();
-    });
+      cb()
+    })
 }
 export function pickExclude(obj, keys) {
   if (!isPlainObject(obj)) {
-    return {};
+    return {}
   }
   return Object.keys(obj).reduce((prev, key) => {
     if (!keys.includes(key)) {
-      prev[key] = obj[key];
+      prev[key] = obj[key]
     }
-    return prev;
-  }, {});
+    return prev
+  }, {})
 }
 export function getRect(selector) {
   return new Promise((resolve) => {
@@ -58,8 +58,8 @@ export function getRect(selector) {
       .in(this)
       .select(selector)
       .boundingClientRect()
-      .exec((rect = []) => resolve(rect[0]));
-  });
+      .exec((rect = []) => resolve(rect[0]))
+  })
 }
 export function getAllRect(selector) {
   return new Promise((resolve) => {
@@ -67,6 +67,12 @@ export function getAllRect(selector) {
       .in(this)
       .selectAll(selector)
       .boundingClientRect()
-      .exec((rect = []) => resolve(rect[0]));
-  });
+      .exec((rect = []) => resolve(rect[0]))
+  })
+}
+export function toPromise(promiseLike) {
+  if (isPromise(promiseLike)) {
+    return promiseLike
+  }
+  return Promise.resolve(promiseLike)
 }

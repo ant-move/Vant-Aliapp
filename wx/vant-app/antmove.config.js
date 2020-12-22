@@ -11,7 +11,7 @@ module.exports = {
     "useRuntimeLog": false,
     "watch": false,
     "ignoreNpm": true,
-    "libraryName": "vant-aliapp/dist",
+    "libraryName": "vant-aliapp",
     "input": "./",
     "output": "../../alipay/npm/dist"
 ,
@@ -22,6 +22,7 @@ module.exports = {
 
     },
     "babel": {
+        "presets": [],
         "plugins": function () {
       return []
     }

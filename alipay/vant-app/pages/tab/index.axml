@@ -54,7 +54,7 @@
     </van-tabs>
   </demo-block>
   <demo-block title='粘性布局' ref='saveChildRef19'>
-    <van-tabs sticky="" ref='saveChildRef20'>
+    <van-tabs sticky=" " ref='saveChildRef20'>
       <van-tab a:for='{{ tabs4 }}' a:key='{{*this}}' title="{{ '标签 ' + item }}" ref-numbers='{{ tabs4 }}' ref='saveChildRef21'>
         <view class='content'>
           {{ '内容' + item }}
