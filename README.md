@@ -49,6 +49,12 @@ git clone https://github.com/ant-move/Vant-Aliapp.git
 
 ## 使用组件
 
+在 app.js 中加入下列代码
+
+```javascript
+import 'vant-aliapp/dist/__antmove/component/componentClass.js'
+```
+
 以按钮组件为例，只需要在 json 文件中引入按钮对应的自定义组件即可
 
 ```json
