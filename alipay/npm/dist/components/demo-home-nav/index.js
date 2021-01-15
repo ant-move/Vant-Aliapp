@@ -1,19 +1,19 @@
-const _my = require("../../__antmove/api/index.js")(my);
+"use strict";
 
-const wx = _my;
+var _my = require("../../__antmove/api/index.js")(my);
+
+var wx = _my;
 Component({
   properties: {
     group: Object
   },
   methods: {
-    onClick(event) {
+    onClick: function onClick(event) {
       wx.navigateTo({
         url: event.target.dataset.url
       });
     },
-
-    antmoveAction: function () {
-      //执行时动态赋值，请勿删除
+    antmoveAction: function antmoveAction() {//执行时动态赋值，请勿删除
     }
   }
 });

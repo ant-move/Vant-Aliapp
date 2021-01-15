@@ -168,7 +168,12 @@
 .tabs-index .van-tab__title__info {
     position: relative !important;
     top: -1px !important;
-    display: inline-block;
+    display: inline-block !important;
     -webkit-transform: translateX(0) !important;
     transform: translateX(0) !important;
+}
+
+.tabs-index .van-tab__title__info.van-info--dot {
+    position: absolute !important;
+    top: 40% !important;
 }

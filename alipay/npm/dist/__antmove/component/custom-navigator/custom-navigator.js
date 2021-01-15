@@ -1,6 +1,8 @@
-const utils = require('../../api/utils')
-const processDataSet = require('../utils/processDataSet')
+"use strict";
 
+var utils = require('../../api/utils');
+
+var processDataSet = require('../utils/processDataSet');
 
 Component({
   data: {},
@@ -11,35 +13,36 @@ Component({
     url: '',
     className: '',
     openType: '',
-    path: '',
+    path: ''
   },
-  didMount() {
-    this.props.appId && utils.warn(
-      // `支付宝navigator组件不支持 appId 属性!`
-      '请修改对应支付宝小程序id',
-    )
+  didMount: function didMount() {
+    this.props.appId && utils.warn( // `支付宝navigator组件不支持 appId 属性!`
+    '请修改对应支付宝小程序id');
   },
   methods: {
-    navHandler(e) {
+    navHandler: function navHandler(e) {
+      var _this = this;
+
       // 支付宝navigator不支持ontap事件
-      const tapEvent = processDataSet(e, this.props)
-      this.props.onTap && this.props.onTap(tapEvent)
+      var tapEvent = processDataSet(e, this.props);
+      this.props.onTap && this.props.onTap(tapEvent);
+
       if (this.props.appId && this.props.appId.toString()) {
         my.navigateToMiniProgram({
           appId: this.props.appId.toString(),
           path: this.props.path,
           extraData: this.props.extraData || {},
-          success: (res) => {
-            this.props.onSuccess && this.props.onSuccess(res)
+          success: function success(res) {
+            _this.props.onSuccess && _this.props.onSuccess(res);
           },
-          fail: (res) => {
-            this.props.onFail && this.props.onFail(res)
+          fail: function fail(res) {
+            _this.props.onFail && _this.props.onFail(res);
           },
-          complete: (res) => {
-            this.props.onComplete && this.props.onComplete(res)
-          },
-        })
+          complete: function complete(res) {
+            _this.props.onComplete && _this.props.onComplete(res);
+          }
+        });
       }
-    },
-  },
-})
+    }
+  }
+});

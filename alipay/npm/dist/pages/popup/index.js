@@ -1,94 +1,80 @@
-import Page from "../../common/page";
-Page({
-    data: {
-        show: {
-            basic: false,
-            top: false,
-            bottom: false,
-            left: false,
-            right: false,
-            round: false,
-            closeIcon: false,
-            customCloseIcon: false,
-            customIconPosition: false
-        }
-    },
+"use strict";
 
-    toggle(type, show) {
-        this.setData({
-            [`show.${type}`]: show
-        });
-    },
+var _page = _interopRequireDefault(require("../../common/page"));
 
-    showBasic() {
-        this.toggle("basic", true);
-    },
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-    hideBasic() {
-        this.toggle("basic", false);
-    },
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-    showTop() {
-        this.toggle("top", true);
-    },
-
-    hideTop() {
-        this.toggle("top", false);
-    },
-
-    showLeft() {
-        this.toggle("left", true);
-    },
-
-    hideLeft() {
-        this.toggle("left", false);
-    },
-
-    showRight() {
-        this.toggle("right", true);
-    },
-
-    hideRight() {
-        this.toggle("right", false);
-    },
-
-    showBottom() {
-        this.toggle("bottom", true);
-    },
-
-    hideBottom() {
-        this.toggle("bottom", false);
-    },
-
-    showRound() {
-        this.toggle("round", true);
-    },
-
-    hideRound() {
-        this.toggle("round", false);
-    },
-
-    showCloseIcon() {
-        this.toggle("closeIcon", true);
-    },
-
-    hideCloseIcon() {
-        this.toggle("closeIcon", false);
-    },
-
-    showCustomCloseIcon() {
-        this.toggle("customCloseIcon", true);
-    },
-
-    hideCustomCloseIcon() {
-        this.toggle("customCloseIcon", false);
-    },
-
-    showCustomIconPosition() {
-        this.toggle("customIconPosition", true);
-    },
-
-    hideCustomIconPosition() {
-        this.toggle("customIconPosition", false);
+(0, _page["default"])({
+  data: {
+    show: {
+      basic: false,
+      top: false,
+      bottom: false,
+      left: false,
+      right: false,
+      round: false,
+      closeIcon: false,
+      customCloseIcon: false,
+      customIconPosition: false
     }
+  },
+  toggle: function toggle(type, show) {
+    this.setData(_defineProperty({}, "show.".concat(type), show));
+  },
+  showBasic: function showBasic() {
+    this.toggle("basic", true);
+  },
+  hideBasic: function hideBasic() {
+    this.toggle("basic", false);
+  },
+  showTop: function showTop() {
+    this.toggle("top", true);
+  },
+  hideTop: function hideTop() {
+    this.toggle("top", false);
+  },
+  showLeft: function showLeft() {
+    this.toggle("left", true);
+  },
+  hideLeft: function hideLeft() {
+    this.toggle("left", false);
+  },
+  showRight: function showRight() {
+    this.toggle("right", true);
+  },
+  hideRight: function hideRight() {
+    this.toggle("right", false);
+  },
+  showBottom: function showBottom() {
+    this.toggle("bottom", true);
+  },
+  hideBottom: function hideBottom() {
+    this.toggle("bottom", false);
+  },
+  showRound: function showRound() {
+    this.toggle("round", true);
+  },
+  hideRound: function hideRound() {
+    this.toggle("round", false);
+  },
+  showCloseIcon: function showCloseIcon() {
+    this.toggle("closeIcon", true);
+  },
+  hideCloseIcon: function hideCloseIcon() {
+    this.toggle("closeIcon", false);
+  },
+  showCustomCloseIcon: function showCustomCloseIcon() {
+    this.toggle("customCloseIcon", true);
+  },
+  hideCustomCloseIcon: function hideCustomCloseIcon() {
+    this.toggle("customCloseIcon", false);
+  },
+  showCustomIconPosition: function showCustomIconPosition() {
+    this.toggle("customIconPosition", true);
+  },
+  hideCustomIconPosition: function hideCustomIconPosition() {
+    this.toggle("customIconPosition", false);
+  }
 });

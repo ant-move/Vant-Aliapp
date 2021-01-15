@@ -1,10897 +1,6612 @@
-module.exports = {
-'components/demo-block/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'components/demo-block/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'components/demo-home/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'components/demo-home/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'components/demo-home-nav/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'components/demo-home-nav/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/action-sheet/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
+"use strict";
+
+var _module$exports;
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+module.exports = (_module$exports = {
+  'components/demo-block/index': {
+    id: 'saveChildRef0',
+    children: []
+  }
+}, _defineProperty(_module$exports, "components/demo-block/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'components/demo-home/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "components/demo-home/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'components/demo-home-nav/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "components/demo-home-nav/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/action-sheet/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "dist/action-sheet/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'dist/area/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/area/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/button/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }, {
+    id: 'saveChildRef3',
+    children: []
+  }, {
+    id: 'saveChildRef4',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/button/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }, {
+    id: 'saveChildRef3',
+    children: []
+  }, {
+    id: 'saveChildRef4',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/calendar/calendar', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/calendar/calendar", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/calendar/components/header/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/calendar/components/header/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/calendar/components/month/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/calendar/components/month/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/calendar/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }, {
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef13',
+      children: []
+    }, {
+      id: 'saveChildRef14',
+      children: []
+    }, {
+      id: 'saveChildRef15',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }, {
+    id: 'saveChildRef3',
+    children: []
+  }, {
+    id: 'saveChildRef4',
+    children: []
+  }, {
+    id: 'saveChildRef5',
+    children: []
+  }, {
+    id: 'saveChildRef9',
+    children: []
+  }, {
+    id: 'saveChildRef10',
+    children: []
+  }, {
+    id: 'saveChildRef11',
+    children: []
+  }, {
+    id: 'saveChildRef12',
+    children: []
+  }, {
+    id: 'saveChildRef16',
+    children: []
+  }, {
+    id: 'saveChildRef17',
+    children: []
+  }, {
+    id: 'saveChildRef18',
+    children: []
+  }, {
+    id: 'saveChildRef19',
+    children: []
+  }, {
+    id: 'saveChildRef20',
+    children: []
+  }, {
+    id: 'saveChildRef21',
+    children: []
+  }, {
+    id: 'saveChildRef22',
+    children: []
+  }, {
+    id: 'saveChildRef23',
+    children: []
+  }, {
+    id: 'saveChildRef24',
+    children: []
+  }, {
+    id: 'saveChildRef25',
+    children: []
+  }, {
+    id: 'saveChildRef26',
+    children: []
+  }, {
+    id: 'saveChildRef27',
+    children: []
+  }, {
+    id: 'saveChildRef28',
+    children: []
+  }, {
+    id: 'saveChildRef29',
+    children: []
+  }, {
+    id: 'saveChildRef30',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/calendar/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }, {
+      id: 'saveChildRef4',
+      children: []
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: []
+  }, {
+    id: 'saveChildRef9',
+    children: []
+  }, {
+    id: 'saveChildRef10',
+    children: []
+  }, {
+    id: 'saveChildRef11',
+    children: []
+  }, {
+    id: 'saveChildRef12',
+    children: []
+  }, {
+    id: 'saveChildRef13',
+    children: []
+  }, {
+    id: 'saveChildRef14',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/card/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/card/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/cell/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/cell/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/cell-group/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/cell-group/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/checkbox/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/checkbox/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/checkbox-group/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/checkbox-group/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/circle/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/circle/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/col/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/col/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/collapse/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/collapse/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/collapse-item/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/collapse-item/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/count-down/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/count-down/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/datetime-picker/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/datetime-picker/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/dialog/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
         id: 'saveChildRef3',
         children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/action-sheet/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/area/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/area/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/button/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef4',
         children: []
-    }
-    ]
-    }
-    ,'dist/button/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
+      }]
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "dist/dialog/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
         id: 'saveChildRef3',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef4',
         children: []
-    }
-    ]
-    }
-    ,'dist/calendar/calendar': 
-    {
-        id: 'saveChildRef0',
+      }]
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'dist/divider/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/divider/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/dropdown-item/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
         children: []
-    }
-    ,'dist/calendar/calendar': 
-    {
-        id: 'saveChildRef0',
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "dist/dropdown-item/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
         children: []
-    }
-    ,'dist/calendar/components/header/index': 
-    {
-        id: 'saveChildRef0',
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'dist/dropdown-menu/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/dropdown-menu/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/empty/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/empty/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/field/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "dist/field/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'dist/goods-action/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/goods-action/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/goods-action-button/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/goods-action-button/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/goods-action-icon/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "dist/goods-action-icon/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'dist/grid/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/grid/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/grid-item/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/grid-item/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/icon/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/icon/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/image/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/image/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/index-anchor/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/index-anchor/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/index-bar/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/index-bar/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/info/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/info/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/loading/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/loading/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/nav-bar/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/nav-bar/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/notice-bar/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }, {
+    id: 'saveChildRef3',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/notice-bar/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }, {
+    id: 'saveChildRef3',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/notify/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/notify/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/overlay/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/overlay/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/panel/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/panel/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/picker/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/picker/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/picker/toolbar', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/picker/toolbar", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/picker-column/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/picker-column/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/popup/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/popup/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/progress/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/progress/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/radio/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/radio/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/radio-group/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/radio-group/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/rate/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/rate/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/row/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/row/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/search/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/search/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/share-sheet/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "dist/share-sheet/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'dist/share-sheet/options', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/share-sheet/options", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/sidebar/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/sidebar/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/sidebar-item/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/sidebar-item/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/skeleton/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/skeleton/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/slider/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/slider/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/stepper/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/stepper/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/steps/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/steps/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/sticky/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/sticky/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/submit-bar/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/submit-bar/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/swipe-cell/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/swipe-cell/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/switch/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/switch/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/tab/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/tab/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/tabbar/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/tabbar/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/tabbar-item/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/tabbar-item/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/tabs/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "dist/tabs/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'dist/tag/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/tag/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/toast/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: [{
+      id: 'saveChildRef3',
+      children: []
+    }, {
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "dist/toast/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: [{
+      id: 'saveChildRef3',
+      children: []
+    }, {
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'dist/transition/index', {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, "dist/transition/index", {
+  id: 'saveChildRef0',
+  children: []
+}), _defineProperty(_module$exports, 'dist/tree-select/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/tree-select/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'dist/uploader/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }, {
+    id: 'saveChildRef3',
+    children: []
+  }, {
+    id: 'saveChildRef4',
+    children: []
+  }, {
+    id: 'saveChildRef5',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "dist/uploader/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }, {
+    id: 'saveChildRef2',
+    children: []
+  }, {
+    id: 'saveChildRef3',
+    children: []
+  }, {
+    id: 'saveChildRef4',
+    children: []
+  }, {
+    id: 'saveChildRef5',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/action-sheet/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: []
+    }, {
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: []
+    }, {
+      id: 'saveChildRef15',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: []
+    }, {
+      id: 'saveChildRef18',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/action-sheet/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: []
+    }, {
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: []
+    }, {
+      id: 'saveChildRef15',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: []
+    }, {
+      id: 'saveChildRef18',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/area/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/area/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/button/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }, {
+      id: 'saveChildRef4',
+      children: []
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: []
+    }, {
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: []
+    }, {
+      id: 'saveChildRef15',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: []
+    }, {
+      id: 'saveChildRef18',
+      children: []
+    }, {
+      id: 'saveChildRef19',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef20',
+    children: [{
+      id: 'saveChildRef21',
+      children: []
+    }, {
+      id: 'saveChildRef22',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef23',
+    children: [{
+      id: 'saveChildRef24',
+      children: []
+    }, {
+      id: 'saveChildRef25',
+      children: []
+    }, {
+      id: 'saveChildRef26',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef27',
+    children: [{
+      id: 'saveChildRef28',
+      children: []
+    }, {
+      id: 'saveChildRef29',
+      children: []
+    }, {
+      id: 'saveChildRef30',
+      children: []
+    }, {
+      id: 'saveChildRef31',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef32',
+    children: [{
+      id: 'saveChildRef33',
+      children: []
+    }, {
+      id: 'saveChildRef34',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef35',
+    children: [{
+      id: 'saveChildRef36',
+      children: []
+    }, {
+      id: 'saveChildRef37',
+      children: []
+    }, {
+      id: 'saveChildRef38',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/button/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }, {
+      id: 'saveChildRef4',
+      children: []
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: []
+    }, {
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: []
+    }, {
+      id: 'saveChildRef15',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: []
+    }, {
+      id: 'saveChildRef18',
+      children: []
+    }, {
+      id: 'saveChildRef19',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef20',
+    children: [{
+      id: 'saveChildRef21',
+      children: []
+    }, {
+      id: 'saveChildRef22',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef23',
+    children: [{
+      id: 'saveChildRef24',
+      children: []
+    }, {
+      id: 'saveChildRef25',
+      children: []
+    }, {
+      id: 'saveChildRef26',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef27',
+    children: [{
+      id: 'saveChildRef28',
+      children: []
+    }, {
+      id: 'saveChildRef29',
+      children: []
+    }, {
+      id: 'saveChildRef30',
+      children: []
+    }, {
+      id: 'saveChildRef31',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef32',
+    children: [{
+      id: 'saveChildRef33',
+      children: []
+    }, {
+      id: 'saveChildRef34',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef35',
+    children: [{
+      id: 'saveChildRef36',
+      children: []
+    }, {
+      id: 'saveChildRef37',
+      children: []
+    }, {
+      id: 'saveChildRef38',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/calendar/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }, {
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }, {
+      id: 'saveChildRef11',
+      children: []
+    }, {
+      id: 'saveChildRef12',
+      children: []
+    }, {
+      id: 'saveChildRef13',
+      children: []
+    }, {
+      id: 'saveChildRef14',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef15',
+    children: [{
+      id: 'saveChildRef16',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef17',
+    children: []
+  }, {
+    id: 'saveChildRef18',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/calendar/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }, {
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }, {
+      id: 'saveChildRef11',
+      children: []
+    }, {
+      id: 'saveChildRef12',
+      children: []
+    }, {
+      id: 'saveChildRef13',
+      children: []
+    }, {
+      id: 'saveChildRef14',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef15',
+    children: [{
+      id: 'saveChildRef16',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef17',
+    children: []
+  }, {
+    id: 'saveChildRef18',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/card/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: [{
+        id: 'saveChildRef5',
         children: []
-    }
-    ,'dist/calendar/components/header/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/calendar/components/month/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/calendar/components/month/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/calendar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
+      }, {
         id: 'saveChildRef6',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef7',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef8',
         children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/card/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: [{
         id: 'saveChildRef5',
         children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ]
-    }
-    ,'dist/calendar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef6',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef7',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef8',
         children: []
-    }
-    ]
-    }
-    ,'dist/card/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/card/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/cell/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,'dist/cell/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,'dist/cell-group/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/cell-group/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/checkbox/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/checkbox/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/checkbox-group/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/checkbox-group/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/circle/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/circle/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/col/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/col/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/collapse/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/collapse/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/collapse-item/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/collapse-item/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/count-down/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/count-down/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/datetime-picker/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/datetime-picker/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/dialog/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/cell/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
         id: 'saveChildRef3',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef4',
         children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/dialog/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/divider/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/divider/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/dropdown-item/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/dropdown-item/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/dropdown-menu/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/dropdown-menu/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/empty/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/empty/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/field/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/field/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/goods-action/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/goods-action/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/goods-action-button/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/goods-action-button/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/goods-action-icon/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/goods-action-icon/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/grid/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/grid/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/grid-item/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/grid-item/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/icon/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/icon/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/image/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,'dist/image/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,'dist/index-anchor/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/index-anchor/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/index-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/index-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/info/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/info/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/loading/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/loading/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/nav-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/nav-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/notice-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,'dist/notice-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,'dist/notify/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/notify/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/overlay/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/overlay/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/panel/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/panel/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/picker/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,'dist/picker/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/picker/toolbar': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/picker/toolbar': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/picker-column/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/picker-column/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/popup/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,'dist/popup/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,'dist/progress/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/progress/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/radio/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/radio/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/radio-group/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/radio-group/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/rate/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,'dist/rate/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,'dist/row/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/row/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/search/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/search/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/share-sheet/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/share-sheet/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/share-sheet/options': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/share-sheet/options': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/sidebar/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/sidebar/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/sidebar-item/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/sidebar-item/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/skeleton/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/skeleton/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/slider/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/slider/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/stepper/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/stepper/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/steps/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,'dist/steps/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,'dist/sticky/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/sticky/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/submit-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,'dist/submit-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,'dist/swipe-cell/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/swipe-cell/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/switch/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/switch/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/tab/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/tab/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/tabbar/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/tabbar/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/tabbar-item/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,'dist/tabbar-item/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,'dist/tabs/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/tabs/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/tag/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/tag/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'dist/toast/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/toast/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'dist/transition/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/transition/index': 
-    {
-        id: 'saveChildRef0',
-        children: []
-    }
-    ,'dist/tree-select/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,'dist/tree-select/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,'dist/uploader/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ,'dist/uploader/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ,'pages/action-sheet/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
+      }]
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: [{
         id: 'saveChildRef7',
-        children: [
-    {
+        children: []
+      }, {
         id: 'saveChildRef8',
         children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/action-sheet/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/area/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ,'pages/area/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ,'pages/button/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
+      }]
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }, {
+      id: 'saveChildRef13',
+      children: []
+    }, {
+      id: 'saveChildRef14',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef15',
+    children: [{
+      id: 'saveChildRef16',
+      children: []
+    }, {
+      id: 'saveChildRef17',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef18',
+    children: [{
+      id: 'saveChildRef19',
+      children: [{
         id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
         children: []
-    }
-    ,
-    {
+      }]
+    }, {
+      id: 'saveChildRef21',
+      children: [{
         id: 'saveChildRef22',
         children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ,
-    {
+      }]
+    }]
+  }, {
+    id: 'saveChildRef23',
+    children: [{
+      id: 'saveChildRef24',
+      children: [{
         id: 'saveChildRef25',
         children: []
-    }
-    ,
-    {
+      }]
+    }, {
+      id: 'saveChildRef26',
+      children: [{
+        id: 'saveChildRef27',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef28',
+    children: [{
+      id: 'saveChildRef29',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/cell/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }, {
+        id: 'saveChildRef4',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: [{
+        id: 'saveChildRef7',
+        children: []
+      }, {
+        id: 'saveChildRef8',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }, {
+      id: 'saveChildRef13',
+      children: []
+    }, {
+      id: 'saveChildRef14',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef15',
+    children: [{
+      id: 'saveChildRef16',
+      children: []
+    }, {
+      id: 'saveChildRef17',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef18',
+    children: [{
+      id: 'saveChildRef19',
+      children: [{
+        id: 'saveChildRef20',
+        children: []
+      }]
+    }, {
+      id: 'saveChildRef21',
+      children: [{
+        id: 'saveChildRef22',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef23',
+    children: [{
+      id: 'saveChildRef24',
+      children: [{
+        id: 'saveChildRef25',
+        children: []
+      }]
+    }, {
+      id: 'saveChildRef26',
+      children: [{
+        id: 'saveChildRef27',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef28',
+    children: [{
+      id: 'saveChildRef29',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/checkbox/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef6',
+    children: [{
+      id: 'saveChildRef7',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef12',
+    children: [{
+      id: 'saveChildRef13',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef14',
+    children: [{
+      id: 'saveChildRef15',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: [{
+        id: 'saveChildRef18',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef19',
+    children: [{
+      id: 'saveChildRef20',
+      children: [{
+        id: 'saveChildRef21',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef22',
+    children: [{
+      id: 'saveChildRef23',
+      children: [{
+        id: 'saveChildRef24',
+        children: [{
+          id: 'saveChildRef25',
+          children: [{
+            id: 'saveChildRef26',
+            children: []
+          }]
+        }]
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/checkbox/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef6',
+    children: [{
+      id: 'saveChildRef7',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef12',
+    children: [{
+      id: 'saveChildRef13',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef14',
+    children: [{
+      id: 'saveChildRef15',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: [{
+        id: 'saveChildRef18',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef19',
+    children: [{
+      id: 'saveChildRef20',
+      children: [{
+        id: 'saveChildRef21',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef22',
+    children: [{
+      id: 'saveChildRef23',
+      children: [{
+        id: 'saveChildRef24',
+        children: [{
+          id: 'saveChildRef25',
+          children: [{
+            id: 'saveChildRef26',
+            children: []
+          }]
+        }]
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/circle/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }, {
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }, {
+      id: 'saveChildRef11',
+      children: []
+    }, {
+      id: 'saveChildRef12',
+      children: []
+    }, {
+      id: 'saveChildRef13',
+      children: []
+    }, {
+      id: 'saveChildRef14',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef15',
+    children: []
+  }, {
+    id: 'saveChildRef16',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/circle/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }, {
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }, {
+      id: 'saveChildRef11',
+      children: []
+    }, {
+      id: 'saveChildRef12',
+      children: []
+    }, {
+      id: 'saveChildRef13',
+      children: []
+    }, {
+      id: 'saveChildRef14',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef15',
+    children: []
+  }, {
+    id: 'saveChildRef16',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/col/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }, {
+        id: 'saveChildRef4',
+        children: []
+      }, {
+        id: 'saveChildRef5',
+        children: []
+      }]
+    }, {
+      id: 'saveChildRef6',
+      children: [{
+        id: 'saveChildRef7',
+        children: []
+      }, {
+        id: 'saveChildRef8',
+        children: []
+      }]
+    }, {
+      id: 'saveChildRef9',
+      children: [{
+        id: 'saveChildRef10',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: [{
+        id: 'saveChildRef13',
+        children: []
+      }, {
+        id: 'saveChildRef14',
+        children: []
+      }, {
+        id: 'saveChildRef15',
+        children: []
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/col/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }, {
+        id: 'saveChildRef4',
+        children: []
+      }, {
+        id: 'saveChildRef5',
+        children: []
+      }]
+    }, {
+      id: 'saveChildRef6',
+      children: [{
+        id: 'saveChildRef7',
+        children: []
+      }, {
+        id: 'saveChildRef8',
+        children: []
+      }]
+    }, {
+      id: 'saveChildRef9',
+      children: [{
+        id: 'saveChildRef10',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: [{
+        id: 'saveChildRef13',
+        children: []
+      }, {
+        id: 'saveChildRef14',
+        children: []
+      }, {
+        id: 'saveChildRef15',
+        children: []
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/collapse/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }, {
+        id: 'saveChildRef4',
+        children: []
+      }, {
+        id: 'saveChildRef5',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef6',
+    children: [{
+      id: 'saveChildRef7',
+      children: [{
+        id: 'saveChildRef8',
+        children: []
+      }, {
+        id: 'saveChildRef9',
+        children: []
+      }, {
+        id: 'saveChildRef10',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: [{
+        id: 'saveChildRef13',
+        children: []
+      }, {
+        id: 'saveChildRef14',
+        children: []
+      }, {
+        id: 'saveChildRef15',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: [{
+        id: 'saveChildRef18',
+        children: [{
+          id: 'saveChildRef19',
+          children: []
+        }]
+      }, {
+        id: 'saveChildRef20',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef21',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/collapse/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }, {
+        id: 'saveChildRef4',
+        children: []
+      }, {
+        id: 'saveChildRef5',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef6',
+    children: [{
+      id: 'saveChildRef7',
+      children: [{
+        id: 'saveChildRef8',
+        children: []
+      }, {
+        id: 'saveChildRef9',
+        children: []
+      }, {
+        id: 'saveChildRef10',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: [{
+        id: 'saveChildRef13',
+        children: []
+      }, {
+        id: 'saveChildRef14',
+        children: []
+      }, {
+        id: 'saveChildRef15',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: [{
+        id: 'saveChildRef18',
+        children: [{
+          id: 'saveChildRef19',
+          children: []
+        }]
+      }, {
+        id: 'saveChildRef20',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef21',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/count-down/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }, {
+      id: 'saveChildRef11',
+      children: [{
+        id: 'saveChildRef12',
+        children: []
+      }, {
+        id: 'saveChildRef13',
+        children: []
+      }, {
+        id: 'saveChildRef14',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef15',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/count-down/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }, {
+      id: 'saveChildRef11',
+      children: [{
+        id: 'saveChildRef12',
+        children: []
+      }, {
+        id: 'saveChildRef13',
+        children: []
+      }, {
+        id: 'saveChildRef14',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef15',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/dashboard/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/dashboard/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/datetime-picker/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/datetime-picker/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/dialog/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }, {
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef12',
+    children: []
+  }, {
+    id: 'saveChildRef13',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/dialog/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }, {
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef12',
+    children: []
+  }, {
+    id: 'saveChildRef13',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/divider/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/divider/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/dropdown-menu/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }, {
+        id: 'saveChildRef4',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: [{
+        id: 'saveChildRef7',
+        children: []
+      }, {
+        id: 'saveChildRef8',
+        children: [{
+          id: 'saveChildRef9',
+          children: [{
+            id: 'saveChildRef10',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef11',
+          children: [{
+            id: 'saveChildRef12',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef13',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef14',
+    children: [{
+      id: 'saveChildRef15',
+      children: [{
+        id: 'saveChildRef16',
+        children: []
+      }, {
+        id: 'saveChildRef17',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef18',
+    children: [{
+      id: 'saveChildRef19',
+      children: [{
+        id: 'saveChildRef20',
+        children: []
+      }, {
+        id: 'saveChildRef21',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef22',
+    children: [{
+      id: 'saveChildRef23',
+      children: [{
+        id: 'saveChildRef24',
+        children: []
+      }, {
+        id: 'saveChildRef25',
+        children: []
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/dropdown-menu/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }, {
+        id: 'saveChildRef4',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: [{
+        id: 'saveChildRef7',
+        children: []
+      }, {
+        id: 'saveChildRef8',
+        children: [{
+          id: 'saveChildRef9',
+          children: [{
+            id: 'saveChildRef10',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef11',
+          children: [{
+            id: 'saveChildRef12',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef13',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef14',
+    children: [{
+      id: 'saveChildRef15',
+      children: [{
+        id: 'saveChildRef16',
+        children: []
+      }, {
+        id: 'saveChildRef17',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef18',
+    children: [{
+      id: 'saveChildRef19',
+      children: [{
+        id: 'saveChildRef20',
+        children: []
+      }, {
+        id: 'saveChildRef21',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef22',
+    children: [{
+      id: 'saveChildRef23',
+      children: [{
+        id: 'saveChildRef24',
+        children: []
+      }, {
+        id: 'saveChildRef25',
+        children: []
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/empty/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: [{
+        id: 'saveChildRef5',
+        children: [{
+          id: 'saveChildRef6',
+          children: []
+        }]
+      }, {
+        id: 'saveChildRef7',
+        children: [{
+          id: 'saveChildRef8',
+          children: []
+        }]
+      }, {
+        id: 'saveChildRef9',
+        children: [{
+          id: 'saveChildRef10',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: [{
+        id: 'saveChildRef15',
+        children: []
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/empty/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: [{
+        id: 'saveChildRef5',
+        children: [{
+          id: 'saveChildRef6',
+          children: []
+        }]
+      }, {
+        id: 'saveChildRef7',
+        children: [{
+          id: 'saveChildRef8',
+          children: []
+        }]
+      }, {
+        id: 'saveChildRef9',
+        children: [{
+          id: 'saveChildRef10',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: [{
+        id: 'saveChildRef15',
+        children: []
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/field/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: [{
+        id: 'saveChildRef6',
+        children: []
+      }, {
+        id: 'saveChildRef7',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: [{
+        id: 'saveChildRef10',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: [{
+        id: 'saveChildRef13',
+        children: []
+      }, {
+        id: 'saveChildRef14',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef15',
+    children: [{
+      id: 'saveChildRef16',
+      children: [{
+        id: 'saveChildRef17',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef18',
+    children: [{
+      id: 'saveChildRef19',
+      children: [{
+        id: 'saveChildRef20',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef21',
+    children: [{
+      id: 'saveChildRef22',
+      children: [{
+        id: 'saveChildRef23',
+        children: [{
+          id: 'saveChildRef24',
+          children: []
+        }]
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/field/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: [{
+        id: 'saveChildRef6',
+        children: []
+      }, {
+        id: 'saveChildRef7',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: [{
+        id: 'saveChildRef10',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: [{
+        id: 'saveChildRef13',
+        children: []
+      }, {
+        id: 'saveChildRef14',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef15',
+    children: [{
+      id: 'saveChildRef16',
+      children: [{
+        id: 'saveChildRef17',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef18',
+    children: [{
+      id: 'saveChildRef19',
+      children: [{
+        id: 'saveChildRef20',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef21',
+    children: [{
+      id: 'saveChildRef22',
+      children: [{
+        id: 'saveChildRef23',
+        children: [{
+          id: 'saveChildRef24',
+          children: []
+        }]
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/goods-action/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }, {
+        id: 'saveChildRef4',
+        children: []
+      }, {
+        id: 'saveChildRef5',
+        children: []
+      }, {
+        id: 'saveChildRef6',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: [{
+        id: 'saveChildRef9',
+        children: []
+      }, {
+        id: 'saveChildRef10',
+        children: []
+      }, {
+        id: 'saveChildRef11',
+        children: []
+      }, {
+        id: 'saveChildRef12',
+        children: []
+      }, {
+        id: 'saveChildRef13',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef14',
+    children: [{
+      id: 'saveChildRef15',
+      children: [{
+        id: 'saveChildRef16',
+        children: []
+      }, {
+        id: 'saveChildRef17',
+        children: []
+      }, {
+        id: 'saveChildRef18',
+        children: []
+      }, {
+        id: 'saveChildRef19',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef20',
+    children: [{
+      id: 'saveChildRef21',
+      children: [{
+        id: 'saveChildRef22',
+        children: []
+      }, {
+        id: 'saveChildRef23',
+        children: []
+      }, {
+        id: 'saveChildRef24',
+        children: []
+      }, {
+        id: 'saveChildRef25',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef26',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/goods-action/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }, {
+        id: 'saveChildRef4',
+        children: []
+      }, {
+        id: 'saveChildRef5',
+        children: []
+      }, {
+        id: 'saveChildRef6',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: [{
+        id: 'saveChildRef9',
+        children: []
+      }, {
+        id: 'saveChildRef10',
+        children: []
+      }, {
+        id: 'saveChildRef11',
+        children: []
+      }, {
+        id: 'saveChildRef12',
+        children: []
+      }, {
+        id: 'saveChildRef13',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef14',
+    children: [{
+      id: 'saveChildRef15',
+      children: [{
+        id: 'saveChildRef16',
+        children: []
+      }, {
+        id: 'saveChildRef17',
+        children: []
+      }, {
+        id: 'saveChildRef18',
+        children: []
+      }, {
+        id: 'saveChildRef19',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef20',
+    children: [{
+      id: 'saveChildRef21',
+      children: [{
+        id: 'saveChildRef22',
+        children: []
+      }, {
+        id: 'saveChildRef23',
+        children: []
+      }, {
+        id: 'saveChildRef24',
+        children: []
+      }, {
+        id: 'saveChildRef25',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef26',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/grid/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: [{
+        id: 'saveChildRef6',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: [{
+        id: 'saveChildRef9',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: [{
+        id: 'saveChildRef12',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: [{
+        id: 'saveChildRef15',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: [{
+        id: 'saveChildRef18',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef19',
+    children: [{
+      id: 'saveChildRef20',
+      children: [{
+        id: 'saveChildRef21',
+        children: []
+      }, {
+        id: 'saveChildRef22',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef23',
+    children: [{
+      id: 'saveChildRef24',
+      children: [{
+        id: 'saveChildRef25',
+        children: []
+      }, {
         id: 'saveChildRef26',
         children: []
-    }
-    ]
-    }
-    ,
-    {
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/grid/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: [{
+        id: 'saveChildRef6',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: [{
+        id: 'saveChildRef9',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: [{
+        id: 'saveChildRef12',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: [{
+        id: 'saveChildRef15',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: [{
+        id: 'saveChildRef18',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef19',
+    children: [{
+      id: 'saveChildRef20',
+      children: [{
+        id: 'saveChildRef21',
+        children: []
+      }, {
+        id: 'saveChildRef22',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef23',
+    children: [{
+      id: 'saveChildRef24',
+      children: [{
+        id: 'saveChildRef25',
+        children: []
+      }, {
+        id: 'saveChildRef26',
+        children: []
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/icon/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: [{
+          id: 'saveChildRef4',
+          children: [{
+            id: 'saveChildRef5',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef6',
+          children: [{
+            id: 'saveChildRef7',
+            children: []
+          }]
+        }]
+      }, {
+        id: 'saveChildRef8',
+        children: [{
+          id: 'saveChildRef9',
+          children: [{
+            id: 'saveChildRef10',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef11',
+          children: [{
+            id: 'saveChildRef12',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef13',
+          children: [{
+            id: 'saveChildRef14',
+            children: []
+          }]
+        }]
+      }, {
+        id: 'saveChildRef15',
+        children: [{
+          id: 'saveChildRef16',
+          children: [{
+            id: 'saveChildRef17',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef18',
+          children: [{
+            id: 'saveChildRef19',
+            children: []
+          }]
+        }]
+      }, {
+        id: 'saveChildRef20',
+        children: [{
+          id: 'saveChildRef21',
+          children: [{
+            id: 'saveChildRef22',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef23',
+          children: [{
+            id: 'saveChildRef24',
+            children: []
+          }]
+        }]
+      }]
+    }, {
+      id: 'saveChildRef25',
+      children: [{
+        id: 'saveChildRef26',
+        children: [{
+          id: 'saveChildRef27',
+          children: []
+        }]
+      }]
+    }, {
+      id: 'saveChildRef28',
+      children: [{
+        id: 'saveChildRef29',
+        children: [{
+          id: 'saveChildRef30',
+          children: []
+        }]
+      }]
+    }, {
+      id: 'saveChildRef31',
+      children: [{
+        id: 'saveChildRef32',
+        children: [{
+          id: 'saveChildRef33',
+          children: []
+        }]
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/icon/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: [{
+          id: 'saveChildRef4',
+          children: [{
+            id: 'saveChildRef5',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef6',
+          children: [{
+            id: 'saveChildRef7',
+            children: []
+          }]
+        }]
+      }, {
+        id: 'saveChildRef8',
+        children: [{
+          id: 'saveChildRef9',
+          children: [{
+            id: 'saveChildRef10',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef11',
+          children: [{
+            id: 'saveChildRef12',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef13',
+          children: [{
+            id: 'saveChildRef14',
+            children: []
+          }]
+        }]
+      }, {
+        id: 'saveChildRef15',
+        children: [{
+          id: 'saveChildRef16',
+          children: [{
+            id: 'saveChildRef17',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef18',
+          children: [{
+            id: 'saveChildRef19',
+            children: []
+          }]
+        }]
+      }, {
+        id: 'saveChildRef20',
+        children: [{
+          id: 'saveChildRef21',
+          children: [{
+            id: 'saveChildRef22',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef23',
+          children: [{
+            id: 'saveChildRef24',
+            children: []
+          }]
+        }]
+      }]
+    }, {
+      id: 'saveChildRef25',
+      children: [{
+        id: 'saveChildRef26',
+        children: [{
+          id: 'saveChildRef27',
+          children: []
+        }]
+      }]
+    }, {
+      id: 'saveChildRef28',
+      children: [{
+        id: 'saveChildRef29',
+        children: [{
+          id: 'saveChildRef30',
+          children: []
+        }]
+      }]
+    }, {
+      id: 'saveChildRef31',
+      children: [{
+        id: 'saveChildRef32',
+        children: [{
+          id: 'saveChildRef33',
+          children: []
+        }]
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/image/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: [{
+        id: 'saveChildRef6',
+        children: [{
+          id: 'saveChildRef7',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: [{
+        id: 'saveChildRef10',
+        children: [{
+          id: 'saveChildRef11',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef12',
+    children: [{
+      id: 'saveChildRef13',
+      children: [{
+        id: 'saveChildRef14',
+        children: [{
+          id: 'saveChildRef15',
+          children: []
+        }]
+      }, {
+        id: 'saveChildRef16',
+        children: [{
+          id: 'saveChildRef17',
+          children: [{
+            id: 'saveChildRef18',
+            children: []
+          }]
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef19',
+    children: [{
+      id: 'saveChildRef20',
+      children: [{
+        id: 'saveChildRef21',
+        children: [{
+          id: 'saveChildRef22',
+          children: []
+        }]
+      }, {
+        id: 'saveChildRef23',
+        children: [{
+          id: 'saveChildRef24',
+          children: []
+        }]
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/image/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: [{
+        id: 'saveChildRef6',
+        children: [{
+          id: 'saveChildRef7',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: [{
+        id: 'saveChildRef10',
+        children: [{
+          id: 'saveChildRef11',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef12',
+    children: [{
+      id: 'saveChildRef13',
+      children: [{
+        id: 'saveChildRef14',
+        children: [{
+          id: 'saveChildRef15',
+          children: []
+        }]
+      }, {
+        id: 'saveChildRef16',
+        children: [{
+          id: 'saveChildRef17',
+          children: [{
+            id: 'saveChildRef18',
+            children: []
+          }]
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef19',
+    children: [{
+      id: 'saveChildRef20',
+      children: [{
+        id: 'saveChildRef21',
+        children: [{
+          id: 'saveChildRef22',
+          children: []
+        }]
+      }, {
+        id: 'saveChildRef23',
+        children: [{
+          id: 'saveChildRef24',
+          children: []
+        }]
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/index-bar/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: [{
+          id: 'saveChildRef4',
+          children: []
+        }, {
+          id: 'saveChildRef5',
+          children: []
+        }, {
+          id: 'saveChildRef6',
+          children: []
+        }, {
+          id: 'saveChildRef7',
+          children: []
+        }]
+      }]
+    }, {
+      id: 'saveChildRef8',
+      children: [{
+        id: 'saveChildRef9',
+        children: [{
+          id: 'saveChildRef10',
+          children: []
+        }, {
+          id: 'saveChildRef11',
+          children: []
+        }, {
+          id: 'saveChildRef12',
+          children: []
+        }, {
+          id: 'saveChildRef13',
+          children: []
+        }]
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/index-bar/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: [{
+          id: 'saveChildRef4',
+          children: []
+        }, {
+          id: 'saveChildRef5',
+          children: []
+        }, {
+          id: 'saveChildRef6',
+          children: []
+        }, {
+          id: 'saveChildRef7',
+          children: []
+        }]
+      }]
+    }, {
+      id: 'saveChildRef8',
+      children: [{
+        id: 'saveChildRef9',
+        children: [{
+          id: 'saveChildRef10',
+          children: []
+        }, {
+          id: 'saveChildRef11',
+          children: []
+        }, {
+          id: 'saveChildRef12',
+          children: []
+        }, {
+          id: 'saveChildRef13',
+          children: []
+        }]
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/loading/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/loading/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/nav-bar/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: [{
+        id: 'saveChildRef5',
+        children: []
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/nav-bar/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: [{
+        id: 'saveChildRef5',
+        children: []
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/notice-bar/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef6',
+    children: [{
+      id: 'saveChildRef7',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/notice-bar/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef6',
+    children: [{
+      id: 'saveChildRef7',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/notify/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/notify/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/overlay/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/overlay/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/panel/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: [{
+        id: 'saveChildRef5',
+        children: []
+      }, {
+        id: 'saveChildRef6',
+        children: []
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/panel/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: [{
+        id: 'saveChildRef5',
+        children: []
+      }, {
+        id: 'saveChildRef6',
+        children: []
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/picker/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/picker/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/popup/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }, {
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }, {
+      id: 'saveChildRef11',
+      children: []
+    }, {
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: []
+    }, {
+      id: 'saveChildRef15',
+      children: []
+    }, {
+      id: 'saveChildRef16',
+      children: []
+    }, {
+      id: 'saveChildRef17',
+      children: []
+    }, {
+      id: 'saveChildRef18',
+      children: []
+    }, {
+      id: 'saveChildRef19',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef20',
+    children: [{
+      id: 'saveChildRef21',
+      children: []
+    }, {
+      id: 'saveChildRef22',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/popup/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }, {
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }, {
+      id: 'saveChildRef11',
+      children: []
+    }, {
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: []
+    }, {
+      id: 'saveChildRef15',
+      children: []
+    }, {
+      id: 'saveChildRef16',
+      children: []
+    }, {
+      id: 'saveChildRef17',
+      children: []
+    }, {
+      id: 'saveChildRef18',
+      children: []
+    }, {
+      id: 'saveChildRef19',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef20',
+    children: [{
+      id: 'saveChildRef21',
+      children: []
+    }, {
+      id: 'saveChildRef22',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/progress/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/progress/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/radio/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }, {
+        id: 'saveChildRef4',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: [{
+        id: 'saveChildRef7',
+        children: []
+      }, {
+        id: 'saveChildRef8',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: [{
+        id: 'saveChildRef11',
+        children: []
+      }, {
+        id: 'saveChildRef12',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: [{
+        id: 'saveChildRef15',
+        children: []
+      }, {
+        id: 'saveChildRef16',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef17',
+    children: [{
+      id: 'saveChildRef18',
+      children: [{
+        id: 'saveChildRef19',
+        children: []
+      }, {
+        id: 'saveChildRef20',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef21',
+    children: [{
+      id: 'saveChildRef22',
+      children: [{
+        id: 'saveChildRef23',
+        children: []
+      }, {
+        id: 'saveChildRef24',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef25',
+    children: [{
+      id: 'saveChildRef26',
+      children: [{
         id: 'saveChildRef27',
-        children: [
-    {
+        children: []
+      }, {
         id: 'saveChildRef28',
         children: []
-    }
-    ,
-    {
-        id: 'saveChildRef29',
+      }]
+    }]
+  }, {
+    id: 'saveChildRef29',
+    children: [{
+      id: 'saveChildRef30',
+      children: [{
+        id: 'saveChildRef31',
+        children: [{
+          id: 'saveChildRef32',
+          children: [{
+            id: 'saveChildRef33',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef34',
+          children: [{
+            id: 'saveChildRef35',
+            children: []
+          }]
+        }]
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/radio/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
         children: []
-    }
-    ,
-    {
+      }, {
+        id: 'saveChildRef4',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: [{
+        id: 'saveChildRef7',
+        children: []
+      }, {
+        id: 'saveChildRef8',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: [{
+        id: 'saveChildRef11',
+        children: []
+      }, {
+        id: 'saveChildRef12',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: [{
+        id: 'saveChildRef15',
+        children: []
+      }, {
+        id: 'saveChildRef16',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef17',
+    children: [{
+      id: 'saveChildRef18',
+      children: [{
+        id: 'saveChildRef19',
+        children: []
+      }, {
+        id: 'saveChildRef20',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef21',
+    children: [{
+      id: 'saveChildRef22',
+      children: [{
+        id: 'saveChildRef23',
+        children: []
+      }, {
+        id: 'saveChildRef24',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef25',
+    children: [{
+      id: 'saveChildRef26',
+      children: [{
+        id: 'saveChildRef27',
+        children: []
+      }, {
+        id: 'saveChildRef28',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef29',
+    children: [{
+      id: 'saveChildRef30',
+      children: [{
+        id: 'saveChildRef31',
+        children: [{
+          id: 'saveChildRef32',
+          children: [{
+            id: 'saveChildRef33',
+            children: []
+          }]
+        }, {
+          id: 'saveChildRef34',
+          children: [{
+            id: 'saveChildRef35',
+            children: []
+          }]
+        }]
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/rate/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/rate/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/search/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/search/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/share-sheet/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: []
+    }, {
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/share-sheet/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: []
+    }, {
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/sidebar/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: [{
+          id: 'saveChildRef4',
+          children: []
+        }, {
+          id: 'saveChildRef5',
+          children: []
+        }, {
+          id: 'saveChildRef6',
+          children: []
+        }]
+      }]
+    }, {
+      id: 'saveChildRef7',
+      children: [{
+        id: 'saveChildRef8',
+        children: [{
+          id: 'saveChildRef9',
+          children: []
+        }, {
+          id: 'saveChildRef10',
+          children: []
+        }, {
+          id: 'saveChildRef11',
+          children: []
+        }]
+      }]
+    }, {
+      id: 'saveChildRef12',
+      children: [{
+        id: 'saveChildRef13',
+        children: [{
+          id: 'saveChildRef14',
+          children: []
+        }, {
+          id: 'saveChildRef15',
+          children: []
+        }, {
+          id: 'saveChildRef16',
+          children: []
+        }]
+      }]
+    }, {
+      id: 'saveChildRef17',
+      children: [{
+        id: 'saveChildRef18',
+        children: [{
+          id: 'saveChildRef19',
+          children: []
+        }, {
+          id: 'saveChildRef20',
+          children: []
+        }, {
+          id: 'saveChildRef21',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef22',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/sidebar/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: [{
+          id: 'saveChildRef4',
+          children: []
+        }, {
+          id: 'saveChildRef5',
+          children: []
+        }, {
+          id: 'saveChildRef6',
+          children: []
+        }]
+      }]
+    }, {
+      id: 'saveChildRef7',
+      children: [{
+        id: 'saveChildRef8',
+        children: [{
+          id: 'saveChildRef9',
+          children: []
+        }, {
+          id: 'saveChildRef10',
+          children: []
+        }, {
+          id: 'saveChildRef11',
+          children: []
+        }]
+      }]
+    }, {
+      id: 'saveChildRef12',
+      children: [{
+        id: 'saveChildRef13',
+        children: [{
+          id: 'saveChildRef14',
+          children: []
+        }, {
+          id: 'saveChildRef15',
+          children: []
+        }, {
+          id: 'saveChildRef16',
+          children: []
+        }]
+      }]
+    }, {
+      id: 'saveChildRef17',
+      children: [{
+        id: 'saveChildRef18',
+        children: [{
+          id: 'saveChildRef19',
+          children: []
+        }, {
+          id: 'saveChildRef20',
+          children: []
+        }, {
+          id: 'saveChildRef21',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef22',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/skeleton/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/skeleton/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/slider/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/slider/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/stepper/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef15',
+    children: [{
+      id: 'saveChildRef16',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef17',
+    children: [{
+      id: 'saveChildRef18',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef19',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/stepper/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef15',
+    children: [{
+      id: 'saveChildRef16',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef17',
+    children: [{
+      id: 'saveChildRef18',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef19',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/steps/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef6',
+    children: [{
+      id: 'saveChildRef7',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/steps/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef6',
+    children: [{
+      id: 'saveChildRef7',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef8',
+    children: [{
+      id: 'saveChildRef9',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/sticky/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: [{
+        id: 'saveChildRef6',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: [{
+        id: 'saveChildRef9',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: [{
+        id: 'saveChildRef12',
+        children: []
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/sticky/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: [{
+        id: 'saveChildRef6',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: [{
+        id: 'saveChildRef9',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: [{
+        id: 'saveChildRef12',
+        children: []
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/submit-bar/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: [{
+        id: 'saveChildRef9',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/submit-bar/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: [{
+        id: 'saveChildRef9',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/swipe-cell/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: [{
+          id: 'saveChildRef4',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: [{
+        id: 'saveChildRef7',
+        children: [{
+          id: 'saveChildRef8',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: [{
+        id: 'saveChildRef11',
+        children: [{
+          id: 'saveChildRef12',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: []
+  }, {
+    id: 'saveChildRef14',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/swipe-cell/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: [{
+          id: 'saveChildRef4',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: [{
+        id: 'saveChildRef7',
+        children: [{
+          id: 'saveChildRef8',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: [{
+        id: 'saveChildRef11',
+        children: [{
+          id: 'saveChildRef12',
+          children: []
+        }]
+      }]
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: []
+  }, {
+    id: 'saveChildRef14',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/switch/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/switch/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/tab/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: [{
+        id: 'saveChildRef6',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: [{
+        id: 'saveChildRef9',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: [{
+        id: 'saveChildRef12',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: [{
+        id: 'saveChildRef15',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: [{
+        id: 'saveChildRef18',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef19',
+    children: [{
+      id: 'saveChildRef20',
+      children: [{
+        id: 'saveChildRef21',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef22',
+    children: [{
+      id: 'saveChildRef23',
+      children: [{
+        id: 'saveChildRef24',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef25',
+    children: [{
+      id: 'saveChildRef26',
+      children: [{
+        id: 'saveChildRef27',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef28',
+    children: [{
+      id: 'saveChildRef29',
+      children: [{
         id: 'saveChildRef30',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef31',
         children: []
-    }
-    ]
-    }
-    ,
-    {
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/tab/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: [{
+        id: 'saveChildRef6',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: [{
+        id: 'saveChildRef9',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: [{
+        id: 'saveChildRef12',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: [{
+        id: 'saveChildRef15',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: [{
+        id: 'saveChildRef18',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef19',
+    children: [{
+      id: 'saveChildRef20',
+      children: [{
+        id: 'saveChildRef21',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef22',
+    children: [{
+      id: 'saveChildRef23',
+      children: [{
+        id: 'saveChildRef24',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef25',
+    children: [{
+      id: 'saveChildRef26',
+      children: [{
+        id: 'saveChildRef27',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef28',
+    children: [{
+      id: 'saveChildRef29',
+      children: [{
+        id: 'saveChildRef30',
+        children: []
+      }, {
+        id: 'saveChildRef31',
+        children: []
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/tabbar/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
+        id: 'saveChildRef3',
+        children: []
+      }, {
+        id: 'saveChildRef4',
+        children: []
+      }, {
+        id: 'saveChildRef5',
+        children: []
+      }, {
+        id: 'saveChildRef6',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: [{
+        id: 'saveChildRef9',
+        children: []
+      }, {
+        id: 'saveChildRef10',
+        children: []
+      }, {
+        id: 'saveChildRef11',
+        children: []
+      }, {
+        id: 'saveChildRef12',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: [{
+        id: 'saveChildRef15',
+        children: []
+      }, {
+        id: 'saveChildRef16',
+        children: []
+      }, {
+        id: 'saveChildRef17',
+        children: []
+      }, {
+        id: 'saveChildRef18',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef19',
+    children: [{
+      id: 'saveChildRef20',
+      children: [{
+        id: 'saveChildRef21',
+        children: []
+      }, {
+        id: 'saveChildRef22',
+        children: []
+      }, {
+        id: 'saveChildRef23',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef24',
+    children: [{
+      id: 'saveChildRef25',
+      children: [{
+        id: 'saveChildRef26',
+        children: []
+      }, {
+        id: 'saveChildRef27',
+        children: []
+      }, {
+        id: 'saveChildRef28',
+        children: []
+      }, {
+        id: 'saveChildRef29',
+        children: []
+      }]
+    }]
+  }, {
+    id: 'saveChildRef30',
+    children: [{
+      id: 'saveChildRef31',
+      children: [{
         id: 'saveChildRef32',
-        children: [
-    {
+        children: []
+      }, {
         id: 'saveChildRef33',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef34',
         children: []
-    }
-    ]
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef35',
-        children: [
-    {
-        id: 'saveChildRef36',
         children: []
-    }
-    ,
-    {
-        id: 'saveChildRef37',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef38',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/button/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/tabbar/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: [{
         id: 'saveChildRef3',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef4',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef5',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef6',
         children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
+      }]
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: [{
         id: 'saveChildRef9',
         children: []
-    }
-    ]
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef10',
-        children: [
-    {
+        children: []
+      }, {
         id: 'saveChildRef11',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef12',
         children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ,
-    {
+      }]
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: [{
         id: 'saveChildRef15',
         children: []
-    }
-    ]
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef16',
-        children: [
-    {
+        children: []
+      }, {
         id: 'saveChildRef17',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef18',
         children: []
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
+      }]
+    }]
+  }, {
+    id: 'saveChildRef19',
+    children: [{
+      id: 'saveChildRef20',
+      children: [{
         id: 'saveChildRef21',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef22',
         children: []
-    }
-    ]
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
         children: []
-    }
-    ,
-    {
-        id: 'saveChildRef25',
-        children: []
-    }
-    ,
-    {
+      }]
+    }]
+  }, {
+    id: 'saveChildRef24',
+    children: [{
+      id: 'saveChildRef25',
+      children: [{
         id: 'saveChildRef26',
         children: []
-    }
-    ]
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef27',
-        children: [
-    {
+        children: []
+      }, {
         id: 'saveChildRef28',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef29',
         children: []
-    }
-    ,
-    {
-        id: 'saveChildRef30',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef31',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
+      }]
+    }]
+  }, {
+    id: 'saveChildRef30',
+    children: [{
+      id: 'saveChildRef31',
+      children: [{
         id: 'saveChildRef32',
-        children: [
-    {
+        children: []
+      }, {
         id: 'saveChildRef33',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef34',
         children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef35',
-        children: [
-    {
-        id: 'saveChildRef36',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef37',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef38',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/calendar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: [
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ]
-    }
-    ,'pages/calendar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: [
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ]
-    }
-    ,'pages/card/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/card/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/cell/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: [
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef21',
-        children: [
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: [
-    {
-        id: 'saveChildRef25',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef26',
-        children: [
-    {
-        id: 'saveChildRef27',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef28',
-        children: [
-    {
-        id: 'saveChildRef29',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/cell/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: [
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef21',
-        children: [
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: [
-    {
-        id: 'saveChildRef25',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef26',
-        children: [
-    {
-        id: 'saveChildRef27',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef28',
-        children: [
-    {
-        id: 'saveChildRef29',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/checkbox/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: [
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef22',
-        children: [
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: [
-    {
-        id: 'saveChildRef25',
-        children: [
-    {
-        id: 'saveChildRef26',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/checkbox/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: [
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef22',
-        children: [
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: [
-    {
-        id: 'saveChildRef25',
-        children: [
-    {
-        id: 'saveChildRef26',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/circle/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ]
-    }
-    ,'pages/circle/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ]
-    }
-    ,'pages/col/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: [
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/col/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: [
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/collapse/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: [
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ]
-    }
-    ,'pages/collapse/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: [
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ]
-    }
-    ,'pages/count-down/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ,'pages/count-down/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ,'pages/dashboard/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'pages/dashboard/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: []
-    }
-    ]
-    }
-    ,'pages/datetime-picker/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ]
-    }
-    ,'pages/datetime-picker/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ]
-    }
-    ,'pages/dialog/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ,'pages/dialog/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ,'pages/divider/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/divider/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/dropdown-menu/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: [
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef22',
-        children: [
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef25',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/dropdown-menu/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: [
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef22',
-        children: [
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef25',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/empty/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/empty/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/field/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: [
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: [
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef21',
-        children: [
-    {
-        id: 'saveChildRef22',
-        children: [
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/field/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: [
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: [
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef21',
-        children: [
-    {
-        id: 'saveChildRef22',
-        children: [
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/goods-action/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: [
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: [
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef23',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef25',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef26',
-        children: []
-    }
-    ]
-    }
-    ,'pages/goods-action/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: [
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: [
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef23',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef25',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef26',
-        children: []
-    }
-    ]
-    }
-    ,'pages/grid/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: [
-    {
-        id: 'saveChildRef25',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef26',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/grid/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: [
-    {
-        id: 'saveChildRef25',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef26',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/icon/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: [
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: [
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef25',
-        children: [
-    {
-        id: 'saveChildRef26',
-        children: [
-    {
-        id: 'saveChildRef27',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef28',
-        children: [
-    {
-        id: 'saveChildRef29',
-        children: [
-    {
-        id: 'saveChildRef30',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef31',
-        children: [
-    {
-        id: 'saveChildRef32',
-        children: [
-    {
-        id: 'saveChildRef33',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/icon/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: [
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: [
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef25',
-        children: [
-    {
-        id: 'saveChildRef26',
-        children: [
-    {
-        id: 'saveChildRef27',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef28',
-        children: [
-    {
-        id: 'saveChildRef29',
-        children: [
-    {
-        id: 'saveChildRef30',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef31',
-        children: [
-    {
-        id: 'saveChildRef32',
-        children: [
-    {
-        id: 'saveChildRef33',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/image/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: [
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: [
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/image/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: [
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: [
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/index-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/index-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/loading/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/loading/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/nav-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/nav-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/notice-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/notice-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/notify/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ,'pages/notify/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ,'pages/overlay/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/overlay/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/panel/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/panel/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/picker/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ,'pages/picker/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ,'pages/popup/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/popup/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/progress/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/progress/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/radio/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef21',
-        children: [
-    {
-        id: 'saveChildRef22',
-        children: [
-    {
-        id: 'saveChildRef23',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef25',
-        children: [
-    {
-        id: 'saveChildRef26',
-        children: [
-    {
-        id: 'saveChildRef27',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef28',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef29',
-        children: [
-    {
-        id: 'saveChildRef30',
-        children: [
-    {
-        id: 'saveChildRef31',
-        children: [
-    {
-        id: 'saveChildRef32',
-        children: [
-    {
-        id: 'saveChildRef33',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef34',
-        children: [
-    {
+      }, {
         id: 'saveChildRef35',
         children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/radio/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
+      }]
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/tag/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }, {
+      id: 'saveChildRef4',
+      children: []
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef6',
+    children: [{
+      id: 'saveChildRef7',
+      children: []
+    }, {
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }, {
+      id: 'saveChildRef13',
+      children: []
+    }, {
+      id: 'saveChildRef14',
+      children: []
+    }, {
+      id: 'saveChildRef15',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: []
+    }, {
+      id: 'saveChildRef18',
+      children: []
+    }, {
+      id: 'saveChildRef19',
+      children: []
+    }, {
+      id: 'saveChildRef20',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef21',
+    children: [{
+      id: 'saveChildRef22',
+      children: []
+    }, {
+      id: 'saveChildRef23',
+      children: []
+    }, {
+      id: 'saveChildRef24',
+      children: []
+    }, {
+      id: 'saveChildRef25',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef26',
+    children: [{
+      id: 'saveChildRef27',
+      children: []
+    }, {
+      id: 'saveChildRef28',
+      children: []
+    }, {
+      id: 'saveChildRef29',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef30',
+    children: [{
+      id: 'saveChildRef31',
+      children: []
+    }, {
+      id: 'saveChildRef32',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/tag/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }, {
+      id: 'saveChildRef4',
+      children: []
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef6',
+    children: [{
+      id: 'saveChildRef7',
+      children: []
+    }, {
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }, {
+      id: 'saveChildRef13',
+      children: []
+    }, {
+      id: 'saveChildRef14',
+      children: []
+    }, {
+      id: 'saveChildRef15',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: []
+    }, {
+      id: 'saveChildRef18',
+      children: []
+    }, {
+      id: 'saveChildRef19',
+      children: []
+    }, {
+      id: 'saveChildRef20',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef21',
+    children: [{
+      id: 'saveChildRef22',
+      children: []
+    }, {
+      id: 'saveChildRef23',
+      children: []
+    }, {
+      id: 'saveChildRef24',
+      children: []
+    }, {
+      id: 'saveChildRef25',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef26',
+    children: [{
+      id: 'saveChildRef27',
+      children: []
+    }, {
+      id: 'saveChildRef28',
+      children: []
+    }, {
+      id: 'saveChildRef29',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef30',
+    children: [{
+      id: 'saveChildRef31',
+      children: []
+    }, {
+      id: 'saveChildRef32',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/toast/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef12',
+    children: []
+  }]
+}), _defineProperty(_module$exports, "pages/toast/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef4',
+    children: [{
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef10',
+    children: [{
+      id: 'saveChildRef11',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef12',
+    children: []
+  }]
+}), _defineProperty(_module$exports, 'pages/transition/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }, {
+      id: 'saveChildRef4',
+      children: []
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }, {
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }, {
+      id: 'saveChildRef11',
+      children: []
+    }, {
+      id: 'saveChildRef12',
+      children: []
+    }, {
+      id: 'saveChildRef13',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/transition/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }, {
+      id: 'saveChildRef3',
+      children: []
+    }, {
+      id: 'saveChildRef4',
+      children: []
+    }, {
+      id: 'saveChildRef5',
+      children: []
+    }, {
+      id: 'saveChildRef6',
+      children: []
+    }, {
+      id: 'saveChildRef7',
+      children: []
+    }, {
+      id: 'saveChildRef8',
+      children: []
+    }, {
+      id: 'saveChildRef9',
+      children: []
+    }, {
+      id: 'saveChildRef10',
+      children: []
+    }, {
+      id: 'saveChildRef11',
+      children: []
+    }, {
+      id: 'saveChildRef12',
+      children: []
+    }, {
+      id: 'saveChildRef13',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/tree-select/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: [{
         id: 'saveChildRef7',
         children: []
-    }
-    ,
-    {
+      }, {
         id: 'saveChildRef8',
         children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
+      }]
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/tree-select/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: [{
+        id: 'saveChildRef7',
         children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
+      }, {
+        id: 'saveChildRef8',
         children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
+      }]
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, 'pages/uploader/index', {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: [{
         id: 'saveChildRef15',
         children: []
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef21',
-        children: [
-    {
-        id: 'saveChildRef22',
-        children: [
-    {
-        id: 'saveChildRef23',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef25',
-        children: [
-    {
-        id: 'saveChildRef26',
-        children: [
-    {
-        id: 'saveChildRef27',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef28',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef29',
-        children: [
-    {
-        id: 'saveChildRef30',
-        children: [
-    {
-        id: 'saveChildRef31',
-        children: [
-    {
-        id: 'saveChildRef32',
-        children: [
-    {
-        id: 'saveChildRef33',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef34',
-        children: [
-    {
-        id: 'saveChildRef35',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/rate/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/rate/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/search/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/search/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/share-sheet/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ,'pages/share-sheet/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ,'pages/sidebar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: [
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ,
-    {
+      }]
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef18',
+    children: [{
+      id: 'saveChildRef19',
+      children: []
+    }, {
+      id: 'saveChildRef20',
+      children: []
+    }]
+  }]
+}), _defineProperty(_module$exports, "pages/uploader/index", {
+  id: 'saveChildRef0',
+  children: [{
+    id: 'saveChildRef1',
+    children: [{
+      id: 'saveChildRef2',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef3',
+    children: [{
+      id: 'saveChildRef4',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef5',
+    children: [{
+      id: 'saveChildRef6',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef7',
+    children: [{
+      id: 'saveChildRef8',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef9',
+    children: [{
+      id: 'saveChildRef10',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef11',
+    children: [{
+      id: 'saveChildRef12',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef13',
+    children: [{
+      id: 'saveChildRef14',
+      children: [{
         id: 'saveChildRef15',
         children: []
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ]
-    }
-    ,'pages/sidebar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: [
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ]
-    }
-    ,'pages/skeleton/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/skeleton/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/slider/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/slider/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/stepper/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: [
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ]
-    }
-    ,'pages/stepper/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: [
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ]
-    }
-    ,'pages/steps/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,'pages/steps/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,'pages/sticky/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/sticky/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/submit-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,'pages/submit-bar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,'pages/swipe-cell/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ,'pages/swipe-cell/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ]
-    }
-    ,'pages/switch/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ,'pages/switch/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ,'pages/tab/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef22',
-        children: [
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef25',
-        children: [
-    {
-        id: 'saveChildRef26',
-        children: [
-    {
-        id: 'saveChildRef27',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef28',
-        children: [
-    {
-        id: 'saveChildRef29',
-        children: [
-    {
-        id: 'saveChildRef30',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef31',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/tab/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: [
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef22',
-        children: [
-    {
-        id: 'saveChildRef23',
-        children: [
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef25',
-        children: [
-    {
-        id: 'saveChildRef26',
-        children: [
-    {
-        id: 'saveChildRef27',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef28',
-        children: [
-    {
-        id: 'saveChildRef29',
-        children: [
-    {
-        id: 'saveChildRef30',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef31',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/tabbar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef23',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef24',
-        children: [
-    {
-        id: 'saveChildRef25',
-        children: [
-    {
-        id: 'saveChildRef26',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef27',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef28',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef29',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef30',
-        children: [
-    {
-        id: 'saveChildRef31',
-        children: [
-    {
-        id: 'saveChildRef32',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef33',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef34',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef35',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/tabbar/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: [
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: [
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: [
-    {
-        id: 'saveChildRef20',
-        children: [
-    {
-        id: 'saveChildRef21',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef23',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef24',
-        children: [
-    {
-        id: 'saveChildRef25',
-        children: [
-    {
-        id: 'saveChildRef26',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef27',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef28',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef29',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef30',
-        children: [
-    {
-        id: 'saveChildRef31',
-        children: [
-    {
-        id: 'saveChildRef32',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef33',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef34',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef35',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/tag/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef21',
-        children: [
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef23',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef25',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef26',
-        children: [
-    {
-        id: 'saveChildRef27',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef28',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef29',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef30',
-        children: [
-    {
-        id: 'saveChildRef31',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef32',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/tag/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef14',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef21',
-        children: [
-    {
-        id: 'saveChildRef22',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef23',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef24',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef25',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef26',
-        children: [
-    {
-        id: 'saveChildRef27',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef28',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef29',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef30',
-        children: [
-    {
-        id: 'saveChildRef31',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef32',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/toast/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,'pages/toast/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: [
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: [
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,'pages/transition/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/transition/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/tree-select/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/tree-select/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: [
-    {
-        id: 'saveChildRef7',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/uploader/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,'pages/uploader/index': 
-    {
-        id: 'saveChildRef0',
-        children: [
-    {
-        id: 'saveChildRef1',
-        children: [
-    {
-        id: 'saveChildRef2',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef3',
-        children: [
-    {
-        id: 'saveChildRef4',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef5',
-        children: [
-    {
-        id: 'saveChildRef6',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef7',
-        children: [
-    {
-        id: 'saveChildRef8',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef9',
-        children: [
-    {
-        id: 'saveChildRef10',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef11',
-        children: [
-    {
-        id: 'saveChildRef12',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef13',
-        children: [
-    {
-        id: 'saveChildRef14',
-        children: [
-    {
-        id: 'saveChildRef15',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef16',
-        children: [
-    {
-        id: 'saveChildRef17',
-        children: []
-    }
-    ]
-    }
-    ,
-    {
-        id: 'saveChildRef18',
-        children: [
-    {
-        id: 'saveChildRef19',
-        children: []
-    }
-    ,
-    {
-        id: 'saveChildRef20',
-        children: []
-    }
-    ]
-    }
-    ]
-    }
-    ,}
+      }]
+    }]
+  }, {
+    id: 'saveChildRef16',
+    children: [{
+      id: 'saveChildRef17',
+      children: []
+    }]
+  }, {
+    id: 'saveChildRef18',
+    children: [{
+      id: 'saveChildRef19',
+      children: []
+    }, {
+      id: 'saveChildRef20',
+      children: []
+    }]
+  }]
+}), _module$exports);

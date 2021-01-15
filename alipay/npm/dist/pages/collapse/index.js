@@ -1,32 +1,34 @@
-import Page from "../../common/page";
-import Toast from "../../dist/toast/toast";
-Page({
-    data: {
-        active1: [0],
-        active2: 0,
-        active3: [],
-        active4: [],
-        title1: "有赞微商城",
-        title2: "有赞零售",
-        title3: "有赞美业",
-        content1: "提供多样店铺模板，快速搭建网上商城",
-        content2:
-            "网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失",
-        content3: "线上拓客，随时预约，贴心顺手的开单收银"
-    },
+"use strict";
 
-    onChange(event) {
-        const { key } = event.currentTarget.dataset;
-        this.setData({
-            [key]: event.detail
-        });
-    },
+var _page = _interopRequireDefault(require("../../common/page"));
 
-    onOpen(event) {
-        Toast(`展开: ${event.detail}`);
-    },
+var _toast = _interopRequireDefault(require("../../dist/toast/toast"));
 
-    onClose(event) {
-        Toast(`关闭: ${event.detail}`);
-    }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+(0, _page["default"])({
+  data: {
+    active1: [0],
+    active2: 0,
+    active3: [],
+    active4: [],
+    title1: "有赞微商城",
+    title2: "有赞零售",
+    title3: "有赞美业",
+    content1: "提供多样店铺模板，快速搭建网上商城",
+    content2: "网店吸粉获客、会员分层营销、一机多种收款，告别经营低效和客户流失",
+    content3: "线上拓客，随时预约，贴心顺手的开单收银"
+  },
+  onChange: function onChange(event) {
+    var key = event.currentTarget.dataset.key;
+    this.setData(_defineProperty({}, key, event.detail));
+  },
+  onOpen: function onOpen(event) {
+    (0, _toast["default"])("\u5C55\u5F00: ".concat(event.detail));
+  },
+  onClose: function onClose(event) {
+    (0, _toast["default"])("\u5173\u95ED: ".concat(event.detail));
+  }
 });

@@ -1,17 +1,22 @@
-const _my = require("../../__antmove/api/index.js")(my);
+"use strict";
 
-const wx = _my;
-import { link } from "../mixins/link";
-import { VantComponent } from "../common/component";
-import { addUnit } from "../common/utils";
-VantComponent({
+var _link = require("../mixins/link");
+
+var _component = require("../common/component");
+
+var _utils = require("../common/utils");
+
+var _my = require("../../__antmove/api/index.js")(my);
+
+var wx = _my;
+(0, _component.VantComponent)({
   relation: {
     name: "grid",
     type: "ancestor",
     current: "grid-item"
   },
   classes: ["content-class", "icon-class", "text-class"],
-  mixins: [link],
+  mixins: [_link.link],
   props: {
     icon: String,
     iconColor: String,
@@ -24,79 +29,71 @@ VantComponent({
   data: {
     viewStyle: ""
   },
+  mounted: function mounted() {
+    var _this = this;
 
-  mounted() {
-    wx.nextTick(() => {
-      this.updateStyle();
+    wx.nextTick(function () {
+      _this.updateStyle();
     });
   },
-
   methods: {
-    updateStyle() {
+    updateStyle: function updateStyle() {
       if (!this.parent) {
         return;
       }
 
-      const {
-        data,
-        children
-      } = this.parent;
-      const {
-        columnNum,
-        border,
-        square,
-        gutter,
-        clickable,
-        center,
-        direction,
-        iconSize
-      } = data;
-      const width = `${100 / columnNum}%`;
-      const styleWrapper = [];
-      styleWrapper.push(`width: ${width}`);
+      var _this$parent = this.parent,
+          data = _this$parent.data,
+          children = _this$parent.children;
+      var columnNum = data.columnNum,
+          border = data.border,
+          square = data.square,
+          gutter = data.gutter,
+          clickable = data.clickable,
+          center = data.center,
+          direction = data.direction,
+          iconSize = data.iconSize;
+      var width = "".concat(100 / columnNum, "%");
+      var styleWrapper = [];
+      styleWrapper.push("width: ".concat(width));
 
       if (square) {
-        styleWrapper.push(`padding-top: ${width}`);
+        styleWrapper.push("padding-top: ".concat(width));
       }
 
       if (gutter) {
-        const gutterValue = addUnit(gutter);
-        styleWrapper.push(`padding-right: ${gutterValue}`);
-        const index = children.indexOf(this);
+        var gutterValue = (0, _utils.addUnit)(gutter);
+        styleWrapper.push("padding-right: ".concat(gutterValue));
+        var index = children.indexOf(this);
 
         if (index >= columnNum && !square) {
-          styleWrapper.push(`margin-top: ${gutterValue}`);
+          styleWrapper.push("margin-top: ".concat(gutterValue));
         }
       }
 
-      let contentStyle = "";
+      var contentStyle = "";
 
       if (square && gutter) {
-        const gutterValue = addUnit(gutter);
-        contentStyle = `
-          right: ${gutterValue};
-          bottom: ${gutterValue};
-          height: auto;
-        `;
+        var _gutterValue = (0, _utils.addUnit)(gutter);
+
+        contentStyle = "\n          right: ".concat(_gutterValue, ";\n          bottom: ").concat(_gutterValue, ";\n          height: auto;\n        ");
       }
 
       this.setData({
         viewStyle: styleWrapper.join("; "),
-        contentStyle,
-        center,
-        border,
-        square,
-        gutter,
-        clickable,
-        direction,
-        iconSize
+        contentStyle: contentStyle,
+        center: center,
+        border: border,
+        square: square,
+        gutter: gutter,
+        clickable: clickable,
+        direction: direction,
+        iconSize: iconSize
       });
     },
-
-    onClick() {
+    onClick: function onClick() {
       this.$emit("click");
       this.jumpLink();
     }
-
   }
 });

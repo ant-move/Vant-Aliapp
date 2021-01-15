@@ -1,23 +1,29 @@
-function handleExternalClasses(opts = {}) {
-  const arr = opts.externalClasses || []
-  const _class = []
-  arr.forEach((a) => {
-    _class.push(_transform(a) || '')
-  })
+"use strict";
 
-  opts.data = opts.data || {}
+function handleExternalClasses() {
+  var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var arr = opts.externalClasses || [];
+  var _class = [];
+  arr.forEach(function (a) {
+    _class.push(_transform(a) || '');
+  });
+  opts.data = opts.data || {};
+  opts.data.__classNames = _class;
+  opts.data.__classes = '';
 
-  opts.data.__classNames = _class
-  opts.data.__classes = ''
+  function _transform() {
+    var str = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+    str = str.replace(/-(\w)/g, function () {
+      for (var _len = arguments.length, $ = new Array(_len), _key = 0; _key < _len; _key++) {
+        $[_key] = arguments[_key];
+      }
 
-  function _transform(str = '') {
-    str = str.replace(/-(\w)/g, (...$) => {
-      return $[1].toUpperCase()
-    })
-
-    return str || ''
+      return $[1].toUpperCase();
+    });
+    return str || '';
   }
-  return opts
+
+  return opts;
 }
 
-module.exports = handleExternalClasses
+module.exports = handleExternalClasses;

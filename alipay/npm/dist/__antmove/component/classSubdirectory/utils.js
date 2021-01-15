@@ -1,94 +1,86 @@
+"use strict";
+
 /**
  * 把支付宝的e转成对等的微信e
  */
 function antmoveAction(e) {
-  const wxEvent = {
+  var wxEvent = {
     currentTarget: e.currentTarget,
     target: e.target,
     type: e.type.toLowerCase(),
     changedTouches: e.changedTouches,
     touches: e.touches,
-    timeStamp: e.timeStamp,
-  }
-
-  const eventDetail = e.detail || {}
-
-  const { pageX, pageY } = eventDetail
+    timeStamp: e.timeStamp
+  };
+  var eventDetail = e.detail || {};
+  var pageX = eventDetail.pageX,
+      pageY = eventDetail.pageY;
 
   if (!wxEvent.changedTouches) {
-    wxEvent.changedTouches = [
-      e.detail
-    ]
+    wxEvent.changedTouches = [e.detail];
   }
 
   if (!wxEvent.touches) {
-    wxEvent.touches = [
-      e.detail
-    ]
+    wxEvent.touches = [e.detail];
   }
 
   if (typeof pageX !== 'undefined' && typeof pageY !== 'undefined') {
     wxEvent.detail = {
       x: pageX,
-      y: pageY,
-    }
+      y: pageY
+    };
   } else {
-    wxEvent.detail = eventDetail
+    wxEvent.detail = eventDetail;
   }
 
-  const userFnName
-        = `antmove${
-          wxEvent.type.replace(/^\w/, ($1) => {
-            return $1.toUpperCase()
-          })}`
-
-  const userFn = e.currentTarget.dataset[userFnName]
+  var userFnName = "antmove".concat(wxEvent.type.replace(/^\w/, function ($1) {
+    return $1.toUpperCase();
+  }));
+  var userFn = e.currentTarget.dataset[userFnName];
 
   if (!userFn || !this[userFn]) {
-    console.warn(
-      `does not have a method "${userFnName}" to handle event "${wxEvent.type}"`,
-    )
-    return
+    console.warn("does not have a method \"".concat(userFnName, "\" to handle event \"").concat(wxEvent.type, "\""));
+    return;
   }
 
-  delete e.currentTarget.dataset[userFnName]
-
-  this[userFn](wxEvent)
+  delete e.currentTarget.dataset[userFnName];
+  this[userFn](wxEvent);
 }
 
 module.exports = {
   connectNodes: function connectNodes(node, ast) {
-    if (!node.$relationNode.$parent) { return false }
-    const parentNodeId = node.$relationNode.$parent.$id
-    const parentNodeRoute = node.$relationNode.$parent.$route
-
-    const refNumbers
-            = (node.$self.props.refNumbers
-                && node.$self.props.refNumbers.length)
-            || 1
-
-    const parentArray = ast.$refNodes[parentNodeRoute][parentNodeId]
-    let parent = null
-    if (refNumbers > 1) {
-      parentArray.forEach((_parent) => {
-        if (_parent.$children.length < refNumbers && !parent) {
-          parent = _parent
-          return true
-        }
-      })
-    } else {
-      parent = parentArray[parentArray.length - 1]
+    if (!node.$relationNode.$parent) {
+      return false;
     }
+
+    var parentNodeId = node.$relationNode.$parent.$id;
+    var parentNodeRoute = node.$relationNode.$parent.$route;
+    var refNumbers = node.$self.props.refNumbers && node.$self.props.refNumbers.length || 1;
+    var parentArray = ast.$refNodes[parentNodeRoute][parentNodeId];
+    var parent = null;
+
+    if (refNumbers > 1) {
+      parentArray.forEach(function (_parent) {
+        if (_parent.$children.length < refNumbers && !parent) {
+          parent = _parent;
+          return true;
+        }
+      });
+    } else {
+      parent = parentArray[parentArray.length - 1];
+    }
+
     if (parent) {
-      node.setParent(parent)
+      node.setParent(parent);
     }
   },
-  setIfWatch,
-  antmoveAction,
-}
+  setIfWatch: setIfWatch,
+  antmoveAction: antmoveAction
+};
+
 function setIfWatch(res) {
   my.setStorageSync({
     key: 'ifWatch',
-    data: res,
-  })
+    data: res
+  });
 }

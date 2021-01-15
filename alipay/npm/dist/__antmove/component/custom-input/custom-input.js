@@ -1,4 +1,6 @@
-const processDataSet = require('../utils/processDataSet')
+"use strict";
+
+var processDataSet = require('../utils/processDataSet');
 
 Component({
   props: {
@@ -17,45 +19,45 @@ Component({
     selectionStart: -1,
     selectionEnd: -1,
     name: '',
-    onInput: () => {},
-    onFocus: () => {},
-    onBlur: () => {},
-    onConfirm: () => {},
-    onTap: () => {},
-    catchTap: () => {},
+    onInput: function onInput() {},
+    onFocus: function onFocus() {},
+    onBlur: function onBlur() {},
+    onConfirm: function onConfirm() {},
+    onTap: function onTap() {},
+    catchTap: function catchTap() {}
   },
   methods: {
-    inputHandler(e) {
+    inputHandler: function inputHandler(e) {
       if (this.props.onInput) {
-        const tapEvent = processDataSet(e, this.props)
-        this.props.onInput(tapEvent)
+        var tapEvent = processDataSet(e, this.props);
+        this.props.onInput(tapEvent);
       }
     },
-    focusHandler(e) {
+    focusHandler: function focusHandler(e) {
       if (this.props.onFocus) {
-        const tapEvent = processDataSet(e, this.props)
-        this.props.onFocus(tapEvent)
+        var tapEvent = processDataSet(e, this.props);
+        this.props.onFocus(tapEvent);
       }
     },
-    blurHandler(e) {
+    blurHandler: function blurHandler(e) {
       if (this.props.onBlur) {
-        const tapEvent = processDataSet(e, this.props)
-        this.props.onBlur(tapEvent)
+        var tapEvent = processDataSet(e, this.props);
+        this.props.onBlur(tapEvent);
       }
     },
-    bindconfirmHandler(e) {
+    bindconfirmHandler: function bindconfirmHandler(e) {
       if (this.props.onConfirm) {
-        const tapEvent = processDataSet(e, this.props)
-        this.props.onConfirm(tapEvent)
+        var tapEvent = processDataSet(e, this.props);
+        this.props.onConfirm(tapEvent);
       }
     },
-    tapHandler(e) {
-      const tapEvent = processDataSet(e, this.props)
-      this.props.onTap && this.props.onTap(tapEvent)
+    tapHandler: function tapHandler(e) {
+      var tapEvent = processDataSet(e, this.props);
+      this.props.onTap && this.props.onTap(tapEvent);
     },
-    catchtapHandler(e) {
-      const tapEvent = processDataSet(e, this.props)
-      this.props.catchTap && this.props.catchTap(tapEvent)
-    },
-  },
-})
+    catchtapHandler: function catchtapHandler(e) {
+      var tapEvent = processDataSet(e, this.props);
+      this.props.catchTap && this.props.catchTap(tapEvent);
+    }
+  }
+});

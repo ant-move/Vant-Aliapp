@@ -50,7 +50,7 @@
 }
 
 .info-index .van-info--dot {
-    min-width: 0;
+    min-width: 1px;
     border-radius: 100%;
     width: 8px;
     width: var(--info-dot-size, 8px);

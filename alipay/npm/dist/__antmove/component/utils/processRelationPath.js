@@ -1,16 +1,21 @@
-const utils = require('../../api/utils')
+"use strict";
 
-const { browserPath } = utils
-const posix = browserPath()
+var utils = require('../../api/utils');
+
+var browserPath = utils.browserPath;
+var posix = browserPath();
 
 function processRelationPath(self, relation) {
-  const from = self.is
-  let to = relation
+  var from = self.is;
+  var to = relation;
+
   if (to[0] === '.') {
-    to = `../${to}`
+    to = "../".concat(to);
   }
-  const _p = posix.join(from, to)
-  return _p
+
+  var _p = posix.join(from, to);
+
+  return _p;
 }
 
-module.exports = processRelationPath
+module.exports = processRelationPath;

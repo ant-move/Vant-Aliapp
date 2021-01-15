@@ -1,12 +1,17 @@
-import Page from "../../common/page";
-Page({
-    data: {
-        show: false
-    },
+"use strict";
 
-    onChange({ detail }) {
-        this.setData({
-            show: detail
-        });
-    }
+var _page = _interopRequireDefault(require("../../common/page"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+(0, _page["default"])({
+  data: {
+    show: false
+  },
+  onChange: function onChange(_ref) {
+    var detail = _ref.detail;
+    this.setData({
+      show: detail
+    });
+  }
 });

@@ -1,6 +1,6 @@
-<import-sjs ref='saveChildRef0' from="./index.axmlloadingColor.sjs" name='loadingColor'>
+<import-sjs from="./index.axmlloadingColor.sjs" name='loadingColor'>
 </import-sjs><import-sjs from='../wxs/utils.sjs' name='utils'>
-</import-sjs><view unscope-style=" " style='{{style}}' class='{{className}} {{utils.bem("button", [{block}]).match(/van-button--block/) ? "button-index-block" : "button-index-inlineflex"}}'>
+</import-sjs><view unscope-style=" " style='{{style}}' class='{{className}} {{utils.bem("button", [{block}]).match(/van-button--block/) ? "button-index-block" : "button-index-inlineflex"}}' ref='saveChildRef0'>
   <btn id='{{ id }}' data-detail='{{ dataset }}' class="{{customClass}} {{ utils.bem('button', [type, size, { block, round, plain, square, loading, disabled, hairline, unclickable: disabled || loading }]) }} {{ hairline ? 'van-hairline--surround' : '' }}" hover-class='van-button--active {{hoverClass}}' form-type='{{ formType }}' style='{{ baseStyle }} {{ customStyle }}' open-type="{{ disabled ? '' : openType }}" business-id='{{ businessId }}' app-parameter='{{ appParameter }}' aria-label='{{ ariaLabel }}' onGetUserInfo='bindGetUserInfo' onGetPhoneNumber='bindGetPhoneNumber' onOpenSetting='bindOpenSetting' onTap='antmoveAction' data-antmove-tap="{{ !disabled ? 'onClick' : 'noop' }}">
     <block a:if='{{ loading }}'>
       <van-loading custom-class='{{loadingClass}}' size='{{ loadingSize }}' type='{{ loadingType }}' color='{{ loadingColor(type,color,plain) }}' ref='saveChildRef1'>

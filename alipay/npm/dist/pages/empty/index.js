@@ -1,12 +1,16 @@
-import Page from "../../common/page";
-Page({
-    data: {
-        activeTab: 0
-    },
+"use strict";
 
-    onChange(event) {
-        this.setData({
-            activeTab: event.detail.name
-        });
-    }
+var _page = _interopRequireDefault(require("../../common/page"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+(0, _page["default"])({
+  data: {
+    activeTab: 0
+  },
+  onChange: function onChange(event) {
+    this.setData({
+      activeTab: event.detail.name
+    });
+  }
 });

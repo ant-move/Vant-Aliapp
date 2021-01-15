@@ -1,15 +1,18 @@
-import Page from "../../common/page";
-import Toast from "../../dist/toast/toast";
-Page({
-  onClickButton() {
-    Toast("点击按钮");
-  },
+"use strict";
 
-  onClickLink() {
-    Toast("修改地址");
-  },
+var _page = _interopRequireDefault(require("../../common/page"));
 
-  antmoveAction: function () {
-    //执行时动态赋值，请勿删除
+var _toast = _interopRequireDefault(require("../../dist/toast/toast"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+(0, _page["default"])({
+  onClickButton: function onClickButton() {
+    (0, _toast["default"])("点击按钮");
+  },
+  onClickLink: function onClickLink() {
+    (0, _toast["default"])("修改地址");
+  },
+  antmoveAction: function antmoveAction() {//执行时动态赋值，请勿删除
   }
 });

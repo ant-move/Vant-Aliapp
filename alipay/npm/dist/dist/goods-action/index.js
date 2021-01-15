@@ -1,37 +1,40 @@
-const _my = require("../../__antmove/api/index.js")(my);
-const wx = _my;
-import { VantComponent } from "../common/component";
-VantComponent({
-    relation: {
-        type: "descendant",
-        name: "goods-action-button",
-        current: "goods-action",
+"use strict";
 
-        linked() {
-            this.updateStyle();
-        },
+var _component = require("../common/component");
 
-        unlinked() {
-            this.updateStyle();
-        },
+var _my = require("../../__antmove/api/index.js")(my);
 
-        linkChanged() {
-            this.updateStyle();
-        }
+var wx = _my;
+(0, _component.VantComponent)({
+  relation: {
+    type: "descendant",
+    name: "goods-action-button",
+    current: "goods-action",
+    linked: function linked() {
+      this.updateStyle();
     },
-    props: {
-        safeAreaInsetBottom: {
-            type: Boolean,
-            value: true
-        }
+    unlinked: function unlinked() {
+      this.updateStyle();
     },
-    methods: {
-        updateStyle() {
-            wx.nextTick(() => {
-                this.children.forEach(child => {
-                    child.updateStyle();
-                });
-            });
-        }
+    linkChanged: function linkChanged() {
+      this.updateStyle();
     }
+  },
+  props: {
+    safeAreaInsetBottom: {
+      type: Boolean,
+      value: true
+    }
+  },
+  methods: {
+    updateStyle: function updateStyle() {
+      var _this = this;
+
+      wx.nextTick(function () {
+        _this.children.forEach(function (child) {
+          child.updateStyle();
+        });
+      });
+    }
+  }
 });

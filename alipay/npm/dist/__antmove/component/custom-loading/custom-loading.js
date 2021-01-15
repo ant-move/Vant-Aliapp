@@ -1,25 +1,28 @@
+"use strict";
+
 Component({
   props: {
     hidden: true,
     duration: 1500,
     textContent: '',
-    onLoadChange: () => { },
+    onLoadChange: function onLoadChange() {}
   },
   methods: {
-    watchHidden() {
-      const num = Number(this.props.duration)
+    watchHidden: function watchHidden() {
+      var num = Number(this.props.duration);
+
       if (!this.props.hidden) {
-        const that = this
-        setTimeout(() => {
-          const e = {
-            type: 'change',
-          }
-          that.props.onLoadChange(e)
-        }, num)
+        var that = this;
+        setTimeout(function () {
+          var e = {
+            type: 'change'
+          };
+          that.props.onLoadChange(e);
+        }, num);
       }
-    },
+    }
   },
-  didUpdate() {
-    this.watchHidden()
-  },
-})
+  didUpdate: function didUpdate() {
+    this.watchHidden();
+  }
+});

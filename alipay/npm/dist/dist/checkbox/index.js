@@ -1,11 +1,13 @@
-import { VantComponent } from "../common/component";
+"use strict";
+
+var _component = require("../common/component");
 
 function emit(target, value) {
   target.$emit("input", value);
   target.$emit("change", value);
 }
 
-VantComponent({
+(0, _component.VantComponent)({
   field: true,
   relation: {
     name: "checkbox-group",
@@ -33,47 +35,38 @@ VantComponent({
     parentDisabled: false
   },
   methods: {
-    emitChange(value) {
+    emitChange: function emitChange(value) {
       if (this.parent) {
         this.setParentValue(this.parent, value);
       } else {
         emit(this, value);
       }
     },
-
-    toggle() {
-      const {
-        parentDisabled,
-        disabled,
-        value
-      } = this.data;
+    toggle: function toggle() {
+      var _this$data = this.data,
+          parentDisabled = _this$data.parentDisabled,
+          disabled = _this$data.disabled,
+          value = _this$data.value;
 
       if (!disabled && !parentDisabled) {
         this.emitChange(!value);
       }
     },
-
-    onClickLabel() {
-      const {
-        labelDisabled,
-        parentDisabled,
-        disabled,
-        value
-      } = this.data;
+    onClickLabel: function onClickLabel() {
+      var _this$data2 = this.data,
+          labelDisabled = _this$data2.labelDisabled,
+          parentDisabled = _this$data2.parentDisabled,
+          disabled = _this$data2.disabled,
+          value = _this$data2.value;
 
       if (!disabled && !labelDisabled && !parentDisabled) {
         this.emitChange(!value);
       }
     },
-
-    setParentValue(parent, value) {
-      const parentValue = parent.data.value.slice();
-      const {
-        name
-      } = this.data;
-      const {
-        max
-      } = parent.data;
+    setParentValue: function setParentValue(parent, value) {
+      var parentValue = parent.data.value.slice();
+      var name = this.data.name;
+      var max = parent.data.max;
 
       if (value) {
         if (max && parentValue.length >= max) {
@@ -85,7 +78,7 @@ VantComponent({
           emit(parent, parentValue);
         }
       } else {
-        const index = parentValue.indexOf(name);
+        var index = parentValue.indexOf(name);
 
         if (index !== -1) {
           parentValue.splice(index, 1);
@@ -93,6 +86,5 @@ VantComponent({
         }
       }
     }
-
   }
 });

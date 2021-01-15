@@ -117,6 +117,7 @@
 </demo-block>
 
 <van-calendar
+  is-wx
   show="{{ showCalendar }}"
   type="{{ type }}"
   color="{{ color }}"
@@ -126,6 +127,29 @@
   max-date="{{ maxDate }}"
   max-range="{{ maxRange }}"
   formatter="{{ formatter }}"
+  show-confirm="{{ showConfirm }}"
+  confirm-text="{{ confirmText }}"
+  confirm-disabled-text="{{ confirmDisabledText }}"
+  bind:confirm="onConfirm"
+  bind:select="onSelect"
+  bind:unselect="onUnselect"
+  bind:open="onOpen"
+  bind:opened="onOpened"
+  bind:close="onClose"
+  bind:closed="onClosed"
+>
+</van-calendar>
+<van-calendar
+  is-alipay
+  show="{{ showCalendar }}"
+  type="{{ type }}"
+  color="{{ color }}"
+  round="{{ round }}"
+  position="{{ position }}"
+  min-date="{{ minDate }}"
+  max-date="{{ maxDate }}"
+  max-range="{{ maxRange }}"
+  onFormatter="_dayFormatter"
   show-confirm="{{ showConfirm }}"
   confirm-text="{{ confirmText }}"
   confirm-disabled-text="{{ confirmDisabledText }}"

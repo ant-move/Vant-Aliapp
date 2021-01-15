@@ -1,9 +1,13 @@
-const _my = require("../../__antmove/api/index.js")(my);
+"use strict";
 
-const wx = _my;
-import { VantComponent } from "../common/component";
-import { getRect, getSystemInfoSync } from "../common/utils";
-VantComponent({
+var _component = require("../common/component");
+
+var _utils = require("../common/utils");
+
+var _my = require("../../__antmove/api/index.js")(my);
+
+var wx = _my;
+(0, _component.VantComponent)({
   classes: ["title-class"],
   props: {
     title: String,
@@ -35,43 +39,39 @@ VantComponent({
   data: {
     height: 46
   },
+  created: function created() {
+    var _getSystemInfoSync = (0, _utils.getSystemInfoSync)(),
+        statusBarHeight = _getSystemInfoSync.statusBarHeight;
 
-  created() {
-    const {
-      statusBarHeight
-    } = getSystemInfoSync();
     this.setData({
-      statusBarHeight,
+      statusBarHeight: statusBarHeight,
       height: 46 + statusBarHeight
     });
   },
-
-  mounted() {
+  mounted: function mounted() {
     this.setHeight();
   },
-
   methods: {
-    onClickLeft() {
+    onClickLeft: function onClickLeft() {
       this.$emit("click-left");
     },
-
-    onClickRight() {
+    onClickRight: function onClickRight() {
       this.$emit("click-right");
     },
+    setHeight: function setHeight() {
+      var _this = this;
 
-    setHeight() {
       if (!this.data.fixed || !this.data.placeholder) {
         return;
       }
 
-      wx.nextTick(() => {
-        getRect.call(this, ".van-nav-bar").then(res => {
-          this.setData({
+      wx.nextTick(function () {
+        _utils.getRect.call(_this, ".van-nav-bar").then(function (res) {
+          _this.setData({
             height: res.height
           });
         });
       });
     }
-
   }
 });

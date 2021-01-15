@@ -1,37 +1,35 @@
-import Page from "../../common/page";
-Page({
+"use strict";
+
+var _page = _interopRequireDefault(require("../../common/page"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+(0, _page["default"])({
   data: {
     show: false,
     showEmbedded: false
   },
-
-  onClickShow() {
+  onClickShow: function onClickShow() {
     this.setData({
       show: true
     });
   },
-
-  onClickHide() {
+  onClickHide: function onClickHide() {
     this.setData({
       show: false
     });
   },
-
-  onClickShowEmbedded() {
+  onClickShowEmbedded: function onClickShowEmbedded() {
     this.setData({
       showEmbedded: true
     });
   },
-
-  onClickHideEmbedded() {
+  onClickHideEmbedded: function onClickHideEmbedded() {
     this.setData({
       showEmbedded: false
     });
   },
-
-  noop() {},
-
-  antmoveAction: function () {
-    //执行时动态赋值，请勿删除
+  noop: function noop() {},
+  antmoveAction: function antmoveAction() {//执行时动态赋值，请勿删除
   }
 });

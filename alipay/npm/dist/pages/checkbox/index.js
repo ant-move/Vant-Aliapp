@@ -1,5 +1,12 @@
-import Page from "../../common/page";
-Page({
+"use strict";
+
+var _page = _interopRequireDefault(require("../../common/page"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+(0, _page["default"])({
   data: {
     checkbox1: true,
     checkbox2: true,
@@ -14,36 +21,22 @@ Page({
     activeIcon: "https://img.yzcdn.cn/vant/user-active.png",
     inactiveIcon: "https://img.yzcdn.cn/vant/user-inactive.png"
   },
-
-  onChange(event) {
-    const {
-      key
-    } = event.currentTarget.dataset;
-    this.setData({
-      [key]: event.detail
-    });
+  onChange: function onChange(event) {
+    var key = event.currentTarget.dataset.key;
+    this.setData(_defineProperty({}, key, event.detail));
   },
-
-  onClick(event) {
-    const {
-      value
-    } = event.currentTarget.dataset;
+  onClick: function onClick(event) {
+    var value = event.currentTarget.dataset.value;
     this.setData({
       radio3: value
     });
   },
-
-  toggle(event) {
-    const {
-      index
-    } = event.currentTarget.dataset;
-    const checkbox = this.selectComponent(`.checkboxes-${index}`);
+  toggle: function toggle(event) {
+    var index = event.currentTarget.dataset.index;
+    var checkbox = this.selectComponent(".checkboxes-".concat(index));
     checkbox.toggle();
   },
-
-  noop() {},
-
-  antmoveAction: function () {
-    //执行时动态赋值，请勿删除
+  noop: function noop() {},
+  antmoveAction: function antmoveAction() {//执行时动态赋值，请勿删除
   }
 });

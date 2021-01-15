@@ -1,3 +1,5 @@
-const runtimeProcess = require('./runtimeProcess.js')
+"use strict";
 
-module.exports = runtimeProcess
+var runtimeProcess = require('./runtimeProcess.js');
+
+module.exports = runtimeProcess;

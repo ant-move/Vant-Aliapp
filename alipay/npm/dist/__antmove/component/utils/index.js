@@ -1,39 +1,60 @@
-const getUrl = require('./getUrl')
-const watchShakes = require('./watchShakes')
-const updateData = require('./updateData')
-const processRelationPath = require('./processRelationPath')
-const _relationNode = require('./_relationNode')
-const findRelationNode = require('./findRelationNode')
-const compatibleLifetime = require('./compatibleLifetime')
-const collectObserver = require('./collectObserver')
-const collectObservers = require('./collectObservers')
-const processTriggerEvent = require('./processTriggerEvent')
-const { observerHandle } = require('./observerHandle')
-const processDataSet = require('./processDataSet')
-const handleProps = require('./handleProps')
-const handleExternalClasses = require('./handleExternalClasses')
-const handleAfterInit = require('./handleAfterInit')
-const mergeOptions = require('./mergeOptions')
-const { copy } = require('./cloneDeep')
-const nextUid = require('./nextUid')
+"use strict";
+
+var getUrl = require('./getUrl');
+
+var watchShakes = require('./watchShakes');
+
+var updateData = require('./updateData');
+
+var processRelationPath = require('./processRelationPath');
+
+var _relationNode = require('./_relationNode');
+
+var findRelationNode = require('./findRelationNode');
+
+var compatibleLifetime = require('./compatibleLifetime');
+
+var collectObserver = require('./collectObserver');
+
+var collectObservers = require('./collectObservers');
+
+var processTriggerEvent = require('./processTriggerEvent');
+
+var _require = require('./observerHandle'),
+    observerHandle = _require.observerHandle;
+
+var processDataSet = require('./processDataSet');
+
+var handleProps = require('./handleProps');
+
+var handleExternalClasses = require('./handleExternalClasses');
+
+var handleAfterInit = require('./handleAfterInit');
+
+var mergeOptions = require('./mergeOptions');
+
+var _require2 = require('./cloneDeep'),
+    copy = _require2.copy;
+
+var nextUid = require('./nextUid');
 
 module.exports = {
-  getUrl,
-  watchShakes,
-  updateData,
-  processRelationPath,
-  _relationNode,
-  findRelationNode,
-  compatibleLifetime,
-  collectObserver,
-  collectObservers,
-  processTriggerEvent,
-  observerHandle,
-  processDataSet,
-  handleProps,
-  handleExternalClasses,
-  handleAfterInit,
-  mergeOptions,
-  copy,
-  nextUid,
-}
+  getUrl: getUrl,
+  watchShakes: watchShakes,
+  updateData: updateData,
+  processRelationPath: processRelationPath,
+  _relationNode: _relationNode,
+  findRelationNode: findRelationNode,
+  compatibleLifetime: compatibleLifetime,
+  collectObserver: collectObserver,
+  collectObservers: collectObservers,
+  processTriggerEvent: processTriggerEvent,
+  observerHandle: observerHandle,
+  processDataSet: processDataSet,
+  handleProps: handleProps,
+  handleExternalClasses: handleExternalClasses,
+  handleAfterInit: handleAfterInit,
+  mergeOptions: mergeOptions,
+  copy: copy,
+  nextUid: nextUid
+};

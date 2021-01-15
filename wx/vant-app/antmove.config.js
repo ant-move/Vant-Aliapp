@@ -12,6 +12,7 @@ module.exports = {
     "watch": false,
     "ignoreNpm": true,
     "libraryName": "vant-aliapp",
+    "useCompileLog": true,
     "input": "./",
     "output": "../../alipay/npm/dist"
 ,

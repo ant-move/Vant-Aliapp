@@ -4,9 +4,9 @@
   <van-overlay a:if='{{ overlay }}' show='{{ show }}' z-index='{{ zIndex }}' custom-style='{{ overlayStyle }}' duration='{{ duration }}' inited='{{inited}}' display='{{display}}' onClick='onClickOverlay' ref='saveChildRef1'>
   </van-overlay>
   <view a:if='{{ inited }}' class="{{customClass}} {{ classes }} {{ utils.bem('popup', [position, { round, safe: safeAreaInsetBottom, safeTop: safeAreaInsetTop }]) }}" style="z-index: {{ zIndex }}; -webkit-transition-duration:{{ currentDuration }}ms; transition-duration:{{ currentDuration }}ms; {{ display ? '' : 'display: none;' }};{{ customStyle }}" onTransitionend='onTransitionEnd'>
-    <slot>
-    </slot>
     <van-icon a:if='{{ closeable }}' name='{{ closeIcon }}' class='{{closeIconClass}} van-popup__close-icon van-popup__close-icon--{{ closeIconPosition }}' onClick='onClickCloseIcon' ref='saveChildRef2'>
     </van-icon>
+    <slot>
+    </slot>
   </view>
 </view>

@@ -1,18 +1,24 @@
-const _my = require("../../__antmove/api/index.js")(my);
+"use strict";
 
-const wx = _my;
-import { VantComponent } from "../common/component";
-import { button } from "../mixins/button";
-import { openType } from "../mixins/open-type";
-import { canIUseFormFieldButton } from "../common/version";
-const mixins = [button, openType];
+var _component = require("../common/component");
 
-if (canIUseFormFieldButton()) {
+var _button = require("../mixins/button");
+
+var _openType = require("../mixins/open-type");
+
+var _version = require("../common/version");
+
+var _my = require("../../__antmove/api/index.js")(my);
+
+var wx = _my;
+var mixins = [_button.button, _openType.openType];
+
+if ((0, _version.canIUseFormFieldButton)()) {
   mixins.push("wx://form-field-button");
 }
 
-VantComponent({
-  mixins,
+(0, _component.VantComponent)({
+  mixins: mixins,
   classes: ["hover-class", "loading-class"],
   data: {
     baseStyle: ""
@@ -52,23 +58,22 @@ VantComponent({
     },
     color: {
       type: String,
-
-      observer(color) {
-        let style = "";
+      observer: function observer(color) {
+        var style = "";
 
         if (color) {
-          style += `color: ${this.data.plain ? color : "white"};`;
+          style += "color: ".concat(this.data.plain ? color : "white", ";");
 
           if (!this.data.plain) {
             // Use background instead of backgroundColor to make linear-gradient work
-            style += `background: ${color};`;
+            style += "background: ".concat(color, ";");
           } // hide border when color is linear-gradient
 
 
           if (color.indexOf("gradient") !== -1) {
             style += "border: 0;";
           } else {
-            style += `border-color: ${color};`;
+            style += "border-color: ".concat(color, ";");
           }
         }
 
@@ -78,17 +83,14 @@ VantComponent({
           });
         }
       }
-
     }
   },
   methods: {
-    onClick() {
+    onClick: function onClick() {
       if (!this.data.loading) {
         this.$emit("click");
       }
     },
-
-    noop() {}
-
+    noop: function noop() {}
   }
 });

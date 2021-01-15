@@ -1,87 +1,119 @@
-const _my = require("../../__antmove/api/index.js")(my);
-const wx = _my;
-import { isNumber, isPlainObject, isPromise } from "./validator";
-export function isDef(value) {
-    return value !== undefined && value !== null;
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.isDef = isDef;
+exports.isObj = isObj;
+exports.range = range;
+exports.nextTick = nextTick;
+exports.getSystemInfoSync = getSystemInfoSync;
+exports.addUnit = addUnit;
+exports.requestAnimationFrame = requestAnimationFrame;
+exports.pickExclude = pickExclude;
+exports.getRect = getRect;
+exports.getAllRect = getAllRect;
+exports.toPromise = toPromise;
+
+var _validator = require("./validator");
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var _my = require("../../__antmove/api/index.js")(my);
+
+var wx = _my;
+
+function isDef(value) {
+  return value !== undefined && value !== null;
 }
-export function isObj(x) {
-    const type = typeof x;
-    return x !== null && (type === "object" || type === "function");
+
+function isObj(x) {
+  var type = _typeof(x);
+
+  return x !== null && (type === "object" || type === "function");
 }
-export function range(num, min, max) {
-    return Math.min(Math.max(num, min), max);
+
+function range(num, min, max) {
+  return Math.min(Math.max(num, min), max);
 }
-export function nextTick(fn) {
-    setTimeout(() => {
-        fn();
-    }, 1000 / 30);
+
+function nextTick(fn) {
+  setTimeout(function () {
+    fn();
+  }, 1000 / 30);
 }
-let systemInfo;
-export function getSystemInfoSync() {
-    if (systemInfo == null) {
-        systemInfo = wx.getSystemInfoSync();
+
+var systemInfo;
+
+function getSystemInfoSync() {
+  if (systemInfo == null) {
+    systemInfo = wx.getSystemInfoSync();
+  }
+
+  return systemInfo;
+}
+
+function addUnit(value) {
+  if (!isDef(value)) {
+    return undefined;
+  }
+
+  value = String(value);
+  return (0, _validator.isNumber)(value) ? "".concat(value, "px") : value;
+}
+
+function requestAnimationFrame(cb) {
+  var systemInfo = getSystemInfoSync();
+
+  if (systemInfo.platform === "devtools") {
+    return nextTick(cb);
+  }
+
+  return wx.createSelectorQuery().selectViewport().boundingClientRect().exec(function () {
+    cb();
+  });
+}
+
+function pickExclude(obj, keys) {
+  if (!(0, _validator.isPlainObject)(obj)) {
+    return {};
+  }
+
+  return Object.keys(obj).reduce(function (prev, key) {
+    if (!keys.includes(key)) {
+      prev[key] = obj[key];
     }
 
-    return systemInfo;
+    return prev;
+  }, {});
 }
-export function addUnit(value) {
-    if (!isDef(value)) {
-        return undefined;
-    }
 
-    value = String(value);
-    return isNumber(value) ? `${value}px` : value;
-}
-export function requestAnimationFrame(cb) {
-    const systemInfo = getSystemInfoSync();
+function getRect(selector) {
+  var _this = this;
 
-    if (systemInfo.platform === "devtools") {
-        return nextTick(cb);
-    }
-
-    return wx
-        .createSelectorQuery()
-        .selectViewport()
-        .boundingClientRect()
-        .exec(() => {
-            cb();
-        });
-}
-export function pickExclude(obj, keys) {
-    if (!isPlainObject(obj)) {
-        return {};
-    }
-
-    return Object.keys(obj).reduce((prev, key) => {
-        if (!keys.includes(key)) {
-            prev[key] = obj[key];
-        }
-
-        return prev;
-    }, {});
-}
-export function getRect(selector) {
-    return new Promise(resolve => {
-        wx.createSelectorQuery()
-            .in(this)
-            .select(selector)
-            .boundingClientRect()
-            .exec((rect = []) => resolve(rect[0]));
+  return new Promise(function (resolve) {
+    wx.createSelectorQuery()["in"](_this).select(selector).boundingClientRect().exec(function () {
+      var rect = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      return resolve(rect[0]);
     });
+  });
 }
-export function getAllRect(selector) {
-    return new Promise(resolve => {
-        wx.createSelectorQuery()
-            .in(this)
-            .selectAll(selector)
-            .boundingClientRect()
-            .exec((rect = []) => resolve(rect[0]));
-    });
-}
-export function toPromise(promiseLike) {
-    if (isPromise(promiseLike)) {
-        return promiseLike;
-    }
 
-    return Promise.resolve(promiseLike);
+function getAllRect(selector) {
+  var _this2 = this;
+
+  return new Promise(function (resolve) {
+    wx.createSelectorQuery()["in"](_this2).selectAll(selector).boundingClientRect().exec(function () {
+      var rect = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+      return resolve(rect[0]);
+    });
+  });
+}
+
+function toPromise(promiseLike) {
+  if ((0, _validator.isPromise)(promiseLike)) {
+    return promiseLike;
+  }
+
+  return Promise.resolve(promiseLike);
 }

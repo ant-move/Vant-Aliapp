@@ -1,5 +1,5 @@
-<import-sjs ref='saveChildRef0' from='../wxs/utils.sjs' name='utils'>
-</import-sjs><view style='{{ viewStyle }}' class="{{customClass}} {{ utils.bem('image', { round })}}" unscope-style=" " onTap='antmoveAction' data-antmove-tap='onClick'>
+<import-sjs from='../wxs/utils.sjs' name='utils'>
+</import-sjs><view style='{{ viewStyle }}' class="{{customClass}} {{ utils.bem('image', { round })}}" unscope-style=" " ref='saveChildRef0' onTap='antmoveAction' data-antmove-tap='onClick'>
   <image a:if='{{ !error }}' src='{{ src }}' mode='{{ mode }}' lazy-load='{{ lazyLoad }}' class='{{imageClass}} van-image__img' onLoad='onLoad' onError='onError'>
   </image>
   <view a:if='{{ loading && showLoading }}' class='{{loadingClass}} van-image__loading'>

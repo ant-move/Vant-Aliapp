@@ -1,8 +1,10 @@
+"use strict";
+
 Component({
-    properties: {
-        title: String,
-        padding: Boolean,
-        card: Boolean
-    },
-    externalClasses: ["custom-class"]
+  properties: {
+    title: String,
+    padding: Boolean,
+    card: Boolean
+  },
+  externalClasses: ["custom-class"]
 });

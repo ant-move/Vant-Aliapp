@@ -1,14 +1,19 @@
+"use strict";
+
 function handleAfterInit() {
-  let classStr = ''
-  this.data.__classNames
-    .forEach((key) => {
-      classStr += (this.props[key] || '')
-    })
+  var _this = this;
+
+  var classStr = '';
+
+  this.data.__classNames.forEach(function (key) {
+    classStr += _this.props[key] || '';
+  });
+
   if (this.data._classes !== classStr) {
     this.setData({
-      _classes: classStr,
-    })
+      _classes: classStr
+    });
   }
 }
 
-module.exports = handleAfterInit
+module.exports = handleAfterInit;

@@ -1,15 +1,22 @@
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 function collectObserver(observerObj, option, ctx) {
-  Object.keys(option).forEach((prop) => {
-    if (typeof option[prop] !== 'object' || !option[prop]) { return false }
+  Object.keys(option).forEach(function (prop) {
+    if (_typeof(option[prop]) !== 'object' || !option[prop]) {
+      return false;
+    }
+
     if (option[prop].observer) {
       if (typeof option[prop].observer === 'string') {
-        observerObj[prop] = ctx.methods[option[prop].observer]
+        observerObj[prop] = ctx.methods[option[prop].observer];
       } else {
-        observerObj[prop] = option[prop].observer
+        observerObj[prop] = option[prop].observer;
       }
     }
-  })
-  return observerObj
+  });
+  return observerObj;
 }
 
-module.exports = collectObserver
+module.exports = collectObserver;

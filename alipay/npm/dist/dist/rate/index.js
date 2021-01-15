@@ -1,23 +1,25 @@
-const _my = require("../../__antmove/api/index.js")(my);
+"use strict";
 
-const wx = _my;
-import { VantComponent } from "../common/component";
-import { canIUseModel } from "../common/version";
-VantComponent({
+var _component = require("../common/component");
+
+var _version = require("../common/version");
+
+var _my = require("../../__antmove/api/index.js")(my);
+
+var wx = _my;
+(0, _component.VantComponent)({
   field: true,
   classes: ["icon-class"],
   props: {
     value: {
       type: Number,
-
-      observer(value) {
+      observer: function observer(value) {
         if (value !== this.data.innerValue) {
           this.setData({
             innerValue: value
           });
         }
       }
-
     },
     readonly: Boolean,
     disabled: Boolean,
@@ -46,15 +48,13 @@ VantComponent({
     count: {
       type: Number,
       value: 5,
-
-      observer(value) {
+      observer: function observer(value) {
         this.setData({
           innerCountArray: Array.from({
             length: value
           })
         });
       }
-
     },
     gutter: null,
     touchable: {
@@ -69,13 +69,11 @@ VantComponent({
     })
   },
   methods: {
-    onSelect(event) {
-      const {
-        data
-      } = this;
-      const {
-        score
-      } = event.detail.target.dataset;
+    onSelect: function onSelect(event) {
+      var _this = this;
+
+      var data = this.data;
+      var score = event.detail.target.dataset.score;
 
       if (!data.disabled && !data.readonly) {
         this.setData({
@@ -84,31 +82,32 @@ VantComponent({
         //   this.setData({ value: score + 1 });
         // }
 
-        wx.nextTick(() => {
-          this.$emit("input", score + 1);
-          this.$emit("change", score + 1);
+        wx.nextTick(function () {
+          _this.$emit("input", score + 1);
+
+          _this.$emit("change", score + 1);
         });
       }
     },
+    onTouchMove: function onTouchMove(event) {
+      var _this2 = this;
 
-    onTouchMove(event) {
-      const {
-        touchable
-      } = this.data;
+      var touchable = this.data.touchable;
       if (!touchable) return;
-      const {
-        clientX
-      } = event.touches[0];
-      this.getRect(".van-rate__icon", true).then(list => {
-        const target = list.sort(item => item.right - item.left).find(item => clientX >= item.left && clientX <= item.right);
+      var clientX = event.touches[0].clientX;
+      this.getRect(".van-rate__icon", true).then(function (list) {
+        var target = list.sort(function (item) {
+          return item.right - item.left;
+        }).find(function (item) {
+          return clientX >= item.left && clientX <= item.right;
+        });
 
         if (target != null) {
-          this.onSelect(Object.assign(Object.assign({}, event), {
+          _this2.onSelect(Object.assign(Object.assign({}, event), {
             currentTarget: target
           }));
         }
       });
     }
-
   }
 });

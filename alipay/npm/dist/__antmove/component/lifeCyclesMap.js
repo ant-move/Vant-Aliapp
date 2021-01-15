@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * type
  * 0 - missing - 不支持该属性
@@ -5,12 +7,11 @@
  * 3 - diffType - 类型不同
  * 4 - defaultValue - 默认值不同
  */
-
 module.exports = {
   Component: {
     created: {
       type: 1,
-      name: 'onInit',
-    },
-  },
-}
+      name: 'onInit'
+    }
+  }
+};

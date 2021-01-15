@@ -1,104 +1,104 @@
-const _my = require("../../__antmove/api/index.js")(my);
-const wx = _my;
-let queue = [];
-const defaultOptions = {
-    show: false,
-    title: "",
-    width: null,
-    theme: "default",
-    message: "",
-    zIndex: 100,
-    overlay: true,
-    selector: "#van-dialog",
-    className: "",
-    asyncClose: false,
-    transition: "scale",
-    customStyle: "",
-    messageAlign: "",
-    overlayStyle: "",
-    confirmButtonText: "确认",
-    cancelButtonText: "取消",
-    showConfirmButton: true,
-    showCancelButton: false,
-    closeOnClickOverlay: false,
-    confirmButtonOpenType: ""
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+var _my = require("../../__antmove/api/index.js")(my);
+
+var wx = _my;
+var queue = [];
+var defaultOptions = {
+  show: false,
+  title: "",
+  width: null,
+  theme: "default",
+  message: "",
+  zIndex: 100,
+  overlay: true,
+  selector: "#van-dialog",
+  className: "",
+  asyncClose: false,
+  transition: "scale",
+  customStyle: "",
+  messageAlign: "",
+  overlayStyle: "",
+  confirmButtonText: "确认",
+  cancelButtonText: "取消",
+  showConfirmButton: true,
+  showCancelButton: false,
+  closeOnClickOverlay: false,
+  confirmButtonOpenType: ""
 };
-let currentOptions = Object.assign({}, defaultOptions);
+var currentOptions = Object.assign({}, defaultOptions);
 
 function getContext() {
-    const pages = getCurrentPages();
-    return pages[pages.length - 1];
+  var pages = getCurrentPages();
+  return pages[pages.length - 1];
 }
 
-const Dialog = options => {
-    options = Object.assign(Object.assign({}, currentOptions), options);
-    return new Promise((resolve, reject) => {
-        const context = options.context || getContext();
-        const dialog = context.selectComponent(options.selector);
-        delete options.context;
-        delete options.selector;
+var Dialog = function Dialog(options) {
+  options = Object.assign(Object.assign({}, currentOptions), options);
+  return new Promise(function (resolve, reject) {
+    var context = options.context || getContext();
+    var dialog = context.selectComponent(options.selector);
+    delete options.context;
+    delete options.selector;
 
-        if (dialog) {
-            dialog.setData(
-                Object.assign(
-                    {
-                        onCancel: reject,
-                        onConfirm: resolve
-                    },
-                    options
-                )
-            );
-            wx.nextTick(() => {
-                dialog.setData({
-                    show: true
-                });
-            });
-            queue.push(dialog);
-        } else {
-            console.warn(
-                "未找到 van-dialog 节点，请确认 selector 及 context 是否正确"
-            );
-        }
-    });
+    if (dialog) {
+      dialog.setData(Object.assign({
+        onCancel: reject,
+        onConfirm: resolve
+      }, options));
+      wx.nextTick(function () {
+        dialog.setData({
+          show: true
+        });
+      });
+      queue.push(dialog);
+    } else {
+      console.warn("未找到 van-dialog 节点，请确认 selector 及 context 是否正确");
+    }
+  });
 };
 
-Dialog.alert = options => Dialog(options);
-
-Dialog.confirm = options =>
-    Dialog(
-        Object.assign(
-            {
-                showCancelButton: true
-            },
-            options
-        )
-    );
-
-Dialog.close = () => {
-    queue.forEach(dialog => {
-        dialog.close();
-    });
-    queue = [];
+Dialog.alert = function (options) {
+  return Dialog(options);
 };
 
-Dialog.stopLoading = () => {
-    queue.forEach(dialog => {
-        dialog.stopLoading();
-    });
+Dialog.confirm = function (options) {
+  return Dialog(Object.assign({
+    showCancelButton: true
+  }, options));
+};
+
+Dialog.close = function () {
+  queue.forEach(function (dialog) {
+    dialog.close();
+  });
+  queue = [];
+};
+
+Dialog.stopLoading = function () {
+  queue.forEach(function (dialog) {
+    dialog.stopLoading();
+  });
 };
 
 Dialog.currentOptions = currentOptions;
 Dialog.defaultOptions = defaultOptions;
 
-Dialog.setDefaultOptions = options => {
-    currentOptions = Object.assign(Object.assign({}, currentOptions), options);
-    Dialog.currentOptions = currentOptions;
+Dialog.setDefaultOptions = function (options) {
+  currentOptions = Object.assign(Object.assign({}, currentOptions), options);
+  Dialog.currentOptions = currentOptions;
 };
 
-Dialog.resetDefaultOptions = () => {
-    currentOptions = Object.assign({}, defaultOptions);
-    Dialog.currentOptions = currentOptions;
+Dialog.resetDefaultOptions = function () {
+  currentOptions = Object.assign({}, defaultOptions);
+  Dialog.currentOptions = currentOptions;
 };
 
 Dialog.resetDefaultOptions();
-export default Dialog;
+var _default = Dialog;
+exports["default"] = _default;

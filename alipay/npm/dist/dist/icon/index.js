@@ -1,5 +1,8 @@
-import { VantComponent } from "../common/component";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+(0, _component.VantComponent)({
   props: {
     dot: Boolean,
     info: null,
@@ -18,9 +21,8 @@ VantComponent({
     name: String
   },
   methods: {
-    onClick(action) {
+    onClick: function onClick(action) {
       this.$emit("click", action);
     }
-
   }
 });

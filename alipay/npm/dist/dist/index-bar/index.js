@@ -1,36 +1,39 @@
-const _my = require("../../__antmove/api/index.js")(my);
+"use strict";
 
-const wx = _my;
-import { GREEN } from "../common/color";
-import { VantComponent } from "../common/component";
-import { getRect } from "../common/utils";
-import { pageScrollMixin } from "../mixins/page-scroll";
+var _color = require("../common/color");
 
-const indexList = () => {
-  const list = [];
-  const charCodeOfA = "A".charCodeAt(0);
+var _component = require("../common/component");
 
-  for (let i = 0; i < 26; i++) {
+var _utils = require("../common/utils");
+
+var _pageScroll = require("../mixins/page-scroll");
+
+var _my = require("../../__antmove/api/index.js")(my);
+
+var wx = _my;
+
+var indexList = function indexList() {
+  var list = [];
+  var charCodeOfA = "A".charCodeAt(0);
+
+  for (var i = 0; i < 26; i++) {
     list.push(String.fromCharCode(charCodeOfA + i));
   }
 
   return list;
 };
 
-VantComponent({
+(0, _component.VantComponent)({
   relation: {
     name: "index-anchor",
     type: "descendant",
     current: "index-bar",
-
-    linked() {
+    linked: function linked() {
       this.updateData();
     },
-
-    unlinked() {
+    unlinked: function unlinked() {
       this.updateData();
     }
-
   },
   props: {
     sticky: {
@@ -43,7 +46,7 @@ VantComponent({
     },
     highlightColor: {
       type: String,
-      value: GREEN
+      value: _color.GREEN
     },
     stickyOffsetTop: {
       type: Number,
@@ -54,7 +57,7 @@ VantComponent({
       value: indexList()
     }
   },
-  mixins: [pageScrollMixin(function (event) {
+  mixins: [(0, _pageScroll.pageScrollMixin)(function (event) {
     this.scrollTop = (event === null || event === void 0 ? void 0 : event.scrollTop) || 0;
     this.onScroll();
   })],
@@ -62,69 +65,72 @@ VantComponent({
     activeAnchorIndex: null,
     showSidebar: false
   },
-
-  created() {
+  created: function created() {
     this.scrollTop = 0;
   },
-
   methods: {
-    updateData() {
-      wx.nextTick(() => {
-        if (this.timer != null) {
-          clearTimeout(this.timer);
+    updateData: function updateData() {
+      var _this = this;
+
+      wx.nextTick(function () {
+        if (_this.timer != null) {
+          clearTimeout(_this.timer);
         }
 
-        this.timer = setTimeout(() => {
-          this.setData({
-            showSidebar: !!this.children.length
+        _this.timer = setTimeout(function () {
+          _this.setData({
+            showSidebar: !!_this.children.length
           });
-          this.setRect().then(() => {
-            this.onScroll();
+
+          _this.setRect().then(function () {
+            _this.onScroll();
           });
         }, 0);
       });
     },
-
-    setRect() {
+    setRect: function setRect() {
       return Promise.all([this.setAnchorsRect(), this.setListRect(), this.setSiderbarRect()]);
     },
+    setAnchorsRect: function setAnchorsRect() {
+      var _this2 = this;
 
-    setAnchorsRect() {
-      return Promise.all(this.children.map(anchor => getRect.call(anchor, ".van-index-anchor-wrapper").then(rect => {
-        if (!rect) return;
-        Object.assign(anchor, {
-          height: rect.height,
-          top: rect.top + this.scrollTop
+      return Promise.all(this.children.map(function (anchor) {
+        return _utils.getRect.call(anchor, ".van-index-anchor-wrapper").then(function (rect) {
+          if (!rect) return;
+          Object.assign(anchor, {
+            height: rect.height,
+            top: rect.top + _this2.scrollTop
+          });
         });
-      })));
+      }));
     },
+    setListRect: function setListRect() {
+      var _this3 = this;
 
-    setListRect() {
-      return getRect.call(this, ".van-index-bar").then(rect => {
+      return _utils.getRect.call(this, ".van-index-bar").then(function (rect) {
         if (!rect) return;
-        Object.assign(this, {
+        Object.assign(_this3, {
           height: rect.height,
-          top: rect.top + this.scrollTop
+          top: rect.top + _this3.scrollTop
         });
       });
     },
+    setSiderbarRect: function setSiderbarRect() {
+      var _this4 = this;
 
-    setSiderbarRect() {
-      return getRect.call(this, ".van-index-bar__sidebar").then(res => {
+      return _utils.getRect.call(this, ".van-index-bar__sidebar").then(function (res) {
         if (!res) return;
-        this.sidebar = {
+        _this4.sidebar = {
           height: res.height,
           top: res.top
         };
       });
     },
-
-    setDiffData({
-      target,
-      data
-    }) {
-      const diffData = {};
-      Object.keys(data).forEach(key => {
+    setDiffData: function setDiffData(_ref) {
+      var target = _ref.target,
+          data = _ref.data;
+      var diffData = {};
+      Object.keys(data).forEach(function (key) {
         if (target.data[key] !== data[key]) {
           diffData[key] = data[key];
         }
@@ -134,27 +140,24 @@ VantComponent({
         target.setData(diffData);
       }
     },
-
-    getAnchorRect(anchor) {
-      return getRect.call(anchor, ".van-index-anchor-wrapper").then(rect => ({
-        height: rect.height,
-        top: rect.top
-      }));
+    getAnchorRect: function getAnchorRect(anchor) {
+      return _utils.getRect.call(anchor, ".van-index-anchor-wrapper").then(function (rect) {
+        return {
+          height: rect.height,
+          top: rect.top
+        };
+      });
     },
+    getActiveAnchorIndex: function getActiveAnchorIndex() {
+      var children = this.children,
+          scrollTop = this.scrollTop;
+      var _this$data = this.data,
+          sticky = _this$data.sticky,
+          stickyOffsetTop = _this$data.stickyOffsetTop;
 
-    getActiveAnchorIndex() {
-      const {
-        children,
-        scrollTop
-      } = this;
-      const {
-        sticky,
-        stickyOffsetTop
-      } = this.data;
-
-      for (let i = this.children.length - 1; i >= 0; i--) {
-        const preAnchorHeight = i > 0 ? children[i - 1].height : 0;
-        const reachTop = sticky ? preAnchorHeight + stickyOffsetTop : 0;
+      for (var i = this.children.length - 1; i >= 0; i--) {
+        var preAnchorHeight = i > 0 ? children[i - 1].height : 0;
+        var reachTop = sticky ? preAnchorHeight + stickyOffsetTop : 0;
 
         if (reachTop + scrollTop >= children[i].top) {
           return i;
@@ -163,24 +166,23 @@ VantComponent({
 
       return -1;
     },
+    onScroll: function onScroll() {
+      var _this5 = this;
 
-    onScroll() {
-      const {
-        children = [],
-        scrollTop
-      } = this;
+      var _this$children = this.children,
+          children = _this$children === void 0 ? [] : _this$children,
+          scrollTop = this.scrollTop;
 
       if (!children.length) {
         return;
       }
 
-      const {
-        sticky,
-        stickyOffsetTop,
-        zIndex,
-        highlightColor
-      } = this.data;
-      const active = this.getActiveAnchorIndex();
+      var _this$data2 = this.data,
+          sticky = _this$data2.sticky,
+          stickyOffsetTop = _this$data2.stickyOffsetTop,
+          zIndex = _this$data2.zIndex,
+          highlightColor = _this$data2.highlightColor;
+      var active = this.getActiveAnchorIndex();
       this.setDiffData({
         target: this,
         data: {
@@ -189,60 +191,48 @@ VantComponent({
       });
 
       if (sticky) {
-        let isActiveAnchorSticky = false;
+        var isActiveAnchorSticky = false;
 
         if (active !== -1) {
           isActiveAnchorSticky = children[active].top <= stickyOffsetTop + scrollTop;
         }
 
-        children.forEach((item, index) => {
+        children.forEach(function (item, index) {
           if (index === active) {
-            let wrapperStyle = "";
-            let anchorStyle = `
-              color: ${highlightColor};
-            `;
+            var wrapperStyle = "";
+            var anchorStyle = "\n              color: ".concat(highlightColor, ";\n            ");
 
             if (isActiveAnchorSticky) {
-              wrapperStyle = `
-                height: ${children[index].height}px;
-              `;
-              anchorStyle = `
-                position: fixed;
-                top: ${stickyOffsetTop}px;
-                z-index: ${zIndex};
-                color: ${highlightColor};
-              `;
+              wrapperStyle = "\n                height: ".concat(children[index].height, "px;\n              ");
+              anchorStyle = "\n                position: fixed;\n                top: ".concat(stickyOffsetTop, "px;\n                z-index: ").concat(zIndex, ";\n                color: ").concat(highlightColor, ";\n              ");
             }
 
-            this.setDiffData({
+            _this5.setDiffData({
               target: item,
               data: {
                 active: true,
-                anchorStyle,
-                wrapperStyle
+                anchorStyle: anchorStyle,
+                wrapperStyle: wrapperStyle
               }
             });
           } else if (index === active - 1) {
-            const currentAnchor = children[index];
-            const currentOffsetTop = currentAnchor.top;
-            const targetOffsetTop = index === children.length - 1 ? this.top : children[index + 1].top;
-            const parentOffsetHeight = targetOffsetTop - currentOffsetTop;
-            const translateY = parentOffsetHeight - currentAnchor.height;
-            const anchorStyle = `
-              position: relative;
-              transform: translate3d(0, ${translateY}px, 0);
-              z-index: ${zIndex};
-              color: ${highlightColor};
-            `;
-            this.setDiffData({
+            var currentAnchor = children[index];
+            var currentOffsetTop = currentAnchor.top;
+            var targetOffsetTop = index === children.length - 1 ? _this5.top : children[index + 1].top;
+            var parentOffsetHeight = targetOffsetTop - currentOffsetTop;
+            var translateY = parentOffsetHeight - currentAnchor.height;
+
+            var _anchorStyle = "\n              position: relative;\n              transform: translate3d(0, ".concat(translateY, "px, 0);\n              z-index: ").concat(zIndex, ";\n              color: ").concat(highlightColor, ";\n            ");
+
+            _this5.setDiffData({
               target: item,
               data: {
                 active: true,
-                anchorStyle
+                anchorStyle: _anchorStyle
               }
             });
           } else {
-            this.setDiffData({
+            _this5.setDiffData({
               target: item,
               data: {
                 active: false,
@@ -254,16 +244,14 @@ VantComponent({
         });
       }
     },
-
-    onClick(event) {
+    onClick: function onClick(event) {
       this.scrollToAnchor(event.target.dataset.index);
     },
-
-    onTouchMove(event) {
-      const sidebarLength = this.children.length;
-      const touch = event.touches[0];
-      const itemHeight = this.sidebar.height / sidebarLength;
-      let index = Math.floor((touch.clientY - this.sidebar.top) / itemHeight);
+    onTouchMove: function onTouchMove(event) {
+      var sidebarLength = this.children.length;
+      var touch = event.touches[0];
+      var itemHeight = this.sidebar.height / sidebarLength;
+      var index = Math.floor((touch.clientY - this.sidebar.top) / itemHeight);
 
       if (index < 0) {
         index = 0;
@@ -273,24 +261,25 @@ VantComponent({
 
       this.scrollToAnchor(index);
     },
-
-    onTouchStop() {
+    onTouchStop: function onTouchStop() {
       this.scrollToAnchorIndex = null;
     },
+    scrollToAnchor: function scrollToAnchor(index) {
+      var _this6 = this;
 
-    scrollToAnchor(index) {
       if (typeof index !== "number" || this.scrollToAnchorIndex === index) {
         return;
       }
 
       this.scrollToAnchorIndex = index;
-      const anchor = this.children.find(item => item.data.index === this.data.indexList[index]);
+      var anchor = this.children.find(function (item) {
+        return item.data.index === _this6.data.indexList[index];
+      });
 
       if (anchor) {
         anchor.scrollIntoView(this.scrollTop);
         this.$emit("select", anchor.data.index);
       }
     }
-
   }
 });

@@ -33,6 +33,6 @@
     <van-calendar title='日历' poppable='{{ false }}' show-confirm='{{ false }}' min-date='{{ tiledMinDate }}' max-date='{{ tiledMaxDate }}' class='tiled-calendar' ref='saveChildRef16'>
     </van-calendar>
   </demo-block>
-  <van-calendar show='{{ showCalendar }}' type='{{ type }}' color='{{ color }}' round='{{ round }}' position='{{ position }}' min-date='{{ minDate }}' max-date='{{ maxDate }}' max-range='{{ maxRange }}' formatter='{{ formatter }}' show-confirm='{{ showConfirm }}' confirm-text='{{ confirmText }}' confirm-disabled-text='{{ confirmDisabledText }}' onConfirm='onConfirm' onSelect='onSelect' onUnselect='onUnselect' onOpen='onOpen' onOpened='onOpened' onClose='onClose' onClosed='onClosed' ref='saveChildRef17'>
+  <van-calendar show='{{ showCalendar }}' type='{{ type }}' color='{{ color }}' round='{{ round }}' position='{{ position }}' min-date='{{ minDate }}' max-date='{{ maxDate }}' max-range='{{ maxRange }}' onFormatter='_dayFormatter' show-confirm='{{ showConfirm }}' confirm-text='{{ confirmText }}' confirm-disabled-text='{{ confirmDisabledText }}' onConfirm='onConfirm' onSelect='onSelect' onUnselect='onUnselect' onOpen='onOpen' onOpened='onOpened' onClose='onClose' onClosed='onClosed' ref='saveChildRef18'>
   </van-calendar>
 </view>

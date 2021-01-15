@@ -1,31 +1,36 @@
-import Page from "../../common/page";
-import Toast from "../../dist/toast/toast";
-import database from "../../database_area";
-let db;
-Page({
-    data: {
-        areaList: {},
-        loading: true,
-        value: 330302
-    },
+"use strict";
 
-    onShow() {
-        this.setData({
-            loading: false,
-            areaList: database
-        });
-    },
+var _page = _interopRequireDefault(require("../../common/page"));
 
-    onChange(event) {
-        const { values } = event.detail;
-        Toast(values.map(item => item.name).join("-"));
-    },
+var _toast = _interopRequireDefault(require("../../dist/toast/toast"));
 
-    onConfirm(event) {
-        console.log(event);
-    },
+var _database_area = _interopRequireDefault(require("../../database_area"));
 
-    onCancel(event) {
-        console.log(event);
-    }
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var db;
+(0, _page["default"])({
+  data: {
+    areaList: {},
+    loading: true,
+    value: 330302
+  },
+  onShow: function onShow() {
+    this.setData({
+      loading: false,
+      areaList: _database_area["default"]
+    });
+  },
+  onChange: function onChange(event) {
+    var values = event.detail.values;
+    (0, _toast["default"])(values.map(function (item) {
+      return item.name;
+    }).join("-"));
+  },
+  onConfirm: function onConfirm(event) {
+    console.log(event);
+  },
+  onCancel: function onCancel(event) {
+    console.log(event);
+  }
 });

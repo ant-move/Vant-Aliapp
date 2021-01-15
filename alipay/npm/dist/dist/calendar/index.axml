@@ -2,49 +2,49 @@
   <import-sjs from='./index.sjs' name='computed'>
   </import-sjs>
   <van-popup a:if='{{ poppable }}' custom-class='van-calendar__popup--{{ position }}' close-icon-class='van-calendar__close-icon' show='{{ show }}' round='{{ round }}' position='{{ position }}' closeable='{{ showTitle || showSubtitle }}' close-on-click-overlay='{{ closeOnClickOverlay }}' onEnter='onOpen' onClose='onClose' onAfter-enter='onOpened' onAfter-leave='onClosed' ref='saveChildRef1'>
-    <block a:for='{{ [{ title, subtitle, showTitle, showSubtitle, minDate, maxDate, type, color, showMark, formatter, rowHeight, currentDate, safeAreaInsetBottom, showConfirm, confirmDisabledText, confirmText, scrollIntoView, allowSameDay  }] }}' a:for-item='amitem' _is='calendar' ref-numbers='{{ [{ title, subtitle, showTitle, showSubtitle, minDate, maxDate, type, color, showMark, formatter, rowHeight, currentDate, safeAreaInsetBottom, showConfirm, confirmDisabledText, confirmText, scrollIntoView, allowSameDay  }] }}'>
+    <block a:for='{{ [{ title, subtitle, showTitle, showSubtitle, minDate, maxDate, type, color, showMark, rowHeight, currentDate, safeAreaInsetBottom, showConfirm, confirmDisabledText, confirmText, scrollIntoView, allowSameDay  }] }}' a:for-item='amitem' _is='calendar' ref-numbers='{{ [{ title, subtitle, showTitle, showSubtitle, minDate, maxDate, type, color, showMark, rowHeight, currentDate, safeAreaInsetBottom, showConfirm, confirmDisabledText, confirmText, scrollIntoView, allowSameDay  }] }}'>
       <view class='van-calendar'>
-        <header title='{{amitem.title}}' showTitle='{{amitem.showTitle}}' subtitle='{{amitem.subtitle}}' showSubtitle='{{amitem.showSubtitle}}' ref='saveChildRef2'>
+        <header title='{{ amitem.title }}' showTitle='{{ amitem.showTitle }}' subtitle='{{ amitem.subtitle }}' showSubtitle='{{ amitem.showSubtitle }}' ref='saveChildRef5'>
           <slot name='title' slot='title'>
           </slot>
         </header>
-        <scroll-view class='van-calendar__body' scroll-y=' ' scroll-into-view='{{amitem.scrollIntoView}}'>
-          <month a:for='{{ computed.getMonths(minDate, maxDate) }}' a:key='{{*this}}' id='month{{amitem.index}}' class='month' data-date='{{item}}' date='{{item}}' type='{{amitem.type}}' color='{{amitem.color}}' minDate='{{amitem.minDate}}' maxDate='{{amitem.maxDate}}' showMark='{{amitem.showMark}}' formatter='{{amitem.formatter}}' rowHeight='{{amitem.rowHeight}}' currentDate='{{amitem.currentDate}}' showSubtitle='{{amitem.showSubtitle}}' allowSameDay='{{amitem.allowSameDay}}' showMonthTitle="{{ typeof index === 'number' || !showSubtitle }}" onClick='onClickDay' ref-numbers='{{ computed.getMonths(minDate, maxDate) }}' ref='saveChildRef3'>
+        <scroll-view class='van-calendar__body' scroll-y=' ' scroll-into-view='{{ amitem.scrollIntoView }}'>
+          <month a:for='{{ computed.getMonths(amitem.minDate, amitem.maxDate) }}' a:key='{{*this}}' id='month{{ index }}' class='month' data-date='{{ item }}' date='{{ item }}' type='{{ amitem.type }}' color='{{ amitem.color }}' minDate='{{ amitem.minDate }}' maxDate='{{ amitem.maxDate }}' showMark='{{ amitem.showMark }}' onFormatter='onFormatter' rowHeight='{{ amitem.rowHeight }}' currentDate='{{ amitem.currentDate }}' showSubtitle='{{ amitem.showSubtitle }}' allowSameDay='{{ amitem.allowSameDay }}' showMonthTitle="{{ typeof index === 'number' || !amitem.showSubtitle }}" onClick='onClickDay' ref-numbers='{{ computed.getMonths(amitem.minDate, amitem.maxDate) }}' ref='saveChildRef6'>
           </month>
         </scroll-view>
-        <view class="van-calendar__footer {{ safeAreaInsetBottom ? 'van-calendar__footer--safe-area-inset-bottom' : '' }}">
+        <view class="van-calendar__footer {{ amitem.safeAreaInsetBottom ? 'van-calendar__footer--safe-area-inset-bottom' : '' }}">
           <slot name='footer'>
           </slot>
         </view>
-        <view class="van-calendar__footer {{ safeAreaInsetBottom ? 'van-calendar__footer--safe-area-inset-bottom' : '' }}">
-          <van-button a:if='{{amitem.showConfirm}}' round=' ' block=' ' type='danger' color='{{amitem.color}}' custom-class='van-calendar__confirm' disabled='{{ computed.getButtonDisabled(type, currentDate) }}' nativeType='text' onClick='onConfirm' ref='saveChildRef4'>
-            {{ computed.getButtonDisabled(type, currentDate) ? confirmDisabledText : confirmText }}
+        <view class="van-calendar__footer {{ amitem.safeAreaInsetBottom ? 'van-calendar__footer--safe-area-inset-bottom' : '' }}">
+          <van-button a:if='{{ amitem.showConfirm }}' round=' ' block=' ' type='danger' color='{{ amitem.color }}' custom-class='van-calendar__confirm' disabled='{{ computed.getButtonDisabled(amitem.type, amitem.currentDate) }}' nativeType='text' onClick='onConfirm' ref='saveChildRef7'>
+            {{ computed.getButtonDisabled(amitem.type, amitem.currentDate) ? amitem.confirmDisabledText : amitem.confirmText }}
           </van-button>
         </view>
       </view>
     </block>
   </van-popup>
-  <block a:else  a:for='{{ [{ title, subtitle, showTitle, showSubtitle, minDate, maxDate, type, color, showMark, formatter, rowHeight, currentDate, safeAreaInsetBottom, showConfirm, confirmDisabledText, confirmText, scrollIntoView, allowSameDay  }] }}' a:for-item='amitem' _is='calendar' ref-numbers='{{ [{ title, subtitle, showTitle, showSubtitle, minDate, maxDate, type, color, showMark, formatter, rowHeight, currentDate, safeAreaInsetBottom, showConfirm, confirmDisabledText, confirmText, scrollIntoView, allowSameDay  }] }}'>
+  <block a:else  a:for='{{ [{ title, subtitle, showTitle, showSubtitle, minDate, maxDate, type, color, showMark, rowHeight, currentDate, safeAreaInsetBottom, showConfirm, confirmDisabledText, confirmText, scrollIntoView, allowSameDay  }] }}' a:for-item='amitem' _is='calendar' ref-numbers='{{ [{ title, subtitle, showTitle, showSubtitle, minDate, maxDate, type, color, showMark, rowHeight, currentDate, safeAreaInsetBottom, showConfirm, confirmDisabledText, confirmText, scrollIntoView, allowSameDay  }] }}'>
     <view class='van-calendar'>
-      <header title='{{amitem.title}}' showTitle='{{amitem.showTitle}}' subtitle='{{amitem.subtitle}}' showSubtitle='{{amitem.showSubtitle}}' ref='saveChildRef5'>
+      <header title='{{ amitem.title }}' showTitle='{{ amitem.showTitle }}' subtitle='{{ amitem.subtitle }}' showSubtitle='{{ amitem.showSubtitle }}' ref='saveChildRef11'>
         <slot name='title' slot='title'>
         </slot>
       </header>
-      <scroll-view class='van-calendar__body' scroll-y=' ' scroll-into-view='{{amitem.scrollIntoView}}'>
-        <month a:for='{{ computed.getMonths(minDate, maxDate) }}' a:key='{{*this}}' id='month{{amitem.index}}' class='month' data-date='{{item}}' date='{{item}}' type='{{amitem.type}}' color='{{amitem.color}}' minDate='{{amitem.minDate}}' maxDate='{{amitem.maxDate}}' showMark='{{amitem.showMark}}' formatter='{{amitem.formatter}}' rowHeight='{{amitem.rowHeight}}' currentDate='{{amitem.currentDate}}' showSubtitle='{{amitem.showSubtitle}}' allowSameDay='{{amitem.allowSameDay}}' showMonthTitle="{{ typeof index === 'number' || !showSubtitle }}" onClick='onClickDay' ref-numbers='{{ computed.getMonths(minDate, maxDate) }}' ref='saveChildRef6'>
+      <scroll-view class='van-calendar__body' scroll-y=' ' scroll-into-view='{{ amitem.scrollIntoView }}'>
+        <month a:for='{{ computed.getMonths(amitem.minDate, amitem.maxDate) }}' a:key='{{*this}}' id='month{{ index }}' class='month' data-date='{{ item }}' date='{{ item }}' type='{{ amitem.type }}' color='{{ amitem.color }}' minDate='{{ amitem.minDate }}' maxDate='{{ amitem.maxDate }}' showMark='{{ amitem.showMark }}' onFormatter='onFormatter' rowHeight='{{ amitem.rowHeight }}' currentDate='{{ amitem.currentDate }}' showSubtitle='{{ amitem.showSubtitle }}' allowSameDay='{{ amitem.allowSameDay }}' showMonthTitle="{{ typeof index === 'number' || !amitem.showSubtitle }}" onClick='onClickDay' ref-numbers='{{ computed.getMonths(amitem.minDate, amitem.maxDate) }}' ref='saveChildRef12'>
         </month>
       </scroll-view>
-      <view class="van-calendar__footer {{ safeAreaInsetBottom ? 'van-calendar__footer--safe-area-inset-bottom' : '' }}">
+      <view class="van-calendar__footer {{ amitem.safeAreaInsetBottom ? 'van-calendar__footer--safe-area-inset-bottom' : '' }}">
         <slot name='footer'>
         </slot>
       </view>
-      <view class="van-calendar__footer {{ safeAreaInsetBottom ? 'van-calendar__footer--safe-area-inset-bottom' : '' }}">
-        <van-button a:if='{{amitem.showConfirm}}' round=' ' block=' ' type='danger' color='{{amitem.color}}' custom-class='van-calendar__confirm' disabled='{{ computed.getButtonDisabled(type, currentDate) }}' nativeType='text' onClick='onConfirm' ref='saveChildRef7'>
-          {{ computed.getButtonDisabled(type, currentDate) ? confirmDisabledText : confirmText }}
+      <view class="van-calendar__footer {{ amitem.safeAreaInsetBottom ? 'van-calendar__footer--safe-area-inset-bottom' : '' }}">
+        <van-button a:if='{{ amitem.showConfirm }}' round=' ' block=' ' type='danger' color='{{ amitem.color }}' custom-class='van-calendar__confirm' disabled='{{ computed.getButtonDisabled(amitem.type, amitem.currentDate) }}' nativeType='text' onClick='onConfirm' ref='saveChildRef13'>
+          {{ computed.getButtonDisabled(amitem.type, amitem.currentDate) ? amitem.confirmDisabledText : amitem.confirmText }}
         </van-button>
       </view>
     </view>
   </block>
-  <van-toast id='van-toast' ref='saveChildRef8'>
+  <van-toast id='van-toast' ref='saveChildRef14'>
   </van-toast>
 </view>

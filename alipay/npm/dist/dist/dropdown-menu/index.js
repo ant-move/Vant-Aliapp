@@ -1,24 +1,25 @@
-const _my = require("../../__antmove/api/index.js")(my);
+"use strict";
 
-const wx = _my;
-import { VantComponent } from "../common/component";
-import { addUnit } from "../common/utils";
-let ARRAY = [];
-VantComponent({
+var _component = require("../common/component");
+
+var _utils = require("../common/utils");
+
+var _my = require("../../__antmove/api/index.js")(my);
+
+var wx = _my;
+var ARRAY = [];
+(0, _component.VantComponent)({
   field: true,
   relation: {
     name: "dropdown-item",
     type: "descendant",
     current: "dropdown-menu",
-
-    linked() {
+    linked: function linked() {
       this.updateItemListData();
     },
-
-    unlinked() {
+    unlinked: function unlinked() {
       this.updateItemListData();
     }
-
   },
   props: {
     activeColor: {
@@ -57,37 +58,36 @@ VantComponent({
   data: {
     itemListData: []
   },
+  beforeCreate: function beforeCreate() {
+    var _wx$getSystemInfoSync = wx.getSystemInfoSync(),
+        windowHeight = _wx$getSystemInfoSync.windowHeight;
 
-  beforeCreate() {
-    const {
-      windowHeight
-    } = wx.getSystemInfoSync();
     this.windowHeight = windowHeight;
     ARRAY.push(this);
   },
+  destroyed: function destroyed() {
+    var _this = this;
 
-  destroyed() {
-    ARRAY = ARRAY.filter(item => item !== this);
+    ARRAY = ARRAY.filter(function (item) {
+      return item !== _this;
+    });
   },
-
   methods: {
-    updateItemListData() {
+    updateItemListData: function updateItemListData() {
       this.setData({
-        itemListData: this.children.map(child => child.data)
+        itemListData: this.children.map(function (child) {
+          return child.data;
+        })
       });
     },
-
-    updateChildrenData() {
-      Array.isArray(this.children) && this.children.forEach(child => {
+    updateChildrenData: function updateChildrenData() {
+      Array.isArray(this.children) && this.children.forEach(function (child) {
         child.updateDataFromParent();
       });
     },
-
-    toggleItem(active) {
-      this.children.forEach((item, index) => {
-        const {
-          showPopup
-        } = item.data;
+    toggleItem: function toggleItem(active) {
+      this.children.forEach(function (item, index) {
+        var showPopup = item.data.showPopup;
 
         if (index === active) {
           item.toggle();
@@ -98,53 +98,50 @@ VantComponent({
         }
       });
     },
-
-    close() {
-      this.children.forEach(child => {
+    close: function close() {
+      this.children.forEach(function (child) {
         child.toggle(false, {
           immediate: true
         });
       });
     },
+    getChildWrapperStyle: function getChildWrapperStyle() {
+      var _this2 = this;
 
-    getChildWrapperStyle() {
-      const {
-        zIndex,
-        direction
-      } = this.data;
-      return this.getRect(".van-dropdown-menu").then(rect => {
-        const {
-          top = 0,
-          bottom = 0
-        } = rect;
-        const offset = direction === "down" ? bottom : this.windowHeight - top;
-        let wrapperStyle = `z-index: ${zIndex};`;
+      var _this$data = this.data,
+          zIndex = _this$data.zIndex,
+          direction = _this$data.direction;
+      return this.getRect(".van-dropdown-menu").then(function (rect) {
+        var _rect$top = rect.top,
+            top = _rect$top === void 0 ? 0 : _rect$top,
+            _rect$bottom = rect.bottom,
+            bottom = _rect$bottom === void 0 ? 0 : _rect$bottom;
+        var offset = direction === "down" ? bottom : _this2.windowHeight - top;
+        var wrapperStyle = "z-index: ".concat(zIndex, ";");
 
         if (direction === "down") {
-          wrapperStyle += `top: ${addUnit(offset)};`;
+          wrapperStyle += "top: ".concat((0, _utils.addUnit)(offset), ";");
         } else {
-          wrapperStyle += `bottom: ${addUnit(offset)};`;
+          wrapperStyle += "bottom: ".concat((0, _utils.addUnit)(offset), ";");
         }
 
         return wrapperStyle;
       });
     },
+    onTitleTap: function onTitleTap(event) {
+      var _this3 = this;
 
-    onTitleTap(event) {
-      const {
-        index
-      } = event.currentTarget.dataset;
-      const child = this.children[index];
+      var index = event.currentTarget.dataset.index;
+      var child = this.children[index];
 
       if (!child.data.disabled) {
-        ARRAY.forEach(menuItem => {
-          if (menuItem && menuItem.data.closeOnClickOutside && menuItem !== this) {
+        ARRAY.forEach(function (menuItem) {
+          if (menuItem && menuItem.data.closeOnClickOutside && menuItem !== _this3) {
             menuItem.close();
           }
         });
         this.toggleItem(index);
       }
     }
-
   }
 });

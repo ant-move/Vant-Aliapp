@@ -16,11 +16,12 @@
   style="z-index: {{ zIndex }}; -webkit-transition-duration:{{ currentDuration }}ms; transition-duration:{{ currentDuration }}ms; {{ display ? '' : 'display: none;' }};{{ customStyle }}"
   bind:transitionend="onTransitionEnd"
 >
-  <slot />
   <van-icon
     wx:if="{{ closeable }}"
     name="{{ closeIcon }}"
     class="close-icon-class van-popup__close-icon van-popup__close-icon--{{ closeIconPosition }}"
     bind:click="onClickCloseIcon"
   />
+  <slot />
+  
 </view>

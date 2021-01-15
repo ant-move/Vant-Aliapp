@@ -53,13 +53,6 @@
 		"pages/calendar/index",
 		"pages/share-sheet/index"
 	],
-	"window": {
-		"navigationBarTextStyle": "black",
-		"backgroundTextStyle": "dark",
-		"backgroundColor": "#f8f8f8",
-		"titleBarColor": "#ffffff",
-		"defaultTitle": "Vant Aliapp"
-	},
 	"usingComponents": {
 		"demo-block": "./components/demo-block/index",
 		"van-action-sheet": "./dist/action-sheet/index",
@@ -127,5 +120,10 @@
 		"van-calendar": "./dist/calendar/index",
 		"van-share-sheet": "./dist/share-sheet/index"
 	},
-	"sitemapLocation": "sitemap.json"
+	"sitemapLocation": "sitemap.json",
+	"window": {
+		"titleBarColor": "#ffffff",
+		"backgroundColor": "#f8f8f8",
+		"defaultTitle": "Vant Aliapp"
+	}
 }

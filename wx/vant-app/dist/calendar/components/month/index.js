@@ -42,6 +42,13 @@ VantComponent({
     visible: true,
     days: [],
   },
+  created () {
+    if (wx.__target__ === 'alipay') {
+      if (this.props.onFormatter) {
+        this.setDays()
+      }
+    }
+  },
   methods: {
     onClick(event) {
       const { index } = event.currentTarget.dataset;
@@ -70,6 +77,11 @@ VantComponent({
         };
         if (this.data.formatter) {
           config = this.data.formatter(config);
+        }
+        if (wx.__target__ === 'alipay') {
+          if (this.props.onFormatter && typeof this.props.onFormatter === "function") {
+            config = this.props.onFormatter(config);
+          }
         }
         days.push(config);
       }

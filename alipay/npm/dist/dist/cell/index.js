@@ -1,8 +1,12 @@
-import { link } from "../mixins/link";
-import { VantComponent } from "../common/component";
-VantComponent({
+"use strict";
+
+var _link = require("../mixins/link");
+
+var _component = require("../common/component");
+
+(0, _component.VantComponent)({
   classes: ["title-class", "label-class", "value-class", "right-icon-class", "hover-class"],
-  mixins: [link],
+  mixins: [_link.link],
   props: {
     title: null,
     value: null,
@@ -24,10 +28,9 @@ VantComponent({
     titleStyle: String
   },
   methods: {
-    onClick(event) {
+    onClick: function onClick(event) {
       this.$emit("click", event.detail);
       this.jumpLink();
     }
-
   }
 });

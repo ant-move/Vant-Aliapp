@@ -1,182 +1,202 @@
-const toString = Object.prototype.toString
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var toString = Object.prototype.toString;
+
 function __type(x) {
   // fix typeof null = object
   if (x === null) {
-    return 'null'
+    return 'null';
   }
 
-  const t = typeof x
+  var t = _typeof(x);
+
   if (t !== 'object') {
-    return t
+    return t;
   }
 
-  let cls
-  let clsLow
+  var cls;
+  var clsLow;
+
   try {
-    cls = toString.call(x).slice(8, -1)
-    clsLow = cls.toLowerCase()
+    cls = toString.call(x).slice(8, -1);
+    clsLow = cls.toLowerCase();
   } catch (e) {
     // ie下的 activex对象
-    return 'object'
+    return 'object';
   }
 
   if (clsLow !== 'object') {
-    return clsLow
+    return clsLow;
   }
 
   if (x.constructor === Object) {
-    return clsLow
-  }
+    return clsLow;
+  } // Object.create(null)
 
-  // Object.create(null)
+
   try {
     /* eslint-disable no-proto */
     if (Object.getPrototypeOf(x) === null || x.__proto__ === null) {
       /* eslint-enable no-proto */
-      return 'object'
+      return 'object';
     }
-  } catch (e) {
-    // 
+  } catch (e) {// 
   }
 
   try {
-    const cname = x.constructor.name
+    var cname = x.constructor.name;
 
     if (typeof cname === 'string') {
-      return cname
+      return cname;
     }
-  } catch (e) {
-    // 无constructor
-  }
+  } catch (e) {// 无constructor
+  } // function A() {}; A.prototype.constructor = null; new A
 
-  // function A() {}; A.prototype.constructor = null; new A
-  return 'unknown'
+
+  return 'unknown';
 }
+
 function SimpleWeakmap() {
-  this.cacheArray = []
+  this.cacheArray = [];
 }
-const UNIQUE_KEY = `com.yanhaijing.jsmini.clone${(new Date()).getTime()}`
-SimpleWeakmap.prototype.set = function(key, value) {
-  this.cacheArray.push(key)
-  key[UNIQUE_KEY] = value
-}
-SimpleWeakmap.prototype.get = function(key) {
-  return key[UNIQUE_KEY]
-}
-SimpleWeakmap.prototype.clear = function() {
-  for (let i = 0; i < this.cacheArray.length; i++) {
-    const key = this.cacheArray[i]
-    delete key[UNIQUE_KEY]
+
+var UNIQUE_KEY = "com.yanhaijing.jsmini.clone".concat(new Date().getTime());
+
+SimpleWeakmap.prototype.set = function (key, value) {
+  this.cacheArray.push(key);
+  key[UNIQUE_KEY] = value;
+};
+
+SimpleWeakmap.prototype.get = function (key) {
+  return key[UNIQUE_KEY];
+};
+
+SimpleWeakmap.prototype.clear = function () {
+  for (var i = 0; i < this.cacheArray.length; i++) {
+    var key = this.cacheArray[i];
+    delete key[UNIQUE_KEY];
   }
-  this.cacheArray.length = 0
-}
+
+  this.cacheArray.length = 0;
+};
+
 function getWeakMap() {
-  let result
+  var result;
+
   if (typeof WeakMap !== 'undefined' && __type(WeakMap) === 'function') {
-    result = new WeakMap()
+    result = new WeakMap();
+
     if (__type(result) === 'weakmap') {
-      return result
+      return result;
     }
   }
-  result = new SimpleWeakmap()
 
-  return result
+  result = new SimpleWeakmap();
+  return result;
 }
+
 function isClone(x) {
-  const t = __type(x)
-  return t === 'object' || t === 'array'
+  var t = __type(x);
+
+  return t === 'object' || t === 'array';
 }
+
 function hasOwnProp(obj, key) {
-  return Object.prototype.hasOwnProperty.call(obj, key)
+  return Object.prototype.hasOwnProperty.call(obj, key);
 }
+
 function copy(x) {
-  const uniqueData = getWeakMap()
+  var uniqueData = getWeakMap();
 
-  const t = __type(x)
+  var t = __type(x);
 
-  let root = x
+  var root = x;
 
   if (t === 'array') {
-    root = []
+    root = [];
   } else if (t === 'object') {
-    root = {}
-  }
+    root = {};
+  } // 循环数组
 
-  // 循环数组
-  const loopList = [
-    {
-      parent: root,
-      key: undefined,
-      data: x,
-    }
-  ]
+
+  var loopList = [{
+    parent: root,
+    key: undefined,
+    data: x
+  }];
 
   while (loopList.length) {
     // 深度优先
-    const node = loopList.pop()
-    const parent = node.parent
-    const key = node.key
-    const source = node.data
-    const tt = __type(source)
+    var node = loopList.pop();
+    var parent = node.parent;
+    var key = node.key;
+    var source = node.data;
 
-    // 初始化赋值目标，key为undefined则拷贝到父元素，否则拷贝到子元素
-    let target = parent
+    var tt = __type(source); // 初始化赋值目标，key为undefined则拷贝到父元素，否则拷贝到子元素
+
+
+    var target = parent;
+
     if (typeof key !== 'undefined') {
-      parent[key] = tt === 'array' ? [] : {}
-      target = parent[key]
-    }
+      parent[key] = tt === 'array' ? [] : {};
+      target = parent[key];
+    } // 复杂数据需要缓存操作
 
-    // 复杂数据需要缓存操作
+
     if (isClone(source)) {
       // 命中缓存，直接返回缓存数据
-      const uniqueTarget = uniqueData.get(source)
-      if (uniqueTarget) {
-        parent[key] = uniqueTarget
-        continue // 中断本次循环
-      }
+      var uniqueTarget = uniqueData.get(source);
 
-      // 未命中缓存，保存到缓存
-      uniqueData.set(source, target)
+      if (uniqueTarget) {
+        parent[key] = uniqueTarget;
+        continue; // 中断本次循环
+      } // 未命中缓存，保存到缓存
+
+
+      uniqueData.set(source, target);
     }
 
     if (tt === 'array') {
-      for (let i = 0; i < source.length; i++) {
+      for (var i = 0; i < source.length; i++) {
         if (isClone(source[i])) {
           // 下一次循环
           loopList.push({
             parent: target,
             key: i,
-            data: source[i],
-          })
+            data: source[i]
+          });
         } else {
-          target[i] = source[i]
+          target[i] = source[i];
         }
       }
     } else if (tt === 'object') {
-      for (const k in source) {
+      for (var k in source) {
         if (hasOwnProp(source, k)) {
-          if (k === UNIQUE_KEY) { continue }
+          if (k === UNIQUE_KEY) {
+            continue;
+          }
+
           if (isClone(source[k])) {
             // 下一次循环
             loopList.push({
               parent: target,
               key: k,
-              data: source[k],
-            })
+              data: source[k]
+            });
           } else {
-            target[k] = source[k]
+            target[k] = source[k];
           }
         }
       }
     }
   }
-    
 
-  uniqueData.clear && uniqueData.clear()
-    
-  return root
+  uniqueData.clear && uniqueData.clear();
+  return root;
 }
 
 module.exports = {
-  copy,
-}
+  copy: copy
+};

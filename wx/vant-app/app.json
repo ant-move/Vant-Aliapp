@@ -53,12 +53,21 @@
     "pages/calendar/index",
     "pages/share-sheet/index"
   ],
-  "window": {
-    "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "Vant Aliapp",
-    "navigationBarTextStyle": "black",
-    "backgroundTextStyle": "dark",
-    "backgroundColor": "#f8f8f8"
+  "_wxEnv": {
+    "window": {
+      "navigationBarBackgroundColor": "#f8f8f8",
+      "navigationBarTitleText": "Vant Weapp",
+      "navigationBarTextStyle": "black",
+      "backgroundTextStyle": "dark",
+      "backgroundColor": "#f8f8f8"
+    }
+  },
+  "_alipayEnv": {
+    "window": {
+      "titleBarColor": "#ffffff",
+      "navigationBarTitleText": "Vant Aliapp",
+      "backgroundColor": "#f8f8f8"
+    }
   },
   "usingComponents": {
     "demo-block": "./components/demo-block/index",

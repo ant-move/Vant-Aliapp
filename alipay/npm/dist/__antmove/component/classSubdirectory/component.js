@@ -1,126 +1,157 @@
-const utils = require('../../api/utils')
+"use strict";
 
-const { warnLife, fnAppClass } = utils
-const Relations = require('../../api/relations')
-const config = require('../../api/config.js')
-const {
-  createSelectorQuery,
-  createIntersectionObserver,
-} = require('../../api/my')
-const {
-  getUrl,
-  updateData,
-  processRelationPath,
-  _relationNode,
-  findRelationNode,
-  compatibleLifetime,
-  collectObserver,
-  collectObservers,
-  processTriggerEvent,
-  observerHandle,
-  handleProps,
-  handleExternalClasses,
-  handleAfterInit,
-  mergeOptions,
-  copy,
-  nextUid,
-} = require('../utils')
-const SelectComponent = require('./selectComponent')
-const processRelationHandle = require('./processRelation')
-const createNode = require('./relation')
-const { antmoveAction } = require('./utils')
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var utils = require('../../api/utils');
+
+var warnLife = utils.warnLife,
+    fnAppClass = utils.fnAppClass;
+
+var Relations = require('../../api/relations');
+
+var config = require('../../api/config.js');
+
+var _require = require('../../api/my'),
+    createSelectorQuery = _require.createSelectorQuery,
+    createIntersectionObserver = _require.createIntersectionObserver;
+
+var _require2 = require('../utils'),
+    getUrl = _require2.getUrl,
+    updateData = _require2.updateData,
+    processRelationPath = _require2.processRelationPath,
+    _relationNode = _require2._relationNode,
+    findRelationNode = _require2.findRelationNode,
+    compatibleLifetime = _require2.compatibleLifetime,
+    collectObserver = _require2.collectObserver,
+    collectObservers = _require2.collectObservers,
+    processTriggerEvent = _require2.processTriggerEvent,
+    observerHandle = _require2.observerHandle,
+    handleProps = _require2.handleProps,
+    handleExternalClasses = _require2.handleExternalClasses,
+    handleAfterInit = _require2.handleAfterInit,
+    mergeOptions = _require2.mergeOptions,
+    copy = _require2.copy,
+    nextUid = _require2.nextUid;
+
+var SelectComponent = require('./selectComponent');
+
+var processRelationHandle = require('./processRelation');
+
+var createNode = require('./relation');
+
+var _require3 = require('./utils'),
+    antmoveAction = _require3.antmoveAction;
 
 function getInfo(key, obj) {
-  let val = {}
-  Object.keys(obj).forEach((item) => {
+  var val = {};
+  Object.keys(obj).forEach(function (item) {
     if (key === item || key.indexOf(item) !== -1) {
-      val = obj[item]
+      val = obj[item];
     }
-  })
-  return val
+  });
+  return val;
 }
 
-function processRelations(ctx, relationInfo = {}) {
-  let route = ctx.is
-  route = route.replace(/\/node_modules\/[a-z-]+\/[a-z-]+/, '')
+function processRelations(ctx) {
+  var relationInfo = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var route = ctx.is;
+  route = route.replace(/\/node_modules\/[a-z-]+\/[a-z-]+/, '');
+
   if (route[0] === '/') {
-    route = route.substring(1)
+    route = route.substring(1);
   }
-  const info = getInfo(route, relationInfo)
+
+  var info = getInfo(route, relationInfo);
+
   if (info) {
-    processRelationHandle(info, (node) => {
+    processRelationHandle(info, function (node) {
       if (node.$id === 'saveChildRef0') {
-        ctx[node.$id] = function() {}
-        node.$index = 0
-        node.$route = route
-        createNode.call(ctx, ctx, null, node)
-        return false
+        ctx[node.$id] = function () {};
+
+        node.$index = 0;
+        node.$route = route;
+        createNode.call(ctx, ctx, null, node);
+        return false;
       }
-      ctx[node.$id] = function(ref) {
-        ctx.$antmove = ctx.$antmove || {}
+
+      ctx[node.$id] = function (ref) {
+        ctx.$antmove = ctx.$antmove || {};
+
         if (ctx.$antmove[node.$id] === undefined) {
-          ctx.$antmove[node.$id] = 0
+          ctx.$antmove[node.$id] = 0;
         } else {
-          ctx.$antmove[node.$id] += 1
+          ctx.$antmove[node.$id] += 1;
         }
-        this.selectComponentApp.preProcesscomponents(ref)
-        node.$index = ctx.$antmove[node.$id]
-        node.$route = route
-        createNode.call(ctx, ref, null, node)
-      }
-    })
+
+        this.selectComponentApp.preProcesscomponents(ref);
+        node.$index = ctx.$antmove[node.$id];
+        node.$route = route;
+        createNode.call(ctx, ref, null, node);
+      };
+    });
   } else {
-    console.warn('Missing nodes relation of ', route)
+    console.warn('Missing nodes relation of ', route);
   }
 }
 
 function handleRelations() {
+  var _this = this;
+
   if (this.props.theRelations) {
-    Object.keys(this.props.theRelations).forEach((relation) => {
-      const _p = processRelationPath(this, relation)
-      const relationInfo = this.props.theRelations[relation]
-      let nodes = null
+    Object.keys(this.props.theRelations).forEach(function (relation) {
+      var _p = processRelationPath(_this, relation);
+
+      var relationInfo = _this.props.theRelations[relation];
+      var nodes = null;
 
       if (relationInfo.type === 'child' || relationInfo.type === 'descendant') {
-        return false
-      }
-      nodes = findRelationNode(this.$node, _p, relationInfo.type, true)
-      if (!nodes || nodes[0] === undefined) {
-        return false
+        return false;
       }
 
-      nodes.forEach((n) => {
+      nodes = findRelationNode(_this.$node, _p, relationInfo.type, true);
+
+      if (!nodes || nodes[0] === undefined) {
+        return false;
+      }
+
+      nodes.forEach(function (n) {
         if (!n) {
           // console.error('wrong relation reference of ', relationInfo);
           // console.error('from: ', this.$node.$self.is, 'to: ', _p);
-          return false
+          return false;
         }
-        _relationNode.call(this, n, {
-          relationInfo,
-          _p,
-          relation,
-        })
-      })
-    })
+
+        _relationNode.call(_this, n, {
+          relationInfo: relationInfo,
+          _p: _p,
+          relation: relation
+        });
+      });
+    });
   }
 }
 
 function processObservers(observersObj, options, param) {
   if (options.observers) {
-    collectObservers.call(this, observersObj, options, param)
+    collectObservers.call(this, observersObj, options, param);
   }
 }
 
 function processInit() {
-  getUrl()
+  getUrl();
 }
 
 function processIntersectionObserver(context) {
-  context.createIntersectionObserver = function(...p) {
-    return createIntersectionObserver.fn(...p)
-  }
+  context.createIntersectionObserver = function () {
+    return createIntersectionObserver.fn.apply(createIntersectionObserver, arguments);
+  };
 }
-
 /**
  *
  * @param {*} behavior
@@ -128,284 +159,297 @@ function processIntersectionObserver(context) {
  * @param {*} mixins
  */
 
+
 module.exports = {
-  processTransformationComponent(_opts, options) {
-    const fnApp = fnAppClass()
-    options.properties = options.properties || {}
-    const behaviors = options.behaviors || []
-    const mixins = options.mixins || []
-    const _export = options.export || ''
-    delete options.behaviors
-    delete options.mixins
-    const retMixins = {}
+  processTransformationComponent: function processTransformationComponent(_opts, options) {
+    var fnApp = fnAppClass();
+    options.properties = options.properties || {};
+    var behaviors = options.behaviors || [];
+    var mixins = options.mixins || [];
 
-    _opts.observerObj = {}
-    _opts.observersObj = {}
-    _opts.behaviorsArr = []
+    var _export = options["export"] || '';
 
-    processBehavior(retMixins, behaviors, _opts.behaviorsArr)
-    processBehavior(retMixins, mixins, _opts.behaviorsArr)
-    mergeOptions(retMixins, options)
-    processBehaviorId(behaviors)
-    processBehaviorId(mixins)
+    delete options.behaviors;
+    delete options.mixins;
+    var retMixins = {};
+    _opts.observerObj = {};
+    _opts.observersObj = {};
+    _opts.behaviorsArr = [];
+    processBehavior(retMixins, behaviors, _opts.behaviorsArr);
+    processBehavior(retMixins, mixins, _opts.behaviorsArr);
+    mergeOptions(retMixins, options);
+    processBehaviorId(behaviors);
+    processBehaviorId(mixins);
+    Object.keys(options).forEach(function (key) {
+      _opts[key] = options[key];
+    });
+    handleProps(_opts);
+    handleExternalClasses(_opts);
 
-    Object.keys(options).forEach((key) => {
-      _opts[key] = options[key]
-    })
+    var _life = compatibleLifetime(options);
 
-    handleProps(_opts)
-    handleExternalClasses(_opts)
-
-    const _life = compatibleLifetime(options)
     if (options.properties) {
-      collectObserver(_opts.observerObj, options.properties, options)
+      collectObserver(_opts.observerObj, options.properties, options);
     }
 
     if (!_opts.methods) {
-      _opts.methods = {}
+      _opts.methods = {};
     }
 
-    _opts.methods.antmoveAction = antmoveAction
-
+    _opts.methods.antmoveAction = antmoveAction;
     /**
      * 处理组件所在的页面尺寸变化时执行
      */
+
     if (_opts.pageLifetimes && _opts.pageLifetimes.resize) {
-      _opts.methods.antmovePageLifetimes = function(e) {
-        return _opts.pageLifetimes.resize(e)
-      }
+      _opts.methods.antmovePageLifetimes = function (e) {
+        return _opts.pageLifetimes.resize(e);
+      };
     }
 
-    const didMount = function() {
-      _life.error && warnLife('There is no error life cycle', 'error')
-      _life.move && warnLife('There is no moved life cycle', 'moved')
-      _life.pageLifetimes
-        && warnLife(
-          'There is no page life cycle where the component resides,including(show,hide,resize)',
-          'pageLifetimes',
-        )
-      this.props.genericSelectable
-        && warnLife('generic:selectable is Unsupported', 'generic')
+    var didMount = function didMount() {
+      var _this2 = this;
 
-      // process relations, get relation ast
-      const relationAst = createNode.call(this, null, null, null, null, true)
-        .mountedHandles
-      relationAst.push(() => {
-        handleRelations.call(this)
-      })
-    }
-    fnApp.add('onInit', function() {
-      this.onPageReady = function(p) {
-        _opts.onPageReady && _opts.onPageReady.call(this, p)
-      }
-    })
+      _life.error && warnLife('There is no error life cycle', 'error');
+      _life.move && warnLife('There is no moved life cycle', 'moved');
+      _life.pageLifetimes && warnLife('There is no page life cycle where the component resides,including(show,hide,resize)', 'pageLifetimes');
+      this.props.genericSelectable && warnLife('generic:selectable is Unsupported', 'generic'); // process relations, get relation ast
 
-    fnApp.add('deriveDataFromProps', () => {})
+      var relationAst = createNode.call(this, null, null, null, null, true).mountedHandles;
+      relationAst.push(function () {
+        handleRelations.call(_this2);
+      });
+    };
 
-    fnApp.add('didMount', didMount)
+    fnApp.add('onInit', function () {
+      this.onPageReady = function (p) {
+        _opts.onPageReady && _opts.onPageReady.call(this, p);
+      };
+    });
+    fnApp.add('deriveDataFromProps', function () {});
+    fnApp.add('didMount', didMount);
+
     if (_opts.lifetimes && _opts.lifetimes.created) {
-      fnApp.add('onInit', _opts.lifetimes.created)
+      fnApp.add('onInit', _opts.lifetimes.created);
     } else {
-      fnApp.add('onInit', _opts.created)
+      fnApp.add('onInit', _opts.created);
     }
-    fnApp.insert('onInit', function() {
-      this.__wxExparserNodeId__ = nextUid()
-      processIntersectionObserver(this)
-      this.createSelectorQuery = function() {
+
+    fnApp.insert('onInit', function () {
+      this.__wxExparserNodeId__ = nextUid();
+      processIntersectionObserver(this);
+
+      this.createSelectorQuery = function () {
         if (config.env !== 'production') {
-          console.warn(
-            '支付宝createSelectorQuery不支持限定选择器的选择范围，如使用，请保证对应选择器使用的唯一性',
-          )
+          console.warn('支付宝createSelectorQuery不支持限定选择器的选择范围，如使用，请保证对应选择器使用的唯一性');
         }
-        return createSelectorQuery.fn()
-      }
-      for (const method in this) {
+
+        return createSelectorQuery.fn();
+      };
+
+      for (var method in this) {
         if (typeof this[method] === 'function') {
-          this[method] = this[method].bind(this)
+          this[method] = this[method].bind(this);
         }
       }
-      this.getRelationNodes = function() {
-        return []
-      }
-      processComponentExport(_export, behaviors, this)
-      this.selectComponentApp = new SelectComponent(this)
 
-      this.properties = {
-        ..._opts.properties,
-      }
-      processInit.call(this, _opts, options, _life, fnApp)
-      testBehaviors(behaviors)
-      updateData.call(this)
-      processRelations(this, Relations)
-      this.selectComponentApp.connect()
-      this.selectOwnerComponent = processSelectOwnerComponent.bind(this)
-      this.getPageId = processGetPageId.bind(this)
-      addAntmoveData.call(this)
+      this.getRelationNodes = function () {
+        return [];
+      };
+
+      processComponentExport(_export, behaviors, this);
+      this.selectComponentApp = new SelectComponent(this);
+      this.properties = _objectSpread({}, _opts.properties);
+      processInit.call(this, _opts, options, _life, fnApp);
+      testBehaviors(behaviors);
+      updateData.call(this);
+      processRelations(this, Relations);
+      this.selectComponentApp.connect();
+      this.selectOwnerComponent = processSelectOwnerComponent.bind(this);
+      this.getPageId = processGetPageId.bind(this);
+      addAntmoveData.call(this);
+
       if (typeof this.triggerEvent !== 'function') {
-        processTriggerEvent.call(this)
+        processTriggerEvent.call(this);
       }
-      processObservers.call(this, _opts.observersObj, options, _opts)
-      observerHandle(_opts.observerObj, _opts, this, true)
-    })
-    fnApp.bind('onInit', _opts)
+
+      processObservers.call(this, _opts.observersObj, options, _opts);
+      observerHandle(_opts.observerObj, _opts, this, true);
+    });
+    fnApp.bind('onInit', _opts);
+
     if (_opts.lifetimes && _opts.lifetimes.attached) {
-      fnApp.add('didMount', _opts.lifetimes.attached)
+      fnApp.add('didMount', _opts.lifetimes.attached);
     } else {
-      fnApp.add('didMount', _opts.attached)
+      fnApp.add('didMount', _opts.attached);
     }
+
     if (_opts.pageLifetimes && _opts.pageLifetimes.show) {
-      fnApp.add('didMount', _opts.pageLifetimes.show)
+      fnApp.add('didMount', _opts.pageLifetimes.show);
     }
 
-    fnApp.add('didMount', _opts.ready)
+    fnApp.add('didMount', _opts.ready || _opts.lifetimes && _opts.lifetimes.ready);
 
-    const didUpdate = function(...param) {
-      updateData.call(this, param)
-      processObservers.call(
-        this,
-        _opts.observersObj,
-        options,
-        this.$antmove._data,
-      )
-      observerHandle(_opts.observerObj, this.$antmove._data, this)
-      addAntmoveData.call(this)
-    }
-    fnApp.add('didUpdate', didUpdate)
-    fnApp.add('didUpdate', function() {
-      handleAfterInit.call(this)
-    })
+    var didUpdate = function didUpdate() {
+      for (var _len = arguments.length, param = new Array(_len), _key = 0; _key < _len; _key++) {
+        param[_key] = arguments[_key];
+      }
 
-    fnApp.bind('deriveDataFromProps', _opts)
-    fnApp.bind('didUpdate', _opts)
-    fnApp.bind('didMount', _opts)
+      updateData.call(this, param);
+      processObservers.call(this, _opts.observersObj, options, this.$antmove._data);
+      observerHandle(_opts.observerObj, this.$antmove._data, this);
+      addAntmoveData.call(this);
+    };
+
+    fnApp.add('didUpdate', didUpdate);
+    fnApp.add('didUpdate', function () {
+      handleAfterInit.call(this);
+    });
+    fnApp.bind('deriveDataFromProps', _opts);
+    fnApp.bind('didUpdate', _opts);
+    fnApp.bind('didMount', _opts);
+
     if (_opts.lifetimes && _opts.lifetimes.detached) {
-      fnApp.add('didUnmount', _opts.lifetimes.detached)
+      fnApp.add('didUnmount', _opts.lifetimes.detached);
     } else {
-      fnApp.add('didUnmount', options.detached)
+      fnApp.add('didUnmount', options.detached);
     }
-    fnApp.add('didUnmount', function() {
+
+    fnApp.add('didUnmount', function () {
       // todo: 暂时这样处理使其不报错
       if (this.$node && this.$node.$parent) {
-        this.$node.$parent.removeChild(this.$node)
-        const refId = this.$node.$relationNode.$id
-        this.$antmove[refId]--
+        this.$node.$parent.removeChild(this.$node);
+        var refId = this.$node.$relationNode.$id;
+        this.$antmove[refId]--;
       }
-    })
-    fnApp.bind('didUnmount', _opts)
-  },
-}
+    });
+    fnApp.bind('didUnmount', _opts);
+  }
+};
 
 function addAntmoveData() {
-  const _data = [{}, {}]
-  const ctx = this
-  const _props = {}
-  for (const i in ctx.properties) {
+  var _data = [{}, {}];
+  var ctx = this;
+  var _props = {};
+
+  for (var i in ctx.properties) {
     if (ctx.properties.hasOwnProperty(i)) {
-      _props[i] = ctx.data[i]
+      _props[i] = ctx.data[i];
     }
   }
-  _data[0] = copy(_props)
-  _data[1] = copy(ctx.data)
-  this.$antmove = this.$antmove || {}
-  this.$antmove._data = _data
-}
 
+  _data[0] = copy(_props);
+  _data[1] = copy(ctx.data);
+  this.$antmove = this.$antmove || {};
+  this.$antmove._data = _data;
+}
 /**
  * selectOwnerComponent
  */
-function processSelectOwnerComponent() {
-  const node = this.$node
-  if (node && node.$parent && node.$parent.$self) {
-    return node.$parent.$self
-  }
-  return {}
-}
 
+
+function processSelectOwnerComponent() {
+  var node = this.$node;
+
+  if (node && node.$parent && node.$parent.$self) {
+    return node.$parent.$self;
+  }
+
+  return {};
+}
 /**
  * getPageId
  */
 
+
 function processGetPageId() {
   if (this.$page) {
-    return `pageId:${this.$page.$id}`
+    return "pageId:".concat(this.$page.$id);
   }
-  return 'pageId: undefined'
-}
 
+  return 'pageId: undefined';
+}
 /**
  * behavior
  */
-function processBehavior(_opts = {}, opts, $behaviors) {
-  const self = this
+
+
+function processBehavior() {
+  var _opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  var opts = arguments.length > 1 ? arguments[1] : undefined;
+  var $behaviors = arguments.length > 2 ? arguments[2] : undefined;
+  var self = this;
+
   if (Array.isArray(opts)) {
-    opts.forEach((item) => {
-      if (
-        typeof item === 'object'
-        && ($behaviors.indexOf(item.$id) === -1 || item.$id === undefined)
-      ) {
-        $behaviors.push(item.$id)
-        _process.call(self, _opts, item)
+    opts.forEach(function (item) {
+      if (_typeof(item) === 'object' && ($behaviors.indexOf(item.$id) === -1 || item.$id === undefined)) {
+        $behaviors.push(item.$id);
+
+        _process.call(self, _opts, item);
       }
-    })
-  } else if (typeof opts === 'object' && $behaviors.indexOf(opts.$id) === -1) {
-    $behaviors.push(opts.$id)
-    _process.call(self, _opts, opts)
+    });
+  } else if (_typeof(opts) === 'object' && $behaviors.indexOf(opts.$id) === -1) {
+    $behaviors.push(opts.$id);
+
+    _process.call(self, _opts, opts);
   }
-  function _process(__opts = {}, opt = {}) {
+
+  function _process() {
+    var __opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+    var opt = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
     if (opt.behaviors) {
-      processBehavior.call(self, __opts, opt.behaviors, $behaviors)
-      delete opt.behaviors
+      processBehavior.call(self, __opts, opt.behaviors, $behaviors);
+      delete opt.behaviors;
     }
 
     if (opt.mixins) {
-      processBehavior(__opts, opt.mixins, $behaviors)
-      delete opt.mixins
+      processBehavior(__opts, opt.mixins, $behaviors);
+      delete opt.mixins;
     }
-    mergeOptions(opt, __opts)
+
+    mergeOptions(opt, __opts);
   }
 }
 
 function processBehaviorId(behavior) {
   if (Array.isArray(behavior)) {
-    behavior.forEach((item) => {
-      if (typeof item === 'object' && item.$id) {
-        delete item.$id
+    behavior.forEach(function (item) {
+      if (_typeof(item) === 'object' && item.$id) {
+        delete item.$id;
       }
-    })
-  } else if (typeof behavior === 'object' && behavior.$id) {
-    delete behavior.$id
+    });
+  } else if (_typeof(behavior) === 'object' && behavior.$id) {
+    delete behavior.$id;
   }
 }
 
 function processComponentExport(_export, behaviors, self) {
   if (typeof _export !== 'function') {
-    return
+    return;
   }
+
   if (Array.isArray(behaviors)) {
-    behaviors.forEach((bhv) => {
+    behaviors.forEach(function (bhv) {
       if (bhv === 'wx://component-export') {
-        self._this = _export()
+        self._this = _export();
       }
-    })
+    });
   } else if (behaviors === 'wx://component-export') {
-    self._this = _export()
+    self._this = _export();
   }
 }
 
 function testBehaviors(behaviors) {
   if (Array.isArray(behaviors)) {
-    behaviors.forEach((bhv) => {
+    behaviors.forEach(function (bhv) {
       if (bhv === 'wx://form-field') {
-        warnLife(
-          'Wx://form-field in built-in behavior is not supported',
-          'behavior/form-field',
-        )
+        warnLife('Wx://form-field in built-in behavior is not supported', 'behavior/form-field');
       }
-    })
+    });
   } else if (behaviors === 'wx://form-field') {
-    warnLife(
-      'Wx://form-field in built-in behavior is not supported',
-      'behavior/form-field',
-    )
+    warnLife('Wx://form-field in built-in behavior is not supported', 'behavior/form-field');
   }
 }

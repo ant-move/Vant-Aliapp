@@ -1,84 +1,103 @@
+"use strict";
+
 function selectComponent(ctx) {
-  this.$ctx = ctx
-  this.$nodes = {}
-  this.$cacheNodes = {}
+  this.$ctx = ctx;
+  this.$nodes = {};
+  this.$cacheNodes = {};
 }
 
 selectComponent.prototype = {
-  _addComponentNode(className, ctx) {
-    className = `.${className}`
-    const componentNodes = this.$nodes
+  _addComponentNode: function _addComponentNode(className, ctx) {
+    className = ".".concat(className);
+    var componentNodes = this.$nodes;
+
     if (componentNodes[className]) {
-      componentNodes[className].push(ctx)
+      componentNodes[className].push(ctx);
     } else {
-      componentNodes[className] = [ctx]
+      componentNodes[className] = [ctx];
     }
-    this.$cacheNodes[ctx.$id] = { className }
+
+    this.$cacheNodes[ctx.$id] = {
+      className: className
+    };
   },
-  addComponentNodeId(id, ctx) {
-    id = `#${id}`
-    ctx.props && ctx.props.id ? ctx.id = ctx.props.id : ctx.id = ''
-    const componentNodes = this.$nodes
+  addComponentNodeId: function addComponentNodeId(id, ctx) {
+    id = "#".concat(id);
+    ctx.props && ctx.props.id ? ctx.id = ctx.props.id : ctx.id = '';
+    var componentNodes = this.$nodes;
+
     if (componentNodes[id]) {
-      componentNodes[id].push(ctx)
+      componentNodes[id].push(ctx);
     } else {
-      componentNodes[id] = [ctx]
+      componentNodes[id] = [ctx];
     }
-    this.$cacheNodes[ctx.$id] = { id }
+
+    this.$cacheNodes[ctx.$id] = {
+      id: id
+    };
   },
-  addComponentNode(className = '', ctx) {
-    ctx.props && ctx.props.id ? ctx.id = ctx.props.id : ctx.id = ''
-    const classNameArray = className.split(/\s+/g)
-    classNameArray.forEach((classNameStr) => {
-      this._addComponentNode(classNameStr, ctx)
-    })
+  addComponentNode: function addComponentNode() {
+    var _this = this;
+
+    var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+    var ctx = arguments.length > 1 ? arguments[1] : undefined;
+    ctx.props && ctx.props.id ? ctx.id = ctx.props.id : ctx.id = '';
+    var classNameArray = className.split(/\s+/g);
+    classNameArray.forEach(function (classNameStr) {
+      _this._addComponentNode(classNameStr, ctx);
+    });
   },
-  selectComponent(className) {
-    const componentNodes = this.$nodes
-    return componentNodes[className] && componentNodes[className][0]
+  selectComponent: function selectComponent(className) {
+    var componentNodes = this.$nodes;
+    return componentNodes[className] && componentNodes[className][0];
   },
-  selectComponents(className) {
-    const componentNodes = this.$nodes
-    return componentNodes[className]
+  selectComponents: function selectComponents(className) {
+    var componentNodes = this.$nodes;
+    return componentNodes[className];
   },
-  preProcesscomponents,
-  connect() {
-    const ctx = this.$ctx
-    const self = this
-    ctx.selectComponent = function(...p) {
-      if (self.selectComponent(...p) && self.selectComponent(...p)._this !== undefined) {
-        return self.selectComponent(...p)._this
+  preProcesscomponents: preProcesscomponents,
+  connect: function connect() {
+    var ctx = this.$ctx;
+    var self = this;
+
+    ctx.selectComponent = function () {
+      if (self.selectComponent.apply(self, arguments) && self.selectComponent.apply(self, arguments)._this !== undefined) {
+        return self.selectComponent.apply(self, arguments)._this;
       } else {
-        return self.selectComponent(...p)
+        return self.selectComponent.apply(self, arguments);
       }
-    }
-    ctx.selectAllComponents = function(...p) {
-      const componentsArr = self.selectComponents(...p) || []
-      const newArr = []
-      componentsArr.forEach((item) => {
+    };
+
+    ctx.selectAllComponents = function () {
+      var componentsArr = self.selectComponents.apply(self, arguments) || [];
+      var newArr = [];
+      componentsArr.forEach(function (item) {
         if (item._this !== undefined) {
-          newArr.push(item._this)
+          newArr.push(item._this);
         } else {
-          newArr.push(item)
+          newArr.push(item);
         }
-      })
-      return newArr
-    }
-  },
-}
+      });
+      return newArr;
+    };
+  }
+};
 
 function preProcesscomponents(ctx) {
-  const selectorObj = this.$cacheNodes[ctx.$id]
-  selectorObj && Object.keys(selectorObj)
-    .forEach((item) => {
-      this.$nodes[item] = []
-    })
+  var _this2 = this;
+
+  var selectorObj = this.$cacheNodes[ctx.$id];
+  selectorObj && Object.keys(selectorObj).forEach(function (item) {
+    _this2.$nodes[item] = [];
+  });
+
   if (ctx.props.id) {
-    this.addComponentNodeId(ctx.props.id, ctx)
+    this.addComponentNodeId(ctx.props.id, ctx);
   }
+
   if (ctx.props.className) {
-    this.addComponentNode(ctx.props.className, ctx)
+    this.addComponentNode(ctx.props.className, ctx);
   }
 }
 
-module.exports = selectComponent
+module.exports = selectComponent;

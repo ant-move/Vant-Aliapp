@@ -1,5 +1,8 @@
-import { VantComponent } from "../common/component";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+(0, _component.VantComponent)({
   classes: ["active-class", "disabled-class"],
   relation: {
     type: "ancestor",
@@ -14,27 +17,26 @@ VantComponent({
     disabled: Boolean
   },
   methods: {
-    onClick() {
-      const {
-        parent
-      } = this;
+    onClick: function onClick() {
+      var _this = this;
+
+      var parent = this.parent;
 
       if (!parent || this.data.disabled) {
         return;
       }
 
-      const index = parent.children.indexOf(this);
-      parent.setActive(index).then(() => {
-        this.$emit("click", index);
+      var index = parent.children.indexOf(this);
+      parent.setActive(index).then(function () {
+        _this.$emit("click", index);
+
         parent.$emit("change", index);
       });
     },
-
-    setActive(selected) {
+    setActive: function setActive(selected) {
       return this.setData({
-        selected
+        selected: selected
       });
     }
-
   }
 });

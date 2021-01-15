@@ -115,6 +115,9 @@ Page({
       case 'customDayText':
         data.minDate = new Date(2010, 4, 1).getTime();
         data.maxDate = new Date(2010, 4, 31).getTime();
+        if (wx.__target__ === 'alipay') {
+          data._formatter = true
+        }
         data.formatter = this.dayFormatter;
         break;
       case 'customPosition':
@@ -128,7 +131,9 @@ Page({
 
     this.setData(data);
   },
-
+  _dayFormatter(day) {
+      return this.data._formatter ? this.dayFormatter(day) : function(day){return day}
+  },
   dayFormatter(day) {
     const month = day.date.getMonth() + 1;
     const date = day.date.getDate();

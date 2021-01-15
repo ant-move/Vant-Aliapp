@@ -46,7 +46,7 @@
         minDate="{{ minDate }}"
         maxDate="{{ maxDate }}"
         showMark="{{ showMark }}"
-        formatter="{{ formatter }}"
+        onFormatter="onFormatter"
         rowHeight="{{ rowHeight }}"
         currentDate="{{ currentDate }}"
         showSubtitle="{{ showSubtitle }}"

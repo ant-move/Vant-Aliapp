@@ -1,18 +1,23 @@
-const _my = require("../../__antmove/api/index.js")(my);
-const wx = _my;
-import Page from "../../common/page";
-Page({
-    onClickLeft() {
-        wx.showToast({
-            title: "点击返回",
-            icon: "none"
-        });
-    },
+"use strict";
 
-    onClickRight() {
-        wx.showToast({
-            title: "点击按钮",
-            icon: "none"
-        });
-    }
+var _page = _interopRequireDefault(require("../../common/page"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var _my = require("../../__antmove/api/index.js")(my);
+
+var wx = _my;
+(0, _page["default"])({
+  onClickLeft: function onClickLeft() {
+    wx.showToast({
+      title: "点击返回",
+      icon: "none"
+    });
+  },
+  onClickRight: function onClickRight() {
+    wx.showToast({
+      title: "点击按钮",
+      icon: "none"
+    });
+  }
 });

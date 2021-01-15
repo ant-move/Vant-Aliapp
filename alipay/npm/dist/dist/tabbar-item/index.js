@@ -1,5 +1,8 @@
-import { VantComponent } from "../common/component";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+(0, _component.VantComponent)({
   props: {
     info: null,
     name: null,
@@ -19,14 +22,12 @@ VantComponent({
     active: false
   },
   methods: {
-    onClick() {
-      const {
-        parent
-      } = this;
+    onClick: function onClick() {
+      var parent = this.parent;
 
       if (parent) {
-        const index = parent.children.indexOf(this);
-        const active = this.data.name || index;
+        var index = parent.children.indexOf(this);
+        var active = this.data.name || index;
 
         if (active !== this.data.active) {
           parent.$emit("change", active);
@@ -35,23 +36,18 @@ VantComponent({
 
       this.$emit("click");
     },
-
-    updateFromParent() {
-      const {
-        parent
-      } = this;
+    updateFromParent: function updateFromParent() {
+      var parent = this.parent;
 
       if (!parent) {
         return;
       }
 
-      const index = parent.children.indexOf(this);
-      const parentData = parent.data;
-      const {
-        data
-      } = this;
-      const active = (data.name || index) === parentData.active;
-      const patch = {};
+      var index = parent.children.indexOf(this);
+      var parentData = parent.data;
+      var data = this.data;
+      var active = (data.name || index) === parentData.active;
+      var patch = {};
 
       if (active !== data.active) {
         patch.active = active;
@@ -69,6 +65,5 @@ VantComponent({
         this.setData(patch);
       }
     }
-
   }
 });

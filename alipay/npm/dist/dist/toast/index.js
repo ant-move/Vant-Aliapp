@@ -1,5 +1,8 @@
-import { VantComponent } from "../common/component";
-VantComponent({
+"use strict";
+
+var _component = require("../common/component");
+
+(0, _component.VantComponent)({
   props: {
     show: Boolean,
     mask: Boolean,
@@ -24,7 +27,6 @@ VantComponent({
   },
   methods: {
     // for prevent touchmove
-    noop() {}
-
+    noop: function noop() {}
   }
 });

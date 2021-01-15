@@ -122,6 +122,9 @@ VantComponent({
     }
   },
   methods: {
+    onFormatter(opts) {
+      return this.props.onFormatter ? this.props.onFormatter(opts) : opts
+    },
     reset() {
       this.setData({ currentDate: this.getInitialDate() });
       this.scrollIntoView();

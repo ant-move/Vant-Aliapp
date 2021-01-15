@@ -1,8 +1,14 @@
-import { addUnit, isDef } from "../common/utils";
-import { VantComponent } from "../common/component";
-import { button } from "../mixins/button";
-import { openType } from "../mixins/open-type";
-const FIT_MODE_MAP = {
+"use strict";
+
+var _utils = require("../common/utils");
+
+var _component = require("../common/component");
+
+var _button = require("../mixins/button");
+
+var _openType = require("../mixins/open-type");
+
+var FIT_MODE_MAP = {
   none: "center",
   fill: "scaleToFill",
   cover: "aspectFill",
@@ -10,20 +16,18 @@ const FIT_MODE_MAP = {
   widthFix: "widthFix",
   heightFix: "heightFix"
 };
-VantComponent({
-  mixins: [button, openType],
+(0, _component.VantComponent)({
+  mixins: [_button.button, _openType.openType],
   classes: ["custom-class", "loading-class", "error-class", "image-class"],
   props: {
     src: {
       type: String,
-
-      observer() {
+      observer: function observer() {
         this.setData({
           error: false,
           loading: true
         });
       }
-
     },
     round: Boolean,
     width: {
@@ -58,63 +62,55 @@ VantComponent({
     loading: true,
     viewStyle: ""
   },
-
-  mounted() {
+  mounted: function mounted() {
     this.setMode();
     this.setStyle();
   },
-
   methods: {
-    setMode() {
+    setMode: function setMode() {
       this.setData({
         mode: FIT_MODE_MAP[this.data.fit]
       });
     },
+    setStyle: function setStyle() {
+      var _this$data = this.data,
+          width = _this$data.width,
+          height = _this$data.height,
+          radius = _this$data.radius;
+      var style = "";
 
-    setStyle() {
-      const {
-        width,
-        height,
-        radius
-      } = this.data;
-      let style = "";
-
-      if (isDef(width)) {
-        style += `width: ${addUnit(width)};`;
+      if ((0, _utils.isDef)(width)) {
+        style += "width: ".concat((0, _utils.addUnit)(width), ";");
       }
 
-      if (isDef(height)) {
-        style += `height: ${addUnit(height)};`;
+      if ((0, _utils.isDef)(height)) {
+        style += "height: ".concat((0, _utils.addUnit)(height), ";");
       }
 
-      if (isDef(radius)) {
+      if ((0, _utils.isDef)(radius)) {
         style += "overflow: hidden;";
-        style += `border-radius: ${addUnit(radius)};`;
+        style += "border-radius: ".concat((0, _utils.addUnit)(radius), ";");
       }
 
       this.setData({
         viewStyle: style
       });
     },
-
-    onLoad(event) {
+    onLoad: function onLoad(event) {
       this.setData({
         loading: false
       });
       this.$emit("load", event.detail);
     },
-
-    onError(event) {
+    onError: function onError(event) {
       this.setData({
         loading: false,
         error: true
       });
       this.$emit("error", event.detail);
     },
-
-    onClick(event) {
+    onClick: function onClick(event) {
       this.$emit("click", event.detail);
     }
-
   }
 });

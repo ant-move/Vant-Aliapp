@@ -1,40 +1,48 @@
-const isArray = Array.isArray
-Promise.all = function(arr) {
-  return new Promise(((resolve, reject) => {
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+var isArray = Array.isArray;
+
+Promise.all = function (arr) {
+  return new Promise(function (resolve, reject) {
     if (!isArray(arr)) {
-      return reject(new TypeError('Promise.all accepts an array'))
+      return reject(new TypeError('Promise.all accepts an array'));
     }
 
-    const args = Array.prototype.slice.call(arr)
-    if (args.length === 0) { return resolve([]) }
-    let remaining = args.length
+    var args = Array.prototype.slice.call(arr);
+
+    if (args.length === 0) {
+      return resolve([]);
+    }
+
+    var remaining = args.length;
 
     function res(i, val) {
       try {
-        if (val && (typeof val === 'object' || typeof val === 'function')) {
-          const then = val.then
+        if (val && (_typeof(val) === 'object' || typeof val === 'function')) {
+          var then = val.then;
+
           if (typeof then === 'function') {
-            then.call(
-              val,
-              (_val) => {
-                res(i, _val)
-              },
-              reject,
-            )
-            return
+            then.call(val, function (_val) {
+              res(i, _val);
+            }, reject);
+            return;
           }
         }
-        args[i] = val
+
+        args[i] = val;
+
         if (--remaining === 0) {
-          resolve(args)
+          resolve(args);
         }
       } catch (ex) {
-        reject(ex)
+        reject(ex);
       }
     }
 
-    for (let i = 0; i < args.length; i++) {
-      res(i, args[i])
+    for (var i = 0; i < args.length; i++) {
+      res(i, args[i]);
     }
-  }))
-}
+  });
+};

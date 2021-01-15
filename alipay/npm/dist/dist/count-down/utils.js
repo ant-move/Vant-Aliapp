@@ -1,61 +1,77 @@
-function padZero(num, targetLength = 2) {
-    let str = num + "";
+"use strict";
 
-    while (str.length < targetLength) {
-        str = "0" + str;
-    }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.parseTimeData = parseTimeData;
+exports.parseFormat = parseFormat;
+exports.isSameSecond = isSameSecond;
 
-    return str;
+function padZero(num) {
+  var targetLength = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 2;
+  var str = num + "";
+
+  while (str.length < targetLength) {
+    str = "0" + str;
+  }
+
+  return str;
 }
 
-const SECOND = 1000;
-const MINUTE = 60 * SECOND;
-const HOUR = 60 * MINUTE;
-const DAY = 24 * HOUR;
-export function parseTimeData(time) {
-    const days = Math.floor(time / DAY);
-    const hours = Math.floor((time % DAY) / HOUR);
-    const minutes = Math.floor((time % HOUR) / MINUTE);
-    const seconds = Math.floor((time % MINUTE) / SECOND);
-    const milliseconds = Math.floor(time % SECOND);
-    return {
-        days,
-        hours,
-        minutes,
-        seconds,
-        milliseconds
-    };
+var SECOND = 1000;
+var MINUTE = 60 * SECOND;
+var HOUR = 60 * MINUTE;
+var DAY = 24 * HOUR;
+
+function parseTimeData(time) {
+  var days = Math.floor(time / DAY);
+  var hours = Math.floor(time % DAY / HOUR);
+  var minutes = Math.floor(time % HOUR / MINUTE);
+  var seconds = Math.floor(time % MINUTE / SECOND);
+  var milliseconds = Math.floor(time % SECOND);
+  return {
+    days: days,
+    hours: hours,
+    minutes: minutes,
+    seconds: seconds,
+    milliseconds: milliseconds
+  };
 }
-export function parseFormat(format, timeData) {
-    const { days } = timeData;
-    let { hours, minutes, seconds, milliseconds } = timeData;
 
-    if (format.indexOf("DD") === -1) {
-        hours += days * 24;
-    } else {
-        format = format.replace("DD", padZero(days));
-    }
+function parseFormat(format, timeData) {
+  var days = timeData.days;
+  var hours = timeData.hours,
+      minutes = timeData.minutes,
+      seconds = timeData.seconds,
+      milliseconds = timeData.milliseconds;
 
-    if (format.indexOf("HH") === -1) {
-        minutes += hours * 60;
-    } else {
-        format = format.replace("HH", padZero(hours));
-    }
+  if (format.indexOf("DD") === -1) {
+    hours += days * 24;
+  } else {
+    format = format.replace("DD", padZero(days));
+  }
 
-    if (format.indexOf("mm") === -1) {
-        seconds += minutes * 60;
-    } else {
-        format = format.replace("mm", padZero(minutes));
-    }
+  if (format.indexOf("HH") === -1) {
+    minutes += hours * 60;
+  } else {
+    format = format.replace("HH", padZero(hours));
+  }
 
-    if (format.indexOf("ss") === -1) {
-        milliseconds += seconds * 1000;
-    } else {
-        format = format.replace("ss", padZero(seconds));
-    }
+  if (format.indexOf("mm") === -1) {
+    seconds += minutes * 60;
+  } else {
+    format = format.replace("mm", padZero(minutes));
+  }
 
-    return format.replace("SSS", padZero(milliseconds, 3));
+  if (format.indexOf("ss") === -1) {
+    milliseconds += seconds * 1000;
+  } else {
+    format = format.replace("ss", padZero(seconds));
+  }
+
+  return format.replace("SSS", padZero(milliseconds, 3));
 }
-export function isSameSecond(time1, time2) {
-    return Math.floor(time1 / 1000) === Math.floor(time2 / 1000);
+
+function isSameSecond(time1, time2) {
+  return Math.floor(time1 / 1000) === Math.floor(time2 / 1000);
 }

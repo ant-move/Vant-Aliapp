@@ -1,53 +1,62 @@
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 /* eslint-disable */
+var logUtils = require('./log.js');
 
-const logUtils = require('./log.js')
+var hasProxy = typeof Proxy !== 'undefined';
 
-const hasProxy = typeof Proxy !== 'undefined'
-let _Proxy = function () {}
+var _Proxy = function _Proxy() {};
 
 if (hasProxy) {
-  _Proxy = Proxy
+  _Proxy = Proxy;
 }
 
-module.exports = {
-  ...logUtils,
-
-  nextUid(len = 8) {
-    return Math.random()
-      .toString(36)
-      .substr(len + 1)
+module.exports = _objectSpread(_objectSpread({}, logUtils), {}, {
+  nextUid: function nextUid() {
+    var len = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 8;
+    return Math.random().toString(36).substr(len + 1);
   },
+  parseSelector: function parseSelector(sel) {
+    var ret = sel;
 
-  parseSelector(sel) {
-    let ret = sel
     if (sel.indexOf('>>>') !== -1) {
-      console.warn('支付宝不支持跨自定义组件的后代选择器，已降级')
-      const arr = sel.split('>>>')
-      ret = arr[arr.length - 1].trim()
+      console.warn('支付宝不支持跨自定义组件的后代选择器，已降级');
+      var arr = sel.split('>>>');
+      ret = arr[arr.length - 1].trim();
     }
-    return ret
+
+    return ret;
   },
 
   /**
    * defineGetter
    */
-  defineGetter(obj = {}, descObj = {}, cb = () => {}) {
+  defineGetter: function defineGetter() {
+    var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var descObj = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var cb = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : function () {};
+
     if (!hasProxy) {
-      return obj
+      return obj;
     }
+
     return new _Proxy(obj, {
-      get(target, attr) {
-        if (
-          typeof attr === 'string' &&
-          descObj[attr] &&
-          descObj[attr].type === 0
-        ) {
-          cb && cb(target, attr)
+      get: function get(target, attr) {
+        if (typeof attr === 'string' && descObj[attr] && descObj[attr].type === 0) {
+          cb && cb(target, attr);
         }
 
-        return target[attr]
-      },
-    })
+        return target[attr];
+      }
+    });
   },
 
   /**
@@ -55,773 +64,826 @@ module.exports = {
    * wxAttr: 微信key值
    * alipayAttr: 支付宝key值
    **/
-  objectMap(sourceObj = {}, wxAttr, alipayAttr) {
+  objectMap: function objectMap() {
+    var sourceObj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var wxAttr = arguments.length > 1 ? arguments[1] : undefined;
+    var alipayAttr = arguments.length > 2 ? arguments[2] : undefined;
+
     if (!hasProxy) {
       Object.defineProperty(sourceObj, wxAttr, {
-        get() {
-          return sourceObj[alipayAttr]
-        },
-      })
-
-      return sourceObj
-    }
-    return new _Proxy(sourceObj, {
-      get(target, attr) {
-        if (attr === wxAttr) {
-          return target[alipayAttr]
+        get: function get() {
+          return sourceObj[alipayAttr];
         }
-      },
-    })
+      });
+      return sourceObj;
+    }
+
+    return new _Proxy(sourceObj, {
+      get: function get(target, attr) {
+        if (attr === wxAttr) {
+          return target[alipayAttr];
+        }
+      }
+    });
   },
   // 类型转换
-  changeType(str) {
-    const hexA = new Array(0)
+  changeType: function changeType(str) {
+    var hexA = new Array(0);
+
     if (typeof attr === 'string') {
       // 十六进制字符串转字节数组
-      let pos = 0
-      let len = str.length
+      var pos = 0;
+      var len = str.length;
+
       if (len % 2 !== 0) {
-        return null
+        return null;
       }
-      len /= 2
-      for (let i = 0; i < len; i++) {
-        const s = str.substr(pos, 2)
-        const v = parseInt(s, 16)
-        hexA.push(v)
-        pos += 2
+
+      len /= 2;
+
+      for (var i = 0; i < len; i++) {
+        var s = str.substr(pos, 2);
+        var v = parseInt(s, 16);
+        hexA.push(v);
+        pos += 2;
       }
-      return hexA
+
+      return hexA;
     }
   },
   // https://github.com/wandergis/coordtransform/blob/master/index.js
-  gcj02towgs84(_lng, _lat) {
-    const lat = +_lat
-    const lng = +_lng
-    const ee = 0.00669342162296594323
-    const a = 6378245.0
+  gcj02towgs84: function gcj02towgs84(_lng, _lat) {
+    var lat = +_lat;
+    var lng = +_lng;
+    var ee = 0.00669342162296594323;
+    var a = 6378245.0;
 
     if (out_of_china(lng, lat)) {
-      return [lng, lat]
+      return [lng, lat];
     } else {
-      let dlat = transformlat(lng - 105.0, lat - 35.0)
-      let dlng = transformlng(lng - 105.0, lat - 35.0)
-      const radlat = (lat / 180.0) * Math.PI
-      let magic = Math.sin(radlat)
-      magic = 1 - ee * magic * magic
-      const sqrtmagic = Math.sqrt(magic)
-      dlat = (dlat * 180.0) / (((a * (1 - ee)) / (magic * sqrtmagic)) * Math.PI)
-      dlng = (dlng * 180.0) / ((a / sqrtmagic) * Math.cos(radlat) * Math.PI)
-      const mglat = lat + dlat
-      const mglng = lng + dlng
-      return [lng * 2 - mglng, lat * 2 - mglat]
+      var dlat = transformlat(lng - 105.0, lat - 35.0);
+      var dlng = transformlng(lng - 105.0, lat - 35.0);
+      var radlat = lat / 180.0 * Math.PI;
+      var magic = Math.sin(radlat);
+      magic = 1 - ee * magic * magic;
+      var sqrtmagic = Math.sqrt(magic);
+      dlat = dlat * 180.0 / (a * (1 - ee) / (magic * sqrtmagic) * Math.PI);
+      dlng = dlng * 180.0 / (a / sqrtmagic * Math.cos(radlat) * Math.PI);
+      var mglat = lat + dlat;
+      var mglng = lng + dlng;
+      return [lng * 2 - mglng, lat * 2 - mglat];
     }
   },
-
-  ab2hex(buffer) {
-    const hexArr = Array.prototype.map.call(new Uint8Array(buffer), (bit) => {
-      return `00${bit.toString(16)}`.slice(-2)
-    })
-    return hexArr.join('')
+  ab2hex: function ab2hex(buffer) {
+    var hexArr = Array.prototype.map.call(new Uint8Array(buffer), function (bit) {
+      return "00".concat(bit.toString(16)).slice(-2);
+    });
+    return hexArr.join('');
   },
 
   /**
    * change attr for object
    * replace attr by newAttr
    */
-  changeObjAttr(obj = {}, attr, newAttr) {
+  changeObjAttr: function changeObjAttr() {
+    var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    var attr = arguments.length > 1 ? arguments[1] : undefined;
+    var newAttr = arguments.length > 2 ? arguments[2] : undefined;
+
     if (obj[attr] !== undefined) {
-      obj[newAttr] = obj[attr]
-      delete obj[attr]
+      obj[newAttr] = obj[attr];
+      delete obj[attr];
     } else {
-      console.warn(`${attr} attribute is missing!`)
+      console.warn("".concat(attr, " attribute is missing!"));
     }
 
-    return obj
+    return obj;
   },
-  fnAppClass,
-  browserPath,
-  mapAuthSetting,
-}
+  fnAppClass: fnAppClass,
+  browserPath: browserPath,
+  mapAuthSetting: mapAuthSetting
+});
 
 function out_of_china(lng, lat) {
   // 纬度3.86~53.55,经度73.66~135.05
-  return !(lng > 73.66 && lng < 135.05 && lat > 3.86 && lat < 53.55)
+  return !(lng > 73.66 && lng < 135.05 && lat > 3.86 && lat < 53.55);
 }
 
 function transformlat(lng, lat) {
-  let ret =
-    -100.0 +
-    2.0 * lng +
-    3.0 * lat +
-    0.2 * lat * lat +
-    0.1 * lng * lat +
-    0.2 * Math.sqrt(Math.abs(lng))
-  ret +=
-    ((20.0 * Math.sin(6.0 * lng * Math.PI) +
-      20.0 * Math.sin(2.0 * lng * Math.PI)) *
-      2.0) /
-    3.0
-  ret +=
-    ((20.0 * Math.sin(lat * Math.PI) + 40.0 * Math.sin((lat / 3.0) * Math.PI)) *
-      2.0) /
-    3.0
-  ret +=
-    ((160.0 * Math.sin((lat / 12.0) * Math.PI) +
-      320 * Math.sin((lat * Math.PI) / 30.0)) *
-      2.0) /
-    3.0
-  return ret
+  var ret = -100.0 + 2.0 * lng + 3.0 * lat + 0.2 * lat * lat + 0.1 * lng * lat + 0.2 * Math.sqrt(Math.abs(lng));
+  ret += (20.0 * Math.sin(6.0 * lng * Math.PI) + 20.0 * Math.sin(2.0 * lng * Math.PI)) * 2.0 / 3.0;
+  ret += (20.0 * Math.sin(lat * Math.PI) + 40.0 * Math.sin(lat / 3.0 * Math.PI)) * 2.0 / 3.0;
+  ret += (160.0 * Math.sin(lat / 12.0 * Math.PI) + 320 * Math.sin(lat * Math.PI / 30.0)) * 2.0 / 3.0;
+  return ret;
 }
 
 function transformlng(lng, lat) {
-  let ret =
-    300.0 +
-    lng +
-    2.0 * lat +
-    0.1 * lng * lng +
-    0.1 * lng * lat +
-    0.1 * Math.sqrt(Math.abs(lng))
-  ret +=
-    ((20.0 * Math.sin(6.0 * lng * Math.PI) +
-      20.0 * Math.sin(2.0 * lng * Math.PI)) *
-      2.0) /
-    3.0
-  ret +=
-    ((20.0 * Math.sin(lng * Math.PI) + 40.0 * Math.sin((lng / 3.0) * Math.PI)) *
-      2.0) /
-    3.0
-  ret +=
-    ((150.0 * Math.sin((lng / 12.0) * Math.PI) +
-      300.0 * Math.sin((lng / 30.0) * Math.PI)) *
-      2.0) /
-    3.0
-  return ret
+  var ret = 300.0 + lng + 2.0 * lat + 0.1 * lng * lng + 0.1 * lng * lat + 0.1 * Math.sqrt(Math.abs(lng));
+  ret += (20.0 * Math.sin(6.0 * lng * Math.PI) + 20.0 * Math.sin(2.0 * lng * Math.PI)) * 2.0 / 3.0;
+  ret += (20.0 * Math.sin(lng * Math.PI) + 40.0 * Math.sin(lng / 3.0 * Math.PI)) * 2.0 / 3.0;
+  ret += (150.0 * Math.sin(lng / 12.0 * Math.PI) + 300.0 * Math.sin(lng / 30.0 * Math.PI)) * 2.0 / 3.0;
+  return ret;
 }
 
 function fnAppClass() {
-  const fn = {
+  var fn = {
     $data: {},
-    add(key, cb = () => {}) {
-      fn.$data[key] = fn.$data[key] || []
-      fn.$data[key].push(cb)
-      return fn
+    add: function add(key) {
+      var cb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
+      fn.$data[key] = fn.$data[key] || [];
+      fn.$data[key].push(cb);
+      return fn;
     },
-    insert(key, cb = () => {}) {
-      fn.$data[key] = fn.$data[key] || []
-      fn.$data[key].unshift(cb)
+    insert: function insert(key) {
+      var cb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : function () {};
+      fn.$data[key] = fn.$data[key] || [];
+      fn.$data[key].unshift(cb);
     },
-    getFn(key) {
-      return fn.$data[key]
+    getFn: function getFn(key) {
+      return fn.$data[key];
     },
-    bind(key, ctx = {}) {
-      fn.$data[key] = fn.$data[key] || []
-      fn.add(key, ctx[key])
-      ctx[key] = function (...params) {
-        const self = this
-        fn.getFn(key).forEach((cb) => {
-          cb.apply(self, params)
-        })
-      }
-    },
-  }
-  return fn
+    bind: function bind(key) {
+      var ctx = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      fn.$data[key] = fn.$data[key] || [];
+      fn.add(key, ctx[key]);
+
+      ctx[key] = function () {
+        for (var _len = arguments.length, params = new Array(_len), _key = 0; _key < _len; _key++) {
+          params[_key] = arguments[_key];
+        }
+
+        var self = this;
+        fn.getFn(key).forEach(function (cb) {
+          cb.apply(self, params);
+        });
+      };
+    }
+  };
+  return fn;
 }
 
 function assertPath(path) {
   if (typeof path !== 'string') {
-    throw new TypeError(
-      `Path must be a string. Received ${JSON.stringify(path)}`
-    )
+    throw new TypeError("Path must be a string. Received ".concat(JSON.stringify(path)));
   }
-}
+} // Resolves . and .. elements in a path with directory names
 
-// Resolves . and .. elements in a path with directory names
+
 function normalizeStringPosix(path, allowAboveRoot) {
-  let res = ''
-  let lastSegmentLength = 0
-  let lastSlash = -1
-  let dots = 0
-  let code
-  for (let i = 0; i <= path.length; ++i) {
+  var res = '';
+  var lastSegmentLength = 0;
+  var lastSlash = -1;
+  var dots = 0;
+  var code;
+
+  for (var i = 0; i <= path.length; ++i) {
     if (i < path.length) {
-      code = path.charCodeAt(i)
-    } else if (code === 47 /* /*/) {
-      break
-    } else {
-      code = 47 /* /*/
-    }
-    if (code === 47 /* /*/) {
-      if (lastSlash === i - 1 || dots === 1) {
-        // NOOP
-      } else if (lastSlash !== i - 1 && dots === 2) {
-        if (
-          res.length < 2 ||
-          lastSegmentLength !== 2 ||
-          res.charCodeAt(res.length - 1) !== 46 /* .*/ ||
-          res.charCodeAt(res.length - 2) !== 46 /* .*/
-        ) {
-          if (res.length > 2) {
-            const lastSlashIndex = res.lastIndexOf('/')
-            if (lastSlashIndex !== res.length - 1) {
-              if (lastSlashIndex === -1) {
-                res = ''
-                lastSegmentLength = 0
-              } else {
-                res = res.slice(0, lastSlashIndex)
-                lastSegmentLength = res.length - 1 - res.lastIndexOf('/')
-              }
-              lastSlash = i
-              dots = 0
-              continue
-            }
-          } else if (res.length === 2 || res.length === 1) {
-            res = ''
-            lastSegmentLength = 0
-            lastSlash = i
-            dots = 0
-            continue
-          }
-        }
-        if (allowAboveRoot) {
-          if (res.length > 0) {
-            res += '/..'
-          } else {
-            res = '..'
-          }
-          lastSegmentLength = 2
-        }
+      code = path.charCodeAt(i);
+    } else if (code === 47
+    /* /*/
+    ) {
+        break;
       } else {
-        if (res.length > 0) {
-          res += `/${path.slice(lastSlash + 1, i)}`
+      code = 47;
+      /* /*/
+    }
+
+    if (code === 47
+    /* /*/
+    ) {
+        if (lastSlash === i - 1 || dots === 1) {// NOOP
+        } else if (lastSlash !== i - 1 && dots === 2) {
+          if (res.length < 2 || lastSegmentLength !== 2 || res.charCodeAt(res.length - 1) !== 46
+          /* .*/
+          || res.charCodeAt(res.length - 2) !== 46
+          /* .*/
+          ) {
+              if (res.length > 2) {
+                var lastSlashIndex = res.lastIndexOf('/');
+
+                if (lastSlashIndex !== res.length - 1) {
+                  if (lastSlashIndex === -1) {
+                    res = '';
+                    lastSegmentLength = 0;
+                  } else {
+                    res = res.slice(0, lastSlashIndex);
+                    lastSegmentLength = res.length - 1 - res.lastIndexOf('/');
+                  }
+
+                  lastSlash = i;
+                  dots = 0;
+                  continue;
+                }
+              } else if (res.length === 2 || res.length === 1) {
+                res = '';
+                lastSegmentLength = 0;
+                lastSlash = i;
+                dots = 0;
+                continue;
+              }
+            }
+
+          if (allowAboveRoot) {
+            if (res.length > 0) {
+              res += '/..';
+            } else {
+              res = '..';
+            }
+
+            lastSegmentLength = 2;
+          }
         } else {
-          res = path.slice(lastSlash + 1, i)
+          if (res.length > 0) {
+            res += "/".concat(path.slice(lastSlash + 1, i));
+          } else {
+            res = path.slice(lastSlash + 1, i);
+          }
+
+          lastSegmentLength = i - lastSlash - 1;
         }
-        lastSegmentLength = i - lastSlash - 1
-      }
-      lastSlash = i
-      dots = 0
-    } else if (code === 46 /* .*/ && dots !== -1) {
-      ++dots
+
+        lastSlash = i;
+        dots = 0;
+      } else if (code === 46
+    /* .*/
+    && dots !== -1) {
+      ++dots;
     } else {
-      dots = -1
+      dots = -1;
     }
   }
-  return res
+
+  return res;
 }
 
 function _format(sep, pathObject) {
-  const dir = pathObject.dir || pathObject.root
-  const base =
-    pathObject.base || (pathObject.name || '') + (pathObject.ext || '')
+  var dir = pathObject.dir || pathObject.root;
+  var base = pathObject.base || (pathObject.name || '') + (pathObject.ext || '');
+
   if (!dir) {
-    return base
+    return base;
   }
+
   if (dir === pathObject.root) {
-    return dir + base
+    return dir + base;
   }
-  return dir + sep + base
+
+  return dir + sep + base;
 }
 
-const posix = {
+var posix = {
   // path.resolve([from ...], to)
-  resolve: function resolve(...args) {
-    let resolvedPath = ''
-    let resolvedAbsolute = false
-    let cwd
+  resolve: function resolve() {
+    var resolvedPath = '';
+    var resolvedAbsolute = false;
+    var cwd;
 
-    for (let i = args.length - 1; i >= -1 && !resolvedAbsolute; i--) {
-      let path
+    for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
+      var path = void 0;
+
       if (i >= 0) {
-        path = args[i]
+        path = i < 0 || arguments.length <= i ? undefined : arguments[i];
       } else {
         if (cwd === undefined) {
-          cwd = process.cwd()
+          cwd = process.cwd();
         }
-        path = cwd
+
+        path = cwd;
       }
 
-      assertPath(path)
+      assertPath(path); // Skip empty entries
 
-      // Skip empty entries
       if (path.length === 0) {
-        continue
+        continue;
       }
 
-      resolvedPath = `${path}/${resolvedPath}`
-      resolvedAbsolute = path.charCodeAt(0) === 47 /* /*/
-    }
-
-    // At this point the path should be resolved to a full absolute path, but
+      resolvedPath = "".concat(path, "/").concat(resolvedPath);
+      resolvedAbsolute = path.charCodeAt(0) === 47;
+      /* /*/
+    } // At this point the path should be resolved to a full absolute path, but
     // handle relative paths to be safe (might happen when process.cwd() fails)
-
     // Normalize the path
-    resolvedPath = normalizeStringPosix(resolvedPath, !resolvedAbsolute)
+
+
+    resolvedPath = normalizeStringPosix(resolvedPath, !resolvedAbsolute);
 
     if (resolvedAbsolute) {
       if (resolvedPath.length > 0) {
-        return `/${resolvedPath}`
+        return "/".concat(resolvedPath);
       }
-      return '/'
-    } else if (resolvedPath.length > 0) {
-      return resolvedPath
-    }
-    return '.'
-  },
 
+      return '/';
+    } else if (resolvedPath.length > 0) {
+      return resolvedPath;
+    }
+
+    return '.';
+  },
   normalize: function normalize(path) {
-    assertPath(path)
+    assertPath(path);
 
     if (path.length === 0) {
-      return '.'
+      return '.';
     }
 
-    const isAbsolute = path.charCodeAt(0) === 47 /* /*/
-    const trailingSeparator = path.charCodeAt(path.length - 1) === 47 /* /*/
+    var isAbsolute = path.charCodeAt(0) === 47;
+    /* /*/
 
+    var trailingSeparator = path.charCodeAt(path.length - 1) === 47;
+    /* /*/
     // Normalize the path
-    path = normalizeStringPosix(path, !isAbsolute)
+
+    path = normalizeStringPosix(path, !isAbsolute);
 
     if (path.length === 0 && !isAbsolute) {
-      path = '.'
+      path = '.';
     }
+
     if (path.length > 0 && trailingSeparator) {
-      path += '/'
+      path += '/';
     }
 
     if (isAbsolute) {
-      return `/${path}`
+      return "/".concat(path);
     }
-    return path
-  },
 
+    return path;
+  },
   isAbsolute: function isAbsolute(path) {
-    assertPath(path)
-    return path.length > 0 && path.charCodeAt(0) === 47 /* /*/
+    assertPath(path);
+    return path.length > 0 && path.charCodeAt(0) === 47;
+    /* /*/
   },
-
-  join: function join(...p) {
-    if (p.length === 0) {
-      return '.'
+  join: function join() {
+    if (arguments.length === 0) {
+      return '.';
     }
-    let joined
-    for (let i = 0; i < p.length; ++i) {
-      const arg = p[i]
-      assertPath(arg)
+
+    var joined;
+
+    for (var i = 0; i < arguments.length; ++i) {
+      var arg = i < 0 || arguments.length <= i ? undefined : arguments[i];
+      assertPath(arg);
+
       if (arg.length > 0) {
         if (joined === undefined) {
-          joined = arg
+          joined = arg;
         } else {
-          joined += `/${arg}`
+          joined += "/".concat(arg);
         }
       }
     }
+
     if (joined === undefined) {
-      return '.'
+      return '.';
     }
-    return posix.normalize(joined)
+
+    return posix.normalize(joined);
   },
-
   relative: function relative(from, to) {
-    assertPath(from)
-    assertPath(to)
+    assertPath(from);
+    assertPath(to);
 
     if (from === to) {
-      return ''
+      return '';
     }
 
-    from = posix.resolve(from)
-    to = posix.resolve(to)
+    from = posix.resolve(from);
+    to = posix.resolve(to);
 
     if (from === to) {
-      return ''
-    }
+      return '';
+    } // Trim any leading backslashes
 
-    // Trim any leading backslashes
-    let fromStart = 1
+
+    var fromStart = 1;
+
     for (; fromStart < from.length; ++fromStart) {
-      if (from.charCodeAt(fromStart) !== 47 /* /*/) {
-        break
-      }
+      if (from.charCodeAt(fromStart) !== 47
+      /* /*/
+      ) {
+          break;
+        }
     }
-    const fromEnd = from.length
-    const fromLen = fromEnd - fromStart
 
-    // Trim any leading backslashes
-    let toStart = 1
+    var fromEnd = from.length;
+    var fromLen = fromEnd - fromStart; // Trim any leading backslashes
+
+    var toStart = 1;
+
     for (; toStart < to.length; ++toStart) {
-      if (to.charCodeAt(toStart) !== 47 /* /*/) {
-        break
-      }
+      if (to.charCodeAt(toStart) !== 47
+      /* /*/
+      ) {
+          break;
+        }
     }
-    const toEnd = to.length
-    const toLen = toEnd - toStart
 
-    // Compare paths to find the longest common path from root
-    const length = fromLen < toLen ? fromLen : toLen
-    let lastCommonSep = -1
-    let i = 0
+    var toEnd = to.length;
+    var toLen = toEnd - toStart; // Compare paths to find the longest common path from root
+
+    var length = fromLen < toLen ? fromLen : toLen;
+    var lastCommonSep = -1;
+    var i = 0;
+
     for (; i <= length; ++i) {
       if (i === length) {
         if (toLen > length) {
-          if (to.charCodeAt(toStart + i) === 47 /* /*/) {
-            // We get here if `from` is the exact base path for `to`.
-            // For example: from='/foo/bar'; to='/foo/bar/baz'
-            return to.slice(toStart + i + 1)
-          } else if (i === 0) {
+          if (to.charCodeAt(toStart + i) === 47
+          /* /*/
+          ) {
+              // We get here if `from` is the exact base path for `to`.
+              // For example: from='/foo/bar'; to='/foo/bar/baz'
+              return to.slice(toStart + i + 1);
+            } else if (i === 0) {
             // We get here if `from` is the root
             // For example: from='/'; to='/foo'
-            return to.slice(toStart + i)
+            return to.slice(toStart + i);
           }
         } else if (fromLen > length) {
-          if (from.charCodeAt(fromStart + i) === 47 /* /*/) {
-            // We get here if `to` is the exact base path for `from`.
-            // For example: from='/foo/bar/baz'; to='/foo/bar'
-            lastCommonSep = i
-          } else if (i === 0) {
+          if (from.charCodeAt(fromStart + i) === 47
+          /* /*/
+          ) {
+              // We get here if `to` is the exact base path for `from`.
+              // For example: from='/foo/bar/baz'; to='/foo/bar'
+              lastCommonSep = i;
+            } else if (i === 0) {
             // We get here if `to` is the root.
             // For example: from='/foo'; to='/'
-            lastCommonSep = 0
+            lastCommonSep = 0;
           }
         }
-        break
+
+        break;
       }
-      const fromCode = from.charCodeAt(fromStart + i)
-      const toCode = to.charCodeAt(toStart + i)
+
+      var fromCode = from.charCodeAt(fromStart + i);
+      var toCode = to.charCodeAt(toStart + i);
+
       if (fromCode !== toCode) {
-        break
-      } else if (fromCode === 47 /* /*/) {
-        lastCommonSep = i
-      }
+        break;
+      } else if (fromCode === 47
+      /* /*/
+      ) {
+          lastCommonSep = i;
+        }
     }
 
-    let out = ''
-    // Generate the relative path based on the path difference between `to`
+    var out = ''; // Generate the relative path based on the path difference between `to`
     // and `from`
+
     for (i = fromStart + lastCommonSep + 1; i <= fromEnd; ++i) {
-      if (i === fromEnd || from.charCodeAt(i) === 47 /* /*/) {
-        if (out.length === 0) {
-          out += '..'
-        } else {
-          out += '/..'
+      if (i === fromEnd || from.charCodeAt(i) === 47
+      /* /*/
+      ) {
+          if (out.length === 0) {
+            out += '..';
+          } else {
+            out += '/..';
+          }
         }
-      }
-    }
-
-    // Lastly, append the rest of the destination (`to`) path that comes after
+    } // Lastly, append the rest of the destination (`to`) path that comes after
     // the common path parts
+
+
     if (out.length > 0) {
-      return out + to.slice(toStart + lastCommonSep)
+      return out + to.slice(toStart + lastCommonSep);
     }
 
-    toStart += lastCommonSep
-    if (to.charCodeAt(toStart) === 47 /* /*/) {
-      ++toStart
-    }
-    return to.slice(toStart)
+    toStart += lastCommonSep;
+
+    if (to.charCodeAt(toStart) === 47
+    /* /*/
+    ) {
+        ++toStart;
+      }
+
+    return to.slice(toStart);
   },
-
   _makeLong: function _makeLong(path) {
-    return path
+    return path;
   },
-
   dirname: function dirname(path) {
-    assertPath(path)
+    assertPath(path);
+
     if (path.length === 0) {
-      return '.'
+      return '.';
     }
-    let code = path.charCodeAt(0)
-    const hasRoot = code === 47 /* /*/
-    let end = -1
-    let matchedSlash = true
-    for (let i = path.length - 1; i >= 1; --i) {
-      code = path.charCodeAt(i)
-      if (code === 47 /* /*/) {
-        if (!matchedSlash) {
-          end = i
-          break
-        }
-      } else {
+
+    var code = path.charCodeAt(0);
+    var hasRoot = code === 47;
+    /* /*/
+
+    var end = -1;
+    var matchedSlash = true;
+
+    for (var i = path.length - 1; i >= 1; --i) {
+      code = path.charCodeAt(i);
+
+      if (code === 47
+      /* /*/
+      ) {
+          if (!matchedSlash) {
+            end = i;
+            break;
+          }
+        } else {
         // We saw the first non-path separator
-        matchedSlash = false
+        matchedSlash = false;
       }
     }
 
     if (end === -1) {
-      return hasRoot ? '/' : '.'
+      return hasRoot ? '/' : '.';
     }
-    if (hasRoot && end === 1) {
-      return '//'
-    }
-    return path.slice(0, end)
-  },
 
+    if (hasRoot && end === 1) {
+      return '//';
+    }
+
+    return path.slice(0, end);
+  },
   basename: function basename(path, ext) {
     if (ext !== undefined && typeof ext !== 'string') {
-      throw new TypeError('"ext" argument must be a string')
+      throw new TypeError('"ext" argument must be a string');
     }
-    assertPath(path)
 
-    let start = 0
-    let end = -1
-    let matchedSlash = true
-    let i
+    assertPath(path);
+    var start = 0;
+    var end = -1;
+    var matchedSlash = true;
+    var i;
 
     if (ext !== undefined && ext.length > 0 && ext.length <= path.length) {
       if (ext.length === path.length && ext === path) {
-        return ''
+        return '';
       }
-      let extIdx = ext.length - 1
-      let firstNonSlashEnd = -1
+
+      var extIdx = ext.length - 1;
+      var firstNonSlashEnd = -1;
+
       for (i = path.length - 1; i >= 0; --i) {
-        const code = path.charCodeAt(i)
-        if (code === 47 /* /*/) {
-          // If we reached a path separator that was not part of a set of path
-          // separators at the end of the string, stop now
-          if (!matchedSlash) {
-            start = i + 1
-            break
-          }
-        } else {
+        var code = path.charCodeAt(i);
+
+        if (code === 47
+        /* /*/
+        ) {
+            // If we reached a path separator that was not part of a set of path
+            // separators at the end of the string, stop now
+            if (!matchedSlash) {
+              start = i + 1;
+              break;
+            }
+          } else {
           if (firstNonSlashEnd === -1) {
             // We saw the first non-path separator, remember this index in case
             // we need it if the extension ends up not matching
-            matchedSlash = false
-            firstNonSlashEnd = i + 1
+            matchedSlash = false;
+            firstNonSlashEnd = i + 1;
           }
+
           if (extIdx >= 0) {
             // Try to match the explicit extension
             if (code === ext.charCodeAt(extIdx)) {
               if (--extIdx === -1) {
                 // We matched the extension, so mark this as the end of our path
                 // component
-                end = i
+                end = i;
               }
             } else {
               // Extension does not match, so our result is the entire path
               // component
-              extIdx = -1
-              end = firstNonSlashEnd
+              extIdx = -1;
+              end = firstNonSlashEnd;
             }
           }
         }
       }
 
       if (start === end) {
-        end = firstNonSlashEnd
+        end = firstNonSlashEnd;
       } else if (end === -1) {
-        end = path.length
+        end = path.length;
       }
-      return path.slice(start, end)
+
+      return path.slice(start, end);
     }
+
     for (i = path.length - 1; i >= 0; --i) {
-      if (path.charCodeAt(i) === 47 /* /*/) {
-        // If we reached a path separator that was not part of a set of path
-        // separators at the end of the string, stop now
-        if (!matchedSlash) {
-          start = i + 1
-          break
-        }
-      } else if (end === -1) {
+      if (path.charCodeAt(i) === 47
+      /* /*/
+      ) {
+          // If we reached a path separator that was not part of a set of path
+          // separators at the end of the string, stop now
+          if (!matchedSlash) {
+            start = i + 1;
+            break;
+          }
+        } else if (end === -1) {
         // We saw the first non-path separator, mark this as the end of our
         // path component
-        matchedSlash = false
-        end = i + 1
+        matchedSlash = false;
+        end = i + 1;
       }
     }
 
     if (end === -1) {
-      return ''
+      return '';
     }
-    return path.slice(start, end)
-  },
 
+    return path.slice(start, end);
+  },
   extname: function extname(path) {
-    assertPath(path)
-    let startDot = -1
-    let startPart = 0
-    let end = -1
-    let matchedSlash = true
-    // Track the state of characters (if any) we see before our first dot and
+    assertPath(path);
+    var startDot = -1;
+    var startPart = 0;
+    var end = -1;
+    var matchedSlash = true; // Track the state of characters (if any) we see before our first dot and
     // after any path separator we find
-    let preDotState = 0
-    for (let i = path.length - 1; i >= 0; --i) {
-      const code = path.charCodeAt(i)
-      if (code === 47 /* /*/) {
-        // If we reached a path separator that was not part of a set of path
-        // separators at the end of the string, stop now
-        if (!matchedSlash) {
-          startPart = i + 1
-          break
+
+    var preDotState = 0;
+
+    for (var i = path.length - 1; i >= 0; --i) {
+      var code = path.charCodeAt(i);
+
+      if (code === 47
+      /* /*/
+      ) {
+          // If we reached a path separator that was not part of a set of path
+          // separators at the end of the string, stop now
+          if (!matchedSlash) {
+            startPart = i + 1;
+            break;
+          }
+
+          continue;
         }
-        continue
-      }
+
       if (end === -1) {
         // We saw the first non-path separator, mark this as the end of our
         // extension
-        matchedSlash = false
-        end = i + 1
+        matchedSlash = false;
+        end = i + 1;
       }
-      if (code === 46 /* .*/) {
-        // If this is our first dot, mark it as the start of our extension
-        if (startDot === -1) {
-          startDot = i
-        } else if (preDotState !== 1) {
-          preDotState = 1
-        }
-      } else if (startDot !== -1) {
+
+      if (code === 46
+      /* .*/
+      ) {
+          // If this is our first dot, mark it as the start of our extension
+          if (startDot === -1) {
+            startDot = i;
+          } else if (preDotState !== 1) {
+            preDotState = 1;
+          }
+        } else if (startDot !== -1) {
         // We saw a non-dot and non-path separator before our dot, so we should
         // have a good chance at having a non-empty extension
-        preDotState = -1
+        preDotState = -1;
       }
     }
 
-    if (
-      startDot === -1 ||
-      end === -1 ||
-      // We saw a non-dot character immediately before the dot
-      preDotState === 0 ||
-      // The (right-most) trimmed path component is exactly '..'
-      (preDotState === 1 && startDot === end - 1 && startDot === startPart + 1)
-    ) {
-      return ''
+    if (startDot === -1 || end === -1 || // We saw a non-dot character immediately before the dot
+    preDotState === 0 || // The (right-most) trimmed path component is exactly '..'
+    preDotState === 1 && startDot === end - 1 && startDot === startPart + 1) {
+      return '';
     }
-    return path.slice(startDot, end)
-  },
 
+    return path.slice(startDot, end);
+  },
   format: function format(pathObject) {
-    if (pathObject === null || typeof pathObject !== 'object') {
-      throw new TypeError(
-        `The "pathObject" argument must be of type Object. Received type ${typeof pathObject}`
-      )
+    if (pathObject === null || _typeof(pathObject) !== 'object') {
+      throw new TypeError("The \"pathObject\" argument must be of type Object. Received type ".concat(_typeof(pathObject)));
     }
-    return _format('/', pathObject)
+
+    return _format('/', pathObject);
   },
-
   parse: function parse(path) {
-    assertPath(path)
+    assertPath(path);
+    var ret = {
+      root: '',
+      dir: '',
+      base: '',
+      ext: '',
+      name: ''
+    };
 
-    const ret = { root: '', dir: '', base: '', ext: '', name: '' }
     if (path.length === 0) {
-      return ret
+      return ret;
     }
-    let code = path.charCodeAt(0)
-    const isAbsolute = code === 47 /* /*/
-    let start
+
+    var code = path.charCodeAt(0);
+    var isAbsolute = code === 47;
+    /* /*/
+
+    var start;
+
     if (isAbsolute) {
-      ret.root = '/'
-      start = 1
+      ret.root = '/';
+      start = 1;
     } else {
-      start = 0
+      start = 0;
     }
-    let startDot = -1
-    let startPart = 0
-    let end = -1
-    let matchedSlash = true
-    let i = path.length - 1
 
-    // Track the state of characters (if any) we see before our first dot and
+    var startDot = -1;
+    var startPart = 0;
+    var end = -1;
+    var matchedSlash = true;
+    var i = path.length - 1; // Track the state of characters (if any) we see before our first dot and
     // after any path separator we find
-    let preDotState = 0
 
-    // Get non-dir info
+    var preDotState = 0; // Get non-dir info
+
     for (; i >= start; --i) {
-      code = path.charCodeAt(i)
-      if (code === 47 /* /*/) {
-        // If we reached a path separator that was not part of a set of path
-        // separators at the end of the string, stop now
-        if (!matchedSlash) {
-          startPart = i + 1
-          break
+      code = path.charCodeAt(i);
+
+      if (code === 47
+      /* /*/
+      ) {
+          // If we reached a path separator that was not part of a set of path
+          // separators at the end of the string, stop now
+          if (!matchedSlash) {
+            startPart = i + 1;
+            break;
+          }
+
+          continue;
         }
-        continue
-      }
+
       if (end === -1) {
         // We saw the first non-path separator, mark this as the end of our
         // extension
-        matchedSlash = false
-        end = i + 1
+        matchedSlash = false;
+        end = i + 1;
       }
-      if (code === 46 /* .*/) {
-        // If this is our first dot, mark it as the start of our extension
-        if (startDot === -1) {
-          startDot = i
-        } else if (preDotState !== 1) {
-          preDotState = 1
-        }
-      } else if (startDot !== -1) {
+
+      if (code === 46
+      /* .*/
+      ) {
+          // If this is our first dot, mark it as the start of our extension
+          if (startDot === -1) {
+            startDot = i;
+          } else if (preDotState !== 1) {
+            preDotState = 1;
+          }
+        } else if (startDot !== -1) {
         // We saw a non-dot and non-path separator before our dot, so we should
         // have a good chance at having a non-empty extension
-        preDotState = -1
+        preDotState = -1;
       }
     }
 
-    if (
-      startDot === -1 ||
-      end === -1 ||
-      // We saw a non-dot character immediately before the dot
-      preDotState === 0 ||
-      // The (right-most) trimmed path component is exactly '..'
-      (preDotState === 1 && startDot === end - 1 && startDot === startPart + 1)
-    ) {
+    if (startDot === -1 || end === -1 || // We saw a non-dot character immediately before the dot
+    preDotState === 0 || // The (right-most) trimmed path component is exactly '..'
+    preDotState === 1 && startDot === end - 1 && startDot === startPart + 1) {
       if (end !== -1) {
         if (startPart === 0 && isAbsolute) {
-          ret.base = path.slice(1, end)
-          ret.name = path.slice(1, end)
+          ret.base = path.slice(1, end);
+          ret.name = path.slice(1, end);
         } else {
-          ret.base = path.slice(startPart, end)
-          ret.name = path.slice(startPart, end)
+          ret.base = path.slice(startPart, end);
+          ret.name = path.slice(startPart, end);
         }
       }
     } else {
       if (startPart === 0 && isAbsolute) {
-        ret.name = path.slice(1, startDot)
-        ret.base = path.slice(1, end)
+        ret.name = path.slice(1, startDot);
+        ret.base = path.slice(1, end);
       } else {
-        ret.name = path.slice(startPart, startDot)
-        ret.base = path.slice(startPart, end)
+        ret.name = path.slice(startPart, startDot);
+        ret.base = path.slice(startPart, end);
       }
-      ret.ext = path.slice(startDot, end)
+
+      ret.ext = path.slice(startDot, end);
     }
 
     if (startPart > 0) {
-      ret.dir = path.slice(0, startPart - 1)
+      ret.dir = path.slice(0, startPart - 1);
     } else if (isAbsolute) {
-      ret.dir = '/'
+      ret.dir = '/';
     }
 
-    return ret
+    return ret;
   },
-
   sep: '/',
   delimiter: ':',
   win32: null,
-  posix: null,
-}
-
-posix.posix = posix
+  posix: null
+};
+posix.posix = posix;
 
 function browserPath() {
-  return posix
+  return posix;
 }
 
 function mapAuthSetting(obj) {
-  const keys = [
-    ['scope.userLocation', 'location'],
-    ['scope.writePhotosAlbum', 'album'],
-    ['scope.camera', 'camera'],
-    ['scope.userInfo', 'userInfo'],
-    ['scope.address', 'aliaddress'],
-    ['scope.werun', 'alipaysports'],
-  ]
+  var keys = [['scope.userLocation', 'location'], ['scope.writePhotosAlbum', 'album'], ['scope.camera', 'camera'], ['scope.userInfo', 'userInfo'], ['scope.address', 'aliaddress'], ['scope.werun', 'alipaysports']];
+  var authSetting = {};
+  keys.forEach(function (item) {
+    var value = obj[item[1]];
 
-  const authSetting = {}
-
-  keys.forEach((item) => {
-    const value = obj[item[1]]
     if (typeof value !== 'undefined') {
-      authSetting[item[0]] = value
+      authSetting[item[0]] = value;
     }
-  })
-
-  return authSetting
+  });
+  return authSetting;
 }
