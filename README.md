@@ -79,6 +79,14 @@ import 'vant-aliapp/dist/__antmove/component/componentClass.js'
 
 > 预览时请在项目详情设置中开启 `component2` 编译，详情可参考[支付宝小程序自定义组件使用介绍](https://docs.alipay.com/mini/framework/custom-component-overview#%E4%BD%BF%E7%94%A8%E9%A1%BB%E7%9F%A5)。
 
+## 注意事项
+
+checkbox、collapse、dropdown-menu、goods-action、grid、radio、tab、tabbar、index-bar、sidebar等组件涉及到微信的relations的写法，目前原生支付宝或钉钉小程序不支持直接引入这些组件。解决方法按以下步骤进行：
+1. npm下载Antmove命令行工具
+> npm install antmove -g
+2. 在你的项目根目录下，使用 alipay-compiler 对项目进行转换
+> antmove -t alipay-compiler
+1. 转换后的支付宝小程序即可支持以上组件
 
 ## 联系
 
