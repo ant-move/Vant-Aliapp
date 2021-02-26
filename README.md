@@ -86,7 +86,7 @@ checkbox、collapse、dropdown-menu、goods-action、grid、radio、tab、tabbar
 > npm install antmove -g
 2. 在你的项目根目录下，使用 alipay-compiler 对项目进行转换
 > antmove -t alipay-compiler
-1. 转换后的支付宝小程序即可支持以上组件
+3. 转换后的支付宝小程序即可支持以上组件
 
 ## 联系
 
