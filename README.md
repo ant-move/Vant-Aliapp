@@ -13,7 +13,7 @@ Vant Aliapp 是移动端 Vue 组件库 [Vant](https://github.com/youzan/vant) �
 
 支付宝扫描下方小程序二维码，体验组件库示例：
 
-<img src="https://img.alicdn.com/imgextra/i4/O1CN01r9dDA41VrqnQePDfN_!!6000000002707-2-tps-296-294.png" width="200" height="200" style="margin-top: 10px;" >
+<img src="https://cache.amap.com/ecology/tool/amap-backend-server/platform/img/16268702852015063.png" width="200" height="200" style="margin-top: 10px;" >
 
 ## 使用之前
 
