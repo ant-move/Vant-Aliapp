@@ -1,3 +1,15 @@
+# 注意：该仓库已停止维护
+如果寻找其它的替代方案，建议使用官方提供的 [antD小程序版](https://mini.ant.design/)
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<hr/>
+
+
 <p align="center">
   <img alt="logo" src="https://img.yzcdn.cn/vant/logo.png" width="120" style="margin-bottom: 10px;">
 </p>
